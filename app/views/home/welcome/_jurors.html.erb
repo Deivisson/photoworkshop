@@ -1,0 +1,15 @@
+<div class="texts-container">
+	<h1><%= t(".title") %></h1>
+	<p><%= t(".info").html_safe %></p>
+	<%= link_to t('.how_to_be_juror'),"#",class:'button-link' %>
+</div>
+
+<div class="jurors-avatar">
+	<% 6.times do %>
+		<div class="circle">
+			<span class="jurors-name">Deivisson Bruno</span>
+			<%= image_tag("avatar.jpg") %>
+
+		</div>
+	<% end %>
+</div>

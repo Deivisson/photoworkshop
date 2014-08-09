@@ -1,0 +1,260 @@
+ul.menu {
+  background-color: #fff;
+  border: 1px solid #eee;
+	height:60px;
+	width: 960px;
+	position: fixed;
+	top: 10px;
+  li {
+    float: left;
+    height: 100%;
+    width: 150px;
+    border-right: 1px solid #666;
+    a {
+      color: #777;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      line-height: 62px;
+      &.login {
+        font-weight: bold;
+      }
+    }
+    &.logo-space {
+      width: 204px;
+    }
+  }
+}
+
+.centralizer {
+  height: auto;
+  width: 960px;
+  margin: 0 auto;
+}
+
+.welcome-cover,.welcome-cover-mask {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow:0px 3px 4px #DBDBDB;
+  height: 800px;
+  position: fixed;
+  opacity: 1;
+  transition: opacity 0.5s linear 0s;
+  top: 0;
+  width: 100%;
+  z-index: -200; 
+}
+
+.welcome-cover-mask {
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -100; 
+}
+
+.welcome-content {
+  float: left;
+  height: 320px;
+  position: fixed;
+  width: 960px;
+  h1,h2 {
+    color: #FFF;
+    text-align: center;
+    width: 100%;
+    text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.25);
+  }
+  h1 {
+    font-size: 52px;
+  }
+  h2 {
+    font-size: 30px;
+    margin-top: 5px;
+    letter-spacing: 2px;
+  }
+  a.sign-up-button {
+    border: 1px solid #777;
+    border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    color: #FFF;
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+    height: 40px;
+    margin: 40px 10px 0 0;
+    padding: 5px;
+    position: absolute;
+    text-decoration: none;
+    width: 250px;
+    &.facebook {
+      background-color: #4E70B5;
+      border: 1px solid #4453B5;
+      margin-left: 210px;
+    }
+    &.twitter {
+     background-color: #28C2FA; 
+     border: 1px solid #29AFFA;
+     margin-left: 490px;
+    }
+  }
+  a.sign_up_email {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
+    position: absolute;
+    margin: 120px 0 0 0;
+    text-align: center;
+    text-shadow: 2px 2px 1px rgba(68, 68, 68, 1);
+    width: 100%;
+  }
+}
+
+.how_work {
+  background-color: #FFF;
+  float: left;
+  height: 600px;
+  width: 100%;
+  padding-top: 40px;
+  z-index:  999;
+  .photographer-image {
+    border: 1px solid #eee;
+    float: left;
+    height: 500px;
+    width: 440px
+  }
+
+  .texts-container {
+    float: right;
+    width: 500px;
+    h1 {
+      font-size: 30px;
+      font-weight: bold;
+    }
+    p {
+      font-size: 22px;
+      line-height: 28px;
+      margin-top: 35px;
+
+    }
+  }
+  .texts-container ul.counts {
+    list-style: none;
+    margin-top: 80px;
+    width: 100%;
+    li {
+      float: left;
+      height: 140px;
+      width: 220px;
+      &.first {
+        border-right: 1px solid blue;  
+      }
+      span.count-icon {
+        border: 1px solid red;
+        float: left;
+        height: 40px;
+        margin: 0 0 20px 85px;
+        width: 40px;
+      }
+      label {
+        float: left;
+        font-size: 11px;
+        font-weight: bold;
+        width: 100%;
+        text-align: center;
+      }
+      span.count {
+        float: left;
+        font-size: 40px;
+        margin-top: 10px;
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.jurors {
+  background-color: #eee;
+  float: left;
+  height: 600px;
+  width: 100%;
+  padding-top: 40px;
+  z-index:  999;
+  .texts-container {
+    float: left;
+    width: 500px;
+    h1 {
+      font-size: 30px;
+      font-weight: bold;
+    }
+    p {
+      font-size: 22px;
+      line-height: 28px;
+      margin-top: 35px;
+
+    }
+  }  
+  .jurors-avatar {
+    border: 1px solid #eee;
+    float: right;
+    height: 500px;
+    width: 440px;
+    .circle {
+      background-color: #FFF;
+      border: 1px solid #E8E5E5;
+      border-radius: 50%;
+      box-shadow: 1px 1px 2px #A19AA0;
+      float: left;
+      height: 120px; 
+      margin: 0 0 25px 22px;
+      width: 120px;
+      &:hover span.jurors-name {visibility: visible;};
+      img {
+        border-radius: 50%;
+        width: 110px;
+        height: 110px; 
+        margin: 6px 0 0 8px;
+      }
+      span.jurors-name {
+        background-color: #000;
+        border-radius: 10px; 
+        -moz-border-radius: 10px; 
+        -webkit-border-radius: 10px; 
+        color: #fff;
+        visibility: hidden;
+        font-size: 12px;
+        height: 30px;
+        line-height: 30px;
+        width: 118px;
+        margin: 60px 0 0 0px;
+        position: absolute;
+        text-align: center;
+        opacity: 0.7;
+      }
+
+    }
+  }
+
+}
+
+.button-link {
+  background-color: #09C144;
+  border: 1px solid #00A144;
+  border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  -webkit-border-radius: 5px; 
+  color: #FFF;
+  float: left;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 40px;
+  text-align: center;
+  height: 40px;
+  margin: 40px 10px 0 0;
+  padding: 5px;
+  position: absolute;
+  text-decoration: none;
+  width: 250px;
+}

@@ -1,0 +1,31 @@
+pt_BR:
+  welcome: 
+    menu:
+      how_work: "COMO FUNCIONA?"
+      jurors: "JURADOS"
+      inspirations: "INSPIRAÇÕES"
+      contests: "CONCURSOS"
+      login: "LOGIN"
+    
+    texts:
+      header: "Cadastre-se agora"
+      sub_header: "a comunidade de fotografia que mais cresce"
+    
+    authentication:    
+      facebook_sign_up: "Use a conta do Facebook"
+      twitter_sign_up: "Use a conta do Twitter"
+      sign_up_email: "ou cadastre-se usando o email."
+
+  home:
+    welcome:
+      index:
+      how_work:
+        title: "AQUI VOCÊ É O FOTOGRAFO."
+        info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod quis mauris non aliquam. <br><br> Sed vel porttitor arcu. Proin sollicitudin sapien at sodales pretium. Quisque ornare posuere aliquam. Nullam sit amet massa non sapien sodales consequat. Aliquam ac mattis diam."
+        registers_photographers: "FOTOGRAFOS CADASTRADOS"
+        posted_photos: "FOTOGRAFIAS POSTADAS"
+
+      jurors:
+        title: "JURADOS"
+        info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod quis mauris non aliquam. <br><br> Sed vel porttitor arcu. Proin sollicitudin sapien at sodales pretium. Quisque ornare posuere aliquam. Nullam sit amet massa non sapien sodales consequat. Aliquam ac mattis diam."
+        how_to_be_juror: "SAIBA COMO SER UM JURADO!"
