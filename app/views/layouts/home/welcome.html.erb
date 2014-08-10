@@ -25,7 +25,8 @@
 					<h2><%=t('welcome.texts.sub_header') %></h2>
 					<%= link_to t('welcome.authentication.facebook_sign_up'),"#",class:'sign-up-button facebook'%>
 					<%= link_to t('welcome.authentication.twitter_sign_up'),"#",class:'sign-up-button twitter'%>
-					<%= link_to t('welcome.authentication.sign_up_email'),"#",class:'sign_up_email' %>
+					<%= link_to t('welcome.authentication.sign_up_email'),
+											new_user_registration_path,class:'sign_up_email' %>
 			</div>
 		</div>
 	</div>
