@@ -1,17 +1,21 @@
 ul.menu {
-  background-color: #fff;
+  background-color: #f9f9f9;
+  box-shadow:0px 2px 5px #777;
   border: 1px solid #eee;
+  border-radius: 7px; 
+  -moz-border-radius: 7px; 
+  -webkit-border-radius: 7px; 
 	height:60px;
 	width: 960px;
 	position: fixed;
-	top: 10px;
+	top: 30px;
   li {
     float: left;
     height: 100%;
     width: 150px;
-    border-right: 1px solid #666;
+    border-right: 1px solid #d2d2d2;
     a {
-      color: #777;
+      color: #a7a7a7;
       display: block;
       text-align: center;
       text-decoration: none;
@@ -23,6 +27,11 @@ ul.menu {
     &.logo-space {
       width: 204px;
     }
+    &.last {
+      border:0;
+    } 
+
+
   }
 }
 
@@ -60,10 +69,10 @@ ul.menu {
     color: #FFF;
     text-align: center;
     width: 100%;
-    text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.25);
+    text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.75);
   }
   h1 {
-    font-size: 52px;
+    font-size: 62px;
   }
   h2 {
     font-size: 30px;
@@ -112,14 +121,13 @@ ul.menu {
 }
 
 .how_work {
-  background-color: #FFF;
+  background-color: #fff7e4;
   float: left;
   height: 600px;
   width: 100%;
   padding-top: 40px;
   z-index:  999;
   .photographer-image {
-    border: 1px solid #eee;
     float: left;
     height: 500px;
     width: 440px
@@ -129,14 +137,16 @@ ul.menu {
     float: right;
     width: 500px;
     h1 {
+      color: #333337;
       font-size: 30px;
       font-weight: bold;
     }
     p {
+      color: #333337;
       font-size: 22px;
       line-height: 28px;
       margin-top: 35px;
-
+      text-align: justify;
     }
   }
   .texts-container ul.counts {
@@ -148,16 +158,23 @@ ul.menu {
       height: 140px;
       width: 220px;
       &.first {
-        border-right: 1px solid blue;  
+        border-right: 1px solid #bfb192;  
       }
       span.count-icon {
-        border: 1px solid red;
+        background-image: url("/assets/home/welcome_sprite.png");
         float: left;
         height: 40px;
-        margin: 0 0 20px 85px;
-        width: 40px;
+        margin: 0 0 20px 78px;
+        width: 53px;
+        &.photographers {
+          background-position: -2px -55px;
+        }
+        &.pictures {
+          background-position: 0 0;
+        }
       }
       label {
+        color: #333337;
         float: left;
         font-size: 11px;
         font-weight: bold;
@@ -176,7 +193,7 @@ ul.menu {
 }
 
 .jurors {
-  background-color: #eee;
+  background-color: #d5f8ed;
   float: left;
   height: 600px;
   width: 100%;
@@ -186,13 +203,16 @@ ul.menu {
     float: left;
     width: 500px;
     h1 {
+      color: #333337;
       font-size: 30px;
       font-weight: bold;
     }
     p {
+      color: #333337;
       font-size: 22px;
       line-height: 28px;
       margin-top: 35px;
+      text-align: justify;
 
     }
   }  
