@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+
   devise_for :users
   scope :home do
     resources :welcome
   end
+
+  namespace :user do 
+    resources :dashboard, only: :index
+  end
+
   root "home/welcome#index"
   
 

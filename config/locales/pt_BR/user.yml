@@ -1,0 +1,9 @@
+pt_BR:
+  user:
+    dashboard:
+      index:
+        menu:
+          profile: "Perfil"
+          photographers: "Fotografos"
+          upload: "Upload"
+

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Photograph</title>
+  <%= stylesheet_link_tag    'user', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'user', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<ul class="toolbar">
+		<%= yield :toolbar %>
+	</ul>
+<%= yield %>
+
+</body>
+</html>

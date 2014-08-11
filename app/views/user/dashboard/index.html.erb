@@ -1,0 +1,25 @@
+<%= content_for :toolbar do %>
+	<%= content_tag :li, class:'logo'  do %>
+
+	<% end %>
+
+	<%= content_tag :ul, class:'menu' do %>
+		<li>
+      <span class="profile"></span> 
+      <%= link_to t('.menu.profile'), "#" %>
+    </li>
+    <li>
+      <span class="photographers"></span> 
+      <%= link_to t('.menu.photographers'), "#",class:'photographers1' %>
+    </li>
+    <li>
+      <span class="upload"></span> 
+      <%= link_to t('.menu.upload'), "#" %>
+    </li>  
+
+	<% end %>
+	
+	<%= content_tag :li, class:'user-info'  do %>
+		Deivisson
+	<% end %>
+<% end %>
