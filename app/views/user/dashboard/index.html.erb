@@ -20,6 +20,8 @@
 	<% end %>
 	
 	<%= content_tag :li, class:'user-info'  do %>
-		Deivisson
+    <%= image_tag("avatar.jpg",class:'avatar') %>
+    <%= content_tag :label,"Deivisson Bruno",class:'user-name' %>
+    <%= link_to "Logoff",destroy_user_session_path %>
 	<% end %>
 <% end %>

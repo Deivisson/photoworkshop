@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   end
 
   namespace :user do 
-    resources :dashboard, only: :index
+    root "dashboard#index"
+    resources :dashboard, :only => [:index]
   end
-
   root "home/welcome#index"
   
 

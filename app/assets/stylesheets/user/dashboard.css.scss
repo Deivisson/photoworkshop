@@ -26,12 +26,24 @@ ul.toolbar {
 			float: left;
 			width: 140px;			
 		};
-		&.user-info {
-			border-left: 1px solid #E9E9E9;
-			float: right;
-			width: 120px;
+	}
+	li.user-info {
+		border-left: 1px solid #E9E9E9;
+		float: right;
+		width: 180px;
+		img.avatar {
+			border-radius: 50%;
+			border: 1px solid gray;
+			float: left;
+			height: 42px;
+			margin: 7px 0 0 -6px;
+			width: 42px;
 		}
-
+		label.user-name {
+			float: left;
+			font-size: 12px;
+			margin: 20px 0 0 10px;
+		}
 	}
 	ul.menu {
 		float: left;
@@ -46,21 +58,26 @@ ul.toolbar {
 				height: 100%;
 				line-height: 90px;
 				margin-top: -30px;
-				padding: 0 10px 0 10px;
+				padding: 0 20px 0 20px;
 				text-decoration: none;
 			}
+
 			span {
-					background-image: url(/assets/user/dashboard_menu_sprite.png) ;
-					background-repeat: no-repeat;
-					background-position: center center;
-					float: left;
-					margin: 10px 0 0 0;
-					width: 100%;
-					height: 24px;
-					&.profile {background-position: 10px 0px;}
-					&.photographers {background-position: 30px -100px;}
-					&.upload {background-position: 12px -50px;}
-				}
+				background-image: url(/assets/user/dashboard_menu_sprite.png) ;
+				background-repeat: no-repeat;
+				background-position: center center;
+				float: left;
+				margin: 10px 0 0 0;
+				width: 100%;
+				height: 24px;
+				&.profile {background-position: 20px 0px;}
+				&.photographers {background-position: 38px -103px;}
+				&.upload {background-position: 25px -52px;}
+			}
+			&:hover a {color: #000} ;
+			&:hover span.profile {background-position: 20px -24px;}
+			&:hover span.photographers {background-position: 38px -127px;}
+			&:hover span.upload {background-position: 25px -77px;}
 		}
 	}
 }
