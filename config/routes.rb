@@ -1,15 +1,25 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-  scope :home do
-    resources :welcome
+  namespace :admin do
+    resources :categories
   end
 
+  devise_for :admins
+  namespace :admin do
+    resources :countries
+  end
+  
+  devise_for :users
   namespace :user do 
     root "dashboard#index"
     resources :dashboard, :only => [:index]
   end
+  
+  scope :home do
+    resources :welcome
+  end
   root "home/welcome#index"
+
   
 
   # The priority is based upon order of creation: first created -> highest priority.
