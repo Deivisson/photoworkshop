@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :states
+
   namespace :admin do
     resources :categories
   end
