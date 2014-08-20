@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140813034233) do
+ActiveRecord::Schema.define(version: 20140814022745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,30 @@ ActiveRecord::Schema.define(version: 20140813034233) do
     t.datetime "updated_at"
   end
 
+  create_table "photos", force: true do |t|
+    t.integer  "user_id",                          null: false
+    t.integer  "category_id",                      null: false
+    t.string   "title",                limit: 40
+    t.text     "description"
+    t.string   "tags",                 limit: 100
+    t.string   "camera",               limit: 50
+    t.string   "lens",                 limit: 50
+    t.string   "aperture",             limit: 10
+    t.string   "shutter_speed",        limit: 10
+    t.date     "taken_at"
+    t.string   "focal_lenght",         limit: 4
+    t.string   "iso",                  limit: 6
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+  end
+
+  add_index "photos", ["category_id"], name: "index_photos_on_category_id", using: :btree
+  add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
+
   create_table "states", force: true do |t|
     t.string   "name",       limit: 100
     t.string   "short_name", limit: 2
@@ -78,6 +102,9 @@ ActiveRecord::Schema.define(version: 20140813034233) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  add_foreign_key "photos", "categories", name: "fk_photos_category"
+  add_foreign_key "photos", "users", name: "fk_photos_users"
 
   add_foreign_key "states", "countries", name: "states_countries"
 

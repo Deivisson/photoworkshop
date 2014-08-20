@@ -1,0 +1,65 @@
+<%= form_for @photo, url:user_photos_path, :html => {multipart:true} do |f| %>
+  <% if @photo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+
+      <ul>
+      <% @photo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.text_field :category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :tags %><br>
+    <%= f.text_field :tags %>
+  </div>
+  <div class="field">
+    <%= f.label :camera %><br>
+    <%= f.text_field :camera %>
+  </div>
+  <div class="field">
+    <%= f.label :lens %><br>
+    <%= f.text_field :lens %>
+  </div>
+  <div class="field">
+    <%= f.label :aperture %><br>
+    <%= f.text_field :aperture %>
+  </div>
+  <div class="field">
+    <%= f.label :shutter_speed %><br>
+    <%= f.text_field :shutter_speed %>
+  </div>
+  <div class="field">
+    <%= f.label :focal_lenght %><br>
+    <%= f.text_field :focal_lenght %>
+  </div>
+  <div class="field">
+    <%= f.label :iso %><br>
+    <%= f.text_field :iso %>
+  </div>
+  <div class="field">
+    <%= f.label :picture %><br>
+    <%= f.file_field :picture %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

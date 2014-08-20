@@ -1,0 +1,39 @@
+.common-button {
+	background-color: #F1F1F1;
+  border:1px solid #cecece;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  color: #777;
+  cursor:pointer;
+  font-size:14px;
+  font-weight: bold !important;
+  height:33px ;
+  line-height: 33px;
+  padding: 0px 14px 0px 14px;
+  text-decoration: none;
+  /*text-shadow: 0px 1px 1px #384917;*/
+  vertical-align: center;
+  width:auto;	
+}
+
+.upload-button {
+	float: right;	
+	margin: 7px 5px 0 0;
+  &:hover {
+    background-color: #32a6d3;
+    border-color: #1B8DBA;
+    color: #FFF;
+  };
+}
+
+
+
+
+
+
+
+
+
+
+

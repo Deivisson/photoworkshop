@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  category_id: 
+  title: MyString
+  description: MyString
+  tags: MyString
+  camera: MyString
+  lens: MyString
+  aperture: MyString
+  shutter_speed: MyString
+  taken_at: 2014-08-13
+  focal_lenght: MyString
+  iso: MyString
+
+two:
+  user_id: 
+  category_id: 
+  title: MyString
+  description: MyString
+  tags: MyString
+  camera: MyString
+  lens: MyString
+  aperture: MyString
+  shutter_speed: MyString
+  taken_at: 2014-08-13
+  focal_lenght: MyString
+  iso: MyString

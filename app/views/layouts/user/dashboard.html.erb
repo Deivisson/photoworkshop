@@ -9,8 +9,33 @@
 <body>
 	<ul class="toolbar">
 		<%= yield :toolbar %>
+		<%= content_tag :li, class:'user-info'  do %>
+	    <%= link_to "Logoff",destroy_user_session_path %>
+		<% end %>
+		<%= link_to "Upload",new_user_photo_path, class:"common-button upload-button" %>
 	</ul>
-<%= yield %>
+	<div class="left-col">
+		<div class="top-info">
+
+		</div>
+		<div class="user-content">
+			<%= image_tag("avatar.jpg",class:'avatar') %>
+			<%= content_tag :label,class:'user-name' do %>
+					<span>Deivisson</span>
+					Bruno
+			<% end %>
+		</div>
+
+		<!-- Lateral menu -->
+	  <%= content_tag :ul, class:'menu' do %>
+	    <li><%= link_to t('user.lateral_menu.profile'), "#",class:'profile' %></li>
+	    <li><%= link_to t('user.lateral_menu.photographers'), "#",class:'photographers' %></li>
+	    <li><%= link_to t('user.lateral_menu.upload'), "#",class:'upload' %></li>  
+  	<% end %>
+	</div>
+	<div class="main-content-area">
+		<%= yield %>
+	</div>
 
 </body>
 </html>

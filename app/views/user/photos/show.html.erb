@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @photo.user %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @photo.category %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @photo.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @photo.description %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @photo.tags %>
+</p>
+
+<p>
+  <strong>Camera:</strong>
+  <%= @photo.camera %>
+</p>
+
+<p>
+  <strong>Lens:</strong>
+  <%= @photo.lens %>
+</p>
+
+<p>
+  <strong>Aperture:</strong>
+  <%= @photo.aperture %>
+</p>
+
+<p>
+  <strong>Shutter speed:</strong>
+  <%= @photo.shutter_speed %>
+</p>
+
+<p>
+  <strong>Taken at:</strong>
+  <%= @photo.taken_at %>
+</p>
+
+<p>
+  <strong>Focal lenght:</strong>
+  <%= @photo.focal_lenght %>
+</p>
+
+<p>
+  <strong>Iso:</strong>
+  <%= @photo.iso %>
+</p>
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>

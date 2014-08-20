@@ -1,2 +1,2 @@
-module StatesHelper
+module Admin::StatesHelper
 end

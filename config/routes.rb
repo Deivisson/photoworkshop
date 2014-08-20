@@ -1,20 +1,18 @@
 Rails.application.routes.draw do
-
-  resources :states
-
-  namespace :admin do
-    resources :categories
-  end
+  
 
   devise_for :admins
   namespace :admin do
+    resources :categories
     resources :countries
+    resources :states
   end
   
   devise_for :users
   namespace :user do 
     root "dashboard#index"
     resources :dashboard, :only => [:index]
+    resources :photos
   end
   
   scope :home do

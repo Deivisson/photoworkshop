@@ -1,9 +1,18 @@
 pt_BR:
   user:
+    lateral_menu:
+      profile: "Perfil"
+      photographers: "Fotografos"
+      upload: "Upload"
+
     dashboard:
       index:
-        menu:
-          profile: "Perfil"
-          photographers: "Fotografos"
-          upload: "Upload"
+    
+
+        profile:
+          me: Perfil
+          photos: Fotos
+          following: "Seguindo"
+          followers: "Seguidores"
+
 
