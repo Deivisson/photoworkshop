@@ -10,3 +10,43 @@ body {
 html {
 	min-width: 1000px;
 }
+
+
+.panel {
+	background-color: #FFF;
+	border: 1px solid #cecece;
+	border-radius: 5px 5px 0px 0px; 
+	-moz-border-radius: 5px 5px 0px 0px; 
+	-webkit-border-radius: 5px 5px 0px 0px;
+	float: left;     
+	margin: 10px;
+	h5.title {
+    background-color: #ebebeb;
+    border-bottom: 1px solid #cecece;
+		border-radius: 5px 5px 0px 0px; 
+		-moz-border-radius: 5px 5px 0px 0px; 
+		-webkit-border-radius: 5px 5px 0px 0px; 
+    color: #777;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 38px;
+    text-indent: 20px;
+		height: 37px;
+		width: 100%;
+	}
+	.panel-content {
+		padding: 15px;	
+		.grid2column {
+			width: 105%;
+			.input {
+				float: left;	
+				width: 45%;
+				input {
+					width: 97% !important;
+				}
+				&.second-col {margin-left: 14px}
+			}
+		}
+	}
+
+}

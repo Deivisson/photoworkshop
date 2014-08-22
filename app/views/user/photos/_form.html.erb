@@ -1,65 +1,33 @@
-<%= form_for @photo, url:user_photos_path, :html => {multipart:true} do |f| %>
-  <% if @photo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+<div class="centralizer">
+  <%= semantic_form_for @photo, url:user_photos_path, :html => {multipart:true} do |f| %>
+    <%= content_tag(:div, class:"panel",style:'width: 400px;') do %>
+      <h5 class="title">Informações</h5>
+      <div class="panel-content">
+        <%= f.input :title %>
+        <%= f.input :description, :input_html => {rows:5} %>
+        <%= f.input :category_id %>
+        <%= f.input :tags %>
+      </div>
+    <% end %>
+    <%= content_tag(:div, class:"panel",style:'width: 400px;') do %>
+      <h5 class="title">EXIF </h5>
+      <div class="panel-content">
+        <%= f.input :camera %>
+        <%= f.input :lens %>
+        <div class='grid2column'>
+          <%= f.input :aperture %>
+          <%= f.input :shutter_speed, :wrapper_html => { :class => "second-col" } %>
+        </div>
+        <div class='grid2column'%>
+          <%= f.input :focal_lenght %>
+          <%= f.input :iso, :wrapper_html => { :class => "second-col" } %>
+        </div>
+      </div>
+      <%= f.input :picture, :as => :file %>
+    <% end %>    
 
-      <ul>
-      <% @photo.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.text_field :category_id %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :tags %><br>
-    <%= f.text_field :tags %>
-  </div>
-  <div class="field">
-    <%= f.label :camera %><br>
-    <%= f.text_field :camera %>
-  </div>
-  <div class="field">
-    <%= f.label :lens %><br>
-    <%= f.text_field :lens %>
-  </div>
-  <div class="field">
-    <%= f.label :aperture %><br>
-    <%= f.text_field :aperture %>
-  </div>
-  <div class="field">
-    <%= f.label :shutter_speed %><br>
-    <%= f.text_field :shutter_speed %>
-  </div>
-  <div class="field">
-    <%= f.label :focal_lenght %><br>
-    <%= f.text_field :focal_lenght %>
-  </div>
-  <div class="field">
-    <%= f.label :iso %><br>
-    <%= f.text_field :iso %>
-  </div>
-  <div class="field">
-    <%= f.label :picture %><br>
-    <%= f.file_field :picture %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

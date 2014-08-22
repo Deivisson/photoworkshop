@@ -27,6 +27,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'foreigner'
 gem "paperclip", "~> 4.1"
+gem 'formtastic'
+gem 'bootstrap-sass' #, '~> 3.1.1.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
