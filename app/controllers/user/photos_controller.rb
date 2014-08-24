@@ -18,16 +18,8 @@ class User::PhotosController < User::BaseController
 
   def create
     @photo = current_user.photos.build(photo_params)
-
-    respond_to do |format|
-      if @photo.save
-        format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
-        format.json { render :show, status: :created, location: @photo }
-      else
-        format.html { render :new }
-        format.json { render json: @photo.errors, status: :unprocessable_entity }
-      end
-    end
+    @photo.save
+    respond_with(@photo, location:user_photos_path)
   end
 
   def update

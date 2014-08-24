@@ -4,6 +4,8 @@
 *= require common/base
 *= require common/buttons
 *= require common/formtastic_changes
+*= require common/jquery-ui.min
+*= require common/modal_dialog
 *= require user/dashboard
 *= require user/photos
 */

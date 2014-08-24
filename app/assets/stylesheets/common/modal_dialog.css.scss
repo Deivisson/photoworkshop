@@ -1,0 +1,70 @@
+.ui-widget-overlay {
+	background-color: #000;
+	z-index: 99999999;
+}
+
+.ui-dialog .ui-dialog-content {
+	/*background-color: #FFF;*/
+	margin: 0;
+	padding: 0;
+}
+
+.modal-view {
+	/*background-color: red;*/
+	float: left;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	.photo-container, .photo-info {
+		height: 100%;
+		top: 0;
+	}
+	.photo-container {
+		/*background-color: red;*/
+		position: absolute;
+		right: 280px;
+		left: 0px;		
+		img {
+			position: absolute;
+			width: 300px;
+			height: 500px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 60px;
+		}
+	}
+	.photo-info {
+		background-color: #222326;
+		border-left: 1px solid #393B40;
+		right: 0;
+		padding: 10px;
+		position: fixed;
+		width: 280px;
+		.content-info {
+			border-bottom: 1px solid #393B40;
+			float: left;
+			padding-bottom: 10px;
+			width: 100%;
+			img {
+				border: 1px solid #131519;
+		    border-radius: 50%;
+		    float: left;
+		    height: 50px;
+		    margin: 0;
+		    width: 50px;
+			}
+			a.user-name {
+				float: left;
+				font-size: 16px;
+				color: #32A6D3;
+				margin: 5px 0 0 10px;
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				};
+			}
+
+		}
+	}
+}

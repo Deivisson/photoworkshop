@@ -2,7 +2,9 @@
 <%= content_tag :ul, class:'photos-gallery' do %>
   <% @photos.each do |photo| %>
     <li>
-    	<%= link_to image_tag(photo.picture.url(:small)),"#" %>
+    	<%= link_to image_tag(photo.picture.url(:medium)), 
+    							user_photo_path(photo), 
+    							class:'photo-picture' %>
     </li>
   <% end %>
 <% end %>

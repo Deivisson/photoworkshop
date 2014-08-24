@@ -13,6 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap
+//= require common/modal_dialog
+//= require common/jquery-ui.min.js
 //= require user/photos
+
+
 
