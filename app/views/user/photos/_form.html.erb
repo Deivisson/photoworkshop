@@ -1,33 +1,30 @@
 <div class="centralizer">
   <%= semantic_form_for @photo, url:user_photos_path, :html => {multipart:true} do |f| %>
-    <%= content_tag(:div, class:"panel",style:'width: 400px;') do %>
-      <h5 class="title">Informações</h5>
-      <div class="panel-content">
+    <div id="dragandrophandler">
+      <%= content_tag :img ,"", id:'image-upload'%>
+      <%= f.input :picture, 
+                  as: :file,
+                  label: t('.select_file'),
+                  input_html: {:onchange => "showImagePreview(this)"} %>
+    </div>
+    <%= content_tag(:div, class:"panel",style:'width: 92%;') do %>
+      <%= content_tag :h5, t('.photo_info'),class:'title' %>
+      <div class="panel-content" style="width:45%">
         <%= f.input :title %>
         <%= f.input :description, :input_html => {rows:5} %>
-        <%= f.input :category_id %>
+      </div>
+      <div class="panel-content" style="width:45%">
+        <%= f.input :category_id,
+                    as: :select,
+                    collection: @categories.collect{|c|[c.description,c.id]} %>
         <%= f.input :tags %>
-      </div>
+      </div>      
     <% end %>
-    <%= content_tag(:div, class:"panel",style:'width: 400px;') do %>
-      <h5 class="title">EXIF </h5>
-      <div class="panel-content">
-        <%= f.input :camera %>
-        <%= f.input :lens %>
-        <div class='grid2column'>
-          <%= f.input :aperture %>
-          <%= f.input :shutter_speed, :wrapper_html => { :class => "second-col" } %>
-        </div>
-        <div class='grid2column'%>
-          <%= f.input :focal_lenght %>
-          <%= f.input :iso, :wrapper_html => { :class => "second-col" } %>
-        </div>
-      </div>
-      <%= f.input :picture, :as => :file %>
-    <% end %>    
-
     <div class="actions">
-      <%= f.submit %>
+      <%= submit_button f %>
     </div>
   <% end %>
 </div>
+
+
+ 

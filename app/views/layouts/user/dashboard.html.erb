@@ -9,6 +9,9 @@
 <body>
 	<ul class="toolbar">
 		<%= yield :toolbar %>
+		<%= content_tag :li, class:'page-title'  do %>
+    	<%= yield(:title) %>
+		<% end if show_title? %>
 		<%= content_tag :li, class:'user-info'  do %>
 	    <%= link_to "Logoff",destroy_user_session_path %>
 		<% end %>
@@ -28,9 +31,8 @@
 
 		<!-- Lateral menu -->
 	  <%= content_tag :ul, class:'menu' do %>
-	    <li><%= link_to t('user.lateral_menu.profile'), "#",class:'profile' %></li>
+	    <li><%= link_to t('user.lateral_menu.profile'), user_profile_path(0) ,class:'profile' %></li>
 	    <li><%= link_to t('user.lateral_menu.photographers'), "#",class:'photographers' %></li>
-	    <li><%= link_to t('user.lateral_menu.upload'), "#",class:'upload' %></li>  
   	<% end %>
 	</div>
 	<div class="main-content-area">

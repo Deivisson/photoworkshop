@@ -1,5 +1,6 @@
 class User::PhotosController < User::BaseController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
+  before_action :load_resources, only: [:new, :create, :edit, :update]
 
   def index
     @photos = current_user.photos
@@ -16,7 +17,7 @@ class User::PhotosController < User::BaseController
   end
 
   def create
-    @photo = Photo.new(photo_params)
+    @photo = current_user.photos.build(photo_params)
 
     respond_to do |format|
       if @photo.save
@@ -55,6 +56,10 @@ class User::PhotosController < User::BaseController
     end
 
     def photo_params
-      params.require(:photo).permit(:user_id, :category_id, :title, :description, :tags, :camera, :lens, :aperture, :shutter_speed, :taken_at, :focal_lenght, :iso,:picture)
+      params.require(:photo).permit(:user_id, :category_id, :title, :description, :tags, :picture)
+    end
+
+    def load_resources
+      @categories = Category.all
     end
 end

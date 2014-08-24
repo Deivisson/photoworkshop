@@ -1,23 +1,37 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'open-uri'
+path = Rails.root
 
-country = nil
-countries = %W(Brasil)
-countries.each do |country|
-	country = Country.where(name:country).first_or_create!
-end
 
-states = [{name:'Minas Gerais',short_name:'MG',country_id:1},
-					{name:'São Paulo',short_name:'SP',country_id:1},
-					{name:'Rio de Janeiro',short_name:'RJ',country_id:1}]
-states.each do |state|
-	State.where(state).first_or_create!
-end
+#populate countries table
+open("#{path}/db/data/countries.csv") do |file|
+  puts "Populating country table..."
+  file.read.each_line do |country|
+    arr = country.split(";")
+    Country.create!({id:arr[0],name:arr[1]})
+  end
+  puts "Data entered in the country table"
+end if Country.first.nil?
+
+#populate states
+open("#{path}/db/data/states.csv") do |file|
+  puts "Populating state table..."
+  file.read.each_line do |state|
+    arr = state.split(";")
+    State.create!({id:arr[0],name:arr[1],short_name:arr[2],country_id:arr[3]})
+  end
+  puts "Data entered in the state table"
+end if State.first.nil?
+
+#populate cities
+open("#{path}/db/data/cities.csv") do |file|
+  puts "Populating city table..."
+  file.read.each_line do |city|
+    arr = city.split(";")
+    City.create!({id:arr[0],name:arr[1],state_id:arr[2]})
+  end
+  puts "Data entered in the city table"
+end if City.first.nil?
+
 
 categories = %W(Retrato Casamento Street)
 categories.each do |category|

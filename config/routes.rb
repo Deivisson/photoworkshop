@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-
   devise_for :admins
   namespace :admin do
     resources :categories
@@ -13,6 +12,7 @@ Rails.application.routes.draw do
     root "dashboard#index"
     resources :dashboard, :only => [:index]
     resources :photos
+    resources :user_profiles, :as => :profiles, :only => [:show,:edit,:update]
   end
   
   scope :home do

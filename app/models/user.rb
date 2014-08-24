@@ -4,20 +4,15 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :user, presence:true
-  validates :category, presence:true
-
-      # validates :title, presence:true
-      # validates :tags, presence:true
-      # validates :camera, presence:true
-      # validates :lens, presence:true
-      # validates :aperture, presence:true
-      # validates :shutter_speed, presence:true
-      # t.date :taken_at
-      # validates :focal_lenght, presence:true
-      # validates :iso, presence:true
-
-
   has_many :photos
   has_many :categories
+  has_one :profile, class_name:'UserProfile'
+
+  after_create :create_profile
+
+private
+	
+	def create_profile
+  		self.profile = UserProfile.new
+	end  	
 end

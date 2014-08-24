@@ -1,0 +1,42 @@
+<%= render partial:"user/menu_profile", locals: {current_menu:'about'} %>
+<br>
+<%= content_tag(:div, class:"panel flat",style:'width: 50%;') do %>
+  <div class="panel-content">
+    <h4><%= ta UserProfile, :description %></h4>
+    <div class="show-fields">
+      <p><%= @user_profile.description %></p>
+    </div>
+    <h4><%= t('.location') %></h4>
+    <div class="show-fields">
+      <% if !@user_profile.city_id.nil? %>
+        <%= image_tag("/assets/user/flags/1.png",style:"float:left") %>
+        <div style="float:left;width: 80%; margin: 7px 0 0 10px; border-left: 1px solid #eee;padding-left: 10px">
+          <%= sf @user_profile,:country_id, @user_profile.city.state.country.name %>
+          <%= sf @user_profile,:state_id, @user_profile.city.state.name %>
+          <%= sf @user_profile,:city_id, @user_profile.city.name %>
+        </div>
+      <% end %>
+    </div>    
+  </div>
+<% end %>
+
+<%= content_tag(:div, class:"panel flat",style:'width: 40%;') do %>
+  <div class="panel-content">
+    <h4><%= t('.basic_info') %></h4>
+    <div class="show-fields">
+      <%= sf @user_profile,:category_id, 
+                    @user_profile.category.nil? ? "" : @user_profile.category.description %>
+      <%= sf @user_profile,:work %>
+      <%= sf @user_profile,:camera %>
+      <%= sf @user_profile,:home_page %>
+    </div>
+    <h4><%= t('.social_networks') %></h4>
+    <div class="show-fields">
+      <%= sf @user_profile,:facebook %>
+      <%= sf @user_profile,:twitter %>
+      <%= sf @user_profile,:google_plus %>
+      <%= sf @user_profile,:tumblr %>
+      <%= sf @user_profile,:flickr %>
+    </div>    
+  </div>
+<% end %>

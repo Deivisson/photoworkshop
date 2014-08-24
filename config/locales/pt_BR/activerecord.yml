@@ -1,0 +1,48 @@
+pt_BR:
+  activerecord:
+    errors:
+      messages:
+        inclusion: "Não é um valor válido. Não incluso nas opções dada."
+        exclusion: "is reserved"
+        invalid: "é inválido"
+        confirmation: "não coincide com a confirmação"
+        accepted: "must be accepted"
+        empty: "Preenchimento Obrigatório"
+        blank: "Preenchimento Obrigatório"
+        too_long: "é muito longo (máximo é %{count} caracteres)"
+        too_short: "é muito curto(a) (mínimo is %{count} caracteres)"
+        wrong_length: "is the wrong length (should be %{count} caracteres)"
+        taken: "Já Cadastrado"
+        not_a_number: "não é um número"
+        greater_than: "deverá ser maior que %{count}"
+        greater_than_or_equal_to: "deverá ser maior ou igual a %{count}"
+        equal_to: "must be equal to %{count}"
+        less_than: "must be less than %{count}"
+        less_than_or_equal_to: "deve ser menor ou igual a %{count}"
+        odd: "must be odd"
+        even: "must be even"
+
+    models:
+      user:
+        one: "Usuário"
+        other: "Usuários"
+      photo:
+        one: "Foto"
+        other: "Fotos"
+
+    attributes:
+      user_profile:
+        description: "Descrição"
+        category_id: "Categoria"
+        work: "Trabalho"
+        camera: "Camera"
+        home_page: "Home Page"
+        country_id: "País"
+        state_id: "Estado"
+        city_id: "Cidade"
+      photo:
+        title: "Título"
+        description: "Descrição"
+        category_id: "Categoria"
+        tags: "Tags"
+

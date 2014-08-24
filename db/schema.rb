@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140814022745) do
+ActiveRecord::Schema.define(version: 20140824023200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,11 +45,43 @@ ActiveRecord::Schema.define(version: 20140814022745) do
     t.datetime "updated_at"
   end
 
+  create_table "cities", force: true do |t|
+    t.string   "name"
+    t.integer  "state_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cities", ["state_id"], name: "index_cities_on_state_id", using: :btree
+
   create_table "countries", force: true do |t|
     t.string   "name",       limit: 100
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "photo_exifs", force: true do |t|
+    t.integer  "photo_id",                 null: false
+    t.string   "maker",         limit: 60
+    t.string   "model",         limit: 50
+    t.string   "lens",          limit: 30
+    t.string   "orientation",   limit: 40
+    t.string   "shutter_speed", limit: 10
+    t.string   "aperture",      limit: 10
+    t.string   "iso",           limit: 6
+    t.datetime "taken_at"
+    t.string   "flash",         limit: 30
+    t.string   "focal_lenght",  limit: 20
+    t.string   "colorsapce",    limit: 20
+    t.string   "exposuremode",  limit: 20
+    t.string   "whitebalance",  limit: 20
+    t.integer  "imagewidth"
+    t.integer  "imageheight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "photo_exifs", ["photo_id"], name: "index_photo_exifs_on_photo_id", using: :btree
 
   create_table "photos", force: true do |t|
     t.integer  "user_id",                          null: false
@@ -57,19 +89,12 @@ ActiveRecord::Schema.define(version: 20140814022745) do
     t.string   "title",                limit: 40
     t.text     "description"
     t.string   "tags",                 limit: 100
-    t.string   "camera",               limit: 50
-    t.string   "lens",                 limit: 50
-    t.string   "aperture",             limit: 10
-    t.string   "shutter_speed",        limit: 10
-    t.date     "taken_at"
-    t.string   "focal_lenght",         limit: 4
-    t.string   "iso",                  limit: 6
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "photos", ["category_id"], name: "index_photos_on_category_id", using: :btree
@@ -84,6 +109,26 @@ ActiveRecord::Schema.define(version: 20140814022745) do
   end
 
   add_index "states", ["country_id"], name: "index_states_on_country_id", using: :btree
+
+  create_table "user_profiles", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "category_id"
+    t.text     "description"
+    t.string   "work",        limit: 50
+    t.string   "camera",      limit: 30
+    t.string   "home_page"
+    t.string   "facebook",    limit: 50
+    t.string   "twitter",     limit: 50
+    t.string   "google_plus", limit: 50
+    t.string   "tumblr",      limit: 50
+    t.string   "flickr",      limit: 50
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "city_id"
+  end
+
+  add_index "user_profiles", ["category_id"], name: "index_user_profiles_on_category_id", using: :btree
+  add_index "user_profiles", ["user_id"], name: "index_user_profiles_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -103,9 +148,17 @@ ActiveRecord::Schema.define(version: 20140814022745) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "cities", "states", name: "cities_states"
+
+  add_foreign_key "photo_exifs", "photos", name: "fk_photos_exifs"
+
   add_foreign_key "photos", "categories", name: "fk_photos_category"
   add_foreign_key "photos", "users", name: "fk_photos_users"
 
   add_foreign_key "states", "countries", name: "states_countries"
+
+  add_foreign_key "user_profiles", "categories", name: "user_profiles_categories"
+  add_foreign_key "user_profiles", "cities", name: "user_profiles_cities"
+  add_foreign_key "user_profiles", "users", name: "user_profiles_users"
 
 end

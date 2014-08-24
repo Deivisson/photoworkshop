@@ -1,0 +1,20 @@
+
+<!--
+    <%= content_tag(:div, class:"panel",style:'width: 40%;') do %>
+      <h5 class="title">EXIF </h5>
+      <%= f.semantic_fields_for :exif do |exif| %>
+        <div class="panel-content">
+          <%= exif.input :camera, input_html: {class:'camera-field'} %>
+          <%= exif.input :lens %>
+          <div class='grid2column'>
+            <%= exif.input :aperture %>
+            <%= exif.input :shutter_speed, :wrapper_html => { :class => "second-col" } %>
+          </div>
+          <div class='grid2column'%>
+            <%= exif.input :focal_lenght %>
+            <%= exif.input :iso, :wrapper_html => { :class => "second-col" } %>
+          </div>
+        </div>
+        
+      <% end %>
+    <% end %> 

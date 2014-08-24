@@ -1,0 +1,41 @@
+<%= semantic_form_for @user_profile do |f| %>
+
+  <%= content_tag(:div, class:"panel",style:'width: 45%;') do %>
+    <%= content_tag :h5, t('.basic_info'),class:'title' %>
+    <div class="panel-content">
+      <%= f.input :camera %>
+      <%= f.input :category_id,
+                  as: :select,
+                  collection: @categories.collect{|c|[c.description,c.id]} %>
+      <%= f.input :work %>
+      <%= f.input :home_page %>
+      <%= f.input :description, input_html: {rows:5} %>
+      <%= f.input :country_id,
+                  as: :select,
+                  collection: @countries.collect{|c|[c.name,c.id]} %>
+
+      <%= f.input :state_id,
+                  as: :select,
+                  collection: @states.collect{|c|[c.name,c.id]} %>   
+
+      <%= f.input :city_id,
+                  as: :select,
+                  collection: @cities.collect{|c|[c.name,c.id]} %>                     
+    </div>
+  <% end %>
+
+  <%= content_tag(:div, class:"panel",style:'width: 45%;') do %>
+    <%= content_tag :h5, t('.social_networks'),class:'title' %>
+    <div class="panel-content">
+      <%= f.input :facebook %>
+      <%= f.input :twitter %>
+      <%= f.input :google_plus %>
+      <%= f.input :tumblr %>
+      <%= f.input :flickr %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= submit_button f %>
+  </div>
+<% end %>

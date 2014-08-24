@@ -1,20 +1,4 @@
-<%= content_for :toolbar do %>
-  <%= content_tag :ul, class:'menu' do %>
-    <li>
-      <%= link_to t('.profile.me'), "#" %>
-    </li>
-    <li class="current">
-      <%= link_to t('.profile.photos'),"#" %>
-    </li>
-    <li>
-      <%= link_to t('.profile.following'),"#" %>
-    </li>
-    <li>
-      <%= link_to t('.profile.followers'),"#" %>
-    </li>
-  <% end %>
-<% end %>
-
+<%= render partial:"user/menu_profile", locals: {current_menu:'photos'} %>
 <%= content_tag :ul, class:'photos-gallery' do %>
   <% @photos.each do |photo| %>
     <li>
@@ -22,3 +6,4 @@
     </li>
   <% end %>
 <% end %>
+

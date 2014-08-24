@@ -20,22 +20,36 @@ html {
 	-webkit-border-radius: 5px 5px 0px 0px;
 	float: left;     
 	margin: 10px;
-	h5.title {
+
+	h4, h5.title {
     background-color: #ebebeb;
     border-bottom: 1px solid #cecece;
 		border-radius: 5px 5px 0px 0px; 
 		-moz-border-radius: 5px 5px 0px 0px; 
 		-webkit-border-radius: 5px 5px 0px 0px; 
     color: #777;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bold;
     line-height: 38px;
     text-indent: 20px;
+    text-transform: uppercase;
 		height: 37px;
 		width: 100%;
-	}
+	};
+	h4 {
+		background-color: #fff;
+		font-size: 22px;
+		font-weight: normal;
+		float: left;
+		text-indent: 0;
+		margin-bottom: 20px;
+		text-transform: none;
+		width: 100%;
+	};
 	.panel-content {
-		padding: 15px;	
+		float: left;
+		padding: 15px;
+		width: 95%;	
 		.grid2column {
 			width: 105%;
 			.input {
@@ -47,6 +61,34 @@ html {
 				&.second-col {margin-left: 14px}
 			}
 		}
+		p {
+			color: #777;
+			font-size: 16px;
+    	line-height: 28px; 
+    	text-align: justify;
+		}
 	}
-
 }
+
+.flat {
+	h5.title {
+    background-color: #fff;
+    border-bottom: 1px solid #cecece;
+	}
+	.panel-content .show-fields {
+		margin-bottom: 20px;
+		float: left;
+		p {
+			display: block;
+			float: left;
+			width: 100%;
+			&.colon {
+				&:before {content:': ';};	
+			};
+			strong {
+				float: left;
+				width: 120px;
+			}
+		}
+	}
+} 

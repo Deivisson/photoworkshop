@@ -1,4 +1,7 @@
 pt_BR:
+  buttons:
+    confirm: "Confirmar"
+    wait_label: "Aguarde..."
   welcome: 
     menu:
       how_work: "COMO FUNCIONA?"

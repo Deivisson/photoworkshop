@@ -5,14 +5,29 @@ pt_BR:
       photographers: "Fotografos"
       upload: "Upload"
 
-    dashboard:
-      index:
-    
-
-        profile:
-          me: Perfil
-          photos: Fotos
-          following: "Seguindo"
-          followers: "Seguidores"
+    profile:
+      menu:
+        about: "Sobre"
+        photos: "Fotos"
+        following: "Seguindo"
+        followers: "Seguidores"
 
 
+    photos:
+      new:
+        title: "Uploading Fotografia"
+      form:
+        select_file: "Arraste a foto para aqui ou Click para selecionar."
+        photo_info: "Informações"
+
+    user_profiles:
+      edit:
+        title: "Atualização de Perfil"
+      form:
+        basic_info: "Informações Básicas"
+        social_networks: "Redes Sociais"
+      show:
+        about: "Sobre"
+        basic_info: "Informações Básicas"
+        social_networks: "Redes Sociais"
+        location: "Localização"
