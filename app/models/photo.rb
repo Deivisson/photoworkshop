@@ -13,6 +13,9 @@ class Photo < ActiveRecord::Base
 
   after_post_process :save_exif
 
+  def orientation
+    self.exif.imagewidth > self.exif.imageheight ? "landscape" : "portrate"
+  end
 
 private 
 

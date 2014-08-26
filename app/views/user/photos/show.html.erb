@@ -1,41 +1,15 @@
 <div id="modal-container" class="modal-view" >
-    <p id="notice"><%= notice %></p>
-
-    <p>
-      <strong>User:</strong>
-      <%= @photo.user %>
-    </p>
-
-    <p>
-      <strong>Category:</strong>
-      <%= @photo.category %>
-    </p>
-
-    <p>
-      <strong>Title:</strong>
-      <%= @photo.title %>
-    </p>
-
-    <p>
-      <strong>Description:</strong>
-      <%= @photo.description %>
-    </p>
-
-    <p>
-      <strong>Tags:</strong>
-      <%= @photo.tags %>
-    </p>
-    <div class="photo-container" id="photo-container">
-      <%= image_tag(@photo.picture.url(:medium),id:'photo') %>
+  <div class="photo-container" id="photo-container">
+    <%= image_tag(@photo.picture.url(:medium),id:'photo-picture',class:"photo-picture #{@photo.orientation}") %>
+  </div>
+  <div class="photo-info">
+    <div class="content-info">
+      <img class="avatar" src="/assets/avatar.jpg" alt="Avatar">
+      <%= link_to "Deivisson Bruno", "#",class:'user-name' %>
     </div>
-    <div class="photo-info">
-      <div class="content-info">
-        <img class="avatar" src="/assets/avatar.jpg" alt="Avatar">
-        <%= link_to "Deivisson Bruno", "#",class:'user-name' %>
-      </div>
-      <div class="content-info">
-        <%= @photo.exif.model %>
-        <%= @photo.exif.iso %>
-      </div>      
-    </div>
+    <div class="content-info">
+      <%= @photo.exif.model %>
+      <%= @photo.exif.iso %>
+    </div>      
+  </div>
 </div>  

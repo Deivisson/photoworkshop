@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-
+	
 		$(".photo-picture").click(function(e){
 			var w = $(window).width() * 1;
 			var h = $(window).height() * 1;
@@ -12,21 +12,21 @@ $(document).ready(function() {
 			    modal: true,
 			    close: function() {
 			      $('#dialog-form').remove();
+			      jQuery('body').css('overflow','auto');
 			    },
 			    draggable: false,
           resizable: false
 			  });
 
 			  dialog_form.load(url + ' #modal-container', function(){
-			  		//resizeModalDialog();
-			  		//$(".ui-dialog-titlebar").remove();
+			  		jQuery('body').css('overflow','hidden');
 			  		adjustLayout();
 			  });
 			  
 			  dialog_form.dialog('open');
 			  e.preventDefault();  
 	});
-	//$(window).resize(myFunction());
+	
 
 	// var obj = $("#dragandrophandler");
 	// obj.on('dragenter', function (e){
@@ -66,23 +66,19 @@ $(document).ready(function() {
  
 });
 
+$(window).resize(function () {
+  adjustLayout();
+});
+
 function adjustLayout(){
-	var w = $(window).width() * 1;
-	var h = $(window).height() * 1;
-
-	$("#ui-widget-overlay").css({	width:w,height:h});
-	$("#ui-widget-content").css({	width:w,height:h});
-
-  $('#photo').css({
-    position:'absolute',
-    height: ($("#photo-container").height() - 40),
-    width: ($("#photo-container").width() - 600),
-    left:($("#photo-container").width() - $('#photo').outerWidth() - 120 )/2,
-  	top: -55
-    //top: ($("#photo-container").height() - $('#photo').outerHeight())/2
-    
-  });
-
+	 //alert("Size " + w + "x" + h);
+	 $(".ui-widget-content").css({
+	 	height:"100%",
+	 	width: "100%"
+	 });
+	 var w = $("#photo-container").width();
+	 var h = $("#photo-container").height();
+	 $("#photo-picture").css("left",(w/2) - ($("#photo-picture").width()/2));
 }
 
 function resizeModalDialog(){
