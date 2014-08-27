@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140824023200) do
+ActiveRecord::Schema.define(version: 20140827002825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,10 +61,10 @@ ActiveRecord::Schema.define(version: 20140824023200) do
   end
 
   create_table "photo_exifs", force: true do |t|
-    t.integer  "photo_id",                 null: false
+    t.integer  "photo_id",                  null: false
     t.string   "maker",         limit: 60
     t.string   "model",         limit: 50
-    t.string   "lens",          limit: 30
+    t.string   "lens",          limit: 100
     t.string   "orientation",   limit: 40
     t.string   "shutter_speed", limit: 10
     t.string   "aperture",      limit: 10
@@ -79,13 +79,15 @@ ActiveRecord::Schema.define(version: 20140824023200) do
     t.integer  "imageheight"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "photo_exifs", ["photo_id"], name: "index_photo_exifs_on_photo_id", using: :btree
 
   create_table "photos", force: true do |t|
-    t.integer  "user_id",                          null: false
-    t.integer  "category_id",                      null: false
+    t.integer  "user_id",                                      null: false
+    t.integer  "category_id",                                  null: false
     t.string   "title",                limit: 40
     t.text     "description"
     t.string   "tags",                 limit: 100
@@ -95,6 +97,7 @@ ActiveRecord::Schema.define(version: 20140824023200) do
     t.datetime "picture_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "views",                            default: 0, null: false
   end
 
   add_index "photos", ["category_id"], name: "index_photos_on_category_id", using: :btree

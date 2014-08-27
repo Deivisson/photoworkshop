@@ -53,6 +53,7 @@
 		.content-info {
 			border-bottom: 1px solid #393B40;
 			float: left;
+			margin-bottom: 10px;
 			padding-bottom: 10px;
 			width: 100%;
 			img {
@@ -66,6 +67,7 @@
 			a.user-name {
 				float: left;
 				font-size: 16px;
+				font-weight: bold;
 				color: #32A6D3;
 				margin: 5px 0 0 10px;
 				text-decoration: none;
@@ -73,7 +75,68 @@
 					text-decoration: underline;
 				};
 			}
+			span.posting-label,
+			span.views-label, {
+				color: #dbdce2;
+				float: left;
+				font-size: 12px;
+				margin-top: 10px;
+				width: 100%;
+			}
+			span.views-label {
+				background: url("/assets/user/view_32.png" ) no-repeat 0px -5px;
+				text-indent: 40px;
+				font-size: 10px;
+				margin-bottom: 10px;
+				strong {
+					/*color: #DAA622;*/
+					font-size: 30px;
+					/*font-weight: bold;*/
+					font-style: normal;
+					line-height: 20px;
+				}
 
+			}
+		}
+		.photo-exif {
+			h1, h4 {
+				color: #dbdce2;
+				float: left;
+				font-size: 18px;
+			}
+			h1 {
+
+			}
+			h4 {
+				font-size: 12px;
+				margin: 5px 0 5px 0;
+			}
+			ul {
+				float: left;
+				list-style: none;
+				margin-top: 20px;
+				li {
+					height: 25px;
+					width: 140px;
+					float: left;
+					margin-bottom: 12px;
+					span {
+						background: url("/assets/user/exif_sprite.png") no-repeat !important; 
+						float: left;
+						height: 24px;
+						margin: -5px 5px 0 0;
+						width: 26px;
+						&.aperture {background-position: -12px -40px !important;}
+						&.focal-lenght {background-position: -12px -140px !important;}
+						&.shutter-speed {background-position: -12px -105px !important;}
+						&.iso {background-position: -12px -73px !important}
+					};
+					label {
+						color: #dbdce2;
+						float: left;
+					}
+				}
+			}
 		}
 	}
 }

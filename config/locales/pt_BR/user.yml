@@ -19,7 +19,9 @@ pt_BR:
       form:
         select_file: "Arraste a foto para aqui ou Click para selecionar."
         photo_info: "Informações"
-
+      show:
+        posting_label: "Postada com %{category}  em %{created_at} "
+        views_label: "<strong>%{count}</strong> visualizações"
     user_profiles:
       edit:
         title: "Atualização de Perfil"

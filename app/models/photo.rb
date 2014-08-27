@@ -17,6 +17,10 @@ class Photo < ActiveRecord::Base
     self.exif.imagewidth > self.exif.imageheight ? "landscape" : "portrate"
   end
 
+  def update_views!
+    self.update_attribute(:views,self.views+1)
+  end
+
 private 
 
   def save_exif

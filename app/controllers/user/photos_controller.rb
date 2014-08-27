@@ -7,6 +7,7 @@ class User::PhotosController < User::BaseController
   end
 
   def show
+    @photo.update_views! if @photo.user_id != current_user.id
   end
 
   def new
