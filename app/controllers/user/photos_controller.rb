@@ -45,7 +45,14 @@ class User::PhotosController < User::BaseController
 
   private
     def set_photo
-      @photo = Photo.find(params[:id])
+      if params[:act]
+        condition = "id #{params[:act] == "next" ? ' > ' : ' < ' } ?"
+        order     = "id #{params[:act] == "next" ? ' asc ' : ' desc ' }"
+        @photo = current_user.photos.where(condition,params[:id].to_i).order(order).limit(1).first
+      end
+      if params[:act].nil? || @photo.nil?
+        @photo = current_user.photos.find(params[:id])
+      end
     end
 
     def photo_params

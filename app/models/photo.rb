@@ -21,6 +21,35 @@ class Photo < ActiveRecord::Base
     self.update_attribute(:views,self.views+1)
   end
 
+  def camera
+    return "-" if self.exif.model.nil?    
+    self.exif.model
+  end
+
+  def lens
+    return "-" if self.exif.model.nil?    
+    self.exif.lens
+  end  
+
+  def iso
+    return "-" if self.exif.iso.nil?
+    self.exif.iso
+  end
+
+  def aperture
+    return "-" if self.exif.aperture.nil?
+    "f/#{self.exif.aperture}"
+  end
+
+  def shutter_speed
+    return "-" if self.exif.shutter_speed.nil?    
+    self.exif.shutter_speed
+  end
+
+  def focal_lenght
+    return "-" if self.exif.focal_lenght.nil?    
+    self.exif.focal_lenght
+  end  
 private 
 
   def save_exif
