@@ -1,6 +1,12 @@
 <div class="photo-container" id="photo-container">
   <%= link_to "<<<<<",user_photo_path(@photo,act:'previous'),remote:true %> 
   <%= link_to ">>>>>",user_photo_path(@photo,act:'next'),remote:true %> 
+ 
+  <% if @photo.admirer_ids.include?(current_user.id) %> 
+    <%= link_to "Unlike",user_photo_unlike_path(@photo.id),remote:true %> 
+  <% else %>
+    <%= link_to "Like",user_photo_like_path(@photo.id),remote:true %> 
+  <% end %>
   <%= image_tag(@photo.picture.url(:medium),id:'photo-picture',class:"photo-picture #{@photo.orientation}") %>
 </div>
 <div class="photo-info">

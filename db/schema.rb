@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140827002825) do
+ActiveRecord::Schema.define(version: 20140829030303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,16 @@ ActiveRecord::Schema.define(version: 20140827002825) do
 
   add_index "photo_exifs", ["photo_id"], name: "index_photo_exifs_on_photo_id", using: :btree
 
+  create_table "photo_likes", force: true do |t|
+    t.integer  "photo_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "photo_likes", ["photo_id"], name: "index_photo_likes_on_photo_id", using: :btree
+  add_index "photo_likes", ["user_id"], name: "index_photo_likes_on_user_id", using: :btree
+
   create_table "photos", force: true do |t|
     t.integer  "user_id",                                      null: false
     t.integer  "category_id",                                  null: false
@@ -154,6 +164,9 @@ ActiveRecord::Schema.define(version: 20140827002825) do
   add_foreign_key "cities", "states", name: "cities_states"
 
   add_foreign_key "photo_exifs", "photos", name: "fk_photos_exifs"
+
+  add_foreign_key "photo_likes", "photos", name: "photo_likes_photos"
+  add_foreign_key "photo_likes", "users", name: "photo_likes_user"
 
   add_foreign_key "photos", "categories", name: "fk_photos_category"
   add_foreign_key "photos", "users", name: "fk_photos_users"

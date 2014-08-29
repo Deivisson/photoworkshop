@@ -8,6 +8,10 @@ class Photo < ActiveRecord::Base
   belongs_to :category
   has_one :exif, class_name:'PhotoExif'
   
+  #Likes associations
+  has_many :likes, class_name:'PhotoLike'
+  has_many :admirers, through: :likes
+
   has_attached_file :picture, :styles => {small:"300x300", medium:"800x800"}, default_url:"/images/missing.png"
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 

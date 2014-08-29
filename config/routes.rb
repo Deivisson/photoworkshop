@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resources :dashboard, :only => [:index]
     resources :photos
     resources :user_profiles, :as => :profiles, :only => [:show,:edit,:update]
+    get "photo_likes/:photo_id/like", to: "photo_likes#like", :as => :photo_like
+    get "photo_likes/:photo_id/unlike", to: "photo_likes#unlike", :as => :photo_unlike
   end
   
   scope :home do
