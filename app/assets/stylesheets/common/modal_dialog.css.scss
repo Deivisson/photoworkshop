@@ -57,13 +57,13 @@
 			padding-bottom: 10px;
 			width: 100%;
 			label.section-label {
-				font-color: #000;
+				color: #32a6d3;
 				font-size: 10px;
 				font-weight: bold;
 				left: 10px;
 				position: absolute;
 				text-transform: uppercase;
-				text-shadow: 0px 1px 1px #51594E;
+				/*text-shadow: 0 1px 0 #000;*/
 			};
 			img {
 				border: 1px solid #131519;
@@ -93,29 +93,44 @@
 				width: 100%;
 			}
 			span.views-label {
-				background: url("/assets/user/view_32.png" ) no-repeat 0px 5px;
-				text-indent: 40px;
-				font-size: 40px;
+				font-size: 30px;
 				height: 40px;
 				margin-bottom: 10px;
+				text-align: left !important;
+				text-indent: 10px;
 				width: 100%;
-				strong {
-					/*color: #DAA622;*/
-					font-size: 30px;
-					/*font-weight: bold;*/
-					font-style: normal;
-					line-height: 20px;
-				}
-			}
+			};
 			p.tags-label {
 				margin-top: 30px;					
 				a {
-					color: #32A6D3;
+					color: #FFF;
 					font-size: 16px;
 					text-decoration: none;
 					&:hover {
 						text-decoration: underline;
 					};
+				}
+			}
+			ul.counts {
+				float: left;
+				height: 50px;
+				width: 100%;
+				li {
+					border-right: 1px solid #393b40;
+					float: left;
+					height: 100%;
+					padding:0;
+					width: 48%;
+					label {
+						float: left;
+						position: relative;
+					};
+					span {
+						float: left;
+						text-align: center;
+						margin-top: 5px !important;
+					}
+					&.last-item {border-right: 0px;}
 				}
 			}
 		}

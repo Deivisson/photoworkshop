@@ -22,6 +22,7 @@ pt_BR:
       show_details:
         posting: "Postada com %{category}  em %{created_at} "
         views: "Visualizações"
+        likes: "Curtidas"
         exif: "Exif"
         tags: "Tags"
     user_profiles:

@@ -1,12 +1,7 @@
 <div class="photo-container" id="photo-container">
   <%= link_to "<<<<<",user_photo_path(@photo,act:'previous'),remote:true %> 
   <%= link_to ">>>>>",user_photo_path(@photo,act:'next'),remote:true %> 
- 
-  <% if @photo.admirer_ids.include?(current_user.id) %> 
-    <%= link_to "Unlike",user_photo_unlike_path(@photo.id),remote:true %> 
-  <% else %>
-    <%= link_to "Like",user_photo_like_path(@photo.id),remote:true %> 
-  <% end %>
+  <div id="like-links"> <%= render 'like_links' %> </div>
   <%= image_tag(@photo.picture.url(:medium),id:'photo-picture',class:"photo-picture #{@photo.orientation}") %>
 </div>
 <div class="photo-info">
@@ -20,8 +15,16 @@
           class:'posting-label' %>
   </div>
   <div class="content-info">
-    <%= content_tag :label,t(".views"),class:'section-label' %>
-    <%= content_tag :span,@photo.views, class:"views-label" %>
+    <ul class="counts">
+      <li>
+        <%= content_tag :label,t(".views"),class:'section-label', style:'left:0' %>
+        <%= content_tag :span,@photo.views, class:"views-label" %>
+      </li>
+      <li class="last-item">
+        <%= content_tag :label,t(".likes"),class:'section-label' %>
+        <%= content_tag :span,@photo.likes.count, class:"views-label",id:'likes-count' %>
+      </li>
+    </ul>
   </div>          
   <div class="content-info photo-exif">
     <%= content_tag :label,t(".exif"),class:'section-label' %>

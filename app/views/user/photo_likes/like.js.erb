@@ -1,0 +1,4 @@
+<% unless @likes_count.nil? %>
+	$("#likes-count").text("<%= @likes_count %>")
+	$("#like-links").html("<%= escape_javascript(render 'user/photos/like_links') %>");
+<% end %>
