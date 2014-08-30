@@ -3,7 +3,7 @@ class User::PhotosController < User::BaseController
   before_action :load_resources, only: [:new, :create, :edit, :update]
 
   def index
-    @photos = current_user.photos
+    @photos = current_user.photos.includes(:category)
   end
 
   def show

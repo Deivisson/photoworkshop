@@ -25,6 +25,7 @@ pt_BR:
         likes: "Curtidas"
         exif: "Exif"
         tags: "Tags"
+
     user_profiles:
       edit:
         title: "Atualização de Perfil"
@@ -36,3 +37,8 @@ pt_BR:
         basic_info: "Informações Básicas"
         social_networks: "Redes Sociais"
         location: "Localização"
+
+    photographers:
+      follow_links:
+        follow: "Seguir"
+        unfollow: "Parar de Seguir"

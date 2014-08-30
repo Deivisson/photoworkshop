@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140829030303) do
+ActiveRecord::Schema.define(version: 20140830180301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -143,6 +143,15 @@ ActiveRecord::Schema.define(version: 20140829030303) do
   add_index "user_profiles", ["category_id"], name: "index_user_profiles_on_category_id", using: :btree
   add_index "user_profiles", ["user_id"], name: "index_user_profiles_on_user_id", using: :btree
 
+  create_table "user_relations", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "user_followed_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_relations", ["user_id"], name: "index_user_relations_on_user_id", using: :btree
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -176,5 +185,8 @@ ActiveRecord::Schema.define(version: 20140829030303) do
   add_foreign_key "user_profiles", "categories", name: "user_profiles_categories"
   add_foreign_key "user_profiles", "cities", name: "user_profiles_cities"
   add_foreign_key "user_profiles", "users", name: "user_profiles_users"
+
+  add_foreign_key "user_relations", "users", name: "user_relations_users"
+  add_foreign_key "user_relations", "users", name: "user_relations_users_followed", column: "user_followed_id"
 
 end
