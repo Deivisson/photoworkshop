@@ -4,11 +4,11 @@
 			<div id="follow-links-<%= user.id %>">
 				<%= render partial:"follow_links", locals: {user:user} %>
 			</div>
-			<%= image_tag("avatar.jpg") %>
+			<%= image_tag(user.profile.avatar.url(:medium)) %>
 			<div class="info">
-				<%= link_to("Deivisson Bruno") do %>
+				<%= link_to("#") do %>
 					<%= image_tag("/assets/user/flags/1.png",class:'country') %>
-					<%= "Deivisson Bruno" %>
+					<%= user.profile.user_name %>
 				<% end%>
 				<p>
 					10 Photos |

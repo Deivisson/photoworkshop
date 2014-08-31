@@ -3,6 +3,8 @@
   <%= content_tag(:div, class:"panel",style:'width: 45%;') do %>
     <%= content_tag :h5, t('.basic_info'),class:'title' %>
     <div class="panel-content">
+      <%= f.input :avatar %>
+      <%= f.input :user_name %>
       <%= f.input :camera %>
       <%= f.input :category_id,
                   as: :select,
