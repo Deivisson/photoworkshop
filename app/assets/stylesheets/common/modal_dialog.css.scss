@@ -19,7 +19,7 @@
 	margin: 0;
 	top: 0;
 	width: 100%;
-	.photo-container, .photo-info {
+	.photo-container, .photo-info, .photo-bar {
 		height: 100%;
 		top: 0;
 	}
@@ -27,7 +27,7 @@
 	/*	background-color: green;*/
 		height: 100%;
 		position: absolute;
-		right: 290px;
+		right: 350px;
 		left: 0px;
 		/*width: 100%;	*/
 		img.photo-picture {
@@ -42,7 +42,40 @@
 				width: 90%;
 			}
 		}
-	}
+	};
+	ul.photo-bar {
+		background-color: #222326;
+		border-left: 1px solid #393B40;
+		height: 104%;
+		list-style: none;
+		width: 40px;
+		right: 300px;
+		position: fixed;
+		top: 0px;
+		padding-top: 5px;
+		li {
+			width: 32px;
+			height: 32px;
+			margin-left: 4px;
+			a {
+				background: url("/assets/user/photo_preview_toolbar_sprite.png") no-repeat;
+				display: block;
+				height: 100%;
+				width: 100%;
+			};
+			#like-links {
+				float: left;
+				height: 100%;
+				width: 100%;
+				a.liked-photo {
+					background-position: -1px 0px;
+				};
+				a.unlike-photo {
+					background-position: -37px 0;
+				}
+			}
+		}
+	};
 	.photo-info {
 		background-color: #222326;
 		border-left: 1px solid #393B40;
@@ -55,7 +88,7 @@
 			float: left;
 			margin-bottom: 10px;
 			padding-bottom: 10px;
-			width: 100%;
+			width: 280px;
 			label.section-label {
 				color: #32a6d3;
 				font-size: 10px;

@@ -3,7 +3,7 @@
 <head>
   <title>Photograph</title>
   <%= stylesheet_link_tag    'user', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'user', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'user', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -22,10 +22,9 @@
 
 		</div>
 		<div class="user-content">
-			<%= image_tag("avatar.jpg",class:'avatar') %>
+			<%= image_tag(current_user.profile.avatar.url(:medium),class:'avatar') %>
 			<%= content_tag :label,class:'user-name' do %>
-					<span>Deivisson</span>
-					Bruno
+				<span><%= current_user.profile.user_name %></span>
 			<% end %>
 		</div>
 

@@ -16,6 +16,7 @@
 //= require common/modal_dialog
 //= require common/jquery-ui.min.js
 //= require user/photos
+//= require user/user_profiles
 
 
 

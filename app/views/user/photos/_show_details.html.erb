@@ -1,20 +1,27 @@
 <div class="photo-container" id="photo-container">
   <%= link_to "<<<<<",user_photo_path(@photo,act:'previous'),remote:true %> 
   <%= link_to ">>>>>",user_photo_path(@photo,act:'next'),remote:true %> 
-  <div id="like-links"> <%= render 'like_links' %> </div>
+  
   <%= image_tag(@photo.picture.url(:medium),id:'photo-picture',class:"photo-picture #{@photo.orientation}") %>
 </div>
+<ul class="photo-bar">
+  <li>
+    <div id="like-links"> <%= render 'like_links' %> </div>
+  </li>
+</ul>
 <div class="photo-info">
   
   <div class="content-info">
-    <img class="avatar" src="/assets/avatar.jpg" alt="Avatar">
-    <%= link_to "Deivisson Bruno", "#",class:'user-name' %>
+    <%= image_tag(current_user.profile.avatar.url(:medium),class:'avatar') %>
+    <%= link_to current_user.profile.user_name, "#",class:'user-name' %>
     <%= content_tag :span, 
           t(".posting",category:@photo.category.description,
           created_at:format_date(@photo.created_at,)),
           class:'posting-label' %>
   </div>
+  
   <div class="content-info">
+
     <ul class="counts">
       <li>
         <%= content_tag :label,t(".views"),class:'section-label', style:'left:0' %>
