@@ -1,2 +1,7 @@
 <% title t(".title"), class:'title-icon profile' %>
+<%= content_for :toolbar_buttons do %>
+  <%= link_to t('.cancel_edit_profile'),
+              user_profile_path(current_user.id), 
+              class:"common-button cancel-button" %>
+<% end %>
 <%= render 'form' %>

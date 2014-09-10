@@ -16,6 +16,7 @@
 	    <%= link_to "Logoff",destroy_user_session_path %>
 		<% end %>
 		<%= link_to "Upload",new_user_photo_path, class:"common-button upload-button" %>
+		<%= yield :toolbar_buttons %>
 	</ul>
 	<div class="left-col">
 		<div class="top-info">

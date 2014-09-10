@@ -8,7 +8,7 @@ pt_BR:
     profile:
       menu:
         about: "Sobre"
-        photos: "Fotos"
+        photos: "Minhas Fotos"
         following: "Seguindo"
         followers: "Seguidores"
 
@@ -19,6 +19,7 @@ pt_BR:
       form:
         select_file: "Arraste a foto para aqui ou Click para selecionar."
         photo_info: "Informações"
+        cancel_upload: "Cancelar Upload"
       show_details:
         posting: "Postada com %{category}  em %{created_at} "
         views: "Visualizações"
@@ -29,10 +30,12 @@ pt_BR:
     user_profiles:
       edit:
         title: "Atualização de Perfil"
+        cancel_edit_profile: "Cancelar"
       form:
         basic_info: "Informações Básicas"
         social_networks: "Redes Sociais"
       show:
+        edit_profile_button: "Editar Perfil"
         about: "Sobre"
         basic_info: "Informações Básicas"
         social_networks: "Redes Sociais"

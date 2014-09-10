@@ -1,4 +1,9 @@
 <%= render partial:"user/menu_profile", locals: {current_menu:'about'} %>
+<%= content_for :toolbar_buttons do %>
+  <%= link_to t('.edit_profile_button'),
+              edit_user_profile_path(current_user.id), 
+              class:"common-button edit-button" %>
+<% end %>
 <br>
 <%= content_tag(:div, class:"panel flat",style:'width: 50%;') do %>
   <div class="panel-content">

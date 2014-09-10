@@ -27,6 +27,32 @@
   };
 }
 
+.edit-button {
+  background-color: #2CD676;
+  border-color: #22AA5D;
+  color: #FFF;
+  float: right; 
+  margin: 7px 5px 0 0;
+  &:hover {
+    background-color: #08D360;
+    border-color: #22AA5D;
+    color: #FFF;
+  };
+}
+
+.cancel-button {
+  background-color: #D36967;
+  border-color: #A02724;
+  color: #FFF;
+  float: right; 
+  margin: 7px 5px 0 0;
+  &:hover {
+    background-color: #B73C3A;
+    border-color: #A02724;
+    color: #FFF;
+  };
+}
+
 .submit-button, .update {
   background-color: #428bca;
   border:1px solid #357ebd;
