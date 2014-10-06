@@ -29,7 +29,7 @@
 		position: absolute;
 		right: 350px;
 		left: 0px;
-		/*width: 100%;	*/
+		width: 78%;
 		img.photo-picture {
 			top: 40px;
 			position: absolute;
@@ -45,14 +45,18 @@
 	};
 	ul.photo-bar {
 		background-color: #222326;
-		border-left: 1px solid #393B40;
-		height: 104%;
+		/*border-left: 1px solid #393B40;*/
+		float: left;
+		height: 30px;
 		list-style: none;
-		width: 40px;
-		right: 300px;
+		width: 400px;
+		margin: 0 auto;
+		margin-top: 2px;
+		position: relative;
+		/*right: 300px;
 		position: fixed;
 		top: 0px;
-		padding-top: 5px;
+		padding-top: 5px;*/
 		li {
 			width: 32px;
 			height: 32px;
@@ -61,6 +65,7 @@
 				background: url("/assets/user/photo_preview_toolbar_sprite.png") no-repeat;
 				display: block;
 				height: 100%;
+				margin: 2px 0 0 1px;
 				width: 100%;
 			};
 			#like-links {
@@ -92,7 +97,7 @@
 			label.section-label {
 				color: #32a6d3;
 				font-size: 10px;
-				font-weight: bold;
+				font-weight: normal;
 				left: 10px;
 				position: absolute;
 				text-transform: uppercase;

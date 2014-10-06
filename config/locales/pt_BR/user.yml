@@ -42,6 +42,8 @@ pt_BR:
         location: "Localização"
 
     photographers:
+      index:
+        title: "Fotografos"
       follow_links:
         follow: "Seguir"
         unfollow: "Parar de Seguir"

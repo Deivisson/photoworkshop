@@ -2,7 +2,8 @@ class User::PhotographersController < User::BaseController
 	before_action :set_user, only: [:follow,:unfollow]
 
 	def index
-		@users = User.where("id <> ?",current_user.id)
+		@users = User.joins(:profile).where("users.id <> ?",current_user.id)
+		@users = @users.where("user_profiles.user_name like ?","%#{params[:search]}%") if params[:search].present?
 	end
 
 	def following

@@ -1,0 +1,3 @@
+<% if @users.any? %>
+	$("#photographers-container").html("<%= escape_javascript(render 'photographers') %>");
+<% end %>

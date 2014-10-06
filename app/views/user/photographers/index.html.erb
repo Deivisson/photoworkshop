@@ -1,2 +1,10 @@
-<%= render "photographers" %>
+<% title t(".title") %>
+<%= content_for :toolbar_buttons do %>
+  <%= form_tag user_photographers_path, method: :get, remote:true,class:'search-form' do |f| %>
+  	<%= text_field_tag "search","",placeholder:"Pesquisar fotografo" %>
+  <% end %>
+<% end %>
+<div id="photographers-container">
+	<%= render "photographers" %>
+</div>
 
