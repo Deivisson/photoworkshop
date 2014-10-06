@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   devise_for :admins
   namespace :admin do
     resources :categories
@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       get :following, on: :collection
       get :followers, on: :collection
     end
+    resources :workshops
   end
   
   scope :home do

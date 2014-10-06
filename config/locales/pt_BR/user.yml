@@ -3,6 +3,7 @@ pt_BR:
     lateral_menu:
       profile: "Perfil"
       photographers: "Fotografos"
+      workshops: "Workshops"
       upload: "Upload"
 
     profile:
@@ -12,6 +13,10 @@ pt_BR:
         following: "Seguindo"
         followers: "Seguidores"
 
+    workshop:
+      menu:
+        taught_by_me: "Ministrado por mim"
+        photos: "Minhas Fotos"
 
     photos:
       new:

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140831024329) do
+ActiveRecord::Schema.define(version: 20141006023105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -175,6 +175,24 @@ ActiveRecord::Schema.define(version: 20140831024329) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "workshops", force: true do |t|
+    t.integer  "user_id"
+    t.string   "description",      limit: 200, null: false
+    t.text     "details"
+    t.date     "start_date",                   null: false
+    t.date     "end_date",                     null: false
+    t.integer  "vacancies_number"
+    t.decimal  "value"
+    t.string   "prerequisite"
+    t.string   "goal"
+    t.string   "target_audience"
+    t.text     "term"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "workshops", ["user_id"], name: "index_workshops_on_user_id", using: :btree
+
   add_foreign_key "cities", "states", name: "cities_states"
 
   add_foreign_key "photo_exifs", "photos", name: "fk_photos_exifs"
@@ -193,5 +211,7 @@ ActiveRecord::Schema.define(version: 20140831024329) do
 
   add_foreign_key "user_relations", "users", name: "user_relations_users"
   add_foreign_key "user_relations", "users", name: "user_relations_users_followed", column: "user_followed_id"
+
+  add_foreign_key "workshops", "users", name: "workshops_user"
 
 end

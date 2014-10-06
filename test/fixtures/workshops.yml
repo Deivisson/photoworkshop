@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  description: MyString
+  details: MyText
+  start_date: 2014-10-05
+  end_date: 2014-10-05
+  vacancies_number: 1
+  value: 9.99
+  prerequisite: MyString
+  goal: MyString
+  target_audience: MyString
+  term: MyText
+
+two:
+  user_id: 
+  description: MyString
+  details: MyText
+  start_date: 2014-10-05
+  end_date: 2014-10-05
+  vacancies_number: 1
+  value: 9.99
+  prerequisite: MyString
+  goal: MyString
+  target_audience: MyString
+  term: MyText
