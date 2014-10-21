@@ -16,8 +16,14 @@ class User < ActiveRecord::Base
 
   #define following and followers users
   has_many :user_relations, class_name:'UserRelation'
-  has_many :workshops
-  
+
+  #Workshops given by user
+  has_many :owner_workshops, class_name:"Workshop"
+
+  #Workshops that the user is a participant
+  has_many :workshop_participants
+  has_many :my_workshops, through: :workshop_participants
+
   after_create :create_profile
 
   attr_accessor :following

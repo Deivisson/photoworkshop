@@ -4,7 +4,7 @@ class UserProfile < ActiveRecord::Base
 
   has_attached_file :avatar, 
                     :styles => { :medium => "500x500>", :thumb => "100x100>" }, 
-                    :default_url => "/assets/user/no_avatar.png"
+                    :default_url => "user/no_avatar.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   
   belongs_to :user

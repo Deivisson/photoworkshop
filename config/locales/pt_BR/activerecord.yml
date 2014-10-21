@@ -47,4 +47,17 @@ pt_BR:
         description: "Descrição"
         category_id: "Categoria"
         tags: "Tags"
-
+      workshop:
+        description: "Descrição"
+        details: "Detalhes"
+        start_date: "Data Início"
+        end_date: "Data Término"
+        vacancies_number: "Nº de Vagas"
+        value: "Investimento"
+        prerequisite: "Pré-Requisitos"
+        goal: "Meta"
+        target_audience: "Público Alvo"
+        term: "Termo"
+      workshop_material:
+        description: "Descrição"
+        attachment: "Arquivo"

@@ -1,59 +1,42 @@
-<p id="notice"><%= notice %></p>
+<% title t('.title') %>
+<%= content_for :toolbar_buttons do %>
+  <%= link_to t('.edit_profile_button'),
+              edit_user_workshop_path(@workshop), 
+              class:"common-button edit-button" %>
+<% end %>
 
-<p>
-  <strong>User:</strong>
-  <%= @workshop.user %>
-</p>
+<%= content_tag(:div, class:"panel flat",style:'width: 50%;') do %>
+  <div class="panel-content">
+    <h4><%= t('user.workshops.main_info') %></h4>
+    <div class="show-fields">
+      <%= sf @workshop,:description %>
+      <%= sf @workshop,:details %>
+      <%= sf @workshop,:start_date,format_date(@workshop.start_date) %>
+      <%= sf @workshop,:end_date,format_date(@workshop.end_date) %>
+      <%= sf @workshop,:vacancies_number %>
+      <%= sf @workshop,:value,number_to_currency(@workshop.value) %>
+    </div>
+    <h4><%= t('user.workshops.more_info') %></h4>
+    <div class="show-fields">
+      <%= sf @workshop,:prerequisite %>
+      <%= sf @workshop,:goal %>
+      <%= sf @workshop,:target_audience %>
+      <%= sf @workshop,:term %>
+    </div>
+  </div>
+<% end %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @workshop.description %>
-</p>
+<%= content_tag(:div, class:"panel flat",style:'width: 42%;') do %>
+  <div class="panel-content">
+    <%= render "show_participants" %>
+    <%= render "show_materials" %>
+   
+    <div class="show-fields">
 
-<p>
-  <strong>Details:</strong>
-  <%= @workshop.details %>
-</p>
+    </div>  
+    <h4><%= t('.activites') %></h4>
+    <div class="show-fields">
 
-<p>
-  <strong>Start date:</strong>
-  <%= @workshop.start_date %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @workshop.end_date %>
-</p>
-
-<p>
-  <strong>Vacancies number:</strong>
-  <%= @workshop.vacancies_number %>
-</p>
-
-<p>
-  <strong>Value:</strong>
-  <%= @workshop.value %>
-</p>
-
-<p>
-  <strong>Prerequisite:</strong>
-  <%= @workshop.prerequisite %>
-</p>
-
-<p>
-  <strong>Goal:</strong>
-  <%= @workshop.goal %>
-</p>
-
-<p>
-  <strong>Target audience:</strong>
-  <%= @workshop.target_audience %>
-</p>
-
-<p>
-  <strong>Term:</strong>
-  <%= @workshop.term %>
-</p>
-
-<%= link_to 'Edit', edit_workshop_path(@workshop) %> |
-<%= link_to 'Back', workshops_path %>
+    </div>     
+  </div>
+<% end %>  

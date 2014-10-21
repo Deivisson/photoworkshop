@@ -16,7 +16,7 @@ pt_BR:
     workshop:
       menu:
         taught_by_me: "Ministrado por mim"
-        photos: "Minhas Fotos"
+        photos: ""
 
     photos:
       new:
@@ -52,3 +52,35 @@ pt_BR:
       follow_links:
         follow: "Seguir"
         unfollow: "Parar de Seguir"
+
+    workshops:
+      period: "%{start_date} à %{end_date}"
+      vacancies_number: "%{vacancies_number}"
+      workshop_value: "%{workshop_value}"
+      main_info: "Informações Principais"
+      more_info: "Informações Complementares"
+      form:
+
+      new:
+        title: "Novo Workshop"
+      index:
+        add_new: "Abrir novo Workshop"
+      show:
+        title: "Workshop"
+        activites: "Atividades"
+      show_participants:
+        vacancies_users: "Alunos"
+      show_materials:
+        materials: "Materiais"
+    workshop_materials:
+      new:
+        title: 'Novo Material'
+      edit:
+        title: 'Edição do  Material'
+    workshop_participants:
+      index:
+        title: 'Usuários'
+      users:
+        add_user: "Adicionar Usuário"
+      search_form:
+        placeholder: "Digite o nome do usuário para pesquisa"

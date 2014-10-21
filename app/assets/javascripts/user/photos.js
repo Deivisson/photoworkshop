@@ -16,19 +16,24 @@ $(document).on('ready page:load', function (){
 			    draggable: false,
           resizable: false
 			  });
-
-			  dialog_form.load(url + ' #modal-container', function(){
+				$(".ui-widget-content").addClass("ui-widget-content-full");
+			  dialog_form.load(url + ' #photo-show-modal-container', function(){
 			  		jQuery('body').css('overflow','hidden');
+			  		$(".ui-dialog-titlebar").css("display","none");
+			  		$(".ui-widget-overlay").css("opacity","1");
 			  		adjustLayout();
 			  });
-			  
 			  dialog_form.dialog('open');
 			  e.preventDefault();  
 	});
 });
 
 $(window).resize(function () {
-  adjustLayout();
+	if($("#photo-show-modal-container").length > 0)
+	{
+		adjustLayout();	
+	}
+  
 });
 
 function adjustLayout(){

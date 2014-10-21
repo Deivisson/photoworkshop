@@ -1,0 +1,3 @@
+<% unless @workshop_participant.errors.any? %>
+	$('#participant-<%= "#{@workshop.id}#{@workshop_participant.user_id}" %>').remove();
+<% end %>

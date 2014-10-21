@@ -28,4 +28,17 @@ module ApplicationHelper
     html.join.html_safe
   end
   alias_method :sf, :show_field
+
+  def attachment_extension_picture(type)
+    file =  if type.match("word")
+              "word.png"
+            elsif type.match("pdf")
+              "pdf.png"
+            elsif type.match(/\Aimage\/.*\Z/)
+              "image.png"
+            else
+              "no_extension.png"
+            end
+    return "user/#{file}"
+  end
 end

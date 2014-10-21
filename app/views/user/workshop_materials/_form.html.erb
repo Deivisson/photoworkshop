@@ -1,0 +1,14 @@
+<%= semantic_form_for [:user,@workshop,@workshop_material], 
+										:html => {multipart:true}, remote:true do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :description,
+    						:input_html => {id:'material-description'},
+    						:hint 			=> "Ex.: Aula 1: Desvendando mistério do ISO, Avertura e Diafragma." %>
+    <%= f.input :attachment %>
+  <% end %>
+  <br>
+  <br>
+  <div class="actions" style="margin-left:-10px">
+    <%= submit_button f %>
+  </div>
+<% end %>

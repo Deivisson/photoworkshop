@@ -45,6 +45,10 @@ html {
 		margin-bottom: 20px;
 		text-transform: none;
 		width: 100%;
+		a {
+			float:right;
+			margin: 5px 2px 0 0;
+		}
 	};
 	.panel-content {
 		float: left;

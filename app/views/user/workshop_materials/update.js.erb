@@ -1,0 +1,8 @@
+<% if @workshop_material.errors.any? %>
+	$("#workshop-materials-containter").html("<%= escape_javascript(render 'form') %>")	;
+<% else %>
+	$("#material-<%= @workshop_material.id %>").replaceWith(
+		"<%= escape_javascript(render partial:'workshop_material', locals: {workshop_material:@workshop_material})%>");
+	$("#workshop-materials-modal-dialog").dialog( "close" );
+	bindWorkshopMaterialDialog();
+<% end %>

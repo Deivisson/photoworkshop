@@ -1,19 +1,46 @@
-<%= semantic_form_for @workshop do |f| %>
-  <%= f.inputs do %>
-    <%= f.input :user %>
-    <%= f.input :description %>
-    <%= f.input :details %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.input :vacancies_number %>
-    <%= f.input :value %>
-    <%= f.input :prerequisite %>
-    <%= f.input :goal %>
-    <%= f.input :target_audience %>
-    <%= f.input :term %>
-  <% end %>
+<%= content_for :toolbar_buttons do %>
+  <%= link_to t('buttons.cancel'),
+              user_workshops_path, 
+              class:"common-button cancel-button" %>
+<% end %>  
+<%= semantic_form_for [:user,@workshop] do |f| %>
+  <%= content_tag(:div, class:"panel",style:'width: 45%;') do %>
+    <%= content_tag :h5, t('user.workshops.main_info'),class:'title' %>
+    <div class="panel-content">
+      <%= f.input :description,
+                  :input_html => {autofocus:true} %>
+      <%= f.input :details, 
+                  input_html: {style:'height: 200px'} %>
+      <div class="panel-content" style="width:42%">
+        <%= f.input :start_date,
+                    :as => :string %>
+        <%= f.input :end_date,
+                    :as => :string %>
+      </div>
+      <div class="panel-content" style="width:45%">
+        <%= f.input :vacancies_number %>
+        <%= f.input :value %>
+      </div>
+    </div>
+  <% end %>    
 
-  <%= f.actions do %>
-    <%= f.action :submit, :as => :input %>
-  <% end %>
+  <%= content_tag(:div, class:"panel",style:'width: 45%;') do %>
+    <%= content_tag :h5, t('user.workshops.more_info'),class:'title' %>
+    <div class="panel-content">
+      <%= f.input :target_audience %>
+      <%= f.input :prerequisite, 
+                  :as => :text,
+                  :input_html => {style:"height:90px;"} %>
+
+      <%= f.input :goal, 
+                  :as => :text,
+                  :input_html => {style:"height:90px;"} %>
+     
+      <%= f.input :term,
+                  :input_html => {style:"height:190px;"} %>
+    </div>
+  <% end %>      
+  <div class="actions">
+    <%= submit_button f %>
+  </div>
 <% end %>

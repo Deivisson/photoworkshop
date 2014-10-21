@@ -1,3 +1,133 @@
-// Place all the styles related to the Workshops controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+ul.workshops-items {
+	position: absolute;
+	right: 0;
+	left: 0;
+	padding: 10px;
+	li {
+		background-color: #FFF;
+		float: left;
+		margin-bottom: 5px;
+		height: 120px;
+		padding: 10px;
+		width: 98%;
+		.ws-image {
+			border: 2px dotted #9A9999;
+			float: left;
+			width: 150px;
+			height: 120px;
+		}
+		.ws-details {
+/*			background-color: #eee;*/
+			display: table;
+			float: left;
+			height: 100%;
+			margin-left: 10px;
+			a {
+				color: #333;
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				};
+			}
+			h1 {
+				font-size: 18px;
+			}
+			p {
+				color: #777777;
+				float: left;
+				margin: 10px 0 40px 0;
+				width: 100%;
+			}
+			.workshop-resume {
+				float: left;
+				/*position: absolute;*/
+				width: 100%;
+				margin: 25px 0 0 0;
+				span {
+					color: #777777;
+					float: left;
+					font-size: 12px;
+					margin: 0 10px 7px 0;
+					text-indent: 20px;
+					&.period {background: url("/assets/user/view_16.gif") 0 -3px no-repeat;}
+					&.vacancies {background: url("/assets/user/view_16.gif") 0 -3px no-repeat;}
+					&.value {background: url("/assets/user/view_16.gif") 0 -3px no-repeat;}
+				}
+			}
+		}
+	}
+}
+
+ul.workshop-participants, ul.workshop-materials {
+	float: left;
+	width: 100%;
+	li {
+		border-bottom: 1px dotted #E8E8E8;
+		float: left;
+		margin-bottom: 5px;
+		padding: 5px;
+		width: 97%;
+		.user-avatar {
+			border: 0px;
+			float: left;
+			height: 32px;
+			width: 32px;
+		};
+		label.user-name {
+			color: #888;
+			float: left;
+			font-size: 14px;
+			font-weight: bold;
+			margin: 0px 0 0 10px !important;
+			line-height: 30px;
+		}
+		.buttons-container-participants {
+			margin-top: 7px !important;
+		}
+		&:hover {background-color: #eee;};
+	}
+}
+
+ul.workshop-participants, ul.workshop-materials {
+	li {
+		&:hover .buttons-container {
+			visibility:visible;
+		};
+		img {
+			float: left;
+			margin-top: 3px;
+		};
+		a {
+			color: #777;
+			display: block;
+			float: left;
+			margin: 4px 0 0 5px;
+			text-decoration: none;
+			width: 70%;
+			&:hover {
+				text-decoration: underline;
+			};			
+		};
+		.buttons-container {
+			left: 85%;
+			margin-top: 2px;
+			position: absolute;
+			visibility: hidden;
+			a {
+				float: left;
+				font-size: 11px;
+				width: auto !important;
+				&:hover {
+					text-decoration: underline;
+				};
+			}
+			span.separator {
+				background-color: #cecece;
+				height: 16px;
+				float: left;
+				margin: 0 0 0 4px;
+				width: 1px;
+			}
+		}
+	}
+}

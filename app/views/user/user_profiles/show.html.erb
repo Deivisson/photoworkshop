@@ -14,7 +14,7 @@
     <h4><%= t('.location') %></h4>
     <div class="show-fields">
       <% if !@user_profile.city_id.nil? %>
-        <%= image_tag("/assets/user/flags/1.png",style:"float:left") %>
+        <%= image_tag("user/flags/1.png",style:"float:left") %>
         <div style="float:left;width: 80%; margin: 7px 0 0 10px; border-left: 1px solid #eee;padding-left: 10px">
           <%= sf @user_profile,:country_id, @user_profile.city.state.country.name %>
           <%= sf @user_profile,:state_id, @user_profile.city.state.name %>

@@ -1,0 +1,25 @@
+<% if @user_profiles.any? %>
+	<%= content_tag :ul, class:'workshop-user-participants' do %>
+		<% @user_profiles.each do |user_profile| %>
+			<%= content_tag :li, id:"user-#{user_profile.user_id}" do %>
+				<%= image_tag(user_profile.avatar.url(:medium),class:'user-avatar') %>
+				<div class="details">
+					<%= content_tag :label, user_profile.user_name,class:'user-name' %>
+					<%= content_tag(:p,user_profile.city.name) unless user_profile.city.nil? %>
+				</div>
+				<div class="buttons">
+					<% if @participant_ids.include?(user_profile.user_id) %>
+						<%= "Ja" %>
+					<% else %>
+						<%= link_to t('.add_user'),
+												user_workshop_add_participant_path(@workshop,user_profile.user_id),
+												remote:true,
+												class:"common-button edit-button" %>					
+					<% end %>
+				<% end %>				
+			</li>
+		<% end %>
+	<% end %>
+<% else %>
+	
+<% end %>

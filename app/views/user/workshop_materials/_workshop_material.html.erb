@@ -1,0 +1,16 @@
+<%= content_tag :li, id:"material-#{workshop_material.id}" do %>
+	<%= image_tag attachment_extension_picture(workshop_material.attachment_content_type) %>
+  <%= link_to workshop_material.description, workshop_material.attachment.url %>
+  <div class="buttons-container">
+  	<%= link_to t('buttons.edit'),
+  							edit_user_workshop_material_path(@workshop,workshop_material),
+  							class:"edit-workshop-material" %>
+  	<span class="separator"></span>
+  	<%= link_to t('buttons.destroy'),
+  							user_workshop_material_path(@workshop,workshop_material),
+  							method: :delete,
+  							data: {confirm:t('messages.confirm_destroy')},
+  							remote:true %>
+
+  </div>
+<% end %>

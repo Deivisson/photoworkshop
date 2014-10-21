@@ -1,0 +1,12 @@
+<%= content_tag :li, id:"participant-#{@workshop.id}#{participant.id}" do %>
+  <%= image_tag participant.profile.avatar.url(:thumb),class:'user-avatar' %>
+  <%= content_tag :label, participant.profile.user_name, class:"user-name" %>
+  <div class="buttons-container buttons-container-participants">
+  	<%= link_to t('buttons.destroy'),
+  							user_workshop_remove_participant_path(@workshop,participant),
+  							method: :delete,
+  							data: {confirm:t('messages.confirm_destroy')},
+  							remote:true %>
+
+  <% end %>  
+</li>

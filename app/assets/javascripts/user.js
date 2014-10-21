@@ -12,11 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.remotipart
 //= require turbolinks
 //= require common/modal_dialog
 //= require common/jquery-ui.min.js
 //= require user/photos
 //= require user/user_profiles
+//= require user/workshop_materials
+//= require user/workshop_participants
 
 
 

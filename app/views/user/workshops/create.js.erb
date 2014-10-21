@@ -1,0 +1,5 @@
+<% if @workshop_material.errors.any? %>
+	
+<% else %>
+	$("#workshop-materials-container").append("<%= escape_javascript(render partial:'show_material_item', locals: {material:@workshop_material})%>")
+<% end %>

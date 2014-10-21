@@ -1,0 +1,64 @@
+ul.workshop-user-participants {
+/*	border: 1px solid red;*/
+	float: left;
+	margin-top: 15px;
+	width: 100%;
+	li {
+		border-bottom: 1px dotted #e8e8e8;
+		float: left;
+		padding: 5px;
+		width: 99%;
+		&:hover {
+			background-color: #eee
+		};
+		&:hover .buttons {visibility: visible;};
+		img.user-avatar {
+			float: left;
+			height: 45px; 
+			width: 45px;
+			max-height: 45px; 
+			max-width: 45px;
+		};
+		.details {
+			float: left;
+			height: 100%;
+			margin-left: 10px;
+			label.user-name {
+				color: #777;
+				font-size: 15px;
+				font-weight: bold;
+				float: left;
+				width: 80%
+			};
+			p {
+				color: #777;
+				font-size: 12px;
+				float: left;
+				margin-top: 3px;
+				width: 100%;
+			}
+		}
+		.buttons {
+	    height: 50px;
+	    position: absolute;
+	    right: 20px;
+	    visibility: hidden;
+	    width: auto;
+		}
+	}
+}
+
+.seach-form {
+	float: left;
+	margin: -20px 0 0 0 ;
+	width: 100%;
+	input {
+		border: 0px;
+		border-bottom: 1px solid #ada9a5 !important;
+    border-radius: 5px;
+    font-size: 16px;
+    height: 35px;
+    padding: 1px 2px 2px 1px;
+    width: 100%;
+	}
+}

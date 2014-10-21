@@ -26,11 +26,12 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 gem 'foreigner'
-gem "paperclip", "~> 4.1"
+gem "paperclip", "~> 4.2"
 gem 'formtastic'
 gem 'bootstrap-sass' #, '~> 3.1.1.0'
 gem 'mini_exiftool', '~> 2.4.2'
 gem 'responders'
+gem 'remotipart', '~> 1.2'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

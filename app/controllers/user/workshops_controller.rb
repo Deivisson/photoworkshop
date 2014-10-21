@@ -3,7 +3,7 @@ class User::WorkshopsController < User::BaseController
   before_action :set_workshop, only: [:show, :edit, :update, :destroy]
 
   def index
-    @workshops = Workshop.all
+    @workshops = current_user.owner_workshops
     respond_with(@workshops)
   end
 
@@ -20,7 +20,7 @@ class User::WorkshopsController < User::BaseController
   end
 
   def create
-    @workshop = Workshop.new(workshop_params)
+    @workshop = current_user.owner_workshops.build(workshop_params)
     @workshop.save
     respond_with(@workshop)
   end
@@ -37,7 +37,7 @@ class User::WorkshopsController < User::BaseController
 
   private
     def set_workshop
-      @workshop = Workshop.find(params[:id])
+      @workshop = current_user.owner_workshops.find(params[:id])
     end
 
     def workshop_params

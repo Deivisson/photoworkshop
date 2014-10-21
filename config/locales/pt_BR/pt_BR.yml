@@ -2,6 +2,12 @@ pt_BR:
   buttons:
     confirm: "Confirmar"
     wait_label: "Aguarde..."
+    cancel: "Cancelar"
+    edit: "Editar"
+    destroy: "Excluir"
+  messages:
+    confirm_destroy: "Confirma Exlusão?"
+    
   welcome: 
     menu:
       how_work: "COMO FUNCIONA?"

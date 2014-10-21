@@ -1,0 +1,14 @@
+<h4>
+	<%= t('.vacancies_users') %>
+  <%= link_to image_tag("user/add_16.png"), 
+  						user_workshop_participants_path(@workshop),
+              id:'add-workshop-participants' %>
+</h4>
+<div class="show-fields" style="width:100%">
+  <ul class="workshop-participants" id="workshop-participants-container">
+    <% @workshop.participants.each do |participant| %>
+      <%= render partial:'/user/workshop_participants/participant',
+                 locals: {participant:participant} %>
+    <% end %>
+  </ul>
+</div>

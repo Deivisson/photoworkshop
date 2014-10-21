@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
 
   devise_for :admins
@@ -21,7 +22,14 @@ Rails.application.routes.draw do
       get :following, on: :collection
       get :followers, on: :collection
     end
-    resources :workshops
+    
+    resources :workshops do
+      resources :workshop_materials, as: :materials, except: [:create,:update,:index,:show]
+      resources :workshop_materials, only: [:create,:update]
+      resources :workshop_participants, as: :participants, only: [:index,:destroy]
+      get "workshop_participants/:user_id/add", to:'workshop_participants#add', :as => :add_participant
+      delete "workshop_participants/:user_id/remove", to:'workshop_participants#remove', :as => :remove_participant
+    end
   end
   
   scope :home do
