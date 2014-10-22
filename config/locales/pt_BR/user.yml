@@ -64,12 +64,13 @@ pt_BR:
       new:
         title: "Novo Workshop"
       index:
-        add_new: "Abrir novo Workshop"
+        add_new: "Adicionar Workshop"
       show:
         title: "Workshop"
         activites: "Atividades"
+        edit_workshop: "Editar Workshop"
       show_participants:
-        vacancies_users: "Alunos"
+        vacancies_users: "Participantes"
       show_materials:
         materials: "Materiais"
     workshop_materials:
@@ -82,5 +83,8 @@ pt_BR:
         title: 'Usuários'
       users:
         add_user: "Adicionar Usuário"
+        remove_user: "Remover Participante"
+      participant:
+        remove_user: "Remover"
       search_form:
         placeholder: "Digite o nome do usuário para pesquisa"

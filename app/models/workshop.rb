@@ -6,6 +6,12 @@ class Workshop < ActiveRecord::Base
   validates :end_date, presence:true
   validates :vacancies_number, presence:true, numericality: {only_integer:true}
   validates :value, presence:true, numericality:true
+  validates :status, presence:true
+
+  has_attached_file :image, 
+                    :styles => { :medium => "300x300>", :thumb => "100x100>" }, 
+                    :default_url => "user/no_avatar.png"
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   belongs_to :user
 

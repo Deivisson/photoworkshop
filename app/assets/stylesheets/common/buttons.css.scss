@@ -53,6 +53,32 @@
   };
 }
 
+.destroy-button {
+  background-color: #D36967;
+  border-color: #A02724;
+  color: #FFF;
+  float: right; 
+  margin: 7px 5px 0 0;
+  &:hover {
+    background-color: #B73C3A;
+    border-color: #A02724;
+    color: #FFF;
+  };
+}
+
+.add-button {
+  background-color: #428bca;
+  border-color: #357ebd;
+  color: #FFF;
+  float: right; 
+  margin: 7px 5px 0 0;
+  &:hover {
+    background-color: #3276b1;
+    border-color: #357ebd;
+    color: #FFF;
+  };
+}
+
 .submit-button, .update {
   background-color: #428bca;
   border:1px solid #357ebd;

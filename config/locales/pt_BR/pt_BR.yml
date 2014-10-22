@@ -7,7 +7,13 @@ pt_BR:
     destroy: "Excluir"
   messages:
     confirm_destroy: "Confirma Exlusão?"
-    
+    destroyed_record: "Registro excluído com sucesso!"
+    updated_record: "Registro atualizado com sucesso!"
+    created_record: "Registro cadastros com sucesso!"
+    confirm_add_user_to_workshop: "Deseja realmente tornar o Usuário um Participante do Workshop?"
+    user_added_to_workshop: "Usuário adicionado com sucesso!!"
+    confirm_remove_user_from_workshop: "Confirma a remoção do Usuário do Workshop?"
+    user_removed_from_workshop: "Participante removido com sucesso!!"
   welcome: 
     menu:
       how_work: "COMO FUNCIONA?"

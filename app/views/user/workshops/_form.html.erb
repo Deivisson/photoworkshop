@@ -7,8 +7,13 @@
   <%= content_tag(:div, class:"panel",style:'width: 45%;') do %>
     <%= content_tag :h5, t('user.workshops.main_info'),class:'title' %>
     <div class="panel-content">
+      <%= content_tag :img, "",class:'user-avatar',id:'image-upload'%>
+      <%= f.input :image, 
+                  label:false,
+                  input_html: {:onchange => "showImageWorkshopPreview(this)"} %>
+
       <%= f.input :description,
-                  :input_html => {autofocus:true} %>
+                  :input_html => {autofocus:true, id:'workshop-description'} %>
       <%= f.input :details, 
                   input_html: {style:'height: 200px'} %>
       <div class="panel-content" style="width:42%">

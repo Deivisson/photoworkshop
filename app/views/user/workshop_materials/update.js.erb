@@ -5,4 +5,5 @@
 		"<%= escape_javascript(render partial:'workshop_material', locals: {workshop_material:@workshop_material})%>");
 	$("#workshop-materials-modal-dialog").dialog( "close" );
 	bindWorkshopMaterialDialog();
+	flashNoticeMessage("<%= t('messages.updated_record') %>");
 <% end %>

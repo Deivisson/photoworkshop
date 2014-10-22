@@ -9,9 +9,11 @@ class CreateWorkshops < ActiveRecord::Migration
       t.integer :vacancies_number
       t.decimal :value
       t.string :prerequisite
-      t.string :goal
+      t.text :goal
       t.string :target_audience
       t.text :term
+      t.integer :status, null:false, default:0
+      t.attachment :image
       t.timestamps
     end
     add_foreign_key :workshops, :users, name:'workshops_user'

@@ -1,3 +1,4 @@
 <% unless @workshop_material.errors.any? %>
 	$("#material-<%= @workshop_material.id %>").remove();
+	flashNoticeMessage("<%= t('messages.destroyed_record') %>");
 <% end %>

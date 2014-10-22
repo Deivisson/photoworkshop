@@ -111,3 +111,76 @@ html {
     width: 300px;
 	}	
 }
+
+
+/*Container for flash notice and flash warning */
+.flash_container {
+	font-family:  Helvetica, Verdana, Arial;
+  margin:0 auto;
+  width:400px;
+  position:absolute;
+  height:auto;
+  left:50%;
+  margin-left:-200px;
+  padding-top:6px;
+  z-index: 9999999999;
+}
+
+
+#flash_notice {
+  padding: 5px 8px;
+  margin: 0px 0px 5px 0px;
+  height:100%
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_warning {
+  padding: 5px 8px;
+  margin: 0px 0px 5px 0px;
+}
+
+#flash_warning {
+  background-color: #ffc3c6 ;
+  border: solid 1px #e08a8e;
+}
+
+#flash_alert {
+  padding: 5px 8px;
+  margin: 0px 0px 5px 0px;
+  height:100%
+}
+
+#flash_alert {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+.no-record, .information, .notice {
+  border: 1px solid ;
+  font-size: 13px;
+  margin: 4px 8px 4px 1px;
+  padding: 8px;
+  width: 98%;
+
+  a {
+    color: #004F84;
+    font-size:13px;
+    font-width: bold;
+    text-decoration: none;
+    &:hover { font-style: italic;   text-decoration:underline }
+  }
+}
+
+.no-record, .information {
+  background:#F9F8E5;
+  border-color: #FCCE7E;
+}
+
+.notice {
+  background-color: #ffc3c6 ;
+  border-color: #e08a8e;
+}

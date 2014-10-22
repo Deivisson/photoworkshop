@@ -9,6 +9,7 @@
 	<% @workshops.each do |workshop| %>
 		<li>
 			<div class="ws-image">
+				<%= image_tag(workshop.image.url(:medium)) %>
 			</div>
 			<div class="ws-details">
 				<h1><%= link_to workshop.description, user_workshop_path(workshop) %></h1>

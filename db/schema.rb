@@ -200,16 +200,21 @@ ActiveRecord::Schema.define(version: 20141013015551) do
 
   create_table "workshops", force: true do |t|
     t.integer  "user_id"
-    t.string   "description",      limit: 200, null: false
+    t.string   "description",        limit: 200,             null: false
     t.text     "details"
-    t.date     "start_date",                   null: false
-    t.date     "end_date",                     null: false
+    t.date     "start_date",                                 null: false
+    t.date     "end_date",                                   null: false
     t.integer  "vacancies_number"
     t.decimal  "value"
     t.string   "prerequisite"
     t.string   "goal"
     t.string   "target_audience"
     t.text     "term"
+    t.integer  "status",                         default: 0, null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

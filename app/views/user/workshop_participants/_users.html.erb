@@ -9,12 +9,18 @@
 				</div>
 				<div class="buttons">
 					<% if @participant_ids.include?(user_profile.user_id) %>
-						<%= "Ja" %>
+				  	<%= link_to t('.remove_user'),
+				  							user_workshop_remove_participant_path(@workshop,user_profile.user_id),
+				  							method: :delete,
+				  							data: {confirm:t('messages.confirm_remove_user_from_workshop')},
+				  							remote:true,
+				  							class:"common-button destroy-button" %>
 					<% else %>
 						<%= link_to t('.add_user'),
 												user_workshop_add_participant_path(@workshop,user_profile.user_id),
+												data: {confirm:t('messages.confirm_add_user_to_workshop')},
 												remote:true,
-												class:"common-button edit-button" %>					
+												class:"common-button add-button" %>					
 					<% end %>
 				<% end %>				
 			</li>
