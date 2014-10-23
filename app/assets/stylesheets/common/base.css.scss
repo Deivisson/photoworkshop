@@ -1,3 +1,4 @@
+
 body {
 	background-color:#FFF;
 	font-family:  Helvetica, Verdana, Arial;
@@ -92,7 +93,13 @@ html {
 			strong {
 				float: left;
 				width: 120px;
-			}
+			};
+			span {
+				border: 0px solid #eee;
+		    display: block;
+		    margin: -32px 0 0 130px;
+		    padding: 5px;
+			} 			
 		}
 	}
 } 

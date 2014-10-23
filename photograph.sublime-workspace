@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"me",
+				"message"
+			],
+			[
 				"use",
 				"user_participant"
 			],
@@ -510,20 +514,32 @@
 			[
 				"soluc",
 				"solucao_ids"
-			],
-			[
-				"projeto",
-				"projeto_id"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "app/controllers/user/workshop_activities_controller.rb",
+			"settings":
+			{
+				"buffer_size": 1046,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/user/workshop_participants_controller.rb",
+			"settings":
+			{
+				"buffer_size": 1046,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 348.0,
+		"height": 295.0,
 		"selected_items":
 		[
 			[
@@ -568,27 +584,53 @@
 	},
 	"file_history":
 	[
-		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/user/workshops.css.scss",
-		"/home/deivisson/Projects/ruby/photograph/config/routes.rb",
-		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_participants/_participant.html.erb",
+		"/home/deivisson/Projects/ruby/photograph/app/controllers/user/workshop_materials_controller.rb",
 		"/home/deivisson/Projects/ruby/photograph/config/locales/pt_BR/user.yml",
-		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/user/workshop_participants.css.scss",
-		"/home/deivisson/Projects/ruby/photograph/app/controllers/user/workshop_participants_controller.rb",
+		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/common/base.css.scss",
+		"/home/deivisson/Projects/ruby/photograph/app/helpers/application_helper.rb",
+		"/home/deivisson/Projects/ruby/photograph/app/controllers/user/workshops_controller.rb",
+		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshops/edit.html.erb",
+		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshops/index.html.erb",
+		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/user/workshops.css.scss",
 		"/home/deivisson/Projects/ruby/photograph/app/models/workshop.rb",
-		"/home/deivisson/Projects/ruby/photograph/app/models/workshop_participant.rb",
+		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_materials/create.js.erb",
+		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_materials/update.js.erb",
+		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_materials/destroy.js.erb",
+		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshops/_form.html.erb",
+		"/home/deivisson/Projects/ruby/photograph/app/assets/javascripts/user/workshops.js",
+		"/home/deivisson/Projects/ruby/photograph/db/migrate/20141006023105_create_workshops.rb",
+		"/home/deivisson/Projects/ruby/photograph/app/assets/javascripts/user/photos.js",
+		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_participants/_participant.html.erb",
+		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshops/show.html.erb",
+		"/home/deivisson/Projects/ruby/photograph/app/assets/javascripts/user.js",
+		"/home/deivisson/Projects/ruby/photograph/app/assets/javascripts/user/user_profiles.js",
+		"/home/deivisson/Projects/ruby/photograph/app/views/user/user_profiles/_form.html.erb",
+		"/home/deivisson/Projects/ruby/photograph/app/models/user_profile.rb",
+		"/home/deivisson/Projects/ruby/photograph/db/migrate/20140831024329_add_avatar_and_user_name_to_user_profiles.rb",
+		"/home/deivisson/Projects/ruby/photograph/config/locales/pt_BR/pt_BR.yml",
+		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/common/buttons.css.scss",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_participants/add.js.erb",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_participants/remove.js.erb",
+		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/user/dashboard.css.scss",
+		"/home/deivisson/Projects/ruby/photograph/app/assets/javascripts/common/flash_messages.js",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_participants/_users.html.erb",
-		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_materials/destroy.js.erb",
+		"/home/deivisson/Projects/ruby/kativeme/app/assets/javascripts/company/base.js",
+		"/home/deivisson/Projects/ruby/kativeme/app/assets/stylesheets/common/base.scss",
+		"/home/deivisson/Projects/ruby/photograph/app/assets/javascripts/common/basic.js",
+		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshops/_show_participants.html.erb",
+		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_participants/_search_form.html.erb",
+		"/home/deivisson/Projects/ruby/photograph/app/views/layouts/user/dashboard.html.erb",
+		"/home/deivisson/Projects/ruby/photograph/config/routes.rb",
+		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/user/workshop_participants.css.scss",
+		"/home/deivisson/Projects/ruby/photograph/app/controllers/user/workshop_participants_controller.rb",
+		"/home/deivisson/Projects/ruby/photograph/app/models/workshop_participant.rb",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_participants/destroy.js.erb",
 		"/home/deivisson/Projects/ruby/photograph/config/initializers/session_store.rb",
 		"/home/deivisson/Projects/ruby/photograph/test/fixtures/workshops.yml",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_materials/_workshop_material.html.erb",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshops/_show_materials.html.erb",
-		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshops/_show_participants.html.erb",
 		"/home/deivisson/Projects/ruby/photograph/app/controllers/user/users_controller.rb",
 		"/home/deivisson/Projects/ruby/photograph/app/assets/javascripts/user/workshop_participants.js",
-		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_participants/_search_form.html.erb",
 		"/home/deivisson/Projects/ruby/sgs/app/controllers/usuario/clientes_controller.rb",
 		"/home/deivisson/Projects/ruby/sgs/app/views/usuario/clientes/index.js.erb",
 		"/home/deivisson/Projects/ruby/sgs/app/controllers/usuario/solicitacoes_controller.rb",
@@ -652,50 +694,24 @@
 		"/home/deivisson/Projects/ruby/sgs/app/views/layouts/projeto.html.erb",
 		"/home/deivisson/Projects/ruby/sgs/app/views/layouts/full_layout.html.erb",
 		"/home/deivisson/Projects/ruby/sgs/app/views/layouts/tarefas.html.erb",
-		"/home/deivisson/Projects/ruby/photograph/app/models/user_profile.rb",
 		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/user/user_profiles.css.scss",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_participants/index.html.erb",
 		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/user.scss",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_participants/index.js.erb",
 		"/home/deivisson/Projects/ruby/kativeme/lib/search.rb",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_materials/edit.html.erb",
-		"/home/deivisson/Projects/ruby/photograph/app/controllers/user/workshop_materials_controller.rb",
-		"/home/deivisson/Projects/ruby/photograph/app/assets/javascripts/user.js",
 		"/home/deivisson/Projects/ruby/photograph/app/models/workshop_material.rb",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/user_profiles/show.html.erb",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/photographers/_photographers.html.erb",
 		"/home/deivisson/Projects/ruby/photograph/db/migrate/20141013015551_create_workshop_materials.rb",
-		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/common/base.css.scss",
 		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/common/modal_dialog.css.scss",
-		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_materials/update.js.erb",
-		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_materials/create.js.erb",
 		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/common/formtastic_changes.css.scss",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_materials/new.html.erb",
 		"/home/deivisson/Projects/ruby/photograph/app/assets/javascripts/user/workshop_materials.js",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_materials/_form.html.erb",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/photos/_form.html.erb",
 		"/home/deivisson/Projects/ruby/photograph/config/locales/pt_BR/activerecord.yml",
-		"/home/deivisson/Projects/ruby/photograph/app/assets/javascripts/common/modal_dialog.js",
-		"/home/deivisson/Desktop/Projetos/app_desenv/app/views/version_requests/create.js.erb",
-		"/home/deivisson/Desktop/Projetos/app_desenv/app/assets/javascripts/version_requests.js",
-		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshops/_show_material_item.html.erb",
-		"/home/deivisson/Projects/ruby/photograph/Gemfile",
-		"/home/deivisson/Projects/ruby/photograph/test/controllers/workshop_materials_controller_test.rb",
-		"/home/deivisson/Projects/ruby/photograph/public/system/workshop_materials/files/000/000/001/original/SGS_-_Implementações_-_Etapa_2.pdf",
-		"/home/deivisson/Projects/ruby/sgs/app/models/solicitacao.rb",
-		"/home/deivisson/Projects/ruby/photograph/app/models/photo.rb",
-		"/home/deivisson/Projects/ruby/photograph/app/controllers/user/photos_controller.rb",
-		"/home/deivisson/Projects/ruby/photograph/app/views/user/photos/show.html.erb",
-		"/home/deivisson/Projects/ruby/photograph/app/assets/javascripts/user/photos.js",
-		"/home/deivisson/Projects/ruby/sgs/lib/assets/stylesheets/jquery-ui-1.10.0.custom.css",
-		"/home/deivisson/Projects/ruby/kativeme/lib/assets/stylesheets/jquery-ui-1.10.0.custom.css",
-		"/home/deivisson/Projects/ruby/kativeme/app/assets/stylesheets/common/modal_form.scss",
-		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshops/show.html.erb",
-		"/home/deivisson/Projects/ruby/photograph/app/controllers/user/workshops_controller.rb",
-		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshops/_form.html.erb",
-		"/home/deivisson/Projects/ruby/photograph/app/controllers/workshop_materials_controller.rb",
-		"/home/deivisson/Projects/ruby/photograph/app/models/user.rb",
-		"/home/deivisson/Projects/ruby/photograph/db/migrate/20141012215439_create_workshop_participants.rb"
+		"/home/deivisson/Projects/ruby/photograph/app/assets/javascripts/common/modal_dialog.js"
 	],
 	"find":
 	{
@@ -892,8 +908,65 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/controllers/user/workshop_activities_controller.rb",
+					"settings":
+					{
+						"buffer_size": 1046,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1046,
+								1046
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 345.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/controllers/user/workshop_participants_controller.rb",
+					"settings":
+					{
+						"buffer_size": 1046,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		},
 		{
@@ -935,7 +1008,7 @@
 		"rows":
 		[
 			0.0,
-			0.441466413194,
+			0.557440459587,
 			1.0
 		]
 	},
@@ -955,8 +1028,52 @@
 		"selected_items":
 		[
 			[
+				"user.",
+				"config/locales/pt_BR/user.yml"
+			],
+			[
+				"base",
+				"app/assets/stylesheets/common/base.css.scss"
+			],
+			[
+				"applica_hel",
+				"app/helpers/application_helper.rb"
+			],
+			[
+				"wor",
+				"app/models/workshop.rb"
+			],
+			[
+				"wo.scs",
+				"app/assets/stylesheets/user/workshops.css.scss"
+			],
+			[
+				"creat_w",
+				"db/migrate/20141006023105_create_workshops.rb"
+			],
+			[
+				"user_prof",
+				"app/models/user_profile.rb"
+			],
+			[
 				"work",
-				"app/models/workshop_participant.rb"
+				"app/models/workshop.rb"
+			],
+			[
+				"pt_br",
+				"config/locales/pt_BR/pt_BR.yml"
+			],
+			[
+				"pt_",
+				"config/locales/pt_BR/pt_BR.yml"
+			],
+			[
+				"button",
+				"app/assets/stylesheets/common/buttons.css.scss"
+			],
+			[
+				"dashbo",
+				"app/assets/stylesheets/user/dashboard.css.scss"
 			],
 			[
 				"route",
@@ -1095,16 +1212,8 @@
 				"app/controllers/user/workshop_participants_controller.rb"
 			],
 			[
-				"user.",
-				"config/locales/pt_BR/user.yml"
-			],
-			[
 				"_photographers.html.erb",
 				"app/views/user/photographers/_photographers.html.erb"
-			],
-			[
-				"base",
-				"app/assets/stylesheets/common/base.css.scss"
 			],
 			[
 				"modal",
@@ -1199,10 +1308,6 @@
 				"app/models/workshop_material.rb"
 			],
 			[
-				"wor",
-				"app/models/workshop.rb"
-			],
-			[
 				"workshop_me",
 				"app/models/workshop_material.rb"
 			],
@@ -1259,10 +1364,6 @@
 				"app/assets/stylesheets/user/workshops.css.scss"
 			],
 			[
-				"pt_br",
-				"config/locales/pt_BR/user.yml"
-			],
-			[
 				"worksho/new",
 				"app/views/user/workshops/new.html.erb"
 			],
@@ -1305,10 +1406,6 @@
 			[
 				"user.rb",
 				"app/models/user.rb"
-			],
-			[
-				"button",
-				"app/assets/stylesheets/common/buttons.css.scss"
 			],
 			[
 				"moda",
@@ -1441,30 +1538,6 @@
 			[
 				"base.c",
 				"app/assets/stylesheets/common/base.css.scss"
-			],
-			[
-				"dash",
-				"app/assets/stylesheets/user/dashboard.css.scss"
-			],
-			[
-				"use_pro/sho",
-				"app/views/user/user_profiles/show.html.erb"
-			],
-			[
-				"_menu",
-				"app/views/user/_menu_profile.html.erb"
-			],
-			[
-				"profile",
-				"app/controllers/company/core/user_profile_controller.rb"
-			],
-			[
-				"seed",
-				"db/seeds.rb"
-			],
-			[
-				"se",
-				"db/seeds.rb"
 			]
 		],
 		"width": 0.0

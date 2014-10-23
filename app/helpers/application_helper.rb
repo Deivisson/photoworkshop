@@ -22,7 +22,7 @@ module ApplicationHelper
     html << content_tag(:p,class:'colon') do
       inner_html = []
       inner_html << content_tag(:strong,ta(model_instance.class,attribute.to_sym))
-      inner_html << (content.nil? ? model_instance.send(attribute) : content)
+      inner_html << content_tag(:span,(content.nil? ? model_instance.send(attribute) : content))
       inner_html.join.html_safe
     end
     html.join.html_safe

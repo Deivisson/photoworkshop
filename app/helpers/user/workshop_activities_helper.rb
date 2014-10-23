@@ -1,0 +1,2 @@
+module WorkshopActivitiesHelper
+end

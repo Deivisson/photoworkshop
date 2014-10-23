@@ -63,6 +63,8 @@ pt_BR:
 
       new:
         title: "Novo Workshop"
+      edit:
+        title: "Editando Workshop"
       index:
         add_new: "Adicionar Workshop"
       show:

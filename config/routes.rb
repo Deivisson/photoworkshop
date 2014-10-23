@@ -1,6 +1,8 @@
 
 Rails.application.routes.draw do
 
+  resources :workshop_activities
+
   devise_for :admins
   namespace :admin do
     resources :categories

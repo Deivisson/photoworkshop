@@ -1,0 +1,31 @@
+<h1>Listing workshop_activities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Details</th>
+      <th>Status</th>
+      <th>Limit date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @workshop_activities.each do |workshop_activity| %>
+      <tr>
+        <td><%= workshop_activity.description %></td>
+        <td><%= workshop_activity.details %></td>
+        <td><%= workshop_activity.status %></td>
+        <td><%= workshop_activity.limit_date %></td>
+        <td><%= link_to 'Show', workshop_activity %></td>
+        <td><%= link_to 'Edit', edit_workshop_activity_path(workshop_activity) %></td>
+        <td><%= link_to 'Destroy', workshop_activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Workshop activity', new_workshop_activity_path %>

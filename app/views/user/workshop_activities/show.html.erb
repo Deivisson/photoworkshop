@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @workshop_activity.description %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @workshop_activity.details %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @workshop_activity.status %>
+</p>
+
+<p>
+  <strong>Limit date:</strong>
+  <%= @workshop_activity.limit_date %>
+</p>
+
+<%= link_to 'Edit', edit_workshop_activity_path(@workshop_activity) %> |
+<%= link_to 'Back', workshop_activities_path %>
