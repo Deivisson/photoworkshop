@@ -1,0 +1,33 @@
+permissao1:
+  descricao: Listagem de Cliente
+  chave: listar_cliente
+  itens:
+    item1:
+      descricao: Cadastra cliente
+      chave: cadastrar_cliente
+    item2:
+      descricao: Editar cadastro do cliente
+      chave: editar_cliente
+    item3:
+      descricao: Excluir cliente
+      chave: excluir_cliente
+    item4:
+      descricao: Visualiza Cliente
+      chave: visualizar_cliente
+
+permissao2:
+  descricao: Cadastro de Categorias dos Clientes
+  chave: listar_categorias_clientes
+  itens:
+    item1:
+      descricao: Cadastra categoria do cliente
+      chave: cadastrar_categoria_cliente
+    item2:
+      descricao: Editar cadastro da categoria do cliente
+      chave: editar_categoria_cliente
+    item3:
+      descricao: Excluir categoria do cliente
+      chave: excluir_categoria_cliente
+    item4:
+      descricao: Visualiza categoria do cliente
+      chave: visualizar_categoria_cliente

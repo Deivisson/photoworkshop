@@ -3,8 +3,13 @@
   <%= link_to t('.edit_workshop'),
               edit_user_workshop_path(@workshop), 
               class:"common-button edit-button" %>
-<% end %>
 
+  <%= link_to t('.open_workshop'),
+              user_workshop_open_path(@workshop), 
+              data: {confirm:t('.confirm_open_workshop_msg')},
+              class:"common-button cancel-button" unless @workshop.opened? %>
+<% end %>
+<%= content_tag(:div, t('.msg_not_opened').html_safe,class:'alert') unless @workshop.opened? %>
 <%= content_tag(:div, class:"panel flat",style:'width: 50%;') do %>
   <div class="panel-content">
     <h4><%= t('user.workshops.main_info') %></h4>
@@ -30,13 +35,6 @@
   <div class="panel-content">
     <%= render "show_participants" %>
     <%= render "show_materials" %>
-   
-    <div class="show-fields">
-
-    </div>  
-    <h4><%= t('.activites') %></h4>
-    <div class="show-fields">
-
-    </div>     
+    <%= render "show_activities" %>
   </div>
 <% end %>  

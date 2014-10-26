@@ -1,4 +1,6 @@
 class Workshop < ActiveRecord::Base
+
+  OPENED = 1
   
   validates :user, presence:true
   validates :description, presence:true, length: {maximum:200}
@@ -19,4 +21,9 @@ class Workshop < ActiveRecord::Base
   has_many :participants, through: :workshop_participants
 
   has_many :materials, class_name: "WorkshopMaterial"
+  has_many :activities, class_name: "WorkshopActivity"
+
+  def opened?
+    self.status == OPENED
+  end
 end

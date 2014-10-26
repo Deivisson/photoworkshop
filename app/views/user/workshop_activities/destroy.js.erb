@@ -1,0 +1,4 @@
+<% unless @workshop_activity.errors.any? %>
+	$("#activity-<%= @workshop_activity.id %>").remove();
+	flashNoticeMessage("<%= t('messages.destroyed_record') %>");
+<% end %>

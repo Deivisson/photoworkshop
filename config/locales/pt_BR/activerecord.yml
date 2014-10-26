@@ -61,3 +61,7 @@ pt_BR:
       workshop_material:
         description: "Descrição"
         attachment: "Arquivo"
+      workshop_activity:
+        description: "Descrição"
+        details: "Detalhes"
+        limit_date: "Data Limite Entrega"

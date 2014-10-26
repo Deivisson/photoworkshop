@@ -1,8 +1,6 @@
 
 Rails.application.routes.draw do
 
-  resources :workshop_activities
-
   devise_for :admins
   namespace :admin do
     resources :categories
@@ -26,11 +24,14 @@ Rails.application.routes.draw do
     end
     
     resources :workshops do
+      get :open
       resources :workshop_materials, as: :materials, except: [:create,:update,:index,:show]
       resources :workshop_materials, only: [:create,:update]
       resources :workshop_participants, as: :participants, only: [:index,:destroy]
       get "workshop_participants/:user_id/add", to:'workshop_participants#add', :as => :add_participant
       delete "workshop_participants/:user_id/remove", to:'workshop_participants#remove', :as => :remove_participant
+      resources :workshop_activities, as: :activities, except: [:create,:update,:index,:show]
+      resources :workshop_activities, only: [:create,:update]
     end
   end
   

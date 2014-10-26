@@ -1,0 +1,9 @@
+<% if @workshop_activity.errors.any? %>
+	$("#workshop-activities-containter").html("<%= escape_javascript(render 'form') %>")	;
+<% else %>
+	$("#workshop-activities-container").append(
+		"<%= escape_javascript(render partial:'workshop_activity', locals: {workshop_activity:@workshop_activity})%>");
+	$("#workshop-activities-modal-dialog").dialog( "close" );
+	bindWorkshopActivityDialog();
+	flashNoticeMessage("<%= t('messages.created_record') %>");
+<% end %>

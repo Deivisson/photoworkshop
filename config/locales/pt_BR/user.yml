@@ -69,17 +69,28 @@ pt_BR:
         add_new: "Adicionar Workshop"
       show:
         title: "Workshop"
-        activites: "Atividades"
         edit_workshop: "Editar Workshop"
+        open_workshop: "Abrir Workshop"
+        msg_not_opened: '<strong>Atenção, Workshop ainda não está aberto!</strong> Após finalizar todas as configurações, clique no botão acima "Abrir Workshop" e o mesmo ficará visível publicamente. É necessário que esteja aberto para que possa receber solicitação de matrículas.'
+        confirm_open_workshop_msg: "Confirmar Abertura do Workshop? "
       show_participants:
         vacancies_users: "Participantes"
       show_materials:
         materials: "Materiais"
+      show_activities:
+        activities: "Atividades"
+
     workshop_materials:
       new:
         title: 'Novo Material'
       edit:
         title: 'Edição do  Material'
+    workshop_activities:
+      new:
+        title: 'Nova Atividade'
+      edit:
+        title: 'Edição da Atividade'
+
     workshop_participants:
       index:
         title: 'Usuários'

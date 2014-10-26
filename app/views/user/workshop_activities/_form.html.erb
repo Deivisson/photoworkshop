@@ -1,12 +1,15 @@
-<%= semantic_form_for @workshop_activity do |f| %>
+<%= semantic_form_for [:user,@workshop,@workshop_activity], remote:true do |f| %>
   <%= f.inputs do %>
-    <%= f.input :description %>
-    <%= f.input :details %>
-    <%= f.input :status %>
-    <%= f.input :limit_date %>
+    <%= f.input :description,
+    						:input_html => {id:'workshop-activity-description'} %>
+    <%= f.input :details,
+  							:input_html => {rows:10} %>
+    <%= f.input :limit_date,
+    						:as => :string %>
   <% end %>
-
-  <%= f.actions do %>
-    <%= f.action :submit, :as => :input %>
-  <% end %>
+  <br>
+  <br>
+  <div class="actions" style="margin-left:-10px">
+    <%= submit_button f %>
+  </div>
 <% end %>

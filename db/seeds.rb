@@ -37,3 +37,4 @@ categories = %W(Retrato Casamento Street)
 categories.each do |category|
 	Category.where(description:category).first_or_create!
 end
+

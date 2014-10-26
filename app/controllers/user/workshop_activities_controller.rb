@@ -1,4 +1,5 @@
 class User::WorkshopActivitiesController < User::BaseController
+  before_action :set_workshop
   before_action :set_workshop_activity, only: [:show, :edit, :update, :destroy]
 
   # def index
@@ -6,34 +7,37 @@ class User::WorkshopActivitiesController < User::BaseController
   #   respond_with(@workshop_activities)
   # end
 
-  # def show
-  #   respond_with(@workshop_activity)
-  # end
-
-  def new
-    @workshop_activity = WorkshopActivity.new
+  def show
     respond_with(@workshop_activity)
   end
 
-  def edit; end
+  def new
+    @workshop_activity = WorkshopActivity.new
+    respond_with(@workshop_activity,layout:false)
+  end
+
+  def edit
+    respond_with(@workshop_activity,layout:false)
+  end
 
   def create
-    @workshop_activity = WorkshopActivity.new(workshop_activity_params)
+    @workshop_activity = @workshop.activities.build(workshop_activity_params)
     @workshop_activity.save
-    respond_with(@workshop_activity)
   end
 
   def update
     @workshop_activity.update(workshop_activity_params)
-    respond_with(@workshop_activity)
   end
 
   def destroy
     @workshop_activity.destroy
-    respond_with(@workshop_activity)
   end
 
   private
+    def set_workshop
+      @workshop = current_user.owner_workshops.find(params[:workshop_id])
+    end
+
     def set_workshop_activity
       @workshop_activity = WorkshopActivity.find(params[:id])
     end

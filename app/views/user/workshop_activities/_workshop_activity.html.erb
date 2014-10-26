@@ -1,0 +1,15 @@
+<%= content_tag :li, id:"activity-#{workshop_activity.id}" do %>
+  <%= link_to workshop_activity.description, "#" %>
+  <div class="buttons-container">
+  	<%= link_to t('buttons.edit'),
+  							edit_user_workshop_activity_path(@workshop,workshop_activity),
+  							class:"edit-workshop-activity" %>
+  	<span class="separator"></span>
+  	<%= link_to t('buttons.destroy'),
+  							user_workshop_activity_path(@workshop,workshop_activity),
+  							method: :delete,
+  							data: {confirm:t('messages.confirm_destroy')},
+  							remote:true %>
+
+  </div>
+<% end %>

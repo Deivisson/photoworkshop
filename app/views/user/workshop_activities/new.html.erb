@@ -1,5 +1,4 @@
-<h1>New workshop_activity</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', workshop_activities_path %>
+<div id="workshop-activities-containter">
+	<%= content_tag :label,t('.title'), class:'modal-title',id:'modal-title-activity' %>
+	<%= render 'form' %>
+</div>
