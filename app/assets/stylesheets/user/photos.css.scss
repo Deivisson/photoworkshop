@@ -1,44 +1,45 @@
 ul.photos-gallery {
 	li {
-		margin: 20px 0 0 20px;
-		width: 274px;
-		/*height: 284px;*/
-		height: auto;
+		margin: 11px 0 0 15px;
+		padding: 1px;
+		width: 270px;
+		height: 270px;
 		img {
-			/*height: 100%;*/
-			height:  284px;
+			height: 100%;
+			border-radius: 5px; 
+			-moz-border-radius: 5px; 
+			-webkit-border-radius: 5px; 
 			width: 100%;
 		}
+		.fix-info {
+			position: relative;
+	    margin-top: -44px;
+	    h5, h6 {
+	    	color: #fff;
+	    	float: left;
+	    	font-weight: bold;
+	    	text-shadow: 0.1px 0.1px 0.5px #2a2b2d;
+	    	margin: 4px 0 0 2px;
+	    	width: 100%;
+	    }
+	    h5 {
+		    font-size: 18px;
+	    };
+	    h6 {
+	    	font-size: 12px;
+	    	font-weight: normal !important;
+	    }	    
+		};
 		.info {
-			/*border: 1px solid red;*/
 			/*background-color: #000;*/
-			/*visibility: hidden;*/
-			background-color: #F8F8F8;
+			visibility: hidden;
 	    height: 50px;
-	    margin-top: -2px;
-	    /*margin-top: -62px;*/
+	    margin-top: -270px;
 	    opacity: 0.8;
 	    position: relative;
 	    width: 100%;
-	    h5, h6 {
-	    	float: left;
-	    	/*color: #FFF;*/
-	    	
-	    	font-weight: bold;
-	    	/*text-shadow: 1px 1px 0 #000 !important;*/
-	    	margin: 4px 0 0 2px;
-	    }
-	    h5 {
-	    	color: #32a6d3;
-	    	width: 100%;
-	    };
-	    h6 {
-	    	font-size: 11px;
-	    	font-weight: normal !important;
-	    }
 	    span {
 	    	color: #aaa;
-	    	float: right;
 	    	margin: 7px 30px 0 3px;
 	    	text-indent: 20px;
 	    	&.views {

@@ -1,5 +1,9 @@
 pt_BR:
   user:
+    user_resume:
+      photos: Fotos
+      following: "Seguindo"
+      followers: "Seguidores"
     lateral_menu:
       profile: "Perfil"
       photographers: "Fotografos"
@@ -15,8 +19,8 @@ pt_BR:
 
     workshop:
       menu:
-        taught_by_me: "Ministrado por mim"
-        photos: ""
+        as_instructor: "Que eu ministrei"
+        as_student: "Que eu participei"
 
     photos:
       new:

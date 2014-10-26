@@ -1,10 +1,9 @@
 class User::WorkshopsController < User::BaseController
-  
   before_action :set_workshop, only: [:show, :edit, :update, :destroy, :open]
 
   def index
-    @workshops = current_user.owner_workshops
-    respond_with(@workshops)
+    get_index_type
+    @workshops = @type == "instructor" ? current_user.owner_workshops : current_user.my_workshops
   end
 
   def show
@@ -38,7 +37,7 @@ class User::WorkshopsController < User::BaseController
 
   def open
     @workshop.update_attribute(:status,Workshop::OPENED)
-    flash[:notice] = t('.controller.workshop.open.success_on_open')
+    flash[:notice] = t('controller.workshop.open.success_on_open')
     redirect_to user_workshop_path(@workshop)
   end
 
@@ -50,5 +49,14 @@ class User::WorkshopsController < User::BaseController
 
     def workshop_params
       params.require(:workshop).permit(:user_id, :description, :details, :start_date, :end_date, :vacancies_number, :value, :prerequisite, :goal, :target_audience, :term, :image)
+    end
+
+    def get_index_type
+      @type = "instructor"
+      if params[:type].present?
+        @type = params[:type]
+      else
+        @type = "student" unless current_user.owner_workshops.limit(1).any?
+      end
     end
 end

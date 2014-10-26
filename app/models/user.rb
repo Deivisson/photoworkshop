@@ -36,6 +36,10 @@ class User < ActiveRecord::Base
     @following
   end
   
+  def following_count
+    @following_count =  @following_count || following.size
+  end
+
   def following_ids
     self.following.collect{|u| u.id}
   end
@@ -43,6 +47,15 @@ class User < ActiveRecord::Base
   def followers
     User.joins(:user_relations).where("user_relations.user_followed_id = ?",self.id) 
   end
+
+  def followers_count
+    @followers_count = @followers_count || followers.size
+  end
+
+  def photos_count
+    @photos_count = @photos_count || photos.count
+  end
+
 private
 	
 	def create_profile

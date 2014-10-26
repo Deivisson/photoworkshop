@@ -1,0 +1,8 @@
+$("#workshop-list").html("<%= escape_javascript(render 'workshops') %>");
+<% if @type == "instructor" %>
+	$("#menu-workshop-instructor").parent().addClass('current');
+	$("#menu-workshop-student").parent().removeClass('current');
+<% else %>
+	$("#menu-workshop-instructor").parent().removeClass('current');
+	$("#menu-workshop-student").parent().addClass('current');
+<% end %>

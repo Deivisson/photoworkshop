@@ -27,19 +27,42 @@
 		<div class="top-info">
 
 		</div>
-		<div class="user-content">
-			<%= image_tag(current_user.profile.avatar.url(:medium),class:'avatar') %>
-			<%= content_tag :label,class:'user-name' do %>
-				<span><%= current_user.profile.user_name %></span>
-			<% end %>
-		</div>
+		<div class="float-container">
+			<div class="user-content">
+				<%= image_tag(current_user.profile.avatar.url(:medium),class:'avatar') %>
+				<%= content_tag :label,class:'user-name' do %>
+					<span><%= current_user.profile.user_name %></span>
+				<% end %>
+				<span class="user-ranking"><%= "97%" %></span>
+				<ul class="user-resume">
+					<li>
+						<%= content_tag :label, t('user.user_resume.photos') %>
+						<%= content_tag :span do %>
+							<%= link_to current_user.photos_count, user_photos_path %>
+						<% end %>
+					</li>
+					<li>
+						<%= content_tag :label, t('user.user_resume.following') %>
+						<%= content_tag :span do %> 
+							<%= link_to current_user.following_count,following_user_photographers_path %>
+						<% end %>
+					</li>
+					<li>
+						<%= content_tag :label, t('user.user_resume.followers') %>
+						<%= content_tag :span do %> 
+							<%= link_to current_user.followers_count,followers_user_photographers_path %>
+						<% end %>
+					</li>												
+				</ul>
+			</div>
 
-		<!-- Lateral menu -->
-	  <%= content_tag :ul, class:'menu' do %>
-	    <li><%= link_to t('user.lateral_menu.profile'), user_profile_path(0) ,class:'profile' %></li>
-	    <li><%= link_to t('user.lateral_menu.photographers'), user_photographers_path,class:'photographers' %></li>
-	    <li><%= link_to t('user.lateral_menu.workshop'), user_workshops_path ,class:'profile' %></li>
-  	<% end %>
+			<!-- Lateral menu -->
+		  <%= content_tag :ul, class:'menu' do %>
+		    <li><%= link_to t('user.lateral_menu.profile'), user_profile_path(0) ,class:'profile' %></li>
+		    <li><%= link_to t('user.lateral_menu.photographers'), user_photographers_path,class:'photographers' %></li>
+		    <li><%= link_to t('user.lateral_menu.workshop'), user_workshops_path ,class:'profile' %></li>
+	  	<% end %>
+  	</div>
 	</div>
 	<div class="main-content-area">
 		<%= yield %>

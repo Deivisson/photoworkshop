@@ -1,0 +1,16 @@
+<ul class="workshops-items">
+	<% @workshops.each do |workshop| %>
+		<li>
+			<div class="ws-image">
+				<%= image_tag(workshop.image.url(:medium)) %>
+			</div>
+			<div class="ws-details">
+				<h1><%= workshop.description %></h1>
+				<p><%= workshop.details %></p>
+				<div class="workshop-resume">
+
+				</div>
+			</div>
+		</li>
+	<% end %>
+</ul>

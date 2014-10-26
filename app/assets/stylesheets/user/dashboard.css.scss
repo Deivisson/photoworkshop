@@ -3,70 +3,128 @@ body {
 }
 
 .left-col {
-	background-color: #1B1E24;
+	background-color: #E5E5E5;/*#1B1E24;*/
 	bottom: 0px;
 	position: fixed;
 	top: 0;
 	width: 250px;
 	.top-info {
-		background-color: #22262E;
-		height: 50px;
+		background-color: #F8F8F8	 ;/*#22262E;*/
+		height: 45px;
 		float: left;
 		width: 100%
 	}
-	.user-content {
+	.float-container {
+		background-color: #1B1E24;
+		border-radius: 5px; 
+		-moz-border-radius: 5px; 
+		-webkit-border-radius: 5px; 		
 		float: left;
-		height: 140px;
-		width: 100%;
-		img.avatar {
-			border-radius: 50%;
-			border: 1px solid #131519;
+		margin: 15px 10px 10px 10px;
+		padding-bottom: 20px;
+		width: 237px;
+		.user-content {
 			float: left;
-			height: 65px;
-			margin: 15px 0 0 15px;
-			width: 65px;
-		}
-		label.user-name {
-			color: #FFF;
-			float: left;
-			font-size: 19px;
-			margin: 20px 0 0 10px;
-			span {
-				font-weight: bold;
-			}
-		}
-	}
-	ul.menu {
-		float: left;
-		width: 100%;
-		list-style: none;
-		li {
-			float: left;
-			margin-bottom: 2px;
-			padding: 0;
+			height: auto;
+			margin-bottom: 10px;
 			width: 100%;
-			a {
-				background-image: url(/assets/user/dashboard_menu_sprite.png) ;
-				background-repeat: no-repeat;
-				color: #999999;
-				font-size: 12px;
-				display: block;
+			img.avatar {
+				border-radius: 50%;
+				border: 1px solid #131519;
 				float: left;
-				height: 24px;
-				line-height: 24px;
-				padding: 2px 0 2px 0;
-				text-decoration: none;
-				text-indent: 60px;
-				text-transform: uppercase;
-				width: 100%;
-				&.profile {background-position: 20px 0px;}
-				&.photographers {background-position: 20px -102px;}
-				&.upload {background-position: 20px -51px;}
+				height: 65px;
+				margin: 15px 0 0 7px;
+				width: 65px;
 			}
-			&:hover a {color: #FFF} ;
-			/*&:hover span.profile {background-position: 20px -24px;}
-			&:hover span.photographers {background-position: 38px -127px;}
-			&:hover span.upload {background-position: 25px -77px;}*/
+			label.user-name {
+				color: #FFF;
+				float: left;
+				font-size: 19px;
+				margin: 20px 0 0 10px;
+				span {
+					display: block;
+					font-weight: normal;
+					float: left;
+				}
+			};
+			span.user-ranking {
+				color: #999999;
+				display: block;
+				font-size: 28px;
+				float: left;
+				text-align: center;
+				margin-top: 10px;
+				width: 160px;
+			}
+			ul.user-resume {
+				border-bottom: 1px solid #4f4f4f;
+		    float: left;
+		    height: auto;
+		    margin: 10px 0 10px 0;
+		    width: 99%;
+				li {
+					float: left;
+					margin: 10px 0 10px 0;
+					width: 33.33%;
+					label {
+						color: #999999;
+						float: left;
+						font-size: 11px;
+						font-weight: normal;
+						text-transform: uppercase;
+						text-align: center;
+						width: 100%;
+					};
+					span {
+						color: #32a6d3;
+						float: left;
+						font-size: 25px;
+						text-align: center;
+						margin-top: 10px;
+						width: 100%;
+						a {
+							color:#32a6d3;
+							text-decoration: none;
+							&:hover {
+								text-decoration:underline;
+							}; 
+						}
+					}
+				}
+			}
+		}
+		ul.menu {
+			float: left;
+			width: 100%;
+			list-style: none;
+			li {
+				float: left;
+				margin-bottom: 2px;
+				padding: 0;
+				width: 100%;
+				a {
+					background-image: url(/assets/user/dashboard_menu_sprite.png) ;
+					background-repeat: no-repeat;
+					color: #999999;
+					font-size: 12px;
+					display: block;
+					float: left;
+					height: 24px;
+					line-height: 24px;
+					padding: 2px 0 2px 0;
+					text-decoration: none;
+					text-indent: 60px;
+					text-transform: uppercase;
+					width: 100%;
+					&.profile {background-position: 20px 0px;}
+					&.photographers {background-position: 20px -102px;}
+					&.upload {background-position: 20px -51px;}
+				}
+				&:hover a {color: #FFF} ;
+				/*&:hover span.profile {background-position: 20px -24px;}
+				&:hover span.photographers {background-position: 38px -127px;}
+				&:hover span.upload {background-position: 25px -77px;}*/
+			}
 		}
 	}
 }
@@ -80,9 +138,9 @@ body {
 }
 
 ul.toolbar {
-	background-color: #FFF;
+	background-color: #F8F8F8;
 	box-shadow:1px 2px 5px #DBD5D9;
-	height: 50px;
+	height: 45px;
 	list-style: none;
 	left: 250px;
 	right: 0px;
@@ -149,7 +207,7 @@ ul.toolbar {
 				float: left;
 				font-weight: bold;
 				height: 100%;
-				line-height: 57px;
+				line-height: 47px;
 				padding: 0 20px 0 20px;
 				text-decoration: none;
 				text-transform: uppercase;

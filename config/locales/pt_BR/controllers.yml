@@ -1,5 +1,5 @@
 pt_BR:
-	controller:
-		workshop:
-			open:
-				success_on_open: "Workshop aberto com sucesso!"
+  controller:
+    workshop:
+      open:
+        success_on_open: "Workshop aberto com sucesso!"

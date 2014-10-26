@@ -1,33 +1,9 @@
-<%= render partial:"menu_workshop", locals: {current_menu:''} %>
+<%= render partial:"menu_workshop", locals: {current_menu:@type} %>
 <%= content_for :toolbar_buttons do %>
   <%= link_to t('.add_new'),
               new_user_workshop_path, 
               class:"common-button edit-button" %>
 <% end %>
-
-<ul class="workshops-items">
-	<% @workshops.each do |workshop| %>
-		<li>
-			<div class="ws-image">
-				<%= image_tag(workshop.image.url(:medium)) %>
-			</div>
-			<div class="ws-details">
-				<h1><%= link_to workshop.description, user_workshop_path(workshop) %></h1>
-				<p><%= workshop.details %></p>
-				<div class="workshop-resume">
-					<span class="period">
-						<%= t('user.workshops.period',
-							start_date:format_date(workshop.start_date),
-							end_date:format_date(workshop.end_date)) %>
-					</span>
-					<span class="vacancies">
-						<%= t('user.workshops.vacancies_number',vacancies_number:workshop.vacancies_number) %>
-					</span>
-					<span class="value">
-						<%= t('user.workshops.workshop_value', workshop_value:number_to_currency(workshop.value)) %>
-					</span>
-				</div>
-			</div>
-		</li>
-	<% end %>
-</ul>
+<div id="workshop-list">
+	<%= render 'workshops' %>
+</div>

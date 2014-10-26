@@ -4,9 +4,11 @@
     <li>
     	<%= link_to image_tag(photo.picture.url(:medium)), user_photo_path(photo), 
 									class:'photo-picture' %>
-			<div class="info">
+			<div class="fix-info">
 				<h5><%= photo.title.truncate(30) %></h5>
-				<h6><%= photo.category.description.truncate(30) %></h6>
+				<h6><%= photo.category.description.truncate(30) %></h6>				
+			</div>
+			<div class="info">
 				<span class="views"><%= photo.views %></span>
 				<span class="likes"><%= photo.likes.count %></span>
 			</div>
