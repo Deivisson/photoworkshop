@@ -8,6 +8,7 @@ class User::PhotosController < User::BaseController
 
   def show
     @photo.update_views! if @photo.user_id != current_user.id
+    respond_with(@photo,layout:'user/show_photo')
   end
 
   def new

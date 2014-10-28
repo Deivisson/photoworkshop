@@ -30,28 +30,44 @@ ul.photos-gallery {
 	    	font-weight: normal !important;
 	    }	    
 		};
-		.info {
-			/*background-color: #000;*/
+		.gallery-photo-info {
 			visibility: hidden;
+	    float: left;
 	    height: 50px;
-	    margin-top: -270px;
-	    opacity: 0.8;
+	    margin-top: -265px;
 	    position: relative;
 	    width: 100%;
-	    span {
-	    	color: #aaa;
-	    	margin: 7px 30px 0 3px;
-	    	text-indent: 20px;
-	    	&.views {
-	    		background: url("/assets/user/views_pb_16.png") no-repeat 0 -2px;
-	    	}
-	    	&.likes {
-	    		background: url("/assets/user/like_pb_16.png") no-repeat 0 -1px;
-	    	}
+	    .info-item {
+				background-color: #1B1E24;
+				border-radius: 5px; 
+				-moz-border-radius: 5px; 
+				-webkit-border-radius: 5px;				
+		    float: right;
+		    height: 54px;
+		    margin: 4px 5px 15px 0;
+		    opacity: 0.9;
+		    width: auto;
+		    color: #fff;
+		    span {
+		    	float: left;
+	    		font-size: 12px;
+			    text-indent: 0px !important;  
+			    margin: 5px 0 0 0;
+			    text-align: center;
+	    		width: 100%;
+		    };
+		    h1 {
+		    	float: left;
+					font-size: 30px;
+			    text-align: center;
+			    margin: 0px;
+			    margin-top: 2px;
+			    width: 100%;
+		    }
 	    }
 		}
 
-		&:hover .info	{
+		&:hover .gallery-photo-info	{
 			visibility: visible;
 
 		};
@@ -121,3 +137,9 @@ input.camera-field {
 	};
 }
 
+.photo-show-extra-content {
+	width: 100%;
+	background-color: #FFF;
+	height: 500px;
+	position: absolute;
+}

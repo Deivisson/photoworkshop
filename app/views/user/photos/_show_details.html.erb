@@ -1,66 +1,73 @@
-<div class="photo-container" id="photo-container">
-  <%= link_to "<<<<<",user_photo_path(@photo,act:'previous'),remote:true %> 
-  <%= link_to ">>>>>",user_photo_path(@photo,act:'next'),remote:true %> 
-  
-  <%= image_tag(@photo.picture.url(:medium),id:'photo-picture',class:"photo-picture #{@photo.orientation}") %>
-  <ul class="photo-bar" id="photo-toolbar">
-    <li>
-      <div id="like-links"> <%= render 'like_links' %> </div>
-    </li>
-  </ul>
-</div>
-<div class="photo-info">
-  <div class="content-info">
-    <%= image_tag(current_user.profile.avatar.url(:medium),class:'avatar') %>
-    <%= link_to current_user.profile.user_name, "#",class:'user-name' %>
-    <%= content_tag :span, 
-          t(".posting",category:@photo.category.description,
-          created_at:format_date(@photo.created_at,)),
-          class:'posting-label' %>
-  </div>
-  
-  <div class="content-info">
-    <ul class="counts">
+<%= content_tag :div, style:'float:left;background-color:red' do %>
+  <div class="photo-container" id="photo-container" style:'position:fixed'>
+    <%= link_to "<<<<<",user_photo_path(@photo,act:'previous'),remote:true %> 
+    <%= link_to ">>>>>",user_photo_path(@photo,act:'next'),remote:true %> 
+    
+    <%= image_tag(@photo.picture.url(:medium),id:'photo-picture',class:"photo-picture #{@photo.orientation}") %>
+    <ul class="photo-bar" id="photo-toolbar">
       <li>
-        <%= content_tag :label,t(".views"),class:'section-label', style:'left:0' %>
-        <%= content_tag :span,@photo.views, class:"views-label" %>
-      </li>
-      <li class="last-item">
-        <%= content_tag :label,t(".likes"),class:'section-label' %>
-        <%= content_tag :span,@photo.likes.count, class:"views-label",id:'likes-count' %>
+        <div id="like-links"> <%= render 'like_links' %> </div>
       </li>
     </ul>
-  </div>          
-  <div class="content-info photo-exif">
-    <%= content_tag :label,t(".exif"),class:'section-label' %>
-    <br><br>
-    <h1><%= @photo.camera %></h1>
-    <h4><%= @photo.lens %></h4>
-    <%= content_tag :ul do %>
-      <li>
-        <%= content_tag :span, "", class:"aperture" %>
-        <%=content_tag :label,@photo.aperture  %>
-      </li>
-      <li>
-        <%= content_tag :span, "", class:"focal-lenght" %>
-        <%=content_tag :label,@photo.focal_lenght  %>
-      </li>
-      <li>
-        <%= content_tag :span, "", class:"shutter-speed" %>
-        <%=content_tag :label,@photo.shutter_speed  %>
-      </li>
-      <li>
-        <%= content_tag :span, "", class:"iso" %>
-        <%=content_tag :label,@photo.iso  %>
-      </li>
-    <% end %>
-  </div>  
-  <div class="content-info">
-    <%= content_tag :label,t(".tags"),class:'section-label' %>
-    <%= content_tag :p,"",class:'tags-label' do %>
-        <%- @photo.tags.split(",").each do |tag| %>
-          <%= link_to tag, "#" %>
-        <% end %>
-    <% end %>
-  </div>         
-</div>
+  </div>
+  <div class="photo-show-extra-content">
+  sa
+  </div>
+  <div class="photo-info">
+    <div class="content-info">
+      <%= image_tag(current_user.profile.avatar.url(:medium),class:'avatar') %>
+      <%= link_to current_user.profile.user_name, "#",class:'user-name' %>
+      <%= content_tag :span, 
+            t(".posting",category:@photo.category.description,
+            created_at:format_date(@photo.created_at,)),
+            class:'posting-label' %>
+    </div>
+    <div class="content-info">
+      <ul class="counts">
+        <li>
+          <%= content_tag :label,t(".views"),class:'section-label', style:'left:0' %>
+          <%= content_tag :span,@photo.views, class:"views-label" %>
+        </li>
+        <li class="last-item">
+          <%= content_tag :label,t(".likes"),class:'section-label' %>
+          <%= content_tag :span,@photo.likes.count, class:"views-label",id:'likes-count' %>
+        </li>
+      </ul>
+    </div>          
+    <div class="content-info photo-exif">
+      <%= content_tag :label,t(".exif"),class:'section-label' %>
+      <br><br>
+      <h1><%= @photo.camera %></h1>
+      <h4><%= @photo.lens %></h4>
+      <%= content_tag :ul do %>
+        <li>
+          <%= content_tag :span, "", class:"aperture" %>
+          <%=content_tag :label,@photo.aperture  %>
+        </li>
+        <li>
+          <%= content_tag :span, "", class:"focal-lenght" %>
+          <%=content_tag :label,@photo.focal_lenght  %>
+        </li>
+        <li>
+          <%= content_tag :span, "", class:"shutter-speed" %>
+          <%=content_tag :label,@photo.shutter_speed  %>
+        </li>
+        <li>
+          <%= content_tag :span, "", class:"iso" %>
+          <%=content_tag :label,@photo.iso  %>
+        </li>
+      <% end %>
+    </div>  
+    <div class="content-info">
+      <%= content_tag :label,t(".tags"),class:'section-label' %>
+      <%= content_tag :p,"",class:'tags-label' do %>
+          <%- @photo.tags.split(",").each do |tag| %>
+            <%= link_to tag, "#" %>
+          <% end %>
+      <% end %>
+    </div> 
+  </div>
+<% end %>
+
+
+  

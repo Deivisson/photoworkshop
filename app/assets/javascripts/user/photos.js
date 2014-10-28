@@ -19,6 +19,7 @@ $(document).on('ready page:load', function (){
 				$(".ui-widget-content").addClass("ui-widget-content-full");
 			  dialog_form.load(url + ' #photo-show-modal-container', function(){
 			  		jQuery('body').css('overflow','hidden');
+
 			  		$(".ui-dialog-titlebar").css("display","none");
 			  		$(".ui-widget-overlay").css("opacity","1");
 			  		adjustLayout();
@@ -46,6 +47,9 @@ function adjustLayout(){
 	 var h = $("#photo-container").height();
 	 $("#photo-picture").css("left",(w/2) - ($("#photo-picture").width()/2));
 	 $("#photo-toolbar").css("left",(w/2) - ($("#photo-toolbar").width()/2));
+
+	 $(".photo-show-extra-content").css("top", h + 10);
+	 $(".photo-show-extra-content").css("width",w - 40);
 	 
 }
 

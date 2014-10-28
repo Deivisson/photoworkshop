@@ -1,16 +1,22 @@
 <%= render partial:"user/menu_profile", locals: {current_menu:'photos'} %>
-<%= content_tag :ul, class:'photos-gallery' do %>
+<%= content_tag :ul, class:'photos-gallery',id:'photos-gallery' do %>
   <% @photos.each do |photo| %>
-    <li>
+    <li class="photo-item-container">
     	<%= link_to image_tag(photo.picture.url(:medium)), user_photo_path(photo), 
 									class:'photo-picture' %>
 			<div class="fix-info">
 				<h5><%= photo.title.truncate(30) %></h5>
 				<h6><%= photo.category.description.truncate(30) %></h6>				
 			</div>
-			<div class="info">
-				<span class="views"><%= photo.views %></span>
-				<span class="likes"><%= photo.likes.count %></span>
+			<div class="gallery-photo-info">
+				<div class="info-item">
+					<span>Visualizações</span>
+					<%= content_tag :h1, photo.views %>
+				</div>
+				<div class="info-item">
+					<span>Curtidas</span>
+					<%= content_tag :h1, photo.likes.count %>
+				</div>
 			</div>
     </li>
   <% end %>

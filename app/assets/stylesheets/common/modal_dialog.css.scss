@@ -36,6 +36,9 @@
     border-radius: 0px 0px 0px 0px; 
 		-moz-border-radius: 0px 0px 0px 0px; 
 		-webkit-border-radius: 0px 0px 0px 0px; 
+		position: fixed;
+		top: 0;
+		overflow-y: visible;
 }
 
 .ui-dialog .ui-dialog-titlebar {
@@ -144,6 +147,7 @@
 		padding: 10px;
 		position: fixed;
 		width: 280px;
+		z-index: -999;
 		.content-info {
 			border-bottom: 1px solid #393B40;
 			float: left;
