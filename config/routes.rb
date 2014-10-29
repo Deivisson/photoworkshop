@@ -33,6 +33,7 @@ Rails.application.routes.draw do
       resources :workshop_activities, as: :activities, except: [:create,:update,:index,:show]
       resources :workshop_activities, only: [:create,:update]
     end
+    resources :photo_comments
   end
   
   scope :home do

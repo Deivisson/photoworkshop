@@ -6,5 +6,6 @@ class CreateWorkshopMaterials < ActiveRecord::Migration
       t.attachment :attachment
       t.timestamps
     end
+    add_foreign_key :workshop_materials, :workshops, name:"workshop_materials_workshop"
   end
 end

@@ -49,7 +49,7 @@ function adjustLayout(){
 	 $("#photo-toolbar").css("left",(w/2) - ($("#photo-toolbar").width()/2));
 
 	 $(".photo-show-extra-content").css("top", h + 10);
-	 $(".photo-show-extra-content").css("width",w - 40);
+	 $(".photo-show-extra-content").css("width",w - 20);
 	 
 }
 

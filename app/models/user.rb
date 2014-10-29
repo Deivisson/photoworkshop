@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
   #Workshops that the user is a participant
   has_many :workshop_participants
   has_many :my_workshops, through: :workshop_participants
+  has_many :photo_comments
 
   after_create :create_profile
 

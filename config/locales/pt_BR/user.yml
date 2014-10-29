@@ -35,7 +35,8 @@ pt_BR:
         likes: "Curtidas"
         exif: "Exif"
         tags: "Tags"
-
+      show_photo_comments:
+        comments: "Comentários"
     user_profiles:
       edit:
         title: "Atualização de Perfil"

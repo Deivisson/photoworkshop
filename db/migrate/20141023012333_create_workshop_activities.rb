@@ -8,5 +8,6 @@ class CreateWorkshopActivities < ActiveRecord::Migration
       t.date :limit_date
       t.timestamps
     end
+    add_foreign_key :workshop_activities, :workshops, name:"workshop_activities_workshop"
   end
 end

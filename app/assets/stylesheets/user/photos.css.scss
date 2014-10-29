@@ -134,12 +134,47 @@ input.camera-field {
 			visibility: hidden;
 			font-size: 10px;
 		}
-	};
+	}	
 }
 
 .photo-show-extra-content {
 	width: 100%;
-	background-color: #FFF;
+	background-color: #000;
 	height: 500px;
+	left: 0;
 	position: absolute;
+	padding: 10px 0 0 20px;
+	.photo-comments {
+		/*border: 1px solid #FFF;*/
+		height: 400px;
+		width: 700px;
+		.form-container {
+			/*border: 1px solid #EEE;*/
+			width: 100%;
+			h1 {
+				color: #fff;
+				font-weight: bold;
+				font-size: 14px;
+				text-transform: uppercase;
+				margin-bottom: 10px;
+				width: 100%;
+			};
+			img.avatar {
+				border: 1px solid #131519;
+				border-radius: 5px; 
+				-moz-border-radius: 5px; 
+				-webkit-border-radius: 5px;				
+		    float: left;
+		    height: 65px;
+		    margin: 0px 0 0 7px;
+		    width: 65px;
+			};
+			form {
+				float: left;
+				margin: 0 0 0 17px;
+				width: 80%; 
+			}
+		}
+	}
+
 }

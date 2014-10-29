@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141023012333) do
+ActiveRecord::Schema.define(version: 20141029005518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,17 @@ ActiveRecord::Schema.define(version: 20141023012333) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "photo_comments", force: true do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "photo_id",   null: false
+    t.text     "content",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "photo_comments", ["photo_id"], name: "index_photo_comments_on_photo_id", using: :btree
+  add_index "photo_comments", ["user_id"], name: "index_photo_comments_on_user_id", using: :btree
 
   create_table "photo_exifs", force: true do |t|
     t.integer  "photo_id",                  null: false
@@ -234,6 +245,9 @@ ActiveRecord::Schema.define(version: 20141023012333) do
   add_index "workshops", ["user_id"], name: "index_workshops_on_user_id", using: :btree
 
   add_foreign_key "cities", "states", name: "cities_states"
+
+  add_foreign_key "photo_comments", "photos", name: "photo_comments_photo"
+  add_foreign_key "photo_comments", "users", name: "photo_comments_user"
 
   add_foreign_key "photo_exifs", "photos", name: "fk_photos_exifs"
 

@@ -10,9 +10,11 @@
       </li>
     </ul>
   </div>
+  
   <div class="photo-show-extra-content">
-  sa
+    <%= render "show_photo_comments" %>
   </div>
+  
   <div class="photo-info">
     <div class="content-info">
       <%= image_tag(current_user.profile.avatar.url(:medium),class:'avatar') %>
