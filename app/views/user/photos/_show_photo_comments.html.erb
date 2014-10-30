@@ -2,6 +2,9 @@
 	<div class="form-container">
 		<%= content_tag :h1, t('.comments') %>
 		<%= image_tag(current_user.profile.avatar(:medium),class:'avatar') %>
-		<%= render '/user/photo_comments/form' %>
+		<div id="comment-form"><%= render '/user/photo_comments/form' %></div>
 	</div>
+	<ul id="photo-list-comments">
+		<%= render @photo.comments %>
+	</ul>
 </div>

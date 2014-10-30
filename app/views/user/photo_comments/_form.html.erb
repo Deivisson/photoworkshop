@@ -1,11 +1,8 @@
-<%= semantic_form_for [:user,@photo_comment] do |f| %>
+<%= semantic_form_for [:user,@photo,PhotoComment.new], remote:true do |f| %>
   <%= f.inputs do %>
     <%= f.input :content,
-  							:input_html => {rows:5},
+  							:input_html => {rows:3},
   							:label => false %>
   <% end %>
-
-  <%= f.actions do %>
-    <%= f.action :submit, :as => :input %>
-  <% end %>
+  <%= submit_tag t('buttons.comment'), class:'submit-button' %>
 <% end %>

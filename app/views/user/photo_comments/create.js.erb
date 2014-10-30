@@ -1,0 +1,8 @@
+<% if  @photo_comment.errors.any? %>
+
+<% else %>
+	$("#photo-list-comments").prepend("<%= escape_javascript(
+			render partial:'/user/photo_comments/photo_comment',locals: {photo_comment:@photo_comment}) %>");
+
+	$("#comment-form").html("<%= escape_javascript(render '/user/photo_comments/form') %>");
+<% end %>

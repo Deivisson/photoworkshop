@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   namespace :user do 
     root "dashboard#index"
     resources :dashboard, :only => [:index]
-    resources :photos
+    resources :photos do 
+      resources :photo_comments, only: [:create,:destroy]
+    end
     resources :user_profiles, :as => :profiles, :only => [:show,:edit,:update]
     get "photo_likes/:photo_id/like", to: "photo_likes#like", :as => :photo_like
     get "photo_likes/:photo_id/unlike", to: "photo_likes#unlike", :as => :photo_unlike
@@ -33,7 +35,7 @@ Rails.application.routes.draw do
       resources :workshop_activities, as: :activities, except: [:create,:update,:index,:show]
       resources :workshop_activities, only: [:create,:update]
     end
-    resources :photo_comments
+    
   end
   
   scope :home do

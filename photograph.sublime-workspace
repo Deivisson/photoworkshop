@@ -4,12 +4,36 @@
 		"selected_items":
 		[
 			[
-				"visi",
-				"visible"
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"pad",
+				"padding"
 			],
 			[
 				"tex",
-				"text-align"
+				"text-transform"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"wo",
+				"workshop_materials"
+			],
+			[
+				"wi",
+				"workshop_participants"
+			],
+			[
+				"pho",
+				"photo_comments"
+			],
+			[
+				"visi",
+				"visible"
 			],
 			[
 				"margin",
@@ -20,24 +44,12 @@
 				"text-indent"
 			],
 			[
-				"mar",
-				"margin"
-			],
-			[
 				"ma",
 				"max-width"
 			],
 			[
 				"text",
 				"text-indent"
-			],
-			[
-				"pad",
-				"padding-right"
-			],
-			[
-				"pho",
-				"photos_count"
 			],
 			[
 				"fol",
@@ -64,10 +76,6 @@
 				"workshop"
 			],
 			[
-				"wo",
-				"workshop_activity"
-			],
-			[
 				"deta",
 				"Detalhes"
 			],
@@ -90,10 +98,6 @@
 			[
 				"pa",
 				"participant"
-			],
-			[
-				"font",
-				"font-size"
 			],
 			[
 				"marg",
@@ -210,10 +214,6 @@
 			[
 				"di",
 				"display"
-			],
-			[
-				"wi",
-				"width"
 			],
 			[
 				"ci",
@@ -520,6 +520,30 @@
 	"buffers":
 	[
 		{
+			"file": "app/views/user/photos/_show_photo_comments.html.erb",
+			"settings":
+			{
+				"buffer_size": 230,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/user/photo_comments/_form.html.erb",
+			"settings":
+			{
+				"buffer_size": 264,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/user/photos_controller.rb",
+			"settings":
+			{
+				"buffer_size": 1837,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "app/assets/javascripts/user/photos.js",
 			"settings":
 			{
@@ -528,74 +552,18 @@
 			}
 		},
 		{
-			"file": "app/assets/stylesheets/user/photos.css.scss",
-			"settings":
-			{
-				"buffer_size": 2658,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/user/photos_controller.rb",
-			"settings":
-			{
-				"buffer_size": 1799,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/stylesheets/common/modal_dialog.css.scss",
-			"settings":
-			{
-				"buffer_size": 5429,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/stylesheets/user/dashboard.css.scss",
-			"settings":
-			{
-				"buffer_size": 4818,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "config/locales/pt_BR/user.yml",
 			"settings":
 			{
-				"buffer_size": 2997,
+				"buffer_size": 3055,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/user/photos/index.html.erb",
+			"file": "app/assets/stylesheets/user/photos.css.scss",
 			"settings":
 			{
-				"buffer_size": 779,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/user/photos/show.html.erb",
-			"settings":
-			{
-				"buffer_size": 98,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/user/photos/_show_details.html.erb",
-			"settings":
-			{
-				"buffer_size": 2628,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/layouts/user/show_photo.html.erb",
-			"settings":
-			{
-				"buffer_size": 316,
+				"buffer_size": 3300,
 				"line_ending": "Unix"
 			}
 		}
@@ -603,7 +571,7 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 203.0,
+		"height": 276.0,
 		"selected_items":
 		[
 			[
@@ -648,15 +616,31 @@
 	},
 	"file_history":
 	[
-		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/common/modal_dialog.css.scss",
-		"/home/deivisson/Projects/ruby/photograph/app/views/layouts/user/dashboard.html.erb",
-		"/home/deivisson/Projects/ruby/photograph/app/views/user/photos/index.html.erb",
+		"/home/deivisson/Projects/ruby/photograph/config/routes.rb",
+		"/home/deivisson/Projects/ruby/photograph/app/views/user/photos/_show_details.html.erb",
+		"/home/deivisson/Projects/ruby/photograph/app/views/user/photos/_form.html.erb",
+		"/home/deivisson/Projects/ruby/photograph/app/models/photo_comment.rb",
 		"/home/deivisson/Projects/ruby/photograph/app/models/user.rb",
+		"/home/deivisson/Projects/ruby/photograph/app/models/photo.rb",
+		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/user/photos.css.scss",
+		"/home/deivisson/Projects/ruby/photograph/app/views/user/photos/show.html.erb",
+		"/home/deivisson/Projects/ruby/photograph/app/views/user/photos/_show_photo_coments.html.erb",
+		"/home/deivisson/Projects/ruby/photograph/db/migrate/20141029005518_create_photo_comments.rb",
+		"/home/deivisson/Projects/ruby/photograph/db/migrate/20141023012333_create_workshop_activities.rb",
+		"/home/deivisson/Projects/ruby/photograph/db/migrate/20141013015551_create_workshop_materials.rb",
+		"/home/deivisson/Projects/ruby/photograph/db/migrate/20141012215439_create_workshop_participants.rb",
+		"/home/deivisson/Projects/ruby/photograph/config/locales/pt_BR/user.yml",
+		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/user/dashboard.css.scss",
+		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/common/modal_dialog.css.scss",
+		"/home/deivisson/Projects/ruby/photograph/app/controllers/user/photos_controller.rb",
+		"/home/deivisson/Projects/ruby/photograph/app/assets/javascripts/user/photos.js",
+		"/home/deivisson/Projects/ruby/photograph/app/views/layouts/user/show_photo.html.erb",
+		"/home/deivisson/Projects/ruby/photograph/app/views/user/photos/index.html.erb",
+		"/home/deivisson/Projects/ruby/photograph/app/views/layouts/user/dashboard.html.erb",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshops/_my_workshops.html.erb",
 		"/home/deivisson/Projects/ruby/photograph/app/controllers/user/workshops_controller.rb",
 		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/common/buttons.css.scss",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshops/index.js.erb",
-		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/user/photos.css.scss",
 		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/user/photographers.css.scss",
 		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/common/base.css.scss",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/user_profiles/show.html.erb",
@@ -664,14 +648,10 @@
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshops/_menu_workshop.html.erb",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshops/_owner_workshops.html.erb",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshops/index.html.erb",
-		"/home/deivisson/Projects/ruby/photograph/config/locales/pt_BR/user.yml",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshops/_workshops.html.erb",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshops/_owner_workshop.html.erb",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshops/_my_workshop.html.erb",
-		"/home/deivisson/Projects/ruby/photograph/app/views/user/photos/show.html.erb",
 		"/home/deivisson/Projects/ruby/photograph/app/controllers/user/user_profiles_controller.rb",
-		"/home/deivisson/Projects/ruby/photograph/app/controllers/user/photos_controller.rb",
-		"/home/deivisson/Projects/ruby/photograph/config/routes.rb",
 		"/home/deivisson/Projects/ruby/photograph/config/locales/pt_BR/controllers.yml",
 		"/home/deivisson/Projects/ruby/photograph/app/models/workshop.rb",
 		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/common/alerts.css.scss",
@@ -680,7 +660,6 @@
 		"/home/deivisson/Projects/ruby/photograph/test/fixtures/users.yml",
 		"/home/deivisson/Projects/ruby/photograph/app/assets/javascripts/common/base.js",
 		"/home/deivisson/Projects/ruby/photograph/app/assets/javascripts/user.js",
-		"/home/deivisson/Projects/ruby/photograph/app/assets/javascripts/user/photos.js",
 		"/home/deivisson/Projects/ruby/photograph/app/assets/javascripts/common/flash_messages.js",
 		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/user/alert.css.scss",
 		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/user.scss",
@@ -694,7 +673,6 @@
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_materials/destroy.js.erb",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_materials/update.js.erb",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshops/_show_activities.html.erb",
-		"/home/deivisson/Projects/ruby/photograph/db/migrate/20141023012333_create_workshop_activities.rb",
 		"/home/deivisson/Projects/ruby/photograph/config/locales/pt_BR/activerecord.yml",
 		"/home/deivisson/Projects/ruby/photograph/app/controllers/user/workshop_materials_controller.rb",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_activities/edit.html.erb",
@@ -709,7 +687,6 @@
 		"/home/deivisson/Projects/ruby/photograph/app/models/workshop_activity.rb",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshops/_form.html.erb",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshops/_show_materials.html.erb",
-		"/home/deivisson/Projects/ruby/photograph/db/migrate/20141013015551_create_workshop_materials.rb",
 		"/home/deivisson/Projects/ruby/photograph/db/seeds.rb",
 		"/home/deivisson/Projects/ruby/photograph/db/permissoes.yml",
 		"/home/deivisson/Projects/ruby/photograph/config/initializers/inflections.rb",
@@ -726,7 +703,6 @@
 		"/home/deivisson/Projects/ruby/photograph/db/migrate/20140831024329_add_avatar_and_user_name_to_user_profiles.rb",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_participants/add.js.erb",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_participants/remove.js.erb",
-		"/home/deivisson/Projects/ruby/photograph/app/assets/stylesheets/user/dashboard.css.scss",
 		"/home/deivisson/Projects/ruby/photograph/app/views/user/workshop_participants/_users.html.erb",
 		"/home/deivisson/Projects/ruby/kativeme/app/assets/javascripts/company/base.js",
 		"/home/deivisson/Projects/ruby/kativeme/app/assets/stylesheets/common/base.scss",
@@ -767,15 +743,7 @@
 		"/home/deivisson/Projects/ruby/sgs/app/views/usuario/categoria_clientes/show.html.erb",
 		"/home/deivisson/Projects/ruby/sgs/app/views/usuario/categoria_clientes/_form.html.erb",
 		"/home/deivisson/Projects/ruby/sgs/db/migrate/20141019184006_add_cnpj_categoria_apelido_to_clientes.rb",
-		"/home/deivisson/Projects/ruby/sgs/app/views/usuario/cliente_contatos/show.html.erb",
-		"/home/deivisson/Projects/ruby/sgs/db/migrate/20141019180642_create_categoria_clientes.rb",
-		"/home/deivisson/Projects/ruby/sgs/app/views/usuario/cliente_contatos/_form.html.erb",
-		"/home/deivisson/Projects/ruby/sgs/app/views/layouts/cadastros_basicos.html.erb",
-		"/home/deivisson/Projects/ruby/sgs/app/controllers/usuario/cliente_contatos_controller.rb",
-		"/home/deivisson/Projects/ruby/sgs/db/migrate/20100225153739_create_clientes.rb",
-		"/home/deivisson/Projects/ruby/sgs/config/database.yml",
-		"/home/deivisson/Projects/ruby/sgs/app/views/usuario/cliente_contatos/edit.html.erb",
-		"/home/deivisson/Projects/ruby/sgs/app/views/usuario/cliente_contatos/new.html.erb"
+		"/home/deivisson/Projects/ruby/sgs/app/views/usuario/cliente_contatos/show.html.erb"
 	],
 	"find":
 	{
@@ -972,86 +940,57 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/assets/javascripts/user/photos.js",
+					"file": "app/views/user/photos/_show_photo_comments.html.erb",
 					"settings":
 					{
-						"buffer_size": 2299,
+						"buffer_size": 230,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1428,
-								1428
+								230,
+								230
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 663.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/assets/stylesheets/user/photos.css.scss",
+					"file": "app/views/user/photo_comments/_form.html.erb",
 					"settings":
 					{
-						"buffer_size": 2658,
+						"buffer_size": 264,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2554,
-								2554
+								160,
+								160
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2261.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/assets/stylesheets/user/photos.css.scss",
-					"settings":
-					{
-						"buffer_size": 2658,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2594,
-								2594
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2244.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1061,15 +1000,15 @@
 					"file": "app/controllers/user/photos_controller.rb",
 					"settings":
 					{
-						"buffer_size": 1799,
+						"buffer_size": 1837,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								375,
-								375
+								294,
+								294
 							]
 						],
 						"settings":
@@ -1086,174 +1025,6 @@
 				},
 				{
 					"buffer": 3,
-					"file": "app/assets/stylesheets/common/modal_dialog.css.scss",
-					"settings":
-					{
-						"buffer_size": 5429,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								856,
-								856
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 174.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 4,
-					"file": "app/assets/stylesheets/user/dashboard.css.scss",
-					"settings":
-					{
-						"buffer_size": 4818,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4180,
-								4180
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3092.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "config/locales/pt_BR/user.yml",
-					"settings":
-					{
-						"buffer_size": 2997,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								78,
-								78
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/YAML/YAML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/views/user/photos/index.html.erb",
-					"settings":
-					{
-						"buffer_size": 779,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								192,
-								192
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/views/user/photos/show.html.erb",
-					"settings":
-					{
-						"buffer_size": 98,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								98,
-								98
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "app/views/user/photos/_show_details.html.erb",
-					"settings":
-					{
-						"buffer_size": 2628,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								568,
-								568
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 102.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 0,
 					"file": "app/assets/javascripts/user/photos.js",
 					"settings":
 					{
@@ -1264,8 +1035,8 @@
 						"selection":
 						[
 							[
-								1485,
-								1485
+								1482,
+								1482
 							]
 						],
 						"settings":
@@ -1274,34 +1045,68 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 510.0,
+						"translation.y": 561.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
-				},
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
 				{
-					"buffer": 9,
-					"file": "app/views/layouts/user/show_photo.html.erb",
+					"buffer": 4,
+					"file": "config/locales/pt_BR/user.yml",
 					"settings":
 					{
-						"buffer_size": 316,
+						"buffer_size": 3055,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								280,
-								280
+								950,
+								950
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 391.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/assets/stylesheets/user/photos.css.scss",
+					"settings":
+					{
+						"buffer_size": 3300,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3004,
+								3004
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2572.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1342,7 +1147,7 @@
 		"rows":
 		[
 			0.0,
-			0.599059695304,
+			0.567517639229,
 			1.0
 		]
 	},
@@ -1362,20 +1167,44 @@
 		"selected_items":
 		[
 			[
-				"modal",
-				"app/assets/stylesheets/common/modal_dialog.css.scss"
+				"photo.js",
+				"app/assets/javascripts/user/photos.js"
+			],
+			[
+				"route",
+				"config/routes.rb"
 			],
 			[
 				"photo_con",
 				"app/controllers/user/photos_controller.rb"
 			],
 			[
-				"photos",
+				"user",
+				"config/locales/pt_BR/user.yml"
+			],
+			[
+				"photo.s",
 				"app/assets/stylesheets/user/photos.css.scss"
 			],
 			[
-				"photo.js",
-				"app/assets/javascripts/user/photos.js"
+				"photo",
+				"app/models/photo.rb"
+			],
+			[
+				"use",
+				"app/models/user.rb"
+			],
+			[
+				"phto_com",
+				"app/models/photo_comment.rb"
+			],
+			[
+				"modal",
+				"app/assets/stylesheets/common/modal_dialog.css.scss"
+			],
+			[
+				"photos",
+				"app/assets/stylesheets/user/photos.css.scss"
 			],
 			[
 				"phot.js",
@@ -1388,10 +1217,6 @@
 			[
 				"user.",
 				"app/models/user.rb"
-			],
-			[
-				"user",
-				"config/locales/pt_BR/user.yml"
 			],
 			[
 				"button",
@@ -1492,10 +1317,6 @@
 			[
 				"user.ym",
 				"config/locales/pt_BR/user.yml"
-			],
-			[
-				"route",
-				"config/routes.rb"
 			],
 			[
 				"infle",
@@ -1730,10 +1551,6 @@
 				"app/controllers/user/photos_controller.rb"
 			],
 			[
-				"photo",
-				"app/models/photo.rb"
-			],
-			[
 				"pho",
 				"app/models/photo.rb"
 			],
@@ -1756,10 +1573,6 @@
 			[
 				"user_pr",
 				"app/models/user_profile.rb"
-			],
-			[
-				"use",
-				"app/models/user.rb"
 			],
 			[
 				"workshop_pa",
@@ -1864,14 +1677,6 @@
 			[
 				"dashbord.s",
 				"app/assets/stylesheets/user/dashboard.css.scss"
-			],
-			[
-				"photo.sc",
-				"app/assets/stylesheets/user/photos.css.scss"
-			],
-			[
-				"hotos",
-				"test/fixtures/photos.yml"
 			]
 		],
 		"width": 0.0

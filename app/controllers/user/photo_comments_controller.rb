@@ -1,45 +1,28 @@
-class PhotoCommentsController < ApplicationController
-  before_action :set_photo_comment, only: [:show, :edit, :update, :destroy]
+class User::PhotoCommentsController < User::BaseController
+  before_action :set_photo_comment, only: [:destroy]
+  before_action :set_photo, only: [:create]
 
-  def index
-    @photo_comments = PhotoComment.all
-    respond_with(@photo_comments)
-  end
-
-  def show
-    respond_with(@photo_comment)
-  end
-
-  def new
-    @photo_comment = PhotoComment.new
-    respond_with(@photo_comment)
-  end
-
-  def edit
-  end
 
   def create
-    @photo_comment = PhotoComment.new(photo_comment_params)
+    @photo_comment = @photo.comments.build(photo_comment_params.merge(user_id:current_user.id))
     @photo_comment.save
-    respond_with(@photo_comment)
-  end
-
-  def update
-    @photo_comment.update(photo_comment_params)
-    respond_with(@photo_comment)
+    puts @photo_comment.errors.full_messages
   end
 
   def destroy
     @photo_comment.destroy
-    respond_with(@photo_comment)
   end
 
   private
+    def set_photo
+      @photo = current_user.photos.find(params[:photo_id])  
+    end
+
     def set_photo_comment
       @photo_comment = PhotoComment.find(params[:id])
     end
 
     def photo_comment_params
-      params.require(:photo_comment).permit(:user_id, :photo_id, :content)
+      params.require(:photo_comment).permit(:content)
     end
 end

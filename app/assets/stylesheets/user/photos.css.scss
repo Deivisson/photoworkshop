@@ -139,11 +139,13 @@ input.camera-field {
 
 .photo-show-extra-content {
 	width: 100%;
-	background-color: #000;
-	height: 500px;
+	background-color: #F8F8F8;/*#3D3D3D;*/
+	height: auto;
 	left: 0;
+	min-height: 500px;
 	position: absolute;
 	padding: 10px 0 0 20px;
+	z-index: 9999;
 	.photo-comments {
 		/*border: 1px solid #FFF;*/
 		height: 400px;
@@ -152,7 +154,7 @@ input.camera-field {
 			/*border: 1px solid #EEE;*/
 			width: 100%;
 			h1 {
-				color: #fff;
+				color: #999999;/*#fff*/;
 				font-weight: bold;
 				font-size: 14px;
 				text-transform: uppercase;
@@ -173,8 +175,49 @@ input.camera-field {
 				float: left;
 				margin: 0 0 0 17px;
 				width: 80%; 
+				.submit-button {
+					float: right;
+					margin: -10px 8px 0px 0;
+				}
 			}
 		}
 	}
-
+	.photo-comments ul {
+		/*border-top: 1px solid #eee;*/
+		float: left;
+		width: 100%;
+		margin-top: 30px;
+		padding-top: 20px;
+		li {
+			float: left;
+			margin-bottom: 20px;
+			width: 100%;
+			img.avatar {
+				/*border: 1px solid #131519;*/
+				border-radius: 3px; 
+				-moz-border-radius: 3px; 
+				-webkit-border-radius: 3px;				
+		    float: left;
+		    height: 65px;
+		    margin: 0px 0 0 7px;
+		    width: 65px;
+			};
+			.comments-content {
+				float: left;
+				margin-left: 20px;
+				h1.user_name {
+					color: #000;
+					font-size: 16px;
+					font-weight: bold;
+					float: left;
+					width: 100%;
+				}
+				p.content {
+					float: left;
+					color: #71767a;
+					margin-top: 10px;
+				}
+			}			
+		}
+	}
 }
