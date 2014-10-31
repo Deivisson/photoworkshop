@@ -5,6 +5,7 @@
 		<div id="comment-form"><%= render '/user/photo_comments/form' %></div>
 	</div>
 	<ul id="photo-list-comments">
+		<%= content_tag :h1, t('.last_comments') %><br>
 		<%= render @photo.comments %>
 	</ul>
 </div>

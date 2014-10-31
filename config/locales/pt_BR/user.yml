@@ -37,6 +37,7 @@ pt_BR:
         tags: "Tags"
       show_photo_comments:
         comments: "Comentários"
+        last_comments: "Comentários Recentes"
     user_profiles:
       edit:
         title: "Atualização de Perfil"

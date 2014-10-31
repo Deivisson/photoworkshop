@@ -102,41 +102,41 @@ pt_BR:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: aproximadamente 1 hora
-        other: aproximadamente %{count} horas
+        one: aproximadamente 1 hora atrás
+        other: aproximadamente %{count} horas atrás
       about_x_months:
-        one: aproximadamente 1 mês
-        other: aproximadamente %{count} meses
+        one: aproximadamente 1 mês atrás
+        other: aproximadamente %{count} meses atrás
       about_x_years:
-        one: aproximadamente 1 ano
-        other: aproximadamente %{count} anos
+        one: aproximadamente 1 ano atrás
+        other: aproximadamente %{count} anos atrás
       almost_x_years:
-        one: quase 1 ano
-        other: quase %{count} anos
-      half_a_minute: meio minuto
+        one: quase 1 ano atrás
+        other: quase %{count} anos atrás
+      half_a_minute: meio minuto atrás
       less_than_x_minutes:
-        one: menos de um minuto
-        other: menos de %{count} minutos
+        one: menos de um minuto atrás
+        other: menos de %{count} minutos atrás
       less_than_x_seconds:
-        one: menos de 1 segundo
-        other: menos de %{count} segundos
+        one: menos de 1 segundo atrás
+        other: menos de %{count} segundos atrás
       over_x_years:
-        one: mais de 1 ano
-        other: mais de %{count} anos
+        one: mais de 1 ano atrás
+        other: mais de %{count} anos atrás
       x_days:
-        one: 1 dia
-        other: ! '%{count} dias'
+        one: 1 dia atrás
+        other: ! '%{count} dias atrás' 
       x_minutes:
-        one: 1 minuto
-        other: ! '%{count} minutos'
+        one: 1 minuto atrás
+        other: ! '%{count} minutos atrás'
       x_months:
-        one: 1 mês
-        other: ! '%{count} meses'
+        one: 1 mês atrás
+        other: ! '%{count} meses atrás'
       x_seconds:
-        one: 1 segundo
-        other: ! '%{count} segundos'
+        one: 1 segundo atrás
+        other: ! '%{count} segundos atrás' 
     prompts:
-      day: Dia
+      day: Dia 
       hour: Hora
       minute: Minuto
       month: Mês
