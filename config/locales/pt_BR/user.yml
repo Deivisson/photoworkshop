@@ -5,6 +5,7 @@ pt_BR:
       following: "Seguindo"
       followers: "Seguidores"
     lateral_menu:
+      explore: "Explorar"
       profile: "Perfil"
       photographers: "Fotografos"
       workshops: "Workshops"
@@ -38,6 +39,8 @@ pt_BR:
       show_photo_comments:
         comments: "Comentários"
         last_comments: "Comentários Recentes"
+      show_photo_likers:
+        likers: "Usuários que curtiram"
     user_profiles:
       edit:
         title: "Atualização de Perfil"
@@ -107,3 +110,10 @@ pt_BR:
         remove_user: "Remover"
       search_form:
         placeholder: "Digite o nome do usuário para pesquisa"
+
+    explore:
+      menu:
+        fans_pictures: "Fãns"
+        inspirations: "Inspirações"
+        newest: "Recentes"
+        recommended: "Recomendadas"

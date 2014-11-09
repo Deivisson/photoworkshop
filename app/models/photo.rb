@@ -10,7 +10,7 @@ class Photo < ActiveRecord::Base
   
   #Likes associations
   has_many :likes, class_name:'PhotoLike'
-  has_many :admirers, through: :likes
+  has_many :likers, through: :likes
   has_many :comments, class_name:'PhotoComment'
 
   has_attached_file :picture, :styles => {small:"300x300", medium:"800x800"}, default_url:"/images/missing.png"
@@ -24,6 +24,14 @@ class Photo < ActiveRecord::Base
 
   def update_views!
     self.update_attribute(:views,self.views+1)
+  end
+
+  def increment_likes!
+    self.update_attribute(:likes_count,self.likes_count+1)
+  end
+
+  def decrement_likes!
+    self.update_attribute(:likes_count,self.likes_count-1) if self.likes_count > 0
   end
 
   def camera

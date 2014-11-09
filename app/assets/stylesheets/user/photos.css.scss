@@ -1,5 +1,15 @@
-ul.photos-gallery {
+.icon-likes {
+	background: url("user/like-pb-16.png");
+}
+
+.icon-views {
+
+}
+
+ul.photos-gallery, ul.photos-gallery-b {
+	width: 100%;
 	li {
+		float: left;
 		margin: 11px 0 0 15px;
 		padding: 1px;
 		width: 270px;
@@ -66,15 +76,200 @@ ul.photos-gallery {
 		    }
 	    }
 		}
-
 		&:hover .gallery-photo-info	{
 			visibility: visible;
-
 		};
 	}		
 }
 
+ul.photos-gallery-b {
+	width: 99%;
+	.style-1, .style-2, .style-3 {
+/*		border: 1px solid blue;*/
+		float: left;
+		height: 564px;
+		width: 100%;
+		li.bigger, li.smaller {
+			float: left;
+			a {
+				float: left;
+				width: 100%;
+				img {
+					border:1px solid #D8D8D8;
+					border-bottom: 0px;
+					border-radius: 5px 5px 0px 0px; 
+					-moz-border-radius: 5px 5px 0px 0px; 
+					-webkit-border-radius: 5px 5px 0px ;
+				}
+			}
+			.details {
+				background-color: #F8F8F8;
+				border:1px solid #D8D8D8;
+				border-radius: 0px 0px 5px 5px; 
+				-moz-border-radius: 0px 0px 5px 5px; 
+				-webkit-border-radius: 0px 0px 5px 5px;
+				float: left;
+				height: 50px;
+				margin-top: -2px;
+				width: 100%;
+				img.user-avatar {
+					border-radius: 50%;
+					border: 0px solid #131519;
+					float: left;
+					height: 40px;
+					margin: 4px 0 0 7px;
+					width: 40px;
+				}
+				.details-content {
+					float: left;
+					max-width: 200px;
+					a, p {
+						float: left;
+						font-weight: normal;
+						text-decoration: none;
+						width: 100%;
+					}
+					a {
+						color: #32a6d3;
+						margin: 8px 0 0 10px;
+						&:hover {text-decoration:underline;};
+					}
+					p {
+						color: #B7B7B7;
+						margin: 5px 0 0 10px;
+						font-size: 12px;
+					}
+				}
+				.details-resume {
+					height: 40px;
+					float: right;
+					width: 70px;
+					position: relative;
+					label {
+						color: #b7b7b7;
+						float: left;
+						height: 15px;
+						line-height: 16px;
+						margin-top: 5px;
+						text-indent: 20px;
+						width: 100%;
+						&.likes {
+							background: url("/assets/user/like_pb_16.png") no-repeat;
+						};
+						&.views {
+							background: url("/assets/user/views_pb_16.png") no-repeat;
+						}
+					}
+				}
+			}			
+		};
+		li.bigger {
+			height: 500px;
+			width: 65%;
+			a img {
+				height: 500px;
+			}			
+		};
+		li.smaller {
+			height: 268px;
+			width: 31%;
+			a img {
+				height: 220px;
+			}
+		};
 
+	};
+	.style-2 {
+		li.bigger {
+			float: right;
+		};
+		li.smaller {
+			float: left;
+		}
+	};
+	.style-3 {
+		li.bigger, li.smaller {
+			height: 500px !important;
+			width: 31.5%;
+			float:left;
+			a img {
+				height: 500px;
+			}	
+		}
+	}
+/*	li {
+		float: left;
+		margin: 11px 0 0 15px;
+		padding: 1px;
+		width: 270px;
+		height: 270px;
+		img {
+			height: 100%;
+			border-radius: 5px; 
+			-moz-border-radius: 5px; 
+			-webkit-border-radius: 5px; 
+			width: 100%;
+		}
+		.fix-info {
+			position: relative;
+	    margin-top: -44px;
+	    h5, h6 {
+	    	color: #fff;
+	    	float: left;
+	    	font-weight: bold;
+	    	text-shadow: 0.1px 0.1px 0.5px #2a2b2d;
+	    	margin: 4px 0 0 2px;
+	    	width: 100%;
+	    }
+	    h5 {
+		    font-size: 18px;
+	    };
+	    h6 {
+	    	font-size: 12px;
+	    	font-weight: normal !important;
+	    }	    
+		};
+		.gallery-photo-info {
+			visibility: hidden;
+	    float: left;
+	    height: 50px;
+	    margin-top: -265px;
+	    position: relative;
+	    width: 100%;
+	    .info-item {
+				background-color: #1B1E24;
+				border-radius: 5px; 
+				-moz-border-radius: 5px; 
+				-webkit-border-radius: 5px;				
+		    float: right;
+		    height: 54px;
+		    margin: 4px 5px 15px 0;
+		    opacity: 0.9;
+		    width: auto;
+		    color: #fff;
+		    span {
+		    	float: left;
+	    		font-size: 12px;
+			    text-indent: 0px !important;  
+			    margin: 5px 0 0 0;
+			    text-align: center;
+	    		width: 100%;
+		    };
+		    h1 {
+		    	float: left;
+					font-size: 30px;
+			    text-align: center;
+			    margin: 0px;
+			    margin-top: 2px;
+			    width: 100%;
+		    }
+	    }*/
+/*		}
+		&:hover .gallery-photo-info	{
+			visibility: visible;
+		};*/
+			
+}
 
 
 
@@ -148,16 +343,17 @@ input.camera-field {
 	z-index: 9999;
 	.photo-comments {
 		/*border: 1px solid #FFF;*/
-		height: 400px;
+		height: auto;
 		width: 700px;
-			h1 {
-				color: #999999;/*#fff*/;
-				font-weight: bold;
-				font-size: 14px;
-				text-transform: uppercase;
-				margin-bottom: 10px;
-				width: 100%;
-			};		
+		float: left;
+		h1 {
+			color: #999999;/*#fff*/;
+			font-weight: bold;
+			font-size: 14px;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+			width: 100%;
+		};		
 		.form-container {
 			/*border: 1px solid #EEE;*/
 			width: 100%;
@@ -229,9 +425,31 @@ input.camera-field {
 					p.content {
 						float: left;
 						color: #71767a;
+						margin-left: 20px;
 					}
 				}
 			}			
 		}
+	}
+	.photo-likers ul {
+		float: left;
+		width: 300px;
+		h1 {
+			color: #32A6D3;/*#fff*/;
+			font-weight: bold;
+			font-size: 13px;
+			text-transform: uppercase;
+			width: 100%;
+		}
+			img.avatar {
+				border: 1px solid #131519;
+				border-radius: 5px; 
+				-moz-border-radius: 5px; 
+				-webkit-border-radius: 5px;				
+		    float: left;
+		    height: 65px;
+		    margin: 0 2px 2px 0;
+		    width: 65px;
+			};		
 	}
 }

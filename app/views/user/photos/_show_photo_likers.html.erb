@@ -1,0 +1,10 @@
+<div class="photo-likers">
+	<ul>
+		<%= content_tag :h1, t('.likers') %><br>
+		<%- @photo.likers.each do |l| %>
+			<li>
+				<%= image_tag l.profile.avatar.url(:medium), class:'avatar' %>
+			</li>
+		<% end %>
+	</ul>	
+</div>

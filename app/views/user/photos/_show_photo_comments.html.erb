@@ -6,6 +6,6 @@
 	</div>
 	<ul id="photo-list-comments">
 		<%= content_tag :h1, t('.last_comments') %><br>
-		<%= render @photo.comments %>
+		<%= render @photo.comments.order("created_at desc") %>
 	</ul>
 </div>
