@@ -175,3 +175,19 @@ ul.photographers {
 	-moz-box-shadow: 0 10px 20px rgba(0,0,0,.7);
         box-shadow: 0 10px 20px rgba(0,0,0,.7);
 }
+
+
+.photographer-profile-container {
+	background-color: blue;
+	border: 1px solid #EEE;
+	height: 300px;
+	left: 0;
+	margin: -7px 0 0 -2px;
+	position: absolute;
+	width: 100%;
+	img {
+		height: 300px;
+		width: 100%;
+	}
+}	
+

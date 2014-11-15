@@ -60,6 +60,6 @@ class User < ActiveRecord::Base
 private
 	
 	def create_profile
-  		self.profile = UserProfile.new
+  		self.profile = UserProfile.new(user_name:"DeivissonBruno")
 	end  	
 end

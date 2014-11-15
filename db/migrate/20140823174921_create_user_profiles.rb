@@ -12,7 +12,6 @@ class CreateUserProfiles < ActiveRecord::Migration
       t.string :google_plus, :limit => 50
       t.string :tumblr, :limit => 50
       t.string :flickr, :limit => 50
-      t.attachment :avatar
       t.timestamps
     end
     add_foreign_key :user_profiles, :users, name:'user_profiles_users'

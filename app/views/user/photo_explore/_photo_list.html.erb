@@ -1,0 +1,9 @@
+<% if @gallary_type == "flow" %>
+	<%= gallary_flow :photos_explore %>
+<% elsif @gallary_type == "flow_grid" %>
+	<%= gallary_grid :photos_explore, true %>
+<% elsif @gallary_type == "list" %>
+	<%= gallary_list :photos_explore %>
+<% else %>
+	<%= gallary_grid :photos_explore %>
+<% end %>

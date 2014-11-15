@@ -228,7 +228,6 @@ ul.toolbar {
 					color: #32A6D3;
 					font-weight: bold;
 				}
-
 			}
 		}
 	}
@@ -248,10 +247,32 @@ ul.toolbar {
 	}
 }
 
-/*ul.photos-gallery {
-	width: 100%;
+ul.buttons-bar {
+	float: right;
 	li {
-		float: left;
-		margin: 0;
+		border: 1px solid #eee;
+		border-radius: 3px; 
+		-moz-border-radius: 3px; 
+		-webkit-border-radius: 3px;		
+		height: 28px;
+		width:  24px;
+		margin: 5px 4px 0 1px;
+		padding: 2px 4px 4px 4px;
+		a {
+			display: block;
+			height: 100%;
+			float: left;
+			width: 100%;
+			&.gallary-list {
+				background: url(/assets/user/grid_list.png) no-repeat  0 4px ; 
+			}
+			&.gallary-grid {
+				background: url(/assets/user/grid.png) no-repeat  0 4px ; 
+			}
+		}
+		&.selected {
+			background-color: #24B2E5;
+			border: 1px solid #32A6D3;
+		}
 	}
-}*/
+}

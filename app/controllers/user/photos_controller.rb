@@ -4,6 +4,7 @@ class User::PhotosController < User::BaseController
 
   def index
     @photos = current_user.photos.includes(:category)
+    @gallary_type   = params[:gallary_type] || "flow" 
   end
 
   def show

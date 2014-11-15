@@ -73,25 +73,25 @@ ActiveRecord::Schema.define(version: 20141109004703) do
 
   create_table "photo_exifs", force: true do |t|
     t.integer  "photo_id",                  null: false
-    t.string   "maker",         limit: 60
-    t.string   "model",         limit: 50
+    t.string   "maker",         limit: 100
+    t.string   "model",         limit: 100
     t.string   "lens",          limit: 100
-    t.string   "orientation",   limit: 40
-    t.string   "shutter_speed", limit: 10
-    t.string   "aperture",      limit: 10
-    t.string   "iso",           limit: 6
+    t.string   "orientation",   limit: 100
+    t.string   "shutter_speed", limit: 100
+    t.string   "aperture",      limit: 100
+    t.string   "iso",           limit: 10
     t.datetime "taken_at"
-    t.string   "flash",         limit: 30
+    t.string   "flash",         limit: 100
     t.string   "focal_lenght",  limit: 20
     t.string   "colorsapce",    limit: 20
     t.string   "exposuremode",  limit: 20
     t.string   "whitebalance",  limit: 20
     t.integer  "imagewidth"
     t.integer  "imageheight"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.float    "latitude"
     t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "photo_exifs", ["photo_id"], name: "index_photo_exifs_on_photo_id", using: :btree
@@ -231,7 +231,7 @@ ActiveRecord::Schema.define(version: 20141109004703) do
     t.integer  "vacancies_number"
     t.decimal  "value"
     t.string   "prerequisite"
-    t.string   "goal"
+    t.text     "goal"
     t.string   "target_audience"
     t.text     "term"
     t.integer  "status",                         default: 0, null: false
@@ -266,6 +266,13 @@ ActiveRecord::Schema.define(version: 20141109004703) do
 
   add_foreign_key "user_relations", "users", name: "user_relations_users"
   add_foreign_key "user_relations", "users", name: "user_relations_users_followed", column: "user_followed_id"
+
+  add_foreign_key "workshop_activities", "workshops", name: "workshop_activities_workshop"
+
+  add_foreign_key "workshop_materials", "workshops", name: "workshop_materials_workshop"
+
+  add_foreign_key "workshop_participants", "users", name: "workshop_participants_user"
+  add_foreign_key "workshop_participants", "workshops", name: "workshop_participants_workshop"
 
   add_foreign_key "workshops", "users", name: "workshops_user"
 

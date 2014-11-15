@@ -6,14 +6,14 @@
     <%= image_tag(@photo.picture.url(:medium),id:'photo-picture',class:"photo-picture #{@photo.orientation}") %>
     <ul class="photo-bar" id="photo-toolbar">
       <li>
-        <div id="like-links"> <%= render 'like_links' %> </div>
+        <div id="like-links"> <%= render 'user/shared/photo_view/like_links' %> </div>
       </li>
     </ul>
   </div>
   
   <div class="photo-show-extra-content">
-    <%= render "show_photo_comments" %>
-    <%= render "show_photo_likers" %>
+    <%= render "user/shared/photo_view/show_photo_comments" %>
+    <%= render "user/shared/photo_view/show_photo_likers" %>
   </div>
   
   <div class="photo-info">

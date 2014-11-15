@@ -22,6 +22,6 @@ class User::PhotoLikesController < User::BaseController
 private
 
 	def set_photo
-    @photo = current_user.photos.find(params[:photo_id])
+    @photo = Photo.find(params[:photo_id])
 	end
 end

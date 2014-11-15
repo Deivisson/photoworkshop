@@ -19,7 +19,15 @@ class Photo < ActiveRecord::Base
   after_post_process :save_exif
 
   def orientation
-    self.exif.imagewidth > self.exif.imageheight ? "landscape" : "portrate"
+    self.exif.imagewidth > self.exif.imageheight ? "landscape" : "portrait"
+  end
+
+  def landscape?
+    self.exif.imagewidth > self.exif.imageheight
+  end
+
+  def portrait?
+    self.exif.imagewidth < self.exif.imageheight
   end
 
   def update_views!

@@ -30,17 +30,6 @@ pt_BR:
         select_file: "Arraste a foto para aqui ou Click para selecionar."
         photo_info: "Informações"
         cancel_upload: "Cancelar Upload"
-      show_details:
-        posting: "Postada com %{category}  em %{created_at} "
-        views: "Visualizações"
-        likes: "Curtidas"
-        exif: "Exif"
-        tags: "Tags"
-      show_photo_comments:
-        comments: "Comentários"
-        last_comments: "Comentários Recentes"
-      show_photo_likers:
-        likers: "Usuários que curtiram"
     user_profiles:
       edit:
         title: "Atualização de Perfil"
@@ -110,8 +99,21 @@ pt_BR:
         remove_user: "Remover"
       search_form:
         placeholder: "Digite o nome do usuário para pesquisa"
+    shared:
+      photo_view:
+        show_details:
+          posting: "Postada com %{category}  em %{created_at} "
+          views: "Visualizações"
+          likes: "Curtidas"
+          exif: "Exif"
+          tags: "Tags"
+        show_photo_comments:
+          comments: "Comentários"
+          last_comments: "Comentários Recentes"
+        show_photo_likers:
+          likers: "Usuários que curtiram"
 
-    explore:
+    photo_explore:
       menu:
         fans_pictures: "Fãns"
         inspirations: "Inspirações"

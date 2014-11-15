@@ -5,6 +5,7 @@
 }
 
 /*.ui-dialog-titlebar { display:none; }*/
+.noTitleStuff .ui-dialog-titlebar {display:none}
 .ui-dialog .ui-dialog-content {
 	/*background-color: #FFF;*/
 	height: 100%;
@@ -92,7 +93,7 @@
 		img.photo-picture {
 			top: 40px;
 			position: absolute;
-			&.portrate {
+			&.portrait {
 				height: 88%;
 				width: 40%;
 			};

@@ -1,9 +1,15 @@
 class User::PhotographersController < User::BaseController
-	before_action :set_user, only: [:follow,:unfollow]
+	before_action :set_user, only: [:follow,:unfollow,:show]
 
 	def index
 		@users = User.joins(:profile).where("users.id <> ?",current_user.id)
-		@users = @users.where("user_profiles.user_name like ?","%#{params[:search]}%") if params[:search].present?
+		if params[:search].present?
+			@users = @users.where("user_profiles.user_name like ?","%#{params[:search]}%") 
+		end
+	end
+
+	def show
+		@user_photos = @user.photos.limit(10)
 	end
 
 	def following
@@ -30,7 +36,7 @@ class User::PhotographersController < User::BaseController
 private 
 
 	def set_user
-		@user = User.find(params[:photographer_id])
+		@user = User.find(params[:photographer_id].nil? ? params[:id] : params[:photographer_id])
 	end
 
 end

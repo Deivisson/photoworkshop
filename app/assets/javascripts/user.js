@@ -24,6 +24,7 @@
 //= require user/workshop_materials
 //= require user/workshop_participants
 //= require user/workshop_activities
+//= require user/photographers
 
 
 

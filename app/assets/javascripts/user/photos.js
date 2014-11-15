@@ -1,5 +1,9 @@
 
 $(document).on('ready page:load', function (){
+	photoView();
+});
+
+function photoView(){
 	$(".photo-picture").click(function(e){
 			var w = $(window).width() * 1;
 			var h = $(window).height() * 1;
@@ -14,20 +18,19 @@ $(document).on('ready page:load', function (){
 			      jQuery('body').css('overflow','auto');
 			    },
 			    draggable: false,
-          resizable: false
+          resizable: false,
+          dialogClass: 'noTitleStuff'
 			  });
 				$(".ui-widget-content").addClass("ui-widget-content-full");
 			  dialog_form.load(url + ' #photo-show-modal-container', function(){
 			  		jQuery('body').css('overflow','hidden');
-
-			  		$(".ui-dialog-titlebar").css("display","none");
 			  		$(".ui-widget-overlay").css("opacity","1");
 			  		adjustLayout();
 			  });
 			  dialog_form.dialog('open');
 			  e.preventDefault();  
-	});
-});
+	});	
+}
 
 $(window).resize(function () {
 	if($("#photo-show-modal-container").length > 0)

@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :user_profiles, :as => :profiles, :only => [:show,:edit,:update]
     get "photo_likes/:photo_id/like", to: "photo_likes#like", :as => :photo_like
     get "photo_likes/:photo_id/unlike", to: "photo_likes#unlike", :as => :photo_unlike
-    resources :photographers, only: [:index] do
+    resources :photographers, only: [:index,:show] do
       get :follow
       get :unfollow
       get :following, on: :collection
@@ -35,7 +35,9 @@ Rails.application.routes.draw do
       resources :workshop_activities, as: :activities, except: [:create,:update,:index,:show]
       resources :workshop_activities, only: [:create,:update]
     end
-    get "explore/index", as: :explore
+    #explore resources
+    get "photo_explore", to: "photo_explore#index", as: :photo_explore
+    get "photo_explore/:photo_id", to: "photo_explore#show", as: :photo_explore_show
   end
   
   scope :home do

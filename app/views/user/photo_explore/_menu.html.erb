@@ -15,3 +15,8 @@
     <% end %>
   <% end %>
 <% end %>
+<%= content_for :toolbar_buttons do %>
+  <ul class="buttons-bar" id="buttons-bar-items">
+    <%= render 'buttons_bar' %>
+  </ul>
+<% end %>
