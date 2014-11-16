@@ -18,6 +18,9 @@ class Photo < ActiveRecord::Base
 
   after_post_process :save_exif
 
+  scope :landscapes, -> {joins(:exif).where('photo_exifs.imagewidth > photo_exifs.imageheight')}
+  scope :portraits, -> {joins(:exif).where('photo_exifs.imagewidth < photo_exifs.imageheight')}
+
   def orientation
     self.exif.imagewidth > self.exif.imageheight ? "landscape" : "portrait"
   end

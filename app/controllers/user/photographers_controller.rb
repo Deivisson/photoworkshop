@@ -9,7 +9,7 @@ class User::PhotographersController < User::BaseController
 	end
 
 	def show
-		@user_photos = @user.photos.limit(10)
+		@photos = @user.photos.limit(9)
 	end
 
 	def following

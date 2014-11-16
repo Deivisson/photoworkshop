@@ -178,7 +178,6 @@ ul.photographers {
 
 
 .photographer-profile-container {
-	background-color: blue;
 	border: 1px solid #EEE;
 	height: 300px;
 	left: 0;
@@ -188,6 +187,82 @@ ul.photographers {
 	img {
 		height: 300px;
 		width: 100%;
+	}
+	.profile {
+		border-bottom: 1px solid #DDDDDD;
+    height: 165px;
+    margin-top: -100px;
+    position: absolute;
+    width: 100%;
+    .avatar-container {
+			background-color: #FFFFFF;
+	    border: 1px solid #B7B7B7;
+			border-radius: 5px; 
+			-moz-border-radius: 5px; 
+			-webkit-border-radius: 5px; 	    
+	  	float: left;
+	    height: 145px;
+	    margin: 5px 5px 5px 22px;
+	    padding: 3px;
+	    width: 140px;
+	    img {
+				border-radius: 5px; 
+				-moz-border-radius: 5px; 
+				-webkit-border-radius: 5px;	    	
+	    	height: 100%;
+	    	width: 100%;
+	    }
+    }
+    h1.user-name, h3.score {
+	    color: #FFFFFF;
+	    float: left;
+	    font-size: 32px;
+	    font-weight: normal;
+	    margin: 5px 0 0 10px;
+	    text-shadow: 1px 1px 1px #333333;
+	    width: 700px;
+    }
+    h1.user-name {
+    	margin-top: 28px;
+    }
+    h3.score {
+    	font-size: 18px;
+    	font-style: normal;
+    }
+	}
+	.profile ul {
+    float: left;
+    height: 58px;
+    margin-top: 23px;
+    width: 700px;
+    li {
+    	float: left;
+    	height: 100%;
+    	padding: 0 10px 0 1px;
+    	width: 80px;
+    	label {
+    		color: #999999;
+    		float: left;
+    		font-size: 11px;
+    		text-align: center;
+    		margin-top: 5px;
+    		width: 100%;
+    		text-transform: uppercase;
+    	}
+    	span {
+    		color: #32A6D3;
+		    float: left;
+		    font-size: 22px;
+		    margin-top: 10px;
+		    text-align: center;
+		    width: 100%;
+    	}
+    }
+	}
+	.photographers-photo-gallary {
+    float: left;
+    margin: 70px 0 0 10px;
+    width: 880px;
 	}
 }	
 

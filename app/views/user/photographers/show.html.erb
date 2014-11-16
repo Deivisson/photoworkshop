@@ -1,5 +1,30 @@
 <div id="photographer-show-modal-container">
 	<div class="photographer-profile-container">
-		<%= image_tag(@user.photos.find(5).picture.url(:medium)) %>
+		<%= image_tag(@user.cover_photo.picture.url(:medium) || "mini_cover.png" ) %>
+		<div class="profile">
+			<div class="avatar-container">
+				<%= image_tag(@user.profile.avatar.url(:medium)) %>
+			</div>
+			<%= content_tag :h1, @user.profile.user_name,class:"user-name" %>
+			<%= content_tag :h3, t('.score',score:'80%'),class:"score" %>
+			<%= content_tag :ul do %>
+				<li>
+					<label>Fotos</label>
+					<span><%= @user.photos_count %></span>
+				</li>
+				<li>
+					<label>Seguindo</label>
+					<span><%= @user.following_count %></span>
+				</li>
+				<li>
+					<label>Seguidores</label>
+					<span><%= @user.followers_count %></span>
+				</li>				
+			<% end %>
+		</div>
+
+		<div class="photographers-photo-gallary">
+			<%= gallary_grid :photos_explore %>
+		</div>
 	</div>
 </div>

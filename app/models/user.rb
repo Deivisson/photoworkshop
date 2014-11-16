@@ -29,6 +29,10 @@ class User < ActiveRecord::Base
 
   attr_accessor :following
 
+  def cover_photo
+    self.photos.landscapes.limit(1).first
+  end
+
   def following
     if @following.nil?
       @following = User.joins("INNER JOIN user_relations ON users.id = user_relations.user_followed_id")

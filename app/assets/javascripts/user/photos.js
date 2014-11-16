@@ -8,13 +8,13 @@ function photoView(){
 			var w = $(window).width() * 1;
 			var h = $(window).height() * 1;
 			var url = $(this).attr('href');
-			var dialog_form = $(getModalContainer()).dialog({
+			var dialog_form = $(getModalContainer("photo-modal-dialog")).dialog({
 			    autoOpen: false,
 			    width: w,
 			    height: h,
 			    modal: true,
 			    close: function() {
-			      $('#dialog-form').remove();
+			      $('#photo-modal-dialog').remove();
 			      jQuery('body').css('overflow','auto');
 			    },
 			    draggable: false,

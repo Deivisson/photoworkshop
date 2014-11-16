@@ -47,6 +47,9 @@ pt_BR:
     photographers:
       index:
         title: "Fotografos"
+
+      show:
+        score: "Pontuação %{score}"
       follow_links:
         follow: "Seguir"
         unfollow: "Parar de Seguir"
