@@ -230,11 +230,17 @@ ul.photographers {
     	font-style: normal;
     }
 	}
-	.profile ul {
+	.profile ul.resume {
+		background: none repeat scroll 0 0 #FFFFFF;
     float: left;
-    height: 58px;
-    margin-top: 23px;
-    width: 700px;
+    height: 66px;
+    left: 0;
+    margin-top: 98px;
+    padding: 5px 0 0 170px;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    z-index: -99;    
     li {
     	float: left;
     	height: 100%;
@@ -258,6 +264,16 @@ ul.photographers {
 		    width: 100%;
     	}
     }
+	}
+	.profile ul.links {
+		float: right;
+		li a {
+			float: left;
+	    height: 35px;
+	    margin: 30px 18px 0 0px;
+	    line-height: 35px;
+		}
+
 	}
 	.photographers-photo-gallary {
     float: left;

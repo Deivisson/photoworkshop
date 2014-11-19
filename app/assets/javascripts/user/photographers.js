@@ -17,6 +17,7 @@ $(document).on('ready page:load', function (){
 		  });
 		  dialog_form.load(url + ' #photographer-show-modal-container', function(){
 	  		jQuery('body').css('overflow','hidden');
+	  		$(".ui-dialog-content").css("overflow-x", "hidden");
 	  		photoView();
 		  });
 		  dialog_form.dialog('open');
