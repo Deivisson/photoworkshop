@@ -1,6 +1,6 @@
 <div id="photographer-show-modal-container">
 	<div class="photographer-profile-container">
-		<%= image_tag(@user.cover_photo.picture.url(:medium) || "mini_cover.png" ) %>
+		<%= image_tag(@user.cover_photo) %>
 		<div class="profile">
 			<div class="avatar-container">
 				<%= image_tag(@user.profile.avatar.url(:medium)) %>
@@ -9,24 +9,22 @@
 			<%= content_tag :h3, t('.score',score:'80%'),class:"score" %>
 			<%= content_tag :ul, class:"resume" do %>
 				<li>
-					<label>Fotos</label>
+					<label><%= t("user.user_resume.photos") %></label>
 					<span><%= @user.photos_count %></span>
 				</li>
 				<li>
-					<label>Seguindo</label>
+					<label><%= t("user.user_resume.following") %></label>
 					<span><%= @user.following_count %></span>
 				</li>
 				<li>
-					<label>Seguidores</label>
-					<span><%= @user.followers_count %></span>
+					<label><%= t("user.user_resume.followers") %></label>
+					<span id="photographer-followers-count"><%= @user.followers_count %></span>
 				</li>
 			<% end %>
 			<%= content_tag :ul, class:"links" do %>
-				<li>
-					<%= link_to t('.unfollow'), 
-								user_photographer_unfollow_path(@user.id),
-								class:'common-button', remote:true %>
-				</li>
+				<%= content_tag :li, id:"follow-links-modal-profile-#{@user.id}" do %>
+					<%= render partial:'user/photographers/follow_links', locals: {user:@user} %>
+				<% end %>
 			<% end %>			
 		</div>
 

@@ -30,7 +30,12 @@ class User < ActiveRecord::Base
   attr_accessor :following
 
   def cover_photo
-    self.photos.landscapes.limit(1).first
+    cover = self.photos.landscapes.limit(1).first
+    if cover.nil?
+      "mini_cover.png"
+    else
+      cover.picture.url(:medium)
+    end
   end
 
   def following

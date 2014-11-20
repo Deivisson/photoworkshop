@@ -6,7 +6,7 @@
 			</div>
 			<%= image_tag(user.profile.avatar.url(:medium)) %>
 			<div class="info">
-				<%= link_to("#") do %>
+				<%= link_to(user_photographer_path(user.id),class:"photographer-profile") do %>
 					<%= image_tag("user/flags/1.png",class:'country') %>
 					<%= user.profile.user_name %>
 				<% end%>

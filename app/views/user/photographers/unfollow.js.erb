@@ -1,1 +1,21 @@
-$("#follow-links-<%= @user.id %>").html("<%= escape_javascript(render partial:'follow_links', locals: {user:@user}) %>");
+//Update link on photographers list
+if ($("#follow-links-<%= @user.id %>").length >0 ) {
+	$("#follow-links-<%= @user.id %>").html("<%= escape_javascript(render partial:'follow_links', locals: {user:@user}) %>");
+}
+
+//Update link on modal photographer profile
+if ($("#follow-links-modal-profile-<%= @user.id %>").length >0 ) {
+	$("#follow-links-modal-profile-<%= @user.id %>").html("<%= escape_javascript(render partial:'follow_links', locals: {user:@user}) %>");	
+}
+
+//Update number of followings on home menu
+if ($("#current-user-following-count").length > 0) {
+	var count = parseInt($("#current-user-following-count").text()) - 1;
+	$("#current-user-following-count").text(count);
+} 
+
+//Update number of user's followers Ex.: photographer profile page
+if ($("#photographer-followers-count").length > 0) {
+	var count = parseInt($("#photographer-followers-count").text()) - 1;
+	$("#photographer-followers-count").text(count);
+} 

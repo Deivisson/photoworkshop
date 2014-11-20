@@ -44,7 +44,9 @@
 					<li>
 						<%= content_tag :label, t('user.user_resume.following') %>
 						<%= content_tag :span do %> 
-							<%= link_to current_user.following_count,following_user_photographers_path %>
+							<%= link_to current_user.following_count,
+													following_user_photographers_path,
+													id:"current-user-following-count" %>
 						<% end %>
 					</li>
 					<li>
