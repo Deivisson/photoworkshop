@@ -1,13 +1,11 @@
 <li>
 	<%= image_tag(current_user.profile.avatar(:medium),class:'avatar') %>	
 	<div class="comments-content">
-		<div class="col1">
-			<%= content_tag :h2, photo_comment.user.profile.user_name,class:'user_name' %>
+		<%= content_tag :h2, class:'user_name' do %>
+			<%= photo_comment.user.profile.user_name %>
 			<%= content_tag :span, distance_of_time_in_words(photo_comment.created_at, Time.now) %>
-		</div>
-		<div class="col2">
-			<%= content_tag :p, photo_comment.content,class:'content' %>
-		</div>
+		<% end %>
+		<%= content_tag :p, photo_comment.content,class:'content' %>
 	</div>
 	
 </li>
