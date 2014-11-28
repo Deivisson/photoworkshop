@@ -12,7 +12,18 @@ body {
 		background-color: #F8F8F8	 ;/*#22262E;*/
 		height: 45px;
 		float: left;
-		width: 100%
+		width: 100%;
+		a.upload-photo {
+			/*background-color: #B73C3A;
+			border: 1px solid #A02724;*/
+			float: right;
+			height: 32px;
+			margin: 5px 8px 5px 5px;
+			width: 32px;
+			img {
+				margin: 2px 4px 0 3px;
+			}
+		}
 	}
 	.float-container {
 		background-color: #1B1E24;

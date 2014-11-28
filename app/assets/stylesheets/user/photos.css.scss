@@ -18,7 +18,7 @@ ul.photos-gallery-list {
 		.fix-info {
 			position: relative;
 	    margin-top: -44px;
-	    h5, h6 {
+	    h5, h6,a {
 	    	color: #fff;
 	    	float: left;
 	    	font-weight: bold;
@@ -28,6 +28,11 @@ ul.photos-gallery-list {
 	    }
 	    h5 {
 		    font-size: 18px;
+	    };
+	    a {
+	    	font-size: 16px;
+	    	text-decoration: none;
+	    	&:hover {text-decoration:underline;};
 	    };
 	    h6 {
 	    	font-size: 12px;
@@ -116,17 +121,23 @@ ul.photos-gallery-list {
 				.details-content {
 					float: left;
 					max-width: 200px;
-					a, p {
+					a, p, label.photo-title {
 						float: left;
 						font-weight: normal;
 						text-decoration: none;
 						width: 100%;
 					}
-					a {
+					a  {
 						color: #32a6d3;
 						margin: 8px 0 0 10px;
 						&:hover {text-decoration:underline;};
 					}
+					label.photo-title {
+						color: #76777F;
+						font-size: 15px;
+						margin: 8px 0 0 10px;
+						
+					}					
 					p {
 						color: #B7B7B7;
 						margin: 5px 0 0 10px;

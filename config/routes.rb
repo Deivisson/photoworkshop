@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   
   devise_for :users
   namespace :user do 
-    root "dashboard#index"
+    root "photo_explore#index"
     resources :dashboard, :only => [:index]
     resources :photos do 
       resources :photo_comments, only: [:create,:destroy]

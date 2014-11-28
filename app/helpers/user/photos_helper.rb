@@ -82,8 +82,17 @@ private
 	def photo_info_to_gallary_grid(photo)
 		content_tag(:div,class:'fix-info') do 
 			html = []
-			html << content_tag(:h5,photo.title.truncate(30))
-			html << content_tag(:h6,photo.category.description.truncate(30))
+			# html << link_to(photo.user.profile.user_name,
+			# 								user_photographer_path(photo.user_id),
+			# 								class:"photographer-profile") if @location != :user_photos
+			# html << content_tag(:h6,photo.title.truncate(30))
+			if @location == :photos_explore
+				html << link_to(photo.user.profile.user_name,user_photographer_path(photo.user_id),
+				 												class:"photographer-profile") #photographers name
+			elsif @location == :user_photos
+				html << content_tag(:h5,photo.title.truncate(30))
+			end
+			html << content_tag(:h6,distance_of_time_in_words(photo.created_at, Time.now))			
 			html.join.html_safe
 		end.html_safe
 	end
@@ -128,8 +137,12 @@ private
 			html_details << image_tag(photo.user.profile.avatar.url(:thumb),class:'user-avatar')
 			html_details << content_tag(:div,class:"details-content") do 
 				html_content = []
-				html_content << link_to(photo.user.profile.user_name,user_photographer_path(photo.user_id),
-																class:"photographer-profile") #photographers name
+				if @location == :photos_explore
+					html_content << link_to(photo.user.profile.user_name,user_photographer_path(photo.user_id),
+					 												class:"photographer-profile") #photographers name
+				elsif @location == :user_photos
+					html_content << content_tag(:label,photo.title,class:"photo-title")
+				end
 				html_content << content_tag(:p,distance_of_time_in_words(photo.created_at, Time.now))
 				html_content.join.html_safe
 			end

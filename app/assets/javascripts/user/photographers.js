@@ -1,4 +1,8 @@
 $(document).on('ready page:load', function (){
+	photographerPreview();
+});
+
+function photographerPreview(){
 	$(".photographer-profile").click(function(e){
 		var h = $(window).height() * 1;
 		var url = $(this).attr('href');
@@ -23,4 +27,4 @@ $(document).on('ready page:load', function (){
 		  dialog_form.dialog('open');
 		  e.preventDefault();  
 	});	
-});
+}
