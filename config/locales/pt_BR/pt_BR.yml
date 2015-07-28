@@ -21,7 +21,8 @@ pt_BR:
       jurors: "JURADOS"
       inspirations: "INSPIRAÇÕES"
       contests: "CONCURSOS"
-      login: "LOGIN"
+      login: "Login"
+      sign_up: "Cadastre-se <span>grátis</span>"
     
     texts:
       header: "Cadastre-se agora"

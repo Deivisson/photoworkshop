@@ -7,19 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="centralizer">
-		<ul class="menu">
-			<li class="logo-space"></li>
-			<li><%= link_to t('welcome.menu.how_work'),"#",id:'how-work-link' %></li>
-			<li><%= link_to t('welcome.menu.jurors'),"#",id:"jurors-link" %></li>
-			<li><%= link_to t('welcome.menu.inspirations'),"#" %></li>
-			<li><%= link_to t('welcome.menu.contests'),"#" %></li>
-			<li class="last">
-				<%= link_to t('welcome.menu.login'), new_user_session_path,class:'login' %>
-			</li>
-		</ul>
+	<div class="welcome-header">
+		<div class="logo-container">
+			Pic<span>2Gether</span>
+		</div>
+		<div class="centralizer">
+			<ul class="menu" >
+				<li class="logo-space"></li>
+				<li><%= link_to t('welcome.menu.how_work'),"#",id:'how-work-link' %></li>
+				<li><%= link_to t('welcome.menu.jurors'),"#",id:"jurors-link" %></li>
+				<li><%= link_to t('welcome.menu.inspirations'),"#" %></li>
+				<li><%= link_to t('welcome.menu.contests'),"#" %></li>
+			</ul>
+		</div>
+		<div class="account-buttons">
+			<%= link_to t('welcome.menu.login'), new_user_session_path %>
+			<%= link_to t('welcome.menu.sign_up').html_safe, 
+									new_user_session_path,class:'sign-up' %>
+		</div>
 	</div>
-	<div class="welcome-cover" id="welcome-cover" style="background-image:url(<%='/assets/cover.jpg'%>)"></div>
+	<div class="welcome-cover" id="welcome-cover" style="background-image:url(<%='/assets/cover2.jpg'%>)"></div>
 	<div class="welcome-cover-mask" id="welcome-cover-mask">
 		<div class="centralizer">
 			<div class="welcome-content" id="welcome-content">
@@ -33,7 +40,7 @@
 		</div>
 	</div>
 	
-	<div class="how_work" id="welcome-how-work">
+	<div class="how_work" id="welcome-how-work" style="background-image:url(<%='/assets/cover2.jpg'%>)">
 		<div class="centralizer">
 			<%= yield :how_work %>
 		</div>

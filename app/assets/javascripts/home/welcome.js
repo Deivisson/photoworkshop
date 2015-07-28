@@ -7,11 +7,13 @@ $(document).ready(function(){
 
 
 	$('#how-work-link').click(function(){
-    $('html,body').animate({scrollTop: $('#welcome-how-work').offset().top},'easeInSine');
+    $('html,body').animate({scrollTop: $('#welcome-how-work').offset().top},650);
 	});
 
 	$('#jurors-link').click(function(){
-    $('html,body').animate({scrollTop:$("#welcome-jurors").offset().top},'easeInSine');
+    $('html,body').animate({scrollTop:$("#welcome-jurors").offset().top},650,function () {
+
+    });
   });
 
 });
