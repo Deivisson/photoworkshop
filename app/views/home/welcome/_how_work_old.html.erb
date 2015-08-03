@@ -1,0 +1,20 @@
+<div class="photographer-image">
+	<%= image_tag("polaroid.png",style:'width: 400px') %>
+</div>
+
+<div class="texts-container">
+	<h1><%= t(".title") %></h1>
+	<p><%= t(".info").html_safe %></p>
+	<ul class="counts">
+		<li class="first">
+			<span class="count-icon photographers"></span>
+			<label><%= t('.registers_photographers') %></label>
+			<span class="count">4.987</span>
+		</li>
+		<li>
+			<span class="count-icon pictures"></span>
+			<label><%= t('.posted_photos') %></label>
+			<span class="count">54.230</span>
+		</li>
+	</ul>
+</div>

@@ -1,19 +1,40 @@
+
 $(document).ready(function(){
+
 	var value = $(window).height() ;
-	$('#welcome-cover, #welcome-how-work, #welcome-jurors').height(value);
-	//$('#welcome-jurors').height(value);
+	$('#welcome-cover, #welcome-how-work, #welcome-made-for-who, #welcome-professionals, #welcome-sign-up').height(value);
 	$('#welcome-how-work').css("margin-top",value);
 	$('#welcome-content').css("margin-top",value - $('#welcome-content').height());
 
+	$('#how-work-link, #made-for-who-link, #top-link, #professionals-link, #sign-up-link').click(function(event) {
+		var link = $(this);
+		var linkId = link.attr("id");
+		var top = (linkId == "top-link" ? 0 : $("#"+link.attr("target")).offset().top);
+		
+		$(".step").removeClass("hover");
+		$("#welcome-header").removeClass("dark");
 
-	$('#how-work-link').click(function(){
-    $('html,body').animate({scrollTop: $('#welcome-how-work').offset().top},650);
+		$("#menu-home").find("li > a").removeClass("selected");
+		link.addClass("selected");
+    $('html,body').animate({scrollTop: top},650, function(){
+    	
+    	//Efect on click How Work link
+    	if (linkId == "how-work-link")	{
+    		$("#step1").addClass("hover");
+    	} else if(linkId == "professionals-link") {
+    		$("#welcome-header").addClass("dark");
+    		$("#pic-professionals").addClass("showed");
+    		$("#professionals-text-box").addClass("showed-text-box");
+    	}  else if(linkId == "sign-up-link") {
+    		$("#welcome-header").addClass("dark");
+    	}
+    		
+    });
+    event.preventDefault();
 	});
 
-	$('#jurors-link').click(function(){
-    $('html,body').animate({scrollTop:$("#welcome-jurors").offset().top},650,function () {
-
-    });
+	//Remover hover class from all .step element
+	$(".step ").mouseenter(function(){
+    $(".step").removeClass("hover");
   });
-
 });

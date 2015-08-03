@@ -1,0 +1,1 @@
+Ext.locale = {"hello":"Hello world"}

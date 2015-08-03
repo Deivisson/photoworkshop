@@ -17,12 +17,16 @@ pt_BR:
     user_removed_from_workshop: "Participante removido com sucesso!!"
   welcome: 
     menu:
+      cover: "COVER"
       how_work: "COMO FUNCIONA?"
       jurors: "JURADOS"
+      for_who: "FEITO PRA QUEM?"
+      professionals: "PROFISSIONAIS"
       inspirations: "INSPIRAÇÕES"
       contests: "CONCURSOS"
       login: "Login"
       sign_up: "Cadastre-se <span>grátis</span>"
+      contactus: "CONTATO"
     
     texts:
       header: "Cadastre-se agora"

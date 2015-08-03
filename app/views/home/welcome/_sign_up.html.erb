@@ -1,0 +1,23 @@
+<h1 class="title">
+	Cadastre-se 
+</h1>
+<div class="sign-up-box">
+	<div class="social-network-buttons">
+		sad
+	</div>
+	<%= form_for(:user, :url => session_path(:user), html:{class:"sign-up-form"}) do |f| %>
+		<div class="field">
+			<%= f.email_field :email, autofocus: true, placeholder: "Entre com seu Email" %>
+		</div>
+
+		<div class="field">
+			<%= f.password_field :password, autocomplete: "off", placeholder: "Senha" %>
+		</div>
+		<div class="field">
+			<%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirmação da Senha" %>
+		</div>
+		<div>
+			<%= f.submit "Sign up", class:"submit-button" %>
+		</div>
+	<% end %>
+</div>

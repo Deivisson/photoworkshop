@@ -7,27 +7,41 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="welcome-header">
+	<div class="welcome-header" id="welcome-header">
 		<div class="logo-container">
 			Pic<span>2Gether</span>
 		</div>
 		<div class="centralizer">
-			<ul class="menu" >
+			<ul class="menu" id="menu-home" >
 				<li class="logo-space"></li>
-				<li><%= link_to t('welcome.menu.how_work'),"#",id:'how-work-link' %></li>
-				<li><%= link_to t('welcome.menu.jurors'),"#",id:"jurors-link" %></li>
-				<li><%= link_to t('welcome.menu.inspirations'),"#" %></li>
-				<li><%= link_to t('welcome.menu.contests'),"#" %></li>
+				<li>
+					<%= link_to t('welcome.menu.cover'),"#",id:'top-link', class:'selected' %>
+				</li>				
+				<li>
+					<%= link_to t('welcome.menu.how_work'),"#",id:'how-work-link',target:'welcome-how-work' %>
+				</li>
+				<li>
+					<%= link_to t('welcome.menu.for_who'),"#",id:'made-for-who-link',target:'welcome-made-for-who' %>
+				</li>
+				<li>
+					<%= link_to t('welcome.menu.professionals'),"#",id:"professionals-link",target:'welcome-professionals' %>
+				</li>
 			</ul>
 		</div>
 		<div class="account-buttons">
 			<%= link_to t('welcome.menu.login'), new_user_session_path %>
-			<%= link_to t('welcome.menu.sign_up').html_safe, 
-									new_user_session_path,class:'sign-up' %>
+			<%= link_to t('welcome.menu.sign_up').html_safe,"#",class:'sign-up',
+									 id:"sign-up-link",target:'welcome-sign-up' %>
 		</div>
 	</div>
-	<div class="welcome-cover" id="welcome-cover" style="background-image:url(<%='/assets/cover2.jpg'%>)"></div>
+
+	<div class="welcome-cover" id="welcome-cover" style="background-image:url(<%='/assets/avatar3.jpg'%>)"></div>
 	<div class="welcome-cover-mask" id="welcome-cover-mask">
+		<div class="coverby-container">
+			<%= image_tag("avatar.jpg",class:'cover-user-avatar') %>
+			<span class="photo-by">Photo by</span>
+			<span class="user-name">Deivisson Bruno</span>
+		</div>
 		<div class="centralizer">
 			<div class="welcome-content" id="welcome-content">
 					<h1><%=t('welcome.texts.header') %></h1>
@@ -38,19 +52,23 @@
 											new_user_registration_path,class:'sign_up_email' %>
 			</div>
 		</div>
+
 	</div>
-	
-	<div class="how_work" id="welcome-how-work" style="background-image:url(<%='/assets/cover2.jpg'%>)">
-		<div class="centralizer">
-			<%= yield :how_work %>
-		</div>
+	<%= link_to "", "#", class:"back-page", id:'top-link' %>
+	<div class="how_work" id="welcome-how-work">
+		<div class="centralizer"><%= render 'how_work' %></div>
+		<div class="bg"></div>
 	</div>
-	<div class="jurors" id="welcome-jurors">
-		<div class="centralizer">
-			<%= yield :jurors %>
-		</div>
+	<div class="made-for-who" id="welcome-made-for-who">
+		<div class="centralizer"><%= render 'made_for_who' %></div>
 	</div>
-<%= yield %>
+	<div class="professionals" id="welcome-professionals">
+		<div class="centralizer"><%= render 'professionals' %></div>
+	</div>
+	<div class="sign-up-container" id="welcome-sign-up">
+		<div class="centralizer"><%= render 'sign_up' %></div>
+	</div>	
+	<%= yield %>
 
 </body>
 </html>
