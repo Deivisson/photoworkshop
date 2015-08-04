@@ -1,13 +1,10 @@
 <h1 class="title">
-	Cadastre-se 
+	Crie a sua conta
 </h1>
-<div class="sign-up-box">
-	<div class="social-network-buttons">
-		sad
-	</div>
+<div class="sign-up-box" id="sign-up-box">
 	<%= form_for(:user, :url => session_path(:user), html:{class:"sign-up-form"}) do |f| %>
 		<div class="field">
-			<%= f.email_field :email, autofocus: true, placeholder: "Entre com seu Email" %>
+			<%= f.email_field :email, autofocus: true, placeholder: "Email" %>
 		</div>
 
 		<div class="field">
@@ -20,4 +17,8 @@
 			<%= f.submit "Sign up", class:"submit-button" %>
 		</div>
 	<% end %>
+	<div class="account-buttons social-network-buttons">
+			<%= link_to t('welcome.authentication.facebook_sign_up'),"#",class:'sign-up-button facebook'%>
+			<%= link_to t('welcome.authentication.twitter_sign_up'),"#",class:'sign-up-button twitter'%>
+	</div>
 </div>

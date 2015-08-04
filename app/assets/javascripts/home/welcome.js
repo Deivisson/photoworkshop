@@ -16,7 +16,7 @@ $(document).ready(function(){
 
 		$("#menu-home").find("li > a").removeClass("selected");
 		link.addClass("selected");
-    $('html,body').animate({scrollTop: top},650, function(){
+    $('html,body').animate({scrollTop: top},250, function(){
     	
     	//Efect on click How Work link
     	if (linkId == "how-work-link")	{
@@ -26,6 +26,7 @@ $(document).ready(function(){
     		$("#pic-professionals").addClass("showed");
     		$("#professionals-text-box").addClass("showed-text-box");
     	}  else if(linkId == "sign-up-link") {
+            $("#sign-up-box").addClass("showed");
     		$("#welcome-header").addClass("dark");
     	}
     		

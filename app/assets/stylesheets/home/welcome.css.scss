@@ -1,5 +1,5 @@
 html, body {
-  overflow-x: hidden; 
+  overflow: hidden; 
 }
 
 .centralizer {
@@ -31,6 +31,35 @@ html, body {
   margin: 0 0 0 20px;
   span {
     color: #008CBF;
+  }
+}
+
+ul.about-container {
+  bottom: 5px;
+  height: 30px;
+  position: fixed;
+  left: 20px;
+  li {
+    float: left;
+    padding: 0 3px 0 3px;
+    &:after {
+      color: #eee;
+      content: ".";
+      margin: -5px 0 0 5px;
+    };
+    a {
+      color: #FFF;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      };
+    }
+  }
+  li:last-child {
+    &:after {
+      color: #eee;
+      content: "";
+    }    
   }
 }
 
@@ -175,34 +204,6 @@ ul.menu {
     margin-top: 5px;
     letter-spacing: 2px;
   }
-  a.sign-up-button {
-    border: 1px solid #777;
-    border-radius: 5px; 
-    -moz-border-radius: 5px; 
-    -webkit-border-radius: 5px; 
-    color: #FFF;
-    float: left;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 40px;
-    text-align: center;
-    height: 40px;
-    margin: 40px 10px 0 0;
-    padding: 5px;
-    position: absolute;
-    text-decoration: none;
-    width: 250px;
-    &.facebook {
-      background-color: #4E70B5;
-      border: 1px solid #4453B5;
-      margin-left: 210px;
-    }
-    &.twitter {
-     background-color: #28C2FA; 
-     border: 1px solid #29AFFA;
-     margin-left: 490px;
-    }
-  }
   a.sign_up_email {
     color: #FFF;
     font-weight: bold;
@@ -215,6 +216,36 @@ ul.menu {
     width: 100%;
   }
 }
+
+a.sign-up-button {
+  border: 1px solid #777;
+  border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  -webkit-border-radius: 5px; 
+  color: #FFF;
+  float: left;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 40px;
+  text-align: center;
+  height: 40px;
+  margin: 40px 10px 0 0;
+  padding: 5px;
+  position: absolute;
+  text-decoration: none;
+  width: 250px;
+  &.facebook {
+    background-color: #4E70B5;
+    border: 1px solid #4453B5;
+    margin-left: 210px;
+  }
+  &.twitter {
+   background-color: #28C2FA; 
+   border: 1px solid #29AFFA;
+   margin-left: 490px;
+  }
+}
+
 
 .how_work, .made-for-who, .professionals, .sign-up-container {
   float: left;
@@ -502,97 +533,6 @@ ul.menu {
   }
 }
 
- /* ul.resume {
-    float: left;
-    color: #FFF;
-    margin-top: 90px;
-    width: 600px;
-    margin-left: 10%;
-    li {
-      float: left;
-      width: 300px;
-      h3 {
-        color: #F9BF3B;
-        font-size: 42px;
-        font-style: normal;
-        height: 100%;
-        text-align: center;
-        width: 100%;
-      }
-      h5 {
-        text-align: center;
-        text-transform: uppercase;
-        width: 100%;
-        margin-top: 10px;
-      }
-    }
-  }*/
-  /*
-  .photographer-image {
-    float: left;
-    height: 500px;
-    width: 440px
-  }
-
-  .texts-container {
-    float: right;
-    width: 500px;
-    h1 {
-      color: #FFF;
-      font-size: 27px;
-      font-weight: bold;
-    }
-    p {
-      color: #FFF;
-      font-size: 20px;
-      line-height: 22px;
-      margin-top: 35px;
-      text-align: justify;
-    }
-  }
-  .texts-container ul.counts {
-    list-style: none;
-    margin-top: 80px;
-    width: 100%;
-    li {
-      float: left;
-      height: 140px;
-      width: 220px;
-      &.first {
-        border-right: 1px solid #bfb192;  
-      }
-      span.count-icon {
-        background-image: url("/assets/home/welcome_sprite.png");
-        float: left;
-        height: 40px;
-        margin: 0 0 20px 78px;
-        width: 53px;
-        &.photographers {
-          background-position: -2px -55px;
-        }
-        &.pictures {
-          background-position: 0 0;
-        }
-      }
-      label {
-        color: #333337;
-        float: left;
-        font-size: 11px;
-        font-weight: bold;
-        width: 100%;
-        text-align: center;
-      }
-      span.count {
-        float: left;
-        font-size: 40px;
-        margin-top: 10px;
-        text-align: center;
-        width: 100%;
-      }
-    }
-  }*/
-
-
 .jurors {
   background-color: #d5f8ed;
   .texts-container {
@@ -657,9 +597,18 @@ ul.menu {
 
 .sign-up-container {
   background-color: #2D2D2D;
+  .bg {
+    background: url("/assets/home/camera.jpg");
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    margin-top: -150px;
+    z-index: 1
+  }  
   h1.title {
     font-size: 38px;
-    color: #303030;
+    color: #FFF;
     text-align: center;
     text-transform: uppercase;
     margin-top: -30px;
@@ -667,35 +616,72 @@ ul.menu {
   }
   .sign-up-box {
     background-color: #FFF;
-    border: 1px solid red;
+    border-radius: 10px; 
+    -moz-border-radius: 10px; 
+    -webkit-border-radius: 10px;    
     float: left;
     left: 50%;
-    height: 260px;
-    position: absolute;
-    margin: 100px 0 0 -350px;
-    width: 700px;
-    .social-network-buttons {
-      border-right: 1px solid #777;
-      float: left;
-      height: 240px;
-      margin: 10px 0 10px 0;
-      width: 350px;
-    }
+    height: auto;
+    padding: 20px;
+    position: relative;
+    margin: 40px 0 0 -200px;
+    width: 390px;
+    z-index: 999;
+
+    transition:All 0.3s ease;
+    -webkit-transition:All 0.3s ease;
+    -moz-transition:All 0.3s ease;
+    -o-transition:All 0.3s ease;
+    transform: translate(-2000px);
+    -webkit-transform: translate(-2000px);
+    -moz-transform: translate(-2000px);
+    -o-transform: translate(-2000px);
+    -ms-transform: translate(-2000px);
+    &.showed {
+      transform: translate(0px);
+      -webkit-transform: translate(0px);
+      -moz-transform: translate(0px);
+      -o-transform: translate(0px);
+      -ms-transform: translate(0px);
+    }    
     .sign-up-form {
-      float: right;
-      margin: 20px 35px 10px 0;      
-      width: 300px;
+      float: left;
+      margin: 20px 0 0 10px;
+      width: 355px;
       .field {
         float: left;
         margin-bottom: 12px;
         width: 100%;
         input {
-          height: 37px;
-          padding-left: 15px;
+          border: 1px solid #A6A6A6;
+          border-radius: 5px; 
+          -moz-border-radius: 5px; 
+          -webkit-border-radius: 5px;          
+          height: 42px;
           width: 100%;
+          padding-left: 12px;
         }
       }
     }
+    .social-network-buttons {
+      border-top: 1px solid #e7e7e7;
+      float: left;
+      height: 140px;
+      margin: 30px 0 0 12px;
+      padding-top: 30px;
+      width: 360px;
+      a.sign-up-button {
+        float: left;
+        height: 30px;
+        line-height: 30px;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-top: 5px;
+        position: relative;
+        width: 350px;
+        z-index: 999;
+      }
+    }    
   }
 }
 

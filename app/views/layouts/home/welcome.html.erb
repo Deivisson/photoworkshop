@@ -35,7 +35,7 @@
 		</div>
 	</div>
 
-	<div class="welcome-cover" id="welcome-cover" style="background-image:url(<%='/assets/avatar3.jpg'%>)"></div>
+	<div class="welcome-cover" id="welcome-cover" style="background-image:url(<%='/assets/cover2.jpg'%>)"></div>
 	<div class="welcome-cover-mask" id="welcome-cover-mask">
 		<div class="coverby-container">
 			<%= image_tag("avatar.jpg",class:'cover-user-avatar') %>
@@ -67,7 +67,13 @@
 	</div>
 	<div class="sign-up-container" id="welcome-sign-up">
 		<div class="centralizer"><%= render 'sign_up' %></div>
-	</div>	
+		<div class="bg"></div>
+	</div>
+	<ul class="about-container">
+		<li><%= link_to "Termos", "#" %></li>
+		<li><%= link_to "facebook", "#" %></li>
+		<li><%= link_to "Sobre", "#" %></li>
+	</ul>
 	<%= yield %>
 
 </body>
