@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141109004703) do
+ActiveRecord::Schema.define(version: 20150805022845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -155,6 +155,7 @@ ActiveRecord::Schema.define(version: 20141109004703) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "full_name",           limit: 100
   end
 
   add_index "user_profiles", ["category_id"], name: "index_user_profiles_on_category_id", using: :btree

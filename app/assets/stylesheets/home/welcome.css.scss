@@ -622,7 +622,7 @@ a.sign-up-button {
     float: left;
     left: 50%;
     height: auto;
-    padding: 20px;
+    padding: 10px;
     position: relative;
     margin: 40px 0 0 -200px;
     width: 390px;
@@ -653,20 +653,23 @@ a.sign-up-button {
         margin-bottom: 12px;
         width: 100%;
         input {
-          border: 1px solid #A6A6A6;
+          border: 1px solid #D8D8D8;
           border-radius: 5px; 
           -moz-border-radius: 5px; 
           -webkit-border-radius: 5px;          
-          height: 42px;
+          height: 35px;
           width: 100%;
           padding-left: 12px;
+          &:focus {
+            box-shadow:0px 1px 4px #C6E9F4;
+          };
         }
       }
     }
     .social-network-buttons {
       border-top: 1px solid #e7e7e7;
       float: left;
-      height: 140px;
+      height: 80px;
       margin: 30px 0 0 12px;
       padding-top: 30px;
       width: 360px;
@@ -678,7 +681,7 @@ a.sign-up-button {
         margin-left: 0;
         margin-top: 5px;
         position: relative;
-        width: 350px;
+        width: 155px;
         z-index: 999;
       }
     }    

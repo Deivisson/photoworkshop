@@ -2,9 +2,19 @@
 	Crie a sua conta
 </h1>
 <div class="sign-up-box" id="sign-up-box">
-	<%= form_for(:user, :url => session_path(:user), html:{class:"sign-up-form"}) do |f| %>
+	<%= form_for(:user, :url => registration_path(:user), html:{class:"sign-up-form"}) do |f| %>
 		<div class="field">
-			<%= f.email_field :email, autofocus: true, placeholder: "Email" %>
+			<%= f.text_field :full_name, 
+												placeholder: "Nome + Sobrenome",
+												id:"user-full-name" %>
+		</div>
+
+		<div class="field">
+			<%= f.text_field :user_name, autofocus: true, placeholder: "User Nome" %>
+		</div>
+
+		<div class="field">
+			<%= f.email_field :email, placeholder: "Email" %>
 		</div>
 
 		<div class="field">

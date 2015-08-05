@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :states
   end
   
-  devise_for :users
+  devise_for :users, controllers: {registrations: "authentication/registrations"}
   namespace :user do 
     root "photo_explore#index"
     resources :dashboard, :only => [:index]

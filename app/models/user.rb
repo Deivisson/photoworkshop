@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
 
   after_create :create_profile
 
-  attr_accessor :following
+  attr_accessor :following, :full_name, :user_name
 
   def cover_photo
     cover = self.photos.landscapes.limit(1).first
@@ -69,6 +69,6 @@ class User < ActiveRecord::Base
 private
 	
 	def create_profile
-  		self.profile = UserProfile.new(user_name:"DeivissonBruno")
+  		self.profile = UserProfile.new({user_name: user_name, full_name: full_name})
 	end  	
 end

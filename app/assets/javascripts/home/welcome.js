@@ -28,6 +28,7 @@ $(document).ready(function(){
     	}  else if(linkId == "sign-up-link") {
             $("#sign-up-box").addClass("showed");
     		$("#welcome-header").addClass("dark");
+            $("#user-full-name").focus();
     	}
     		
     });
