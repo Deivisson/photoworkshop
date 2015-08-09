@@ -4,9 +4,11 @@ pt_BR:
       photos: Fotos
       following: "Seguindo"
       followers: "Seguidores"
-    lateral_menu:
+    main_menu:
+      home: "Home"
       explore: "Explorar"
       profile: "Perfil"
+      me: "Me"
       photographers: "Fotografos"
       workshops: "Workshops"
       upload: "Upload"

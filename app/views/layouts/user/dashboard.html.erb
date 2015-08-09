@@ -25,8 +25,12 @@
 
 	<div class="left-col">
 		<div class="top-info">
-			<%= link_to image_tag("user/upload_photo.png"), 
-									new_user_photo_path,class:"upload-photo" %>
+    	<%= link_to user_home_index_path, class:"home-menu" do %>
+    		<span class="icon20 home"></span>
+    	<% end %>
+			<%= link_to new_user_photo_path, class:"home-menu" do %>
+				<span class="icon20 upload"></span>
+			<% end %>
 		</div>
 		<div class="float-container">
 			<div class="user-content">
@@ -58,14 +62,6 @@
 					</li>												
 				</ul>
 			</div>
-
-			<!-- Lateral menu -->
-		  <%= content_tag :ul, class:'menu' do %>
-		  	<li><%= link_to t('user.lateral_menu.explore'), user_photo_explore_path ,class:'profile' %></li>
-		    <li><%= link_to t('user.lateral_menu.profile'), user_profile_path(0) ,class:'profile' %></li>
-		    <li><%= link_to t('user.lateral_menu.photographers'), user_photographers_path,class:'photographers' %></li>
-		    <li><%= link_to t('user.lateral_menu.workshop'), user_workshops_path ,class:'profile' %></li>
-	  	<% end %>
   	</div>
 	</div>
 	<div class="main-content-area">

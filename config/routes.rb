@@ -1,4 +1,3 @@
-
 Rails.application.routes.draw do
 
   devise_for :admins
@@ -11,7 +10,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: "authentication/registrations"}
   namespace :user do 
     root "photo_explore#index"
-    resources :dashboard, :only => [:index]
+    resources :home, :only => [:index]
     resources :photos do 
       resources :photo_comments, only: [:create,:destroy]
     end

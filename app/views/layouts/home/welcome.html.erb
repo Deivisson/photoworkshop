@@ -28,17 +28,19 @@
 				</li>
 			</ul>
 		</div>
+		
 		<div class="account-buttons">
 			<%= link_to t('welcome.menu.login'), new_user_session_path %>
 			<%= link_to t('welcome.menu.sign_up').html_safe,"#",class:'sign-up',
 									 id:"sign-up-link",target:'welcome-sign-up' %>
 		</div>
+		<%# yield :login_form %>
 	</div>
 
 	<div class="welcome-cover" id="welcome-cover" style="background-image:url(<%='/assets/cover2.jpg'%>)"></div>
 	<div class="welcome-cover-mask" id="welcome-cover-mask">
 		<div class="coverby-container">
-			<%= image_tag("avatar.jpg",class:'cover-user-avatar') %>
+			<%= image_tag("avatar.jpg",class:'user-avatar') %>
 			<span class="photo-by">Photo by</span>
 			<span class="user-name">Deivisson Bruno</span>
 		</div>

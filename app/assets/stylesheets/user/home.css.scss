@@ -1,0 +1,118 @@
+ul.timeline {
+	height: 400px;
+	left: 50%;
+	margin-left: -450px;
+	position: absolute;
+	width: 900px;
+	li {
+		width: 47%;
+		.timestamp {
+			background-color: #008CBF;
+			border-radius: 31px; 
+			-moz-border-radius: 31px; 
+			-webkit-border-radius: 31px; 
+			color: #fff;
+			font-size: 10px;
+			padding: 5px 12px 7px;
+			margin-bottom: 5px;
+		}
+		&:hover span.cicle {
+			transform: scale(1.4);
+      -webkit-transform: scale(1.4);
+      -moz-transform: scale(1.4);
+      -o-transform: scale(1.4);
+      -ms-transform: scale(1.4);
+		}
+/*		&:hover .item {
+			border-color: #008CBF; 
+		}*/
+		span.cicle {
+			background-color: #008cbf;
+			border-radius: 50%;
+			height: 10px;
+			width: 10px;
+			position: absolute;
+			margin-right: 100%;
+			transition:All 0.3s ease;
+      -webkit-transition:All 0.3s ease;
+      -moz-transition:All 0.3s ease;
+      -o-transition:All 0.3s ease;
+      transform: scale(0.8);
+      -webkit-transform: scale(0.8);
+      -moz-transform: scale(0.8);
+      -o-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+		}
+		&.odd {
+			clear: left;
+			float: left;
+			margin-top: 50px;
+			.timestamp {
+				float: right;
+			}
+			span.cicle {
+				margin-left: 50%;
+				margin-top: 7px;
+			}
+		}
+		&.even {
+			clear: right;
+			float: right;	
+			margin-top: 200px;
+			.timestamp {
+				float: left;
+			}
+			span.cicle {
+		    float: left;
+		    margin-left: -25px;
+		    margin-top: -22px;
+		    position: relative;
+			}			
+		}
+		.item {
+			background-color: #FFF;
+			border: 1px solid #EAEBED;
+			display: table;
+			height: 100px;
+			width: 100%;
+			padding: 5px;
+			transition:All 0.8s ease;
+			img {
+				height: 100%;
+				width: 100%;
+			}
+
+			.photo-info {
+				float: left;
+				margin-top: 10px;
+				padding: 5px;
+				h1 {
+					color: #383845;
+					float: left;
+					font-size: 22px;
+					width: 100%;
+				}
+				p {
+					color: #333;
+					font-size: 14px;
+					float: 100%;
+					line-height: 18px;
+					margin-top: 30px;
+					width: 100%;
+				}
+			}
+		}
+		&:hover .photo-author-container {
+			opacity: 1;
+		};
+		.photo-author-container {
+		 	margin: 50px 0 0 10px;
+		 	opacity: 0.7;
+		 	/*visibility: hidden;*/
+			transition:All 0.7s ease-out;
+      -webkit-transition:All 0.7s ease-out;
+      -moz-transition:All 0.7s ease-out;
+      -o-transition:All 0.7s ease-out;
+		}
+	}
+}

@@ -21,6 +21,10 @@ class Photo < ActiveRecord::Base
   scope :landscapes, -> {joins(:exif).where('photo_exifs.imagewidth > photo_exifs.imageheight')}
   scope :portraits, -> {joins(:exif).where('photo_exifs.imagewidth < photo_exifs.imageheight')}
 
+  def author
+    self.user.profile.user_name  
+  end
+
   def orientation
     self.exif.imagewidth > self.exif.imageheight ? "landscape" : "portrait"
   end

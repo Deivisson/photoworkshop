@@ -15,6 +15,7 @@ class User::UserProfilesController < User::BaseController
       else
         format.html { render :edit }
         format.json { render json: @user_profile.errors, status: :unprocessable_entity }
+        puts @user_profile.errors.full_messages
       end
     end
   end

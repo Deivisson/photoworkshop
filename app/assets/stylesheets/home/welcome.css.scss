@@ -34,6 +34,43 @@ html, body {
   }
 }
 
+.welcome-header .login-form {
+  float: right;
+  margin: 17px 10px 0 0;
+  input {
+    background: transparent;
+    height: 25px;
+    border: 1px solid #fff;
+    color: #fff;;
+    padding: 4px 20px 4px 20px;
+    &.username {
+    border-radius: 5px 0px 0px 5px; 
+    -moz-border-radius: 5px 0px 0px 5px; 
+    -webkit-border-radius: 5px 0px 0px 5px; 
+      width: 120px;
+      margin-right: -5px;
+    }
+    &.password {
+      width: 50px;
+    }
+  }
+  .remember-me {
+    height: 20px;
+    margin-top: 2px;
+    label, input {
+      float: left;
+    }
+    input {
+      margin: -7px 0 0 -1px;
+    }
+    label {
+      color: #fff;
+      font-size: 12px;
+      margin-top: 0px;
+    }
+  }
+}
+
 ul.about-container {
   bottom: 5px;
   height: 30px;
@@ -147,38 +184,6 @@ ul.menu {
   z-index: -200; 
 }
 
-.coverby-container {
-  position: absolute;
-  height: 30px;
-  width: auto;
-  margin: 120px 0  0 40px;
-  max-width: 150px;
-  span.user-name,
-  span.photo-by {
-    color: #FFF;
-    font-size: 12px;
-    float: left;
-    font-weight: bold;
-    text-align: center;
-    margin-left: 6px;
-    width: auto;
-    text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.75);
-  }
-  span.photo-by {
-    margin-top: 10px;
-    font-weight: normal;
-  }
-  img.cover-user-avatar {
-    border: 2px solid #FFF;
-    border-radius: 8px; 
-    -moz-border-radius: 8px; 
-    -webkit-border-radius: 8px;     
-    float: left;
-    height: 30px;
-    margin: 4px 0 0 7px;
-    width: 30px;
-  }
-}
 
 .welcome-cover-mask {
   background-color: rgba(0, 0, 0, 0.3);

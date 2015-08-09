@@ -1,0 +1,24 @@
+<ul class="timeline">
+	<% @photos.each do |photo| %>
+		<li class="<%= cycle("odd", "even") -%> ">
+			<div class="photo-author-container">
+				<%= image_tag(photo.user.profile.avatar(:thumb),class:'user-avatar') %>
+				<span class="photo-by">Photo by</span>
+				<span class="user-name"><%= photo.author %></span>
+			</div>
+			<span class="timestamp">
+				<%= time_ago_in_words(photo.created_at) %> 
+			</span>
+			<span class="cicle"></span>
+			<div class="item">
+				<%= link_to image_tag(photo.picture.url(:medium), class: "#{photo.orientation}"), 
+						user_photo_explore_show_path(photo), class:'photo-picture' %>
+						
+				<div class="photo-info">
+					<h1><%= photo.title%></h1>
+					<p><%= photo.description %> </p>
+				</div>
+			</div>
+		</li>
+	<% end %>
+</ul>
