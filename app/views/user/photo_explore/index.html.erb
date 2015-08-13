@@ -1,5 +1,10 @@
 <%= render "menu" %>
 <div id="photo-list">
-	<%= render "photo_list" %>
+	<%# render "photo_list" %>
+	<div class="grid-flow" style="width:90%;margin-left:5%">
+		<%= build_gallary %>
+	</div>
 </div>
-
+<!-- <div style="float:left;background-position: center center;background-size: cover; border: 1px solid red; height: 400px; width:500px; background-image:url(<%= @photos.first.picture.url(:medium) %>)">
+	ds
+	<div> -->

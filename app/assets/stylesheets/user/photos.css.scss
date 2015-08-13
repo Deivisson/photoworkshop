@@ -1,3 +1,141 @@
+.grid-flow {
+	width: 100%;
+}
+
+.grid-flow .row {
+	float: left;
+	height: 600px;
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.grid-flow .row .col {
+	height: 100%;
+	background-color: #fff;
+	float: left;
+}
+
+.grid-flow .row .col.last-col .img-container {
+	margin-right: 0;
+}
+
+.grid-flow .row .col .img-container {
+	height: 100%;
+	margin-right: 10px;
+}
+
+.grid-flow .row .col .img-container .img-pic {
+	background-position: center center;
+	background-size: cover;
+	border: 1px solid gray;
+	border-bottom: 0;
+	float: left;
+	height: 100%;
+	width: 100%;
+}
+
+.grid-flow .row .col .img-container .img-info {
+	border: 1px solid gray;
+	background-color: #eee;
+	float: left;
+	height: 50px;
+	width: 100%;
+}
+
+.grid-flow .row .col.col20 {
+	width: 20%
+}
+
+.grid-flow .row .col.col25 {
+	width: 25%
+}
+
+.grid-flow .row .col.col33 {
+	width: 33.33%
+}
+
+.grid-flow .row .col.col33:last-child .img-container {
+	margin-right: 0;
+}
+
+.grid-flow .row .col.col40 {
+	width: 40%
+}
+
+.grid-flow .row .col.col50 {
+	width: 50%
+}
+
+.grid-flow .row .col.col75 {
+	width: 75%
+}
+
+.grid-flow .row .col .img-container.w50 {
+	float: left;
+	width: 50%;
+	margin-bottom: 14px;
+}
+
+.grid-flow .row .col .img-container.w100 {
+	float: left;
+	width: 100% !important;
+}
+
+.grid-flow .row .col .img-container.h100 {
+	height: 100%;
+}
+
+.grid-flow .row .col .img-container.h100 .img-pic {
+	height: 90%
+}
+
+.grid-flow .row .col .img-container.h30 {
+	height: 24.2%;
+	margin-top: 12px;
+	margin-right: 14px;
+	width: 48.8% ;
+}
+
+.grid-flow .row .col .img-container.h30:last-child {
+	float: right;
+	margin-right: 0;
+}
+
+.grid-flow .row .col .img-container.h33 {
+	height: 22.9%;
+	margin-bottom: 14px;
+	float: left;
+}
+
+.grid-flow .row .col .img-container.h50 {
+	height: 48%;
+	margin-bottom: 14px;
+}
+
+.grid-flow .row .col .img-container.h50:last-child {
+	margin-bottom: 0px;
+}
+
+.grid-flow .row .col .img-container.h50 .img-pic {
+	height: 83%;
+}
+
+.grid-flow .row .col .img-container.h60 {
+	height: 55%;
+	margin-bottom: 14px;
+}
+
+.grid-flow .row .col .img-container.h70 {
+	height: 65%;
+	margin-bottom: 14px;
+}
+
+.grid-flow .row .col .img-container.top50 {
+	margin-top: 50px;
+}
+
+
+
 ul.photos-gallery-grid, 
 ul.photos-gallery-flow, 
 ul.photos-gallery-list {
@@ -89,7 +227,7 @@ ul.photos-gallery-list {
 		width: 100%;
 		li.bigger, li.smaller, li.landscape, li.portrait  {
 			float: left;
-			a {
+			.photo-picture {
 				float: left;
 				width: 100%;
 				img {

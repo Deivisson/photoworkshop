@@ -1,5 +1,342 @@
 module User::PhotosHelper
 
+	def build_gallary
+		@landscape = [];	@portrait = []
+		html = []
+		@photos.each do |photo|
+			@portrait << photo #if photo.orientation == "portrait"
+			@landscape << photo #if photo.orientation == "landscape"
+			if (@portrait.size + @landscape.size) == 6 || @photos.index(photo) == @photos.size
+				html << content_tag(:div,class:'row') do 
+					build_gallary_row.html_safe
+				end
+				@portrait = [];@landscape = []
+				break;
+			end
+
+		end
+		html.join.html_safe
+	end
+
+	def build_gallary_row()
+		return row_2l_2p
+		# if l == 1 && p == 0 
+
+		# elsif l == 0 && p == 1
+
+		# elsif l == 1 && p == 1
+
+		# elsif l == 2 && p == 0
+		
+		# elsif l == 0 && p == 2
+
+		# elsif l == 1 && p == 2
+
+		# elsif l == 2 && p == 1
+
+		# elsif l == 3 && p == 0
+		
+		# elsif l == 0 && p == 3
+
+		# elsif l == 1 && p == 3  
+
+		# elsif l == 2 && p == 2
+
+		# elsif l == 3 && p == 1
+
+		# elsif l == 4 && p == 0
+
+		# elsif l == 0 && p == 4
+		
+		# end
+	end
+
+	def row_1l_3p
+		html = content_tag(:div,class:"row") do 
+			cols = 2.times.collect{|i| picture_col("col40") {image_factory(@portrait[i], "h100")} }
+			cols << picture_col("col20") do 
+				pics = []
+				pics << image_factory(@portrait.last, "h60 w100")
+				pics << image_factory(@landscape.first, "h30 w100 top50")
+				pics.join.html_safe
+		 	end
+		 	cols.join.html_safe
+		end
+		html.html_safe
+	end
+
+
+	def row_2l_2p
+		html = content_tag(:div,class:"row") do 
+			cols = 2.times.collect{|i| picture_col("col33") {image_factory(@portrait[i], "h100")} }
+			cols << picture_col("col33") do 
+				2.times.collect{|i| image_factory(@landscape[i], "h50")}.join.html_safe
+		 	end
+		 	cols.join.html_safe
+		end
+		html.html_safe
+	end  
+
+
+	def row_2l_2p_b
+		html = content_tag(:div,class:"row") do 
+			cols = []
+			cols << picture_col("col33") do 
+				2.times.collect{|i| image_factory(@landscape[i], "h50")}.join.html_safe
+		 	end
+		 	2.times{|i| cols << picture_col("col33") {image_factory(@portrait[i], "h100")} }
+		 	cols.join.html_safe
+		end
+		html.html_safe
+	end
+
+
+	def row_3l_1p
+		html = content_tag(:div,class:"row") do
+			cols = []
+			cols << picture_col("col25") do 
+				2.times.collect{|i| image_factory(@landscape[i], "h50")}.join.html_safe
+		 	end
+		 	cols << picture_col("col50") {image_factory(@landscape.last, "h100")}
+		 	cols << picture_col("col25 last-col") {image_factory(@portrait.first, "h100")}
+		 	cols.join.html_safe
+		end
+		html.html_safe
+
+	end
+
+
+	def row_4l_0p
+		html = content_tag(:div,class:"row") do
+			cols = []
+			cols << picture_col("col50") {image_factory(@landscape.first, "h100")}
+			cols << picture_col("col50 last-col") do 
+				pics = []
+				pics << image_factory(@landscape.second, "h60")
+				2.times{|i| pics << image_factory(@landscape[i+2], "w50 h30")}
+				pics.join.html_safe
+		 	end
+		 	cols.join.html_safe
+		end
+		html.html_safe
+	end
+
+
+
+
+
+	def picture_col(class_name, &block)
+		html = content_tag(:div,class:"col #{class_name}") do 
+			inner_html = content_tag(:nil, &block)
+			inner_html.html_safe
+		end
+		html.html_safe	
+	end
+
+	def image_factory(photo,class_name="")
+		return if photo.nil?
+		html = content_tag(:div,class:"img-container #{class_name}") do 
+			inner_html = []
+			inner_html << content_tag(:div,"",class:"img-pic", style:"background-image: url('#{photo.picture.url(:medium)}')");
+			inner_html << content_tag(:div,"",class:"img-info")
+			inner_html.join.html_safe
+		end
+		html.html_safe
+	end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	# def row_3l_1p
+	# 	html = []
+	# 	html << content_tag(:li, class:'photo-item-container', style: "width:25%") do
+	# 		html_item = []
+	# 		2.times do |i|
+	# 			html_item << content_tag(:li, class:'photo-item-container', style: "width:100%;height:50%") do
+	# 				html_photo << build_url(@landscape[i])
+	# 				html_photo << photo_info_to_gallary_grid(@landscape[i])
+	# 				html_photo << photo_flow_counts(@landscape[i])
+	# 				html_photo.join.html_safe
+	# 			end
+	# 		end
+	# 	end
+	# 	html << content_tag(:li, class:'photo-item-container', style: "width:50%") do
+	# 		html_item = []
+	# 		html_item << build_url(@portrait.first)
+	# 		html_item << photo_info_to_gallary_grid(@portrait.first)
+	# 		html_item << photo_flow_counts(@portrait.first)
+	# 		html_item.join.html_safe
+	# 	end
+	# 	html << content_tag(:li, class:'photo-item-container', style: "width:25%") do
+	# 		html_item = []
+	# 		html_item << build_url(@landscape.last)
+	# 		html_item << photo_info_to_gallary_grid(@landscape.last)
+	# 		html_item << photo_flow_counts(@landscape.last)
+	# 		html_item.join.html_safe
+	# 	end
+	# 	html.join.html_safe
+	# end
+
+
+	# def row_4l_0p
+	# 	html = []
+	# 	html << content_tag(:li, class:'photo-item-container', style: "width:50%") do
+	# 		html_item = []
+	# 		html_item << build_url(photo)
+	# 		html_item << photo_info_to_gallary_grid(photo)
+	# 		html_item << photo_flow_counts(photo)
+	# 		html_item.join.html_safe
+	# 	end
+	# 	html << content_tag(:li, class:'photo-item-container', style: "width:50%") do
+	# 		html_item = []
+	# 		html_item << build_url(photo)
+	# 		html_item << photo_info_to_gallary_grid(photo)
+	# 		html_item << photo_flow_counts(photo)
+	# 		html_item.join.html_safe
+	# 	end
+	# end
+
+	# def row_2l_2p
+	# 	html = []
+	# 	2.times do |i|
+	# 		html << content_tag(:div, class:'photo-item-container portrait33') do
+	# 			html_item = []
+	# 			html_item << build_url(@portrait[i])
+	# 			html_item << photo_info_to_gallary_grid(@portrait[i])
+	# 			html_item << photo_flow_counts(@portrait[i])
+	# 			html_item.join.html_safe
+	# 		end
+	# 	end
+	# 	html << content_tag(:div, class:'photo-item-container',style:"width:32%;") do
+	# 		html_item = []
+	# 		2.times do |i|
+	# 			html_item << content_tag(:div,class:'2lands',style:'width:100%;height:50%') do
+	# 				html_photo = []
+	# 				html_photo << build_url(@landscape[i])
+	# 				html_photo << photo_info_to_gallary_grid(@landscape[i])
+	# 				html_photo << photo_flow_counts(@landscape[i])
+	# 				html_photo.join.html_safe		
+	# 			end
+	# 		end
+	# 		html_item.join.html_safe
+	# 	end
+	# end
+
+	# def row_2l_2p_b
+	# 	html = []
+	# 	html << content_tag(:li, class:'photo-item-container', style: "width:33.33%") do
+	# 		html_item = []
+	# 		html_item << build_url(photo)
+	# 		html_item << photo_info_to_gallary_grid(photo)
+	# 		html_item << photo_flow_counts(photo)
+	# 		html_item.join.html_safe
+	# 	end
+	# 	html << content_tag(:li, class:'photo-item-container', style: "width:33.33%") do
+	# 		html_item = []
+	# 		html_item << build_url(photo)
+	# 		html_item << photo_info_to_gallary_grid(photo)
+	# 		html_item << photo_flow_counts(photo)
+	# 		html_item.join.html_safe
+	# 	end
+	# 	html << content_tag(:li, class:'photo-item-container', style: "width:33.33%") do
+	# 		html_item = []
+	# 		html_item << build_url(photo)
+	# 		html_item << photo_info_to_gallary_grid(photo)
+	# 		html_item << photo_flow_counts(photo)
+	# 		html_item.join.html_safe
+	# 	end
+	# end
+
+
+	# def row_1l_3p
+	# 	html = []
+	# 	html << content_tag(:li, class:'photo-item-container', style: "width:40%") do
+	# 		html_item = []
+	# 		html_item << build_url(photo)
+	# 		html_item << photo_info_to_gallary_grid(photo)
+	# 		html_item << photo_flow_counts(photo)
+	# 		html_item.join.html_safe
+	# 	end
+	# 	html << content_tag(:li, class:'photo-item-container', style: "width:40%") do
+	# 		html_item = []
+	# 		html_item << build_url(photo)
+	# 		html_item << photo_info_to_gallary_grid(photo)
+	# 		html_item << photo_flow_counts(photo)
+	# 		html_item.join.html_safe
+	# 	end
+	# 	html << content_tag(:li, class:'photo-item-container', style: "width:20%") do
+	# 		html_item = []
+	# 		html_item << build_url(photo)
+	# 		html_item << photo_info_to_gallary_grid(photo)
+	# 		html_item << photo_flow_counts(photo)
+	# 		html_item.join.html_safe
+	# 	end
+	# end
+
+
+	# def row_4l_0p
+	# 	html = []
+	# 	html << content_tag(:li, class:'photo-item-container', style: "width:75%") do
+	# 		html_item = []
+	# 		html_item << build_url(photo)
+	# 		html_item << photo_info_to_gallary_grid(photo)
+	# 		html_item << photo_flow_counts(photo)
+	# 		html_item.join.html_safe
+	# 	end
+	# 	html << content_tag(:li, class:'photo-item-container', style: "width:25%") do
+	# 		html_item = []
+	# 		html_item << build_url(photo)
+	# 		html_item << photo_info_to_gallary_grid(photo)
+	# 		html_item << photo_flow_counts(photo)
+	# 		html_item.join.html_safe
+	# 	end
+	# end
+
+	# def row_3l_1p
+	# 	html = []
+	# 	html << content_tag(:li, class:'photo-item-container', style: "width:25%") do
+	# 		html_item = []
+	# 		html_item << build_url(photo)
+	# 		html_item << photo_info_to_gallary_grid(photo)
+	# 		html_item << photo_flow_counts(photo)
+	# 		html_item.join.html_safe
+	# 	end
+	# 	html << content_tag(:li, class:'photo-item-container', style: "width:50%") do
+	# 		html_item = []
+	# 		html_item << build_url(photo)
+	# 		html_item << photo_info_to_gallary_grid(photo)
+	# 		html_item << photo_flow_counts(photo)
+	# 		html_item.join.html_safe
+	# 	end
+	# 	html << content_tag(:li, class:'photo-item-container', style: "width:25%") do
+	# 		html_item = []
+	# 		html_item << build_url(photo)
+	# 		html_item << photo_info_to_gallary_grid(photo)
+	# 		html_item << photo_flow_counts(photo)
+	# 		html_item.join.html_safe
+	# 	end		
+	# end
+
+
+
 	# PHOTO GALLARY FLOW. Show pictures in specifics layout style
 	# The style will be defined by a randon styles that can be:
 	# style-1: An big landscape image on the left and two others landscape smaller on the right side
@@ -178,13 +515,14 @@ private
 	end
 
 	def build_url(photo)
-		if @location == :user_photos
-			link_to(image_tag(photo.picture.url(:medium)), 
-							user_photo_path(photo), class:'photo-picture')
-		elsif @location == :photos_explore
-			link_to(image_tag(photo.picture.url(:medium)), 
-							user_photo_explore_show_path(photo), class:'photo-picture')
-		end		
+		html = ""
+		# if @location == :user_photos
+		# 	link_to(image_tag(photo.picture.url(:medium)), 
+		# 					user_photo_path(photo), class:'photo-picture')
+		# elsif @location == :photos_explore
+			#link_to(image_tag(photo.picture.url(:medium)), user_photo_explore_show_path(photo), class:'photo-picture')
+		return content_tag(:div, "",class:"photo-image",style:"background-image:url(#{photo.picture.url(:medium)})") 
+		# end
 	end
 
 end
