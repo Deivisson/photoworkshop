@@ -1,5 +1,7 @@
 <% if @gallary_type == "flow" %>
-	<%= gallary_flow :photos_explore %>
+	<div class="grid-flow" style="width:90%;margin-left:5%">
+		<%= build_gallary :photos_explore %>
+	</div>
 <% elsif @gallary_type == "flow_grid" %>
 	<%= gallary_grid :photos_explore, true %>
 <% elsif @gallary_type == "list" %>
