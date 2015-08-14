@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     resources :states
   end
   
-  devise_for :users, controllers: {registrations: "authentication/registrations"}
+  devise_for :users, 
+              controllers: {registrations: "authentication/registrations",omniauth_callbacks:"users/omniauth_callbacks"}
+
   namespace :user do 
     root "photo_explore#index"
     resources :home, :only => [:index]

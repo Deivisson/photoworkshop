@@ -32,6 +32,7 @@ gem 'bootstrap-sass' #, '~> 3.1.1.0'
 gem 'mini_exiftool', '~> 2.4.2'
 gem 'responders'
 gem 'remotipart', '~> 1.2'
+gem 'omniauth-facebook'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
