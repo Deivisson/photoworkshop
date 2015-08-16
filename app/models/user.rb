@@ -1,9 +1,7 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, :omniauth_providers => [:facebook]
+         :omniauthable, :omniauth_providers => [:facebook, :twitter]
 
   #user's photos
   has_many :photos
@@ -24,10 +22,13 @@ class User < ActiveRecord::Base
   has_many :workshop_participants
   has_many :my_workshops, through: :workshop_participants
   has_many :photo_comments
+  has_many :auths, class_name:"UserAuth"
 
   after_create :create_profile
+  after_save :create_user_auth
 
-  attr_accessor :following, :full_name, :user_name
+  attr_accessor :following, :full_name, :user_name, :auth_avatar_url, :auth_provider, :auth_uid
+  
 
   def cover_photo
     cover = self.photos.landscapes.limit(1).first
@@ -66,9 +67,37 @@ class User < ActiveRecord::Base
     @photos_count = @photos_count || photos.count
   end
 
+  def self.from_omniauth(auth)
+    user_auth = UserAuth.where(provider: auth[:provider], uid: auth[:uid]).first
+    if user_auth.nil?
+      user = User.where(email: auth[:email]).first || User.new
+      if user.new_record?
+        user.password         = Devise.friendly_token[0,20]
+        user.full_name        = auth[:full_name]
+        user.user_name        = auth[:user_name]
+        user.auth_avatar_url  = auth[:avatar_url]
+      end
+      user.auth_provider    = auth[:provider]
+      user.auth_uid         = auth[:uid]
+      user.email            = auth[:email]
+      user.save if user.email.present?
+    else
+      user = user_auth.user
+    end
+    return user
+  end
+
+
 private
 	
 	def create_profile
-  		self.profile = UserProfile.new({user_name: user_name, full_name: full_name})
-	end  	
+  		self.profile = UserProfile.new(
+        { user_name: user_name,full_name: full_name, avatar_remote_url: auth_avatar_url})
+	end
+
+  def create_user_auth
+    if (auth_provider.present? && auth_uid.present?)
+      UserAuth.where({user_id: id ,provider: auth_provider, uid:auth_uid}).first_or_create
+    end
+  end
 end

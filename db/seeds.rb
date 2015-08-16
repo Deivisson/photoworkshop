@@ -32,9 +32,12 @@ open("#{path}/db/data/cities.csv") do |file|
   puts "Data entered in the city table"
 end if City.first.nil?
 
-
-categories = %W(Retrato Casamento Street)
-categories.each do |category|
-	Category.where(description:category).first_or_create!
+#categories
+open("#{path}/db/data/categories.txt") do |file|
+  puts "Populating categories table..."
+  file.read.each_line do |category|
+    Category.where(description:category.gsub("\n","")).first_or_create!
+  end
+  puts "Data entered in the categories table"
 end
 

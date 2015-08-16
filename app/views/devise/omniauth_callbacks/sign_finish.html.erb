@@ -1,0 +1,14 @@
+<%= form_tag(complete_sign_up_path, method: :post) do |f| %>
+		<%= text_field_tag "auth[full_name]",@user.full_name %>
+  	<%= text_field_tag "auth[user_name]",@user.user_name %>
+  	<%= text_field_tag "auth[auth_avatar_url]",@user.auth_avatar_url %>
+  	<%= text_field_tag "auth[auth_provider]",@user.auth_provider %>
+  	<%= text_field_tag "auth[auth_uid]",@user.auth_uid %>
+		<div class="field">
+			<%= text_field_tag "auth[email]" %>
+		</div>
+
+		<div>
+			<%= submit_tag "Sign up" %>
+		</div>
+	<% end %>

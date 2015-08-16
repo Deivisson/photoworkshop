@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     resources :states
   end
   
-  devise_for :users, 
-              controllers: {registrations: "authentication/registrations",omniauth_callbacks:"users/omniauth_callbacks"}
+  devise_for :users,controllers: {registrations: "authentication/registrations",
+                                 omniauth_callbacks:"authentication/omniauth_callbacks"}
 
   namespace :user do 
     root "photo_explore#index"
@@ -44,6 +44,8 @@ Rails.application.routes.draw do
   scope :home do
     resources :welcome
   end
+  get "sign_up/finish", to:'omniauth_callbacks#sign_finish', :as => :sign_up_finish
+  post "authentication/sign_up_finish/complete_sign_up", to:'authentication/sign_up_finish#complete_sign_up', :as => :complete_sign_up
   root "home/welcome#index"
 
   

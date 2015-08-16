@@ -219,12 +219,13 @@ module User::PhotosHelper
 		return if photo.nil?
 		html = content_tag(:div,class:"img-container #{class_name}", style:style) do 
 			inner_html = []
-			inner_html << content_tag(:div,class:"img-pic", style:"background-image: url('#{photo.picture.url(:medium)}')") do 
-				build_url(photo)
+			inner_html << content_tag(:div,class:"img-pic", style:"background-image: url('#{photo.picture.url(:medium)}')") do
+				pic = []
+				pic << photo_resume_counts(photo)
+				pic << build_url(photo)
+				pic.join.html_safe
 			end
-			inner_html << content_tag(:div,class:"img-info") do 
-				photo_details(photo)
-			end
+			inner_html << content_tag(:div,class:"img-info") {photo_details(photo)}
 			inner_html.join.html_safe
 		end
 		html.html_safe
@@ -361,6 +362,25 @@ private
 			inner_html.join.html_safe
 		end
 		html.join.html_safe
+	end
+
+	def photo_resume_counts(photo)
+		content_tag(:ul,class:"photo-counts") do 
+			html_info = []
+			html_info << content_tag(:li) do 
+				html_info_item = []
+				html_info_item << content_tag(:span,"Visualizacoes")
+				html_info_item << content_tag(:h1, photo.views)
+				html_info_item.join.html_safe
+			end
+			html_info << content_tag(:li) do 
+				html_info_item = []
+				html_info_item << content_tag(:span,"Curtidas")
+				html_info_item << content_tag(:h1, photo.likes_count)
+				html_info_item.join.html_safe
+			end
+			html_info.join.html_safe
+		end.html_safe
 	end
 
 	def photo_details(photo)

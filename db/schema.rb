@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150814161835) do
+ActiveRecord::Schema.define(version: 20150815021219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,6 +125,16 @@ ActiveRecord::Schema.define(version: 20150814161835) do
   add_index "photos", ["category_id"], name: "index_photos_on_category_id", using: :btree
   add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
 
+  create_table "sessions", force: true do |t|
+    t.string   "session_id", null: false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
+  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
+
   create_table "states", force: true do |t|
     t.string   "name",       limit: 100
     t.string   "short_name", limit: 2
@@ -134,6 +144,16 @@ ActiveRecord::Schema.define(version: 20150814161835) do
   end
 
   add_index "states", ["country_id"], name: "index_states_on_country_id", using: :btree
+
+  create_table "user_auths", force: true do |t|
+    t.integer  "user_id",    null: false
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_auths", ["user_id"], name: "index_user_auths_on_user_id", using: :btree
 
   create_table "user_profiles", force: true do |t|
     t.integer  "user_id"
@@ -183,14 +203,10 @@ ActiveRecord::Schema.define(version: 20150814161835) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "provider"
-    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["provider"], name: "index_users_on_provider", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
 
   create_table "workshop_activities", force: true do |t|
     t.integer  "workshop_id"
@@ -264,6 +280,8 @@ ActiveRecord::Schema.define(version: 20150814161835) do
   add_foreign_key "photos", "users", name: "fk_photos_users"
 
   add_foreign_key "states", "countries", name: "states_countries"
+
+  add_foreign_key "user_auths", "users", name: "user_auths_users"
 
   add_foreign_key "user_profiles", "categories", name: "user_profiles_categories"
   add_foreign_key "user_profiles", "cities", name: "user_profiles_cities"

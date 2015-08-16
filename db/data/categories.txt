@@ -1,0 +1,31 @@
+Abstrato
+Animal
+Arquitetura
+Astrofotografia
+Preto e Branco
+Show
+Familia
+Moda
+Filmes
+Fine Art
+Alimento
+HDRI
+Industrial
+Jornalismo
+Paisagem
+Macro
+Natureza
+Nú
+Pessoas
+Retrato
+Produtos
+Publicidade
+Rural
+Praia
+Esportes
+Fotografia de Rua
+Viagem
+Urbanismo
+Mergulho
+Veiculo
+Casamento

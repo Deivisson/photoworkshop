@@ -20,9 +20,9 @@
 		<div class="field">
 			<%= f.password_field :password, autocomplete: "off", placeholder: "Senha" %>
 		</div>
-		<div class="field">
+<!-- 		<div class="field">
 			<%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirmação da Senha" %>
-		</div>
+		</div> -->
 		<div>
 			<%= f.submit "Sign up", class:"submit-button" %>
 		</div>
@@ -31,6 +31,8 @@
 			<%= link_to t('welcome.authentication.facebook_sign_up'),
 									user_omniauth_authorize_path(:facebook),
 									class:'sign-up-button facebook'%>
-			<%= link_to t('welcome.authentication.twitter_sign_up'),"#",class:'sign-up-button twitter'%>
+			<%= link_to t('welcome.authentication.twitter_sign_up'),
+									user_omniauth_authorize_path(:twitter),
+									class:'sign-up-button twitter'%>
 	</div>
 </div>

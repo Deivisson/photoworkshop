@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Photograph</title>
+  <%= stylesheet_link_tag    'user', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'user', 'data-turbolinks-track' => false %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<ul class="toolbar">
+		<%= yield :toolbar %>
+		<%= content_tag :li, class:'page-title'  do %>
+    	<%= yield(:title) %>
+		<% end if show_title? %>
+		<%= content_tag :li, class:'user-info'  do %>
+	    <%= link_to "Logoff",destroy_user_session_path %>
+		<% end %>
+		<%= yield :toolbar_buttons %>
+	</ul>
+	<div class="flash_container">
+		<%- flash.each do |name, msg| %>
+	    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+	  <%- end %>
+  </div>
+
+	<div class="left-col">
+		<div class="top-info">
+    	<%= link_to user_home_index_path, class:"home-menu" do %>
+    		<span class="icon20 home"></span>
+    	<% end %>
+			<%= link_to new_user_photo_path, class:"home-menu" do %>
+				<span class="icon20 upload"></span>
+			<% end %>
+		</div>
+		<%= yield :categories %>
+	</div>
+	<div class="main-content-area">
+		<%= yield %>
+	</div>
+
+</body>
+</html>

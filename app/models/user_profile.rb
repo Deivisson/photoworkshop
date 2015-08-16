@@ -1,3 +1,5 @@
+require 'openssl'
+OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 class UserProfile < ActiveRecord::Base
 
   validates :user_name, presence:true
@@ -11,8 +13,10 @@ class UserProfile < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
   belongs_to :city
-  attr_accessor :country_id, :state_id
 
+  attr_accessor :country_id, :state_id, :avatar_remote_url
+
+  before_create :avatar_from_remote_url
 
   def state_id
   	if @state_id.nil? && !self.city_id.nil?
@@ -27,4 +31,12 @@ class UserProfile < ActiveRecord::Base
   	end
   	@country_id
   end
+
+private 
+  def avatar_from_remote_url
+    if self.avatar_remote_url.present? && self.avatar.nil?
+      self.avatar = URI.parse(self.avatar_remote_url)
+    end
+  end
+ 
 end
