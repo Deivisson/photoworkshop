@@ -1,4 +1,15 @@
-<%= gallary_button_bar(:user_photos,"flow","gallary-list") %>
-<%= gallary_button_bar(:user_photos,"grid","gallary-grid") %>
-<%= gallary_button_bar(:user_photos,"flow_grid","gallary-grid") %>
-<%= gallary_button_bar(:user_photos,"list","gallary-list") %>
+<%= content_tag :li do %>
+	<%= link_to user_photos_path(gallary_type:"flow"), remote:true do  %>
+		<%= content_tag(:span, "", class:"icon20 grid-flow") %>
+	<% end %>
+<% end %>
+<%= content_tag :li do %>
+	<%= link_to user_photos_path(gallary_type:"table"), remote:true do  %>
+		<%= content_tag(:span, "", class:"icon20 grid-table") %>
+	<% end %>
+<% end %>
+<%= content_tag :li do %>
+	<%= link_to user_photos_path(gallary_type:"list"), remote:true do  %>
+		<%= content_tag(:span, "", class:"icon20 grid-list") %>
+	<% end %>
+<% end %>

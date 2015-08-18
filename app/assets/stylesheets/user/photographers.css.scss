@@ -277,8 +277,15 @@ ul.photographers {
 	}
 	.photographers-photo-gallary {
     float: left;
-    margin: 70px 0 0 10px;
-    width: 880px;
+    margin: 70px 0 0 0px;
+    width: 100%;
+    .grid-table  {
+    	margin-left: 0px;
+    	width: 102% !important;
+    	.img-container {
+    		width: 23.6%;
+    	}
+    }	
 	}
 }	
 

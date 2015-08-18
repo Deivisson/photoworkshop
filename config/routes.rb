@@ -11,7 +11,7 @@ Rails.application.routes.draw do
                                  omniauth_callbacks:"authentication/omniauth_callbacks"}
 
   namespace :user do 
-    root "photo_explore#index"
+    root "home#index"
     resources :home, :only => [:index]
     resources :photos do 
       resources :photo_comments, only: [:create,:destroy]

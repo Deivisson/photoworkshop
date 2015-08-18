@@ -9,7 +9,8 @@ class User::PhotographersController < User::BaseController
 	end
 
 	def show
-		@photos = @user.photos.limit(9)
+		@photos = @user.photos.limit(10)
+		@gallary_type = :table
 	end
 
 	def following

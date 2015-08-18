@@ -191,6 +191,7 @@ ul.toolbar {
 
 ul.buttons-bar {
 	float: right;
+	height: 30px;
 	li {
 		border: 1px solid #eee;
 		border-radius: 3px; 
@@ -205,11 +206,9 @@ ul.buttons-bar {
 			height: 100%;
 			float: left;
 			width: 100%;
-			&.gallary-list {
-				background: url(/assets/user/grid_list.png) no-repeat  0 4px ; 
-			}
-			&.gallary-grid {
-				background: url(/assets/user/grid.png) no-repeat  0 4px ; 
+			span {
+				float: left;
+		    width: 30px;
 			}
 		}
 		&.selected {

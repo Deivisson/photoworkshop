@@ -1,4 +1,3 @@
-$("#photo-list").html("<%= escape_javascript(render 'photo_list')%>");
-$("#buttons-bar-items").html("<%= escape_javascript(render 'buttons_bar')%>")
+$("#photo-list").html("<%= escape_javascript(photo_gallery :photos_explore)%>");
 photographerPreview();
 photoView();
