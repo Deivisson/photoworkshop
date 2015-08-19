@@ -1,15 +1,22 @@
 module User::PhotosHelper
 
-	def photo_gallery(location, show_details=true)
+	def photo_gallery(location, show_details=true, show_grid_style_options=true)
 		@location = location; @show_details = show_details
 		case @gallary_type.to_sym
 		when :list
-			content_tag(:div, class:'grid-list'){list_grid}
+			content = content_tag(:div, class:'grid-list'){list_grid}
 		when :table
-			content_tag(:div, class:'grid-table photo-explore-container'){table_grid}
+			content = content_tag(:div, class:'grid-table photo-explore-container'){table_grid}
 		else 
-			content_tag(:div, class:'grid-flow photo-explore-container'){flow_grid}
-		end.html_safe
+			content = content_tag(:div, class:'grid-flow photo-explore-container'){flow_grid}
+		end
+
+		html = []
+		content_tag(:div,class:'photo-gallary') do 
+			html << content
+			html << options_grid_style if show_grid_style_options
+			html.join.html_safe
+		end
 	end
 
 	def list_grid
@@ -302,5 +309,28 @@ private
 			link_to("", user_photo_explore_show_path(photo),class:'photo-picture')
 		end
 	end
+end
 
+def options_grid_style
+	html = []
+	html << content_tag(:div, class:'grid-styles') do 
+		inner_html = []
+		inner_html << link_to(user_photo_explore_path(gallary_type:"flow"), 
+								class:"link-gallary-type #{@gallary_type.to_sym == :flow ? "selected" : ""}", 
+								remote:true) do 
+			content_tag(:span, "", class:"icon20pb icon-grid-flow")
+		end 
+		inner_html << link_to(user_photo_explore_path(gallary_type:"table"), 
+									class:"link-gallary-type #{@gallary_type.to_sym == :table ? "selected" : ""}", 
+									remote:true) do 
+			content_tag(:span, "", class:"icon20pb icon-grid-table")
+		end 
+		inner_html << link_to(user_photo_explore_path(gallary_type:"list"), 
+									class:"link-gallary-type #{@gallary_type.to_sym == :list ? "selected" : ""}", 
+									remote:true) do 
+			content_tag(:span, "", class:"icon20pb icon-grid-list")
+		end 
+		inner_html.join.html_safe
+	end
+	html.join.html_safe
 end

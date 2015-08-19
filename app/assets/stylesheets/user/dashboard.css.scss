@@ -10,7 +10,7 @@ body {
 	width: 250px;
 	.top-info {
 		background-color: #222	 ;/*#22262E;*/
-		height: 45px;
+		height: 52px;
 		float: left;
 		width: 100%;
 		a.upload-photo {
@@ -40,7 +40,7 @@ body {
 			}
 			span {
 		    float: left;
-		    margin: 9px 2px 0 0;
+		    margin: 12px 2px 0 0;
 			}
 		}
 	}
@@ -50,7 +50,7 @@ body {
 		-moz-border-radius: 5px; 
 		-webkit-border-radius: 5px; 		
 		float: left;
-		margin: 15px 10px 10px 10px;
+		margin: 0px 10px 10px 10px;
 		padding-bottom: 20px;
 		width: 237px;
 		.user-content {
@@ -88,7 +88,6 @@ body {
 				width: 160px;
 			}
 			ul.user-resume {
-				border-bottom: 2px solid #ccc;
 		    float: left;
 		    height: auto;
 		    margin: 10px 0 10px 0;
@@ -159,6 +158,51 @@ body {
 	}
 }
 
+.left-col ul.suggestion-to-follow-photographers {
+	float: left;
+	width: 100%;
+	h1 {
+		border-bottom: 2px solid #CCC;
+		color: #333;
+		font-size: 22px;
+		font-weight: normal;
+		padding-bottom: 10px;
+		width: 100%;
+	}
+	li {
+		border-bottom: 1px solid #CCCCCC;
+		float: left;
+		width: 100%;
+		min-height: 40px;
+		padding: 5px 0 5px 0;
+		&:hover {
+			background-color: #E2E2E2;
+		};
+		img.user-avatar {
+			border-radius: 50%;
+			float: left;
+			height: 45px;
+			width: 45px;
+		}
+		.text-box {
+			float: left;
+			h3.photographer-name, span.photographer-category {
+				display: table;
+				float: left;
+				margin:5px 0 0 10px;
+				width: 100%;
+			}
+			h3.photographer-name {
+				color: #333;
+				font-size: 15px;
+			}
+			span.photographer-category {
+				color: #777;
+			}
+		}
+	}
+}
+
 .dash-centralize {
 	background-color: red;
 	height: auto;
@@ -170,7 +214,7 @@ body {
 ul.toolbar {
   background-color: #222222;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-	height: 45px;
+	height: 52px;
 	transition: background-color 0.1s ease-out 0s;
 }
 
@@ -179,7 +223,7 @@ ul.toolbar {
 	bottom: 0;
 	left: 250px;
 	right: 0;
-	top:50px;
+	top: 60px;
 	position: absolute;
 	.centralizer {
 		margin-left: auto;

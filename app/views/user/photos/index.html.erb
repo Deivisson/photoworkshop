@@ -1,9 +1,4 @@
 <%= render partial:"user/menu_profile", locals: {current_menu:'photos'} %>
-<%= content_for :toolbar_buttons do %>
-  <ul class="buttons-bar" id="buttons-bar-items-user-photo">
-    <%= render 'buttons_bar' %>
-  </ul>
-<% end %>
 <div id="photo-list">
 	<%= photo_gallery :photos_explore %>
 </div>

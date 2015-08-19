@@ -1,5 +1,13 @@
 .icon20 {
 	background: url("/assets/user/menu_sprite.png");
+}
+
+.icon20pb {
+	background: url("/assets/user/menu_sprite_pb.png");
+	float: left;
+}
+
+.icon20, .icon20pb {
 	height: 24px;
 	width: 24px;
 	&.upload {
@@ -17,16 +25,17 @@
 	&.photographers {
 		background-position: -38px -2px;
 	}
-	&.grid-list {
+	&.icon-grid-list {
 		background-position: -229px -1px;	
 	}
-	&.grid-flow {
-		background-position: -195px -1px;
+	&.icon-grid-flow {
+		background-position: -197px -1px;
 	}
-	&.grid-table {
+	&.icon-grid-table {
 		background-position: -165px -1px;
 	}
 }
+
 
 /*.icon32 {
 	background: url("/assets/user/icons32_sprite.png");

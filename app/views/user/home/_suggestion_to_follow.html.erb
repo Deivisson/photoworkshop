@@ -1,0 +1,16 @@
+<div class="float-container">
+  <ul class="suggestion-to-follow-photographers">
+  	<h1>Seguir</h1>
+    <%- @photographers_to_follow.each do |photographer| %>
+    	<li>
+    		<%= image_tag(photographer.profile.avatar.url(:thumb),class:'user-avatar') %>
+    		<div class="text-box">
+    			<h3 class="photographer-name"><%= photographer.profile.full_name %></h3>
+    			<% unless photographer.profile.category.nil? %>
+    				<span class="photographer-category"><%= photographer.profile.category.description %></span>
+  				<% end %>
+    		</div>
+    	</li>
+    <% end %>
+  </ul>
+</div>

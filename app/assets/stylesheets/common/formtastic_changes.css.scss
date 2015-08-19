@@ -187,8 +187,8 @@
 /* STRING, NUMERIC, PASSWORD, EMAIL, URL, PHONE, SEARCH (ETC) OVERRIDES
 --------------------------------------------------------------------------------------------------*/
 .formtastic .stringish input,.formtastic .select select {
-  font-size: 16px;
-  height: 35px;
+  font-size: 14px;
+  height: 30px;
   border: 1px solid #ADA9A5;
   border-radius: 5px; 
   -moz-border-radius: 5px; 
@@ -199,7 +199,7 @@
 
 .formtastic .select select {
   background-color: #fff;
-  height: 39px;
+  height: 34px;
   width:99%;
 }
 .formtastic .stringish input[size] {
