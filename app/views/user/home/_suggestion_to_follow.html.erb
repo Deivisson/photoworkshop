@@ -2,14 +2,23 @@
   <ul class="suggestion-to-follow-photographers">
   	<h1>Seguir</h1>
     <%- @photographers_to_follow.each do |photographer| %>
-    	<li>
+    	<li id="who-follow-user-<%= photographer.id %>">
     		<%= image_tag(photographer.profile.avatar.url(:thumb),class:'user-avatar') %>
     		<div class="text-box">
-    			<h3 class="photographer-name"><%= photographer.profile.full_name %></h3>
+    			<%= link_to photographer.profile.full_name , 
+                      user_photographer_path(photographer.id), 
+                      class:'photographer-name photographer-profile' %>
+
     			<% unless photographer.profile.category.nil? %>
-    				<span class="photographer-category"><%= photographer.profile.category.description %></span>
+    				<span class="photographer-category">
+              <%= photographer.profile.category.description %>
+            </span>
   				<% end %>
+
     		</div>
+        <%= link_to t('buttons.follow'), user_photographer_follow_path(photographer.id), 
+                    remote:true, 
+                    class:"common-button add-button" %>
     	</li>
     <% end %>
   </ul>

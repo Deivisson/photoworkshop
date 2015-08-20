@@ -20,3 +20,8 @@ if ($("#photographer-followers-count").length > 0) {
 	$("#photographer-followers-count").text(count);
 } 
 
+//Remove Suggest, who to follow on user's home 
+if ($("#who-follow-user-<%= @user.id %>").length >0 ) {
+	$("#who-follow-user-<%= @user.id %>").remove();	
+}
+

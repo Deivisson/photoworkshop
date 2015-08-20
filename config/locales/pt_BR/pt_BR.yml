@@ -6,6 +6,7 @@ pt_BR:
     edit: "Editar"
     destroy: "Excluir"
     comment: "Comentar"
+    follow: "Seguir"
   messages:
     confirm_destroy: "Confirma Exlusão?"
     destroyed_record: "Registro excluído com sucesso!"

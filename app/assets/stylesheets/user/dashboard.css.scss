@@ -45,114 +45,101 @@ body {
 		}
 	}
 	.float-container {
-		/*background-color: #1B1E24;*/
+		background-color: #fff;
+    border: 1px solid #ddd;
 		border-radius: 5px; 
 		-moz-border-radius: 5px; 
 		-webkit-border-radius: 5px; 		
 		float: left;
-		margin: 0px 10px 10px 10px;
-		padding-bottom: 20px;
+		margin: 10px 10px 5px;
+		padding-bottom: 0px;
 		width: 237px;
 		.user-content {
 			float: left;
 			height: auto;
 			margin-bottom: 10px;
 			width: 100%;
-			img.avatar {
-				border-radius: 10%;
-				border: 2px solid #fff;
-				float: left;
-				height: 65px;
-				margin: 15px 0 0 7px;
-				width: 65px;
+			.cover-pic {
+				background-color: #222222;
+				border-radius: 5px 5px 0px 0px; 
+				-moz-border-radius: 5px 5px 0px 0px; 
+				-webkit-border-radius: 5px 5px 0px 0px; 
+				height: 90px;
+				width: 100%;
 			}
-			label.user-name {
-				color: #333;
-				float: left;
-				font-size: 19px;
-				margin: 20px 0 0 10px;
-				span {
-					display: block;
-					font-weight: normal;
+			.user-infos {
+				margin-top: -40px;
+				img.avatar {
+					border-radius: 10%;
+					border: 2px solid #fff;
 					float: left;
+					height: 65px;
+					margin: 15px 0 0 7px;
+					width: 65px;
 				}
-			};
-			span.user-ranking {
-				color: #333;
-				display: block;
-				font-size: 28px;
-				font-weight: bold;
-				float: left;
-				text-align: center;
-				margin-top: 10px;
-				width: 160px;
-			}
-			ul.user-resume {
-		    float: left;
-		    height: auto;
-		    margin: 10px 0 10px 0;
-		    width: 99%;
-				li {
+				label.user-name {
+					color: #333;
 					float: left;
-					margin: 10px 0 10px 0;
-					width: 33.33%;
-					label {
-						color: #999999;
-						float: left;
-						font-size: 11px;
-						font-weight: normal;
-						text-transform: uppercase;
-						text-align: center;
-						width: 100%;
-					};
+					font-size: 18px;
+					margin: 45px 0 0 5px;
 					span {
-						color: #32a6d3;
+						display: block;
+						font-weight: normal;
 						float: left;
-						font-size: 25px;
-						text-align: center;
-						margin-top: 10px;
+					}
+					p {
+						color: #B7B7B7;
+						font-size: 12px;
+						line-height: 18px;
+						margin-top: 15px;
 						width: 100%;
-						a {
-							color: #333;
-							text-decoration: none;
-							&:hover {
-								text-decoration:underline;
-							}; 
+					}
+				};
+				span.user-ranking {
+					color: #333;
+					display: block;
+					font-size: 28px;
+					font-weight: bold;
+					float: left;
+					text-align: center;
+					margin-top: 10px;
+					width: 160px;
+				}
+				ul.user-resume {
+			    float: left;
+			    height: auto;
+			    margin: 10px 0 0px 0;
+			    width: 99%;
+					li {
+						float: left;
+						margin: 10px 0 10px 0;
+						width: 33.33%;
+						label {
+							color: #999999;
+							float: left;
+							font-size: 11px;
+							font-weight: normal;
+							text-transform: uppercase;
+							text-align: center;
+							width: 100%;
+						};
+						span {
+							color: #32a6d3;
+							float: left;
+							font-size: 25px;
+							text-align: center;
+							margin-top: 10px;
+							width: 100%;
+							a {
+								color: #333;
+								text-decoration: none;
+								&:hover {
+									text-decoration:underline;
+								}; 
+							}
 						}
 					}
 				}
-			}
-		}
-		ul.menu {
-			float: left;
-			width: 100%;
-			list-style: none;
-			li {
-				float: left;
-				margin-bottom: 2px;
-				padding: 0;
-				width: 100%;
-				a {
-					background-repeat: no-repeat;
-					color: #525557;
-					font-size: 12px;
-					display: block;
-					float: left;
-					height: 24px;
-					line-height: 24px;
-					padding: 2px 0 2px 0;
-					text-decoration: none;
-					text-indent: 60px;
-					text-transform: uppercase;
-					width: 100%;
-					&.profile {background-position: 20px 0px;}
-					&.photographers {background-position: 20px -102px;}
-					&.upload {background-position: 20px -51px;}
-				}
-				&:hover a {color: #FFF} ;
-				/*&:hover span.profile {background-position: 20px -24px;}
-				&:hover span.photographers {background-position: 38px -127px;}
-				&:hover span.upload {background-position: 25px -77px;}*/
 			}
 		}
 	}
@@ -162,43 +149,65 @@ body {
 	float: left;
 	width: 100%;
 	h1 {
-		border-bottom: 2px solid #CCC;
-		color: #333;
-		font-size: 22px;
+		color: #66757f;
+		font-size: 20px;
 		font-weight: normal;
-		padding-bottom: 10px;
+		padding: 10px;
 		width: 100%;
 	}
 	li {
-		border-bottom: 1px solid #CCCCCC;
+		border-bottom: 1px solid #EAEAEA;
 		float: left;
 		width: 100%;
 		min-height: 40px;
-		padding: 5px 0 5px 0;
+		padding: 5px 0 5px 0px;
+		transition:All 0.6s ease;
 		&:hover {
-			background-color: #E2E2E2;
+			background-color: #F1F1F1;
 		};
 		img.user-avatar {
 			border-radius: 50%;
 			float: left;
 			height: 45px;
+			margin-left: 10px;
 			width: 45px;
 		}
 		.text-box {
 			float: left;
-			h3.photographer-name, span.photographer-category {
+			a.photographer-name, span.photographer-category {
 				display: table;
 				float: left;
 				margin:5px 0 0 10px;
+				text-decoration: none;
 				width: 100%;
+
 			}
-			h3.photographer-name {
+			a.photographer-name {
 				color: #333;
 				font-size: 15px;
+				&:hover {
+					text-decoration: underline;
+				};
 			}
 			span.photographer-category {
-				color: #777;
+				color: #b7b7b7;
+				font-size: 12px;
 			}
+		}
+		&:hover .add-button {
+			visibility: visible;
+			opacity: 1;
+		}
+		.add-button {
+			height: 20px;
+	    left: 5px;
+	    line-height: 20px;
+	    margin: 5px 0 0 150px;
+	    opacity: 0.4;
+	    position: absolute;
+	    transition:All 0.6s ease;
+	    visibility: hidden;
+	    width: auto;
 		}
 	}
 }
