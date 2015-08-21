@@ -39,11 +39,16 @@ Rails.application.routes.draw do
     #explore resources
     get "photo_explore", to: "photo_explore#index", as: :photo_explore
     get "photo_explore/:photo_id", to: "photo_explore#show", as: :photo_explore_show
+    resources :portfolios, only: [:index]
   end
   
   scope :home do
     resources :welcome
   end
+  namespace :public do
+    resources :portfolio, only:[:index]
+  end
+
   get "sign_up/finish", to:'omniauth_callbacks#sign_finish', :as => :sign_up_finish
   post "authentication/sign_up_finish/complete_sign_up", to:'authentication/sign_up_finish#complete_sign_up', :as => :complete_sign_up
   root "home/welcome#index"

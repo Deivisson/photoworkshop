@@ -14,6 +14,12 @@
       <% end %>
     <% end %>
     <%= content_tag :li do %>
+      <%= link_to  user_portfolios_path do %>
+        <span class="icon20 photographers"></span>
+        <%= t('user.main_menu.my_portfolio') %>
+      <% end %>
+    <% end %>    
+    <%= content_tag :li do %>
       <%= link_to user_profile_path(0) do %>
         <span class="icon20 me"></span>
         <%= t('user.main_menu.me') %>

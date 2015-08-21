@@ -1,0 +1,22 @@
+<div class="portfolio-horizontal-slide">
+	<div class="header">
+		<%= image_tag(@photographer.profile.avatar.url(:medium), class:'avatar') %>
+		<div class="text-box">
+			<h1><%= @photographer.profile.full_name %></h1>
+			<p><%= @photographer.profile.category.description %></p>
+		</div>
+	</div>
+	<div class="container">
+		<div class="gallery-content">
+			<div class="about">
+				d
+			</div>
+			<% @photographer.photos.each do |photo| %>
+				<%= content_tag :div,class:"img-pic #{photo.orientation}",
+												style:"background-image: url('#{photo.picture.url(:medium)}')" do %>
+					<h1><%= photo.title %></h1>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>
