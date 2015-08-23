@@ -1,0 +1,18 @@
+<div class="portfolio-buttons-container">
+	<%= link_to t('buttons.apply_template'), "#", class:'btn btn-primary' %>
+	<%= link_to t('buttons.view_template'), 
+						public_portfolio_index_path(layout:@layout, layout_theme:@theme), 
+						target:"_blank",class:'btn' %>
+</div>
+<div class="button-group" style="float:right;margin: 4px 30px 0 0;">
+	<%= link_to t('buttons.dark'), 
+							preview_user_portfolios_path(layout:@layout,layout_theme:""), 
+							id:"dark-layout", class:"btn #{@theme.blank? ? "selected" : ""}", remote:true %>
+
+	<%= link_to t('buttons.light'),
+							preview_user_portfolios_path(layout:@layout,layout_theme:"light"),
+							id:"light-layout", class:"btn #{@theme == "light" ? "selected" : ""}", remote:true %>
+</div>
+<div class="portfolio-preview" id="portfolio-layout">
+	<%= render "/shared/portfolio/portfolio_#{@layout}" %>
+</div>

@@ -3,6 +3,7 @@ class Public::PortfolioController < ApplicationController
 	def index
 		@photographer = User.find(1)
 		@layout = params[:layout]
+		@theme = params[:layout_theme] || ""
 	end
 	def get_photo
 		@photo = Photo.find(params[:photo_id])
