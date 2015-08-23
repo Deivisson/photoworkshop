@@ -1,5 +1,15 @@
 class User::PortfoliosController < User::BaseController
+	before_action :set_photographer
+
 	def index
-		@photographer = current_user		
+	end
+
+	def preview
+		@layout = params[:layout]
+	end
+
+private
+	def set_photographer
+		@photographer = current_user
 	end
 end

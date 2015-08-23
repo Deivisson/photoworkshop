@@ -1,9 +1,9 @@
 .common-button {
 	background-color: #F1F1F1;
   border:1px solid #cecece;
-  border-radius: 2px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
   color: #777;
   cursor:pointer;
   font-size:14px;
@@ -109,6 +109,38 @@
 .submit-button:hover, .update:hover {
   background-color: #3276b1;
   border-color: #357ebd;
+}
+
+.btn {
+  background-color: #F1F1F1;
+  border:1px solid #cecece;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  color: #777;
+  cursor:pointer;
+  font-size:14px;
+  font-weight: bold !important;
+  height:33px ;
+  line-height: 33px;
+  padding: 4px;
+  text-decoration: none;
+  /*text-shadow: 0px 1px 1px #384917;*/
+  vertical-align: center;
+  width:auto;  
+  transition:All 0.6s ease;
+  &:hover {
+    background-color: #D6D4D4;
+  };
+}
+
+.btn-primary {
+  background-color: #428bca;
+  border:1px solid #357ebd;
+  color: #FFF;
+  &:hover {
+    background-color: #206CAA;
+  };
 }
 
 

@@ -1,2 +1,8 @@
 <%= render 'menu_options' %>
-<%= render '/shared/portfolio/portfolio_horizontal_slide' %>
+<div class="portfolio-buttons-container">
+	<%= link_to t('buttons.apply_template'), "#", class:'btn btn-primary' %>
+	<%= link_to t('buttons.view_template'), "#", class:'btn' %>
+</div>
+<div id="portfolio-preview-container" class="portfolio-preview">
+	<%= render '/shared/portfolio/portfolio_horizontal_slide' %>
+</div>

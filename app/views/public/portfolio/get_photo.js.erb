@@ -1,0 +1,6 @@
+$("#portfolio-photo-container").html("<%= escape_javascript(render partial:'shared/portfolio/photo_simple_gallery',
+								locals:{photo:@photo}) %>");
+ 
+ $("#portfolio-photo-container").animate({opacity: 0.4}, 1000, function() {
+		$("#portfolio-photo-container").css("opacity",1);
+	});

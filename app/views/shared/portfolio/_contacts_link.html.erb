@@ -1,0 +1,23 @@
+<%= link_to @photographer.profile.tumblr, target:'_blank' do %>
+	<span class="social-network-icon tumblr"></span>
+<% end if @photographer.profile.tumblr.present? %>
+
+<%= link_to @photographer.profile.google_plus, target:'_blank' do %>
+	<span class="social-network-icon googleplus"></span>
+<% end if @photographer.profile.google_plus.present?  %>					
+
+<%= link_to @photographer.profile.facebook, target:'_blank' do %>
+	<span class="social-network-icon facebook"></span>
+<% end if @photographer.profile.facebook.present? %>
+
+<%= link_to @photographer.profile.flickr, target:'_blank' do %>
+	<span class="social-network-icon flickr"></span>
+<% end if @photographer.profile.flickr.present? %>
+
+<%= link_to @photographer.profile.twitter, target:'_blank' do %>
+	<span class="social-network-icon twitter"></span>
+<% end if @photographer.profile.twitter.present?  %>
+
+<%= mail_to "#{@photographer.email}?Subject=Contato From Pic2" do %>
+	<span class="social-network-icon email"></span>
+<% end if @photographer.email.present?  %>					

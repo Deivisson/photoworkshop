@@ -39,7 +39,9 @@ Rails.application.routes.draw do
     #explore resources
     get "photo_explore", to: "photo_explore#index", as: :photo_explore
     get "photo_explore/:photo_id", to: "photo_explore#show", as: :photo_explore_show
-    resources :portfolios, only: [:index]
+    resources :portfolios, only: [:index] do 
+      get :preview, on: :collection
+    end
   end
   
   scope :home do
@@ -47,6 +49,7 @@ Rails.application.routes.draw do
   end
   namespace :public do
     resources :portfolio, only:[:index]
+    get "portfolio/:photo_id", to: "portfolio#get_photo", as: :get_photo
   end
 
   get "sign_up/finish", to:'omniauth_callbacks#sign_finish', :as => :sign_up_finish

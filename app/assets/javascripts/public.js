@@ -14,20 +14,4 @@
 //= require jquery_ujs
 //= require jquery.remotipart
 //= require turbolinks
-//= require common/modal_dialog
-//= require common/jquery-ui.min.js
-//= require common/flash_messages.js
-//= require common/base.js
 //= require common/portfolio.js
-//= require user/photos
-//= require user/user_profiles
-//= require user/workshops
-//= require user/workshop_materials
-//= require user/workshop_participants
-//= require user/workshop_activities
-//= require user/photographers
-//= require user/photo_explore
-
-
-
-

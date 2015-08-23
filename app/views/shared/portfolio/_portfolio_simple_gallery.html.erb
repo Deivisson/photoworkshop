@@ -1,0 +1,32 @@
+<div class="portfolio-simple-gallery">
+	<div class="header">
+		<%= image_tag(@photographer.profile.avatar.url(:medium), class:'avatar') %>
+		<div class="text-box">
+			<h1><%= @photographer.profile.full_name %></h1>
+			<p><%= @photographer.profile.category.description %></p>
+		</div>
+		<div class="contact-container"><%= render '/shared/portfolio/contacts_link' %></div>
+	</div>
+	<div class="container">
+		<div class="portfolio-simple-left-col">
+			<div class="about">
+				<p class="biography">
+					<span>Biografia</span>
+					<%= @photographer.profile.description %>
+				</p>
+			</div>
+			<div class="photo-thumbs">
+				<% @photographer.photos.each do |photo| %>
+					<%= content_tag :div,"",class:"thumb-img",	style:"background-image: url('#{photo.picture.url(:medium)}')" do %>
+						<%=link_to "", public_get_photo_path(photo.id), class:"gallary-photo-item", remote:true %>
+					<% end %>
+				<% end %>
+			</div>
+		</div>	
+		<div class="photo-container" id="portfolio-photo-container">
+			<%= render partial:'shared/portfolio/photo_simple_gallery',
+								locals:{photo:@photographer.photos.first} %>
+		</div>
+
+	</div>
+</div>

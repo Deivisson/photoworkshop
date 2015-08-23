@@ -125,3 +125,8 @@ pt_BR:
         inspirations: "Inspirações"
         newest: "Recentes"
         recommended: "Recomendadas"
+
+    portfolios:
+      menu_options:
+        menu_title: "Templates"
+        free: Grátis
