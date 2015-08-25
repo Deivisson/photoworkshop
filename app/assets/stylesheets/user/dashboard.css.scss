@@ -5,8 +5,8 @@ body {
 .left-col {
 	background-color: #F1F1F1;/*#1B1E24;*/
 	bottom: 0px;
-	position: fixed;
-	top: 0;
+	position: relative;
+	top: 55px;
 	width: 250px;
 	.top-info {
 		background-color: #222	 ;/*#22262E;*/
@@ -175,6 +175,9 @@ body {
 			}
 		}
 	}
+}
+.left-col.fixed-col {
+	position: fixed;
 }
 
 .left-col ul.suggestion-to-follow-photographers {

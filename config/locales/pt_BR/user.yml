@@ -13,7 +13,11 @@ pt_BR:
       workshops: "Workshops"
       upload: "Upload"
       my_portfolio: "Portifolio"
-
+    user_menu:
+      profile: "Perfil"
+      settings: "Configurações"
+      portifolio: "Portifolio"
+      logoff: "Logoff"
     profile:
       menu:
         about: "Sobre"

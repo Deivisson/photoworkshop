@@ -8,6 +8,7 @@
 </head>
 <body>
 	<ul class="toolbar">
+		<%= render "layouts/default_menu_header" %>
 		<%= yield :toolbar %>
 		<%= content_tag :li, class:'page-title'  do %>
     	<%= yield(:title) %>
@@ -23,20 +24,8 @@
 	  <%- end %>
   </div>
 
-	<div class="left-col">
-		<div class="top-info">
-    	<%= link_to user_home_index_path, class:"home-menu" do %>
-    		<span class="icon20 home"></span>
-    	<% end %>
-			<%= link_to new_user_photo_path, class:"home-menu" do %>
-				<span class="icon20 upload"></span>
-			<% end %>
-		</div>
-		<%= yield :categories %>
-	</div>
-	<div class="main-content-area">
-		<%= yield %>
-	</div>
+	<div class="left-col fixed-col"><%= yield :categories %></div>
+	<div class="main-content-area"><%= yield %></div>
 
 </body>
 </html>

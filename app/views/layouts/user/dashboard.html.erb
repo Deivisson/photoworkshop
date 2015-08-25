@@ -8,12 +8,22 @@
 </head>
 <body>
 	<ul class="toolbar">
-		<%= yield :toolbar %>
+ 		<%= render "layouts/default_menu_header" %>
+  	<%= yield :toolbar %>
+
 		<%= content_tag :li, class:'page-title'  do %>
     	<%= yield(:title) %>
 		<% end if show_title? %>
 		<%= content_tag :li, class:'user-info'  do %>
-	    <%= link_to "Logoff",destroy_user_session_path %>
+			<%= image_tag(current_user.profile.avatar.url(:medium),class:'avatar',id:'menu-trigger') %>
+			<ul class="user-menu" id="menu-dropdown">
+				<span class="up-arrow"></span>
+				<li><%= link_to t('user.user_menu.profile'), user_profile_path(0) %></li>
+				<li><%= link_to t('user.user_menu.portfolio'), user_portfolios_path %></li>
+				<li><%= link_to t('user.user_menu.settings'), "#" %></li>
+				<li class="separator"></li>
+				<li><%= link_to t('user.user_menu.logoff'), destroy_user_session_path %></li>
+			</ul>
 		<% end %>
 		<%= yield :toolbar_buttons %>
 	</ul>
@@ -23,20 +33,8 @@
 	  <%- end %>
   </div>
 
-	<div class="left-col">
-		<div class="top-info">
-    	<%= link_to user_home_index_path, class:"home-menu" do %>
-    		<span class="icon20 home"></span>
-    	<% end %>
-			<%= link_to new_user_photo_path, class:"home-menu" do %>
-				<span class="icon20 upload"></span>
-			<% end %>
-		</div>
-		<%= yield :left_col_container %>
-	</div>
-	<div class="main-content-area">
-		<%= yield %>
-	</div>
+	<div class="left-col"><%= yield :left_col_container %></div>
+	<div class="main-content-area"><%= yield %></div>
 
 </body>
 </html>

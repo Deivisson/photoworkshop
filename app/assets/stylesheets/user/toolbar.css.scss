@@ -2,8 +2,8 @@
 ul.toolbar {
  	border-left: 1px solid #0F0F0F;
 	list-style: none;
-	left: 250px;
-	right: 0px;
+	left: 0;
+	right: 0;
 	position: fixed;
 	z-index: 999;
 	li {
@@ -49,6 +49,14 @@ ul.toolbar {
 				}
 			}
 		}
+		&.fixed-menu {
+			float: left;
+			width: 240px;
+			border-right: 1px solid #0F0F0F;
+			li {
+				float: right;
+			}
+		}
 	}
 	li.page-title {
 		border-right: 0 !important;
@@ -70,9 +78,70 @@ ul.toolbar {
 			&.profile {background-position: 0px -29px;}
 		}
 	};
-	li.user-info {
-		border-left: 1px solid #E9E9E9;
+
+}
+
+ul.toolbar li.user-info {
+	border-left: 1px solid #0F0F0F;
+	float: right;
+	width: 140px;
+	img.avatar {
+		border-radius: 50%;
+		cursor: pointer;
 		float: right;
-		width: 80px;
+		height: 40px;
+		margin: 5px 5px 0 0;
+		width: 40px;
+	}
+	ul.user-menu {
+		background: #FFF;
+		/*border: 1px solid #ddd;*/
+		border-radius: 0px 0px 5px 5px; 
+		-moz-border-radius: 0px 0px 5px 5px; 
+		-webkit-border-radius: 0px 0px 5px 5px;	
+		box-shadow:0px 0px 4px #B5B5B5;	
+		float: right;
+		height: 0;
+		padding: 5px 0 0 0;
+		position: absolute;
+		right: 5px;
+		width: 170px;
+		top: 56px;
+		/*visibility: hidden;*/
+		opacity: 0.0;
+		transition:All 0.4s ease; 
+		.up-arrow {
+		   width: 0; 
+		   height: 0; 
+		   border-bottom: 8px solid #FFF; 
+		   border-left: 8px solid transparent; 
+		   border-right: 8px solid transparent; 
+		   position: absolute;
+		   right: 20px;
+		   margin-top: -13px
+		}
+		li {
+			display: table;
+			width: 160px;
+			height: 42px;
+			&.separator {
+				height: 1px;
+				background-color: #f1f1f1;
+			}
+			a {
+				color: #4d4d4d;
+				display: block;
+				line-height: 42px;
+				text-decoration: none;
+			}
+			&:hover {
+				background-color: #F1F1F1;
+			};
+		}
+		&.open-menu {
+			height: auto;
+			opacity: 1;
+			visibility: visible;
+		}
 	}
 }
