@@ -4,7 +4,7 @@ class User::PhotoExploreController < User::BaseController
 		@photos				  = @photos.where(category_id:params["category_id"]) if params["category_id"].present?
 		@gallary_type 	= params[:gallary_type] || "flow" 
 		@categories			= Category.all
-		render layout: "user/photo_explore"
+		render layout: "user/explorer"
 	end
 
 	def show

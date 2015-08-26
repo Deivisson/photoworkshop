@@ -4,6 +4,20 @@
   	<%= text_field_tag "search","",placeholder:"Pesquisar fotografo" %>
   <% end %>
 <% end %>
+<% content_for :categories do %>
+	<ul class="categories-list">
+		<li>
+			<%= link_to "Todas Categorias",user_photo_explore_path, 
+									remote:true, class:'category-item selected'  %>
+		</li>
+		<%- @categories.each do |category| %>		
+			<li>
+				<%= link_to category.description,user_photo_explore_path(category_id:category.id),
+										remote:true, class:'category-item'  %>
+			</li>
+		<% end %>
+	</ul>
+<% end %>
 <div id="photographers-container">
 	<%= render "photographers" %>
 </div>

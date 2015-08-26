@@ -6,6 +6,8 @@ class User::PhotographersController < User::BaseController
 		if params[:search].present?
 			@users = @users.where("user_profiles.user_name like ?","%#{params[:search]}%") 
 		end
+		@categories	= Category.all
+		render layout:'user/explorer'
 	end
 
 	def show

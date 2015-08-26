@@ -1,4 +1,11 @@
-ul.photographers {
+/* Photographers Page List*/
+ul.users-photographers {
+	float: left;
+  left: 50%;
+  margin: -8px auto 0 -600px;
+  position: absolute;
+  max-width: 1024px;
+  width: auto;
 	li {
 		background-color: #FFF;
 		border: 1px solid #cecece;
@@ -6,17 +13,91 @@ ul.photographers {
 		-moz-border-radius: 3px; 
 		-webkit-border-radius: 3px;
 		float: left;  
-		margin: 11px 0 0 15px;
-		padding: 12px;
-		width: 244px;
-		height: 274px;
-		&:hover {
-			.follow-button {visibility:visible;}
-		};
-		img {
-			float: left;
-			height: 220px;
+		margin: 11px 7px 0 0px;
+		padding: 0;
+		width: 24%;
+		height: 254px;
+		.cover-pic {
+			background-position: top center;
+    	background-size: cover;
+			background-color: #222222;
+			border-radius: 5px 5px 0px 0px; 
+			-moz-border-radius: 5px 5px 0px 0px; 
+			-webkit-border-radius: 5px 5px 0px 0px; 
+			height: 160px;
 			width: 100%;
+		}
+		.user-infos {
+			margin-top: -40px;
+			img.avatar {
+				border-radius: 10%;
+				border: 2px solid #fff;
+				float: left;
+				height: 65px;
+				margin: 15px 0 0 7px;
+				width: 65px;
+			}
+			label.user-name {
+				color: #333;
+				float: left;
+				font-size: 18px;
+				margin: 45px 0 0 5px;
+				span {
+					display: block;
+					font-weight: normal;
+					float: left;
+				}
+				p {
+					color: #B7B7B7;
+					font-size: 12px;
+					line-height: 18px;
+					margin-top: 15px;
+					width: 100%;
+				}
+			};
+
+			ul.user-resume {
+		    float: left;
+		    height: 40px;
+		    margin: 10px 0 0 10px;
+		    width: 99%;
+		    img.country-flag {
+					float: left;
+			    height: 32px;
+			    margin: -5px 10px 0 0;
+			    width: 32px;
+				}
+				li {
+					border: 0px;
+					float: left;
+			    height: auto;
+			    margin: 0 2px 0 0;
+			    width: auto;
+					label {
+						color: #999999;
+						float: left;
+						font-size: 9px;
+						font-weight: normal;
+						text-transform: uppercase;
+						text-align: center;
+						width: 100%;
+					};
+					span {
+						color: #777;
+						float: left;
+						font-size: 12px;
+						text-align: center;
+						margin-top: 5px;
+						width: 100%;
+					}
+				}
+			}
+		}
+		&:hover {
+			.follow-button {
+				visibility:visible;
+				opacity: 1;
+			}
 		}
 		.follow-button, .unfollow-button {
 	    float: right;
@@ -25,10 +106,16 @@ ul.photographers {
 	    margin: 0 0 -50px;
 	    position: relative;
 	    text-decoration: none;
+	    opacity: 0.3;
+	    margin: 2px;
 	    padding-top: 4px;
 	    visibility: hidden;
 	    text-indent: 23px;
 	    line-height: 23px;
+	    transition:All 0.8s ease;
+      -webkit-transition:All 0.8s ease;
+      -moz-transition:All 0.8s ease;
+      -o-transition:All 0.8s ease;
 		};
 		.follow-button {
 			background-color: #32a6d3;
@@ -56,127 +143,10 @@ ul.photographers {
 				position: absolute;
 			}
 		};
-		.info {
-			/*border: 1px solid red;*/
-			float: left;
-	    height: auto;
-	    position: relative;
-	    width: 100%;
-	    img.avatar {
-				border-radius: 50%;
-				border: 1px solid #131519;
-				float: left;
-				height: 80px;
-				margin: -40px 0 20px 85px;
-				width: 80px;
-				/*position: absolute;*/
-			};
-	    a {
-	    	color: #32A6D3;
-	    	float: left;
-	    	font-size: 18px;
-	    	font-weight: normal;
-	    	line-height: 26px;
-	    	width: 100%;
-	    	text-align: left;
-	    	text-indent: 5px;
-	    	text-decoration: none;
-	    	margin-top: 10px;
-	    	&:hover {
-	    		text-decoration: underline;
-	    	};
-				img.country {
-					height: 24px;
-					float: left;
-					width: 24px;
-				};
-	    };
-	    p {
-	    	color: #aaa;
-	    	font-size: 12px;
-	    	float: left;
-	    	margin-top: 5px;
-	    	text-align: left;
-	    	width: 100%;
-	    	span {
-	    		border-right: 1px solid #aaa;
-	    		padding-right: 3px;
-	    		vertical-align: center;
-    		}
-	    }
-		}
 	}		
 }
 
-.polaroid-images a {
-	background: white;
-	display: inline;
-	float: left;
-	margin: 0 15px 30px;
-	padding: 10px 10px 25px;
-	text-align: center;
-	text-decoration: none;
-	-webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
-	-moz-box-shadow: 0 4px 6px rgba(0,0,0,.3);
-	box-shadow: 0 4px 6px rgba(0,0,0,.3);
-	-webkit-transition: all .15s linear;
-	-moz-transition: all .15s linear;
-	transition: all .15s linear;
-	z-index:0;
-  position:relative;
-}
-
-.polaroid-images a:after {
-	color: #333;
-	font-size: 20px;
-	content: attr(title);
-	position: relative;
-	top:15px;
-}
-
-.polaroid-images img { 
-	display: block; 
-	width: inherit; 
-}
-
-.polaroid-images a:nth-child(2n)
-{
-	-webkit-transform: rotate(4deg);  
-	-moz-transform: rotate(4deg); 
-	transform: rotate(4deg); 
-}
-.polaroid-images a:nth-child(3n) { 
-	-webkit-transform: rotate(-24deg);  
-	-moz-transform: rotate(-24deg); 
-	transform: rotate(-24deg); 
-}
-.polaroid-images a:nth-child(4n)
-{
-	-webkit-transform: rotate(14deg);  
-	-moz-transform: rotate(14deg); 
-	transform: rotate(14deg); 
-}
-.polaroid-images a:nth-child(5n)
-{
-	-webkit-transform: rotate(-18deg);  
-	-moz-transform: rotate(-18deg); 
-	transform: rotate(-18deg); 
-}
-
-.polaroid-images a:hover{
-	-webkit-transform: rotate(0deg); 
-	-moz-transform: rotate(0deg);
-        transform: rotate(0deg);
-	-webkit-transform: scale(1.2); 
-	-moz-transform: scale(1.2);
-        transform: scale(1.2);
-	z-index:10;
-	-webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
-	-moz-box-shadow: 0 10px 20px rgba(0,0,0,.7);
-        box-shadow: 0 10px 20px rgba(0,0,0,.7);
-}
-
-
+/* Profile Page Style */
 .photographer-profile-container {
 	border: 1px solid #EEE;
 	height: 300px;
