@@ -7,7 +7,7 @@ class Photo < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
   has_one :exif, class_name:'PhotoExif'
-  
+
   #Likes associations
   has_many :likes, class_name:'PhotoLike'
   has_many :likers, through: :likes

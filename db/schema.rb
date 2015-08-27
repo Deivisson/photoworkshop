@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150815021219) do
+ActiveRecord::Schema.define(version: 20150826215251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -176,6 +176,7 @@ ActiveRecord::Schema.define(version: 20150815021219) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "full_name",           limit: 100
+    t.integer  "cover_photo_id"
   end
 
   add_index "user_profiles", ["category_id"], name: "index_user_profiles_on_category_id", using: :btree
@@ -285,6 +286,7 @@ ActiveRecord::Schema.define(version: 20150815021219) do
 
   add_foreign_key "user_profiles", "categories", name: "user_profiles_categories"
   add_foreign_key "user_profiles", "cities", name: "user_profiles_cities"
+  add_foreign_key "user_profiles", "photos", name: "user_profiles_photos", column: "cover_photo_id"
   add_foreign_key "user_profiles", "users", name: "user_profiles_users"
 
   add_foreign_key "user_relations", "users", name: "user_relations_users"

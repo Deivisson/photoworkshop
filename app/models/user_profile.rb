@@ -32,6 +32,15 @@ class UserProfile < ActiveRecord::Base
   	@country_id
   end
 
+  def cover_url
+    photo_url = ""
+    unless cover_photo_id.nil?
+      photo = Photo.find(cover_photo_id)
+      photo_url = photo.picture.url(:medium) unless photo.nil?
+    end
+    return photo_url
+  end
+
 private 
   def avatar_from_remote_url
     if self.avatar_remote_url.present? && self.avatar.nil?

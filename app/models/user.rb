@@ -27,7 +27,8 @@ class User < ActiveRecord::Base
   after_create :create_profile
   after_save :create_user_auth
 
-  attr_accessor :following, :full_name, :user_name, :auth_avatar_url, :auth_provider, :auth_uid
+  attr_accessor :following, :full_name, :user_name
+  attr_accessor :auth_avatar_url, :auth_provider, :auth_uid, :account_url
   
 
   def cover_photo
@@ -80,6 +81,7 @@ class User < ActiveRecord::Base
       user.auth_provider    = auth[:provider]
       user.auth_uid         = auth[:uid]
       user.email            = auth[:email]
+      user.account_url      = auth[:account_url]
       user.save if user.email.present?
     else
       user = user_auth.user
@@ -92,12 +94,20 @@ private
 	
 	def create_profile
   		self.profile = UserProfile.new(
-        { user_name: user_name,full_name: full_name, avatar_remote_url: auth_avatar_url})
+        { user_name: user_name,
+          full_name: full_name, 
+          avatar_remote_url: auth_avatar_url
+        })
 	end
+
 
   def create_user_auth
     if (auth_provider.present? && auth_uid.present?)
-      UserAuth.where({user_id: id ,provider: auth_provider, uid:auth_uid}).first_or_create
+      user_auth = UserAuth.where({user_id: id,provider: auth_provider,uid: auth_uid}).first
+      if user_auth.nil?
+        user_auth = UserAuth.new({user_id: id,provider: auth_provider,uid: auth_uid,account_url: account_url})
+        user_auth.save
+      end
     end
   end
 end

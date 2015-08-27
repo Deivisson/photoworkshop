@@ -1,29 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Photograph</title>
+  <title>Pic2Gether</title>
   <%= stylesheet_link_tag    'user', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'user', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<ul class="toolbar">
-		<%= render "layouts/default_menu_header" %>
-		<%= yield :toolbar %>
-		<%= content_tag :li, class:'page-title'  do %>
-    	<%= yield(:title) %>
-		<% end if show_title? %>
-		<%= content_tag :li, class:'user-info'  do %>
-	    <%= link_to "Logoff",destroy_user_session_path %>
-		<% end %>
-		<%= yield :toolbar_buttons %>
-	</ul>
-	<div class="flash_container">
-		<%- flash.each do |name, msg| %>
-	    <%= content_tag :div, msg, :id => "flash_#{name}" %>
-	  <%- end %>
-  </div>
-
+	<%= render "layouts/toolbar" %>
 	<div class="left-col fixed-col"><%= yield :categories %></div>
 	<div class="main-content-area"><%= yield %></div>
 

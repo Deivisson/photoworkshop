@@ -1,0 +1,30 @@
+<ul class="toolbar">
+	<%= render "layouts/default_menu_header" %>
+	<%= yield :toolbar %>
+
+	<%= content_tag :li, class:'page-title'  do %>
+  	<%= yield(:title) %>
+	<% end if show_title? %>
+
+	<%= content_tag :li, class:'user-info'  do %>
+		<%= link_to new_user_photo_path, class:"upload-image" do %>
+			<span class="icon20 upload"></span>
+			Upload
+		<% end %>
+		<%= image_tag(current_user.profile.avatar.url(:medium),class:'avatar',id:'menu-trigger') %>
+		<ul class="user-menu" id="menu-dropdown">
+			<span class="up-arrow"></span>
+			<li><%= link_to t('user.user_menu.profile'), user_profile_path(0) %></li>
+			<li><%= link_to t('user.user_menu.portfolio'), user_portfolios_path %></li>
+			<li><%= link_to t('user.user_menu.settings'), "#" %></li>
+			<li class="separator"></li>
+			<li><%= link_to t('user.user_menu.logoff'), destroy_user_session_path %></li>
+		</ul>
+	<% end %>
+	<%= yield :toolbar_buttons %>
+</ul>
+<div class="flash_container">
+	<%- flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <%- end %>
+</div>

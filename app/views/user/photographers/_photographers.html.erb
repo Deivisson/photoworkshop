@@ -1,7 +1,7 @@
 <%= content_tag :ul, class:"users-photographers" do %>
 	<% @users.each do |user| %>
 		<li>
-			<div class="cover-pic">
+			<div class="cover-pic" style="background-image: url('<%= user.profile.cover_url %>')">
 				<div id="follow-links-<%= user.id %>">
 					<%= render partial:"follow_links", locals: {user:user} %>
 				</div>

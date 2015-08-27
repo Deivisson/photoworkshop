@@ -61,10 +61,12 @@ body {
 			width: 100%;
 			.cover-pic {
 				background-color: #222222;
+				background-size: cover;
+				background-position: center top;
 				border-radius: 5px 5px 0px 0px; 
 				-moz-border-radius: 5px 5px 0px 0px; 
 				-webkit-border-radius: 5px 5px 0px 0px; 
-				height: 90px;
+				height: 120px;
 				width: 100%;
 			}
 			.user-infos {
@@ -108,7 +110,7 @@ body {
 				ul.user-resume {
 			    float: left;
 			    height: auto;
-			    margin: 10px 0 0px 0;
+			    margin: 5px 0 0px 0;
 			    width: 99%;
 					li {
 						float: left;

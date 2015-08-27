@@ -84,7 +84,25 @@ ul.toolbar {
 ul.toolbar li.user-info {
 	border-left: 1px solid #0F0F0F;
 	float: right;
-	width: 140px;
+	width: 160px;
+	a.upload-image {
+		color: #b9c1c7;
+    display: block;
+    float: left;
+    font-size: 13px;
+    font-weight: normal;
+    height: 100%;
+    line-height: 52px;
+    padding: 0 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+		span {
+	    float: left;
+	    height: 32px;
+	    margin-top: 12px;
+	    width: 32px;
+		}
+	}
 	img.avatar {
 		border-radius: 50%;
 		cursor: pointer;
@@ -107,7 +125,7 @@ ul.toolbar li.user-info {
 		right: 5px;
 		width: 170px;
 		top: 56px;
-		/*visibility: hidden;*/
+		visibility: hidden;
 		opacity: 0.0;
 		transition:All 0.4s ease; 
 		.up-arrow {
