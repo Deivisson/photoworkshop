@@ -9,7 +9,10 @@
 			<div class="user-infos">
       	<%= image_tag(user.profile.avatar.url(:medium),class:'avatar') %>
 	      <%= content_tag :label,class:'user-name' do %>
-	        <span><%= user.profile.user_name %></span>
+	        <span>
+	        	<%= link_to user.profile.user_name,
+									user_photographer_path(user.id), class:"photographer-profile" %>
+					</span>
 	        <p><%= user.profile.category.description %></p>
 	      <% end %>
 	      <ul class="user-resume">

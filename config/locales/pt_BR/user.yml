@@ -10,13 +10,14 @@ pt_BR:
       profile: "Perfil"
       me: "Me"
       photographers: "Fotografos"
-      workshops: "Workshops"
+      #workshops: "Workshops"
       upload: "Upload"
-      my_portfolio: "Portifolio"
+      #my_portfolio: "Portifolio"
     user_menu:
       profile: "Perfil"
       settings: "Configurações"
       portifolio: "Portifolio"
+      workshops: "Workshops"
       logoff: "Logoff"
     profile:
       menu:

@@ -31,15 +31,6 @@ class User < ActiveRecord::Base
   attr_accessor :auth_avatar_url, :auth_provider, :auth_uid, :account_url
   
 
-  def cover_photo
-    cover = self.photos.landscapes.limit(1).first
-    if cover.nil?
-      "mini_cover.png"
-    else
-      cover.picture.url(:medium)
-    end
-  end
-
   def following
     if @following.nil?
       @following = User.joins("INNER JOIN user_relations ON users.id = user_relations.user_followed_id")

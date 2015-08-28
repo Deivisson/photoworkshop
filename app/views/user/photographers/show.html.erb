@@ -1,6 +1,9 @@
+
 <div id="photographer-show-modal-container">
-	<div class="photographer-profile-container">
-		<%= image_tag(@user.cover_photo) %>
+	<%= link_to "X", "#",class:"close-button",id:"modal-close-button" %>
+	<div class="photographer-profile-modal-container">
+		<div class="cover-photo" style="background-image: url(<%= @user.profile.cover_url %>)">
+		</div>
 		<div class="profile">
 			<div class="avatar-container">
 				<%= image_tag(@user.profile.avatar.url(:medium)) %>

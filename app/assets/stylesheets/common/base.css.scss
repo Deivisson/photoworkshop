@@ -106,13 +106,14 @@ html {
 
 .search-form {
 	float: right;
-	margin: 7px 10px 0 0;
+	margin: 9px 10px 0 0;
 	input {
-		border: 1px solid #ada9a5;
+    background-color: #333333;
+		border: 1px solid #0f0f0f;
     border-radius: 5px;
-    font-size: 16px;
-    font-style: italic;
-    height: 31px;
+    color: #FFF;
+    font-size: 14px;
+    height: 28px;
     padding: 1px 2px 2px 1px;
     text-indent: 20px;
     width: 300px;

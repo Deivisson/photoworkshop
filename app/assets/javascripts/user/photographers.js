@@ -23,8 +23,13 @@ function photographerPreview(){
 	  		jQuery('body').css('overflow','hidden');
 	  		$(".ui-dialog-content").css("overflow-x", "hidden");
 	  		photoView();
+	  		$("#modal-close-button").click(function() {
+					$('#photographer-modal-dialog').remove();
+				});
 		  });
 		  dialog_form.dialog('open');
 		  e.preventDefault();  
 	});	
+
+
 }

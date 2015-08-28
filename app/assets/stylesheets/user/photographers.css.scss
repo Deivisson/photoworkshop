@@ -1,11 +1,10 @@
 /* Photographers Page List*/
 ul.users-photographers {
 	float: left;
-  left: 50%;
-  margin: -8px auto 0 -600px;
+  left: 30px;
+  margin: -6px 0 0 30px;
   position: absolute;
-  max-width: 1024px;
-  width: auto;
+
 	li {
 		background-color: #FFF;
 		border: 1px solid #cecece;
@@ -15,8 +14,8 @@ ul.users-photographers {
 		float: left;  
 		margin: 11px 7px 0 0px;
 		padding: 0;
-		width: 24%;
-		height: 254px;
+		width: 300px;
+		height: 300px;
 		.cover-pic {
 			background-position: top center;
     	background-size: cover;
@@ -24,7 +23,7 @@ ul.users-photographers {
 			border-radius: 5px 5px 0px 0px; 
 			-moz-border-radius: 5px 5px 0px 0px; 
 			-webkit-border-radius: 5px 5px 0px 0px; 
-			height: 160px;
+			height: 210px;
 			width: 100%;
 		}
 		.user-infos {
@@ -46,6 +45,14 @@ ul.users-photographers {
 					display: block;
 					font-weight: normal;
 					float: left;
+					a {
+						color: #333;
+						font-size: 16px;
+						text-decoration: none;
+						&:hover {
+							text-decoration: underline;
+						};
+					}
 				}
 				p {
 					color: #B7B7B7;
@@ -146,15 +153,17 @@ ul.users-photographers {
 	}		
 }
 
-/* Profile Page Style */
-.photographer-profile-container {
+/* Profile Page Style as Modal */
+.photographer-profile-modal-container {
 	border: 1px solid #EEE;
 	height: 300px;
 	left: 0;
 	margin: -7px 0 0 -2px;
 	position: absolute;
 	width: 100%;
-	img {
+	.cover-photo {
+		background-position: center center;
+		background-size: cover;
 		height: 300px;
 		width: 100%;
 	}
@@ -226,7 +235,7 @@ ul.users-photographers {
     		text-transform: uppercase;
     	}
     	span {
-    		color: #32A6D3;
+    		color: #333;
 		    float: left;
 		    font-size: 22px;
 		    margin-top: 10px;
