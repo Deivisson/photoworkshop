@@ -1,33 +1,35 @@
 ul.workshops-items {
-	position: absolute;
 	right: 0;
 	left: 0;
 	padding: 10px;
+	width: 1024px;
 	li {
 		background-color: #FFF;
+		border: 1px solid #ddd;
+		border-radius: 5px; 
+		-moz-border-radius: 5px; 
+		-webkit-border-radius: 5px; 		
 		float: left;
-		margin-bottom: 5px;
-		height: 120px;
+		margin: 0 10px 10px 0;
 		padding: 10px;
-		width: 98%;
+		height: 200px;
+		width: 100%;
+		min-width: 500px;
 		.ws-image {
-			border: 1px solid #9A9999;
+			background-size: cover;
+			background-position: center center;
 			float: left;
-			width: 150px;
-			height: 120px;
-			img {
-				width: 150px;
-				height: 120px
-			};
+			width: 250px;
+			height: 100%;
 		}
 		.ws-details {
-/*			background-color: #eee;*/
 			float: left;
 			height: 100%;
-			margin-left: 10px;
-			width: 85%;
+			margin: 0 0 0 10px; 
+			width: 760px;
 			a {
 				color: #333;
+				font-size: 21px;
 				text-decoration: none;
 				&:hover {
 					text-decoration: underline;
@@ -39,14 +41,14 @@ ul.workshops-items {
 			p {
 				color: #777777;
 				float: left;
+				line-height: 20px;
 				margin: 10px 0 40px 0;
 				min-height: 38px;
-				width: 100%;
+				word-spacing: normal;
 			}
 			.workshop-resume {
 				float: left;
 				/*position: absolute;*/
-				width: 100%;
 				margin: 5px 0 0 0;
 				span {
 					color: #777777;
