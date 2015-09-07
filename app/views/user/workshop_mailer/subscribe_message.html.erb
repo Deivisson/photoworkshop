@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <%= @workshop.email_subscribe.html_safe %>
+    <br>
+    <br>
+    <br>
+    <h2><%= @workshop.description %></h2>
+    <p><strong>com:</strong> <%= @workshop.user.profile.user_name %></p>
+  </body>
+</html>

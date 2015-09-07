@@ -1,40 +1,5 @@
-<% title t('.title') %>
-<%= content_for :toolbar_buttons do %>
-  <%= link_to t('.edit_workshop'),
-              edit_user_workshop_path(@workshop), 
-              class:"common-button edit-button" %>
-
-  <%= link_to t('.open_workshop'),
-              user_workshop_open_path(@workshop), 
-              data: {confirm:t('.confirm_open_workshop_msg')},
-              class:"common-button cancel-button" unless @workshop.opened? %>
+<% if @workshop.mine?(current_user) %>
+	<%= render 'user/workshops/show_owner/show' %>
+<% elsif @workshop.enrolled?(current_user) %>
+	<%= render 'user/workshops/show_participant/show' %>
 <% end %>
-<%= content_tag(:div, t('.msg_not_opened').html_safe,class:'alert') unless @workshop.opened? %>
-<%= content_tag(:div, class:"panel flat",style:'width: 50%;') do %>
-  <div class="panel-content">
-    <h4><%= t('user.workshops.main_info') %></h4>
-    <div class="show-fields">
-      <%= sf @workshop,:description %>
-      <%= sf @workshop,:details %>
-      <%= sf @workshop,:start_date,format_date(@workshop.start_date) %>
-      <%= sf @workshop,:end_date,format_date(@workshop.end_date) %>
-      <%= sf @workshop,:vacancies_number %>
-      <%= sf @workshop,:value,number_to_currency(@workshop.value) %>
-    </div>
-    <h4><%= t('user.workshops.more_info') %></h4>
-    <div class="show-fields">
-      <%= sf @workshop,:prerequisite %>
-      <%= sf @workshop,:goal %>
-      <%= sf @workshop,:target_audience %>
-      <%= sf @workshop,:term %>
-    </div>
-  </div>
-<% end %>
-
-<%= content_tag(:div, class:"panel flat",style:'width: 42%;') do %>
-  <div class="panel-content">
-    <%= render "show_participants" %>
-    <%= render "show_materials" %>
-    <%= render "show_activities" %>
-  </div>
-<% end %>  

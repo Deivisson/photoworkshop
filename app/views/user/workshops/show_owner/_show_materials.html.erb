@@ -5,6 +5,8 @@
 </h4>
 <div class="show-fields" style="width:100%">
   <ul class="workshop-materials" id="workshop-materials-container">
-  	<%= render @workshop.materials %>
+  	<%= render partial: "user/workshop_materials/workshop_material",
+  						 collection: @workshop.materials,
+  						 locals:{workshop_owner:true} %>
   </ul>  
 </div>

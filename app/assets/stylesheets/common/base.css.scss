@@ -56,15 +56,18 @@ html {
 		padding: 15px;
 		width: 95%;	
 		.grid2column {
-			width: 105%;
+			width: 99%;
 			.input {
 				float: left;	
-				width: 45%;
+				width: 49%;
 				input {
 					width: 97% !important;
 				}
 				&.second-col {margin-left: 14px}
-			}
+			 &:last-child {
+        float: right;
+       };
+      }
 		}
 		p {
 			color: #777;

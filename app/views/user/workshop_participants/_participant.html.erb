@@ -1,12 +1,21 @@
-<%= content_tag :li, id:"participant-#{@workshop.id}#{participant.id}" do %>
-  <%= image_tag participant.profile.avatar.url(:thumb),class:'user-avatar' %>
-  <%= content_tag :label, participant.profile.user_name, class:"user-name" %>
+<%= content_tag :li, id:"participant-#{@workshop.id}#{participant.user_id}" do %>
+  <%= image_tag participant.user.profile.avatar.url(:thumb),class:'user-avatar' %>
+  <%= link_to participant.user.profile.user_name,
+              user_photographer_path(participant.user_id),
+              class:"photographer-profile user-name" %>
+
+	<%= link_to t('.confirm_matriculation'),
+							user_workshop_confirm_matriculation_path(@workshop,participant.user_id),
+							method: :put,
+							data: {confirm:t('.confirm_matriculation_question')},
+							remote:true, id:"confirm-matriculation-btn",
+							class:"btn btn-small btn-important" unless participant.confirmed? %>
+  
   <div class="buttons-container buttons-container-participants">
   	<%= link_to t('.remove_user'),
-  							user_workshop_remove_participant_path(@workshop,participant),
+  							user_workshop_remove_participant_path(@workshop,participant.user_id),
   							method: :delete,
   							data: {confirm:t('messages.confirm_destroy')},
   							remote:true %>
-
   <% end %>  
 </li>

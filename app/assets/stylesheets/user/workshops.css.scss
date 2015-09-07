@@ -48,21 +48,45 @@ ul.workshops-items {
 			}
 			.workshop-resume {
 				float: left;
-				/*position: absolute;*/
+				position: absolute;
 				margin: 5px 0 0 0;
-				span {
-					color: #777777;
+				margin-top: 150px;
+				.resume-item {
+					border-right: 1px solid #eee; 
 					float: left;
-					font-size: 12px;
-					margin: 0 10px 7px 0;
-					text-indent: 20px;
-					&.period {background: url("/assets/user/view_16.gif") 0 -3px no-repeat;}
-					&.vacancies {background: url("/assets/user/view_16.gif") 0 -3px no-repeat;}
-					&.value {background: url("/assets/user/view_16.gif") 0 -3px no-repeat;}
+					padding: 0 5px 0 0;
+					margin: 0  5px 0 0;
+					width: auto;
+					&:last-child {
+						border:0;
+					};
+					h4 {
+						color: #777;
+						font-size: 10px;
+						float: left;
+						text-align: left;
+						text-transform: uppercase;
+						width: 100%;
+					}
+					span {
+						color: #333;
+						font-size: 12px;
+						float: left;
+						text-align: left;
+						margin-top: 5px;
+						width: 100%;
+					}
 				}
 			}
 		}
 	}
+	li .ribbon-wrapper {
+	  width: 85px;
+	  height: 88px;
+	  overflow: hidden;
+	  position: absolute;
+	  margin: -13px 0 0 950px;
+  }
 }
 
 ul.workshop-participants, ul.workshop-materials {
@@ -80,18 +104,26 @@ ul.workshop-participants, ul.workshop-materials {
 			height: 32px;
 			width: 32px;
 		};
-		label.user-name {
+		a.user-name {
 			color: #888;
 			float: left;
 			font-size: 14px;
 			font-weight: bold;
-			margin: 0px 0 0 10px !important;
-			line-height: 30px;
+			margin: 1px 0 0 7px !important;
+			line-height: 20px;
 		}
 		.buttons-container-participants {
-			margin-top: 7px !important;
+			margin-top: -3px !important;
 		}
 		&:hover {background-color: #eee;};
+		a.btn {
+			color: #FFF;
+			margin: 20px 0 0 42px;
+    	position: absolute;
+    	&:hover {
+    		text-decoration: none;
+    	};
+		}
 	}
 }
 
@@ -110,31 +142,143 @@ ul.workshop-participants, ul.workshop-materials {
 			float: left;
 			margin: 4px 0 0 5px;
 			text-decoration: none;
-			width: 70%;
+			/*width: 70%;*/
 			&:hover {
 				text-decoration: underline;
 			};			
 		};
 		.buttons-container {
-			left: 85%;
-			margin-top: 2px;
-			position: absolute;
+			float: right;
+    	margin-top: -5px;
 			visibility: hidden;
 			a {
+				border-right: 1px solid  #cecece; 
 				float: left;
-				font-size: 11px;
+				font-size: 12px;
 				width: auto !important;
+				padding-right: 5px;
+				&:last-child {
+					border-right:0;
+				};
 				&:hover {
 					text-decoration: underline;
 				};
 			}
-			span.separator {
-				background-color: #cecece;
-				height: 16px;
-				float: left;
-				margin: 0 0 0 4px;
-				width: 1px;
+		}
+	}
+}
+
+
+.ws-preview {
+	height: 600px;
+	width: 960px;
+	.ws-cover {
+		background-size: cover;
+		background-position: center center;
+		float: left;	
+		height: 200px;
+		width: 300px;
+	}
+
+	.ws-workshop-title {
+		float: left;
+		margin-left: 10px;
+		h1 {
+			font-size: 22px;
+			margin-bottom: 7px;
+		}
+		p {
+			a {
+				color: #32a6d3;
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				};
+			}
+			span {
+				color: #777;
 			}
 		}
+		.buttons-container {
+			margin-top: 120px;
+			position: absolute;
+		}
+		.social-network-share {
+	    height: 55px;
+	    margin-left: 450px;
+	    margin-top: 100px;
+	    position: absolute;
+	    width: 100px;
+	    span.share-label {
+	    	color: #333;
+		    float: left;
+		    text-align: left;
+		    width: 100%;
+		    margin-bottom: 5px;
+		    &:after {
+		    	content: ":";
+		    };
+	    }
+	    span.social-network-icon {
+	    	float: left;
+	    }
+		}
+	}
+
+	.ws-details-textbox {
+		float: left;
+/*		border: 1px solid red;*/
+		width: 100%;
+		margin-top: 20px;
+		h1 {
+			color: #777;
+			font-size: 22px;
+			border-bottom: 1px solid #cecece;
+			margin:30px 0 10px 0;
+			padding: 0 0 5px 0;
+
+		}
+		p.ws-details {
+			/*color: #777;*/
+			font-size: 16px;
+			line-height: 22px;
+			margin-bottom: 30px;
+			text-align: justify;
+		}
+
+		p.colon {
+			/*color: #777;*/
+			float: left;
+			height: 20px;
+			margin-bottom: 5px;
+			width: 100%;
+			&:before {
+				content: ":";
+			};
+			strong {
+				/*color: #444;*/
+				background-image: url(/assets/user/list-add.png);
+				background-repeat: no-repeat;
+				font-size: 14px;
+				font-weight: bold;
+				float: left;
+				line-height: 18px;
+				text-indent: 16px;
+
+				width: 120px;
+			}
+			span {
+				line-height: 18px;
+				margin-left: 10px;
+			}
+		}
+		.complement-info {
+			float: left;
+			margin-top: 20px;
+			width: 100%;
+		}
+	}
+	.ws-complement-info {
+
 	}
 }

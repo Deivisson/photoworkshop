@@ -1,0 +1,42 @@
+<% title t('.title') %>
+<%= content_for :toolbar_buttons do %>
+<% end %>
+<%= content_tag(:div, class:"panel flat",style:'width: 50%;') do %>
+  <div class="panel-content">
+    <div class="show-fields">
+      <%= sf @workshop,:description %>
+      <%= sf @workshop,:start_date,format_date(@workshop.start_date) %>
+      <%= sf @workshop,:end_date,format_date(@workshop.end_date) %>
+      <%= sf @workshop,:workload, @workshop.workload %>
+      <%= sf @workshop,:target_audience %>
+    </div>
+    <h4><%= t('user.workshops.more_info') %></h4>
+    <div>
+      <%= @workshop.complement.html_safe unless @workshop.complement.nil? %>
+    </div>
+  </div>
+<% end %>
+
+
+<%= content_tag(:div, class:"panel flat",style:'width: 42%;') do %>
+  <div class="panel-content">
+    <h4><%= t('.activities_legend') %></h4>
+    <%= render "user/workshops/show_participant/activities" %>
+  </div>
+<% end %>  
+
+<%= content_tag(:div, class:"panel flat",style:'width: 42%;') do %>
+  <div class="panel-content">
+    <h4><%= t('.materials_legend') %></h4>
+    <%= render "user/workshops/show_participant/materials" %>
+  </div>
+<% end %>  
+
+
+<%= content_tag(:div, class:"panel flat",style:'width: 42%;') do %>
+  <div class="panel-content">
+    <% render "user/workshops/show_owner/show_participants" %>
+    <% render "user/workshops/show_owner/show_materials" %>
+    <% render "user/workshops/show_owner/show_activities" %>
+  </div>
+<% end %>  

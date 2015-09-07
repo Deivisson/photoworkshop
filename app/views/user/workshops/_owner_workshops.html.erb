@@ -1,23 +1,27 @@
 <ul class="workshops-items">
 	<% @workshops.each do |workshop| %>
 		<li>
+			<div class="ribbon-wrapper">
+				<div class="ribbon ribbon-success"><%= workshop_status(workshop) %></div>
+			</div>
 			<div class="ws-image" style="background-image: url(<%= workshop.image.url(:medium)%>)">
 			</div>
 			<div class="ws-details">
 				<h1><%= link_to workshop.description, user_workshop_path(workshop) %></h1>
-				<p><%= workshop.details %></p>
+				<p><%= workshop.details.truncate(400) %></p>
 				<div class="workshop-resume">
-					<span class="period">
-						<%= t('user.workshops.period',
-							start_date:format_date(workshop.start_date),
-							end_date:format_date(workshop.end_date)) %>
-					</span>
-					<span class="vacancies">
-						<%= t('user.workshops.vacancies_number',vacancies_number:workshop.vacancies_number) %>
-					</span>
-					<span class="value">
-						<%= t('user.workshops.workshop_value', workshop_value:number_to_currency(workshop.value)) %>
-					</span>
+					<div class="resume-item">
+						<h4>Início</h4>
+						<span><%= format_date(workshop.start_date) %></span>
+					</div>
+					<div class="resume-item">
+						<h4>Numero Vagas</h4>
+						<span><%= workshop.vacancies_number %></span>
+					</div>
+					<div class="resume-item">
+						<h4>Investimento</h4>
+						<span><%= number_to_currency(workshop.value) %></span>
+					</div>
 				</div>
 			</div>
 		</li>

@@ -1,6 +1,6 @@
 <%= content_tag :li, id:"activity-#{workshop_activity.id}" do %>
   <%= link_to workshop_activity.description, "#" %>
-  <div class="buttons-container">
+  <%= content_tag :div, class:"buttons-container" do %>
   	<%= link_to t('buttons.edit'),
   							edit_user_workshop_activity_path(@workshop,workshop_activity),
   							class:"edit-workshop-activity" %>
@@ -11,5 +11,5 @@
   							data: {confirm:t('messages.confirm_destroy')},
   							remote:true %>
 
-  </div>
+  <% end if workshop_owner %>
 <% end %>

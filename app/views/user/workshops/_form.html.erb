@@ -12,39 +12,51 @@
                   label:false,
                   input_html: {:onchange => "showImageWorkshopPreview(this)"} %>
 
+      
       <%= f.input :description,
                   :input_html => {autofocus:true, id:'workshop-description'} %>
-      <%= f.input :details, 
-                  input_html: {style:'height: 200px'} %>
-      <div class="panel-content" style="width:42%">
-        <%= f.input :start_date,
-                    :as => :string %>
-        <%= f.input :end_date,
-                    :as => :string %>
-      </div>
-      <div class="panel-content" style="width:45%">
+      <%= f.input :details,input_html: {style:'height: 275px'} %>
+      <%= f.input :target_audience %>
+
+      
+<!--       <%#= f.input :prerequisite, 
+                  :as => :text,
+                  :input_html => {style:"height:40px;"} %>
+      <%#= f.input :goal, 
+                  :as => :text,
+                  :input_html => {style:"height:90px;"} %>
+      <%# f.input :term,
+                  :input_html => {style:"height:190px;"} %> -->
+      <div class="grid2column">
         <%= f.input :vacancies_number %>
-        <%= f.input :value %>
+        <%= f.input :workload,:as => :string %>
       </div>
+      <div class="grid2column">
+        <%= f.input :start_date,:as => :string %>
+        <%= f.input :end_date,:as => :string %>
+      </div>
+      <%= f.input :local %>
+      <%= f.input :value %>
     </div>
   <% end %>    
-
   <%= content_tag(:div, class:"panel",style:'width: 45%;') do %>
     <%= content_tag :h5, t('user.workshops.more_info'),class:'title' %>
     <div class="panel-content">
-      <%= f.input :target_audience %>
-      <%= f.input :prerequisite, 
-                  :as => :text,
-                  :input_html => {style:"height:90px;"} %>
-
-      <%= f.input :goal, 
-                  :as => :text,
-                  :input_html => {style:"height:90px;"} %>
-     
-      <%= f.input :term,
-                  :input_html => {style:"height:190px;"} %>
+      <%= f.input :complement, input_html: {style:'height: 200px',class:"mceEditor"} %>
     </div>
-  <% end %>      
+  <% end %>
+  <%= content_tag(:div, class:"panel",style:'width: 45%;') do %>
+    <%= content_tag :h5, t('user.workshops.email_info'),class:'title' %>
+    <div class="panel-content">
+      <%= f.input :email_subscribe, input_html: {style:'height: 150px',class:"mceEditor"} %>
+    </div>
+  <% end %>     
+  <%= content_tag(:div, class:"panel",style:'width: 45%;') do %>
+    <%= content_tag :h5, t('user.workshops.email_matriculate'),class:'title' %>
+    <div class="panel-content">
+      <%= f.input :email_matriculate, input_html: {style:'height: 150px',class:"mceEditor"} %>
+    </div>
+  <% end %>       
   <div class="actions">
     <%= submit_button f %>
   </div>

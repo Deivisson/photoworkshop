@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pic2Gether</title>
+  <%= stylesheet_link_tag    'user', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'user', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag '//tinymce.cachefly.net/4.2/tinymce.min.js', 'data-turbolinks-track' => false %>
+  <script>
+  	tinymce.init({
+    mode : "specific_textareas",
+    editor_selector : "mceEditor",
+    theme: "modern",
+    plugins: [
+        "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+        "searchreplace wordcount visualblocks visualchars code fullscreen",
+        "insertdatetime media nonbreaking save table contextmenu directionality",
+        "emoticons template paste textcolor colorpicker textpattern imagetools"
+    ],
+    toolbar1: "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent ",
+    toolbar2: "print preview | forecolor backcolor emoticons | link fullscreen",
+    image_advtab: true,
+    menubar: false,
+    toolbar_items_size: 'small'
+	});
+
+	</script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<%= render "layouts/toolbar" %>
+	<div class="main-content-area">
+		<%= yield %>
+	</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<% if @workshop.opened? || @workshop.user_id == current_user.id %>
+	<% if @workshop.participant_ids.include?(current_user.id) %>
+		<% if current_user.matricula_confirmed_for?(@workshop) %>
+			<%= link_to  t('user.workshops.already_subscribed'),"#",class:"btn btn-bigger disabled" %>
+		<% else %>	
+			<%= link_to  t('user.workshops.waiting_confirmation'),"#",class:"btn btn-bigger disabled" %>
+		<% end %>
+	<% else %>
+		<%= link_to t('user.workshops.subscribe'), 
+						user_workshop_subscribe_path(@workshop),
+						data: {confirm: t('user.workshops.confirm_subscribe_question')},
+						method: :post, remote:true,
+						class:"btn btn-primary btn-bigger" %>
+	<% end %>
+<% end %>

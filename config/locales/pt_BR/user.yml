@@ -68,6 +68,17 @@ pt_BR:
       workshop_value: "%{workshop_value}"
       main_info: "Informações Principais"
       more_info: "Informações Complementares"
+      email_info: "Informações de Envio para Pré-Matriculas."
+      email_matriculate: "Informações Envio de Email ao Confirmar matrículada."
+      subscribe: "Faça sua Pré-matrícula"
+      confirm_subscribe_question: "Confirma Pré-Matrícula ?"
+      already_subscribed: "Você já esta matrículado!"
+      subscribe_email_subject: "Pic2Gether - Confirmação Pré-Matrícula"
+      matriculated_email_subject: "Pic2Gether - Confirmação de Matrícula"
+      no_more_vacancies: "Vagas Esgotadas !!!"
+      subscribe_success: "Pré-Matricula realizada com sucesso."
+      waiting_confirmation: "Aguardando confirmação de Matrícula."
+      matriculation_with_success: "Matrícula confirmada com sucesso !!"
       form:
 
       new:
@@ -78,17 +89,25 @@ pt_BR:
         add_new: "Adicionar Workshop"
       show:
         title: "Workshop"
-        edit_workshop: "Editar Workshop"
-        open_workshop: "Abrir Workshop"
-        msg_not_opened: '<strong>Atenção, Workshop ainda não está aberto!</strong> Após finalizar todas as configurações, clique no botão acima "Abrir Workshop" e o mesmo ficará visível publicamente. É necessário que esteja aberto para que possa receber solicitação de matrículas.'
-        confirm_open_workshop_msg: "Confirmar Abertura do Workshop? "
+      show_owner:
+        show:
+          edit_workshop: "Editar Workshop"
+          open_workshop: "Abrir Workshop"
+          msg_not_opened: '<strong>Atenção, Workshop ainda não está aberto!</strong> Após finalizar todas as configurações, clique no botão acima "Abrir Workshop" e o mesmo ficará visível publicamente. É necessário que esteja aberto para que possa receber solicitação de matrículas.'
+          confirm_open_workshop_msg: "Confirmar Abertura do Workshop? "
+      show_participant:
+        show:
+          activities_legend: "Atividades"
+          materials_legend: "Materiais"
+
       show_participants:
         vacancies_users: "Participantes"
       show_materials:
         materials: "Materiais"
       show_activities:
         activities: "Atividades"
-
+      subscribe_link:
+        not_opened: ""
     workshop_materials:
       new:
         title: 'Novo Material'
@@ -108,6 +127,8 @@ pt_BR:
         remove_user: "Remover Participante"
       participant:
         remove_user: "Remover"
+        confirm_matriculation: "Confirmar Matrícula"
+        confirm_matriculation_question: "Confirmar a matrícula do usuário?"
       search_form:
         placeholder: "Digite o nome do usuário para pesquisa"
     shared:

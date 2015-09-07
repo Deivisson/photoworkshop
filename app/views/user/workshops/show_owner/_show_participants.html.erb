@@ -6,7 +6,7 @@
 </h4>
 <div class="show-fields" style="width:100%">
   <ul class="workshop-participants" id="workshop-participants-container">
-    <% @workshop.participants.each do |participant| %>
+    <% @workshop.workshop_participants.each do |participant| %>
       <%= render partial:'/user/workshop_participants/participant',
                  locals: {participant:participant} %>
     <% end %>

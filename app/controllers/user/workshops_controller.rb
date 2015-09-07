@@ -1,22 +1,31 @@
 class User::WorkshopsController < User::BaseController
-  before_action :set_workshop, only: [:show, :edit, :update, :destroy, :open]
+  before_action :set_workshop, only: [:show, :edit, :update, :destroy, :open,:marketing, :subscribe]
 
   def index
     get_index_type
-    @workshops = @type == "instructor" ? current_user.owner_workshops : current_user.my_workshops
+    @workshops = if @type == "instructor" 
+                    current_user.owner_workshops.order(created_at: :desc)
+                  else
+                    current_user.my_workshops.order(created_at: :desc)
+                  end
   end
 
   def show
-    respond_with(@workshop)
+    # IF current user isn't the owner of workshop or not matriculated, will display a hot page
+    if @workshop.mine?(current_user) || @workshop.enrolled?(current_user)
+      respond_with(@workshop)
+    else
+      render :marketing
+    end
   end
 
   def new
     @workshop = Workshop.new
-    respond_with(@workshop)
+    respond_with(@workshop,layout:'/user/workshop_form')
   end
 
   def edit
-
+    respond_with(@workshop,layout:'/user/workshop_form')
   end
 
   def create
@@ -41,14 +50,28 @@ class User::WorkshopsController < User::BaseController
     redirect_to user_workshop_path(@workshop)
   end
 
+  def marketing
+    respond_with(@workshop)
+  end
+
+  def subscribe
+    @workshop.subscribe!(current_user)
+  end
+
   private
     def set_workshop
       id = params[:id] || params[:workshop_id]
-      @workshop = current_user.owner_workshops.find(id)
+      if ["show","marketing","subscribe"].include?(action_name)
+        @workshop = Workshop.find(id)
+      else
+        @workshop = current_user.owner_workshops.find(id)
+      end
     end
 
     def workshop_params
-      params.require(:workshop).permit(:user_id, :description, :details, :start_date, :end_date, :vacancies_number, :value, :prerequisite, :goal, :target_audience, :term, :image)
+      params.require(:workshop).permit(:user_id, :description, :details, :complement, :start_date, :end_date, 
+                    :vacancies_number, :value, :prerequisite, :goal, :target_audience, :term, :image,:workload,
+                    :email_subscribe, :email_matriculate)
     end
 
     def get_index_type

@@ -1,0 +1,49 @@
+<div class="ws-preview">
+	<% if !@workshop.opened? && @workshop.user_id != current_user.id %>
+		<h1>Workshop não Disponível, aguarde ...</h1>
+	<% else %>
+		<div class="ws-cover" 
+				style="background-image: url(<%= @workshop.image.url(:medium)%>)" ></div>
+		<div class="ws-workshop-title">
+			<h1><%= @workshop.description %></h1>
+			<p>
+				<span>com</span> 
+				<%= link_to @workshop.user.profile.full_name,
+										user_photographer_path(@workshop.user_id),
+					 					class:"photographer-profile" %>
+			</p>
+			<div class="buttons-container" id="buttons-container" >
+				<%= render "subscribe_links" %>
+			</div>
+			<div class="social-network-share">
+				<span class="share-label">Compartilhar</span>
+				<%= link_to "#" do %>
+					<span class="social-network-icon facebook"></span>
+				<% end %>
+				<%= link_to "#" do %>
+					<span class="social-network-icon twitter"></span>
+				<% end %>
+			</div>
+		</div>
+		<div class="ws-details-textbox">
+			<h1><%= "Sobre" %></h1>
+			<p class="ws-details">
+				<%= @workshop.details %>
+			</p>
+	    <%= sf @workshop,:start_date,format_date(@workshop.start_date) %>
+	    <%= sf @workshop,:end_date,format_date(@workshop.end_date) %>
+	    <%= sf @workshop,:workload,@workshop.workload %>
+	    <%= sf @workshop,:vacancies_number %>
+	    <%= sf @workshop,:value,number_to_currency(@workshop.value) %>
+	    <%= sf @workshop,:target_audience %>
+	    <br>
+	    <br>
+			<div class="complement-info">
+				<h1>
+					<%= t('user.workshops.more_info') %>
+				</h1>
+				<%= @workshop.complement.html_safe unless @workshop.complement.nil? %>
+			</div>
+		<div>
+	<% end %>
+</div>

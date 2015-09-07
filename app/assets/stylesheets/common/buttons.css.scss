@@ -129,8 +129,18 @@
   vertical-align: center;
   width:auto;  
   transition:All 0.6s ease;
+  text-decoration: none;
   &:hover {
     background-color: #D6D4D4;
+    text-decoration: none;
+  };
+  &.disabled {
+    background:#e4e4e4;
+    box-shadow: 0 1px 0 0 #e4e4e4 inset;
+    border:1px solid #c3c3c3;
+    color: #a2a2a2;
+    pointer-events: none;
+    cursor: default;
   };
 }
 
@@ -141,6 +151,30 @@
   &:hover {
     background-color: #206CAA;
   };
+}
+
+.btn-important {
+  background-color: #da4f49;
+  border:1px solid #CF453F;
+  color: #FFF;
+  &:hover {
+    background-color: #C43B36;
+    border-color: #AF2C28;
+  };
+}
+
+
+.btn-bigger {
+  font-size: 18px;
+  padding: 7px;
+
+}
+
+.btn-small {
+  font-size: 10px;
+  height: 14px;
+  line-height: 16px;
+  padding: 1px;
 }
 
 .button-group {

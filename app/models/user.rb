@@ -80,6 +80,11 @@ class User < ActiveRecord::Base
     return user
   end
 
+  def matricula_confirmed_for?(workshop)
+    participant = workshop.workshop_participants.where(user_id:self.id).first
+    return false if participant.nil?
+    participant.confirmed?
+  end
 
 private
 	

@@ -1,16 +1,15 @@
 <ul class="workshops-items">
 	<% @workshops.each do |workshop| %>
 		<li>
-			<div class="ws-image">
-				<%= image_tag(workshop.image.url(:medium)) %>
+			<div class="ribbon-wrapper">
+				<div class="ribbon ribbon-success"><%= workshop_status(workshop) %></div>
 			</div>
-			<!-- <div class="ws-details">
-				<h1><%= workshop.description %></h1>
-				<p><%= workshop.details %></p>
-				<div class="workshop-resume">
-
-				</div>
-			</div> -->
+			<div class="ws-image" style="background-image: url(<%= workshop.image.url(:medium)%>)">
+			</div>
+			<div class="ws-details">
+				<h1><%= link_to workshop.description, user_workshop_path(workshop) %></h1>
+				<p><%= workshop.details.truncate(400) %></p>
+			</div>
 		</li>
 	<% end %>
 </ul>

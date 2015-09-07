@@ -1,5 +1,5 @@
 <% if @workshop_participant.errors.any? %>
-	
+	alert("<%= @workshop_participant.errors.full_messages.join(" ") %>");
 <% else %>
 	$("#workshop-participants-container").append("<%= escape_javascript(render partial:'participant',locals:{participant:@participant})%>");
 	$("#user-" + '<%= @workshop_participant.user_id %>').remove();
