@@ -8,7 +8,7 @@ class User::WorkshopActivitiesController < User::BaseController
   # end
 
   def show
-    respond_with(@workshop_activity)
+    respond_with(@workshop_activity, layout:false)
   end
 
   def new
@@ -35,11 +35,15 @@ class User::WorkshopActivitiesController < User::BaseController
 
   private
     def set_workshop
-      @workshop = current_user.owner_workshops.find(params[:workshop_id])
+      if action_name == "show"
+        @workshop = current_user.my_workshops.find(params[:workshop_id])
+      else
+        @workshop = current_user.owner_workshops.find(params[:workshop_id])
+      end
     end
 
     def set_workshop_activity
-      @workshop_activity = WorkshopActivity.find(params[:id])
+      @workshop_activity = @workshop.activities.find(params[:id])
     end
 
     def workshop_activity_params

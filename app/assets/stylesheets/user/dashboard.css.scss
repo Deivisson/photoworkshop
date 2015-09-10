@@ -70,17 +70,18 @@ body {
 				width: 100%;
 			}
 			.user-infos {
-				margin-top: -40px;
+				margin-top: -80px;
 				img.avatar {
 					border-radius: 10%;
 					border: 2px solid #fff;
 					float: left;
 					height: 65px;
-					margin: 15px 0 0 7px;
+					margin: 30px 0 0 7px;
 					width: 65px;
 				}
 				label.user-name {
-					color: #333;
+					color: #fff;
+			    text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.75);
 					float: left;
 					font-size: 18px;
 					margin: 45px 0 0 5px;
@@ -90,7 +91,8 @@ body {
 						float: left;
 					}
 					p {
-						color: #B7B7B7;
+						color: #fff;
+				    text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.75);
 						font-size: 12px;
 						line-height: 18px;
 						margin-top: 15px;
@@ -133,7 +135,7 @@ body {
 							margin-top: 10px;
 							width: 100%;
 							a {
-								color: #333;
+								color: #666;
 								text-decoration: none;
 								&:hover {
 									text-decoration:underline;
@@ -143,6 +145,50 @@ body {
 					}
 				}
 			}
+		}
+		.user-content	.level-progress {
+			border-top: 1px solid #eee;
+	    float: left;
+	    height: 40px;
+	    margin-bottom: -10px;
+	    width: 100%;
+	    img.level-avatar {
+	    	float: left;
+	    	height: 24px;
+    		width: 24px;
+	    }
+			.progress-bar {
+				background-color: #E8E5E5;
+				float: left;
+				height: 20px;
+				line-height: 15px;
+				width: 100%;
+				margin-top: 20px;
+				span.points {
+					color: #333;
+			    font-size: 12px;
+			    line-height: 21px;
+			    position: absolute;
+			    text-align: center;
+			    width: 237px;
+    		}
+				.progress {
+					background-color: #2683bd;
+					height: 100%;
+					width: 30%;
+				}
+			}
+			span.level {
+	    	color: #777;
+		    font-size: 12px;
+		    left: 13px;
+		    margin-top: 8px;
+		    position: absolute;
+		    text-transform: uppercase;
+		    strong {
+	    		font-weight: bold;
+	    	}
+    	}
 		}
 	}
 	.float-container ul.menu {

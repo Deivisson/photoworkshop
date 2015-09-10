@@ -15,7 +15,7 @@ html {
 
 .panel {
 	background-color: #FFF;
-	border: 1px solid #cecece;
+	border: 1px solid #E0E0E0;
 	border-radius: 5px 5px 0px 0px; 
 	-moz-border-radius: 5px 5px 0px 0px; 
 	-webkit-border-radius: 5px 5px 0px 0px;
@@ -95,6 +95,8 @@ html {
 			};
 			strong {
 				float: left;
+        line-height: 17px;
+        text-align: left;
 				width: 120px;
 			};
 			span {

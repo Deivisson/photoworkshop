@@ -36,7 +36,7 @@ Rails.application.routes.draw do
       get "workshop_participants/:user_id/add", to:'workshop_participants#add', :as => :add_participant
       delete "workshop_participants/:user_id/remove", to:'workshop_participants#remove', :as => :remove_participant
       put  "workshop_participants/:user_id/confirm_matriculation", to:'workshop_participants#confirm_matriculation', :as => :confirm_matriculation
-      resources :workshop_activities, as: :activities, except: [:create,:update,:index,:show]
+      resources :workshop_activities, as: :activities, except: [:index]
       resources :workshop_activities, only: [:create,:update]
     end
     #explore resources

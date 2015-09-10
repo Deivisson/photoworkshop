@@ -2,7 +2,7 @@
 	$("#workshop-materials-containter").html("<%= escape_javascript(render 'form') %>")	;
 <% else %>
 	$("#material-<%= @workshop_material.id %>").replaceWith(
-		"<%= escape_javascript(render partial:'workshop_material', locals: {workshop_material:@workshop_material})%>");
+		"<%= escape_javascript(render partial:'workshop_material', locals: {workshop_material:@workshop_material,workshop_owner:true})%>");
 	$("#workshop-materials-modal-dialog").dialog( "close" );
 	bindWorkshopMaterialDialog();
 	flashNoticeMessage("<%= t('messages.updated_record') %>");

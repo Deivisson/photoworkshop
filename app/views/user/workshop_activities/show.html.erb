@@ -1,24 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @workshop_activity.description %>
-</p>
-
-<p>
-  <strong>Details:</strong>
-  <%= @workshop_activity.details %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @workshop_activity.status %>
-</p>
-
-<p>
-  <strong>Limit date:</strong>
-  <%= @workshop_activity.limit_date %>
-</p>
-
-<%= link_to 'Edit', edit_workshop_activity_path(@workshop_activity) %> |
-<%= link_to 'Back', workshop_activities_path %>
+<div id="workshop-show-activities-containter">
+	<%= content_tag :label,t('user.workshop_activities.show'), 
+						class:'modal-title',id:'show-modal-title-activity' %>
+	<%= content_tag(:div, class:"panel flat", style:'border:0;margin-top:-20px;') do %>
+	  <div class="panel-content">
+	    <div class="show-fields">
+	    	<%= sf @workshop_activity,:description %>
+	      <%= sf @workshop_activity,:details %>
+	      <%= sf @workshop_activity,:limit_date, format_date(@workshop_activity.limit_date) %>
+	    </div>
+	  </div>
+	<% end %>
+</div>

@@ -99,7 +99,8 @@ pt_BR:
         show:
           activities_legend: "Atividades"
           materials_legend: "Materiais"
-
+          participants_legend: "Participantes"
+          author_legend: "Autor"
       show_participants:
         vacancies_users: "Participantes"
       show_materials:
@@ -114,6 +115,7 @@ pt_BR:
       edit:
         title: 'Edição do  Material'
     workshop_activities:
+      show: "Atividade"
       new:
         title: 'Nova Atividade'
       edit:

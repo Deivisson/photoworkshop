@@ -1,5 +1,4 @@
 ul.workshop-user-participants {
-
 	float: left;
 	margin-top: 15px;
 	width: 100%;
@@ -60,5 +59,67 @@ ul.workshop-user-participants {
     height: 35px;
     padding: 1px 2px 2px 1px;
     width: 100%;
+	}
+}
+
+
+.show-workshop-participant {
+	width: 1024px;
+	.ws-left-col, .ws-right-col {
+		float: left;
+		.panel {
+			margin: 0 0 10px 0;
+		}
+	}
+	.ws-left-col {
+		width: 650px;
+		margin-right: 10px;
+		.ws-image {
+			background-size: cover;
+			background-position: center center;
+			float: left;
+			height: 200px;
+			width: 260px;
+		}
+		p.workshop-description {
+			float: left;
+			font-size: 20px;
+	    font-weight: bold;
+	    line-height: 20px;
+	    margin: -2px 0 0 5px;
+	    text-align: left;
+	    width: 330px;
+		}	
+		.show-fields {
+			margin-top: 20px;
+			p {
+				font-size: 14px;
+				height: 22px;
+				strong {
+					font-weight: bold;
+				}
+			}
+		}
+		/*.ws-complement {
+			float: left;
+			width: 100%;
+		}*/
+	}
+	.ws-right-col {
+		width: 360px;
+	}
+	.author-container {
+		img.avatar {
+			float: left;
+			height: 90px;
+
+			margin: 5px 8px 0 0;
+			width: 90px;
+		}
+		p {
+			font-size: 12px;
+			line-height: 20px;
+			margin: 0 10px 0 0;
+		}
 	}
 }

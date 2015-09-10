@@ -8,7 +8,7 @@
   <ul class="workshop-participants" id="workshop-participants-container">
     <% @workshop.workshop_participants.each do |participant| %>
       <%= render partial:'/user/workshop_participants/participant',
-                 locals: {participant:participant} %>
+                 locals: {participant:participant, workshop_owner:true} %>
     <% end %>
   </ul>
 </div>
