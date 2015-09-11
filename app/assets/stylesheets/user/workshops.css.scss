@@ -89,7 +89,9 @@ ul.workshops-items {
   }
 }
 
-ul.workshop-participants, ul.workshop-materials {
+ul.workshop-participants, 
+ul.workshop-materials,
+ul.workshop-activities {
 	float: left;
 	width: 100%;
 	li {
@@ -127,7 +129,9 @@ ul.workshop-participants, ul.workshop-materials {
 	}
 }
 
-ul.workshop-participants, ul.workshop-materials {
+ul.workshop-participants, 
+ul.workshop-materials,
+ul.workshop-activities {
 	li {
 		&:hover .buttons-container {
 			visibility:visible;
@@ -168,6 +172,23 @@ ul.workshop-participants, ul.workshop-materials {
 	}
 }
 
+ul.workshop-activities li .activity-response {
+	.posted-photo {
+		background-position: center center;
+    background-size: cover;
+    float: left;
+    height: 400px;
+    margin: 10px 0 0 5px;
+    width: 590px;
+    transition:All 0.6s ease;
+    &:hover {
+    	opacity: 0.5;
+    	ul.workshop-activities li {
+    		background-color: #000;	
+    	}
+    };
+	}	
+}
 
 .ws-preview {
 	height: 600px;

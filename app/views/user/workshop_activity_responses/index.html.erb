@@ -1,0 +1,27 @@
+<h1>Listing workshop_activity_responses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Workshop</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @workshop_activity_responses.each do |workshop_activity_response| %>
+      <tr>
+        <td><%= workshop_activity_response.user %></td>
+        <td><%= workshop_activity_response.workshop %></td>
+        <td><%= link_to 'Show', workshop_activity_response %></td>
+        <td><%= link_to 'Edit', edit_workshop_activity_response_path(workshop_activity_response) %></td>
+        <td><%= link_to 'Destroy', workshop_activity_response, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Workshop activity response', new_workshop_activity_response_path %>

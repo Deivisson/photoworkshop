@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150905200627) do
+ActiveRecord::Schema.define(version: 20150910230439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,23 +107,25 @@ ActiveRecord::Schema.define(version: 20150905200627) do
   add_index "photo_likes", ["user_id"], name: "index_photo_likes_on_user_id", using: :btree
 
   create_table "photos", force: true do |t|
-    t.integer  "user_id",                                      null: false
-    t.integer  "category_id",                                  null: false
-    t.string   "title",                limit: 40
+    t.integer  "user_id",                                               null: false
+    t.integer  "category_id",                                           null: false
+    t.string   "title",                         limit: 40
     t.text     "description"
-    t.string   "tags",                 limit: 100
+    t.string   "tags",                          limit: 100
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "views",                            default: 0, null: false
-    t.integer  "likes_count",                      default: 0, null: false
+    t.integer  "views",                                     default: 0, null: false
+    t.integer  "likes_count",                               default: 0, null: false
+    t.integer  "workshop_activity_response_id"
   end
 
   add_index "photos", ["category_id"], name: "index_photos_on_category_id", using: :btree
   add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
+  add_index "photos", ["workshop_activity_response_id"], name: "index_photos_on_workshop_activity_response_id", using: :btree
 
   create_table "sessions", force: true do |t|
     t.string   "session_id", null: false
@@ -220,6 +222,16 @@ ActiveRecord::Schema.define(version: 20150905200627) do
   end
 
   add_index "workshop_activities", ["workshop_id"], name: "index_workshop_activities_on_workshop_id", using: :btree
+
+  create_table "workshop_activity_responses", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "workshop_activity_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "workshop_activity_responses", ["user_id"], name: "index_workshop_activity_responses_on_user_id", using: :btree
+  add_index "workshop_activity_responses", ["workshop_activity_id"], name: "index_workshop_activity_responses_on_workshop_activity_id", using: :btree
 
   create_table "workshop_materials", force: true do |t|
     t.integer  "workshop_id"

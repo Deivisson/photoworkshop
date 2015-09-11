@@ -5,26 +5,7 @@
 <% end %>
 <div class="centralizer">
   <%= semantic_form_for @photo, url:user_photos_path, :html => {multipart:true} do |f| %>
-    <div id="dragandrophandler">
-      <%= content_tag :img ,"", id:'image-upload'%>
-      <%= f.input :picture, 
-                  as: :file,
-                  label: t('.select_file'),
-                  input_html: {:onchange => "showImagePreview(this)"} %>
-    </div>
-    <%= content_tag(:div, class:"panel",style:'width: 92%;') do %>
-      <%= content_tag :h5, t('.photo_info'),class:'title' %>
-      <div class="panel-content" style="width:45%">
-        <%= f.input :title %>
-        <%= f.input :description, :input_html => {rows:5} %>
-      </div>
-      <div class="panel-content" style="width:45%">
-        <%= f.input :category_id,
-                    as: :select,
-                    collection: @categories.collect{|c|[c.description,c.id]} %>
-        <%= f.input :tags %>
-      </div>      
-    <% end %>
+    <%= render partial:'fields', locals: {f: f} %>
     <div class="actions">
       <%= submit_button f %>
     </div>

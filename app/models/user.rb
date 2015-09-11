@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
   has_many :my_workshops, through: :workshop_participants
   has_many :photo_comments
   has_many :auths, class_name:"UserAuth"
+  has_many :activity_responses, class_name: "WorkshopActivityResponse"
 
   after_create :create_profile
   after_save :create_user_auth

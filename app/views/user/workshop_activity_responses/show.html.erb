@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @workshop_activity_response.user %>
+</p>
+
+<p>
+  <strong>Workshop:</strong>
+  <%= @workshop_activity_response.workshop %>
+</p>
+
+<%= link_to 'Edit', edit_workshop_activity_response_path(@workshop_activity_response) %> |
+<%= link_to 'Back', workshop_activity_responses_path %>

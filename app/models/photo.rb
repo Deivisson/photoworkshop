@@ -6,7 +6,10 @@ class Photo < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :category
+  belongs_to :workshop_activity_response
+
   has_one :exif, class_name:'PhotoExif'
+
 
   #Likes associations
   has_many :likes, class_name:'PhotoLike'
