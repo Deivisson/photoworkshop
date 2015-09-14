@@ -37,7 +37,7 @@ test:
 
 production:
   <<: *default
-  database: photograph_production
+  database: photograph_development
   
   username: postgres
   password: master1

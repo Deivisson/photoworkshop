@@ -23,3 +23,5 @@ gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 # gem 'debugger', group: [:development, :test]
 gem 'tzinfo-data',platforms: [:mingw, :mswin]
 gem 'devise'
+gem 'unicorn'
+gem 'therubyracer',  platforms: :ruby

@@ -1,9 +1,9 @@
 .icon20 {
-	background: url("/assets/user/menu_sprite.png");
+	background: url(asset-path("/user/menu_sprite.png"));
 }
 
 .icon20pb {
-	background: url("/assets/user/menu_sprite_pb.png");
+	background: url(asset-path("user/menu_sprite_pb.png"));
 	float: left;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .social-network-icon {
-	background: url("/assets/shared/social_network_sprite.png");
+	background: url(asset-path("shared/social_network_sprite.png"));
 	height: 35px;
 	width: 36px;
 	&.tumblr {

@@ -72,7 +72,7 @@ ul.toolbar {
 
 		}
 		h1.title-icon {
-			background: url("/assets/user/titles_sprite.png") no-repeat;
+			background: url(asset-path("user/titles_sprite.png")) no-repeat;
 			text-indent: 45px;
 			&.upload-photo {background-position: 0px 5px;}
 			&.profile {background-position: 0px -29px;}
