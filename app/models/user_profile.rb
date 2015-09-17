@@ -16,7 +16,7 @@ class UserProfile < ActiveRecord::Base
 
   attr_accessor :country_id, :state_id, :avatar_remote_url
 
-  before_create :avatar_from_remote_url
+  before_create :avatar_from_remote_url, :set_init_category
 
   def state_id
   	if @state_id.nil? && !self.city_id.nil?
@@ -47,5 +47,8 @@ private
       self.avatar = URI.parse(self.avatar_remote_url)
     end
   end
- 
+  
+  def set_init_category
+    self.category_id = Category::DEFAULT_CATEGORY_ID
+  end 
 end
