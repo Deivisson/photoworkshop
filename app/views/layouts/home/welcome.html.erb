@@ -37,7 +37,7 @@
 		</div>
 		<%# yield :login_form %>
 	</div>
-	<%= content_tag :div, "", class:'welcome-cover', 
+	<%= content_tag :div, "", class:'welcome-cover', id:'welcome-cover',
 									style:"background-image:url(#{@photo_cover.picture.url(:medium)})" do %>
 		<div class="welcome-cover-mask" id="welcome-cover-mask">
 			<div class="coverby-container">

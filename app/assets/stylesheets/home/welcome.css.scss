@@ -101,7 +101,7 @@ ul.about-container {
 }
 
 .back-page {
-  background: #008CAF url("/assets/home/back_page.png") 4px 5px;
+  background: #008CAF url(assets-path("home/back_page.png")) 4px 5px;
   background-repeat: no-repeat;
   bottom: 10px;
   width: 32px;
