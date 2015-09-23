@@ -4,7 +4,7 @@ $(document).ready(function(){
 	var value = $(window).height() ;
 	$('#welcome-cover, #welcome-how-work, #welcome-made-for-who, #welcome-professionals, #welcome-sign-up').height(value);
 	$('#welcome-how-work').css("margin-top",value);
-	$('#welcome-content').css("margin-top",value - $('#welcome-content').height());
+	$('#welcome-content').css("margin-top",value - $('#welcome-content').height() + 50);
 
     // Default move to top
     $('html,body').animate({scrollTop: top},250);

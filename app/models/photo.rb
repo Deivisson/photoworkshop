@@ -81,6 +81,18 @@ class Photo < ActiveRecord::Base
     return "-" if self.exif.focal_lenght.nil?    
     self.exif.focal_lenght
   end  
+
+  def cover!
+    self.update_attributes!(cover:true,cover_at:Time.now)
+  end
+
+  def uncover!
+    self.update_attributes!(cover:false,cover_at:nil)
+  end
+
+  def self.cover
+    Photo.where(cover:true).order(cover_at: :desc).limit(1).first
+  end
 private 
 
   def save_exif

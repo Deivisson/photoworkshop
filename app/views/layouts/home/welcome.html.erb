@@ -24,7 +24,8 @@
 					<%= link_to t('welcome.menu.for_who'),"#",id:'made-for-who-link',target:'welcome-made-for-who' %>
 				</li>
 				<li>
-					<%= link_to t('welcome.menu.professionals'),"#",id:"professionals-link",target:'welcome-professionals' %>
+					<%= link_to t('welcome.menu.professionals'),"#",
+								id:"professionals-link",target:'welcome-professionals' %>
 				</li>
 			</ul>
 		</div>
@@ -36,26 +37,33 @@
 		</div>
 		<%# yield :login_form %>
 	</div>
-	<%= content_tag :div, "", class:'welcome-cover', style:"background-image:url(#{asset_path('cover2.jpg')})" %>
-	</div>
-	<div class="welcome-cover-mask" id="welcome-cover-mask">
-		<div class="coverby-container">
-			<%= image_tag("avatar.jpg",class:'user-avatar') %>
-			<span class="photo-by">Photo by</span>
-			<span class="user-name">Deivisson Bruno</span>
+	<%= content_tag :div, "", class:'welcome-cover', 
+									style:"background-image:url(#{@photo_cover.picture.url(:medium)})" do %>
+		<div class="welcome-cover-mask" id="welcome-cover-mask">
+			<div class="coverby-container">
+				<%= image_tag(@photo_cover.user.profile.avatar(:thumb),class:'user-avatar') %>
+				<span class="photo-by">Photo by</span>
+				<span class="user-name">
+					<%= @photo_cover.user.profile.full_name %>
+				</span>
+			</div>
 		</div>
 		<div class="centralizer">
 			<div class="welcome-content" id="welcome-content">
-					<h1><%=t('welcome.texts.header') %></h1>
-					<h2><%=t('welcome.texts.sub_header') %></h2>
-					<%= link_to t('welcome.authentication.facebook_sign_up'),"#",class:'sign-up-button facebook'%>
-					<%= link_to t('welcome.authentication.twitter_sign_up'),"#",class:'sign-up-button twitter'%>
-					<%= link_to t('welcome.authentication.sign_up_email'),
-											new_user_registration_path,class:'sign_up_email' %>
+				<h1><%=t('welcome.texts.header') %></h1>
+				<h2><%=t('welcome.texts.sub_header') %></h2>
+				<%= link_to t('welcome.authentication.facebook_sign_up'),
+										user_omniauth_authorize_path(:facebook),
+										class:'sign-up-button facebook'%>
+				<%= link_to t('welcome.authentication.twitter_sign_up'),
+										user_omniauth_authorize_path(:twitter),
+										class:'sign-up-button twitter'%>
+				<%= link_to t('welcome.authentication.sign_up_email'),
+										"",class:'sign_up_email',id:"sign-up-link",target:'welcome-sign-up' %>
+
 			</div>
 		</div>
-
-	</div>
+	<% end %>
 	<%= link_to "", "#", class:"back-page", id:'top-link' %>
 	<div class="how_work" id="welcome-how-work">
 		<div class="centralizer"><%= render 'how_work' %></div>

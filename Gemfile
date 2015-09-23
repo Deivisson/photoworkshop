@@ -9,7 +9,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring',group: :development
-gem 'foreigner'
+#gem 'foreigner'
 gem "paperclip", "~> 4.2"
 gem 'formtastic'
 gem 'bootstrap-sass' #, '~> 3.1.1.0'
