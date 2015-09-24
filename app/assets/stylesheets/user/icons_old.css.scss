@@ -1,0 +1,71 @@
+.icon20 {
+	background: url(asset-path("user/menu_sprite.png"));
+}
+
+.icon20pb {
+	background: url(asset-path("user/menu_sprite_pb.png"));
+	float: left;
+}
+
+.icon20, .icon20pb {
+	height: 24px;
+	width: 24px;
+	&.upload {
+		background-position: -129px -1px;
+	}
+	&.home {
+		background-position: -4px -2px;
+	}
+	&.explore {
+		background-position: -65px -2px;
+	}
+	&.me {
+		background-position: -98px -2px;	
+	}
+	&.photographers {
+		background-position: -38px -2px;
+	}
+	&.icon-grid-list {
+		background-position: -229px -1px;	
+	}
+	&.icon-grid-flow {
+		background-position: -197px -1px;
+	}
+	&.icon-grid-table {
+		background-position: -165px -1px;
+	}
+}
+
+.social-network-icon {
+	background: url(asset-path("shared/social_network_sprite.png"));
+	height: 35px;
+	width: 36px;
+	&.tumblr {
+		background-position: -6px -5px;
+	}	
+	&.googleplus {
+		background-position: -52px -5px;
+	}
+	&.facebook {
+		background-position: -99px -5px;
+	}
+	&.flickr {
+		background-position: -150px -5px;
+	}
+	&.twitter {
+		background-position: -197px -5px;
+	}			
+	&.email {
+		background-position: -245px -5px;
+	}			
+}
+
+/*.icon32 {
+	background: url("/assets/user/icons32_sprite.png");
+	height: 32px;
+	width: 32px;
+	&.upload-image {
+		background-position: -4px -4px;
+	}
+}
+*/
