@@ -131,7 +131,7 @@ ul.users-photographers {
 			&::before {
 				content:'  ';
 				display:block;
-				background: url("/assets/user/follow_add.png") no-repeat 0 2px;
+				background: url(asset-path("user/follow_add.png")) no-repeat 0 2px;
 				height: 16px;
 				width: 16px;
 				position: absolute;
@@ -144,7 +144,7 @@ ul.users-photographers {
 			&::before {
 				content:'  ';
 				display:block;
-				background: url("/assets/user/follow_add.png") no-repeat 0 2px;
+				background: url(asset-path("user/follow_add.png")) no-repeat 0 2px;
 				height: 16px;
 				width: 16px;
 				position: absolute;

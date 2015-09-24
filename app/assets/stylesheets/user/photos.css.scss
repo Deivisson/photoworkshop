@@ -273,7 +273,7 @@
 
 /* Upload Form */
 input.camera-field {
-	background-image: url("/assets/user/camera.png");
+	background-image: url(asset-path("user/camera.png"));
 	background-position: 5px 7px;
 	background-repeat: no-repeat;
 	background-color: white;
