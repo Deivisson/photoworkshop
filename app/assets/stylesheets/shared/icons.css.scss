@@ -1,11 +1,12 @@
 .icon20 {
-	background: url("/assets/user/menu_sprite.png");
+	background: url(asset-path("user/menu_sprite.png"));
 }
 
 .icon20pb {
-	background: url("/assets/user/menu_sprite_pb.png");
+	background: url(asset-path("user/menu_sprite_pb.png"));
 	float: left;
 }
+
 
 .icon20, .icon20pb {
 	height: 24px;

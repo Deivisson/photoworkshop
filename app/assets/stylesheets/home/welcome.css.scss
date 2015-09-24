@@ -10,7 +10,7 @@ html, body {
 }
 
 .welcome-header {
-  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
   transition: all 0.4s linear 0s;
   height: 70px;
   width: 100%;
@@ -102,7 +102,7 @@ ul.about-container {
 }
 
 .back-page {
-  background: #008CAF url(asset-path("home/back_page.png")) 4px 5px;
+  background: url(asset-path("home/back_page.png")) 4px 5px;
   background-repeat: no-repeat;
   bottom: 10px;
   width: 32px;
