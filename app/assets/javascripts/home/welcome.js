@@ -41,5 +41,7 @@ $(document).ready(function(){
 	//Remover hover class from all .step element
 	$(".step ").mouseenter(function(){
     $(".step").removeClass("hover");
+
+    
   });
 });

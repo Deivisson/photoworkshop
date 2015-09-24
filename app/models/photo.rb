@@ -16,7 +16,12 @@ class Photo < ActiveRecord::Base
   has_many :likers, through: :likes
   has_many :comments, class_name:'PhotoComment'
 
-  has_attached_file :picture, :styles => {small:"300x300", medium:"800x800"}, default_url:"/images/missing.png"
+  has_attached_file :picture,:styles => {
+    small:"250x250", 
+    medium:"600x600",
+    large: "1000X1000",
+    huge: "2000x2000"
+  }, default_url:"/images/missing.png"
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 
   after_post_process :save_exif

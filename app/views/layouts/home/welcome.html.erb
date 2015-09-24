@@ -37,8 +37,9 @@
 		</div>
 		<%# yield :login_form %>
 	</div>
+	<%= link_to "", "#", class:"back-page", id:'top-link' %>
 	<%= content_tag :div, "", class:'welcome-cover', id:'welcome-cover',
-									style:"background-image:url(#{@photo_cover.picture.url(:medium)})" do %>
+									style:"background-image:url(#{@photo_cover.picture.url(:original)})" do %>
 		<div class="welcome-cover-mask" id="welcome-cover-mask">
 			<div class="coverby-container">
 				<%= image_tag(@photo_cover.user.profile.avatar(:thumb),class:'user-avatar') %>
@@ -60,11 +61,10 @@
 										class:'sign-up-button twitter'%>
 				<%= link_to t('welcome.authentication.sign_up_email'),
 										"",class:'sign_up_email',id:"sign-up-link",target:'welcome-sign-up' %>
-
 			</div>
 		</div>
 	<% end %>
-	<%= link_to "", "#", class:"back-page", id:'top-link' %>
+	
 	<div class="how_work" id="welcome-how-work">
 		<div class="centralizer"><%= render 'how_work' %></div>
 		<div class="bg"></div>
