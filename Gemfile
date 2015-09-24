@@ -25,3 +25,4 @@ gem 'tzinfo-data',platforms: [:mingw, :mswin]
 gem 'devise'
 gem 'unicorn'
 gem 'therubyracer',  platforms: :ruby
+gem 'will_paginate', '~> 3.0.7'

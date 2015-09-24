@@ -1,4 +1,4 @@
-<ul class="timeline">
+<ul class="timeline" id="">
 	<% @photos.each do |photo| %>
 		<li>
 			<div class="photo-author-container">
@@ -19,3 +19,6 @@
 		</li>
 	<% end %>
 </ul>
+<div id="infinite-scrolling">
+  <%= will_paginate %>
+</div>
