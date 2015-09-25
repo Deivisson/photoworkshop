@@ -17,14 +17,13 @@ ul.timeline {
 		 	margin: 0;
 		 	span {
 		 		color: #333;
-	 			/*text-shadow: 0px 0px 0px !important;*/
+	 			text-shadow: 0 !important;
 	 			&.photo-by {
 	 				color: #9d9d9d;
 					font-size: 10px;
 					font-weight: normal;
 					margin-bottom: 4px;
 					margin-top: 10px;	 	
-					text-shadow: 0;			
 	 			}
 		 	}
 		}
