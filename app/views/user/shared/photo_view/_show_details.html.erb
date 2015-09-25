@@ -3,7 +3,7 @@
     <%= link_to "<<<<<",user_photo_path(@photo,act:'previous'),remote:true %> 
     <%= link_to ">>>>>",user_photo_path(@photo,act:'next'),remote:true %> 
     
-    <%= image_tag(@photo.picture.url(:medium),id:'photo-picture',class:"photo-picture #{@photo.orientation}") %>
+    <%= image_tag(@photo.picture.url(:large),id:'photo-picture',class:"photo-picture #{@photo.orientation}") %>
     <ul class="photo-bar" id="photo-toolbar">
       <li>
         <div id="like-links"> <%= render 'user/shared/photo_view/like_links' %> </div>

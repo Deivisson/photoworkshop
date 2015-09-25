@@ -249,7 +249,7 @@ module User::PhotosHelper
 		return if photo.nil?
 		html = content_tag(:div,class:"img-container #{class_name}", style:style) do 
 			inner_html = []
-			inner_html << content_tag(:div,class:"img-pic", style:"background-image: url('#{photo.picture.url(:medium)}')") do
+			inner_html << content_tag(:div,class:"img-pic", style:"background-image: url('#{photo.picture.url(:large)}')") do
 				pic = []
 				pic << photo_resume_counts(photo)
 				pic << build_url(photo)

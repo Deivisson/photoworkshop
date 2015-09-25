@@ -1,24 +1,20 @@
-<ul class="timeline" id="">
-	<% @photos.each do |photo| %>
-		<li>
-			<div class="photo-author-container">
-				<%= image_tag(photo.user.profile.avatar(:thumb),class:'user-avatar') %>
-				<span class="photo-by">Photo by</span>
-				<span class="user-name"><%= photo.author %></span>
+<% @photos.each do |photo| %>
+	<li>
+		<div class="photo-author-container">
+			<%= image_tag(photo.user.profile.avatar(:thumb),class:'user-avatar') %>
+			<span class="photo-by">Photo by</span>
+			<span class="user-name"><%= photo.author %></span>
+		</div>
+		<span class="timestamp"><%= time_ago_in_words(photo.created_at) %> </span>
+		<div class="item" >
+			<%= content_tag(:div,class:"img-pic #{photo.orientation}", style:"background-image: url('#{photo.picture.url(:medium)}')")	do %>
+				<%= link_to "", user_photo_explore_show_path(photo), class:'photo-picture' %>
+			<% end %>
+			<div class="photo-info">
+				<h1><%= photo.title%></h1>
+				<p><%= photo.description %> </p>
 			</div>
-			<span class="timestamp"><%= time_ago_in_words(photo.created_at) %> </span>
-			<div class="item" >
-				<%= content_tag(:div,class:"img-pic #{photo.orientation}", style:"background-image: url('#{photo.picture.url(:medium)}')")	do %>
-					<%= link_to "", user_photo_explore_show_path(photo), class:'photo-picture' %>
-				<% end %>
-				<div class="photo-info">
-					<h1><%= photo.title%></h1>
-					<p><%= photo.description %> </p>
-				</div>
-			</div>
-		</li>
-	<% end %>
-</ul>
-<div id="infinite-scrolling">
-  <%= will_paginate %>
-</div>
+		</div>
+	</li>
+<% end %>
+

@@ -21,4 +21,10 @@
   <%= render 'suggestion_to_follow' %>
 <% end %>
 
-<%= render 'timeline' %>
+<ul class="timeline" id="home-timeline">
+  <%= render 'timeline' %>
+</ul>
+
+<div id="infinite-scrolling">
+  <%= will_paginate @photos %>
+</div>

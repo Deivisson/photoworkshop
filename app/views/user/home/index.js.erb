@@ -1,0 +1,7 @@
+$('#home-timeline').append('<%= j render 'timeline' %>');
+<% if @photos.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate @photos %>');
+<% else %>
+  $(window).off('scroll');
+  $('.pagination').remove();
+<% end %>

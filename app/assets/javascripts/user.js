@@ -28,6 +28,7 @@
 //= require user/workshop_activity_responses
 //= require user/photographers
 //= require user/photo_explore
+//= require user/home
 
 
 
