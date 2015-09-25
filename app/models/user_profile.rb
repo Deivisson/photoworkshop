@@ -32,11 +32,11 @@ class UserProfile < ActiveRecord::Base
   	@country_id
   end
 
-  def cover_url
+  def cover_url(size=:medium)
     photo_url = ""
     unless cover_photo_id.nil?
       photo = Photo.find(cover_photo_id)
-      photo_url = photo.picture.url(:medium) unless photo.nil?
+      photo_url = photo.picture.url(size) unless photo.nil?
     end
     return photo_url
   end
