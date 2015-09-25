@@ -16,7 +16,7 @@ class UserProfile < ActiveRecord::Base
 
   attr_accessor :country_id, :state_id, :avatar_remote_url
 
-  before_create :avatar_from_remote_url, :set_init_category
+  before_create :set_initial_datas
 
   def state_id
   	if @state_id.nil? && !self.city_id.nil?
@@ -41,14 +41,17 @@ class UserProfile < ActiveRecord::Base
     return photo_url
   end
 
+  def short_name
+    self.full_name.truncate(18)
+  end
+
 private 
-  def avatar_from_remote_url
-    if self.avatar_remote_url.present? && self.avatar.nil?
+  
+  def set_initial_datas
+    self.category_id = Category::DEFAULT_CATEGORY_ID
+    self.limit_upload_photo_by_day = 1
+    if self.avatar_remote_url.present?
       self.avatar = URI.parse(self.avatar_remote_url)
     end
-  end
-  
-  def set_init_category
-    self.category_id = Category::DEFAULT_CATEGORY_ID
   end 
 end

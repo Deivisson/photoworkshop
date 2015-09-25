@@ -90,13 +90,12 @@ class User < ActiveRecord::Base
 private
 	
 	def create_profile
-  		self.profile = UserProfile.new(
-        { user_name: user_name,
-          full_name: full_name, 
-          avatar_remote_url: auth_avatar_url
-        })
+ 		self.profile = UserProfile.new(
+      { user_name: user_name,
+        full_name: full_name, 
+        avatar_remote_url: auth_avatar_url
+      })
 	end
-
 
   def create_user_auth
     if (auth_provider.present? && auth_uid.present?)

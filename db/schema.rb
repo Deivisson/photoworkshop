@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922235626) do
+ActiveRecord::Schema.define(version: 20150925001425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -163,24 +163,25 @@ ActiveRecord::Schema.define(version: 20150922235626) do
     t.integer  "user_id"
     t.integer  "category_id"
     t.text     "description"
-    t.string   "work",                limit: 50
-    t.string   "camera",              limit: 30
-    t.string   "home_page",           limit: 255
-    t.string   "facebook",            limit: 50
-    t.string   "twitter",             limit: 50
-    t.string   "google_plus",         limit: 50
-    t.string   "tumblr",              limit: 50
-    t.string   "flickr",              limit: 50
+    t.string   "work",                      limit: 50
+    t.string   "camera",                    limit: 30
+    t.string   "home_page",                 limit: 255
+    t.string   "facebook",                  limit: 50
+    t.string   "twitter",                   limit: 50
+    t.string   "google_plus",               limit: 50
+    t.string   "tumblr",                    limit: 50
+    t.string   "flickr",                    limit: 50
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "city_id"
-    t.string   "user_name",           limit: 50
-    t.string   "avatar_file_name",    limit: 255
-    t.string   "avatar_content_type", limit: 255
+    t.string   "user_name",                 limit: 50
+    t.string   "avatar_file_name",          limit: 255
+    t.string   "avatar_content_type",       limit: 255
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "full_name",           limit: 100
+    t.string   "full_name",                 limit: 100
     t.integer  "cover_photo_id"
+    t.integer  "limit_upload_photo_by_day",             default: 0, null: false
   end
 
   add_index "user_profiles", ["category_id"], name: "index_user_profiles_on_category_id", using: :btree
