@@ -5,7 +5,7 @@
     	<li id="who-follow-user-<%= photographer.id %>">
     		<%= image_tag(photographer.profile.avatar.url(:thumb),class:'user-avatar') %>
     		<div class="text-box">
-    			<%= link_to photographer.profile.full_name , 
+    			<%= link_to photographer.profile.short_name , 
                       user_photographer_path(photographer.id), 
                       class:'photographer-name photographer-profile' %>
 
