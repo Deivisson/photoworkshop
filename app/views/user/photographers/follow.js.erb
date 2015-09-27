@@ -8,6 +8,10 @@ if ($("#follow-links-modal-profile-<%= @user.id %>").length >0 ) {
 	$("#follow-links-modal-profile-<%= @user.id %>").html("<%= escape_javascript(render partial:'follow_links', locals: {user:@user}) %>");	
 }
 
+if ($("#photographers-to-follow").length >0 ) {
+	$("#photographers-to-follow").html("<%= escape_javascript(render 'user/home/suggestion_to_follow') %>");	
+}
+
 //Update number of followings on home menu
 if ($("#current-user-following-count").length > 0) {
 	var count = parseInt($("#current-user-following-count").text()) + 1;

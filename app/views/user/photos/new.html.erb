@@ -1,4 +1,8 @@
 <br>
 <% title t(".title"),class:'title-icon upload-photo' %>
-<%= render 'form' %>
+<% if current_user.can_upload_photo_today? %>
+	<%= render 'form' %>
+<% else %>
+	<%= render 'upload_denied' %>
+<% end %>
 

@@ -17,6 +17,8 @@ Rails.application.routes.draw do
       resources :photo_comments, only: [:create,:destroy]
     end
     resources :user_profiles, :as => :profiles, :only => [:show,:edit,:update]
+    post "profile/social_network_shared/:provider", to: "user_profiles#social_network_shared"
+    
     get "photo_likes/:photo_id/like", to: "photo_likes#like", :as => :photo_like
     get "photo_likes/:photo_id/unlike", to: "photo_likes#unlike", :as => :photo_unlike
     resources :photographers, only: [:index,:show] do

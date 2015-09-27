@@ -149,8 +149,8 @@ body {
 		.user-content	.level-progress {
 			border-top: 1px solid #eee;
 	    float: left;
-	    height: 40px;
-	    margin-bottom: -10px;
+	    height: 23px;
+	    margin-bottom: -13px;
 	    width: 100%;
 	    img.level-avatar {
 	    	float: left;
@@ -163,11 +163,10 @@ body {
 				height: 20px;
 				line-height: 15px;
 				width: 100%;
-				margin-top: 20px;
 				span.points {
 					color: #333;
 			    font-size: 12px;
-			    line-height: 21px;
+			    line-height: 22px;
 			    position: absolute;
 			    text-align: center;
 			    width: 237px;
@@ -223,17 +222,19 @@ body {
 			}
 		}
 	}
+
 }
 .left-col.fixed-col {
 	position: fixed;
 }
 
-.left-col ul.suggestion-to-follow-photographers {
+.left-col ul.suggestion-to-follow-photographers,
+.left-col ul.social-network {
 	float: left;
 	width: 100%;
 	h1 {
 		color: #66757f;
-		font-size: 20px;
+		font-size: 18px;
 		font-weight: normal;
 		padding: 10px;
 		width: 100%;
@@ -293,6 +294,27 @@ body {
 	    width: auto;
 		}
 	}
+}
+
+.left-col ul.social-network {
+	li {
+		min-height: 20px;
+		a {
+			color: #333;
+			font-size: 13px;
+			margin-left: 10px;
+			text-decoration: none;
+			line-height: 20px;
+		}
+	}
+	p.share-message {
+		color: #777;
+    float: left;
+    font-size: 11px;
+    line-height: 13px;
+    margin: 20px 10px 10px 10px;
+	}
+	
 }
 
 .dash-centralize {

@@ -158,3 +158,11 @@ pt_BR:
       menu_options:
         menu_title: "Templates"
         free: Grátis
+    home:
+      social_network_share:
+        share: "Redes Sociais"
+        facebook_share: "Compartilhar Facebook"
+        facebook_invite_friends: "Convidar Amigos do Facebook"
+        twitter_share: "Compartilhar Twitter"
+        share_message: "¹Ganhe direito de postar mais uma foto por dia para cada rede social compartilhada."
+        invite_message: "²Para cada amigo convidado, você ganhará um ponto."

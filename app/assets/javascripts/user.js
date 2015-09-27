@@ -19,6 +19,7 @@
 //= require common/flash_messages.js
 //= require common/base.js
 //= require common/portfolio.js
+//= require common/social_network.js
 //= require user/photos
 //= require user/user_profiles
 //= require user/workshops

@@ -446,3 +446,34 @@ input.camera-field {
 		};		
 	}
 }
+
+
+/*Limit upload photo END*/
+.end-limit-upload-photo {
+	background-color: #FFF;
+	border: 1px solid #ddd;
+  border-radius: 5px;
+  float: left;
+  left: 50%;
+  margin-left: -500px;
+  padding: 10px;
+  position: absolute;
+  width: 800px;
+
+	span.ops-face, p {
+		float: left;
+	}
+	p {
+		color: #4e5665;
+		font-size: 32px;
+		margin-top: 10px;
+		span.ops-face {
+			color: #747272;
+			font-size: 86px;
+			border-right: 1px solid #d3d0d6;
+			height: 100px;
+			padding: 0px 10px 0 0;
+			margin-right: 20px;
+		}
+	}
+}

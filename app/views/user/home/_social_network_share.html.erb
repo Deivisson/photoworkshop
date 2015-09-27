@@ -1,0 +1,24 @@
+<div class="float-container">
+  <ul class="social-network">
+  	<h1><%= t(".share") %></h1>
+  	<li>
+	    <div id="fb-root"></div>
+	    <%= link_to t('.facebook_share'),"#", onclick:"FacebookShare();" %>
+    </li>
+  	<li>
+	    <%= link_to t('.twitter_share'),
+        'http://twitter.com/home?status=Confira Pic2Gether, feito p/ quem gosta de fotografia! Ganhe prêmios, exposição, inspiração e melhore seus clicks. pic2Gether.com' , target:'_blank',
+          onclick:"TwitterShare();" %>
+    </li>
+  	<li>
+	    <%= link_to t('.facebook_invite_friends'),"#", onclick:"FacebookInviteFriends();" %>
+    </li>    
+    <br>
+
+  	<p class="share-message" >
+  		<%= t('.share_message') %><br><br>
+  		<%= t('.invite_message') %>
+  	</p>
+  </ul>
+
+</div>

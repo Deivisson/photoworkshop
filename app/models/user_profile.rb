@@ -14,7 +14,7 @@ class UserProfile < ActiveRecord::Base
   belongs_to :category
   belongs_to :city
 
-  attr_accessor :country_id, :state_id, :avatar_remote_url
+  attr_accessor :country_id, :state_id, :avatar_remote_url, :provider_shared
 
   before_create :set_initial_datas
 
@@ -43,6 +43,15 @@ class UserProfile < ActiveRecord::Base
 
   def short_name
     self.full_name.truncate(18)
+  end
+
+  def update_social_network_shared!(provider)
+    method_name = "#{provider}_shared"
+    if self.respond_to?(method_name) && !self.send("#{method_name}?")
+      self.limit_upload_photo_by_day += 1
+      self.send("#{method_name}=",true)
+      self.save
+    end 
   end
 
 private 

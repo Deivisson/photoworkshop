@@ -9,6 +9,9 @@ pt_BR:
     follow: "Seguir"
     view_template: "Visualizar"
     apply_template: "Usar Template"
+  labels:
+    facebook: "Facebook"
+    twitter: "Twitter"
   messages:
     confirm_destroy: "Confirma Exlusão?"
     destroyed_record: "Registro excluído com sucesso!"

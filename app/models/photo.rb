@@ -18,8 +18,8 @@ class Photo < ActiveRecord::Base
 
   has_attached_file :picture,:styles => {
     small:"250x250", 
-    medium:"600x600",
-    large: "1000X1000",
+    medium:"900x900",
+    large: "1200X1200",
     huge: "2000x2000"
   }, default_url:"/images/missing.png"
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
@@ -98,6 +98,12 @@ class Photo < ActiveRecord::Base
   def self.cover
     Photo.where(cover:true).order(cover_at: :desc).limit(1).first
   end
+
+  def self.posted_today_by_user(user)
+    Photo.where("user_id = ? and (created_at between ? and ?)",
+           user.id,Time.now.beginning_of_day,Time.now.end_of_day)
+  end
+
 private 
 
   def save_exif

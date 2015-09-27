@@ -17,6 +17,10 @@ class User::PhotosController < User::BaseController
     @photo = Photo.new
   end
 
+  def zica
+    render :text => "Deu zica"
+  end
+
   def edit
   end
 

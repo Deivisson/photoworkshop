@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150925001425) do
+ActiveRecord::Schema.define(version: 20150926201944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -181,7 +181,9 @@ ActiveRecord::Schema.define(version: 20150925001425) do
     t.datetime "avatar_updated_at"
     t.string   "full_name",                 limit: 100
     t.integer  "cover_photo_id"
-    t.integer  "limit_upload_photo_by_day",             default: 0, null: false
+    t.integer  "limit_upload_photo_by_day",             default: 0,     null: false
+    t.boolean  "facebook_shared",                       default: false, null: false
+    t.boolean  "twitter_shared",                        default: false, null: false
   end
 
   add_index "user_profiles", ["category_id"], name: "index_user_profiles_on_category_id", using: :btree

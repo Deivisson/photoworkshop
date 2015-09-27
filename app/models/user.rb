@@ -87,6 +87,15 @@ class User < ActiveRecord::Base
     participant.confirmed?
   end
 
+  def can_upload_photo_today?
+    self.profile.limit_upload_photo_by_day > Photo.posted_today_by_user(self).count
+  end
+
+  def suggest_to_follow
+    user_ids = self.following_ids
+    user_ids.push(self.id)
+    User.where("id not in (?)", user_ids).limit(2)
+  end
 private
 	
 	def create_profile

@@ -29,6 +29,7 @@ class User::PhotographersController < User::BaseController
 	def follow
 		if !@user.nil?
 			current_user.user_relations << UserRelation.new(user_followed_id:@user.id)
+			@photographers_to_follow = current_user.suggest_to_follow
 		end
 	end
 

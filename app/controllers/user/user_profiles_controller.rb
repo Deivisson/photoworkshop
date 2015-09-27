@@ -20,6 +20,10 @@ class User::UserProfilesController < User::BaseController
     end
   end
 
+  def social_network_shared
+    current_user.profile.update_social_network_shared!(params[:provider])
+  end
+
   private
 
     def set_user_profile

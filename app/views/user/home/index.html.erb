@@ -1,3 +1,8 @@
+<%= facebook_script %>
+<%= facebook_invite_friends %>
+<%= facebook_share %>
+<%= twitter_share %>
+
 <% current_menu = "" %>
 <%= content_for :toolbar do %>
   <%= content_tag :ul, class:'menu' do %>
@@ -18,7 +23,10 @@
 
 <%= content_for :left_col_container do %>
   <%= render 'user_info' %>
-  <%= render 'suggestion_to_follow' %>
+  <div id="photographers-to-follow">
+    <%= render 'suggestion_to_follow' %>
+  </div>
+  <%= render 'social_network_share' %>
 <% end %>
 
 <ul class="timeline" id="home-timeline">
