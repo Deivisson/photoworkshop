@@ -7,13 +7,15 @@
 		</div>
 		<span class="timestamp"><%= time_ago_in_words(photo.created_at) %> </span>
 		<div class="item" >
-			<%= content_tag(:div,class:"img-pic #{photo.orientation}", style:"background-image: url('#{photo.picture.url(:medium)}')")	do %>
+			<%= content_tag(:div,class:"img-pic #{photo.orientation}", 
+						style:"background-image: url('#{photo.picture.url(:medium)}')")	do %>
 				<%= link_to "", user_photo_explore_show_path(photo), class:'photo-picture' %>
 			<% end %>
 			<div class="photo-info">
 				<h1><%= photo.title%></h1>
 				<p><%= photo.description %> </p>
 			</div>
+			<%= render partial:'photo_comments', locals: {photo:photo} %>
 		</div>
 	</li>
 <% end %>

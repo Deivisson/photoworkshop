@@ -1,0 +1,3 @@
+<% if @photo_comment.destroyed? %>
+	$("#photo-comment-<%= @photo_comment.id %>").remove();
+<% end %>

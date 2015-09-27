@@ -1,0 +1,16 @@
+<div class="comment-list-container">
+	<ul class="comment-items" id="timeline-comment-photo-<%= photo.id %>">
+		<% photo.comments.each do |comment| %>
+			<%= render partial:"photo_comment_item", locals:{photo_comment:comment} %>
+		<% end %>
+		<li id="form-container-photo-<%= photo.id %>">
+			<%= image_tag(current_user.profile.avatar(:thumb),class:'user-avatar') %>
+			<div class="text-box">
+				<div id="comment-form-photo-<%= photo.id %>" class="comment-form">
+					<%= render partial: '/user/photo_comments/form', 
+							locals: {photo:photo, submit_button:false, rows_count:1} %>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>

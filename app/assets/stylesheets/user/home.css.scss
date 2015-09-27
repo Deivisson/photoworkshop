@@ -15,6 +15,7 @@ ul.timeline {
 			float: left;
 			position: relative;
 		 	margin: 0;
+		 	min-width: 350px;
 		 	span {
 		 		color: #333;
 	 			text-shadow: 0 !important;
@@ -24,6 +25,9 @@ ul.timeline {
 					font-weight: normal;
 					margin-bottom: 4px;
 					margin-top: 10px;	 	
+	 			}
+	 			&.user-name {
+	 				margin: 25px 0 0 -42px
 	 			}
 		 	}
 		}
@@ -86,6 +90,79 @@ ul.timeline {
 				}
 			}
 		}
-
+		
+		.item .comment-list-container {
+			background-color: #F7F7F7;
+			border-top: 1px solid #eaebed ;
+			float: left;
+			width: 100%;
+			ul.comment-items {
+				margin-top: 7px;
+				width: 100%;
+				li {
+					float: left;
+					width: 100%;
+					margin-top: 10px;
+					padding: 5px;
+					.user-avatar {
+						float: left;
+						border: 2px solid #fff;
+				    border-radius: 50%;
+				    float: left;
+				    height: 30px;
+				    margin: -4px 0 0 0px;
+				    width: 30px;
+					}
+					.text-box {
+						margin: 0px 0 0 40px;
+						&:hover a.comment-destroy-link {
+							visibility: visible;
+						};
+						span.user-comment {
+							float: left;
+							width: 100%;
+							a {
+								color: #32a6d3;
+								font-size: 14px;
+								float: left;
+								text-decoration: none;
+								&:hover {
+									text-decoration: underline;
+								};
+							}
+							p {
+								color: #8f8f8f;
+								font-size: 11px;
+								float: left;
+								width: auto;
+								margin: -2px 0 0 7px;
+							}
+						}
+						p {
+							float: left;
+							line-height: 20px;
+							width: 100%;
+						}
+						a.comment-destroy-link {
+							color: #777;
+							font-size: 12px;
+							text-decoration: none;
+							position: absolute;
+							margin-left: -90px;
+							visibility: hidden;
+							&:hover {
+								text-decoration: underline;
+							};
+						}
+					}
+					.text-box .comment-form {
+						form {
+							margin: -15px 0 0 -2px;
+    					width: 97%;
+						}
+					}
+				}
+			}
+		}
 	}
 }

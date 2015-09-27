@@ -38,6 +38,10 @@ pt_BR:
         select_file: "Arraste a foto para aqui ou Click para selecionar."
         photo_info: "Informações"
         cancel_upload: "Cancelar Upload"
+    
+    photo_comments:
+      form:
+        comment_box_placeholder: "Deixe o seu comentário"
     user_profiles:
       edit:
         title: "Atualização de Perfil"

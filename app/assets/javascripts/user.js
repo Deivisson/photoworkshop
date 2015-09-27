@@ -30,6 +30,7 @@
 //= require user/photographers
 //= require user/photo_explore
 //= require user/home
+//= require user/photo_comments
 
 
 

@@ -1,8 +1,15 @@
 <% if  @photo_comment.errors.any? %>
-
+	alert("Error");
 <% else %>
-	$("#photo-list-comments").prepend("<%= escape_javascript(
-			render partial:'/user/photo_comments/photo_comment',locals: {photo_comment:@photo_comment}) %>");
+	if ($("#photo-list-comments").length > 0) {
+		// Comment photo on Photo View
+		$("#photo-list-comments").prepend("<%= j (render partial:'/user/photo_comments/photo_comment',locals: {photo_comment:@photo_comment}) %>");
+		$("#comment-form").html("<%= j (render partial:'/user/photo_comments/form', locals: {photo:@photo, submit_button:true, rows_count:3}) %>");	
 
-	$("#comment-form").html("<%= escape_javascript(render '/user/photo_comments/form') %>");
+	} else if ($("#timeline-comment-photo-<%= @photo.id %>").length > 0) {
+		// Comment photo on Home TimeLine
+		$("<%= j (render partial:'/user/home/photo_comment_item',locals: {photo_comment:@photo_comment}) %>").insertBefore($("#form-container-photo-<%= @photo.id %>"));
+		$("#comment-form-photo-<%= @photo.id %>").html("<%= j (render partial:'/user/photo_comments/form', locals: {photo:@photo, submit_button:false, rows_count:1}) %>");			
+	}
+	photographerPreview();
 <% end %>

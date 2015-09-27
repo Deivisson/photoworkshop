@@ -2,7 +2,10 @@
 	<div class="form-container">
 		<%= content_tag :h1, t('.comments') %>
 		<%= image_tag(current_user.profile.avatar(:medium),class:'avatar') %>
-		<div id="comment-form"><%= render '/user/photo_comments/form' %></div>
+		<div id="comment-form">
+			<%= render partial: '/user/photo_comments/form', 
+							locals: {photo:@photo, submit_button:true, rows_count:3} %>
+		</div>
 	</div>
 	<ul id="photo-list-comments">
 		<%= content_tag :h1, t('.last_comments') %><br>
