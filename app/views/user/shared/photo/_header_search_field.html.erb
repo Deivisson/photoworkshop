@@ -1,0 +1,5 @@
+<%= content_for :toolbar_buttons do %>
+  <%= form_tag user_photo_explore_path, method: :get, class:'search-form', remote:remote do |f| %>
+    <%= text_field_tag "search","",placeholder:t('.search_placeholder') %>
+  <% end %>
+<% end %>

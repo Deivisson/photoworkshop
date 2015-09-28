@@ -25,6 +25,7 @@ function photographerPreview(){
 	  		photoView();
 	  		$("#modal-close-button").click(function() {
 					$('#photographer-modal-dialog').remove();
+					jQuery('body').css('overflow','auto');
 				});
 		  });
 		  dialog_form.dialog('open');

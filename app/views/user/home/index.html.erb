@@ -3,6 +3,8 @@
 <%= facebook_share %>
 <%= twitter_share %>
 
+
+<%= render partial:'/user/shared/photo/header_search_field', locals: {remote:false} %>
 <% current_menu = "" %>
 <%= content_for :toolbar do %>
   <%= content_tag :ul, class:'menu' do %>

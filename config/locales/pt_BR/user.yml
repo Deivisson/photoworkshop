@@ -150,7 +150,9 @@ pt_BR:
           last_comments: "Comentários Recentes"
         show_photo_likers:
           likers: "Usuários que curtiram"
-
+      photo:
+        header_search_field:
+          search_placeholder: "Pesquisar Fotografia"
     photo_explore:
       menu:
         fans_pictures: "Fãns"
