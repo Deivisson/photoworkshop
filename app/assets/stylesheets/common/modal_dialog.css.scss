@@ -279,7 +279,7 @@
 					float: left;
 					margin-bottom: 12px;
 					span {
-						background: url("/assets/user/exif_sprite.png") no-repeat !important; 
+						background: url(asset-path("user/exif_sprite.png")) no-repeat !important; 
 						float: left;
 						height: 24px;
 						margin: -5px 5px 0 0;
