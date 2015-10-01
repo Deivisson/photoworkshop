@@ -105,13 +105,17 @@
 		top: 0;
 	}
 	.photo-container {
-	/*	background-color: green;*/
 		height: 100%;
 		position: absolute;
-		right: 350px;
+		right: 310px;
 		left: 0px;
-		width: 78%;
-		img.photo-picture {
+		&:hover a.previous-link, &:hover a.next-link {
+			visibility:visible;
+			opacity: 0.9;
+		};
+		.photo-picture {
+			background-position: center center;
+			background-size: cover;
 			top: 40px;
 			position: absolute;
 			&.portrait {
@@ -122,6 +126,23 @@
 				height: 90%;
 				width: 90%;
 			}
+		}
+		a.previous-link, a.next-link {
+	    transition:All 0.6s ease;
+	    -webkit-transition:All 0.6s ease;
+	    -moz-transition:All 0.6s ease;
+	    -o-transition:All 0.6s ease;
+	    opacity: 0.1;
+			position: absolute;
+			top: 50%;
+			visibility: hidden;
+
+		}
+		a.previous-link {
+			left: 0;
+		}
+		a.next-link {
+			right: 0;
 		}
 	};
 	ul.photo-bar {

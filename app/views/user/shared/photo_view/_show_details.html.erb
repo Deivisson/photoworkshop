@@ -1,9 +1,11 @@
 <%= content_tag :div, style:'float:left;background-color:red' do %>
+
   <div class="photo-container" id="photo-container" style:'position:fixed'>
-    <%= link_to "<<<<<",user_photo_path(@photo,act:'previous'),remote:true %> 
-    <%= link_to ">>>>>",user_photo_path(@photo,act:'next'),remote:true %> 
+    <%= link_to "<<<<<",user_photo_path(@photo,act:'previous'),remote:true,class:"previous-link" %> 
+    <%= link_to ">>>>>",user_photo_path(@photo,act:'next'),remote:true,class:"next-link" %> 
     
-    <%= image_tag(@photo.picture.url(:large),id:'photo-picture',class:"photo-picture #{@photo.orientation}") %>
+    <div class="photo-picture <%= @photo.orientation %>", id="photo-picture",
+         style="background-image:url(<%= @photo.picture.url(:huge) %>)" ></div>
     <ul class="photo-bar" id="photo-toolbar">
       <li>
         <div id="like-links"> <%= render 'user/shared/photo_view/like_links' %> </div>
