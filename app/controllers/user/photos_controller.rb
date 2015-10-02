@@ -10,15 +10,11 @@ class User::PhotosController < User::BaseController
   def show
     @photo_comment = PhotoComment.new
     @photo.update_views! if @photo.user_id != current_user.id
-    respond_with(@photo,layout:'user/show_photo')
+    #respond_with(@photo,layout:'user/show_photo')
   end
 
   def new
     @photo = Photo.new
-  end
-
-  def zica
-    render :text => "Deu zica"
   end
 
   def edit

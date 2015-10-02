@@ -8,7 +8,9 @@
          style="background-image:url(<%= @photo.picture.url(:huge) %>)" ></div>
     <ul class="photo-bar" id="photo-toolbar">
       <li>
-        <div id="like-links"> <%= render 'user/shared/photo_view/like_links' %> </div>
+        <div id="like-links"> 
+          <%= render 'user/shared/photo_view/like_links' %> 
+        </div>
       </li>
     </ul>
   </div>

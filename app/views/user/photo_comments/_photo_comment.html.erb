@@ -1,5 +1,5 @@
 <li>
-	<%= image_tag(current_user.profile.avatar(:medium),class:'avatar') %>	
+	<%= image_tag(photo_comment.user.profile.avatar(:medium),class:'avatar') %>	
 	<div class="comments-content">
 		<%= content_tag :h2, class:'user_name' do %>
 			<%= photo_comment.user.profile.user_name %>

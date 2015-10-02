@@ -3,8 +3,8 @@
 <% else %>
 	if ($("#photo-list-comments").length > 0) {
 		// Comment photo on Photo View
-		$("#photo-list-comments").prepend("<%= j (render partial:'/user/photo_comments/photo_comment',locals: {photo_comment:@photo_comment}) %>");
-		$("#comment-form").html("<%= j (render partial:'/user/photo_comments/form', locals: {photo:@photo, submit_button:true, rows_count:3}) %>");	
+		$("<%= j (render partial:'/user/photo_comments/photo_comment',locals: {photo_comment:@photo_comment}) %>").insertAfter($("#last-comment-label"));
+		$("#comment-form").html("<%= j (render partial:'/user/photo_comments/form', locals: {photo:@photo, submit_button:true, rows_count:2}) %>");	
 
 	} else if ($("#timeline-comment-photo-<%= @photo.id %>").length > 0) {
 		// Comment photo on Home TimeLine

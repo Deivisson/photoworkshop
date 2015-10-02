@@ -57,6 +57,7 @@ Rails.application.routes.draw do
   namespace :public do
     resources :portfolio, only:[:index]
     get "portfolio/:photo_id", to: "portfolio#get_photo", as: :get_photo
+    resources :photo, only:[:show]
   end
 
   get "sign_up/finish", to:'omniauth_callbacks#sign_finish', :as => :sign_up_finish
