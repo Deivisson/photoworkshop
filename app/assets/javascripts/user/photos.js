@@ -51,8 +51,9 @@ function adjustLayout(){
 	 $("#photo-picture").css("left",(w/2) - ($("#photo-picture").width()/2));
 	 $("#photo-toolbar").css("left",(w/2) - ($("#photo-toolbar").width()/2));
 
-	 $(".photo-show-extra-content").css("top", h + 10);
-	 //$(".photo-show-extra-content").css("width",w - 19);
+	 $(".photo-show-extra-content").css("top", h + 10
+	 	alert("cu");
+	 	 //$(".photo-show-extra-content").css("width",w - 19);
 	 
 }
 

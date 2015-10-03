@@ -1,0 +1,341 @@
+.modal-view {
+	float: left;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	top: 0;
+	width: 100%;
+	.photo-container, .photo-info, .photo-bar {
+		height: 100%;
+		top: 0;
+	}
+	.photo-container {
+		height: 100%;
+		position: absolute;
+		right: 310px;
+		left: 0px;
+		&:hover a.previous-link, &:hover a.next-link {
+			visibility:visible;
+			opacity: 0.9;
+		};
+		.photo-picture {
+			background-position: center center;
+			background-size: cover;
+			top: 40px;
+			position: absolute;
+			&.portrait {
+				height: 88%;
+				width: 40%;
+			};
+			&.landscape {
+				height: 90%;
+				width: 90%;
+			}
+		}
+		a.previous-link, a.next-link {
+	    transition:All 0.6s ease;
+	    -webkit-transition:All 0.6s ease;
+	    -moz-transition:All 0.6s ease;
+	    -o-transition:All 0.6s ease;
+	    opacity: 0.1;
+			position: absolute;
+			top: 50%;
+			visibility: hidden;
+
+		}
+		a.previous-link {
+			left: 0;
+		}
+		a.next-link {
+			right: 0;
+		}
+	};
+	ul.photo-bar {
+		/*background-color: #222326;
+		border-left: 1px solid #393B40;*/
+		float: left;
+		height: 30px;
+		list-style: none;
+		width: 400px;
+		margin: 0 auto;
+		margin-top: 2px;
+		position: relative;
+		/*right: 300px;
+		position: fixed;
+		top: 0px;
+		padding-top: 5px;*/
+		li {
+			width: 32px;
+			height: 32px;
+			margin-left: 4px;
+			a {
+				background: url("/assets/user/photo_preview_toolbar_sprite.png") no-repeat;
+				display: block;
+				height: 100%;
+				margin: 2px 0 0 1px;
+				width: 100%;
+			};
+			#like-links {
+				float: left;
+				height: 100%;
+				width: 100%;
+				a.liked-photo {
+					background-position: -1px 0px;
+				};
+				a.unlike-photo {
+					background-position: -37px 0;
+				}
+			}
+		}
+	};
+	.photo-info {
+		background-color: #222326;
+		border-left: 1px solid #393B40;
+		right: 0;
+		padding: 10px;
+		position: fixed;
+		width: 280px;
+		z-index: -999;
+		.content-info {
+			border-bottom: 1px solid #393B40;
+			float: left;
+			margin-bottom: 10px;
+			padding-bottom: 10px;
+			width: 280px;
+			label.section-label {
+				color: #32a6d3;
+				font-size: 10px;
+				font-weight: normal;
+				left: 10px;
+				position: absolute;
+				text-transform: uppercase;
+				/*text-shadow: 0 1px 0 #000;*/
+			};
+			img {
+				border: 1px solid #131519;
+		    border-radius: 50%;
+		    float: left;
+		    height: 50px;
+		    margin: 0;
+		    width: 50px;
+			}
+			a.user-name {
+				float: left;
+				font-size: 16px;
+				font-weight: bold;
+				color: #32A6D3;
+				margin: 5px 0 0 10px;
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				};
+			}
+			span.posting-label,
+			span.views-label, {
+				color: #dbdce2;
+				float: left;
+				font-size: 12px;
+				margin-top: 30px;
+				width: 100%;
+			}
+			span.views-label {
+				font-size: 30px;
+				height: 40px;
+				margin-bottom: 10px;
+				text-align: left !important;
+				text-indent: 10px;
+				width: 100%;
+			};
+			p.tags-label {
+				margin-top: 30px;					
+				a {
+					color: #FFF;
+					font-size: 16px;
+					text-decoration: none;
+					&:hover {
+						text-decoration: underline;
+					};
+				}
+			}
+			ul.counts {
+				float: left;
+				height: 50px;
+				width: 100%;
+				li {
+					border-right: 1px solid #393b40;
+					float: left;
+					height: 100%;
+					padding:0;
+					width: 48%;
+					label {
+						float: left;
+						position: relative;
+					};
+					span {
+						float: left;
+						text-align: center;
+						margin-top: 5px !important;
+					}
+					&.last-item {border-right: 0px;}
+				}
+			}
+		}
+		.photo-exif {
+			h1, h4 {
+				color: #dbdce2;
+				float: left;
+				font-size: 18px;
+			}
+			h1 {
+				display: block;
+				width: 100%;
+			}
+			h4 {
+				font-size: 12px;
+				margin: 5px 0 5px 0;
+				width: 100%;
+			}
+			ul {
+				float: left;
+				list-style: none;
+				margin-top: 20px;
+				li {
+					height: 25px;
+					width: 140px;
+					float: left;
+					margin-bottom: 12px;
+					span {
+						background: url(asset-path("user/exif_sprite.png")) no-repeat !important; 
+						float: left;
+						height: 24px;
+						margin: -5px 5px 0 0;
+						width: 26px;
+						&.aperture {background-position: -12px -40px !important;}
+						&.focal-lenght {background-position: -12px -140px !important;}
+						&.shutter-speed {background-position: -12px -105px !important;}
+						&.iso {background-position: -12px -73px !important}
+					};
+					label {
+						color: #dbdce2;
+						float: left;
+					}
+				}
+			}
+		}
+	}
+}
+
+.photo-show-extra-content {
+	width: 100%;
+	background-color: #F8F8F8;/*#3D3D3D;*/
+	height: auto;
+	left: 0;
+	min-height: 500px;
+	position: absolute;
+	padding: 10px 0 0 20px;
+	z-index: 9999;
+	.photo-comments {
+		height: auto;
+		width: 700px;
+		float: left;
+		margin-top: 20px;
+		h1 {
+			color: #999999;/*#fff*/;
+			font-weight: bold;
+			font-size: 12px;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+			width: 100%;
+		};		
+		.form-container {
+			/*border: 1px solid #EEE;*/
+			width: 100%;
+			img.avatar {
+				border: 1px solid #131519;
+				border-radius: 50%; 
+				-moz-border-radius: 50%; 
+				-webkit-border-radius: 50%;				
+		    float: left;
+		    height: 50px;
+		    margin: 0px 0 0 7px;
+		    width: 50px;
+			};
+			form {
+				float: left;
+				margin: 0 0 0 17px;
+				width: 80%; 
+				.submit-button {
+					float: right;
+					margin: -10px 8px 0px 0;
+				}
+			}
+		}
+	}
+	.photo-comments ul {
+		/*border-top: 1px solid #eee;*/
+		float: left;
+		width: 100%;
+		margin-top: 20px;
+		padding-top: 10px;
+		li {
+			float: left;
+			margin-bottom: 20px;
+			width: 100%;
+			img.avatar {
+				/*border: 1px solid #131519;*/
+				border-radius: 50%; 
+				-moz-border-radius: 50%; 
+				-webkit-border-radius: 50%;				
+		    float: left;
+		    height: 40px;
+		    margin: 0px 0 0 7px;
+		    width: 40px;
+			};
+			.comments-content {
+				float: left;
+				margin-left: 15px;
+		    max-width: 560px;
+				h2.user_name {
+					color: #32a6d3;
+					font-size: 15px;
+					text-transform: none;
+					float: left;
+					margin-bottom: 2px;
+					width: 100%;
+				};				
+				span {
+					color: #AEAFB0;
+			    font-size: 12px;
+			    font-weight: normal;
+			    margin: 0 0 0 5px;
+				};
+				p.content {
+					float: left;
+					line-height: 20px;
+					margin: 2px 0 0;
+				}
+			}			
+		}
+	}
+	.photo-likers ul {
+		float: left;
+		margin-top: 20px;
+		width: 300px;
+		h1 {
+			color: #999999;/*#fff*/;
+			font-weight: bold;
+			font-size: 12px;
+			text-transform: uppercase;
+			width: 100%;
+		}
+		img.avatar {
+			border-radius: 5px; 
+			-moz-border-radius: 5px; 
+			-webkit-border-radius: 5px;				
+	    float: left;
+	    height: 55px;
+	    margin: 0 5px 2px 0;
+	    width: 55px;
+		};		
+	}
+}

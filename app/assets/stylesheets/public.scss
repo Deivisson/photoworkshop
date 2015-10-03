@@ -2,24 +2,9 @@
 *= require_self
 *= require common/reset
 *= require common/base
-*= require common/buttons
-*= require common/formtastic_changes
-*= require common/jquery-ui.min
-*= require common/modal_dialog
-*= require common/alerts
-*= require user/dashboard
-*= require user/photos
-*= require user/photographers
-*= require user/user_profiles
-*= require user/workshops
-*= require user/workshop_participants
-*= require user/toolbar
-*= require user/home
-*= require user/photo_explore
-*= require user/portfolio
-*= require user/photo_comments
+*= require common/photo_view
 *= require shared/portfolio
 *= require shared/icons
 *= require shared/badges
-
+*= require public/photo_view
 */
