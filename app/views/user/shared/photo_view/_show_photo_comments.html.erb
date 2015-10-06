@@ -1,12 +1,12 @@
 <div class="photo-comments">
-	<div class="form-container">
+	<%= content_tag :div, class:"form-container" do %>
 		<%= content_tag :h1, t('.comments'), id:"comment-label" %>
 		<%= image_tag(current_user.profile.avatar(:medium),class:'avatar') %>
 		<div id="comment-form">
 			<%= render partial: '/user/photo_comments/form', 
 							locals: {photo:@photo, submit_button:true, rows_count:2} %>
 		</div>
-	</div>
+	<% end unless current_user.nil? %>
 	<ul id="photo-list-comments">
 		<%= content_tag :h1, t('.last_comments'), id:"last-comment-label"  %><br>
 		<%= render partial:'user/photo_comments/photo_comment',collection: @photo.comments.order("created_at desc") %>

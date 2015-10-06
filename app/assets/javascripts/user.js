@@ -20,7 +20,7 @@
 //= require common/base.js
 //= require common/portfolio.js
 //= require common/social_network.js
-//= require user/photos
+//= require common/photos
 //= require user/user_profiles
 //= require user/workshops
 //= require user/workshop_materials

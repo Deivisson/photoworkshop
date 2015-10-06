@@ -1,5 +1,7 @@
+
 $(document).on('ready page:load', function (){
 	photoView();
+	adjustLayout();
 });
 
 function photoView(){

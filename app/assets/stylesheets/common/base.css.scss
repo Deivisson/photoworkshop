@@ -237,3 +237,8 @@ html {
   position: fixed;
   display: none;
 }
+
+#fb-root {
+  z-index: 900000000;
+  position: absolute;
+}

@@ -22,8 +22,8 @@
   
   <div class="photo-info">
     <div class="content-info">
-      <%= image_tag(current_user.profile.avatar.url(:medium),class:'avatar') %>
-      <%= link_to current_user.profile.user_name, "#",class:'user-name' %>
+      <%= image_tag(@photo.user.profile.avatar.url(:medium),class:'avatar') %>
+      <%= link_to @photo.user.profile.user_name, "#",class:'user-name' %>
       <%= content_tag :span, 
             t(".posting",category:@photo.category.description,
             created_at:format_date(@photo.created_at,)),

@@ -36,11 +36,11 @@ module User::SocialNetworkHelper
 	def facebook_share
 		script = <<-SCRIPT
 			<script>
-				function FacebookShare()
+				function FacebookShare(link='http://pic2gether.com')
 		    {
 		      FB.ui({
 		        method: 'share',
-					  href: 'http://pic2gether.com',
+					  href: link ,
 		      }, function(response){
 		        UpdateSocialNetworkShared('facebook',response);
 		      });
