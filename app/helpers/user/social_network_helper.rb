@@ -52,7 +52,7 @@ module User::SocialNetworkHelper
 	
 	def facebook_image_share(image_link)
 		meta = <<-META
-			<meta property="og:image" content="#{image_link}" />
+			<meta property="og:image" content="#{URI.join(root_url, image_link).to_s}" />
 		META
 		content_for :facebook_image_to_share do 
 			meta.html_safe
