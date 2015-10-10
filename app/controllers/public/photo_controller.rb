@@ -1,5 +1,5 @@
 class Public::PhotoController < ApplicationController
-	layout 'public/photographer_portfolio'
+	layout 'public/photo_view'
 	def show
     @photo_comment = PhotoComment.new
 		@photo = Photo.find(params[:id])

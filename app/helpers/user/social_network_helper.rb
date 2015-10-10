@@ -50,6 +50,15 @@ module User::SocialNetworkHelper
 		script.html_safe		
 	end
 	
+	def facebook_image_share(image_link)
+		meta = <<-META
+			<meta property="og:image" content="#{image_link}" />
+		META
+		content_for :facebook_image_to_share do 
+			meta.html_safe
+		end
+	end
+
 	def twitter_share
 		script = <<-SCRIPT
 			<script>

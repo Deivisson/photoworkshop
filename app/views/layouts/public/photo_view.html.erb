@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Photograph</title>
+  <%= stylesheet_link_tag    'public', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'public', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+  <%= yield :facebook_image_to_share %>
+</head>
+<body>
+	<%= yield %>
+	<div class="social-network-box">
+		<div id='fb-root'></div>
+	</div>
+</body>
+</html>
