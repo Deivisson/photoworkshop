@@ -3,6 +3,3 @@
 <% else %>
   <%= link_to "",user_photo_like_path(@photo.id),remote:true, class:'liked-photo' %> 
 <% end unless current_user.nil? %>
-
-
-<%= link_to "Share","#", onclick:"FacebookShare('#{public_photo_url(@photo)}');" %>

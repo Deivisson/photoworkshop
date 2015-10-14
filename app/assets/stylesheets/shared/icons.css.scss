@@ -37,7 +37,8 @@
 	}
 }
 
-.social-network-icon {
+.social-network-icon,
+.social-network-icon-24 {
 	background: url("/assets/shared/social_network_sprite.png");
 	height: 35px;
 	width: 36px;
@@ -59,6 +60,10 @@
 	&.email {
 		background-position: -245px -5px;
 	}			
+}
+
+.social-network-icon-24 {
+	background: url("/assets/shared/social_network_sprite_24.png");
 }
 
 /*.icon32 {

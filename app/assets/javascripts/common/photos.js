@@ -49,7 +49,14 @@ function adjustLayout(){
 		$("#photo-picture").css("left",(w/2) - ($("#photo-picture").width()/2));
 		$("#photo-toolbar").css("left",(w/2) - ($("#photo-toolbar").width()/2));
 		$(".photo-show-extra-content").css("top", h + 10);
-			 //$(".photo-show-extra-content").css("width",w - 19);
+
+
+		$(".ui-widget-content-full").css("overflow-y","hidden");
+		$("#photo-modal-dialog").css("overflow-y","visible").css("width","97.8%");
+	  $("#down-page-photo-view").click(function(){
+	  	var top = $('#photo-list-comments').offset().top - 200;
+	  	$('#photo-modal-dialog').animate({scrollTop: top},250);
+	  });
  	}
 }
 

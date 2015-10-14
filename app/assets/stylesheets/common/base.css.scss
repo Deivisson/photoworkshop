@@ -242,3 +242,32 @@ html {
   z-index: 900000000;
   position: absolute;
 }
+
+.back-page, .down-page, .next-arrow, .previous-arrow {
+  background: url(asset-path("home/back_page.png")) 4px 5px;
+  background-repeat: no-repeat;
+  bottom: 10px;
+  width: 32px;
+  height: 27px;
+  right: 22px;
+  padding: 5px;
+  position: fixed;
+  z-index: 9999;
+}
+
+.down-page {
+  -ms-transform: rotate(-90deg); /* IE 9 */
+  -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+  transform: rotate(180deg);
+} 
+
+.next-arrow {
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+  transform: rotate(90deg);  
+} 
+.previous-arrow {
+  -ms-transform: rotate(-90deg); /* IE 9 */
+  -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+  transform: rotate(-90deg);
+}

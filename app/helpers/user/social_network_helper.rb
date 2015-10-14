@@ -33,7 +33,7 @@ module User::SocialNetworkHelper
 		script.html_safe
 	end
 
-	def facebook_share
+	def facebook_share()
 		script = <<-SCRIPT
 			<script>
 				function FacebookShare(link='http://pic2gether.com')
@@ -70,7 +70,5 @@ module User::SocialNetworkHelper
 		SCRIPT
 		script.html_safe		
 	end
-
-
 	
 end
