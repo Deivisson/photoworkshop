@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
 
   #user's photos
   has_many :photos
-  has_many :categories
   has_one :profile, class_name:'UserProfile'
 
   #Likes associations. Photos liked by user
@@ -25,6 +24,9 @@ class User < ActiveRecord::Base
   has_many :auths, class_name:"UserAuth"
   has_many :activity_responses, class_name: "WorkshopActivityResponse"
 
+  has_and_belongs_to_many :categories
+
+  before_create :set_default_data
   after_create :create_profile
   after_save :create_user_auth
 
@@ -96,14 +98,20 @@ class User < ActiveRecord::Base
     user_ids.push(self.id)
     User.where("id not in (?)", user_ids).limit(2)
   end
+
 private
-	
+
+	def set_default_data
+    self.first_login = true  
+  end
+
 	def create_profile
  		self.profile = UserProfile.new(
       { user_name: user_name,
         full_name: full_name, 
         avatar_remote_url: auth_avatar_url
       })
+
 	end
 
   def create_user_auth

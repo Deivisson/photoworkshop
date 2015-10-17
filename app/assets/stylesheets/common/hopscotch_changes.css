@@ -1,0 +1,22 @@
+div.hopscotch-bubble {
+  border: 5px solid #000000;
+  /* default */
+  border: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+div.hopscotch-bubble .hopscotch-bubble-arrow-container.up .hopscotch-bubble-arrow {
+   top: -14px;
+}
+
+div.hopscotch-bubble .hopscotch-bubble-arrow-container.up {
+  top: -18px
+}
+
+div.hopscotch-bubble .hopscotch-bubble-arrow-container.left .hopscotch-bubble-arrow {
+   left: 3px;
+}
+
+
+div.hopscotch-bubble .hopscotch-bubble-arrow-container.left {
+  left: -18px;
+}

@@ -1,0 +1,17 @@
+<ul class="photo-bar" id="photo-toolbar">
+  <li>
+    <div id="like-links"> 
+      <%= render 'user/shared/photo_view/like_links' %> 
+    </div>
+  </li>
+  <li>
+    <%= link_to "#", onclick:"FacebookShare('#{public_photo_url(@photo)}');" do %>
+      <span class="social-network-icon-24 facebook"></span>  
+    <% end %>
+  </li>
+  <li>
+    <%= link_to "#", onclick:"FacebookShare('#{public_photo_url(@photo)}');" do %>
+      <span class="social-network-icon-24 twitter"></span>  
+    <% end %>
+  </li>
+</ul>

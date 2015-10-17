@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   namespace :user do 
     root "home#index"
     resources :home, :only => [:index]
+    resources :first_login_steps, :only => [:index] do 
+      get :forward, to: "first_login_steps#step"
+      get :backward, to: "first_login_steps#step"
+    end
     resources :photos do 
       resources :photo_comments, only: [:create,:destroy]
     end
@@ -49,6 +53,7 @@ Rails.application.routes.draw do
     resources :portfolios, only: [:index] do 
       get :preview, on: :collection
     end
+    get '/states/:state/cities',:to => 'states#cities'
   end
   
   scope :home do

@@ -21,6 +21,8 @@
 //= require common/portfolio.js
 //= require common/social_network.js
 //= require common/photos
+//= require common/cities.js
+//= require common/hopscotch.js
 //= require user/user_profiles
 //= require user/workshops
 //= require user/workshop_materials
@@ -31,6 +33,7 @@
 //= require user/photo_explore
 //= require user/home
 //= require user/photo_comments
+//= require user/tour/home_tour
 
 
 

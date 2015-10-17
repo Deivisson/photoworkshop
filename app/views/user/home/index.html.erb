@@ -3,6 +3,11 @@
 <%= facebook_share %>
 <%= twitter_share %>
 
+<% if @current_user.first_login? %>
+  <%= hidden_field_tag :first_login, @current_user.first_login?, 
+                       id:'first-login-tag', 
+                       href:user_first_login_steps_path   %>
+<% end %>
 
 <%= render partial:'/user/shared/photo/header_search_field', locals: {remote:false} %>
 <% current_menu = "" %>

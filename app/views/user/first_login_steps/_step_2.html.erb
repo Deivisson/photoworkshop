@@ -1,0 +1,14 @@
+<div class="header">
+	<h1><%= t('.congratulations').html_safe %></h1>
+</div>
+
+<p><%= t('.msg_welcome').html_safe %></p>
+<p style="font-size: 14px;"><%= t('.team') %></p>
+<div class="actions">
+  <%# link_to t('buttons.previous'),
+  						user_first_login_step_backward_path(@previous_step,direction:'backward'), 
+  						class:"btn", remote:true %>	
+  <%= link_to t('buttons.conclude'),"#",id:'after-login-button-conclude',
+  					class:"btn btn-bigger btn-primary" %>
+</div>
+

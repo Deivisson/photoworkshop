@@ -7,7 +7,7 @@
 	<% end if show_title? %>
 
 	<%= content_tag :li, class:'user-info'  do %>
-		<%= link_to new_user_photo_path, class:"upload-image" do %>
+		<%= link_to new_user_photo_path, class:"upload-image", id:'photo-upload-link-header' do %>
 			<span class="icon20 upload"></span>
 			Upload
 		<% end %>

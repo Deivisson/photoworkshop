@@ -46,7 +46,7 @@ function adjustLayout(){
 		});
 		var w = $("#photo-container").width();
 		var h = $("#photo-container").height();
-		$("#photo-picture").css("left",(w/2) - ($("#photo-picture").width()/2));
+		$("#photo-picture").css("left",(w/2) - ($("#photo-picture").width()/2) + 10);
 		$("#photo-toolbar").css("left",(w/2) - ($("#photo-toolbar").width()/2));
 		$(".photo-show-extra-content").css("top", h + 10);
 

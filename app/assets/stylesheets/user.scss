@@ -8,6 +8,8 @@
 *= require common/modal_dialog
 *= require common/photo_view
 *= require common/alerts
+*= require common/hopscotch
+*= require common/hopscotch_changes
 *= require user/dashboard
 *= require user/photos
 *= require user/photographers
@@ -19,8 +21,8 @@
 *= require user/photo_explore
 *= require user/portfolio
 *= require user/photo_comments
+*= require user/first_login_steps
 *= require shared/portfolio
 *= require shared/icons
 *= require shared/badges
-
 */

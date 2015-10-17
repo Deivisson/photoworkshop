@@ -1,0 +1,33 @@
+<div class="header">
+	<h1><%= t('.welcome').html_safe %></h1>
+</div>
+
+<%= form_tag user_first_login_step_forward_path(@step), 
+							id:'step-login-form', method: :get, remote:true, style:"padding-top: 20px;" do |f| %>
+	<div class="field">
+		<label><%= ta UserProfile, :country_id %></label>
+		<%= select_tag "country_id", 
+							options_from_collection_for_select(Country.all, "id", "name"),
+							id:"country-select" %>
+	</div>
+
+	<div class="field">
+		<label><%= ta UserProfile, :state_id %></label>
+		<%= select_tag "state_id", 
+									options_from_collection_for_select(State.all, "id", "name"),
+									id:"states-select",
+									:prompt => "" %>
+	</div>
+
+	<div class="field">
+		<label><%= ta UserProfile, :city_id %></label>
+		<%= select_tag "profile[city_id]", 
+										options_from_collection_for_select([], "id", "name"),
+										id:"cities-select" %>
+  </div>
+
+  <div class="actions">
+    <%= link_to t('buttons.continue'),"#",id:'after-login-button-next-step',
+    					class:"btn btn-bigger btn-primary", remote:true %>
+  </div>
+<% end %>

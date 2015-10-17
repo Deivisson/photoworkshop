@@ -1,3 +1,67 @@
+$(document).on('ready page:load', function (){
+  if ($("#first-login-tag").length > 0) {
+    showFirstLoginModal();
+  }
+
+});
+
+function showFirstLoginModal(url){
+  var h = $(window).height() * 0.6;
+  var url = $("#first-login-tag").attr("href");
+  var dialog_form = $(getModalContainer("first-login-config-modal-dialog")).dialog({
+      autoOpen: false,
+      width: 900,
+      height: h,
+      modal: true,
+      close: function() {
+        $('#first-login-config-modal-dialog').remove();
+        jQuery('body').css('overflow','auto');
+      },
+      draggable: false,
+      resizable: false,
+      dialogClass: 'noTitleStuff',
+      closeOnEscape: false
+    });
+    dialog_form.load(url + ' #user-config-steps-container', function(){
+      jQuery('body').css('overflow','hidden');
+      // $(".ui-dialog-content").css("overflow-x", "hidden");
+
+      // $("#modal-close-button").click(function() {
+      //   $('#photographer-modal-dialog').remove();
+      //   jQuery('body').css('overflow','auto');
+      // });
+      triggerButtonNextEvent();
+      bindLoadCity();
+    });
+    dialog_form.dialog('open');
+}
+
+function selectAllCategoryOnConfigAfterLogin(){
+  if ($("#checkall").length > 0 ) {
+    $("#checkall").change(function(){
+      if ($(this).is(':checked')) {
+        $("ul#category-items > li > input[type='checkbox']").prop('checked', true);
+      } else {
+        $("ul#category-items > li > input[type='checkbox']").prop('checked', false);
+      }       
+    });
+  }
+}
+
+function triggerButtonNextEvent() {
+  if($("#after-login-button-next-step").length > 0) {
+    $("#after-login-button-next-step").click(function(){
+      $("#step-login-form").submit();
+    });
+  }
+  if($("#after-login-button-conclude").length > 0) {
+    $("#after-login-button-conclude").click(function(){
+      $("#first-login-config-modal-dialog").remove();
+      hopscotch.startTour(tourHome);
+    });
+  }
+}
+
 jQuery(function() {
   if ($('#infinite-scrolling').size() > 0) {
     $(window).on('scroll', function() {

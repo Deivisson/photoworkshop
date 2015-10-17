@@ -1,0 +1,27 @@
+<div class="header">
+	<h1><%= t('.interests') %></h1>
+</div>
+
+<%= form_tag user_first_login_step_forward_path(@step), 
+							id:'step-login-form', method: :get, remote:true do |f| %>
+
+	<ul class="list-box-itens" id="category-items">
+		<li class="width100">
+			<%= check_box_tag "", 0,false, id:"checkall" %>
+			<%= content_tag :label, t('.select_all'), for:"checkall" %>
+		</li>
+		<% Category.all.order(:description).each do |category| %>
+			<li>
+				<%= check_box_tag "category_ids[]", category.id,false, id:"check-#{category.id}" %>
+				<%= content_tag :label, category.description, for:"check-#{category.id}" %>
+			</li>
+		<% end %>
+	</ul>
+  <div class="actions">
+    <%= link_to t('buttons.previous'),
+    						user_first_login_step_backward_path(@previous_step,direction:'backward'), 
+    						class:"btn", remote:true %>
+    <%= link_to t('buttons.continue'),"#",id:'after-login-button-next-step',
+    					class:"btn btn-bigger btn-primary", remote:true %>
+  </div>
+<% end %>

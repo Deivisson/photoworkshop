@@ -1,0 +1,44 @@
+<div class="content-info">
+  <ul class="counts">
+    <li>
+      <%= content_tag :label,t(".views"),class:'section-label', style:'left:0' %>
+      <%= content_tag :span,@photo.views, class:"views-label" %>
+    </li>
+    <li class="last-item">
+      <%= content_tag :label,t(".likes"),class:'section-label' %>
+      <%= content_tag :span,@photo.likes.count, class:"views-label",id:'likes-count' %>
+    </li>
+  </ul>
+</div>          
+<div class="content-info photo-exif">
+  <%= content_tag :label,t(".exif"),class:'section-label' %>
+  <br><br>
+  <h1><%= @photo.camera %></h1>
+  <h4><%= @photo.lens %></h4>
+  <%= content_tag :ul do %>
+    <li>
+      <%= content_tag :span, "", class:"aperture" %>
+      <%=content_tag :label,@photo.aperture  %>
+    </li>
+    <li>
+      <%= content_tag :span, "", class:"focal-lenght" %>
+      <%=content_tag :label,@photo.focal_lenght  %>
+    </li>
+    <li>
+      <%= content_tag :span, "", class:"shutter-speed" %>
+      <%=content_tag :label,@photo.shutter_speed  %>
+    </li>
+    <li>
+      <%= content_tag :span, "", class:"iso" %>
+      <%=content_tag :label,@photo.iso  %>
+    </li>
+  <% end %>
+</div>  
+<div class="content-info">
+  <%= content_tag :label,t(".tags"),class:'section-label' %>
+  <%= content_tag :p,"",class:'tags-label' do %>
+      <%- @photo.tags.split(",").each do |tag| %>
+        <%= link_to tag, "#" %>
+      <% end %>
+  <% end %>
+</div>

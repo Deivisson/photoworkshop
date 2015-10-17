@@ -9,6 +9,10 @@ pt_BR:
     follow: "Seguir"
     view_template: "Visualizar"
     apply_template: "Usar Template"
+    next: "Avanças"
+    previous: "Voltar"
+    continue: "Continuar"
+    conclude: "Concluir"
   labels:
     facebook: "Facebook"
     twitter: "Twitter"

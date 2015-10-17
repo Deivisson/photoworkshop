@@ -28,8 +28,8 @@
 				width: 40%;
 			};
 			&.landscape {
-				height: 88%;
-				width: 90%;
+				height: 90%;
+				width: 99%;
 			}
 		}
 		a.previous-link, a.next-link {
@@ -46,7 +46,7 @@
 
 		}
 		a.previous-link {
-			left: 0;
+			left: 20px;
 		}
 		a.next-link {
 			right: 0;

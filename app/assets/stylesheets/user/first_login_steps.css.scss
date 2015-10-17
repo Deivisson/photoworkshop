@@ -1,0 +1,87 @@
+.after-sign-up-steps-box {
+	width: 100%;
+	.header {
+		h1 {
+			font-size: 24px;
+			line-height: 30px;
+			margin-top: 10px;
+		}
+	}
+	p {
+		color: #777;
+		font-size: 18px;
+		margin-top: 20px;
+		line-height: 25px;
+		strong {
+			color: #216DAB;
+			font-weight: bold;
+		}
+	}
+
+	p.tips-to-win-uploads {
+		font-size: 16px;
+		margin: 20px 0 60px 10px;
+		span {
+			border: 1px solid #216DAB;
+			float: left;
+			height: 10px;
+			margin-right: 5px;
+			margin-top: 6px;
+			width: 10px;
+			border-radius: 50%; 
+			-moz-border-radius: 50%; 
+			-webkit-border-radius: 50%; 
+		}
+		i {
+			font-size: 12px;
+		}
+	}
+
+	ul.list-box-itens {
+		margin-top: 30px;
+		width: 100%;
+		li {
+			float: left;
+			height: 27px;
+			width: 32%;
+			&.width100 {
+				width: 100%;
+				label {
+					color: #32a6d3;
+					text-decoration: underline;
+				}
+			}
+			label {
+				cursor: pointer;
+				font-size: 18px;
+			}
+			input[type="checkbox"] {
+				width: 20px;
+			}
+		}
+	}
+	form .field {
+		float: left;
+		width: 100%;
+		margin-top: 20px;
+		label {
+			float: left;
+			width: 100%;
+		}
+		select {
+			float: left;
+			height: 40px;
+			width: 400px;
+		}
+		&:first-child {
+			margin-top: 60px;
+		};
+	}
+}
+
+.after-sign-up-steps-box .actions {
+	float: left;
+	margin: 20px 0 0 5px;
+}
+
+
