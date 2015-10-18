@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  
   devise_for :admins
   namespace :admin do
     resources :categories
@@ -54,6 +55,10 @@ Rails.application.routes.draw do
       get :preview, on: :collection
     end
     get '/states/:state/cities',:to => 'states#cities'
+    resources :notifications do
+      get :set_all_as_read, on: :collection
+    end
+
   end
   
   scope :home do

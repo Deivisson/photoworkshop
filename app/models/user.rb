@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook, :twitter]
 
+  SYSTEM_USER = 1
+
   #user's photos
   has_many :photos
   has_one :profile, class_name:'UserProfile'
@@ -23,14 +25,16 @@ class User < ActiveRecord::Base
   has_many :photo_comments
   has_many :auths, class_name:"UserAuth"
   has_many :activity_responses, class_name: "WorkshopActivityResponse"
+  has_many :notifications_sent, class_name: "Notification", foreign_key: 'user_sender_id'
+  has_many :notifications_received, class_name: "Notification", foreign_key: 'user_receiver_id'
 
   has_and_belongs_to_many :categories
 
   before_create :set_default_data
-  after_create :create_profile
+  after_create :create_profile, :send_welcome_notification
   after_save :create_user_auth
 
-  attr_accessor :following, :full_name, :user_name
+  attr_accessor :following, :full_name, :user_name, :unread_notifications_count
   attr_accessor :auth_avatar_url, :auth_provider, :auth_uid, :account_url
   
 
@@ -99,6 +103,14 @@ class User < ActiveRecord::Base
     User.where("id not in (?)", user_ids).limit(2)
   end
 
+  def last_received_notifications
+    self.notifications_received.recents
+  end
+
+  def unread_notifications_count
+    @unread_notifications_count ||= self.notifications_received.unread.count
+  end
+
 private
 
 	def set_default_data
@@ -111,8 +123,18 @@ private
         full_name: full_name, 
         avatar_remote_url: auth_avatar_url
       })
-
 	end
+
+  def send_welcome_notification
+    attributes = {
+      content:"Teste",
+      type_of: Notification::TYPE_WELCOME,
+      user_sender_id: SYSTEM_USER,
+      user_receiver_id: self.id,
+      read:false
+    }
+    Notification.create!(attributes)
+  end
 
   def create_user_auth
     if (auth_provider.present? && auth_uid.present?)

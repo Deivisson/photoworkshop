@@ -1,0 +1,19 @@
+<ul class="dropdown-menu notifications-menu" id="notifications-menu-dropdown">
+	<span class="up-arrow"></span>
+	<div class="menu-header">
+		<label class="menu-header-title"><%= t("labels.notifications") %></label>
+	</div>
+	<% current_user.last_received_notifications.each do |notification| %>
+		<li class="with-bottom-border <%= 'selected' unless notification.read? %>">
+			<%= image_tag(notification.sender.profile.avatar.url(:thumb),class:'sender-avatar') %>
+			<div class="notifications-text-box">
+				<h1></h1>
+				<p><%= notification.content.html_safe %></p>
+				<span class="created-at"><%= time_ago_in_words(notification.created_at) %> </span>
+			</div>
+		</li>
+	<% end %>
+	<li>
+		<%= link_to t('labels.see_all'), "#",class:'footer-link' %>
+	</li>
+</ul>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151017005913) do
+ActiveRecord::Schema.define(version: 20151017185846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,19 @@ ActiveRecord::Schema.define(version: 20151017005913) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer  "user_sender_id"
+    t.integer  "user_receiver_id"
+    t.text     "content"
+    t.boolean  "read",             default: false, null: false
+    t.integer  "type_of",                          null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
+
+  add_index "notifications", ["user_receiver_id"], name: "index_notifications_on_user_receiver_id", using: :btree
+  add_index "notifications", ["user_sender_id"], name: "index_notifications_on_user_sender_id", using: :btree
 
   create_table "photo_comments", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -302,6 +315,8 @@ ActiveRecord::Schema.define(version: 20151017005913) do
   add_index "workshops", ["user_id"], name: "index_workshops_on_user_id", using: :btree
 
   add_foreign_key "cities", "states", name: "cities_states"
+  add_foreign_key "notifications", "users", column: "user_receiver_id", name: "notifications_receiver_user"
+  add_foreign_key "notifications", "users", column: "user_sender_id", name: "notifications_sender_user"
   add_foreign_key "photo_comments", "photos", name: "photo_comments_photo"
   add_foreign_key "photo_comments", "users", name: "photo_comments_user"
   add_foreign_key "photo_exifs", "photos", name: "fk_photos_exifs"

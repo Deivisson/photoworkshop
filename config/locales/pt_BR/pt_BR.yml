@@ -16,6 +16,8 @@ pt_BR:
   labels:
     facebook: "Facebook"
     twitter: "Twitter"
+    notifications: "Notificações"
+    see_all: "Ver Todas"
   messages:
     confirm_destroy: "Confirma Exlusão?"
     destroyed_record: "Registro excluído com sucesso!"
@@ -25,6 +27,8 @@ pt_BR:
     user_added_to_workshop: "Usuário adicionado com sucesso!!"
     confirm_remove_user_from_workshop: "Confirma a remoção do Usuário do Workshop?"
     user_removed_from_workshop: "Participante removido com sucesso!!"
+  notifications:
+    team_welcome: "A equipe <strong>Pic2Gether</strong> lhe deseja boas vindas, e estamos ansiosos para conhecer o seu trabalho."
   welcome: 
     menu:
       cover: "COVER"

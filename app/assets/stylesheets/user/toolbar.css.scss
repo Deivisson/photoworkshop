@@ -84,8 +84,8 @@ ul.toolbar {
 ul.toolbar li.user-info {
 	border-left: 1px solid #0F0F0F;
 	float: right;
-	width: 160px;
-	a.upload-image {
+	width: auto;
+	a.upload-image, a.notifications-icon {
 		color: #b9c1c7;
     display: block;
     float: left;
@@ -96,11 +96,31 @@ ul.toolbar li.user-info {
     padding: 0 10px;
     text-decoration: none;
     text-transform: uppercase;
+    width: 20px;
 		span {
 	    float: left;
 	    height: 32px;
 	    margin-top: 12px;
 	    width: 32px;
+		}
+	}
+	a.notifications-icon {
+		span.notification-bubble-count {
+			background-color: #940a00;
+	    border: 1px solid #700b04;
+			border-radius: 50%; 
+			-moz-border-radius: 50%; 
+			-webkit-border-radius: 50%;
+	    color: #fff;
+	    font-size: 12px;
+	    font-weight: bold;
+	    height: 20px;
+	    line-height: 19px;
+	    margin: 2px 0 0 -22px;
+	    padding: 0;
+	    position: absolute;
+	    text-align: center;
+	    width: 20px;
 		}
 	}
 	img.avatar {
@@ -111,7 +131,7 @@ ul.toolbar li.user-info {
 		margin: 5px 5px 0 0;
 		width: 40px;
 	}
-	ul.user-menu {
+	ul.dropdown-menu {
 		background: #FFF;
 		/*border: 1px solid #ddd;*/
 		border-radius: 0px 0px 5px 5px; 
@@ -138,6 +158,16 @@ ul.toolbar li.user-info {
 		   right: 20px;
 		   margin-top: -13px
 		}
+		.menu-header {
+			border-bottom: 1px solid #f1f1f1;
+			height: 25px;
+			label.menu-header-title {
+				font-size: 12px;
+				font-weight: bold;
+				float: left;
+				margin: 5px 0 0 4px;
+			}	
+		}
 		li {
 			display: table;
 			width: 160px;
@@ -146,11 +176,26 @@ ul.toolbar li.user-info {
 				height: 1px;
 				background-color: #f1f1f1;
 			}
+			&.with-bottom-border {
+				border-bottom: 1px solid #f1f1f1;
+			}
+			&.selected {
+			 	background-color: #F9F9F9;
+			}
 			a {
 				color: #4d4d4d;
 				display: block;
 				line-height: 42px;
 				text-decoration: none;
+			}
+			a.footer-link {
+				color: #34AADE;
+				font-weight: bold;
+				text-align: center;
+				width: 100%;
+				&:hover	{
+					text-decoration: underline;
+				};
 			}
 			&:hover {
 				background-color: #F1F1F1;
@@ -161,5 +206,44 @@ ul.toolbar li.user-info {
 			opacity: 1;
 			visibility: visible;
 		}
+	}
+	ul.notifications-menu {
+		right: 80px;
+    width: 400px;
+    li {
+    	width: 390px;
+    	padding-bottom: 10px;
+			img.sender-avatar {
+				border-radius: 50%; 
+				-moz-border-radius: 50%; 
+				-webkit-border-radius: 50%;
+				float: left;
+				height: 50px;
+				margin: 4px 0 4px 0;
+				width: 50px;
+			}
+			.notifications-text-box {
+				float: left;
+				margin: 8px 0 0 8px;
+				padding-bottom: 5px;
+				width: 330px;
+				p {
+					color: #333;
+					font-size: 14px;
+					line-height: 17px;
+					margin-bottom: 5px;
+					width: 100%;
+					strong {
+						font-weight: bold;
+					}
+				}
+				span.created-at {
+					color: #8f8f8f;
+					font-size: 12px;
+					text-align: left;
+					width: 100%;
+				}
+			}
+    }
 	}
 }
