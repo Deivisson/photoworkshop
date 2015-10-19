@@ -1,0 +1,8 @@
+<li class="with-bottom-border <%= 'selected' unless notification.read? %>">
+	<%= image_tag(notification.sender.profile.avatar.url(:thumb),class:'sender-avatar') %>
+	<div class="notifications-text-box">
+	  <h1></h1>
+	  <p><%= notification.content.html_safe %></p>
+	  <span class="created-at"><%= time_ago_in_words(notification.created_at) %> </span>
+	</div>
+</li>

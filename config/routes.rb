@@ -55,7 +55,7 @@ Rails.application.routes.draw do
       get :preview, on: :collection
     end
     get '/states/:state/cities',:to => 'states#cities'
-    resources :notifications do
+    resources :notifications, only: [:index] do
       get :set_all_as_read, on: :collection
     end
 

@@ -1,3 +1,53 @@
-// Place all the styles related to the Notifications controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+ul.notifications-list {
+	right: 80px;
+  width: 100%;
+  h2 {
+  	float: left;
+  	font-size: 19px;
+  	padding-bottom: 20px;
+  	width: 100%;
+  }
+  li {
+  	border-bottom: 1px solid #f1f1f1;
+  	float: left;
+  	width: 100%;
+  	padding-bottom: 10px;
+  	&:hover {
+				background-color: #F1F1F1;
+		};
+		&.selected {
+			 	background-color: #F9F9F9;
+		}
+		img.sender-avatar {
+			border-radius: 50%; 
+			-moz-border-radius: 50%; 
+			-webkit-border-radius: 50%;
+			float: left;
+			height: 50px;
+			margin: 4px 0 4px 0;
+			width: 50px;
+		}
+		.notifications-text-box {
+			float: left;
+			margin: 8px 0 0 8px;
+			padding-bottom: 5px;
+			width: 90%;
+			p {
+				color: #333;
+				font-size: 14px;
+				line-height: 17px;
+				margin-bottom: 5px;
+				width: 100%;
+				strong {
+					font-weight: bold;
+				}
+			}
+			span.created-at {
+				color: #8f8f8f;
+				font-size: 12px;
+				text-align: left;
+				width: 100%;
+			}
+		}
+  }
+}

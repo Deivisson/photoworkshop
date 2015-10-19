@@ -34,6 +34,7 @@
 //= require user/home
 //= require user/photo_comments
 //= require user/tour/home_tour
+//= require user/notifications
 
 
 
