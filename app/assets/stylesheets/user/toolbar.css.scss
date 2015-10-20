@@ -100,7 +100,7 @@ ul.toolbar li.user-info {
 		span {
 	    float: left;
 	    height: 32px;
-	    margin-top: 12px;
+	    margin: 12px 0 0 -7px;
 	    width: 32px;
 		}
 	}
@@ -116,7 +116,7 @@ ul.toolbar li.user-info {
 	    font-weight: bold;
 	    height: 20px;
 	    line-height: 19px;
-	    margin: 2px 0 0 -22px;
+	    margin: 3px 0 0 -17px;
 	    padding: 0;
 	    position: absolute;
 	    text-align: center;
@@ -235,6 +235,16 @@ ul.toolbar li.user-info {
 					width: 100%;
 					strong {
 						font-weight: bold;
+					}
+					a {
+						color: #32a6d3 !important;
+						float: left;
+						line-height: 17px;
+						margin-right: 5px; 
+						width: auto;
+						&:hover {
+							text-decoration: underline;
+						}
 					}
 				}
 				span.created-at {

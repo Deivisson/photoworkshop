@@ -41,6 +41,13 @@ ul.notifications-list {
 				strong {
 					font-weight: bold;
 				}
+				a {
+					text-decoration: none;
+					color: #32a6d3 !important;
+					&:hover {
+						text-decoration: underline;
+					};
+				}
 			}
 			span.created-at {
 				color: #8f8f8f;

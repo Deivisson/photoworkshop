@@ -11,7 +11,7 @@
 			<%= content_tag :span,class:'notification-bubble-count', id:'notification-bubble-count' do %>
 				<%= current_user.unread_notifications_count %>
 			<% end if current_user.unread_notifications_count > 0 %>
-			<span class="icon20 upload"></span>
+			<span class="icon20 notification"></span>
 		<% end %>
 		<%= render "user/notifications/resume_menu" %>
 

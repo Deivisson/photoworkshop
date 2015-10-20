@@ -57,4 +57,5 @@ module ApplicationHelper
     SCRIPT
     script.html_safe
   end
+
 end

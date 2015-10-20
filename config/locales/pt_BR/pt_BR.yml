@@ -29,6 +29,7 @@ pt_BR:
     user_removed_from_workshop: "Participante removido com sucesso!!"
   notifications:
     team_welcome: "A equipe <strong>Pic2Gether</strong> lhe deseja boas vindas, e estamos ansiosos para conhecer o seu trabalho."
+    followed: "%{follower} começou seguir você."
   welcome: 
     menu:
       cover: "COVER"

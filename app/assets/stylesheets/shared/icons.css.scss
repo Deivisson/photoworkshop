@@ -12,7 +12,7 @@
 	height: 24px;
 	width: 24px;
 	&.upload {
-		background-position: -129px -1px;
+		background-position: -127px -1px;
 	}
 	&.home {
 		background-position: -4px -2px;
@@ -35,6 +35,10 @@
 	&.icon-grid-table {
 		background-position: -165px -1px;
 	}
+	&.notification {
+		background-position: -255px -1px;
+	}
+
 }
 
 .social-network-icon,
