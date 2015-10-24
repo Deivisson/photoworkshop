@@ -1,5 +1,6 @@
 class User::PhotographersController < User::BaseController
-	before_action :set_user, only: [:follow,:unfollow,:show]
+	before_action :set_user, except: [:index]
+	before_action :get_photos, only: [:photos,:show]
 
 	def index
 		@users = User.joins(:profile).where("users.id <> ?",current_user.id)
@@ -14,16 +15,26 @@ class User::PhotographersController < User::BaseController
 	end
 
 	def show
-		@photos = @user.photos.limit(10)
-		@gallary_type = :table
+		if request.xhr?
+			@gallary_type = :table
+			@modal_view = true 
+		else
+			@gallary_type = :flow
+			@modal_view = false
+		end
+		render layout:'user/show_photographer'
+	end
+
+	def photos
+		@gallary_type = :flow
 	end
 
 	def following
-		@users = current_user.following
+		@users = @user.following
 	end
 
 	def followers
-		@users = current_user.followers
+		@users = @user.followers
 	end
 
 	def follow
@@ -46,4 +57,7 @@ private
 		@user = User.find(params[:photographer_id].nil? ? params[:id] : params[:photographer_id])
 	end
 
+	def get_photos
+		@photos = @user.photos.limit(10)
+	end
 end

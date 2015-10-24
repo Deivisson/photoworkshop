@@ -1,0 +1,37 @@
+<div id="photographer-show-modal-container">
+	<%= link_to "X", "#",class:"close-button",id:"modal-close-button" %>
+	<div class="photographer-profile-modal-container">
+		<div class="cover-photo" style="background-image: url(<%= @user.profile.cover_url(:large) %>)">
+		</div>
+		<div class="profile">
+			<div class="avatar-container">
+				<%= image_tag(@user.profile.avatar.url(:medium)) %>
+			</div>
+			<%= content_tag :h1, @user.profile.user_name,class:"user-name" %>
+			<%= content_tag :h3, t('.score',score:'80%'),class:"score" %>
+			<%= content_tag :ul, class:"resume" do %>
+				<li>
+					<label><%= t("user.user_resume.photos") %></label>
+					<span><%= @user.photos_count %></span>
+				</li>
+				<li>
+					<label><%= t("user.user_resume.following") %></label>
+					<span><%= @user.following_count %></span>
+				</li>
+				<li>
+					<label><%= t("user.user_resume.followers") %></label>
+					<span id="photographer-followers-count"><%= @user.followers_count %></span>
+				</li>
+			<% end %>
+			<%= content_tag :ul, class:"links" do %>
+				<%= content_tag :li, id:"follow-links-modal-profile-#{@user.id}" do %>
+					<%= render partial:'user/photographers/follow_links', locals: {user:@user} %>
+				<% end %>
+			<% end %>			
+		</div>
+
+		<div class="photographers-photo-gallary">
+			<%= photo_gallery :photos_explore, false, false %>
+		</div>
+	</div>
+</div>

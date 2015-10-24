@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pic2Gether</title>
+  <%= stylesheet_link_tag    'user', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'user', 'data-turbolinks-track' => false %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="show-photographer-full-profile">
+	<%= render "layouts/toolbar" %>
+	<div class="main-content-area">
+		<%= yield %>
+	</div>
+	<div class="social-network-box">
+		<div id='fb-root'></div>
+	</div>
+</body>
+</html>

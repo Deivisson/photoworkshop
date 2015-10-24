@@ -2,7 +2,8 @@
 ul.users-photographers {
 	float: left;
   left: 30px;
-  margin: -6px 0 0 30px;
+  margin: 0px 5% 0 5%;
+	width: 90%;	
   position: absolute;
 
 	li {
@@ -14,7 +15,7 @@ ul.users-photographers {
 		float: left;  
 		margin: 11px 7px 0 0px;
 		padding: 0;
-		width: 300px;
+		width: 24%;
 		height: 300px;
 		.cover-pic {
 			background-position: top center;
@@ -170,7 +171,7 @@ ul.users-photographers {
 	}
 	.profile {
 		border-bottom: 1px solid #DDDDDD;
-    height: 165px;
+    height: 167px;
     margin-top: -100px;
     position: absolute;
     width: 100%;
@@ -184,7 +185,9 @@ ul.users-photographers {
 	    height: 145px;
 	    margin: 5px 5px 5px 22px;
 	    padding: 3px;
+	    position: absolute;
 	    width: 140px;
+	    z-index: 99;
 	    img {
 				border-radius: 5px; 
 				-moz-border-radius: 5px; 
@@ -198,9 +201,10 @@ ul.users-photographers {
 	    float: left;
 	    font-size: 32px;
 	    font-weight: normal;
+	    left: 170px;
 	    margin: 5px 0 0 10px;
 	    text-shadow: 1px 1px 1px #333333;
-	    width: 700px;
+	    position: absolute;
     }
     h1.user-name {
     	margin-top: 28px;
@@ -208,19 +212,19 @@ ul.users-photographers {
     h3.score {
     	font-size: 18px;
     	font-style: normal;
+    	margin-top: 70px
     }
 	}
 	.profile ul.resume {
 		background: none repeat scroll 0 0 #FFFFFF;
     float: left;
-    height: 66px;
+    height: 64px;
     left: 0;
     margin-top: 98px;
     padding: 5px 0 0 170px;
     position: absolute;
     right: 0;
-    width: 100%;
-    z-index: -99;    
+    z-index: 0;    
     li {
     	float: left;
     	height: 100%;
@@ -235,13 +239,17 @@ ul.users-photographers {
     		width: 100%;
     		text-transform: uppercase;
     	}
-    	span {
+    	span, a {
     		color: #333;
 		    float: left;
 		    font-size: 22px;
 		    margin-top: 10px;
 		    text-align: center;
+		    text-decoration: none;
 		    width: 100%;
+    	}
+    	a:hover {
+    		text-decoration: underline;
     	}
     }
 	}
@@ -269,3 +277,19 @@ ul.users-photographers {
 	}
 }	
 
+.show-photographer-full-profile {
+	overflow-x: hidden;
+	.main-content-area {
+		left:0;
+		right:-2px;
+		top:58px;
+		padding: 0 ;
+		.photographers-full-profile {
+			margin: 70px 5% 0 5%;
+			width: 90%;	
+		}
+		.photographers-photo-gallary {
+			margin-top: 0;		
+		}
+	} 
+}

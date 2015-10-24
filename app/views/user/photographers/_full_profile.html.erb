@@ -1,0 +1,56 @@
+<%= content_for :toolbar do %>
+  <%= content_tag :ul, class:'menu' do %>
+    <%= content_tag :li do %>
+      <%= link_to  user_photo_explore_path do %>
+        <span class="icon20 explore"></span>
+        <%= t('user.main_menu.explore') %>
+      <% end %>
+    <% end %>
+    <%= content_tag :li do %>
+      <%= link_to  user_photographers_path do %>
+        <span class="icon20 photographers"></span>
+        <%= t('user.main_menu.photographers') %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<div id="photographer-show-modal-container">
+	<div class="photographer-profile-modal-container">
+		<div class="cover-photo" style="background-image: url(<%= @user.profile.cover_url(:large) %>)">
+		</div>
+		<div class="profile">
+			<div class="avatar-container">
+				<%= image_tag(@user.profile.avatar.url(:medium)) %>
+			</div>
+			<%= content_tag :h1, @user.profile.user_name,class:"user-name" %>
+			<%= content_tag :h3, t('.score',score:'80%'),class:"score" %>
+			<%= content_tag :ul, class:"resume" do %>
+				<li>
+					<label><%= t("user.user_resume.photos") %></label>
+					<%= link_to @user.photos_count, 
+										user_photographer_photos_path(@user), remote:true %>
+				</li>
+				<li>
+					<label><%= t("user.user_resume.following") %></label>
+					<%= link_to @user.following_count, 
+											user_photographer_following_path(@user), remote:true %>
+				</li>
+				<li>
+					<label><%= t("user.user_resume.followers") %></label>
+					<%= link_to @user.followers_count,
+									user_photographer_followers_path(@user), 
+									remote:true, id:"photographer-followers-count" %>
+				</li>
+			<% end %>
+			<%= content_tag :ul, class:"links" do %>
+				<%= content_tag :li, id:"follow-links-modal-profile-#{@user.id}" do %>
+					<%= render partial:'user/photographers/follow_links', locals: {user:@user} %>
+				<% end %>
+			<% end %>			
+		</div>
+		<div class="photographers-full-profile" id="photographers-full-profile-container">
+			<%= render 'photos' %>
+		</div>
+	</div>
+</div>

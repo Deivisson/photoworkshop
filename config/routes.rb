@@ -29,8 +29,9 @@ Rails.application.routes.draw do
     resources :photographers, only: [:index,:show] do
       get :follow
       get :unfollow
-      get :following, on: :collection
-      get :followers, on: :collection
+      get :following
+      get :followers
+      get :photos
     end
     
     resources :workshops do

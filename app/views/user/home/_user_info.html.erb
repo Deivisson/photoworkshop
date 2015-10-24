@@ -19,14 +19,15 @@
           <%= content_tag :label, t('user.user_resume.following') %>
           <%= content_tag :span do %> 
             <%= link_to current_user.following_count,
-                        following_user_photographers_path,
+                        user_photographer_following_path(current_user),
                         id:"current-user-following-count" %>
           <% end %>
         </li>
         <li>
           <%= content_tag :label, t('user.user_resume.followers') %>
           <%= content_tag :span do %> 
-            <%= link_to current_user.followers_count,followers_user_photographers_path %>
+            <%= link_to current_user.followers_count, 
+                        user_photographer_followers_path(current_user) %>
           <% end %>
         </li>                       
       </ul>
