@@ -32,7 +32,7 @@ pt_BR:
 
     attributes:
       user_profile:
-        description: "Descrição"
+        description: "Biografia"
         category_id: "Categoria"
         work: "Trabalho"
         camera: "Camera"

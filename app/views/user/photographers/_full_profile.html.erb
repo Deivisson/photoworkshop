@@ -1,20 +1,4 @@
-<%= content_for :toolbar do %>
-  <%= content_tag :ul, class:'menu' do %>
-    <%= content_tag :li do %>
-      <%= link_to  user_photo_explore_path do %>
-        <span class="icon20 explore"></span>
-        <%= t('user.main_menu.explore') %>
-      <% end %>
-    <% end %>
-    <%= content_tag :li do %>
-      <%= link_to  user_photographers_path do %>
-        <span class="icon20 photographers"></span>
-        <%= t('user.main_menu.photographers') %>
-      <% end %>
-    <% end %>
-  <% end %>
-<% end %>
-
+<%= render '/user/shared/main_menu' %>
 <div id="photographer-show-modal-container">
 	<div class="photographer-profile-modal-container">
 		<div class="cover-photo" style="background-image: url(<%= @user.profile.cover_url(:large) %>)">
@@ -41,6 +25,18 @@
 					<%= link_to @user.followers_count,
 									user_photographer_followers_path(@user), 
 									remote:true, id:"photographer-followers-count" %>
+				</li>
+				
+				<%= content_tag :li do %>
+					<label><%= t("user.user_resume.workshops") %></label>
+					<%= link_to @user.owner_workshops_count,
+									user_photographer_workshops_path(@user), 
+									remote:true %>
+				<% end if @user.owner_workshops_count > 0 %>
+
+				<li>
+					<label>...</label>
+					<%= link_to "Sobre", user_photographer_about_path(@user), remote:true %>
 				</li>
 			<% end %>
 			<%= content_tag :ul, class:"links" do %>

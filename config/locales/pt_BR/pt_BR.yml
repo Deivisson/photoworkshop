@@ -13,11 +13,16 @@ pt_BR:
     previous: "Voltar"
     continue: "Continuar"
     conclude: "Concluir"
+    like: "Curtir"
+    unlike: "Não Curtir"
   labels:
     facebook: "Facebook"
     twitter: "Twitter"
     notifications: "Notificações"
     see_all: "Ver Todas"
+    all_categories: "Todas Categorias"
+    share_on_facebook: "Compartilhar Facebook"
+    share_on_twitter: "Compartilhar Twitter"
   messages:
     confirm_destroy: "Confirma Exlusão?"
     destroyed_record: "Registro excluído com sucesso!"
@@ -30,6 +35,8 @@ pt_BR:
   notifications:
     team_welcome: "A equipe <strong>Pic2Gether</strong> lhe deseja boas vindas, e estamos ansiosos para conhecer o seu trabalho."
     followed: "%{follower} começou seguir você."
+  share_messages:
+    share_photo: "Pic2Gether, confira que fotografia incrível %{url}"
   welcome: 
     menu:
       cover: "COVER"

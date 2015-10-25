@@ -248,6 +248,9 @@ ul.users-photographers {
 		    text-decoration: none;
 		    width: 100%;
     	}
+    	a {
+    		color: #32a6d3;
+    	}
     	a:hover {
     		text-decoration: underline;
     	}
@@ -255,13 +258,18 @@ ul.users-photographers {
 	}
 	.profile ul.links {
 		float: right;
-		li a {
+    margin: 85px 0 0;
+    position: absolute;
+    right: 0;
+		li  {
 			float: left;
-	    height: 35px;
-	    margin: 30px 18px 0 0px;
-	    line-height: 35px;
+			a {
+				float: left;
+		    height: 35px;
+		    margin: 30px 5px 0 0px;
+		    line-height: 35px;
+			}
 		}
-
 	}
 	.photographers-photo-gallary {
     float: left;
@@ -289,7 +297,12 @@ ul.users-photographers {
 			width: 90%;	
 		}
 		.photographers-photo-gallary {
-			margin-top: 0;		
+			margin-top: 10px;		
+		}
+		ul.workshops-items {
+			left: 50%;
+			margin-left: -512px;
+			position: absolute;
 		}
 	} 
 }

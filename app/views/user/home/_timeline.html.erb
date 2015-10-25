@@ -14,9 +14,26 @@
 			<div class="photo-info">
 				<h1><%= photo.title%></h1>
 				<p><%= photo.description %> </p>
+				<div class="photo-menu-popup">
+					<ul id="photo-menu-<%= photo.id %>">
+						<li>
+							<%= link_to t('labels.share_on_facebook'), "#", class:'photo-share-menu-link',
+												onclick:"FacebookShare('#{public_photo_url(photo)}');" %>
+						</li>
+						<li>
+							<%= twitter_link_to_share(t('labels.share_on_twitter'),
+											t('share_messages.share_photo', url:public_photo_url(photo))) %>
+						</li>
+						<li id="photo-like-links-<%= photo.id %>">
+							<%= render partial:'user/shared/photo_view/like_links', locals:{photo:photo,show_label:true}  %>
+						</li>
+					</ul>
+					<span class="photo-menu-popup-arrow" photo-id="photo-menu-<%= photo.id %>"></span>
+				</div>
 			</div>
 			<%= render partial:'photo_comments', locals: {photo:photo} %>
 		</div>
 	</li>
 <% end %>
+
 

@@ -4,6 +4,7 @@ pt_BR:
       photos: Fotos
       following: "Seguindo"
       followers: "Seguidores"
+      workshops: "Workshops"
     main_menu:
       home: "Home"
       explore: "Explorar"
@@ -51,6 +52,7 @@ pt_BR:
         social_networks: "Redes Sociais"
       show:
         edit_profile_button: "Editar Perfil"
+      profile:
         about: "Sobre"
         basic_info: "Informações Básicas"
         social_networks: "Redes Sociais"
@@ -58,7 +60,7 @@ pt_BR:
 
     photographers:
       index:
-        title: "Fotografos"
+        search_placeholder: "Pesquisar Fotografos"
 
       show:
         score: "Pontuação %{score}"

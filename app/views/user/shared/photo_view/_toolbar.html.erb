@@ -1,7 +1,7 @@
 <ul class="photo-bar" id="photo-toolbar">
   <li>
     <div id="like-links"> 
-      <%= render 'user/shared/photo_view/like_links' %> 
+      <%= render partial:'user/shared/photo_view/like_links', locals: {photo:@photo, show_label:false} %> 
     </div>
   </li>
   <li>

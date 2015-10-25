@@ -1,7 +1,8 @@
 class User::PhotographersController < User::BaseController
-	before_action :set_user, except: [:index]
+	before_action :set_user
 	before_action :get_photos, only: [:photos,:show]
 
+	#For the index method, the @user is current user
 	def index
 		@users = User.joins(:profile).where("users.id <> ?",current_user.id)
 		if params[:search].present?
@@ -14,6 +15,7 @@ class User::PhotographersController < User::BaseController
 		render layout:'user/explorer'
 	end
 
+	#For the show, photos, following and followers methods, the @user is the user that is showing
 	def show
 		if request.xhr?
 			@gallary_type = :table
@@ -37,6 +39,15 @@ class User::PhotographersController < User::BaseController
 		@users = @user.followers
 	end
 
+	def about
+		@user_profile = @user.profile
+	end
+
+	def workshops
+		@workshops = @user.owner_workshops.order(created_at: :desc)
+	end
+
+	#For the follow and unfollow methods, the @user is the user that is being or stopping followed
 	def follow
 		if !@user.nil?
 			current_user.user_relations << UserRelation.new(user_followed_id:@user.id)
@@ -54,10 +65,14 @@ class User::PhotographersController < User::BaseController
 private 
 
 	def set_user
-		@user = User.find(params[:photographer_id].nil? ? params[:id] : params[:photographer_id])
+		if action_name == "index"
+			@user = current_user
+		else
+			@user = User.find(params[:photographer_id].nil? ? params[:id] : params[:photographer_id])
+		end
 	end
 
 	def get_photos
-		@photos = @user.photos.limit(10)
+		@photos = @user.photos.limit(16)
 	end
 end

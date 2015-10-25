@@ -1,4 +1,16 @@
 <% unless @likes_count.nil? %>
-	$("#likes-count").text("<%= @likes_count %>")
-	$("#like-links").html("<%= escape_javascript(render 'user/shared/photo_view/like_links') %>");
+
+	if ($("#likes-count").length > 0) {
+		$("#likes-count").text("<%= @likes_count %>");
+	}
+
+	if ($("#like-links").length > 0) {
+		$("#like-links").html("<%= j(render partial:'user/shared/photo_view/like_links', locals:{photo:@photo, show_label:false}) %>");
+	}
+
+	var idElement = "#photo-like-links-<%= @photo.id %>";
+	if ($(idElement).length > 0) {
+		$(idElement).html("<%= j(render partial:'user/shared/photo_view/like_links',locals:{photo:@photo, show_label:true}) %>");
+	}
+
 <% end %>

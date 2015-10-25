@@ -2,9 +2,9 @@
 	<% @users.each do |user| %>
 		<li>
 			<div class="cover-pic" style="background-image: url('<%= user.profile.cover_url %>')">
-				<div id="follow-links-<%= user.id %>">
+				<%= content_tag :div, id:"follow-links-#{user.id}" do %>
 					<%= render partial:"follow_links", locals: {user:user} %>
-				</div>
+				<% end if @user.id == current_user.id  %>
 			</div>
 			<div class="user-infos">
       	<%= image_tag(user.profile.avatar.url(:medium),class:'avatar') %>

@@ -9,6 +9,8 @@
 			</div>
 			<%= content_tag :h1, @user.profile.user_name,class:"user-name" %>
 			<%= content_tag :h3, t('.score',score:'80%'),class:"score" %>
+			
+			<!--Menu -->
 			<%= content_tag :ul, class:"resume" do %>
 				<li>
 					<label><%= t("user.user_resume.photos") %></label>
@@ -23,10 +25,17 @@
 					<span id="photographer-followers-count"><%= @user.followers_count %></span>
 				</li>
 			<% end %>
+
+			<!-- Buttons -->
 			<%= content_tag :ul, class:"links" do %>
 				<%= content_tag :li, id:"follow-links-modal-profile-#{@user.id}" do %>
 					<%= render partial:'user/photographers/follow_links', locals: {user:@user} %>
 				<% end %>
+				<li>
+					<%= link_to "Perfil Completo", 
+											user_photographer_path(@user.id),
+											class:'common-button'%>
+				</li>
 			<% end %>			
 		</div>
 

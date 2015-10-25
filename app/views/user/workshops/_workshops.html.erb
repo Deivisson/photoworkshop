@@ -1,5 +1,5 @@
 <% if @type == "instructor" %>
-	<%= render 'owner_workshops' %>
+	<%= render '/user/workshops/owner_workshops' %>
 <% else %>
-	<%= render 'my_workshops' %>
+	<%= render '/user/workshops/my_workshops' %>
 <% end %>

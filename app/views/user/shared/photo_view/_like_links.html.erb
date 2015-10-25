@@ -1,5 +1,9 @@
-<% if @photo.liker_ids.include?(current_user.id) %> 
-  <%= link_to "",user_photo_unlike_path(@photo.id),remote:true,class:'unlike-photo' %> 
+<% if photo.liker_ids.include?(current_user.id) %> 
+  <%= link_to (show_label ? t('buttons.unlike') : "") ,
+  						user_photo_unlike_path(photo.id),
+  						remote:true,class:'unlike-photo' %> 
 <% else %>
-  <%= link_to "",user_photo_like_path(@photo.id),remote:true, class:'liked-photo' %> 
+  <%= link_to (show_label ? t('buttons.like') : ""),
+  						user_photo_like_path(photo.id),
+  						remote:true, class:'liked-photo' %> 
 <% end unless current_user.nil? %>

@@ -17,12 +17,19 @@ module ApplicationHelper
   end
   alias_method :tm, :translate_model
 
-  def show_field(model_instance,attribute,content=nil)
+  def show_field(model_instance,attribute,content=nil,as_link=false)
     html = []
     html << content_tag(:p,class:'colon') do
       inner_html = []
       inner_html << content_tag(:strong,ta(model_instance.class,attribute.to_sym))
-      inner_html << content_tag(:span,(content.nil? ? model_instance.send(attribute) : content))
+
+      content = (content.nil? ? model_instance.send(attribute) : content)
+      if as_link
+        inner_html << link_to(content,content,target:"_blank")
+      else
+        inner_html << content_tag(:span,content)
+      end
+
       inner_html.join.html_safe
     end
     html.join.html_safe

@@ -60,6 +60,11 @@ module User::SocialNetworkHelper
 		end
 	end
 
+	def twitter_link_to_share(title,content,html_options={})
+		html_options.merge!(target:'_blank')
+		link_to title,"http://twitter.com/home?status=#{content}", html_options
+	end
+
 	def twitter_share
 		script = <<-SCRIPT
 			<script>

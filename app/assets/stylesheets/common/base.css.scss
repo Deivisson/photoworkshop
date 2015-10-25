@@ -105,7 +105,14 @@ html {
 		    display: block;
 		    margin: -32px 0 0 130px;
 		    padding: 5px;
-			} 			
+			}
+      a {
+        color: #32a6d3;
+        text-decoration: none;
+        &:hover {
+          text-decoration:underline;
+        };
+      }		
 		}
 	}
 } 

@@ -66,6 +66,10 @@ class User < ActiveRecord::Base
     @photos_count = @photos_count || photos.count
   end
 
+  def owner_workshops_count
+    @owner_workshops_count = @owner_workshops_count || self.owner_workshops.count
+  end
+
   def self.from_omniauth(auth)
     user_auth = UserAuth.where(provider: auth[:provider], uid: auth[:uid]).first
     if user_auth.nil?

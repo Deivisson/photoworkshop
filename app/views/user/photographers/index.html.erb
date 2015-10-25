@@ -1,13 +1,13 @@
-<% title t(".title") %>
+<%= render '/user/shared/main_menu' %>
 <%= content_for :toolbar_buttons do %>
   <%= form_tag user_photographers_path, method: :get, remote:true,class:'search-form' do |f| %>
-  	<%= text_field_tag "search","",placeholder:"Pesquisar fotografo" %>
+  	<%= text_field_tag "search","",placeholder: t('.search_placeholder') %>
   <% end %>
 <% end %>
 <% content_for :categories do %>
 	<ul class="categories-list">
 		<li>
-			<%= link_to "Todas Categorias",
+			<%= link_to t('.all_categories'),
 									user_photographers_path, 
 									remote:true, class:'category-item selected'  %>
 		</li>

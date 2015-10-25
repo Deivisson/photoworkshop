@@ -32,6 +32,8 @@ Rails.application.routes.draw do
       get :following
       get :followers
       get :photos
+      get :about
+      get :workshops
     end
     
     resources :workshops do
