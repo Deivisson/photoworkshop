@@ -184,7 +184,7 @@ module User::PhotosHelper
 			cols << picture_col("col25") do 
 				pics = []
 				pics << image_factory(@landscape.first, "h33 w100")
-				2.times{|i| pics << image_factory(@landscape[i], "h33 w100 top50")}
+				2.times{|i| pics << image_factory(@landscape[i+1], "h33 w100 top50")}
 				pics.join.html_safe
 		 	end
 		 	cols << picture_col("col75","width:74.2%; margin-left:9px") do 
