@@ -95,15 +95,18 @@ function showImagePreview(input) {
 }
 
 function PhotoPopupMenuTrigger(){
-	$(".photo-menu-popup-arrow").unbind("click");
-	$(".photo-menu-popup-arrow").bind("click",function(){
-		var elementid = $(this).attr("photo-id");
-		$("#"+elementid).toggleClass('open-menu');
-	});
-
-	$(".photo-share-menu-link").unbind("click");
-	$(".photo-share-menu-link").bind("click", function(e) {
-		e.preventDefault();
-	});
+	if ($(".photo-menu-popup-arrow").length > 0) {
+		$(".photo-menu-popup-arrow").unbind("click");
+		$(".photo-menu-popup-arrow").bind("click",function(){
+			var elementid = $(this).attr("photo-id");
+			$("#"+elementid).toggleClass('open-menu');
+		});
+	}
+	if($(".photo-share-menu-link").length > 0) {
+		$(".photo-share-menu-link").unbind("click");
+		$(".photo-share-menu-link").bind("click", function(e) {
+			e.preventDefault();
+		});
+	}
 }
 

@@ -255,7 +255,12 @@ module User::PhotosHelper
 				pic << build_url(photo)
 				pic.join.html_safe
 			end
-			inner_html << content_tag(:div,class:"img-info") {photo_details(photo)} if @show_details
+			inner_html << content_tag(:div,class:"img-info") do 
+				html_info = []
+				html_info << photo_details(photo)
+				#html_info << (render partial:'user/shared/photo/menu_popup', locals:{photo:photo} )
+				html_info.join.html_safe
+			end if @show_details
 			inner_html.join.html_safe
 		end
 		html.html_safe
@@ -275,7 +280,7 @@ private
 			html_info << content_tag(:li) do 
 				html_info_item = []
 				html_info_item << content_tag(:span,"Curtidas")
-				html_info_item << content_tag(:h1, photo.likes_count)
+				html_info_item << content_tag(:h1, photo.likes_count,id:"photo-gallery-likes-count-#{photo.id}")
 				html_info_item.join.html_safe
 			end
 			html_info.join.html_safe
@@ -291,6 +296,7 @@ private
 				if @location == :photos_explore
 					html_content << link_to(photo.user.profile.user_name,user_photographer_path(photo.user_id),
 					 												class:"photographer-profile") #photographers name
+					html_content << (render partial:'user/shared/photo/menu_popup', locals:{photo:photo} )
 				elsif @location == :user_photos
 					html_content << content_tag(:label,photo.title,class:"photo-title")
 				end

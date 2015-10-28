@@ -71,15 +71,19 @@
 		border: 0px solid #131519;
 		float: left;
 		height: 40px;
-		margin: 4px 0 0 7px;
+		margin: 2px 0 0 7px;
+		opacity: 1;
 		width: 40px;
 	}
 	.details-content {
-		float: left;
+    float: left;
+    margin-top: -38px;
+    width: 100%;
+/*		float: left;
     margin-left: 45px;
     margin-top: 5px;
     max-width: 200px;
-    position: absolute;
+    position: absolute;*/
 		a, p, label.photo-title {
 			float: left;
 			font-weight: normal;
@@ -88,21 +92,28 @@
 		}
 		a  {
 			color: #32a6d3;
-			margin: 8px 0 0 10px;
+			margin: 5px 0 0 51px;
 			&:hover {text-decoration:underline;};
 		}
 		label.photo-title {
 			color: #76777F;
 			font-size: 15px;
-			margin: 8px 0 0 10px;
+			margin: 8px 0 0 51px;
 			
 		}					
 		p {
 			color: #B7B7B7;
-			margin: 5px 0 0 10px;
+			margin: 5px 0 0 51px;
 			font-size: 12px;
 		}
+		.photo-menu-popup {
+	    float: right;
+	    margin: -85px 4px 0 0;
+	    position: relative;
+
+		}
 	}
+
 }
 
 /* Grid Flow Layout */
@@ -376,20 +387,17 @@ input.camera-field {
 		background: -ms-linear-gradient(top,  #feffff 0%,#f7f7f7 35%,#ededed 100%); /* IE10+ */
 		background: linear-gradient(to bottom,  #feffff 0%,#f7f7f7 35%,#ededed 100%); /* W3C */
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#ededed',GradientType=0 ); /* IE6-8 */
-		border: 1px solid #A39E9A;
+		border: 1px solid #E0E0E0;
 		border-radius: 3px; 
 		-moz-border-radius: 3px; 
 		-webkit-border-radius: 3px; 		
 
 		cursor: pointer;
 		float: right;
-		height: 16px;
+		height: 18px;
 		width: 16px;
 		margin: 0px -2px 0 0;
 		padding:0px 2px 1px 4px;
-		&:after {
-			content: "\25b2";
-		};
 	}
 	ul {
 		background-color: #FFF;
@@ -411,13 +419,18 @@ input.camera-field {
 	    line-height: 20px;
 	    margin-top: 0px !important;
 	    width: 100% !important;
+	    span {
+	    	float: left;
+	    	margin: 2px 0 0 2px;
+	    }
 	    a {
-	    	color: #777;
+	    	color: #777 !important;
 	    	font-size: 12px;
 	    	float: left;
 	    	text-decoration: none;
-	    	text-indent: 5px;
-	    	width: 100%;
+	    	text-indent: 3px;
+	    	margin: 0 !important;
+	    	width: auto !important;
 	    }
 	    a:hover {
 	    	text-decoration: underline;

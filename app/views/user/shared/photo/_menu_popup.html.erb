@@ -1,0 +1,24 @@
+<div class="photo-menu-popup">
+	<ul id="photo-menu-<%= photo.id %>">
+		<li>
+			<span class="icon16pb facebook"></span>	
+			<%= link_to t('labels.share_on_facebook'), "#", class:'photo-share-menu-link',
+								onclick:"FacebookShare('#{public_photo_url(photo)}');" %>
+		</li>
+		<li>
+			<span class="icon16pb twitter"></span>
+			<%= twitter_link_to_share(t('labels.share_on_twitter'),
+							t('share_messages.share_photo', url:public_photo_url(photo))) %>
+		</li>
+		<li>
+			<span class="icon16pb no-icon"></span>
+			<div id="photo-like-links-<%= photo.id %>">
+				<%= render partial:'user/shared/photo_view/like_links', 
+									locals:{photo:photo,show_label:true}  %>
+			</div>
+		</li>
+	</ul>
+	<span class="photo-menu-popup-arrow" photo-id="photo-menu-<%= photo.id %>">
+		<span class="icon16pb share"></span>
+	</span>
+</div>

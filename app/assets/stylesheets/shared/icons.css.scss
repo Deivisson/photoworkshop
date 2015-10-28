@@ -1,12 +1,13 @@
+.icon16,
 .icon20 {
 	background: url(asset-path("user/menu_sprite.png"));
 }
 
+.icon16pb,
 .icon20pb {
 	background: url(asset-path("user/menu_sprite_pb.png"));
 	float: left;
 }
-
 
 .icon20, .icon20pb {
 	height: 24px;
@@ -38,8 +39,26 @@
 	&.notification {
 		background-position: -255px -1px;
 	}
-
 }
+
+.icon16, .icon16pb {
+	height: 17px;
+	width: 17px;
+	&.share {
+		background-position: -294px -6px
+	}
+	&.facebook {
+		background-position: -328px -8px;	
+	}
+	&.twitter {
+		background-position: -359px -8px;
+	}
+	&.no-icon {
+		background-image: none;
+	}
+}
+
+
 
 .social-network-icon,
 .social-network-icon-24 {

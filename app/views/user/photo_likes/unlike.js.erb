@@ -1,5 +1,8 @@
 <% unless @likes_count.nil? %>
 
+	var idElement;
+
+	// Photo View
 	if ($("#likes-count").length > 0) {
 		$("#likes-count").text("<%= @likes_count %>");
 	}
@@ -8,7 +11,13 @@
 		$("#like-links").html("<%= j(render partial:'user/shared/photo_view/like_links', locals:{photo:@photo, show_label:false}) %>");
 	}
 
-	var idElement = "#photo-like-links-<%= @photo.id %>";
+	// Photo Gallary and Home Timeline
+	idElement = "#photo-gallery-likes-count-<%= @photo.id %>";
+	if ($(idElement).length > 0) {
+		$(idElement).text("<%= @likes_count %>");
+	}
+
+	idElement = "#photo-like-links-<%= @photo.id %>";
 	if ($(idElement).length > 0) {
 		$(idElement).html("<%= j(render partial:'user/shared/photo_view/like_links',locals:{photo:@photo, show_label:true}) %>");
 	}
