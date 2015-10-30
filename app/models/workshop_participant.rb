@@ -14,10 +14,23 @@ class WorkshopParticipant < ActiveRecord::Base
 private
 	
 	def notificate
+    i18n_key      = "notifications.#{(self.confirmed? ? "workshop_metriculated" : ".workshop_subscribe")}"
+    workshop_path = Rails.application.routes.url_helpers.user_workshop_marketing_path(workshop_id:self.workshop_id)
+    workshop_url  = "<a href='#{workshop_path}'>#{self.workshop.description}</a>"
+    attributes = {
+      content: I18n.t(i18n_key,workshop_url:workshop_url),
+      type_of: Notification::TYPE_WORKSHOP,
+      user_sender_id: self.workshop.user_id,
+      user_receiver_id: self.user.id,
+      read:false
+    }
+    Notification.create!(attributes)
+
+    #send emails
 		if self.confirmed?
 			User::WorkshopMailer.matriculated_message(self.workshop,self.user).deliver  	
 		else	
-			User::WorkshopMailer.subscribe_message(self.workshop,self.user).deliver  	
+      User::WorkshopMailer.subscribe_message(self.workshop,self.user).deliver
 		end
   end
 

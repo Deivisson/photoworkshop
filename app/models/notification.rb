@@ -2,7 +2,8 @@ class Notification < ActiveRecord::Base
 
 	TYPE_WELCOME = 1
 	TYPE_FOLLOWED = 2
-
+  TYPE_WORKSHOP = 3
+  
 	validates :content, presence:true
 	validates :type_of, presence:true
 	validates :user_sender_id, presence:true
