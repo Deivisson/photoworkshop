@@ -10,7 +10,7 @@
   							method: :put,
   							data: {confirm:t('.confirm_matriculation_question')},
   							remote:true, id:"confirm-matriculation-btn",
-  							class:"btn btn-small btn-important" unless participant.confirmed? %>
+  							class:"btn btn-tiny btn-primary" unless participant.confirmed? %>
     
     <div class="buttons-container buttons-container-participants">
     	<%= link_to t('.remove_user'),

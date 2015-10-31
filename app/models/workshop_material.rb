@@ -12,5 +12,5 @@ class WorkshopMaterial < ActiveRecord::Base
 
   validates_attachment_content_type :attachment, 
                               :content_type =>['application/pdf', 'application/msword', 'text/plain', /\Aimage\/.*\Z/]
-
+  
 end

@@ -11,6 +11,8 @@ class WorkshopParticipant < ActiveRecord::Base
   after_create :notificate
   after_save :notificate, :if => Proc.new {|a| confirmed_changed? && confirmed? && !confirmed_was} 
 
+  scope :confirmed, -> {where(confirmed:true)}
+
 private
 	
 	def notificate

@@ -144,6 +144,7 @@
   };
 }
 
+/* Styles e Types */
 .btn-primary {
   background-color: #428bca;
   border:1px solid #357ebd;
@@ -164,15 +165,37 @@
 }
 
 
+.btn-success {
+  background-color: #5bb75b;
+  border:1px solid #438E43;
+  color: #FFF;
+  &:hover {
+    background-color: #4D9B4D;
+    border-color: #347734;
+  };
+}
+
+/* Sizes */
 .btn-bigger {
   font-size: 18px;
   padding: 7px;
+}
 
+.btn-medium {
+  height: 25px;
+  line-height: 27px;
+  padding: 4px;
 }
 
 .btn-small {
-  font-size: 10px;
-  height: 14px;
+  font-size: 13px;
+  height: 20px;
+  line-height: 20px;
+}
+
+.btn-tiny {
+  font-size: 12px;
+  height: 16px;
   line-height: 16px;
   padding: 1px;
 }
@@ -203,7 +226,9 @@
   }
 }
 
-
+.btn-right {
+  float: right;
+}
 
 
 

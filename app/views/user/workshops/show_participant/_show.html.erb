@@ -43,7 +43,7 @@
       <div class="panel-content">
         <h4><%= t('.participants_legend') %></h4>
           <ul class="workshop-participants">
-            <% @workshop.workshop_participants.each do |participant| %>
+            <% @workshop.workshop_participants.confirmed.each do |participant| %>
               <%= render partial:'/user/workshop_participants/participant',
                     locals: {participant:participant, workshop_owner:false} %>
             <% end %>

@@ -101,10 +101,13 @@ ul.workshop-activities {
 		padding: 5px;
 		width: 97%;
 		.user-avatar {
+			border-radius: 50%; 
+			-moz-border-radius: 50%; 
+			-webkit-border-radius: 50%; 
 			border: 0px;
 			float: left;
-			height: 32px;
-			width: 32px;
+			height: 42px;
+			width: 42px;
 		};
 		a.user-name {
 			color: #888;
@@ -120,7 +123,7 @@ ul.workshop-activities {
 		&:hover {background-color: #eee;};
 		a.btn {
 			color: #FFF;
-			margin: 20px 0 0 42px;
+			margin: 25px 0 0 50px;
     	position: absolute;
     	&:hover {
     		text-decoration: none;

@@ -1,15 +1,19 @@
-<% title t('.title') %>
+<% title t('.workshop') %>
 <%= content_for :toolbar_buttons do %>
+  <%= link_to t('.preview_workshop'), 
+              user_workshop_marketing_path(@workshop),
+              class:'btn btn-primary btn-small btn-right' %>
+
   <%= link_to t('.edit_workshop'),
               edit_user_workshop_path(@workshop), 
-              class:"common-button edit-button" %>
+              class:"btn btn-success btn-small btn-right" %>
 
   <%= link_to t('.open_workshop'),
               user_workshop_open_path(@workshop), 
               data: {confirm:t('.confirm_open_workshop_msg')},
-              class:"common-button cancel-button" unless @workshop.opened? %>
+              class:"btn btn-success btn-small btn-right" unless @workshop.opened? %>
 
-  <%= link_to "View", user_workshop_marketing_path(@workshop) %>
+
 <% end %>
 <%= content_tag(:div, t('.msg_not_opened').html_safe,class:'alert') unless @workshop.opened? %>
 <%= content_tag(:div, class:"panel flat",style:'width: 50%;') do %>
