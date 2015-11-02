@@ -1,0 +1,20 @@
+<%= content_for :left_col_container do %>
+	<%= content_tag(:div, class:"panel flat") do %>
+	  <div class="panel-content">
+	    <%= render 'user/workshop_activities/evaluation/participants' %>
+	  </div>
+	<% end %> 	
+<% end %>
+
+<div class="activity-image-preview-container">
+	<% photo = @workshop_activity.responses.last.photo %>
+	<div class="photo-picture <%= photo.orientation %>" 
+		style="background-image:url(<%= photo.picture.url(:large) %>)" >
+
+	</div>
+</div>
+<div class="teste-column">
+	<%= render 'user/workshop_activities/evaluation/evaluation_itens' %>
+	<%= render partial:'user/workshop_activities/evaluation/photo_exif', locals: {photo:photo} %>
+</div>
+

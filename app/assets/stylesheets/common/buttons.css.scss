@@ -230,10 +230,13 @@
   float: right;
 }
 
-
-
-
-
-
-
-
+/*Links*/
+a {
+  &.disabled {
+    color: #999 !important;
+    pointer-events: none;
+    span {
+      opacity: 0.5 !important;
+    }
+  }
+}

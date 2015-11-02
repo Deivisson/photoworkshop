@@ -1,6 +1,10 @@
-<% title t('.title') %>
+<% title t(".title",workshop_description:@workshop.description) %>
 <%= content_for :toolbar_buttons do %>
+  <%= link_to t('user.workshops.my_all_workshops'),
+              user_workshops_path, 
+              class:"btn btn-success btn-small btn-right" %>
 <% end %>
+
 <div class="show-workshop-participant">
 
   <div class="ws-left-col">
@@ -8,20 +12,9 @@
       <div class="panel-content">
         <div class="ws-image" style="background-image: url(<%= @workshop.image.url(:medium)%>)"></div>
         <p class="workshop-description"><%= @workshop.description %></p>
-        
-        <!-- <div class="show-fields">
-          <%= sf @workshop,:start_date,format_date(@workshop.start_date) %>
-          <%= sf @workshop,:end_date,format_date(@workshop.end_date) %>
-          <%= sf @workshop,:workload, @workshop.workload %>
-          <%= sf @workshop,:target_audience %>
-        </div> -->
-        
-        <!-- <div class="ws-complement">
-          <h4><%= t('user.workshops.more_info') %></h4>
-          <%= @workshop.complement.html_safe unless @workshop.complement.nil? %>
-        </div> -->
       </div>
     <% end %>
+    
     <%= content_tag(:div, class:"panel flat",style:'width: 100%;') do %>
       <div class="panel-content">
         <h4><%= t('.activities_legend') %></h4>
@@ -31,7 +24,6 @@
   </div>
 
   <div class="ws-right-col">
-    
     <%= content_tag(:div, class:"panel flat",style:'width: 100%;') do %>
       <div class="panel-content">
         <h4><%= t('.materials_legend') %></h4>
@@ -55,11 +47,12 @@
       <div class="panel-content">
         <h4><%= t('.author_legend') %></h4>
         <div class="author-container">
-          <%= image_tag(@workshop.user.profile.avatar.url(:medium),class:'avatar') %>
+          <%= link_to user_photographer_path(@workshop.user.id), class:"photographer-profile user-name" do %>
+            <%= image_tag(@workshop.user.profile.avatar.url(:medium),class:'avatar')%>
+          <% end %>
           <p><%= @workshop.user.profile.description %></p>        
         </div>
       </div>
     <% end %>
-   
   </div>
 </div>

@@ -106,11 +106,13 @@
 
 .formtastic .input {
   float: left;
+  list-style: none;
   overflow:hidden; /* clear containing floats */
   padding:0.5em 0; /* padding and negative margin juggling is for Firefox */
   margin-top:-0.5em;
   margin-bottom:1em;
   width: 100%;
+
 }
 
 

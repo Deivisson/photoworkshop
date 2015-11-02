@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151017185846) do
+ActiveRecord::Schema.define(version: 20151101141359) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -242,12 +242,13 @@ ActiveRecord::Schema.define(version: 20151017185846) do
 
   create_table "workshop_activities", force: :cascade do |t|
     t.integer  "workshop_id"
-    t.string   "description", limit: 100,             null: false
+    t.string   "description",           limit: 100,             null: false
     t.text     "details"
-    t.integer  "status",                  default: 0, null: false
+    t.integer  "status",                            default: 0, null: false
     t.date     "limit_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "maximum_upload_number",             default: 1, null: false
   end
 
   add_index "workshop_activities", ["workshop_id"], name: "index_workshop_activities_on_workshop_id", using: :btree

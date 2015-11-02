@@ -1,3 +1,4 @@
 <div id="workshop-activity-response-containter">
+	<%= content_tag :label,t('.title',activity_description:@workshop_activity_response.workshop_activity.description),class:'modal-title',id:'modal-title-response' %>
 	<%= render 'form' %>
 </div>

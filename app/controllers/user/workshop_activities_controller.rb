@@ -8,7 +8,13 @@ class User::WorkshopActivitiesController < User::BaseController
   # end
 
   def show
-    respond_with(@workshop_activity, layout:false)
+    @modal = false
+    if !request.xhr? && current_user.id == @workshop.user_id
+      respond_with(@workshop_activity, layout:'user/workshop_activities_show')
+    else
+      @modal = true
+      respond_with(@workshop_activity, layout:false)
+    end
   end
 
   def new
@@ -36,7 +42,11 @@ class User::WorkshopActivitiesController < User::BaseController
   private
     def set_workshop
       if action_name == "show"
-        @workshop = current_user.my_workshops.find(params[:workshop_id])
+        @workshop = Workshop.find(params[:workshop_id])
+        #Only the workshop owner or workshop's participant can see the workshop and activity
+        unless (@workshop.user_id == current_user.id || @workshop.participant_ids.include?(current_user.id))
+          @workshop = nil
+        end
       else
         @workshop = current_user.owner_workshops.find(params[:workshop_id])
       end
@@ -47,6 +57,6 @@ class User::WorkshopActivitiesController < User::BaseController
     end
 
     def workshop_activity_params
-      params.require(:workshop_activity).permit(:description, :details, :status, :limit_date)
+      params.require(:workshop_activity).permit(:description, :details, :status, :limit_date,:maximum_upload_number)
     end
 end

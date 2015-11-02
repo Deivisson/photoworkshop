@@ -1,0 +1,19 @@
+<div class="activity-response" id="activity-<%= activity.id %>" >
+	<% responses = activity.user_responses(current_user) %>
+	<% if responses.any? %>
+    <% responses.each do |response| %>
+    	<%= render partial:'user/workshops/show_participant/activity_response', 
+    							locals: {response:response} %>
+  	<% end %>  
+	<% else %>
+    <% if activity.time_over? %>
+    	<div class="alert alert-danger">
+  		 	<%= t('.alert_activity_time_over',limit_date:format_date(activity.limit_date)).html_safe %>
+  		</div>
+    <% else %>
+      <div class="alert">
+        <%= t('.alert_no_post_activity',limit_date:format_date(activity.limit_date)).html_safe %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

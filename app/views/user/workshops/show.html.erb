@@ -1,6 +1,6 @@
 <% if @workshop.mine?(current_user) %>
-	<% render 'user/workshops/show_owner/show' %>
-	<%= render 'user/workshops/show_participant/show' %>
+	<%= render 'user/workshops/show_owner/show' %>
+	<%# render 'user/workshops/show_participant/show' %>
 <% elsif @workshop.enrolled?(current_user) %>
 	<%= render 'user/workshops/show_participant/show' %>
 <% end %>

@@ -9,7 +9,7 @@
   							user_workshop_confirm_matriculation_path(@workshop,participant.user_id),
   							method: :put,
   							data: {confirm:t('.confirm_matriculation_question')},
-  							remote:true, id:"confirm-matriculation-btn",
+  							remote:true, id:"confirm-matriculation-btn-#{participant.user_id}",
   							class:"btn btn-tiny btn-primary" unless participant.confirmed? %>
     
     <div class="buttons-container buttons-container-participants">

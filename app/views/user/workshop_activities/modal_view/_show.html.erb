@@ -1,0 +1,14 @@
+<div id="workshop-show-activities-containter">
+	<%= content_tag :label,t('user.workshop_activities.show'), 
+						class:'modal-title',id:'show-modal-title-activity' %>
+	<%= content_tag(:div, class:"panel flat", style:'border:0;margin-top:-20px;') do %>
+	  <div class="panel-content">
+	    <div class="show-fields">
+	    	<%= sf @workshop_activity,:description %>
+	      <%= sf @workshop_activity,:details %>
+	      <%= sf @workshop_activity,:limit_date, format_date(@workshop_activity.limit_date) %>
+	      <%= sf @workshop_activity,:maximum_upload_number %>
+	    </div>
+	  </div>
+	<% end %>
+</div>

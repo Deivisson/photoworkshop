@@ -1,9 +1,18 @@
-<%= semantic_form_for [:user,@workshop_activity_response] do |f| %>
-  <%= f.semantic_fields_for :photos do |photo| %>
-    <%= render partial:'user/photos/fields', locals: {f: photo} %>
-  <% end %>
-
-  <%= f.actions do %>
-    <%= f.action :submit, :as => :input %>
-  <% end %>
+<% if @workshop_activity_response.can_upload? %>
+	<%= semantic_form_for [:user,@workshop_activity_response], remote:true do |f| %>
+	  <%= f.semantic_fields_for :photo do |photo| %>
+	    <%= render partial:'user/photos/fields', locals: {f: photo} %>
+	  <% end %>
+	  <div class="actions">
+	    <%= submit_button f %>
+	  </div>
+	<% end %>
+<% else %>
+	<%= hidden_field_tag :can_upload,"",id:"activity-can-upload" %>
+	<div class="alert">
+		<%= t('user.workshop_activity_responses.upload_not_allowed') %>
+	</div>
 <% end %>
+
+
+

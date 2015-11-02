@@ -125,6 +125,7 @@ ul.workshop-activities {
 			color: #FFF;
 			margin: 25px 0 0 50px;
     	position: absolute;
+    	width: auto;
     	&:hover {
     		text-decoration: none;
     	};
@@ -149,14 +150,14 @@ ul.workshop-activities {
 			float: left;
 			margin: 4px 0 0 5px;
 			text-decoration: none;
-			/*width: 70%;*/
+			width: 70%;
 			&:hover {
 				text-decoration: underline;
 			};			
 		};
 		.buttons-container {
 			float: right;
-    	margin-top: -5px;
+    	margin-top: 0px;
 			visibility: hidden;
 			a {
 				border-right: 1px solid  #cecece; 
@@ -175,24 +176,38 @@ ul.workshop-activities {
 	}
 }
 
-ul.workshop-activities li .activity-response {
-	.posted-photo {
-		background-position: center center;
-    background-size: cover;
-    float: left;
-    height: 400px;
-    margin: 10px 0 0 5px;
-    width: 590px;
-    transition:All 0.6s ease;
-    &:hover {
-    	opacity: 0.5;
-    	ul.workshop-activities li {
-    		background-color: #000;	
-    	}
-    };
-	}	
+ul.workshop-materials,
+ul.workshop-activities {
+	li {
+		.progress-container {
+			background-color: #D6DADC;
+			border-radius: 5px; 
+			-moz-border-radius: 5px; 
+			-webkit-border-radius: 5px;
+			float: left;
+			margin: 3px 0 0 5px;
+			width: 100%;
+			height: 12px;
+			span {
+				color: #3f3f3f;
+		    float: left;
+		    font-size: 10px;
+		    height: 10px;
+		    margin-top: 1px;
+		    text-align: center;
+		    width: 100%;
+			}
+			.progress-evolution {
+				background-color: #5BA4CF;
+				border-radius: 5px; 
+				-moz-border-radius: 5px; 
+				-webkit-border-radius: 5px;
+				height: 100%;
+				width: 100%
+			}
+		}	
+	}
 }
-
 .ws-preview {
 	height: 600px;
 	width: 960px;

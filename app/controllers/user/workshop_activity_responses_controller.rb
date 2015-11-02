@@ -1,4 +1,5 @@
 class User::WorkshopActivityResponsesController < User::BaseController
+  before_action :set_workshop, only: [:create]
   before_action :set_workshop_activity_response, only: [:show, :edit, :update, :destroy]
   before_action :load_resources, only: [:new, :create, :edit, :update]
 
@@ -12,8 +13,12 @@ class User::WorkshopActivityResponsesController < User::BaseController
   # end
 
   def new
-    @workshop_activity_response = WorkshopActivityResponse.new
-    @workshop_activity_response.photos.build
+    attributes = {
+      workshop_activity_id:params[:activity_id],
+      user_id: current_user.id
+    }
+    @workshop_activity_response = WorkshopActivityResponse.new(attributes)
+    @workshop_activity_response.build_photo
     respond_with(@workshop_activity_response, layout:false)
   end
 
@@ -21,11 +26,12 @@ class User::WorkshopActivityResponsesController < User::BaseController
   end
 
   def create
-    @workshop_activity_response = current_user.activity_responses.new(workshop_activity_response_params)
-    @workshop_activity_response.workshop_activity_id = params[:activity_id]
-    @workshop_activity_response.photos.each{|item| item.user_id = current_user.id}
-    @workshop_activity_response.save
-    respond_with(@workshop_activity_response)
+    unless @workshop.nil?
+      @workshop_activity_response = current_user.activity_responses.new(workshop_activity_response_params)
+      @workshop_activity_response.workshop_activity_id = params[:activity_id]
+      @workshop_activity_response.photo.user_id = current_user.id
+      @workshop_activity_response.save
+    end
   end
 
   def update
@@ -35,17 +41,21 @@ class User::WorkshopActivityResponsesController < User::BaseController
 
   def destroy
     @workshop_activity_response.destroy
-    respond_with(@workshop_activity_response)
   end
 
   private
+
     def set_workshop_activity_response
-      @workshop_activity_response = WorkshopActivityResponse.find(params[:id])
+      @workshop_activity_response = current_user.activity_responses.find(params[:id])
+    end
+
+    def set_workshop
+      @workshop = current_user.my_workshops.find(params[:workshop_id])
     end
 
     def workshop_activity_response_params
       params.require(:workshop_activity_response).permit(:activity_id, :workshop_id, 
-        photos_attributes: [:picture,:title,:description,:category_id,:tags])
+        photo_attributes: [:picture,:title,:description,:category_id,:tags])
     end
 
     def load_resources

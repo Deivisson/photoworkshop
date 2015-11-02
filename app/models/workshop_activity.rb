@@ -2,14 +2,36 @@ class WorkshopActivity < ActiveRecord::Base
 	validates :workshop_id, presence:true
 	validates :description, presence:true, length: {maximum:100}
 	validates :status, presence:true
+  validates :maximum_upload_number, presence:true, numericality:true
+  validates :limit_date, presence:true
 
   belongs_to :workshop
   has_many :responses, class_name: "WorkshopActivityResponse"
+
+  attr_accessor :delivered_count, :perc_delivered
 
   def user_responses(user_id)
   	self.responses.where(user_id:user_id)
   end
 	
+  def time_over?
+    Time.now > self.limit_date
+  end
+
+  def delivered_count
+    @delivered_count ||= self.responses.select('user_id').distinct.count
+  end
+
+  def perc_delivered
+    participant_count = self.workshop.participants.count
+    return 0 if participant_count == 0
+    if @perc_delivered.nil? 
+      @perc_delivered = (delivered_count.to_f / participant_count.to_f) * 100
+      @perc_delivered = 100 if @perc_delivered > 100
+    end
+    @perc_delivered
+  end
+
 	after_create :notificate_participants
 
 private

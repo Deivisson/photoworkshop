@@ -21,7 +21,7 @@ pt_BR:
         less_than_or_equal_to: "deve ser menor ou igual a %{count}"
         odd: "must be odd"
         even: "must be even"
-
+        
     models:
       user:
         one: "Usuário"
@@ -70,3 +70,4 @@ pt_BR:
         description: "Descrição"
         details: "Detalhes"
         limit_date: "Data Limite Entrega"
+        maximum_upload_number: "Qtde máxima de Postagem."

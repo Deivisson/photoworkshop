@@ -1,7 +1,36 @@
-<div class="show-fields" style="width:100%">
-  <ul class="workshop-activities" id="workshop-activities-container">
-  	<%= render partial: "user/workshop_activities/workshop_activity",
-					 collection: @workshop.activities, 
-					 locals:{workshop_owner:false} %>
-  </ul>  
+<div class="participant-activities">
+	<% @workshop.activities.each do |activity| %>
+		<%= content_tag(:div, class:"panel flat",style:'width: 100%;') do %>
+	    <div class="panel-content">
+	      <h4>
+	      	<%= activity.description %>
+	      	<span class="sub-title"><%= time_ago_in_words(activity.created_at) %></span>
+	      </h4>
+	      <ul class="panel-toolbar">
+	      	<li>
+	      		<%= link_to user_workshop_activity_path(@workshop,activity),
+      							  class:"show-workshop-activity" do %>
+						  <%= t('.activity_info') %>
+						  <span class="icon16 icon16pb info"></span>
+					  <% end %>
+	      	</li>
+	      	<li>
+	      		<% if activity.time_over? %>
+							<%= link_to "#", class:"disabled" do %>
+									<%= t('.post_activity') %><span class="icon16 icon16pb upload"></span>
+							<% end %>
+	      		<% else %>
+							<%= link_to new_user_workshop_activity_response_path(@workshop,activity),
+												class:"add-workshop-activities-response" do %>
+								<%= t('.post_activity') %><span class="icon16 icon16pb upload"></span>
+							<% end %>
+						<% end %>
+	      	</li>
+	      </ul>
+	      <!--Responses of activities -->
+	    	<%= render partial:'user/workshops/show_participant/responses', 
+	    							locals:{activity:activity} %>
+	    </div>
+	  <% end %>
+	<% end %>
 </div>

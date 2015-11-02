@@ -8,13 +8,13 @@ class Photo < ActiveRecord::Base
   belongs_to :category
   belongs_to :workshop_activity_response
 
-  has_one :exif, class_name:'PhotoExif'
+  has_one :exif, class_name:'PhotoExif', dependent: :destroy
 
 
   #Likes associations
-  has_many :likes, class_name:'PhotoLike'
-  has_many :likers, through: :likes
-  has_many :comments, class_name:'PhotoComment'
+  has_many :likes, class_name:'PhotoLike', dependent: :destroy
+  has_many :likers, through: :likes, dependent: :destroy
+  has_many :comments, class_name:'PhotoComment',dependent: :destroy
 
   has_attached_file :picture,:styles => {
     small:"250x250", 

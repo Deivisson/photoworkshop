@@ -56,6 +56,16 @@
 	&.no-icon {
 		background-image: none;
 	}
+	&.info {
+		background-position: -8px -39px
+	}
+	&.destroy {
+		background-position: -70px -39px;
+	}
+	&.upload {
+		background-position: -37px -39px;
+		width: 20px;
+	}
 }
 
 

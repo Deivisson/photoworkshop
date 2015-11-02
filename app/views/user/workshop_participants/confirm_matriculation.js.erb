@@ -1,2 +1,7 @@
-	$("#confirm-matriculation-btn").remove();
+<% if @workshop_participant.errors.empty? %>
+	var id="#confirm-matriculation-btn-<%= @workshop_participant.user_id %>";
+	$(id).remove();
 	flashNoticeMessage("<%= t('user.workshops.matriculation_with_success') %>");
+<% else %>		
+	alert(@workshop_participant.errors.full_messages.to_sentence)
+<% end %>

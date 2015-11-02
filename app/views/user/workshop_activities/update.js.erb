@@ -5,5 +5,6 @@
 		"<%= escape_javascript(render partial:'workshop_activity', locals: {workshop_activity:@workshop_activity,workshop_owner:true})%>");
 	$("#workshop-activities-modal-dialog").dialog( "close" );
 	bindWorkshopActivityDialog();
+	bindShowWorkshopActivityDialog();
 	flashNoticeMessage("<%= t('messages.updated_record') %>");
 <% end %>

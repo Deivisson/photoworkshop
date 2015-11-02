@@ -1,0 +1,8 @@
+<div class="posted-photo" id="workshop-activity-response-<%= response.id %>"
+    style="background-image:url(<%= response.photo.picture.url(:medium) %>)">
+  <div class="buttons-container">
+  	<%= link_to user_workshop_activity_response_path(@workshop.id,response.workshop_activity_id,response.id),class:"btn",method: :delete,data: {confirm:t('messages.confirm_destroy')},remote:true  do %>
+  				<span class="icon16pb destroy"></span>
+  	<% end %>
+  </div>
+</div>

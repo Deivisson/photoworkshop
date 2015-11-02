@@ -85,6 +85,7 @@ pt_BR:
       subscribe_success: "Pré-Matricula realizada com sucesso."
       waiting_confirmation: "Aguardando confirmação de Matrícula."
       matriculation_with_success: "Matrícula confirmada com sucesso !!"
+      my_all_workshops: "Meus Workshops"
       form:
 
       new:
@@ -112,10 +113,17 @@ pt_BR:
 
       show_participant:
         show:
+          title: "Workshop: %{workshop_description}"
           activities_legend: "Atividades"
           materials_legend: "Materiais"
           participants_legend: "Participantes"
           author_legend: "Autor"
+        activities:
+          activity_info: "Informações sobre Atividade"
+          post_activity: "Postar Foto"
+        responses:
+          alert_no_post_activity: "ATENÇÃO, esta atividade ainda está pendente e o prazo final para postagem da sua foto é no dia <b>%{limit_date}.</b>"
+          alert_activity_time_over: "ATENÇÃO, Prazo para postagem da foto encerrou no dia <b>%{limit_date}.</b>"
       subscribe_link:
         not_opened: ""
     workshop_materials:
@@ -129,7 +137,9 @@ pt_BR:
         title: 'Nova Atividade'
       edit:
         title: 'Edição da Atividade'
-
+      workshop_activity:
+        post_one: "paticipante já postou"
+        post_many: "participantes já postaram"
     workshop_participants:
       index:
         title: 'Usuários'
@@ -142,6 +152,10 @@ pt_BR:
         confirm_matriculation_question: "Confirmar a matrícula do usuário?"
       search_form:
         placeholder: "Digite o nome do usuário para pesquisa"
+    workshop_activity_responses:
+      upload_not_allowed: "Uploads já não são mais permitidos devido já ter postado a quantidade máxima permitida, ou o prazo de postagem chegou ao fim."
+      new:
+        title: "Atividade: %{activity_description}"
     shared:
       photo_view:
         show_details:

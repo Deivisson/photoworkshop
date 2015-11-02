@@ -2,30 +2,25 @@
   <%= link_to workshop_activity.description,
       user_workshop_activity_path(@workshop,workshop_activity),
       class:"show-workshop-activity" %>
-
   <%= content_tag :div, class:"buttons-container" do %>
-    <% if workshop_owner %>
-    	<%= link_to t('buttons.edit'),
-    							edit_user_workshop_activity_path(@workshop,workshop_activity),
-    							class:"edit-workshop-activity" %>
-    	<span class="separator"></span>
-    	<%= link_to t('buttons.destroy'),
-    							user_workshop_activity_path(@workshop,workshop_activity),
-    							method: :delete,
-    							data: {confirm:t('messages.confirm_destroy')},
-    							remote:true %>
-    <% else %>
-      <%= link_to t('buttons.add'),
-          new_user_workshop_activity_response_path(@workshop,workshop_activity),
-          class:"add-workshop-activities-response" %>
-    <% end %>
+  	<%= link_to t('buttons.edit'),
+  							edit_user_workshop_activity_path(@workshop,workshop_activity),
+  							class:"edit-workshop-activity" %>
+  	<span class="separator"></span>
+  	<%= link_to t('buttons.destroy'),
+  							user_workshop_activity_path(@workshop,workshop_activity),
+  							method: :delete,
+  							data: {confirm:t('messages.confirm_destroy')},
+  							remote:true %>
+    <span class="separator"></span>
+    <%= link_to "view",
+              user_workshop_activity_path(@workshop,workshop_activity) %>
   <% end %>
-
-
-  <div class="activity-response">
-    <% workshop_activity.user_responses(current_user).each do |response| %>
-      <div class="posted-photo" 
-            style="background-image:url(<%= response.photos.first.picture.url(:medium) %>)">
-    <% end %>
+  <div class="progress-container">
+    <span>
+      <%= pluralize(workshop_activity.delivered_count,t('.post_one'),t('.post_many')) %>
+    </span>
+    <div class="progress-evolution" 
+          style="width: <%= workshop_activity.perc_delivered %>%"></div>
   </div>
 <% end %>

@@ -2,10 +2,9 @@
   <%= f.inputs do %>
     <%= f.input :description,
     						:input_html => {id:'workshop-activity-description'} %>
-    <%= f.input :details,
-  							:input_html => {rows:10} %>
-    <%= f.input :limit_date,
-    						:as => :string %>
+    <%= f.input :details,:input_html => {rows:10} %>
+    <%= f.input :limit_date, :as => :string %>
+    <%= f.input :maximum_upload_number %>
   <% end %>
   <br>
   <br>

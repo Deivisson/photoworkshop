@@ -19,7 +19,8 @@ class Workshop < ActiveRecord::Base
   belongs_to :user
 
   has_many :workshop_participants
-  has_many :participants, through: :workshop_participants
+  has_many :participants,-> { where("workshop_participants.confirmed" => true) }, through: :workshop_participants
+
 
   has_many :materials, class_name: "WorkshopMaterial"
   has_many :activities, class_name: "WorkshopActivity"
