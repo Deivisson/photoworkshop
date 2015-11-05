@@ -17,6 +17,13 @@
 									locals:{photo:photo,show_label:true}  %>
 			</div>
 		</li>
+		<li>
+			<span class="icon16pb no-icon"></span>
+			<div id="photo-favorite-links-<%= photo.id %>">
+				<%= render partial:'user/shared/photo_view/favorite_links', 
+									locals:{photo:photo,show_label:true}  %>
+			</div>
+		</li>
 	</ul>
 	<span class="photo-menu-popup-arrow" photo-id="photo-menu-<%= photo.id %>">
 		<span class="icon16pb share"></span>

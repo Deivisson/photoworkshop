@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151101141359) do
+ActiveRecord::Schema.define(version: 20151104225028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,16 @@ ActiveRecord::Schema.define(version: 20151101141359) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "favorite_photos", force: :cascade do |t|
+    t.integer  "photo_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "favorite_photos", ["photo_id"], name: "index_favorite_photos_on_photo_id", using: :btree
+  add_index "favorite_photos", ["user_id"], name: "index_favorite_photos_on_user_id", using: :btree
 
   create_table "notifications", force: :cascade do |t|
     t.integer  "user_sender_id"
@@ -316,6 +326,8 @@ ActiveRecord::Schema.define(version: 20151101141359) do
   add_index "workshops", ["user_id"], name: "index_workshops_on_user_id", using: :btree
 
   add_foreign_key "cities", "states", name: "cities_states"
+  add_foreign_key "favorite_photos", "photos"
+  add_foreign_key "favorite_photos", "users"
   add_foreign_key "notifications", "users", column: "user_receiver_id", name: "notifications_receiver_user"
   add_foreign_key "notifications", "users", column: "user_sender_id", name: "notifications_sender_user"
   add_foreign_key "photo_comments", "photos", name: "photo_comments_photo"

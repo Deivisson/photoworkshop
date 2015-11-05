@@ -1,0 +1,14 @@
+<% if @favorite_photo.destroyed? %>
+	var idElement;
+
+	//Foto View
+	if ($("#favorite-links").length > 0) {
+		$("#favorite-links").html("<%= j(render partial:'user/shared/photo_view/favorite_links', locals:{photo:@photo,show_label:false}) %>");
+	}
+
+	idElement = "#photo-favorite-links-<%= @photo.id %>";
+	if ($(idElement).length > 0) {
+		$(idElement).html("<%= j(render partial:'user/shared/photo_view/favorite_links', locals:{photo:@photo,show_label:true}) %>");
+	}
+	flashNoticeMessage("<%= t('messages.photo_unfavorited') %>");
+<% end %>

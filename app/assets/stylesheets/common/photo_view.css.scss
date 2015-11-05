@@ -81,19 +81,28 @@
 			    width: 40px;
 				}
 			}
-			#like-links {
+			#like-links, #favorite-links {
 				float: left;
 				height: 100%;
 				width: 100%;
-				a.liked-photo, a.unlike-photo {
+				a.liked-photo, 
+				a.unlike-photo,
+				a.unfavorite-photo,
+				a.favorite-photo {
 					background: url("/assets/user/photo_preview_toolbar_sprite.png") no-repeat;
 					margin-top: 5px;
 				}
 				a.liked-photo {
 					background-position: -1px 0px;
-				};
+				}
 				a.unlike-photo {
 					background-position: -37px 0;
+				}
+				a.favorite-photo{
+					background-position: -72px 0px;
+				}
+				a.unfavorite-photo {
+					background-position: -109px 0;
 				}
 			}
 		}

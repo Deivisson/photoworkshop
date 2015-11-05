@@ -62,6 +62,9 @@ Rails.application.routes.draw do
       get :set_all_as_read, on: :collection
     end
 
+    #Favorite Photo
+    get "favorite_photos/:photo_id/favoritar", to:'favorite_photos#favoritar', :as => :favoritar_photo
+    get "favorite_photos/:photo_id/unfavoritar", to:'favorite_photos#unfavoritar', :as => :unfavoritar_photo
   end
   
   scope :home do

@@ -27,14 +27,14 @@ class User < ActiveRecord::Base
   has_many :activity_responses, class_name: "WorkshopActivityResponse"
   has_many :notifications_sent, class_name: "Notification", foreign_key: 'user_sender_id'
   has_many :notifications_received, class_name: "Notification", foreign_key: 'user_receiver_id'
-
+  has_many :favorite_photos
   has_and_belongs_to_many :categories
 
   before_create :set_default_data
   after_create :create_profile, :send_welcome_notification
   after_save :create_user_auth
 
-  attr_accessor :following, :full_name, :user_name, :unread_notifications_count
+  attr_accessor :following, :full_name, :user_name, :unread_notifications_count, :favorited_photos_ids
   attr_accessor :auth_avatar_url, :auth_provider, :auth_uid, :account_url
   
 
@@ -113,6 +113,10 @@ class User < ActiveRecord::Base
 
   def unread_notifications_count
     @unread_notifications_count ||= self.notifications_received.unread.count
+  end
+
+  def favorited_photos_ids
+    @favorited_photos_ids ||= self.favorite_photos.collect{|p| p.photo_id}
   end
 
 private
