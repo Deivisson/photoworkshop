@@ -25,6 +25,7 @@ class Photo < ActiveRecord::Base
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 
   after_post_process :save_exif
+  after_create :save_user_points
 
   scope :landscapes, -> {joins(:exif).where('photo_exifs.imagewidth > photo_exifs.imageheight')}
   scope :portraits, -> {joins(:exif).where('photo_exifs.imagewidth < photo_exifs.imageheight')}
@@ -130,6 +131,14 @@ private
       longitude:parse_latlong(exif.gpslongitude)
     }
     self.exif = PhotoExif.new(attributes)
+  end
+
+  def save_user_points
+    attributes = {
+      user_id:self.id,
+      origin:UserPoint::UPLOAD_PHOTO, 
+      number:UserPoint::UPLOAD_PHOTO_POINTS}
+    UserPoint.create!(attributes)
   end
 
   def parse_latlong(latlong)

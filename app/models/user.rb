@@ -28,6 +28,8 @@ class User < ActiveRecord::Base
   has_many :notifications_sent, class_name: "Notification", foreign_key: 'user_sender_id'
   has_many :notifications_received, class_name: "Notification", foreign_key: 'user_receiver_id'
   has_many :favorite_photos
+  has_many :points, class_name: "UserPoint"
+  
   has_and_belongs_to_many :categories
 
   before_create :set_default_data

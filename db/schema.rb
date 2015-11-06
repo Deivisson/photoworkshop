@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151104225028) do
+ActiveRecord::Schema.define(version: 20151105232529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -192,6 +192,16 @@ ActiveRecord::Schema.define(version: 20151104225028) do
 
   add_index "user_auths", ["user_id"], name: "index_user_auths_on_user_id", using: :btree
 
+  create_table "user_points", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "number"
+    t.integer  "origin",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "user_points", ["user_id"], name: "index_user_points_on_user_id", using: :btree
+
   create_table "user_profiles", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "category_id"
@@ -245,6 +255,7 @@ ActiveRecord::Schema.define(version: 20151104225028) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "first_login",                        default: true
+    t.integer  "current_points",                     default: 0,    null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -339,6 +350,7 @@ ActiveRecord::Schema.define(version: 20151104225028) do
   add_foreign_key "photos", "users", name: "fk_photos_users"
   add_foreign_key "states", "countries", name: "states_countries"
   add_foreign_key "user_auths", "users", name: "user_auths_users"
+  add_foreign_key "user_points", "users"
   add_foreign_key "user_profiles", "categories", name: "user_profiles_categories"
   add_foreign_key "user_profiles", "cities", name: "user_profiles_cities"
   add_foreign_key "user_profiles", "photos", column: "cover_photo_id", name: "user_profiles_photos"

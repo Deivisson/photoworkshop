@@ -3,9 +3,9 @@ class UserRelation < ActiveRecord::Base
 	validates :user_followed_id, presence:true, uniqueness: {scope: :user_id}
 
   belongs_to :user
-  after_create :notificate_followed
+  after_create :notificate_followed, :save_points_for_following_user, :save_points_for_followed_user
 
-  private 
+private 
 
   def notificate_followed
 		link = "<a class='photographer-profile' href='/user/photographers/#{user_id}'>#{self.user.profile.user_name} </a> "
@@ -17,6 +17,24 @@ class UserRelation < ActiveRecord::Base
       read:false
     }
     Notification.create!(attributes)
+  end
+
+  #Save the points for user that is following
+  def save_points_for_following_user
+    attributes = {
+      user_id:self.user_id,
+      origin:UserPoint::FOLLOW, 
+      number:UserPoint::FOLLOW_POINTS}
+    UserPoint.create!(attributes)
+  end
+
+  #Save the points for followed user
+  def save_points_for_followed_user
+    attributes = {
+      user_id:self.user_followed_id,
+      origin:UserPoint::BE_FOLLOWED, 
+      number:UserPoint::BE_FOLLOWED_POINTS}
+    UserPoint.create!(attributes)
   end
 
 end
