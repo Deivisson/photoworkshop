@@ -68,6 +68,20 @@ body {
 				-webkit-border-radius: 5px 5px 0px 0px; 
 				height: 120px;
 				width: 100%;
+				.btn {
+					right: 0;
+					height: 16px;
+					margin: 5px 5px 0 0;
+					position: absolute;
+					width: 16px;
+					visibility: hidden;
+					span {
+						float: left;
+					}
+				}
+				&:hover .btn {
+					visibility: visible;
+				};
 			}
 			.user-infos {
 				margin-top: -80px;

@@ -4,3 +4,23 @@ img.user-avatar {
 	width: 120px;
 	height: 140px;
 }
+
+.edit-modal-cover-photos {
+  float: left;
+  margin-top: -20px;
+  padding: 0;
+  width: 680px;
+  .photographers-photo-gallary {
+		margin: 0;
+		.photo-gallary {
+			.photo-explore-container  {
+				margin-left: 0;
+				width: 100%;
+				.img-container {
+					height: 150px;
+					width: 31%;
+				}
+			}
+		}
+  }
+}

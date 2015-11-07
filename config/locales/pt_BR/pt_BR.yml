@@ -36,6 +36,7 @@ pt_BR:
     user_removed_from_workshop: "Participante removido com sucesso!!"
     photo_favorited: "Foto favoritada."
     photo_unfavorited: "Foto desfavoritada."
+    cover_photo_updated: "Foto da capa foi atualizada."
   notifications:
     team_welcome: "A equipe <strong>Pic2Gether</strong> lhe deseja boas vindas, e estamos ansiosos para conhecer o seu trabalho."
     followed: "%{follower} começou seguir você."

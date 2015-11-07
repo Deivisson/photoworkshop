@@ -1,7 +1,10 @@
 module User::PhotosHelper
 
-	def photo_gallery(location, show_details=true, show_grid_style_options=true)
-		@location = location; @show_details = show_details
+	def photo_gallery(location, show_details=true, show_grid_style_options=true, options={})
+		@location = location; 
+		@show_details = show_details
+		@photo_size = options[:photo_size] || :medium
+
 		case @gallary_type.to_sym
 		when :list
 			content = content_tag(:div, class:'grid-list'){list_grid}
@@ -249,7 +252,7 @@ module User::PhotosHelper
 		return if photo.nil?
 		html = content_tag(:div,class:"img-container #{class_name}", style:style) do 
 			inner_html = []
-			inner_html << content_tag(:div,class:"img-pic", style:"background-image: url('#{photo.picture.url(:medium)}')") do
+			inner_html << content_tag(:div,class:"img-pic", style:"background-image: url('#{photo.picture.url(@photo_size)}')") do
 				pic = []
 				pic << photo_resume_counts(photo)
 				pic << build_url(photo)
@@ -313,6 +316,8 @@ private
 		 	link_to("", user_photo_path(photo), class:'photo-picture')
 		elsif @location == :photos_explore
 			link_to("", user_photo_explore_show_path(photo),class:'photo-picture')
+		elsif @location == :profile_cover
+			link_to("", user_update_cover_photo_path(photo),class:'profile-photo-cover',remote:true, method: :put)
 		end
 	end
 end

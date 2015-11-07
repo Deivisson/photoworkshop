@@ -1,6 +1,6 @@
 class User::UserProfilesController < User::BaseController
   
-  before_action :set_user_profile, only: [:show, :edit, :update]
+  before_action :set_user_profile, only: [:show, :edit, :update, :edit_cover, :update_cover_photo]
   before_action :load_resources, only: [:edit, :update]
 
   def show; end
@@ -22,6 +22,19 @@ class User::UserProfilesController < User::BaseController
 
   def social_network_shared
     current_user.profile.update_social_network_shared!(params[:provider])
+  end
+
+  def edit_cover_photo
+    @photos = current_user.photos.limit(30)
+    @gallary_type = :table
+    render layout:false
+  end
+
+  def update_cover_photo
+    @photo = Photo.find(params[:photo_id])
+    unless @photo.nil?
+      @user_profile.update_attribute(:cover_photo_id,@photo.id)
+    end
   end
 
   private

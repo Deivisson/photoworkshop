@@ -22,6 +22,8 @@ Rails.application.routes.draw do
       resources :photo_comments, only: [:create,:destroy]
     end
     resources :user_profiles, :as => :profiles, :only => [:show,:edit,:update]
+    get "profile/edit_cover_photo", to:"user_profiles#edit_cover_photo", :as => :edit_cover_photo
+    put "profile/:photo_id/update_cover_photo", to:"user_profiles#update_cover_photo", :as => :update_cover_photo
     post "profile/social_network_shared/:provider", to: "user_profiles#social_network_shared"
     
     get "photo_likes/:photo_id/like", to: "photo_likes#like", :as => :photo_like

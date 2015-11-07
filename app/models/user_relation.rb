@@ -21,20 +21,12 @@ private
 
   #Save the points for user that is following
   def save_points_for_following_user
-    attributes = {
-      user_id:self.user_id,
-      origin:UserPoint::FOLLOW, 
-      number:UserPoint::FOLLOW_POINTS}
-    UserPoint.create!(attributes)
+    UserPoint.save_points(self.user_id, UserPoint::FOLLOW)
   end
 
   #Save the points for followed user
   def save_points_for_followed_user
-    attributes = {
-      user_id:self.user_followed_id,
-      origin:UserPoint::BE_FOLLOWED, 
-      number:UserPoint::BE_FOLLOWED_POINTS}
-    UserPoint.create!(attributes)
+    UserPoint.save_points(self.user_followed_id, UserPoint::BE_FOLLOWED)
   end
 
 end

@@ -26,6 +26,7 @@ class Photo < ActiveRecord::Base
 
   after_post_process :save_exif
   after_create :save_user_points
+  after_update :save_user_points_after_set_photo_as_cover
 
   scope :landscapes, -> {joins(:exif).where('photo_exifs.imagewidth > photo_exifs.imageheight')}
   scope :portraits, -> {joins(:exif).where('photo_exifs.imagewidth < photo_exifs.imageheight')}
@@ -134,11 +135,13 @@ private
   end
 
   def save_user_points
-    attributes = {
-      user_id:self.id,
-      origin:UserPoint::UPLOAD_PHOTO, 
-      number:UserPoint::UPLOAD_PHOTO_POINTS}
-    UserPoint.create!(attributes)
+    UserPoint.save_points(self.user_id, UserPoint::UPLOAD_PHOTO)
+  end
+
+  def save_user_points_after_set_photo_as_cover
+    if self.cover_changed? && self.cover?
+      UserPoint.save_points(self.user_id, UserPoint::PHOTO_COVERED)
+    end
   end
 
   def parse_latlong(latlong)

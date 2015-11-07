@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :categories
 
   before_create :set_default_data
-  after_create :create_profile, :send_welcome_notification
+  after_create :create_profile, :send_welcome_notification, :save_user_points
   after_save :create_user_auth
 
   attr_accessor :following, :full_name, :user_name, :unread_notifications_count, :favorited_photos_ids
@@ -134,6 +134,10 @@ private
         avatar_remote_url: auth_avatar_url
       })
 	end
+
+  def save_user_points
+    UserPoint.save_points(self.id, UserPoint::SIGN_UP)
+  end
 
   def send_welcome_notification
     attributes = {

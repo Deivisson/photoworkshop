@@ -1,6 +1,11 @@
 <div class="float-container">
   <div class="user-content">
-    <div class="cover-pic" style="background-image: url('<%= current_user.profile.cover_url %>')"></div>
+    <div id="user-home-cover-pic" class="cover-pic" 
+         style="background-image: url('<%= current_user.profile.cover_url %>')">
+      <%= link_to user_edit_cover_photo_path(0), class:"btn", id:'edit-cover' do %>
+        <span class="icon16pb edit"></span>
+      <% end %>
+    </div>
     <div class="user-infos">
       <%= image_tag(current_user.profile.avatar.url(:medium),class:'avatar') %>
       <%= content_tag :label,class:'user-name' do %>

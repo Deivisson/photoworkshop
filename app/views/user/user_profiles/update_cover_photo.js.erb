@@ -1,0 +1,11 @@
+<% if @user_profile.errors.empty? %>
+	$("#edit-cover-modal-dialog").dialog( "close" );
+	if ($("#user-home-cover-pic").length > 0) {
+		$("#user-home-cover-pic").css("background-image", "url('<%= current_user.profile.cover_url %>");  
+	}
+	if ($("#user-profile-cover-pic").length > 0) {
+		$("#user-profile-cover-pic").css("background-image", "url('<%= current_user.profile.cover_url(:huge) %>");  
+	}
+	
+	flashNoticeMessage("<%= t('messages.cover_photo_updated') %>");
+<% end %>

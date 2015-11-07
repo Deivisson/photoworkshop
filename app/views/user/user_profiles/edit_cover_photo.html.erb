@@ -1,0 +1,7 @@
+<div id="edit-modal-cover-containter" class="edit-modal-cover-photos">
+	<%= content_tag :label,t('.title'), 
+			class:'modal-title',id:'modal-title-edit-cover' %>
+	<div class="photographers-photo-gallary" >
+		<%= photo_gallery :profile_cover, false, false, {photo_size: :small} %>
+	</div>
+</div>
