@@ -37,6 +37,21 @@ pt_BR:
     photo_favorited: "Foto favoritada."
     photo_unfavorited: "Foto desfavoritada."
     cover_photo_updated: "Foto da capa foi atualizada."
+  levels:
+    beginner: "Iniciante"
+    student: "Estudante"
+    amateur: "Amador"
+    amateur_technician: "Amaddor Técnico"
+    skilled: "Habilidoso"
+    semi_professional: "Semi Profissional"
+    professional: "Profissional"
+    expert: "Expert"
+    veteran: "Veterano"
+    master: "Mestre"
+    grand_master: "Grão-Mestre"
+    vip: "Vip"
+    superstar: "Super Star"
+
   notifications:
     team_welcome: "A equipe <strong>Pic2Gether</strong> lhe deseja boas vindas, e estamos ansiosos para conhecer o seu trabalho."
     followed: "%{follower} começou seguir você."

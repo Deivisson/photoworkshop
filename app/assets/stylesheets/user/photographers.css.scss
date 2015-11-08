@@ -168,6 +168,14 @@ ul.users-photographers {
 		background-size: cover;
 		height: 300px;
 		width: 100%;
+		.btn {
+	    float: right;
+	    height: 16px;
+	    margin: 20px 20px 0 0;
+			span {
+				float: left;
+			}
+		}
 	}
 	.profile {
 		border-bottom: 1px solid #DDDDDD;

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  i18n_key: MyString
+  points_from: 1
+  points_to: 1
+
+two:
+  i18n_key: MyString
+  points_from: 1
+  points_to: 1

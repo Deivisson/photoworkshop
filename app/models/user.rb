@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   after_create :create_profile, :send_welcome_notification, :save_user_points
   after_save :create_user_auth
 
-  attr_accessor :following, :full_name, :user_name, :unread_notifications_count, :favorited_photos_ids
+  attr_accessor :following, :full_name, :user_name, :unread_notifications_count, :favorited_photos_ids, :level
   attr_accessor :auth_avatar_url, :auth_provider, :auth_uid, :account_url
   
 
@@ -121,6 +121,9 @@ class User < ActiveRecord::Base
     @favorited_photos_ids ||= self.favorite_photos.collect{|p| p.photo_id}
   end
 
+  def level
+    @level ||= Level.by_user(self)
+  end
 private
 
 	def set_default_data

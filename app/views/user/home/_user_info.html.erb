@@ -39,9 +39,11 @@
     </div>
     <div class="level-progress">
       <div class="progress-bar">
-        <span class="points">1600 pontos - Amador</span>
-        <div class="progress">
-          
+        <span class="points">
+          <%= current_user.level.progress_label %>
+        </span>
+        <div class="progress" 
+            style="width:<%= current_user.level.progress_perc %>%">
         </div>
       </div>
     </div>

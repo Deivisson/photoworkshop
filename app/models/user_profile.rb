@@ -16,6 +16,7 @@ class UserProfile < ActiveRecord::Base
 
   attr_accessor :country_id, :state_id, :avatar_remote_url, :provider_shared
 
+  after_save :save_user_points_if_add_cover_photo
   before_create :set_initial_datas
 
   def state_id
@@ -63,4 +64,10 @@ private
       self.avatar = URI.parse(self.avatar_remote_url)
     end
   end 
+
+  def save_user_points_if_add_cover_photo
+    if self.cover_photo_id_changed? && self.cover_photo_id_was == nil
+      UserPoint.save_points(self.user_id, UserPoint::ADD_COVER)
+    end
+  end
 end

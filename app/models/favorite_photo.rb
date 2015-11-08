@@ -11,12 +11,14 @@ private
 
 	#Save the points for user that favorited the photo
   def save_user_points
-    UserPoint.save_points(self.user_id, UserPoint::ADD_FAVORITE_PHOTO)
+    UserPoint.save_points(self.user_id, UserPoint::ADD_FAVORITE_PHOTO,
+                          {favorite_photo_id:photo_id})
   end
 
   #Save the points for owner of photo
   def save_points_for_user_photo_owner
-    UserPoint.save_points(self.photo.user_id, UserPoint::RECEIVE_FAVORITE_PHOTO)
+    UserPoint.save_points(self.photo.user_id, UserPoint::RECEIVE_FAVORITE_PHOTO,
+                        {favorite_photo_id:photo_id,user_favoriter_id:self.user_id })
   end
 
 end

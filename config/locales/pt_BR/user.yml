@@ -57,7 +57,8 @@ pt_BR:
         basic_info: "Informações Básicas"
         social_networks: "Redes Sociais"
         location: "Localização"
-
+      edit_cover_photo:
+        title: "Foto de Capa "
     photographers:
       index:
         search_placeholder: "Pesquisar Fotografos"
