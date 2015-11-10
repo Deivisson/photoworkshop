@@ -1,2 +1,15 @@
-$("#photographers-container").html("<%= escape_javascript(render 'photographers') %>");
+<% if @paging %>
+		$("#photographers-items").append("<%= escape_javascript(render 'photographers') %>");
+	<% if @users.next_page %>
+		$('.pagination').replaceWith('<%= j will_paginate @users %>');
+	<% else %>
+		$(window).off('scroll');
+		$('.pagination').remove();
+	<% end %>
+<% else %>
+	$("#photographers-items").html("<%= escape_javascript(render 'photographers') %>");
+	$("<div class='pagination'></div>").insertAfter($("#photographers-items"));
+	$('#infinite-scrolling').replaceWith('<%= j will_paginate @users %>');
+<% end %>
 photographerPreview();
+ActiveInfinitScrolling();

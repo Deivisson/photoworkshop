@@ -4,7 +4,8 @@ class User::PhotographersController < User::BaseController
 
 	#For the index method, the @user is current user
 	def index
-		@users = User.joins(:profile).where("users.id <> ?",current_user.id)
+		@users = User.joins(:profile).paginate(page: params[:page], per_page: 30)
+		@users = @users.where("users.id <> ?",current_user.id)
 		if params[:search].present?
 			@users = @users.where("user_profiles.user_name like ?","%#{params[:search]}%") 
 		end
@@ -12,6 +13,7 @@ class User::PhotographersController < User::BaseController
 			@users = @users.where("user_profiles.category_id = ?", params[:category_id])
 		end
 		@categories	= Category.all
+		@paging = params[:page].present?
 		render layout:'user/explorer'
 	end
 

@@ -1,4 +1,5 @@
-$('#home-timeline').append('<%= j render 'timeline' %>');
+//$('#home-timeline').append('<%= j render 'timeline' %>');
+$('<%= j render 'timeline' %>').insertBefore( $( ".pagination" ) );
 <% if @photos.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate @photos %>');
 <% else %>

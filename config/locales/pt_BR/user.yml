@@ -63,8 +63,8 @@ pt_BR:
       index:
         search_placeholder: "Pesquisar Fotografos"
 
-      show:
-        score: "Pontuação %{score}"
+      full_profile:
+        score: "Nivel %{level} - %{position}"
       follow_links:
         follow: "Seguir"
         unfollow: "Parar de Seguir"

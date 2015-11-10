@@ -99,10 +99,17 @@ body {
 					float: left;
 					font-size: 18px;
 					margin: 45px 0 0 5px;
-					span {
+
+					a {
+						color: #fff;
 						display: block;
 						font-weight: normal;
 						float: left;
+						text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.75);
+						text-decoration: none;
+						&:hover {
+							text-decoration: underline;
+						};
 					}
 					p {
 						color: #fff;

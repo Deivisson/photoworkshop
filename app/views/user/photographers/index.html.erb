@@ -20,7 +20,14 @@
 		<% end %>
 	</ul>
 <% end %>
-<div id="photographers-container">
-	<%= render "photographers" %>
-</div>
 
+<%= content_tag :ul, class:"users-photographers", id:"photographers-container" do %>
+	<div id="photographers-items">
+		<%= render "photographers" %>
+	</div>
+	<div class="pagination"></div>
+<% end %>
+
+<div id="infinite-scrolling">
+  <%= will_paginate @users %>
+</div>

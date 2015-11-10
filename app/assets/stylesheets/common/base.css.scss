@@ -309,3 +309,26 @@ html {
   -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
   transform: rotate(-90deg);
 }
+
+.loading-gif {
+  background: url(asset-path("loading-wb.gif"));
+  height: 60px;
+  left: 50%;
+  margin-left: -50px;
+  position: absolute;
+  top: 40%;
+  width: 100px;
+}
+
+.pagination {
+  float: left;
+  height: 60px;
+  /*position: fixed;*/
+  width: 60%; 
+  margin-top: 40px;
+  margin-bottom: 120px;
+  a,span,em {
+    color: #fff;
+    visibility: hidden;
+  }
+}

@@ -9,7 +9,7 @@
     <div class="user-infos">
       <%= image_tag(current_user.profile.avatar.url(:medium),class:'avatar') %>
       <%= content_tag :label,class:'user-name' do %>
-        <span><%= current_user.profile.short_name %></span>
+        <%= link_to current_user.profile.short_name, user_photographer_path(current_user) %>
         <p><%= current_user.profile.category.description %></p>
       <% end %>
       <!-- <span class="user-ranking"><%= "97%" %></span> -->
