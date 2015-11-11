@@ -270,7 +270,7 @@ a.sign-up-button {
     color: #FFF;
     text-align: center;
     text-transform: uppercase;
-    margin-top: -20px;
+    margin-top: -30px;
     width: 100%;
   }
   h4.sub-title {
@@ -282,6 +282,95 @@ a.sign-up-button {
     margin-left: 15%;
   }
   ul.how-work-steps {
+    float: left;
+    width: 100%;
+    float: left;
+    margin-top: 140px;
+    .horizontal-line {
+      background-color: #fff;
+      height: 2px;
+      width: 100%;
+      float: left;
+      margin-top: 95px;
+    }    
+    li {
+      float: left;
+      margin-top: -60px; 
+      .vertical-line {
+        display: none;
+        background-color: #fff;
+        float: left;
+        height: 180px;
+        margin: -140px 0 0 125px;
+        width: 2px;
+      }      
+
+      .step {
+        background-color: #2D2F37;
+        /*border: 2px solid #008CBF;*/
+        border: 1px solid #212121;
+        border-radius: 10px;
+        cursor: pointer;
+        float: left;
+        height: 280px; 
+        margin: 0 0 35px 5px;
+        position: relative;
+        width: 220px;
+        z-index: 99999999;
+        transition:All 0.6s ease;
+        -webkit-transition:All 0.6s ease;
+        -moz-transition:All 0.6s ease;
+        -o-transition:All 0.6s ease;
+        transform: rotate(0deg) scale(1.0)  translate(10px);
+        -webkit-transform: rotate(0deg) scale(1.0)  translate(10px);
+        -moz-transform: rotate(0deg) scale(1.0)  translate(10px);
+        -o-transform: rotate(0deg) scale(1.0)  translate(10px);
+        -ms-transform: rotate(0deg) scale(1.0)  translate(10px);
+        &:hover, &.hover {
+          border-color: #008CBF;
+          transform: rotate(0deg) scale(1.2)  translate(0px);
+          -webkit-transform: rotate(0deg) scale(1.2)  translate(0px);
+          -moz-transform: rotate(0deg) scale(1.2)  translate(0px);
+          -o-transform: rotate(0deg) scale(1.2)  translate(0px);
+          -ms-transform: rotate(0deg) scale(1.2)  translate(0px);
+          box-shadow: 1px 1px 2px #008CBF;
+          z-index: 999999999;
+          h4 {
+            font-size: 12px;
+            margin-top: 20px;
+            line-height: 15px; 
+          }
+         /* p.step-tip {
+            visibility: visible;
+            font-size: 12px;
+            line-height: 14px;
+            margin-left: 3%;
+            width: 94%;
+          }*/
+        }
+        h4 {
+          /*color: #FFF;*/
+          color: #008cbf;
+          border-bottom: 1px solid #212121;
+          font-size: 16px;
+          height: 40px;
+          line-height: 22px;
+          text-align: center;
+          margin: 10px 0 0 0px;
+          width: 100%;
+        }
+        p.step-tip {
+          color: #fff;
+          font-size: 16px;
+          line-height: 24px;
+          margin: 20px 5px 0 5px;
+          text-align: center;
+          width: 210px;
+        }
+      }
+    }
+  }
+  /*ul.how-work-steps {
     float: left;
     width: 100%;
     float: left;
@@ -361,7 +450,7 @@ a.sign-up-button {
         }
       }
     }
-  }
+  }*/
 }
 
 .made-for-who {
@@ -371,7 +460,7 @@ a.sign-up-button {
     color: #fff;
     text-align: center;
     text-transform: uppercase;
-    margin-top: -30px;
+    margin-top: -60px;
     width: 100%;
   }
   h4.sub-title {
@@ -469,6 +558,7 @@ a.sign-up-button {
       }
       &.person1, &.person2, &.person3, &.person4, &.person5 {
         z-index: 1;
+        position: relative;
         transition:All 0.2s ease;
         -webkit-transition:All 0.2s ease;
         -moz-transition:All 0.2s ease;
