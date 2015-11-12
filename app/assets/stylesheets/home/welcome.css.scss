@@ -230,16 +230,24 @@ a.sign-up-button {
   padding: 5px;
   position: absolute;
   text-decoration: none;
+  transition:All 0.6s ease;
   width: 250px;
   &.facebook {
     background-color: #4E70B5;
     border: 1px solid #4453B5;
     margin-left: 210px;
+    &:hover {
+      background-color: #325293;
+      border: 1px solid #4E70B5;
+    };
   }
   &.twitter {
-   background-color: #28C2FA; 
-   border: 1px solid #29AFFA;
-   margin-left: 490px;
+    background-color: #28C2FA; 
+    border: 1px solid #29AFFA;
+    margin-left: 490px;
+    &:hover {
+      background-color: #1595C4;
+    };
   }
 }
 
