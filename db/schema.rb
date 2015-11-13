@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107183640) do
+ActiveRecord::Schema.define(version: 20151112234019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -148,6 +148,17 @@ ActiveRecord::Schema.define(version: 20151107183640) do
   add_index "photo_likes", ["photo_id"], name: "index_photo_likes_on_photo_id", using: :btree
   add_index "photo_likes", ["user_id"], name: "index_photo_likes_on_user_id", using: :btree
 
+  create_table "photo_ratings", force: :cascade do |t|
+    t.integer  "photo_id"
+    t.integer  "rating_criterium_id"
+    t.integer  "score",               default: 0
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
+  add_index "photo_ratings", ["photo_id"], name: "index_photo_ratings_on_photo_id", using: :btree
+  add_index "photo_ratings", ["rating_criterium_id"], name: "index_photo_ratings_on_rating_criterium_id", using: :btree
+
   create_table "photos", force: :cascade do |t|
     t.integer  "user_id",                                                   null: false
     t.integer  "category_id",                                               null: false
@@ -170,6 +181,12 @@ ActiveRecord::Schema.define(version: 20151107183640) do
   add_index "photos", ["category_id"], name: "index_photos_on_category_id", using: :btree
   add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
   add_index "photos", ["workshop_activity_response_id"], name: "index_photos_on_workshop_activity_response_id", using: :btree
+
+  create_table "rating_criteria", force: :cascade do |t|
+    t.string   "i18n_key",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "sessions", force: :cascade do |t|
     t.string   "session_id", limit: 255, null: false
@@ -204,9 +221,13 @@ ActiveRecord::Schema.define(version: 20151107183640) do
   create_table "user_points", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "number"
-    t.integer  "origin",     null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "origin",            null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "user_followed_id"
+    t.integer  "user_follower_id"
+    t.integer  "favorite_photo_id"
+    t.integer  "user_favoriter_id"
   end
 
   add_index "user_points", ["user_id"], name: "index_user_points_on_user_id", using: :btree
@@ -355,6 +376,8 @@ ActiveRecord::Schema.define(version: 20151107183640) do
   add_foreign_key "photo_exifs", "photos", name: "fk_photos_exifs"
   add_foreign_key "photo_likes", "photos", name: "photo_likes_photos"
   add_foreign_key "photo_likes", "users", name: "photo_likes_user"
+  add_foreign_key "photo_ratings", "photos"
+  add_foreign_key "photo_ratings", "rating_criteria"
   add_foreign_key "photos", "categories", name: "fk_photos_category"
   add_foreign_key "photos", "users", name: "fk_photos_users"
   add_foreign_key "states", "countries", name: "states_countries"

@@ -51,6 +51,11 @@ pt_BR:
     grand_master: "Grão-Mestre"
     vip: "Vip"
     superstar: "Super Star"
+  rating_criterias:
+    composition: "Composição"
+    criativity: "Criatividade"
+    exhibition: "Exposição"
+    distinctness: "Nitidez"
 
   notifications:
     team_welcome: "A equipe <strong>Pic2Gether</strong> lhe deseja boas vindas, e estamos ansiosos para conhecer o seu trabalho."

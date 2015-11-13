@@ -31,7 +31,6 @@
 	    width: 535px;
 		}
 	}
-
 	
 	.panel .panel-content .activity-response .posted-photo .buttons-container {
 		float: right;
@@ -70,9 +69,48 @@
   }
 }
 
-.teste-column {
+.activity-photo-details {
   float: right;
   height: 100%;
   width: 260px;
 
+}
+
+.activity-photo-details .rating {
+	float: left;
+	width: 250px;
+	ul {
+		li {
+			margin-bottom: 2px;
+			.score-bar {
+				border: 1px solid #777;
+				height: 24px;
+				width: 240px;
+				.score {
+					height: 100%;
+					&.poor {background-color: #EA8A75;width: 20%;}
+					&.so-so {background-color: #49BC51;width: 40%;}
+					&.good {background-color: #E5C92B;width: 60%;}
+					&.so-good {background-color:#45CCBE;width: 80%;}
+					&.excelent {background-color: #369EF9;width: 100%;}
+				}
+			}
+			.score-bar .score {
+				label {
+			    float: left;
+					font-weight: bold;
+			    height: 100%;
+			    line-height: 22px;
+				}
+			}
+		 .score-bar	span.score-value {
+			  float: right;
+			  font-weight: bold;
+			  height: 100%;
+			  line-height: 25px;
+			  margin: -25px 7px 0 0;
+			}
+		}
+	}
+	
 }
