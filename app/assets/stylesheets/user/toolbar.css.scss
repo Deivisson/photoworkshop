@@ -51,12 +51,23 @@ ul.toolbar {
 		}
 		&.fixed-menu {
 			float: left;
-			width: 240px;
-			border-right: 1px solid #0F0F0F;
+			width: 325px;
+			/*border-right: 1px solid #0F0F0F;*/
 			li {
 				float: right;
+
+			}
+			li.app-logo {
+				border-right: 1px solid #0F0F0F;
+				float: left;
+				width: 240px;
+				img {
+					margin: 5px 0 0 60px;
+					width: 120px;
+				}
 			}
 		}
+
 	}
 	li.page-title {
 		border-right: 0 !important;
