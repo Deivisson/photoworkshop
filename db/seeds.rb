@@ -75,3 +75,10 @@ if RatingCriterium.first.nil?
   ].each {|criteria|RatingCriterium.create!(criteria)}
   puts "Data entered in the Rating criterias table"
 end
+
+
+#remove if after execute
+State.all.each do |state|
+  state.name = state.name.gsub('"',"")
+  state.save
+end

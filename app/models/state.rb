@@ -6,4 +6,6 @@ class State < ActiveRecord::Base
 	      
   belongs_to :country
   has_many :cities
+
+  default_scope -> {order("name asc")}
 end

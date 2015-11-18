@@ -1,5 +1,13 @@
 var tourHome = {
   id: "photo-upload-link-header",
+  i18n: {
+    nextBtn: "Avançar",
+    prevBtn: "Voltar",
+    doneBtn: "Concluir",
+    skipBtn: "Cancelar",
+    closeTooltip: "Fechar",
+    stepNums : ["1", "2", "3"]
+  },
   steps: [
     {
       title: "Poste suas fotos",

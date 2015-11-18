@@ -22,11 +22,13 @@
 
       <%= f.input :state_id,
                   as: :select,
-                  collection: @states.collect{|c|[c.name,c.id]} %>   
+                  collection: @states.collect{|c|[c.name,c.id]},
+                  input_html: {id:'states-select'} %>   
 
       <%= f.input :city_id,
                   as: :select,
-                  collection: @cities.collect{|c|[c.name,c.id]} %>                     
+                  collection: @cities.collect{|c|[c.name,c.id]},
+                  input_html: {id:'cities-select'} %>                     
     </div>
   <% end %>
 
