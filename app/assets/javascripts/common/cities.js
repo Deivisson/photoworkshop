@@ -1,12 +1,14 @@
-$(document).ready(function(){
+$(document).on('ready page:load', function (){
   //LOAD CITIES BY STATE
   bindLoadCity();
 });
 
 function bindLoadCity() {
-  $("#states-select").change(function(){
-    loadCities($(this).val(), null);
-  });
+  if ($("#states-select").length > 0) {
+    $("#states-select").change(function(){
+      loadCities($(this).val(), null);
+    });  
+  }
 }
 
 

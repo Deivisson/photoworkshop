@@ -10,7 +10,7 @@
       	<%= image_tag(user.profile.avatar.url(:medium),class:'avatar') %>
         <%= content_tag :label,class:'user-name' do %>
           <span>
-          	<%= link_to user.profile.user_name,
+          	<%= link_to user.profile.user_name.truncate(22),
   								user_photographer_path(user.id), class:"photographer-profile" %>
   				</span>
           <p><%= user.profile.category.description %></p>

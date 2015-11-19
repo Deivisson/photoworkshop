@@ -53,6 +53,6 @@ class User::UserProfilesController < User::BaseController
       @categories = Category.all
       @countries = Country.all
       @states = State.all
-      @cities = City.limit(40)
+      @cities =  @user_profile.state_id.nil? ? [] : City.state(@user_profile.state_id)
     end    
 end
