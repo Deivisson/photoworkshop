@@ -28,6 +28,9 @@ function photoView(){
 		  		jQuery('body').css('overflow','hidden');
 		  		$(".ui-widget-overlay").css("opacity","1");
 		  		adjustLayout();
+	  			$("#photo-view-modal-close-button").click(function() {
+		  			$("#photo-modal-dialog").dialog( "close" );
+					});
 		  });
 		  dialog_form.dialog('open');
 		  e.preventDefault();  

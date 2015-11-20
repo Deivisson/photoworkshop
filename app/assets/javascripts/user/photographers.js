@@ -24,8 +24,7 @@ function photographerPreview(){
 	  		$(".ui-dialog-content").css("overflow-x", "hidden");
 	  		photoView();
 	  		$("#modal-close-button").click(function() {
-					$('#photographer-modal-dialog').remove();
-					jQuery('body').css('overflow','auto');
+					$('#photographer-modal-dialog').dialog("close");
 				});
 		  });
 		  dialog_form.dialog('open');

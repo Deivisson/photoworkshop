@@ -8,9 +8,7 @@
       	<% end if current_user.id == @user.id %>
 		</div>
 		<div class="profile">
-			<div class="avatar-container">
-				<%= image_tag(@user.profile.avatar.url(:medium)) %>
-			</div>
+			<div class="avatar-container"><%= image_tag(@user.profile.avatar.url(:medium)) %></div>
 			<%= content_tag :h1, @user.profile.user_name,class:"user-name" %>
 			<%= content_tag :h3, class:"score" do %>
 				<%= t('.score',level:@user.level.number,position:@user.level.description) %>

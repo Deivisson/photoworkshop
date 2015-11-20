@@ -1,6 +1,6 @@
 <%= content_tag :div, style:'float:left' do %>
-
   <div class="photo-container" id="photo-container" style:'position:fixed'>
+    <%= link_to "", "#",class:"close-button",id:"photo-view-modal-close-button" %>
     <%= link_to "", user_photo_path(@photo,act:'previous'), remote:true,class:"previous-arrow previous-link" %> 
     <%= link_to "", user_photo_path(@photo,act:'next'), remote:true,class:"next-arrow next-link" %> 
     <%= render 'user/shared/photo_view/toolbar.html.erb' %> 

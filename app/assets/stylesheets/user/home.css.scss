@@ -27,8 +27,19 @@ ul.timeline {
 					margin-top: 10px;	 	
 	 			}
 	 			&.user-name {
-	 				margin: 25px 0 0 -42px
+	 				margin: 25px 0 0 -42px;
+	 				a {
+	 					color: #333;
+	 					text-decoration: none;
+	 					&:hover {
+	 						text-decoration: underline;
+	 					}
+	 				}
 	 			}
+		 	}
+		 	img.user-avatar {
+		 		border-radius: 25%;
+		 		margin-left: 0px;
 		 	}
 		}
 		.timestamp {

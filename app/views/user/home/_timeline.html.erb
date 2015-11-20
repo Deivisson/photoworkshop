@@ -3,7 +3,10 @@
 		<div class="photo-author-container">
 			<%= image_tag(photo.user.profile.avatar(:thumb),class:'user-avatar') %>
 			<span class="photo-by">Photo by</span>
-			<span class="user-name"><%= photo.author %></span>
+			<span class="user-name">
+				<%= link_to photo.author, user_photographer_path(photo.user_id), 
+                  	class:'photographer-name photographer-profile' %>
+			</span>
 		</div>
 		<span class="timestamp"><%= time_ago_in_words(photo.created_at) %> </span>
 		<div class="item" >

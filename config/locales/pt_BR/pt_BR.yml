@@ -26,7 +26,7 @@ pt_BR:
     share_on_facebook: "Compartilhar Facebook"
     share_on_twitter: "Compartilhar Twitter"
   messages:
-    confirm_destroy: "Confirma Exlusão?"
+    confirm_destroy: "Confirma Exclusão?"
     destroyed_record: "Registro excluído com sucesso!"
     updated_record: "Registro atualizado com sucesso!"
     created_record: "Registro cadastros com sucesso!"
