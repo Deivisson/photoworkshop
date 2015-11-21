@@ -58,7 +58,7 @@ pt_BR:
     distinctness: "Nitidez"
 
   notifications:
-    team_welcome: "A equipe <strong>Pic2Gether</strong> lhe deseja boas vindas, e estamos ansiosos para conhecer o seu trabalho."
+    team_welcome: "A equipe <strong>Pic2Gether</strong> lhe deseja boas vindas, e estamos ansiosos para conhecer a sua arte."
     followed: "%{follower} começou seguir você."
     workshop_metriculated: "Sua matrícula para o workshop %{workshop_url} acabou de ser confirmada!"
     workshop_subscribe: "Pré-matrícula realizada com sucesso para o workshop %{workshop_url}. Para mais detalhes, confira o seu email."

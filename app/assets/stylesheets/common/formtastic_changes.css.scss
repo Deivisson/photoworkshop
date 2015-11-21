@@ -169,8 +169,8 @@
 /* INLINE ERRORS
 --------------------------------------------------------------------------------------------------*/
 .formtastic .inline-errors {
-  color:#cc0000;
-  margin:0.5em 0 0 0%;
+  color:#cc0000 !important;
+  margin:0 0 0 0%;
 }
 
 .formtastic .errors {

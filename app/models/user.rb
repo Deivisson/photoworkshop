@@ -144,7 +144,7 @@ private
 
   def send_welcome_notification
     attributes = {
-      content:"Teste",
+      content: I18n.t('notifications.team_welcome'),
       type_of: Notification::TYPE_WELCOME,
       user_sender_id: SYSTEM_USER,
       user_receiver_id: self.id,

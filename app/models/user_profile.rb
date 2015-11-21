@@ -6,7 +6,7 @@ class UserProfile < ActiveRecord::Base
   validates :full_name, presence:true, length: {maximum:100}, uniqueness:true
   
   has_attached_file :avatar, 
-                    :styles => { :medium => "500x500>", :thumb => "100x100>" }, 
+                    :styles => { :medium => "500x500>", :thumb => "200x200>" }, 
                     :default_url => "user/no_avatar.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   
