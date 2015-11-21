@@ -10,7 +10,9 @@ $(document).on('ready page:load', function (){
 	// Notification Menu
 	$("#notifications-menu-trigger").click(function(e){
 		closeAllMenus();
-		e.stopPropagation();
+		if ($("#notification-bubble-count").length == 0) {
+			e.stopPropagation();	
+		}
 		menuTrigger($('#notifications-menu-dropdown'));
 	});
 

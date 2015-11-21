@@ -4,7 +4,9 @@
   							:input_html => {
   								rows:rows_count, 
   								placeholder:t('.comment_box_placeholder'),
-  								class:"photo-comment-input-text"},
+  								class:"photo-comment-input-text",
+  								maxlength: 1500
+								},
   							:label => false %>
   <% end %>
   <%= submit_tag t('buttons.comment'), class:'submit-button' if submit_button %>

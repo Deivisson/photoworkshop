@@ -1,11 +1,11 @@
 /* Photographers Page List*/
 ul.users-photographers {
 	float: left;
-  left: 30px;
-  margin: 0px 5% 0 5%;
-	width: 90%;	
-  position: absolute;
-
+  /*left: 10px;*/
+  margin: 0 0 0 20px;
+  position: relative;
+  width: auto;
+  /*right: 10px;*/
 	li {
 		background-color: #FFF;
 		border: 1px solid #cecece;
@@ -16,6 +16,7 @@ ul.users-photographers {
 		margin: 11px 7px 0 0px;
 		padding: 0;
 		width: 24%;
+		min-width: 240px;
 		height: 300px;
 		.cover-pic {
 			background-position: top center;
@@ -84,6 +85,7 @@ ul.users-photographers {
 			    height: auto;
 			    margin: 0 2px 0 0;
 			    width: auto;
+			    min-width: auto;
 					label {
 						color: #999999;
 						float: left;

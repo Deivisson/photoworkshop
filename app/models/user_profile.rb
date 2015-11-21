@@ -4,6 +4,14 @@ class UserProfile < ActiveRecord::Base
 
   validates :user_name, presence:true
   validates :full_name, presence:true, length: {maximum:100}, uniqueness:true
+
+  # validates :facebook,    :url => {:allow_blank => true}
+  # validates :twitter,     :url => {:allow_blank => true}
+  # validates :google_plus, :url => {:allow_blank => true}
+  # validates :tumblr,      :url => {:allow_blank => true}
+  # validates :flickr,      :url => {:allow_blank => true}
+
+  validate :verify_urls
   
   has_attached_file :avatar, 
                     :styles => { :medium => "500x500>", :thumb => "200x200>" }, 
@@ -16,9 +24,10 @@ class UserProfile < ActiveRecord::Base
 
   attr_accessor :country_id, :state_id, :avatar_remote_url, :provider_shared
 
+  #before_validation :verify_urls
   after_save :save_user_points_if_add_cover_photo
   before_create :set_initial_datas
-
+  
   def state_id
   	if @state_id.nil? && !self.city_id.nil?
   		@state_id = self.city.state_id
@@ -69,5 +78,23 @@ private
     if self.cover_photo_id_changed? && self.cover_photo_id_was == nil
       UserPoint.save_points(self.user_id, UserPoint::ADD_COVER)
     end
+  end
+
+  def verify_urls
+    valid_url!(:facebook,self.facebook)
+    valid_url!(:twitter,self.twitter)
+    valid_url!(:google_plus,self.google_plus)
+    valid_url!(:tumblr,self.tumblr)
+    valid_url!(:flickr,self.flickr)
+  end
+
+  def valid_url!(field,url)
+    return unless url.present?
+    self.send("#{field.to_s}=","http://#{url}") unless self.send("#{field.to_s}").include?("http")
+    uri = URI.parse(url)
+    uri.kind_of?(URI::HTTP)
+  rescue URI::InvalidURIError
+    self.errors.add(field, I18n.t('activerecord.errors.messages.invalid_url'))
+    false
   end
 end
