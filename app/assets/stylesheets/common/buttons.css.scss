@@ -175,6 +175,24 @@
   };
 }
 
+.btn-submit {
+  cursor:pointer;
+  font-size:14px !important;
+  font-weight: bold !important;
+  height:35px ;
+  line-height: 31px;
+  padding: 0px 8px !important;
+  vertical-align: center;
+  &:disabled {
+    background:#e4e4e4;
+    background-image: none;
+    box-shadow: 0 1px 0 0 #e4e4e4 inset;
+    border:1px solid #c3c3c3;
+    color: #a2a2a2;
+    text-shadow: 0px 0px 0px #495262;
+  }
+}
+
 /* Sizes */
 .btn-bigger {
   font-size: 18px;

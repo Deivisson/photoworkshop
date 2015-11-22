@@ -194,7 +194,7 @@ ul.menu {
     font-size: 62px;
   }
   h2 {
-    font-size: 30px;
+    font-size: 25px;
     margin-top: 5px;
     letter-spacing: 2px;
   }
@@ -249,7 +249,7 @@ a.sign-up-button {
 }
 
 
-.how_work, .made-for-who, .professionals, .sign-up-container {
+.how_work, .made-for-who, .professionals, .sign-up-container, .contact-us {
   background-color: red;
   float: left;
   height: 600px;
@@ -263,13 +263,13 @@ a.sign-up-button {
 .how_work {
   background-color: #2D2F37;
   .bg {
-    /*background: url(asset-path("home/camera.jpg"));*/
     background-image: url(asset-path("home/camera1.jpg"));
-    position: absolute;
+/*    position: absolute;*/
     width: 100%;
     height: 100%;
     opacity: 0.1;
-    margin-top: -129px;
+    top: 0px;
+    position: absolute;
     z-index: 1
   }  
   h1.title {
@@ -277,7 +277,7 @@ a.sign-up-button {
     color: #FFF;
     text-align: center;
     text-transform: uppercase;
-    margin-top: -30px;
+    margin-top: -40px;
     width: 100%;
   }
   h4.sub-title {
@@ -377,87 +377,6 @@ a.sign-up-button {
       }
     }
   }
-  /*ul.how-work-steps {
-    float: left;
-    width: 100%;
-    float: left;
-    margin-top: 140px;
-    .horizontal-line {
-      background-color: #fff;
-      height: 2px;
-      width: 100%;
-      float: left;
-      margin-top: 95px;
-    }    
-    li {
-      float: left;
-      margin-top: -95px; 
-      .vertical-line {
-        display: none;
-        background-color: #fff;
-        float: left;
-        height: 180px;
-        margin: -20px 0 0 125px;
-        width: 2px;
-      }      
-
-      .step {
-        background-color: #2D2F37;
-        border: 2px solid #008CBF;
-        border-radius: 50%;
-        cursor: pointer;
-        float: left;
-        height: 180px; 
-        margin: 0 0 35px 50px;
-        width: 180px;
-        z-index: 999;
-        transition:All 0.6s ease;
-        -webkit-transition:All 0.6s ease;
-        -moz-transition:All 0.6s ease;
-        -o-transition:All 0.6s ease;
-        transform: rotate(0deg) scale(0.90) skew(1deg) translate(10px);
-        -webkit-transform: rotate(0deg) scale(0.90) skew(1deg) translate(10px);
-        -moz-transform: rotate(0deg) scale(0.90) skew(1deg) translate(10px);
-        -o-transform: rotate(0deg) scale(0.90) skew(1deg) translate(10px);
-        -ms-transform: rotate(0deg) scale(0.90) skew(1deg) translate(10px);
-        &:hover, &.hover {
-          transform: rotate(0deg) scale(1.6) skew(1deg) translate(0px);
-          -webkit-transform: rotate(0deg) scale(1.6) skew(1deg) translate(0px);
-          -moz-transform: rotate(0deg) scale(1.6) skew(1deg) translate(0px);
-          -o-transform: rotate(0deg) scale(1.6) skew(1deg) translate(0px);
-          -ms-transform: rotate(0deg) scale(1.6) skew(1deg) translate(0px);
-          box-shadow: 1px 1px 2px #008CBF;
-          h4 {
-            font-size: 12px;
-            margin-top: 30px;
-            line-height: 15px; 
-          }
-          p.step-tip {
-            visibility: visible;
-            font-size: 12px;
-            line-height: 14px;
-            margin-left: 3%;
-            width: 94%;
-          }
-        }
-        h4 {
-          color: #FFF;
-          font-size: 18px;
-          line-height: 22px;
-          text-align: center;
-          margin: 55px 0 0 0px;
-          width: 100%;
-        }
-        p.step-tip {
-          color: #008CBF;
-          width: 100%;
-          visibility: hidden;
-          text-align: center;
-          margin-top: 5px;
-        }
-      }
-    }
-  }*/
 }
 
 .made-for-who {
@@ -477,7 +396,7 @@ a.sign-up-button {
     color: #fff;
     text-align: center;
     text-transform: uppercase;
-    margin-top: -60px;
+    margin-top: -50px;
     width: 100%;
   }
   h4.sub-title {
@@ -489,7 +408,7 @@ a.sign-up-button {
     margin-left: 10%;
   } 
   ul.who-list {
-    margin-top: 100px;
+    margin-top: 80px;
     margin-left: 40px;
     width: 100%;
     li {
@@ -500,7 +419,7 @@ a.sign-up-button {
         height: 230px; 
         border-radius: 50%;
         margin: 3px 0 0 80px;
-        opacity: 0.3;
+        opacity: 0.50;
         width: 230px;
         transition: all 0.8s linear 0s;
         &:hover {
@@ -527,7 +446,7 @@ a.sign-up-button {
     color: #303030;
     text-align: center;
     text-transform: uppercase;
-    margin-top: -30px;
+    margin-top: -40px;
     width: 100%;
   }
   h4.sub-title {
@@ -540,7 +459,7 @@ a.sign-up-button {
   }  
   .people {
     float: left;
-    margin-top: 80px;
+    margin-top: 60px;
     width: 450px;
     transition:All 0.3s ease;
     -webkit-transition:All 0.3s ease;
@@ -559,6 +478,7 @@ a.sign-up-button {
       -ms-transform: translate(0px);
     }
     img {
+      border-radius: 50%;
       float: left;
       height: 200px;
       width: 200px;
@@ -718,80 +638,8 @@ a.sign-up-button {
     color: #FFF;
     text-align: center;
     text-transform: uppercase;
-    margin-top: -30px;
+    margin-top: -40px;
     width: 100%;
-  }
-  .sign-up-box {
-    background-color: #FFF;
-    border-radius: 10px; 
-    -moz-border-radius: 10px; 
-    -webkit-border-radius: 10px;    
-    float: left;
-    left: 50%;
-    height: auto;
-    padding: 10px;
-    position: relative;
-    margin: 40px 0 0 -200px;
-    width: 390px;
-    z-index: 999;
-
-    transition:All 0.3s ease;
-    -webkit-transition:All 0.3s ease;
-    -moz-transition:All 0.3s ease;
-    -o-transition:All 0.3s ease;
-    transform: translate(-2000px);
-    -webkit-transform: translate(-2000px);
-    -moz-transform: translate(-2000px);
-    -o-transform: translate(-2000px);
-    -ms-transform: translate(-2000px);
-    &.showed {
-      transform: translate(0px);
-      -webkit-transform: translate(0px);
-      -moz-transform: translate(0px);
-      -o-transform: translate(0px);
-      -ms-transform: translate(0px);
-    }    
-    .sign-up-form {
-      float: left;
-      margin: 20px 0 0 10px;
-      width: 355px;
-      .field {
-        float: left;
-        margin-bottom: 12px;
-        width: 100%;
-        input {
-          border: 1px solid #D8D8D8;
-          border-radius: 5px; 
-          -moz-border-radius: 5px; 
-          -webkit-border-radius: 5px;          
-          height: 35px;
-          width: 100%;
-          padding-left: 12px;
-          &:focus {
-            box-shadow:0px 1px 4px #C6E9F4;
-          };
-        }
-      }
-    }
-    .social-network-buttons {
-      border-top: 1px solid #e7e7e7;
-      float: left;
-      height: 80px;
-      margin: 30px 0 0 12px;
-      padding-top: 30px;
-      width: 360px;
-      a.sign-up-button {
-        float: left;
-        height: 30px;
-        line-height: 30px;
-        margin-bottom: 0;
-        margin-left: 0;
-        margin-top: 5px;
-        position: relative;
-        width: 155px;
-        z-index: 999;
-      }
-    }    
   }
 }
 
@@ -813,4 +661,123 @@ a.sign-up-button {
   position: absolute;
   text-decoration: none;
   width: 250px;
+}
+
+.form-box {
+  background-color: #FFF;
+  border-radius: 10px; 
+  -moz-border-radius: 10px; 
+  -webkit-border-radius: 10px;    
+  float: left;
+  left: 50%;
+  height: auto;
+  padding: 10px;
+  position: relative;
+  margin: 20px 0 0 -200px;
+  width: 390px;
+  z-index: 999;
+
+  transition:All 0.3s ease;
+  -webkit-transition:All 0.3s ease;
+  -moz-transition:All 0.3s ease;
+  -o-transition:All 0.3s ease;
+  transform: translate(-2000px);
+  -webkit-transform: translate(-2000px);
+  -moz-transform: translate(-2000px);
+  -o-transform: translate(-2000px);
+  -ms-transform: translate(-2000px);
+  &.showed {
+    transform: translate(0px);
+    -webkit-transform: translate(0px);
+    -moz-transform: translate(0px);
+    -o-transform: translate(0px);
+    -ms-transform: translate(0px);
+  } 
+  .sign-up-form, .contact-us-form {
+    float: left;
+    margin: 20px 0 0 10px;
+    width: 355px;
+    .field {
+      float: left;
+      margin-bottom: 12px;
+      width: 100%;
+      input,textarea {
+        border: 1px solid #D8D8D8;
+        border-radius: 5px; 
+        -moz-border-radius: 5px; 
+        -webkit-border-radius: 5px;          
+        height: 35px;
+        width: 100%;
+        padding-left: 12px;
+        &:focus {
+          box-shadow:0px 1px 4px #C6E9F4;
+        };
+      }
+      textarea {
+        height: 150px;
+        resize: none;
+      }
+    }
+  }
+  &.contact-us-box {
+    width: 600px;
+    margin: 20px 0 0 -300px;
+    .contact-us-form {
+      width:560px;
+    }
+  }      
+  .social-network-buttons {
+    border-top: 1px solid #e7e7e7;
+    float: left;
+    height: 80px;
+    margin: 30px 0 0 12px;
+    padding-top: 30px;
+    width: 360px;
+    a.sign-up-button {
+      float: left;
+      height: 30px;
+      line-height: 30px;
+      margin-bottom: 0;
+      margin-left: 0;
+      margin-top: 5px;
+      position: relative;
+      width: 155px;
+      z-index: 999;
+    }
+  }    
+}
+
+label.social-network-account-label {
+  color: #727171;
+  font-size: 14px;
+  width: 100%;
+  float: left;
+}
+    
+.contact-us {
+  background-color: #2D2D2D;
+  .bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    margin-top: -150px;
+    z-index: 1
+  }  
+  h1.title {
+    font-size: 38px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: -50px;
+    width: 100%;
+  }
+  h4.sub-title {
+    font-size: 20px;
+    color:  #777;
+    text-align: center;
+    margin-top: 10px;
+    width: 80%; 
+    margin-left: 10%;
+  } 
 }

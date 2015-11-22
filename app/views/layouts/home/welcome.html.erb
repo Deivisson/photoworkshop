@@ -15,24 +15,24 @@
 			<ul class="menu" id="menu-home" >
 				<li class="logo-space"></li>
 				<li>
-					<%= link_to t('welcome.menu.cover'),"#",id:'top-link', class:'selected' %>
+					<%= link_to t('home.welcome.menu.cover'),"#",id:'top-link', class:'selected' %>
 				</li>				
 				<li>
-					<%= link_to t('welcome.menu.how_work'),"#",id:'how-work-link',target:'welcome-how-work' %>
+					<%= link_to t('home.welcome.menu.how_work'),"#",id:'how-work-link',target:'welcome-how-work' %>
 				</li>
 				<li>
-					<%= link_to t('welcome.menu.for_who'),"#",id:'made-for-who-link',target:'welcome-made-for-who' %>
+					<%= link_to t('home.welcome.menu.for_who'),"#",id:'made-for-who-link',target:'welcome-made-for-who' %>
 				</li>
 				<li>
-					<%= link_to t('welcome.menu.professionals'),"#",
+					<%= link_to t('home.welcome.menu.professionals'),"#",
 								id:"professionals-link",target:'welcome-professionals' %>
 				</li>
 			</ul>
 		</div>
 		
 		<div class="account-buttons">
-			<%= link_to t('welcome.menu.login'), new_user_session_path %>
-			<%= link_to t('welcome.menu.sign_up').html_safe,"#",class:'sign-up',
+			<%= link_to t('home.welcome.menu.login'), new_user_session_path %>
+			<%= link_to t('home.welcome.menu.sign_up').html_safe,"#",class:'sign-up',
 									 id:"sign-up-link",target:'welcome-sign-up' %>
 		</div>
 		<%# yield :login_form %>
@@ -51,15 +51,15 @@
 		</div>
 		<div class="centralizer">
 			<div class="welcome-content" id="welcome-content">
-				<h1><%=t('welcome.texts.header') %></h1>
-				<h2><%=t('welcome.texts.sub_header') %></h2>
-				<%= link_to t('welcome.authentication.facebook_sign_up'),
+				<h1><%=t('home.welcome.texts.header') %></h1>
+				<h2><%=t('home.welcome.texts.sub_header') %></h2>
+				<%= link_to t('home.welcome.authentication.facebook_sign_up'),
 										user_omniauth_authorize_path(:facebook),
 										class:'sign-up-button facebook'%>
-				<%= link_to t('welcome.authentication.twitter_sign_up'),
+				<%= link_to t('home.welcome.authentication.twitter_sign_up'),
 										user_omniauth_authorize_path(:twitter),
 										class:'sign-up-button twitter'%>
-				<%= link_to t('welcome.authentication.sign_up_email'),
+				<%= link_to t('home.welcome.authentication.sign_up_email'),
 										"",class:'sign_up_email',id:"sign-up-link",target:'welcome-sign-up' %>
 			</div>
 		</div>
@@ -80,10 +80,18 @@
 		<div class="centralizer"><%= render 'sign_up' %></div>
 		<div class="bg"></div>
 	</div>
+	<div class="contact-us" id="welcome-contact-us">
+		<div class="centralizer"><%= render 'contact_us' %></div>
+	</div>
 	<ul class="about-container">
 		<li><%= link_to "Termos", "#" %></li>
-		<li><%= link_to "facebook", "#" %></li>
-		<li><%= link_to "Sobre", "#" %></li>
+		<li><%= link_to "facebook", 
+						"http://www.facebook.com/pic2gether", target:'_blank' %></li>
+		<li>
+				<%= link_to "Fale Conosco", "#", 
+				id:"welcome-contact-us-link",
+				target:'welcome-contact-us' %>
+		</li>
 	</ul>
 	<%= yield %>
 	<%= google_analytics_script %>

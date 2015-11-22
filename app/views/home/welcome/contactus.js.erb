@@ -1,0 +1,9 @@
+<% if @errors.any? %>
+	alert("<%= @errors.join(' e ').html_safe %>");
+<% else %>
+	$("#contact-message-field").val("");
+	$("#contact-email-field").val("");
+	$("#contact-name-field").val("");
+	alert("Sua mensagem foi enviada com sucesso! Em breve entraremos em contato.");
+	$("#contact-name-field").focus();
+<% end %>

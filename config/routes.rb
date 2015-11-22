@@ -69,9 +69,12 @@ Rails.application.routes.draw do
     get "favorite_photos/:photo_id/unfavoritar", to:'favorite_photos#unfavoritar', :as => :unfavoritar_photo
   end
   
-  scope :home do
-    resources :welcome
+  namespace :home do
+    resources :welcome, only: [:index] do 
+      get :contactus, on: :collection
+    end
   end
+
   namespace :public do
     resources :portfolio, only:[:index]
     get "portfolio/:photo_id", to: "portfolio#get_photo", as: :get_photo

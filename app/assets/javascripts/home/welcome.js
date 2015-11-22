@@ -2,14 +2,14 @@
 $(document).ready(function(){
 
 	var value = $(window).height() ;
-	$('#welcome-cover, #welcome-how-work, #welcome-made-for-who, #welcome-professionals, #welcome-sign-up').height(value);
+	$('#welcome-cover, #welcome-how-work, #welcome-made-for-who, #welcome-professionals, #welcome-sign-up, #welcome-contact-us').height(value);
 	$('#welcome-how-work').css("margin-top",value);
 	$('#welcome-content').css("margin-top",value - $('#welcome-content').height() + 50);
 
     // Default move to top
     $('html,body').animate({scrollTop: 0},250);
 
-	$('#how-work-link, #made-for-who-link, #top-link, #professionals-link, #sign-up-link').click(function(event) {
+	$('#how-work-link, #made-for-who-link, #top-link, #professionals-link, #sign-up-link, #welcome-contact-us-link').click(function(event) {
 		var link = $(this);
 		var linkId = link.attr("id");
 		var top = (linkId == "top-link" ? 0 : $("#"+link.attr("target")).offset().top);
@@ -20,7 +20,6 @@ $(document).ready(function(){
 		$("#menu-home").find("li > a").removeClass("selected");
 		link.addClass("selected");
     $('html,body').animate({scrollTop: top},250, function(){
-    	
     	//Efect on click How Work link
     	if (linkId == "how-work-link")	{
     		$("#step1").addClass("hover");
@@ -41,4 +40,10 @@ $(document).ready(function(){
 	$(".step ").mouseenter(function(){
     $(".step").removeClass("hover");
   });
+
+  $("#welcome-contact-us-link").click(function() {
+    $("#contact-name-field").focus();
+  });
+
+
 });

@@ -1,38 +1,41 @@
-<h1 class="title">
-	Crie a sua conta
-</h1>
-<div class="sign-up-box" id="sign-up-box">
+<h1 class="title"><%= t(".title") %></h1>
+<div class="form-box" id="sign-up-box">
 	<%= form_for(:user, :url => registration_path(:user), html:{class:"sign-up-form"}) do |f| %>
 		<div class="field">
 			<%= f.text_field :full_name, 
-												placeholder: "Nome + Sobrenome",
+												placeholder: t('.full_name_field'),
 												id:"user-full-name" %>
 		</div>
 
 		<div class="field">
-			<%= f.text_field :user_name, autofocus: true, placeholder: "User Nome" %>
+			<%= f.text_field :user_name, 
+											 autofocus: true, 
+											 placeholder: t('.user_name') %>
 		</div>
 
 		<div class="field">
-			<%= f.email_field :email, placeholder: "Email" %>
+			<%= f.email_field :email, 
+												placeholder: t('.email') %>
 		</div>
 
 		<div class="field">
-			<%= f.password_field :password, autocomplete: "off", placeholder: "Senha" %>
+			<%= f.password_field :password, 
+												autocomplete: "off", 
+												placeholder: t('.password') %>
 		</div>
-<!-- 		<div class="field">
-			<%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirmação da Senha" %>
-		</div> -->
 		<div>
-			<%= f.submit "Sign up", class:"submit-button" %>
+			<%= f.submit t('.submit'), class:"btn btn-submit" %>
 		</div>
 	<% end %>
 	<div class="account-buttons social-network-buttons">
-			<%= link_to t('welcome.authentication.facebook_sign_up'),
-									user_omniauth_authorize_path(:facebook),
-									class:'sign-up-button facebook'%>
-			<%= link_to t('welcome.authentication.twitter_sign_up'),
-									user_omniauth_authorize_path(:twitter),
-									class:'sign-up-button twitter'%>
+		<label class="social-network-account-label">
+			<%= t('home.account.social_network_account') %>
+		</label>
+		<%= link_to t('home.welcome.authentication.facebook_sign_up'),
+								user_omniauth_authorize_path(:facebook),
+								class:'sign-up-button facebook'%>
+		<%= link_to t('home.welcome.authentication.twitter_sign_up'),
+								user_omniauth_authorize_path(:twitter),
+								class:'sign-up-button twitter'%>
 	</div>
 </div>

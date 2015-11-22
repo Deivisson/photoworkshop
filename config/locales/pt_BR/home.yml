@@ -1,0 +1,85 @@
+pt_BR:
+  home:
+    welcome:
+      menu:
+        cover: "COVER"
+        how_work: "COMO FUNCIONA?"
+        jurors: "JURADOS"
+        for_who: "FEITO PRA QUEM?"
+        professionals: "PROFISSIONAIS"
+        inspirations: "INSPIRAÇÕES"
+        contests: "CONCURSOS"
+        login: "Login"
+        sign_up: "Cadastre-se"
+        contactus: "CONTATO"
+      texts:
+        header: "Cadastre-se agora"
+        sub_header: "Uma maneira incrivelmente divertida e interativa para apresentar suas fotos"
+      authentication:    
+        facebook_sign_up: "Conta Facebook"
+        twitter_sign_up: "Conta Twitter"
+        sign_up_email: "ou cadastre-se usando o email."
+      how_work:
+        sub_title: "Aprenda fotografar, obtenha dicas, feedback e reconhecimento. Compartilhe sua experiência e seja recompensado com exposição global."
+        steps:
+          sign_up:
+            title: "VOCÊ SE CADASTRA"
+            text: "Cadastro simples, rápido e sem complicação. Totalmente gratuito!!!"
+          upload_photos:
+            title: "PUBLICA SUAS FOTOS"
+            text: "Faça o upload das suas fotos, monte seu portfólio e ganhe várias curtidas e comentários."
+          get_visibility:
+            title: "GANHA VISIBILIDADE"
+            text: "Quanto mais fotos postar, mais popular e reconhecido você será."
+          more:
+            title: "EM BREVE"
+            text: "Contrate um Coach, Gerencie Workshops, Participe de desafios e ganhe prêmios."
+      made_for_who:
+        title: "Aos amantes da fotografia "
+        sub_title: "Um ambiente propício para o aprendizado e que como recompensa lhe dará destaque, networking e muitas inspirações."
+        for_beginners: "Para você estudante e amadores na fotografia, encontre inspirações e torne-se cada dia melhor e receberá reconhecimentos e prêmios."
+        for_professionals: "Para você que já é um profissional reconhecido, seja um inspirador e tenha em mãos ferramentas que irá lhe ajudar ainda mais a divulgar o seu trabalho."
+      professionals:
+        title: "JÁ É UM PROFISSIONAL?"
+        sub_title: "Você é fundamental para ajudar o canal a se tornar um ambiente de aprendizado. Veja o que você poderá fazer:"
+        features:
+          workshops:
+            title: "Gerenciar Workshops"
+            details: "Se você ministra workshops, poderá ter acesso a uma ferramenta que irá lhe ajudar na divulgação do workshop,  gerenciar matrículas, disponibilizar materiais, criar desafios, avaliar alunos, sortear brindes e muito mais..."
+          coach:
+            title: "Ser um Coach (<i>Em Breve...</i>)"
+            details: "Sendo um Coach (Técnico) no Pic2Gether, você ajudará na formação de bons fotografos e ainda será remunerado por isto."            
+          technical:
+            title: "Ser um Técnico do Pic2Gether (<i>Em Breve...</i>)"
+            details: "Um técnico do Pic2Gether, tem visibilidade, privilégios e poderes importantes na avalição das fotografias postadas no nosso portal."
+      sign_up:
+        title: "Crie sua conta"
+        full_name_field: "Nome + Sobrenome"
+        user_name: "User Name"
+        email: "Email"
+        password: "Senha"
+        password_confirmation: "Confirmação da Senha"
+        submit: "Confirmar"
+      contact_us:
+        title: "Fale Conosco"
+        sub_title: "Envie-nos a sua mensagem e muito em breve entraremos em contato."
+        name: "Seu nome (Obrigatório)"
+        email: "Seu Email (Obrigatório)"
+        message: "Digite a sua Mensagem (Obrigatório)"
+        submit: "Enviar mensagem"
+
+    account:
+      email: "Endereço de Email"
+      password: "Senha"
+      sign_in: "Login"
+      sign_in_button: "Entrar"
+      remember_me: "Lembre-me"
+      social_network_account: "Utilizar conta da rede social"
+      forgot_password: "Esqueceu a senha ?"
+      email_forgot_password: "Informe o email utilizado no cadastro"
+      submit_reset_password: "Enviar instruções para resetar senha"
+      links:
+        sign_in: "Efetuar login"
+        sign_up: "Cadastre-se"
+        forgot_password: "Esqueceu a Senha?"
+        email: "Email"

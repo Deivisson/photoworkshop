@@ -2,13 +2,26 @@
 <html>
 <head>
   <title>Photograph</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'home', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'home', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<div class="welcome-header" id="welcome-header">
+		<div class="logo-container">
+			<%= link_to image_tag("shared/logo_black.png"), root_path %>
+		</div>
+		<div class="flash_container">
+			<%- flash.each do |name, msg| %>
+		    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+		  <%- end %>
+		</div>
+	</div>
+	<div class="account-page">
+		<div class="bg"></div>
+		<div class="account-form-box">
+			<%= yield %>
+		</div>
+	</div>
 </body>
 </html>

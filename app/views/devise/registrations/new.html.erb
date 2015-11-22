@@ -1,18 +1,32 @@
-<h2>Sign up</h2>
-
+<h2><%= t('home.welcome.sign_up.title')%></h2>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+  <div class="field">
+		<%= f.text_field :full_name, 
+											autofocus: true,
+											placeholder: t('home.welcome.sign_up.full_name_field'),
+											id:"user-full-name" %>
+	</div>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+	<div class="field">
+		<%= f.text_field :user_name, 										  
+										 placeholder: t('home.welcome.sign_up.user_name') %>
+	</div>
 
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+	<div class="field">
+		<%= f.email_field :email, 
+											placeholder: t('home.welcome.sign_up.email') %>
+	</div>
 
-  <div><%= f.submit "Sign up" %></div>
+	<div class="field">
+		<%= f.password_field :password, 
+											autocomplete: "off", 
+											placeholder: t('home.welcome.sign_up.password') %>
+	</div>
+  <div>
+  	<%= f.submit t('home.welcome.sign_up.submit'),class:'btn btn-submit' %>
+  </div>
 <% end %>
 
 <%= render "devise/shared/links" %>

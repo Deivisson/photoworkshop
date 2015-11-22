@@ -1,0 +1,26 @@
+<h1 class="title"><%= t(".title") %></h1>
+<h4 class="sub-title"><%= t(".sub_title") %></h4>
+<div class="form-box showed contact-us-box">
+	<%= form_tag(contactus_home_welcome_index_path, class:"contact-us-form", method: :get, remote:true) do |f| %>
+		<div class="field">
+			<%= text_field_tag "contactus[name]","", placeholder: t('.name') ,
+													id:"contact-name-field"%>
+		</div>
+
+		<div class="field">
+			<%= email_field_tag "contactus[email]", "", placeholder: t('.email'),
+													id:"contact-email-field" %>
+		</div>
+
+		<div class="field">
+			<%= text_area "contactus[message]", "", placeholder: t('.message'),
+											id:"contact-message-field" %>
+		</div>
+		<div>
+			<%= submit_tag t('.submit'), 	
+					class:"btn btn-submit",
+					id:"contact-us-submit-button",
+					data: {disable_with: "Enviando ..."} %>
+		</div>
+	<% end %>
+</div>
