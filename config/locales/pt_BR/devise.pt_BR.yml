@@ -25,6 +25,10 @@ pt_BR:
         subject: "Unlock Instructions"
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
+      sign_finish:
+        title: "Olá %{user_name},"
+        subtitle: "Falta pouco para concluir o seu cadastro. Informe o seu email e click em Concluir Cadastro."
+        confirm_button: "Concluir Cadastro"
       #success: "Successfully authenticated from %{kind} account."
       success: ""
     passwords:

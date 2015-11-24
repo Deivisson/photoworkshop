@@ -22,6 +22,7 @@ class Photo < ActiveRecord::Base
     huge: "2000x2000"
   }, default_url:"/images/missing.png"
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_size :picture, less_than: 7.1.megabytes, message: I18n.t("activerecord.errors.messages.photo_size")
 
   after_post_process :save_exif
   after_create :save_user_points

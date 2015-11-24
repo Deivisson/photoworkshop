@@ -145,7 +145,18 @@ html {
         };
       }		
 		}
-	}
+ 	}
+  .panel-content .show-fields.no-justify-text {
+    p.colon {
+      line-height: 18px;
+      text-align: left;
+      margin-bottom: 10px;
+      width: 95%;
+      a {
+        width: 200px;
+      }
+    }
+  }
 } 
 
 .search-form {

@@ -22,7 +22,8 @@ pt_BR:
         odd: "must be odd"
         even: "must be even"
         invalid_url: "Url possui formação inválida."
-        
+        photo_size: "Photo não pode ter mais que 7 MegaBytes" 
+
     models:
       user:
         one: "Usuário"

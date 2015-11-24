@@ -1,15 +1,19 @@
+<%= image_tag @user.auth_avatar_url, class:'twitter-avatar' %>
+<h2><%= t(".title", user_name: @user.full_name) %></h2>
+<br>
+<h4><%= t(".subtitle") %></h4>
 <%= form_tag(complete_sign_up_path, method: :post) do |f| %>
-		<%= text_field_tag "auth[full_name]",@user.full_name %>
-  	<%= text_field_tag "auth[user_name]",@user.user_name %>
-  	<%= text_field_tag "auth[auth_avatar_url]",@user.auth_avatar_url %>
-  	<%= text_field_tag "auth[auth_provider]",@user.auth_provider %>
-  	<%= text_field_tag "auth[auth_uid]",@user.auth_uid %>
-  	<%= text_field_tag "auth[account_url]",@user.account_url %>
+		<%= hidden_field_tag "auth[full_name]",@user.full_name %>
+  	<%= hidden_field_tag "auth[user_name]",@user.user_name %>
+  	<%= hidden_field_tag "auth[auth_avatar_url]",@user.auth_avatar_url %>
+  	<%= hidden_field_tag "auth[auth_provider]",@user.auth_provider %>
+  	<%= hidden_field_tag "auth[auth_uid]",@user.auth_uid %>
+  	<%= hidden_field_tag "auth[account_url]",@user.account_url %>
 		<div class="field">
-			<%= text_field_tag "auth[email]" %>
+			<%= text_field_tag "auth[email]","", placeholder: "Email", autofocus:true %>
 		</div>
 
 		<div>
-			<%= submit_tag "Sign up" %>
+			<%= submit_tag t(".confirm_button"),class:"btn btn-submit" %>
 		</div>
 	<% end %>
