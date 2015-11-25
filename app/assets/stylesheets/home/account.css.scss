@@ -35,6 +35,9 @@
 	  	margin: 7px 0 2px 7px;
 	  	text-align: center;
 	  	width: 90%;
+	  	&.twitter-sign-up {
+	  		padding-left: 20px;
+	  	}	  
 	  }
 	  h4 {
 	  	color: #A5A5A5;
@@ -42,7 +45,7 @@
 	  	line-height: 22px;
 			margin: 7px 0 2px 7px;
 	  	text-align: center;
-	  	width: 90%;	  	
+	  	width: 90%;
 	  }
 	  img.twitter-avatar {
 	  	border-radius: 10%;

@@ -1,16 +1,12 @@
 
 $(document).ready(function(){
+  var link;
+  resizeContainer();
 
-	var value = $(window).height() ;
-	$('#welcome-cover, #welcome-how-work, #welcome-made-for-who, #welcome-professionals, #welcome-sign-up, #welcome-contact-us').height(value);
-	$('#welcome-how-work').css("margin-top",value);
-	$('#welcome-content').css("margin-top",value - $('#welcome-content').height() + 50);
-
-    // Default move to top
-    $('html,body').animate({scrollTop: 0},250);
-
+  // Default move to top
+  $('html,body').animate({scrollTop: 0},250);
 	$('#how-work-link, #made-for-who-link, #top-link, #professionals-link, #sign-up-link, #welcome-contact-us-link').click(function(event) {
-		var link = $(this);
+    link = $(this);
 		var linkId = link.attr("id");
 		var top = (linkId == "top-link" ? 0 : $("#"+link.attr("target")).offset().top);
 		
@@ -28,9 +24,9 @@ $(document).ready(function(){
     		$("#pic-professionals").addClass("showed");
     		$("#professionals-text-box").addClass("showed-text-box");
     	}  else if(linkId == "sign-up-link") {
-            $("#sign-up-box").addClass("showed");
-    		$("#welcome-header").addClass("dark");
-            $("#user-full-name").focus();
+          $("#sign-up-box").addClass("showed");
+    		  $("#welcome-header").addClass("dark");
+          $("#user-full-name").focus();
     	}
     });
     event.preventDefault();
@@ -45,5 +41,16 @@ $(document).ready(function(){
     $("#contact-name-field").focus();
   });
 
-
+  // Resize windows
+  $( window ).resize(function() {
+    resizeContainer();
+    link.click();
+  });
 });
+
+function resizeContainer() {
+  var value = $(window).height() ;
+  $('#welcome-cover,#welcome-cover-mask, #welcome-how-work, #welcome-made-for-who, #welcome-professionals, #welcome-sign-up, #welcome-contact-us').height(value);
+  $('#welcome-how-work').css("margin-top",value);
+  $('#welcome-content').css("margin-top",value - $('#welcome-content').height() + 50);
+}

@@ -1,5 +1,7 @@
 <%= image_tag @user.auth_avatar_url, class:'twitter-avatar' %>
-<h2><%= t(".title", user_name: @user.full_name) %></h2>
+<h2 class="twitter-sign-up">
+	<%= t(".title", user_name: @user.full_name) %>
+</h2>
 <br>
 <h4><%= t(".subtitle") %></h4>
 <%= form_tag(complete_sign_up_path, method: :post) do |f| %>

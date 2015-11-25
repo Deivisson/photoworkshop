@@ -161,8 +161,10 @@ ul.menu {
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow:0px 3px 4px #DBDBDB;
+  /*border: 1px solid red;*/
   height: 805px;
   position: fixed;
+  bottom:0;
   opacity: 1;
   transition: opacity 0.5s linear 0s;
   top: 0;
