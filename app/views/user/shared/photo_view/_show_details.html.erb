@@ -5,7 +5,9 @@
     <%= link_to "", user_photo_path(@photo,act:'next'), remote:true,class:"next-arrow next-link" %> 
     <%= render 'user/shared/photo_view/toolbar.html.erb' %> 
     <div class="photo-picture <%= @photo.orientation %>", id="photo-picture",
-         style="background-image:url(<%= @photo.picture.url(:huge) %>)" ></div>
+          owner="<%=@photo.user.profile.user_name %>",
+          style="background-image:url(<%= @photo.picture.url(:huge) %>)" >
+    </div>
     <%= link_to "", "#" , class:"down-page", id:'down-page-photo-view' %> 
   </div>
   

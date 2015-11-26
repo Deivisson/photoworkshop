@@ -252,7 +252,9 @@ module User::PhotosHelper
 		return if photo.nil?
 		html = content_tag(:div,class:"img-container #{class_name}", style:style) do 
 			inner_html = []
-			inner_html << content_tag(:div,class:"img-pic", style:"background-image: url('#{photo.picture.url(@photo_size)}')") do
+			inner_html << content_tag(:div,class:"img-pic", 
+										style:"background-image: url('#{photo.picture.url(@photo_size)}')",
+										owner:photo.user.profile.user_name) do
 				pic = []
 				pic << photo_resume_counts(photo)
 				pic << build_url(photo)
@@ -317,7 +319,8 @@ private
 		elsif @location == :photos_explore
 			link_to("", user_photo_explore_show_path(photo),class:'photo-picture')
 		elsif @location == :profile_cover
-			link_to("", user_update_cover_photo_path(photo),class:'profile-photo-cover',remote:true, method: :put)
+			link_to("", user_update_cover_photo_path(photo),class:'profile-photo-cover',
+									remote:true, method: :put)
 		end
 	end
 end

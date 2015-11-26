@@ -1,9 +1,9 @@
 ul.timeline {
 	height: 400px;
 	left: 50%;
-	margin-left: -450px;
+	margin-left: -310px;
 	position: absolute;
-	width: 900px;
+	width: 612px;
 	li {
 		float: left;
 		margin-top: 60px;
@@ -38,8 +38,11 @@ ul.timeline {
 	 			}
 		 	}
 		 	img.user-avatar {
-		 		border-radius: 25%;
-		 		margin-left: 0px;
+		 		border-radius: 50%;
+		    border-width: 3px;
+		    height: 45px;
+		    margin-left: 0;
+		    width: 45px
 		 	}
 		}
 		.timestamp {
@@ -102,7 +105,35 @@ ul.timeline {
 			}
 			.photo-menu-popup {
 				margin-top: -145px;
-    		right: 300px;
+    		right: 10px;
+			}
+
+			.photo-couters {
+				height: 20px;
+				margin-top: -58px;
+				position: absolute;
+				right: 36px;
+				label {
+					color: #6B6B6B;
+					float: left;
+					line-height:20px;
+					margin-right: 8px;
+					span {
+						float: left;
+						margin-right: 4px;
+						opacity: 0.4;
+					}
+					span.count-item {
+						float: left;
+						opacity: 1;
+					}
+					/*&:after {
+						content: " . ";
+					}*/
+					&:last-child:after {
+						content: ""
+					};
+				}
 			}
 		}
 		
@@ -124,9 +155,9 @@ ul.timeline {
 						border: 2px solid #fff;
 				    border-radius: 50%;
 				    float: left;
-				    height: 30px;
+				    height: 35px;
 				    margin: -4px 0 0 0px;
-				    width: 30px;
+				    width: 35px;
 					}
 					.text-box {
 						margin: 0px 0 0 40px;

@@ -1,7 +1,8 @@
 <div class="float-container">
   <div class="user-content">
     <div id="user-home-cover-pic" class="cover-pic" 
-         style="background-image: url('<%= current_user.profile.cover_url %>')">
+         style="background-image: url('<%= current_user.profile.cover_url %>')",
+         owner="<%= current_user.profile.user_name %>">
       <%= link_to user_edit_cover_photo_path(0), class:"btn", id:'edit-cover' do %>
         <span class="icon16pb edit"></span>
       <% end %>

@@ -21,4 +21,9 @@
 		$(idElement).html("<%= j(render partial:'user/shared/photo_view/like_links',locals:{photo:@photo, show_label:true}) %>");
 	}
 
+	// HOme Time line
+	idElement = "#timeline-likes-count-<%= @photo.id %>";
+	if ($(idElement).length > 0) {
+		$(idElement).text("<%= @likes_count %>");
+	}
 <% end %>

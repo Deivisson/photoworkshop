@@ -1,5 +1,7 @@
 $(document).on('ready page:load', function (){
 	photographerPreview();
+	PhotoAvoidRightClick("#user-profile-cover-pic");
+	PhotoAvoidRightClick(".cover-pic");
 });
 
 function photographerPreview(){
@@ -23,6 +25,8 @@ function photographerPreview(){
 	  		jQuery('body').css('overflow','hidden');
 	  		$(".ui-dialog-content").css("overflow-x", "hidden");
 	  		photoView();
+	  		PhotoAvoidRightClick();
+	  		PhotoAvoidRightClick(".cover-photo");
 	  		$("#modal-close-button").click(function() {
 					$('#photographer-modal-dialog').dialog("close");
 				});

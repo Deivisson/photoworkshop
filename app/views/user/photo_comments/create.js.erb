@@ -12,4 +12,5 @@
 		$("#comment-form-photo-<%= @photo.id %>").html("<%= j (render partial:'/user/photo_comments/form', locals: {photo:@photo, submit_button:false, rows_count:1}) %>");			
 	}
 	photographerPreview();
+	TriggerSubmitOnEnterCommentInputField();
 <% end %>

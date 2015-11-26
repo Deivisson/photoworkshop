@@ -3,6 +3,7 @@ $(document).on('ready page:load', function (){
 	photoView();
 	adjustLayout();
 	PhotoPopupMenuTrigger();
+	PhotoAvoidRightClick();
 });
 
 function photoView(){
@@ -28,6 +29,7 @@ function photoView(){
 		  		jQuery('body').css('overflow','hidden');
 		  		$(".ui-widget-overlay").css("opacity","1");
 		  		adjustLayout();
+		  		PhotoAvoidRightClick("#photo-picture");
 	  			$("#photo-view-modal-close-button").click(function() {
 		  			$("#photo-modal-dialog").dialog( "close" );
 					});
@@ -110,6 +112,16 @@ function PhotoPopupMenuTrigger(){
 		$(".photo-share-menu-link").bind("click", function(e) {
 			e.preventDefault();
 		});
+	}
+}
+
+
+function PhotoAvoidRightClick(photoElem=".img-pic") {
+	if ($(photoElem).length > 0) {
+		$(photoElem).on("contextmenu",function() {
+	 		alert("Direitos autorais pertence a " + $(this).attr("owner") +".");
+	   	return false;
+		}); 		
 	}
 }
 
