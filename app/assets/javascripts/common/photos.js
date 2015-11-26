@@ -116,7 +116,8 @@ function PhotoPopupMenuTrigger(){
 }
 
 
-function PhotoAvoidRightClick(photoElem=".img-pic") {
+function PhotoAvoidRightClick(photoElem) {
+	if (photoElem == undefined) photoElem =".img-pic"
 	if ($(photoElem).length > 0) {
 		$(photoElem).on("contextmenu",function() {
 	 		alert("Direitos autorais pertence a " + $(this).attr("owner") +".");
