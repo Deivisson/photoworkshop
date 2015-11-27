@@ -13,7 +13,8 @@ class Photo < ActiveRecord::Base
   has_many :likes, class_name:'PhotoLike', dependent: :destroy
   has_many :likers, through: :likes, dependent: :destroy
   has_many :comments, class_name:'PhotoComment',dependent: :destroy
-  has_many :ratings, class_name: "PhotoRating"
+  has_many :ratings, class_name: "PhotoRating", dependent: :destroy
+  has_many :favorites, class_name: "FavoritePhoto", dependent: :destroy
 
   has_attached_file :picture,:styles => {
     small:"250x250", 

@@ -1,0 +1,15 @@
+<% if @photo.destroyed? %>
+	<% if @gallary_type.to_sym == :flow  %>
+		$("#img-container-<%= @photo.id %>").find("a").remove();
+		$("#img-container-<%= @photo.id %>").find(".photo-counts").remove();
+		var img = $("#img-container-<%= @photo.id %>").find(".img-pic");
+		$(img).css("background-image","");
+		$(img).css("background-color","#000");
+		$(img).html("<p class='remove-photo-label'>Foto removida ;-(</div>");
+		flashNoticeMessage("<%= t('messages.destroyed_record') %>");
+	<% else %>
+		$("#img-container-<%= @photo.id %>").remove();
+	<% end %>
+<% else %>
+	alert("Foto não pode ser excluída.");
+<% end %>

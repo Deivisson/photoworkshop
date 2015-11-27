@@ -20,6 +20,13 @@
 		background-color: #FFF;
 		opacity: 0.3;
 	}
+	p.remove-photo-label {
+		background: #000;
+    color: #fff;
+    font-size: 25px;
+    margin: 10px 0 0 5px;
+    position: absolute;
+	}
 }
 
 .grid-flow .row .col .img-container,
@@ -61,6 +68,19 @@
 		background-color: #000;
 		opacity: 0.8;
 		visibility: visible;
+	};
+	.destroy-photo {
+		height: 16px;
+    margin: 5px 0px 0 -30px;
+    opacity: 0.1;
+    position: absolute;
+    transition:All 0.6s ease;
+    visibility: hidden;
+    width: 16px;
+	}
+	&:hover .destroy-photo {
+		visibility: visible;
+		opacity: 1;
 	};
 }
 
@@ -194,7 +214,7 @@
 	height: 24.2%;
 	margin-top: 12px;
 	margin-right: 14px;
-	width: 48.8% ;
+	width: 48.2% ;
 }
 
 .grid-flow .row .col .img-container.h30:last-child {

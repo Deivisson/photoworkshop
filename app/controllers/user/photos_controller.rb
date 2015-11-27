@@ -3,7 +3,7 @@ class User::PhotosController < User::BaseController
   before_action :load_resources, only: [:new, :create, :edit, :update]
 
   def index
-    @photos = current_user.photos.includes(:category)
+    @photos = current_user.photos.includes(:category).order("created_at desc")
     @gallary_type = params[:gallary_type] || "flow" 
   end
 
@@ -40,10 +40,7 @@ class User::PhotosController < User::BaseController
 
   def destroy
     @photo.destroy
-    respond_to do |format|
-      format.html { redirect_to photos_url, notice: 'Photo was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    @gallary_type = params[:gallary_type]
   end
 
   private

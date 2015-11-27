@@ -15,7 +15,7 @@ module User::PhotosHelper
 		end
 
 		html = []
-		content_tag(:div,class:'photo-gallary') do 
+		content_tag(:div,class:'photo-gallary',style:'min-width: 900px;') do 
 			html << content
 			html << options_grid_style if show_grid_style_options
 			html.join.html_safe
@@ -190,8 +190,9 @@ module User::PhotosHelper
 				2.times{|i| pics << image_factory(@landscape[i+1], "h33 w100 top50")}
 				pics.join.html_safe
 		 	end
-		 	cols << picture_col("col75","width:74.2%; margin-left:9px") do 
-	 			image_factory(@landscape.last, "h100","margin:0")
+		 	#cols << picture_col("col75","width:74.2%; margin-left:8px") do 
+		 	cols << picture_col("col75") do 
+	 			image_factory(@landscape.last, "h100","margin:0 0 0 10px")
 	 		end
 		 	cols.join.html_safe
 		end
@@ -250,8 +251,12 @@ module User::PhotosHelper
 
 	def image_factory(photo,class_name="",style="")
 		return if photo.nil?
-		html = content_tag(:div,class:"img-container #{class_name}", style:style) do 
+		html = content_tag(:div,class:"img-container #{class_name}", style:style, id:"img-container-#{photo.id}") do 
 			inner_html = []
+			inner_html << link_to(user_photo_path(photo.id,gallary_type:@gallary_type),method: :delete,remote:true,
+										class:'btn destroy-photo',data:{confirm:t("messages.confirm_destroy")}) do 
+				content_tag(:span,"",class:"icon16pb destroy").html_safe
+			end if @location == :user_photos
 			inner_html << content_tag(:div,class:"img-pic", 
 										style:"background-image: url('#{photo.picture.url(@photo_size)}')",
 										owner:photo.user.profile.user_name) do
@@ -263,7 +268,6 @@ module User::PhotosHelper
 			inner_html << content_tag(:div,class:"img-info") do 
 				html_info = []
 				html_info << photo_details(photo)
-				#html_info << (render partial:'user/shared/photo/menu_popup', locals:{photo:photo} )
 				html_info.join.html_safe
 			end if @show_details
 			inner_html.join.html_safe
@@ -329,17 +333,17 @@ def options_grid_style
 	html = []
 	html << content_tag(:div, class:'grid-styles') do 
 		inner_html = []
-		inner_html << link_to(user_photo_explore_path(gallary_type:"flow"), 
+		inner_html << link_to(build_gallary_type_link("flow"), 
 								class:"link-gallary-type #{@gallary_type.to_sym == :flow ? "selected" : ""}", 
 								remote:true) do 
 			content_tag(:span, "", class:"icon20pb icon-grid-flow")
 		end 
-		inner_html << link_to(user_photo_explore_path(gallary_type:"table"), 
+		inner_html << link_to(build_gallary_type_link("table"), 
 									class:"link-gallary-type #{@gallary_type.to_sym == :table ? "selected" : ""}", 
 									remote:true) do 
 			content_tag(:span, "", class:"icon20pb icon-grid-table")
 		end 
-		inner_html << link_to(user_photo_explore_path(gallary_type:"list"), 
+		inner_html << link_to(build_gallary_type_link("list"), 
 									class:"link-gallary-type #{@gallary_type.to_sym == :list ? "selected" : ""}", 
 									remote:true) do 
 			content_tag(:span, "", class:"icon20pb icon-grid-list")
@@ -347,4 +351,12 @@ def options_grid_style
 		inner_html.join.html_safe
 	end
 	html.join.html_safe
+end
+
+def build_gallary_type_link(type)
+	if @location == :user_photos
+		user_photos_path(gallary_type:type)
+	else
+		user_photo_explore_path(gallary_type:type)
+	end
 end
