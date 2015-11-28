@@ -1,18 +1,19 @@
 class UserPoint < ActiveRecord::Base
 
 	#Origins
-	UPLOAD_PHOTO 						= 1 ; UPLOAD_PHOTO_POINTS 						= 5 	#okok
-	ADD_COVER 							= 2 ; ADD_COVER_POINTS 								= 5 	#okok
-	ADD_FAVORITE_PHOTO 			= 3 ;	ADD_FAVORITE_PHOTO_POINTS 			= 1 	#okok
-	RECEIVE_FAVORITE_PHOTO 	= 4 ;	RECEIVE_FAVORITE_PHOTO_POINTS 	= 2 	#okok
-	PHOTO_COVERED 					= 5 ;	PHOTO_COVERED_POINTS 						= 10 	#okok 
-	FOLLOW 									= 6 ; FOLLOW_POINTS 									= 1 	#okok
-	BE_FOLLOWED 						= 7 ; BE_FOLLOWED_POINTS 							= 2 	#okok
-	SIGN_UP									= 8 ; SIGN_UP_POINTS									= 5 	#okok
+	UPLOAD_PHOTO 						= 1 ; UPLOAD_PHOTO_POINTS 						= 5 	#OK
+	ADD_COVER 							= 2 ; ADD_COVER_POINTS 								= 5 	#OK
+	ADD_FAVORITE_PHOTO 			= 3 ;	ADD_FAVORITE_PHOTO_POINTS 			= 1 	#
+	RECEIVE_FAVORITE_PHOTO 	= 4 ;	RECEIVE_FAVORITE_PHOTO_POINTS 	= 2 	#
+	PHOTO_COVERED 					= 5 ;	PHOTO_COVERED_POINTS 						= 10 	#OK
+	FOLLOW 									= 6 ; FOLLOW_POINTS 									= 1 	#OK
+	BE_FOLLOWED 						= 7 ; BE_FOLLOWED_POINTS 							= 2 	#OK
+	SIGN_UP									= 8 ; SIGN_UP_POINTS									= 5 	#OK
 
 	validates :user_id, presence:true
 	validates :origin, presence:true
   belongs_to :user
+  belongs_to :photo
 
   after_create :update_user_points
 
@@ -57,13 +58,25 @@ private
 	def self.check_if_can_save_user_points(user_point)
 		case user_point.origin
 		when UserPoint::ADD_FAVORITE_PHOTO
-			return UserPoint.where("user_id = ? and favorite_photo_id = ? ", user_point.user_id, user_point.favorite_photo_id).first.nil?
-		when RECEIVE_FAVORITE_PHOTO
-			return UserPoint.where("user_id = ? and favorite_photo_id = ? and user_favoriter_id = ?", user_point.user_id, user_point.favorite_photo_id,user_point.user_favoriter_id).first.nil?
-		when FOLLOW
-			return UserPoint.where("user_id = ? and user_followed_id = ? ", user_point.user_id, user_point.user_followed_id).first.nil?
-		when BE_FOLLOWED
-			return UserPoint.where("user_id = ? and user_follower_id = ? ", user_point.user_id, user_point.user_follower_id).first.nil?
+			up = UserPoint.where("user_id = ? and photo_id = ?", user_point.user_id, user_point.photo_id)
+			up = up.where("origin = ?",UserPoint::ADD_FAVORITE_PHOTO)
+			return up.first.nil?
+		
+		when UserPoint::RECEIVE_FAVORITE_PHOTO
+			up = UserPoint.where("user_id = ? and photo_id = ?", user_point.user_id, user_point.photo_id)
+			up = up.where("userx_id = ? and origin = ?",user_point.userx_id,UserPoint::RECEIVE_FAVORITE_PHOTO)
+			return up.first.nil?
+		
+		when UserPoint::FOLLOW
+			up = UserPoint.where("user_id = ? and userx_id = ?", user_point.user_id, user_point.userx_id)
+			up = up.where("origin = ?",UserPoint::FOLLOW)
+			return up.first.nil?
+
+		when UserPoint::BE_FOLLOWED
+			up = UserPoint.where("user_id = ? and userx_id = ?", user_point.user_id, user_point.userx_id)
+			up = up.where("origin = ?",UserPoint::BE_FOLLOWED)
+			return up.first.nil?
+
 		else
 			return true
 		end

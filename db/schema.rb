@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151112234019) do
+ActiveRecord::Schema.define(version: 20151128135654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -115,25 +115,25 @@ ActiveRecord::Schema.define(version: 20151112234019) do
 
   create_table "photo_exifs", force: :cascade do |t|
     t.integer  "photo_id",                  null: false
-    t.string   "maker",         limit: 60
-    t.string   "model",         limit: 50
+    t.string   "maker",         limit: 100
+    t.string   "model",         limit: 100
     t.string   "lens",          limit: 100
-    t.string   "orientation",   limit: 40
-    t.string   "shutter_speed", limit: 10
-    t.string   "aperture",      limit: 10
-    t.string   "iso",           limit: 6
+    t.string   "orientation",   limit: 100
+    t.string   "shutter_speed", limit: 100
+    t.string   "aperture",      limit: 100
+    t.string   "iso",           limit: 10
     t.datetime "taken_at"
-    t.string   "flash",         limit: 30
+    t.string   "flash",         limit: 100
     t.string   "focal_lenght",  limit: 20
     t.string   "colorsapce",    limit: 20
     t.string   "exposuremode",  limit: 20
     t.string   "whitebalance",  limit: 20
     t.integer  "imagewidth"
     t.integer  "imageheight"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.float    "latitude"
     t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "photo_exifs", ["photo_id"], name: "index_photo_exifs_on_photo_id", using: :btree
@@ -210,8 +210,8 @@ ActiveRecord::Schema.define(version: 20151112234019) do
 
   create_table "user_auths", force: :cascade do |t|
     t.integer  "user_id",                null: false
-    t.string   "provider",   limit: 255, null: false
-    t.string   "uid",        limit: 255, null: false
+    t.string   "provider",   limit: 255
+    t.string   "uid",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -222,18 +222,15 @@ ActiveRecord::Schema.define(version: 20151112234019) do
     t.integer  "user_id"
     t.integer  "number"
     t.integer  "origin",            null: false
-    t.integer  "user_followed_id"
-    t.integer  "user_follower_id"
-    t.integer  "favorite_photo_id"
-    t.integer  "user_favoriter_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "user_followed_id"
+    t.integer  "user_follower_id"
+    t.integer  "photo_id"
+    t.integer  "user_favoriter_id"
+    t.integer  "userx_id"
   end
 
-  add_index "user_points", ["favorite_photo_id"], name: "index_user_points_on_favorite_photo_id", using: :btree
-  add_index "user_points", ["user_favoriter_id"], name: "index_user_points_on_user_favoriter_id", using: :btree
-  add_index "user_points", ["user_followed_id"], name: "index_user_points_on_user_followed_id", using: :btree
-  add_index "user_points", ["user_follower_id"], name: "index_user_points_on_user_follower_id", using: :btree
   add_index "user_points", ["user_id"], name: "index_user_points_on_user_id", using: :btree
 
   create_table "user_profiles", force: :cascade do |t|
@@ -303,7 +300,7 @@ ActiveRecord::Schema.define(version: 20151112234019) do
     t.date     "limit_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "maximum_upload_number",             default: 0, null: false
+    t.integer  "maximum_upload_number",             default: 1, null: false
   end
 
   add_index "workshop_activities", ["workshop_id"], name: "index_workshop_activities_on_workshop_id", using: :btree
@@ -351,7 +348,7 @@ ActiveRecord::Schema.define(version: 20151112234019) do
     t.integer  "vacancies_number"
     t.decimal  "value"
     t.string   "prerequisite",       limit: 255
-    t.string   "goal",               limit: 255
+    t.text     "goal"
     t.string   "target_audience",    limit: 255
     t.text     "term"
     t.integer  "status",                         default: 0, null: false
@@ -386,16 +383,17 @@ ActiveRecord::Schema.define(version: 20151112234019) do
   add_foreign_key "photos", "users", name: "fk_photos_users"
   add_foreign_key "states", "countries", name: "states_countries"
   add_foreign_key "user_auths", "users", name: "user_auths_users"
-  add_foreign_key "user_points", "photos", column: "favorite_photo_id", name: "user_points_favorite_photo"
   add_foreign_key "user_points", "users"
-  add_foreign_key "user_points", "users", column: "user_favoriter_id", name: "user_points_user_favoriter"
-  add_foreign_key "user_points", "users", column: "user_followed_id", name: "user_points_user_followed"
-  add_foreign_key "user_points", "users", column: "user_follower_id", name: "user_points_user_follower"
+  add_foreign_key "user_points", "users", column: "userx_id", name: "user_points_user_x"
   add_foreign_key "user_profiles", "categories", name: "user_profiles_categories"
   add_foreign_key "user_profiles", "cities", name: "user_profiles_cities"
   add_foreign_key "user_profiles", "photos", column: "cover_photo_id", name: "user_profiles_photos"
   add_foreign_key "user_profiles", "users", name: "user_profiles_users"
   add_foreign_key "user_relations", "users", column: "user_followed_id", name: "user_relations_users_followed"
   add_foreign_key "user_relations", "users", name: "user_relations_users"
+  add_foreign_key "workshop_activities", "workshops", name: "workshop_activities_workshop"
+  add_foreign_key "workshop_materials", "workshops", name: "workshop_materials_workshop"
+  add_foreign_key "workshop_participants", "users", name: "workshop_participants_user"
+  add_foreign_key "workshop_participants", "workshops", name: "workshop_participants_workshop"
   add_foreign_key "workshops", "users", name: "workshops_user"
 end

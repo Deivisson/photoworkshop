@@ -22,13 +22,13 @@ private
   #Save the points for user that is following
   def save_points_for_following_user
     UserPoint.save_points(self.user_id, UserPoint::FOLLOW, 
-                          {user_followed_id:self.user_followed_id})
+                          {userx_id:self.user_followed_id})
   end
 
   #Save the points for followed user
   def save_points_for_followed_user
     UserPoint.save_points(self.user_followed_id, UserPoint::BE_FOLLOWED, 
-                          {user_follower_id:self.user_id})
+                          {userx_id:self.user_id})
   end
 
 end

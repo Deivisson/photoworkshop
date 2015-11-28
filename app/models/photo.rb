@@ -15,7 +15,8 @@ class Photo < ActiveRecord::Base
   has_many :comments, class_name:'PhotoComment',dependent: :destroy
   has_many :ratings, class_name: "PhotoRating", dependent: :destroy
   has_many :favorites, class_name: "FavoritePhoto", dependent: :destroy
-
+  has_many :user_points,foreign_key: "photo_id", dependent: :nullify
+  
   has_attached_file :picture,:styles => {
     small:"250x250", 
     medium:"900x900",
@@ -25,6 +26,7 @@ class Photo < ActiveRecord::Base
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
   validates_attachment_size :picture, less_than: 7.1.megabytes, message: I18n.t("activerecord.errors.messages.photo_size")
 
+  before_destroy :check_if_can_be_destroyed
   after_post_process :save_exif
   after_create :save_user_points
   after_update :save_user_points_after_set_photo_as_cover
@@ -136,12 +138,12 @@ private
   end
 
   def save_user_points
-    UserPoint.save_points(self.user_id, UserPoint::UPLOAD_PHOTO)
+    UserPoint.save_points(self.user_id, UserPoint::UPLOAD_PHOTO, {photo_id:self.id})
   end
 
   def save_user_points_after_set_photo_as_cover
     if self.cover_changed? && self.cover?
-      UserPoint.save_points(self.user_id, UserPoint::PHOTO_COVERED)
+      UserPoint.save_points(self.user_id, UserPoint::PHOTO_COVERED, {photo_id:self.id})
     end
   end
 
@@ -154,5 +156,12 @@ private
   def calculate_latlong(degrees, minutes, seconds, rotation)
     calculated_latlong = degrees.to_f + minutes.to_f/60 + seconds.to_f/3600
     ['S', 'W'].include?(rotation) ? -calculated_latlong : calculated_latlong
+  end
+
+  def check_if_can_be_destroyed
+    unless UserProfile.where("user_id = ? and cover_photo_id = ? ", self.user_id,self.id).first.nil?
+      errors.add(:base,I18n.t("activerecord.errors.messages.photo_cover_can_detroyed"))
+      return false
+    end
   end
 end

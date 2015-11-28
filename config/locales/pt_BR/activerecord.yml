@@ -23,7 +23,7 @@ pt_BR:
         even: "must be even"
         invalid_url: "Url possui formação inválida."
         photo_size: "Photo não pode ter mais que 7 MegaBytes" 
-
+        photo_cover_can_detroyed: "Foto não poderá ser excluída por ela ser a capa do seu perfil. Mude a sua capa e depois poderá excluir!"
     models:
       user:
         one: "Usuário"

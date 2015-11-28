@@ -160,7 +160,9 @@ ul.timeline {
 				    width: 35px;
 					}
 					.text-box {
-						margin: 0px 0 0 40px;
+						float: left;
+						margin: 0px 0 0 10px;
+						width: 530px;
 						&:hover a.comment-destroy-link {
 							visibility: visible;
 						};

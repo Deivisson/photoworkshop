@@ -5,11 +5,11 @@
 		var img = $("#img-container-<%= @photo.id %>").find(".img-pic");
 		$(img).css("background-image","");
 		$(img).css("background-color","#000");
-		$(img).html("<p class='remove-photo-label'>Foto removida ;-(</div>");
+		$(img).html("<p class='remove-photo-label'><%= t('messages.removed_photo') %></div>");
 		flashNoticeMessage("<%= t('messages.destroyed_record') %>");
 	<% else %>
 		$("#img-container-<%= @photo.id %>").remove();
 	<% end %>
 <% else %>
-	alert("Foto não pode ser excluída.");
+	flashNoticeMessage("<%= @photo.errors.full_messages.to_sentence %>");
 <% end %>

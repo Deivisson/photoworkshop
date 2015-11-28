@@ -4,13 +4,6 @@ class UserProfile < ActiveRecord::Base
 
   validates :user_name, presence:true
   validates :full_name, presence:true, length: {maximum:100}, uniqueness:true
-
-  # validates :facebook,    :url => {:allow_blank => true}
-  # validates :twitter,     :url => {:allow_blank => true}
-  # validates :google_plus, :url => {:allow_blank => true}
-  # validates :tumblr,      :url => {:allow_blank => true}
-  # validates :flickr,      :url => {:allow_blank => true}
-
   validate :verify_urls
   
   has_attached_file :avatar, 
@@ -76,7 +69,7 @@ private
 
   def save_user_points_if_add_cover_photo
     if self.cover_photo_id_changed? && self.cover_photo_id_was == nil
-      UserPoint.save_points(self.user_id, UserPoint::ADD_COVER)
+      UserPoint.save_points(self.user_id, UserPoint::ADD_COVER, {photo_id:self.cover_photo_id})
     end
   end
 
