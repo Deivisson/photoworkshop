@@ -44,12 +44,12 @@
 	}
 }
 
-.activity-image-preview-container {
+.activity-response-container {
 	border: 1px solid #E0E0E0;
   bottom: 10px;
   left: 10px;
   position: absolute;
-  right: 270px;
+  right: 235px;
   top: 0;
   .photo-picture {
   	background-position: center center;
@@ -58,7 +58,7 @@
 		bottom: 10px;
 		position: absolute;
   	&.landscape {
-  		left: 10px;
+  		left: 120px;
   		right: 10px;
   	}
   	&.portrait {
@@ -67,25 +67,54 @@
   		right: 20%
   	}
   }
+  ul.response-photo-list {
+  	border: 1px solid #E0E0E0;
+  	float: left;
+  	margin: 10px;
+  	padding: 2px 2px 2px 3px;
+  	width: 91px;
+  	li {
+  		float: left;
+  		height: 100px;
+  		width: 100%;
+  		margin-bottom: 2px;
+  	}
+  	li .response-photo {
+  		background-position: center center;
+  		cursor: pointer;
+  		float: left;
+  		height: 100px;
+  		width: 90px;
+  		transition:All 0.6s ease;
+  		&:hover {
+  			opacity: 0.8;
+  		};
+  		a {
+  			float: left;
+  			height: 100%;
+  			width: 100%;
+  		}
+  	}
+  }
 }
 
-.activity-photo-details {
+.response-photo-details {
   float: right;
   height: 100%;
-  width: 260px;
+  width: 220px;
 
 }
 
-.activity-photo-details .rating {
+.response-photo-details .rating {
 	float: left;
-	width: 250px;
+	width: 210px;
 	ul {
 		li {
 			margin-bottom: 2px;
 			.score-bar {
-				border: 1px solid #777;
-				height: 24px;
-				width: 240px;
+				border: 1px solid #e0e0e0;
+				height: 20px;
+				width: 200px;
 				.score {
 					height: 100%;
 					&.poor {background-color: #EA8A75;width: 20%;}
@@ -98,6 +127,7 @@
 			.score-bar .score {
 				label {
 			    float: left;
+			    font-size: 11px;
 					font-weight: bold;
 			    height: 100%;
 			    line-height: 22px;

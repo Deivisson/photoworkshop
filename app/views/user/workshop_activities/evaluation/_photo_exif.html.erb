@@ -1,24 +1,24 @@
 <div class="content-info photo-exif">
   <%= content_tag :label,t(".exif"),class:'section-label' %>
   <br><br>
-  <h1><%= photo.camera %></h1>
-  <h4><%= photo.lens %></h4>
+  <h1><%= response.photo.camera %></h1>
+  <h4><%= response.photo.lens %></h4>
   <%= content_tag :ul do %>
     <li>
       <%= content_tag :span, "", class:"aperture" %>
-      <%=content_tag :label,photo.aperture  %>
+      <%=content_tag :label,response.photo.aperture  %>
     </li>
     <li>
       <%= content_tag :span, "", class:"focal-lenght" %>
-      <%=content_tag :label,photo.focal_lenght  %>
+      <%=content_tag :label,response.photo.focal_lenght  %>
     </li>
     <li>
       <%= content_tag :span, "", class:"shutter-speed" %>
-      <%=content_tag :label,photo.shutter_speed  %>
+      <%=content_tag :label,response.photo.shutter_speed  %>
     </li>
     <li>
       <%= content_tag :span, "", class:"iso" %>
-      <%=content_tag :label,photo.iso  %>
+      <%=content_tag :label,response.photo.iso  %>
     </li>
   <% end %>
 </div>

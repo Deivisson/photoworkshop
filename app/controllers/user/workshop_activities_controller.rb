@@ -8,8 +8,9 @@ class User::WorkshopActivitiesController < User::BaseController
   # end
 
   def show
-    @modal = false
     if !request.xhr? && current_user.id == @workshop.user_id
+      @modal = false
+      @activity_responses = @workshop_activity.responses
       respond_with(@workshop_activity, layout:'user/workshop_activities_show')
     else
       @modal = true

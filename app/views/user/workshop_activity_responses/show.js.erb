@@ -1,0 +1,6 @@
+$("#response-photo-preview").html("<%= j(render partial:'/user/workshop_activities/evaluation/response_photo_preview',
+		locals: {response:@workshop_activity_response}) %>");
+
+$("#response-photo-details").html("<%= j(render partial:'user/workshop_activities/evaluation/response_photo_details',
+		locals:{response:@workshop_activity_response}) %>");
+

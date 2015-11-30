@@ -1,6 +1,6 @@
 class User::WorkshopActivityResponsesController < User::BaseController
-  before_action :set_workshop, only: [:create]
-  before_action :set_workshop_activity_response, only: [:show, :edit, :update, :destroy]
+  before_action :set_workshop, only: [:create,:show]
+  before_action :set_workshop_activity_response, only: [:edit, :update, :destroy]
   before_action :load_resources, only: [:new, :create, :edit, :update]
 
   # def index
@@ -8,9 +8,12 @@ class User::WorkshopActivityResponsesController < User::BaseController
   #   respond_with(@workshop_activity_responses)
   # end
 
-  # def show
-  #   respond_with(@workshop_activity_response)
-  # end
+  #This action is used by workshop owner to avaliate the responses by participants
+  def show
+    @workshop_activity = @workshop.activities.where(id:params[:activity_id]).first
+    @workshop_activity_response = @workshop_activity.responses.where(id:params[:id]).first
+    #respond_with(@workshop_activity_response)
+  end
 
   def new
     attributes = {
@@ -50,7 +53,11 @@ class User::WorkshopActivityResponsesController < User::BaseController
     end
 
     def set_workshop
-      @workshop = current_user.my_workshops.find(params[:workshop_id])
+      if action_name == "show"
+        @workshop = current_user.owner_workshops.find(params[:workshop_id])
+      else
+        @workshop = current_user.my_workshops.find(params[:workshop_id])
+      end
     end
 
     def workshop_activity_response_params
