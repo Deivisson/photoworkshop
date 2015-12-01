@@ -1,6 +1,19 @@
 $(document).on('ready page:load', function (){
 	bindWorkshopActivityDialog();
 	bindShowWorkshopActivityDialog();
+
+	// $( "#slider-range-max" ).slider({
+	// 	range: "max",
+	// 	min: 0,
+	// 	max: 5,
+	// 	value: 0,
+	// 	slide: function( event, ui ) {
+	// 		$("#amount" ).text( ui.value );
+	// 		$("#score-comp").css("width",(ui.value * 20) + "%");
+	// 	}
+	// });
+	// $("#amount").text( $( "#slider-range-max" ).slider( "value" ) );
+
 });
 
 function bindWorkshopActivityDialog() {

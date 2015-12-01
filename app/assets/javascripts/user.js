@@ -35,6 +35,7 @@
 //= require user/photo_comments
 //= require user/tour/home_tour
 //= require user/notifications
+//= require user/photo_rating
 
 
 

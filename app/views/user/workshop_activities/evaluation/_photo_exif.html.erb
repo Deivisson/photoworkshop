@@ -1,24 +1,38 @@
-<div class="content-info photo-exif">
+<div class="content-info photo-info">
   <%= content_tag :label,t(".exif"),class:'section-label' %>
-  <br><br>
-  <h1><%= response.photo.camera %></h1>
-  <h4><%= response.photo.lens %></h4>
-  <%= content_tag :ul do %>
-    <li>
-      <%= content_tag :span, "", class:"aperture" %>
-      <%=content_tag :label,response.photo.aperture  %>
-    </li>
-    <li>
-      <%= content_tag :span, "", class:"focal-lenght" %>
-      <%=content_tag :label,response.photo.focal_lenght  %>
-    </li>
-    <li>
-      <%= content_tag :span, "", class:"shutter-speed" %>
-      <%=content_tag :label,response.photo.shutter_speed  %>
-    </li>
-    <li>
-      <%= content_tag :span, "", class:"iso" %>
-      <%=content_tag :label,response.photo.iso  %>
-    </li>
-  <% end %>
+  
+  <p>
+    <strong><%= ta Photo, :camera %></strong>
+    <%= response.photo.camera %>
+  </p>  
+  
+  <p>
+    <strong><%= ta Photo, :lens %></strong>
+    <%= response.photo.lens %>
+  </p>
+
+  <p>
+    <strong><%= ta Photo, :aperture %></strong>
+    <%= response.photo.aperture %>
+  </p>
+  <p>
+    <strong><%= ta Photo, :focal_lenght %></strong>
+    <%= response.photo.focal_lenght %>
+  </p>
+  <p>
+    <strong><%= ta Photo, :shutter_speed %></strong>
+    <%= response.photo.shutter_speed %>
+  </p>
+  <p>
+    <strong><%= ta Photo, :iso %></strong>
+    <%= response.photo.iso %>
+  </p>   
+  <p>
+    <strong>Author</strong>
+    <%= response.photo.user.profile.user_name %>
+  </p>
+  <p>
+    <strong>Data Postagem</strong>
+    <%= format_date(response.photo.created_at) %>
+  </p>
 </div>

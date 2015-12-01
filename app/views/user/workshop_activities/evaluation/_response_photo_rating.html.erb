@@ -1,0 +1,44 @@
+<div class="rating">
+	<% if response.photo.ratings.any? %>
+		<%= content_tag :label,t(".rating_photo"),class:'section-label' %>
+		<ul>
+			<li>
+				<div class="score-bar">
+					<div class="score poor" id="score-comp"> 
+						<label>Compsição</label>
+					</div>
+					<span class="score-value" id="amount">0</span>
+				</div>
+			</li>
+			<li>
+				<div class="score-bar">
+						<div class="score so-so"> 
+						<label>Compsição</label>
+					</div>
+					<span class="score-value">0</span>
+				</div>
+			</li>
+			<li>
+				<div class="score-bar">
+					<div class="score good"> </div>
+				</div>
+			</li>
+			<li>
+				<div class="score-bar">
+					<div class="score so-good"> </div>
+				</div>
+			</li>
+			<li>
+				<div class="score-bar">
+					<div class="score excelent"> </div>
+				</div>
+			</li>
+		</ul>
+		<div class="content-info">
+		  
+		</div>
+	<% else %>
+		<%= link_to "Clique para Avaliar a Foto",user_photo_photo_ratings_path(response.photo), 
+								class:"btn btn-success",id:'photo-rating-button' %>
+	<% end %>
+</div>

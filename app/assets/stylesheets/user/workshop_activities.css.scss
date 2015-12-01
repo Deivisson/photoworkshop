@@ -108,12 +108,19 @@
 .response-photo-details .rating {
 	float: left;
 	width: 210px;
+	label.section-label {
+		float: left;
+		font-size: 18px;
+		margin-bottom: 5px;
+		width: 100%;
+	}	
 	ul {
+		float: left;
 		li {
 			margin-bottom: 2px;
 			.score-bar {
 				border: 1px solid #e0e0e0;
-				height: 20px;
+				height: 18px;
 				width: 200px;
 				.score {
 					height: 100%;
@@ -130,17 +137,68 @@
 			    font-size: 11px;
 					font-weight: bold;
 			    height: 100%;
-			    line-height: 22px;
+			    line-height: 18px;
+			    padding-left: 4px;
 				}
 			}
 		 .score-bar	span.score-value {
-			  float: right;
-			  font-weight: bold;
-			  height: 100%;
-			  line-height: 25px;
-			  margin: -25px 7px 0 0;
+			  font-size: 12px;
+		    font-weight: bold;
+		    margin: -15px 25px 0 0;
+		    position: absolute;
+		    right: 0;
 			}
 		}
 	}
-	
+}
+
+.response-photo-details .content-info {
+	float: left;
+	&.photo-info {
+		margin-top: 10px;
+		width: 93%;
+		label.section-label {
+			float: left;
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+		ul {
+			float: left;
+			width: 100%;
+			li {
+				float: left;
+				width: 100%;
+			}
+		}
+		p {
+			border-bottom: 1px solid #CECECE;
+			float: left;
+			font-size: 12px;
+			margin-bottom: 5px;
+			padding-bottom: 5px;
+			width: 96%;
+			strong {
+				float: left;
+				font-weight: bold;
+				margin-bottom: 4px;
+				width: 100%;
+			}
+		}
+	}
+}
+
+.ui-slider  {
+	background: none repeat scroll 0 0 transparent;
+  border: 0 none;
+  border-radius: 0;
+  margin: 2px;
+  position: absolute;
+  width: 194px;
+	.ui-slider-handle {
+		border: 1px solid #777;
+		background-color: #444;
+		cursor: pointer;
+		margin:2px 0 0 -1px;
+		opacity: 0.3
+	}
 }

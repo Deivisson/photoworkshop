@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     end
     resources :photos do 
       resources :photo_comments, only: [:create,:destroy]
+      resources :photo_ratings, only: [:index]
     end
     resources :user_profiles, :as => :profiles, :only => [:show,:edit,:update]
     get "profile/edit_cover_photo", to:"user_profiles#edit_cover_photo", :as => :edit_cover_photo

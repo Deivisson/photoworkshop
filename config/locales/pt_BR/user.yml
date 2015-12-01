@@ -147,6 +147,9 @@ pt_BR:
       workshop_activity:
         post_one: "paticipante já postou"
         post_many: "participantes já postaram"
+      evaluation:
+        response_photo_rating:
+          rating_photo: "Classificação da Foto"
     workshop_participants:
       index:
         title: 'Usuários'
