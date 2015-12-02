@@ -15,7 +15,6 @@ $(document).on('ready page:load', function (){
 
 		  dialog_form.load(url + '#workshop-activity-response-containter', function(){
 		  	jQuery('body').css('overflow','hidden');
-	  		$(this).dialog('option',"title",$("#modal-title-response").text());
 	  		$(".ui-widget-overlay").css("opacity","0.8");
 	  		$("#workshop-activity-response-modal-dialog").css("overflow-x","hidden");
 		  });

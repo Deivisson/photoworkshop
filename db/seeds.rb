@@ -76,13 +76,18 @@ if RatingCriterium.first.nil?
   puts "Data entered in the Rating criterias table"
 end
 
+RatingCriterium.update(1,css_class:"composition")
+RatingCriterium.update(2,css_class:"criativity")
+RatingCriterium.update(3,css_class:"exhibition")
+RatingCriterium.update(4,css_class:"distinctness")
 
-#
-#Temporary and should remove after execute
-#
-UserPoint.all.each do |up|
-  up.userx_id = up.user_followed_id unless up.user_followed_id.nil?
-  up.userx_id = up.user_follower_id unless up.user_follower_id.nil?
-  up.userx_id = up.user_favoriter_id unless up.user_favoriter_id.nil?  
-  up.save
-end
+
+# #
+# #Temporary and should remove after execute
+# #
+# UserPoint.all.each do |up|
+#   up.userx_id = up.user_followed_id unless up.user_followed_id.nil?
+#   up.userx_id = up.user_follower_id unless up.user_follower_id.nil?
+#   up.userx_id = up.user_favoriter_id unless up.user_favoriter_id.nil?  
+#   up.save
+# end

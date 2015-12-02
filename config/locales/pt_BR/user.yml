@@ -43,6 +43,9 @@ pt_BR:
     photo_comments:
       form:
         comment_box_placeholder: "Deixe o seu comentário"
+    photo_ratings:
+      index:
+        title: "Classificação da Fotografia"
     user_profiles:
       edit:
         title: "Atualização de Perfil"
