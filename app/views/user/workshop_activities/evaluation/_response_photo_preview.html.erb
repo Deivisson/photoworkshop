@@ -1,3 +1,4 @@
-<div class="photo-picture <%= response.photo.orientation %>" 
+<div class="photo-posted <%= response.photo.orientation %>" 
 		style="background-image:url(<%= response.photo.picture.url(:large) %>)" >
+		<%= link_to "", user_photo_explore_show_path(response.photo), class:'photo-picture'%>
 </div>

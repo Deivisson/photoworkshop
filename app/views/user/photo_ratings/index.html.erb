@@ -1,17 +1,26 @@
 <div class="photo-rating-modal-container">
 	<%= content_tag :label,t('.title'), class:'modal-title',id:'modal-title-photo-rating' %>
 	<div class="rating">
-		<ul>
-			<% @rating_criteriums.each do |criterium| %>
-				<li class="title-out">
-					<h4><%= criterium.description %></h4>
-					<div class="score-bar fixed-size">
-						<div class="score <%= criterium.css_class %>" id="score-for-criterium-<%= criterium.id %>"></div>
-						<%= content_tag :div,"",id:"slider-range-photo-#{criterium.id}",criterium:"#{criterium.id}" %>
-					</div>
-					<%= text_field_tag "","",class:"score-value",id:"score-value-#{criterium.id}" %>
-				</li>
-			<% end %>
-		</ul>
+		<%= form_tag save_user_photo_photo_ratings_path, method: :put, remote:true do %>
+			<ul>
+				<% @rating_criteriums.each do |criterium| %>
+					<li class="title-out">
+						<h4><%= criterium.description %></h4>
+						<div class="score-bar fixed-size">
+							<div class="score <%= criterium.css_class %>" id="score-for-criterium-<%= criterium.id %>"></div>
+							<%= content_tag :div,"",id:"slider-range-photo-#{criterium.id}",criterium:"#{criterium.id}" %>
+						</div>
+						<%= hidden_field_tag "photo_ratings[][photo_id]",@photo.id %>
+						<%= hidden_field_tag "photo_ratings[][rating_criterium_id]",criterium.id %>
+						<%= text_field_tag "photo_ratings[][score]","0",
+																class:"score-value",id:"score-value-#{criterium.id}" %>
+					</li>
+				<% end %>
+			</ul>
+			<%= hidden_field_tag "response_id", @workshop_activity_response.id %>
+		  <div class="actions" style="margin-left: -5px;">
+    		<%= submit_tag t("buttons.confirm"), class:"submit-button" %>
+  		</div>
+		<% end %>
 	</div>
 </div>

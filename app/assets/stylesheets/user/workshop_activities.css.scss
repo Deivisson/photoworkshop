@@ -51,7 +51,7 @@
   position: absolute;
   right: 235px;
   top: 0;
-  .photo-picture {
+  .photo-posted {
   	background-position: center center;
   	background-size: cover;
 		top: 10px;
@@ -65,6 +65,11 @@
 
   		left: 20%;
   		right: 20%
+  	}
+  	a {
+  		display: block;
+  		height: 100%;
+  		width: 100%;
   	}
   }
   ul.response-photo-list {
@@ -185,6 +190,10 @@
 			}
 		}
 	}
+}
+
+.response-photo-details .rating {
+	width: 200px;
 }
 
 /*.ui-slider  {

@@ -38,6 +38,7 @@ pt_BR:
     photo_unfavorited: "Foto desfavoritada."
     cover_photo_updated: "Foto da capa foi atualizada."
     removed_photo: "Foto removida ;-("
+    rating_photo_with_success: "Foto Avaliada com sucesso."
   levels:
     beginner: "Iniciante"
     student: "Estudante"

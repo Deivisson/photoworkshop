@@ -10,7 +10,7 @@ function photoView(){
 		var w = $(window).width() * 1;
 		var h = $(window).height() * 1;
 		var url = $(this).attr('href');
-		var dialog_form = $(getModalContainer("photo-modal-dialog")).dialog({
+		var dialog_form = $(getModalContainer("photo-modal-dialog",true)).dialog({
 		    autoOpen: false,
 		    width: w,
 		    height: h,

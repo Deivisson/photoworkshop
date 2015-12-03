@@ -1,0 +1,5 @@
+$("#response-photo-details").html("<%= j(render partial:'user/workshop_activities/evaluation/response_photo_details',
+		locals:{response:@workshop_activity_response}) %>");
+
+$("#photo-rating-modal-dialog").dialog( "close" );
+flashNoticeMessage("<%= t('messages.rating_photo_with_success') %>");

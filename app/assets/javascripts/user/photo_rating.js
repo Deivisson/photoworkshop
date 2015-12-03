@@ -1,7 +1,11 @@
 $(document).on('ready page:load', function (){
+	TriggerButtonPhotoRating();		
+});
+
+function TriggerButtonPhotoRating() {
 	$("#photo-rating-button").click(function(e){
 		var url = $(this).attr('href');
-		var dialog_form = $(getModalContainer("#photo-rating-modal-dialog")).dialog({
+		var dialog_form = $(getModalContainer("photo-rating-modal-dialog")).dialog({
 		    autoOpen: false,
 		    width: 300,
 		    height: 500,
@@ -32,4 +36,4 @@ $(document).on('ready page:load', function (){
 		  dialog_form.dialog('open');
 		  e.preventDefault();  
 	});	
-});
+}

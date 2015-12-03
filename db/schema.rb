@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202004623) do
+ActiveRecord::Schema.define(version: 20151202220533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -154,10 +154,12 @@ ActiveRecord::Schema.define(version: 20151202004623) do
     t.integer  "score",               default: 0
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+    t.integer  "user_id"
   end
 
   add_index "photo_ratings", ["photo_id"], name: "index_photo_ratings_on_photo_id", using: :btree
   add_index "photo_ratings", ["rating_criterium_id"], name: "index_photo_ratings_on_rating_criterium_id", using: :btree
+  add_index "photo_ratings", ["user_id"], name: "index_photo_ratings_on_user_id", using: :btree
 
   create_table "photos", force: :cascade do |t|
     t.integer  "user_id",                                                   null: false
@@ -377,6 +379,7 @@ ActiveRecord::Schema.define(version: 20151202004623) do
   add_foreign_key "photo_likes", "users", name: "photo_likes_user"
   add_foreign_key "photo_ratings", "photos"
   add_foreign_key "photo_ratings", "rating_criteria"
+  add_foreign_key "photo_ratings", "users"
   add_foreign_key "photos", "categories", name: "fk_photos_category"
   add_foreign_key "photos", "users", name: "fk_photos_users"
   add_foreign_key "states", "countries", name: "states_countries"
