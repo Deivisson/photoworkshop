@@ -23,7 +23,9 @@ pt_BR:
         even: "must be even"
         invalid_url: "Url possui formação inválida."
         photo_size: "Photo não pode ter mais que 7 MegaBytes" 
+        image_size: "Imagem não pode ter mais que %{size} MegaBytes" 
         photo_cover_can_detroyed: "Foto não poderá ser excluída por ela ser a capa do seu perfil. Mude a sua capa e depois poderá excluir!"
+        start_date_less_than_end_date: "Data de início deverá ser menor ou igual à data de término."
     models:
       user:
         one: "Usuário"
@@ -50,8 +52,9 @@ pt_BR:
         category_id: "Categoria"
         tags: "Tags"
       workshop:
+        image: "Imagem do Workshop"
         description: "Descrição"
-        details: "Detalhes sobre curso"
+        details: "Detalhes Curso"
         start_date: "Data Início"
         end_date: "Data Término"
         vacancies_number: "Nº de Vagas"
@@ -65,6 +68,8 @@ pt_BR:
         level: "Nível"
         content: "Conteúdo/Cronograma"
         certificate: "Emite Certificado?"
+        allow_queued: "Permitir Fila de Espera"
+        allow_pre_enrolls: "Permitir Pré-Matrícula"
       workshop_material:
         description: "Descrição"
         attachment: "Arquivo"

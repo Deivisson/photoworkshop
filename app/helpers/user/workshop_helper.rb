@@ -1,9 +1,9 @@
 module User::WorkshopHelper
 	def workshop_status(workshop)
-		if !workshop.opened?
+		if !workshop.published?
 			"Novo"
 		else
-			"Aberto"
+			"Publicado"
 		end	
 	end
 end

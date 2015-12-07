@@ -1,8 +1,9 @@
 <ul class="response-photo-list">
 	<% @activity_responses.each do |response| %>
 		<li>
-			<div id="activity-response-photo" class="response-photo" 
+			<div id="activity-response-photo-<%= response.photo.id %>" class="response-photo" 
 					 style="background-image:url(<%= response.photo.picture.url(:small) %>)" >
+			 	<%= content_tag :div,"",class:'bubble' if response.photo.rated? %>
 				<%= link_to "", user_workshop_activity_response_path(@workshop,@workshop_activity,response),remote:true %>
 			</div>
 		</li>

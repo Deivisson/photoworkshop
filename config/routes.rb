@@ -42,7 +42,7 @@ Rails.application.routes.draw do
     end
     
     resources :workshops do
-      get :open
+      get :publish
       get :marketing
       post :subscribe
       resources :workshop_materials, as: :materials, except: [:create,:update,:index,:show]

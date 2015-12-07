@@ -122,7 +122,7 @@ ul.workshop-activities {
 		}
 		&:hover {background-color: #eee;};
 		a.btn {
-			color: #FFF;
+			/*color: #FFF;*/
 			margin: 25px 0 0 50px;
     	position: absolute;
     	width: auto;
@@ -148,7 +148,7 @@ ul.workshop-activities {
 			color: #777;
 			display: block;
 			float: left;
-			margin: 4px 0 0 5px;
+			margin: 5px 0 0 5px;
 			text-decoration: none;
 			width: 70%;
 			&:hover {
@@ -241,6 +241,10 @@ ul.workshop-activities {
 		.buttons-container {
 			margin-top: 120px;
 			position: absolute;
+			.alert {
+				margin: -98px 0 20px 0;
+				width: 280px;
+			}	
 		}
 		.social-network-share {
 	    height: 55px;
@@ -319,5 +323,22 @@ ul.workshop-activities {
 	}
 	.ws-complement-info {
 
+	}
+}
+.workshop-image {
+	float: left;
+	margin: 34px 0 0 10px;
+	h1 {
+		color: #aaaaaa;
+		font-size: 18px;
+		font-weight: bold;
+		margin-bottom: 20px;
+	}
+	h2 {
+		margin-top: 5px;
+	}
+	p {
+		font-size: 13px !important;
+		margin: -5px 0 10px 0;
 	}
 }

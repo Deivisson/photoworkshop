@@ -18,6 +18,9 @@
 	    	opacity: 0.9;
 	    	ul.workshop-activities li {
 	    		background-color: #000;	
+	    		a.user-avatar {
+	    			width: 32px 
+	    		}
 	    	}
 	    	.buttons-container {
 					visibility: visible;
@@ -72,6 +75,7 @@
   		width: 100%;
   	}
   }
+
   ul.response-photo-list {
   	border: 1px solid #E0E0E0;
   	float: left;
@@ -99,6 +103,23 @@
   			height: 100%;
   			width: 100%;
   		}
+  	}
+  	li .bubble {
+  		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a8ce80+0,70a016+100 */
+			background: #a8ce80; /* Old browsers */
+			/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+			background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2E4Y2U4MCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3MGEwMTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+			background: -moz-linear-gradient(top,  #a8ce80 0%, #70a016 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top,  #a8ce80 0%,#70a016 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom,  #a8ce80 0%,#70a016 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a8ce80', endColorstr='#70a016',GradientType=0 ); /* IE6-8 */
+			border-radius: 50%; 
+			-moz-border-radius: 50%; 
+			-webkit-border-radius: 50%;  	
+	    height: 12px;
+	    margin: 3px 0 0 75px;
+	    position: absolute;
+	    width: 12px;
   	}
   }
 }
@@ -194,20 +215,69 @@
 
 .response-photo-details .rating {
 	width: 200px;
+	a.photo-rating-button {
+		color: #888888;
+		font-size: 11px;
+		float: right;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		};
+	}
 }
 
-/*.ui-slider  {
-	background: none repeat scroll 0 0 transparent;
-  border: 0 none;
-  border-radius: 0;
-  margin: 2px;
-  position: absolute;
-  width: 194px;
-	.ui-slider-handle {
-		border: 1px solid #777;
-		background-color: #444;
-		cursor: pointer;
-		margin:2px 0 0 -1px;
-		opacity: 0.3
+.response-photo-details ul.comments {
+	width: 200px;
+	label.section-label {
+		float: left;
+		font-size: 18px;
+		margin: 10px 0 20px 0;
 	}
-}*/
+	li {
+		float: left;
+		margin-bottom: 10px;
+		width: 100%;
+
+		img.user-avatar {
+			border-radius: 50%;
+			float: left;
+			height: 32px;
+			width: 32px;
+		}
+		p {
+			float: left;
+			margin: 1px 0 0 10px;
+			text-align: justify;
+			width: 155px;
+		}
+	}
+}
+
+ul.workshop-participants.show {
+	margin: 0px;
+	li {
+		width: 90%;
+		a.photographer-profile.user-avatar-link {
+			margin-top: -2px;
+			width: 32px;
+			img {
+				height: 32px;
+				width: 32px;
+			}
+		}
+		a.user-name {
+			float: left;
+			font-size: 12px;
+			margin: 10px 0 0 35px;
+		}
+		&.selected {
+			background-color: #EEE;
+		}
+	}
+}
+
+.user-activity-responses {
+	.panel-content h4 {
+		margin-left: -10px;
+	}
+}

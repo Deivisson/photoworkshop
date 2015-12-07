@@ -14,8 +14,10 @@
 				</li>
 			<% end %>
 		</ul>
+		<%= link_to t("buttons.reevaluate"), 
+								user_photo_photo_ratings_path(response.photo,response_id:response.id),class:'photo-rating-button',								id:'photo-rating-button'  %>
 	<% else %>
-		<%= link_to "Clique para Avaliar a Foto",
+		<%= link_to t(".avaluate_photo_button"),
 								user_photo_photo_ratings_path(response.photo,response_id:response.id), 
 								class:"btn btn-success",id:'photo-rating-button' %>
 	<% end %>

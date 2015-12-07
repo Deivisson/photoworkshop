@@ -45,7 +45,10 @@ pt_BR:
         comment_box_placeholder: "Deixe o seu comentário"
     photo_ratings:
       index:
-        title: "Classificação da Fotografia"
+        info: "Dê notas de 0 à 5 para as caracteristicas abaixo arrastando a barra para pontuar."
+        title: "Avaliar Fotografia"
+        comment: "Comentário(opcional)"
+
     user_profiles:
       edit:
         title: "Atualização de Perfil"
@@ -85,19 +88,26 @@ pt_BR:
       main_info: "Informações Principais"
       more_info: "Informações Complementares"
       email_info: "Informações de Envio para Pré-Matriculas."
-      email_matriculate: "Informações Envio de Email ao Confirmar matrículada."
+      email_matriculate: "Informações para Email ao confirmar matrícula."
       subscribe: "Faça sua Pré-matrícula"
+      enter_on_queue: "Entrar Fila de Espera"
       confirm_subscribe_question: "Confirma Pré-Matrícula ?"
+      confirm_enter_in_queue: "Confirma entrada na Fila de Espera ?"
       already_subscribed: "Você já esta matrículado!"
       subscribe_email_subject: "Pic2Gether - Confirmação Pré-Matrícula"
       matriculated_email_subject: "Pic2Gether - Confirmação de Matrícula"
       no_more_vacancies: "Vagas Esgotadas !!!"
       subscribe_success: "Pré-Matricula realizada com sucesso."
+      in_queued_success: "Você acabou de entrar na fila de espera, qualquer novidade você será informado."
       waiting_confirmation: "Aguardando confirmação de Matrícula."
       matriculation_with_success: "Matrícula confirmada com sucesso !!"
       my_all_workshops: "Meus Workshops"
       form:
-
+        image_max_size: "Tamanho máximo 2 megabytes"
+        target_audience_hint: "Ex.: Iniciantes, Amadores, Profissionais Avançados"
+        workload_hint: "Ex.: 16 horas"
+        allow_queued_hint: "Marque esta opção e será permitido que usuários interessados realizem a pré-matrícula mesmo após já ter atingido o número de vagas, formando assim a fila de espera. Você terá todo o controle de quais candidatos estão ou não na fila de espera."
+        allow_pre_enrolls_hint: "Marque esta opção para que usuários interessados em participar do workshop/curso possam realizar a pré-matrícula através do Pic2Gether. "
       new:
         title: "Novo Workshop"
       edit:
@@ -110,10 +120,9 @@ pt_BR:
         show:
           title: "Workshop"
           preview_workshop: "Pré-visualizar"
-          edit_workshop: "Editar Workshop"
-          open_workshop: "Abrir Workshop"
-          msg_not_opened: '<strong>Atenção, Workshop ainda não está aberto!</strong> Após finalizar todas as configurações, clique no botão acima "Abrir Workshop" e o mesmo ficará visível publicamente. É necessário que esteja aberto para que possa receber solicitação de matrículas.'
-          confirm_open_workshop_msg: "Confirmar Abertura do Workshop? "
+          publish_workshop: "Publicar"
+          msg_not_published: '<strong>Atenção, Workshop ainda não está publicado!</strong> Após finalizar todas as configurações, clique no botão acima "Publicar" e o mesmo ficará visível publicamente. É necessário que esteja publicado para que possa receber solicitação de pré-matrícula.'
+          confirm_publish_workshop_msg: "Confirmar publicação do Workshop? "
         show_participants:
           vacancies_users: "Participantes"
         show_materials:
@@ -134,8 +143,9 @@ pt_BR:
         responses:
           alert_no_post_activity: "ATENÇÃO, esta atividade ainda está pendente e o prazo final para postagem da sua foto é no dia <b>%{limit_date}.</b>"
           alert_activity_time_over: "ATENÇÃO, Prazo para postagem da foto encerrou no dia <b>%{limit_date}.</b>"
-      subscribe_link:
+      subscribe_links:
         not_opened: ""
+        queue_mg: "ATENÇÃO:: Número de vagas já atingido. Clique no botão abaixo para entrar na fila de Espera."
     workshop_materials:
       new:
         title: 'Novo Material'
@@ -152,7 +162,15 @@ pt_BR:
         post_many: "participantes já postaram"
       evaluation:
         response_photo_rating:
-          rating_photo: "Classificação da Foto"
+          rating_photo: "Avaliação da Foto"
+          avaluate_photo_button: "Clique para Avaliar a Foto"
+        photo_comments:
+          comments: "Comentários"
+        participants:
+          title: "Postagens"
+          all_participants: "Todos Participantes" 
+        responses:
+          no_activity_responses: "Não possui atividades postadas."
     workshop_participants:
       index:
         title: 'Usuários'
@@ -162,6 +180,7 @@ pt_BR:
       participant:
         remove_user: "Remover"
         confirm_matriculation: "Confirmar Matrícula"
+        confirm_matriculation_in_queue: "Confirmar Matrícula (Fila de Espera)"  
         confirm_matriculation_question: "Confirmar a matrícula do usuário?"
       search_form:
         placeholder: "Digite o nome do usuário para pesquisa"

@@ -46,7 +46,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
-    autoprefixer-rails (6.1.0.1)
+    autoprefixer-rails (6.1.2)
       execjs
       json
     bcrypt (3.1.10)
@@ -66,6 +66,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
+    delocalize (1.0.0)
+      rails (>= 2)
     devise (3.5.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -102,15 +104,15 @@ GEM
     mime-types (2.99)
     mimemagic (0.3.0)
     mini_exiftool (2.4.2)
-    mini_portile (0.6.2)
+    mini_portile2 (2.0.0)
     minitest (5.8.3)
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    nokogiri (1.6.6.4)
-      mini_portile (~> 0.6.0)
-    nokogiri (1.6.6.4-x86-mingw32)
-      mini_portile (~> 0.6.0)
+    nokogiri (1.6.7)
+      mini_portile2 (~> 2.0.0.rc2)
+    nokogiri (1.6.7-x86-mingw32)
+      mini_portile2 (~> 2.0.0.rc2)
     oauth (0.4.7)
     oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
@@ -186,7 +188,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    spring (1.4.4)
+    spring (1.5.0)
     sprockets (2.12.4)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -227,6 +229,7 @@ DEPENDENCIES
   activerecord-session_store!
   bootstrap-sass
   coffee-rails (~> 4.0.0)
+  delocalize
   devise
   formtastic
   jbuilder (~> 2.0)

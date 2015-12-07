@@ -1,6 +1,7 @@
 <div class="photo-rating-modal-container">
 	<%= content_tag :label,t('.title'), class:'modal-title',id:'modal-title-photo-rating' %>
 	<div class="rating">
+		<%= content_tag :p, t(".info"),class:"rating-info" %>
 		<%= form_tag save_user_photo_photo_ratings_path, method: :put, remote:true do %>
 			<ul>
 				<% @rating_criteriums.each do |criterium| %>
@@ -17,6 +18,11 @@
 					</li>
 				<% end %>
 			</ul>
+			<div class="photo-comment">
+				<label><%= t(".comment") %></label>
+				<%= text_area_tag "photo_comment[content]", "",maxlength: 1500 %>
+				<%= hidden_field_tag "photo_comment[from_workshop_activity]", true %>
+			</div>
 			<%= hidden_field_tag "response_id", @workshop_activity_response.id %>
 		  <div class="actions" style="margin-left: -5px;">
     		<%= submit_tag t("buttons.confirm"), class:"submit-button" %>

@@ -1,5 +1,5 @@
 <div class="ws-preview">
-	<% if !@workshop.opened? && @workshop.user_id != current_user.id %>
+	<% if !@workshop.published? && @workshop.user_id != current_user.id %>
 		<h1>Workshop não Disponível, aguarde ...</h1>
 	<% else %>
 		<div class="ws-cover" 

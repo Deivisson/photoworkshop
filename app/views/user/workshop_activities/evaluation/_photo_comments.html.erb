@@ -1,0 +1,13 @@
+<ul class="comments">
+  <%= content_tag :label,t(".comments"),class:'section-label' %>
+  <% response.photo.comments.from_workshop_activity.each do |comment| %>
+  		<li>
+  			<%= link_to user_photographer_path(comment.user_id),class:"photographer-profile" do %>
+		  		<%= image_tag(comment.user.profile.avatar.url(:medium),class:'user-avatar') %>
+		  	<% end %>
+		  	<p><%= comment.content %></p>
+	  	</li>
+  <% end %>
+</ul>
+
+

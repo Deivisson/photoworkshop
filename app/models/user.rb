@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
 
   #Workshops that the user is a participant
   has_many :workshop_participants
-  has_many :my_workshops, through: :workshop_participants
+  has_many :my_workshops, -> { where("workshop_participants.confirmed" => true) }, through: :workshop_participants
   has_many :photo_comments
   has_many :auths, class_name:"UserAuth"
   has_many :activity_responses, class_name: "WorkshopActivityResponse"

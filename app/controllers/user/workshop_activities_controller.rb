@@ -8,10 +8,15 @@ class User::WorkshopActivitiesController < User::BaseController
   # end
 
   def show
-    if !request.xhr? && current_user.id == @workshop.user_id
-      @modal = false
+    if (!request.xhr? || params[:responses_user_id].present? ) && current_user.id == @workshop.user_id
+      puts "Passei aqui"
+      @modal = false 
       @activity_responses = @workshop_activity.responses
-      respond_with(@workshop_activity, layout:'user/workshop_activities_show')
+      if params[:responses_user_id]
+        @activity_responses = @activity_responses.where(user_id:params[:responses_user_id]) if params[:responses_user_id].to_i > 0
+      else
+        respond_with(@workshop_activity, layout:'user/workshop_activities_show')
+      end
     else
       @modal = true
       respond_with(@workshop_activity, layout:false)

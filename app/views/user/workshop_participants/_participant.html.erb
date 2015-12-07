@@ -5,12 +5,12 @@
               class:"photographer-profile user-name" %>
 
   <% if workshop_owner %>
-  	<%= link_to t('.confirm_matriculation'),
+  	<%= link_to participant.in_queue? ? t('.confirm_matriculation_in_queue') : t('.confirm_matriculation'),
   							user_workshop_confirm_matriculation_path(@workshop,participant.user_id),
   							method: :put,
   							data: {confirm:t('.confirm_matriculation_question')},
   							remote:true, id:"confirm-matriculation-btn-#{participant.user_id}",
-  							class:"btn btn-tiny btn-primary" unless participant.confirmed? %>
+  							class:"btn btn-tiny" unless participant.confirmed? %>
     
     <div class="buttons-container buttons-container-participants">
     	<%= link_to t('.remove_user'),
@@ -18,5 +18,6 @@
     							method: :delete,
     							data: {confirm:t('messages.confirm_destroy')},
     							remote:true %>
+    </div>
   <% end %> 
 <% end %>

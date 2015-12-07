@@ -109,6 +109,10 @@ class Photo < ActiveRecord::Base
            user.id,Time.now.beginning_of_day,Time.now.end_of_day)
   end
 
+  def rated?
+    self.ratings.count > 0
+  end
+
 private 
 
   def save_exif

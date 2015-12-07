@@ -23,6 +23,7 @@
 //= require common/photos
 //= require common/cities.js
 //= require common/hopscotch.js
+//= require common/mask.js
 //= require user/user_profiles
 //= require user/workshops
 //= require user/workshop_materials
@@ -36,6 +37,9 @@
 //= require user/tour/home_tour
 //= require user/notifications
 //= require user/photo_rating
+//= require jquery_price_format
+//= require jquery.maskedinput-1.3.min
+
 
 
 

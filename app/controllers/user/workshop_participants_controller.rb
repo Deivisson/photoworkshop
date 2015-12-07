@@ -33,7 +33,6 @@ class User::WorkshopParticipantsController < User::BaseController
     @workshop_participant = @workshop.workshop_participants.where(user_id:params[:user_id]).first
     unless @workshop_participant.nil?
       @workshop_participant.update_attribute(:confirmed,true)
-      flash[:notice] = t('controller.workshop.open.success_on_open')
     end
   end
 

@@ -161,8 +161,10 @@
 /* INLINE HINTS
 --------------------------------------------------------------------------------------------------*/
 .formtastic .input .inline-hints {
-  color:#666;
-  margin:0.5em 0 0 0%;
+  color: #8E8B8B;
+  font-size: 13px;
+  line-height: 15px;
+  margin: -1px 0 0 0%;
 }
 
 
@@ -170,6 +172,8 @@
 --------------------------------------------------------------------------------------------------*/
 .formtastic .inline-errors {
   color:#cc0000 !important;
+  font-size: 14px !important;
+  line-height: 18px !important;
   margin:0 0 0 0%;
 }
 
@@ -233,7 +237,7 @@
 /* BOOLEAN LABELS
 --------------------------------------------------------------------------------------------------*/
 .formtastic .boolean label {
-  padding-left:25%;
+  padding-left:0;
   display:block;
 }
 

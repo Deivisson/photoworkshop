@@ -17,6 +17,7 @@ pt_BR:
     unlike: "Não Curtir"
     favorite: "Favoritar"
     unfavorite: "Remover Favorito"
+    reevaluate: "Reavaliar"
   labels:
     facebook: "Facebook"
     twitter: "Twitter"
@@ -25,6 +26,7 @@ pt_BR:
     all_categories: "Todas Categorias"
     share_on_facebook: "Compartilhar Facebook"
     share_on_twitter: "Compartilhar Twitter"
+    image_types: "Arquivos de imagem (jpg, png, gif, bmp)"
   messages:
     confirm_destroy: "Confirma Exclusão?"
     destroyed_record: "Exclusão realizada com sucesso!"
@@ -218,20 +220,21 @@ pt_BR:
       create: Criar %{model}
       submit: Salvar %{model}
       update: Atualizar %{model}
+
   number:
     currency:
       format:
-        delimiter: .
+        delimiter: '.'
         format: ! '%u %n'
         precision: 2
-        separator: ! ','
+        separator: ','
         significant: false
         strip_insignificant_zeros: false
         unit: R$
     format:
-      delimiter: .
-      precision: 3
-      separator: ! ','
+      delimiter: '.'
+      precision: 2
+      separator: ','
       significant: false
       strip_insignificant_zeros: false
     human:

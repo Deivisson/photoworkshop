@@ -17,11 +17,13 @@ module ApplicationHelper
   end
   alias_method :tm, :translate_model
 
-  def show_field(model_instance,attribute,content=nil,as_link=false)
+  def show_field(model_instance,attribute,content=nil,as_link=false,truncate=false)
     html = []
     html << content_tag(:p,class:'colon') do
       inner_html = []
-      inner_html << content_tag(:strong,ta(model_instance.class,attribute.to_sym))
+      text = ta(model_instance.class,attribute.to_sym)
+      text = text.truncate(17) if truncate
+      inner_html << content_tag(:strong,text)
 
       content = (content.nil? ? model_instance.send(attribute) : content)
       if as_link
@@ -65,4 +67,8 @@ module ApplicationHelper
     script.html_safe
   end
 
+  def yes_no(value)
+    return "Sim" if value
+    return "Não" if !value
+  end
 end

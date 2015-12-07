@@ -1,21 +1,12 @@
 <%= content_for :left_col_container do %>
-	<%= content_tag(:div, class:"panel flat") do %>
+	<%= content_tag(:div, class:"panel flat user-activity-responses") do %>
 	  <div class="panel-content">
 	    <%= render 'user/workshop_activities/evaluation/participants' %>
 	  </div>
 	<% end %> 	
 <% end %>
 
-<div class="activity-response-container">
-	<%= render "user/workshop_activities/evaluation/participant_responses" %>
-	<div id="response-photo-preview">	
-		<%= render partial:"user/workshop_activities/evaluation/response_photo_preview", 
-								locals:{response:@workshop_activity.responses.first} %>
-	</div>
-</div>
-
-<div id="response-photo-details" class="response-photo-details">
-	<%= render partial:"user/workshop_activities/evaluation/response_photo_details", 
-								locals:{response:@workshop_activity.responses.first} %>
+<div id="activity-responses">
+	<%= render 'user/workshop_activities/evaluation/responses' %>
 </div>
 

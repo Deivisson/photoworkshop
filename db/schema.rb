@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202220533) do
+ActiveRecord::Schema.define(version: 20151206223207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,11 +103,12 @@ ActiveRecord::Schema.define(version: 20151202220533) do
   add_index "notifications", ["user_sender_id"], name: "index_notifications_on_user_sender_id", using: :btree
 
   create_table "photo_comments", force: :cascade do |t|
-    t.integer  "user_id",    null: false
-    t.integer  "photo_id",   null: false
-    t.text     "content",    null: false
+    t.integer  "user_id",                                null: false
+    t.integer  "photo_id",                               null: false
+    t.text     "content",                                null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "from_workshop_activity", default: false, null: false
   end
 
   add_index "photo_comments", ["photo_id"], name: "index_photo_comments_on_photo_id", using: :btree
@@ -334,6 +335,7 @@ ActiveRecord::Schema.define(version: 20151202220533) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "confirmed",   default: false, null: false
+    t.boolean  "in_queue",    default: false, null: false
   end
 
   add_index "workshop_participants", ["user_id"], name: "index_workshop_participants_on_user_id", using: :btree
@@ -341,17 +343,17 @@ ActiveRecord::Schema.define(version: 20151202220533) do
 
   create_table "workshops", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "description",        limit: 200,             null: false
+    t.string   "description",        limit: 200,                 null: false
     t.text     "details"
-    t.date     "start_date",                                 null: false
-    t.date     "end_date",                                   null: false
+    t.date     "start_date",                                     null: false
+    t.date     "end_date",                                       null: false
     t.integer  "vacancies_number"
     t.decimal  "value"
     t.string   "prerequisite",       limit: 255
     t.text     "goal"
     t.string   "target_audience",    limit: 255
     t.text     "term"
-    t.integer  "status",                         default: 0, null: false
+    t.integer  "status",                         default: 0,     null: false
     t.string   "image_file_name",    limit: 255
     t.string   "image_content_type", limit: 255
     t.integer  "image_file_size"
@@ -363,6 +365,8 @@ ActiveRecord::Schema.define(version: 20151202220533) do
     t.text     "complement"
     t.text     "email_subscribe"
     t.text     "email_matriculate"
+    t.boolean  "allow_queued",                   default: false, null: false
+    t.boolean  "allow_pre_enrolls",              default: true,  null: false
   end
 
   add_index "workshops", ["user_id"], name: "index_workshops_on_user_id", using: :btree

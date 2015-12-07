@@ -4,10 +4,12 @@ class WorkshopParticipant < ActiveRecord::Base
 	
   belongs_to :workshop 
   belongs_to :participant, class_name: "User", foreign_key: "user_id"
+  belongs_to :participants_enrolled, class_name: "User", foreign_key: "user_id"
   belongs_to :user
   belongs_to :my_workshops, class_name: "Workshop", foreign_key: "workshop_id"
 
-  before_create :check_if_has_available_vacancies
+  before_create :check_if_has_available_vacancies, :set_in_queue
+  before_save :remove_from_queue_wait
   after_create :notificate
   after_save :notificate, :if => Proc.new {|a| confirmed_changed? && confirmed? && !confirmed_was} 
 
@@ -37,9 +39,18 @@ private
   end
 
   def check_if_has_available_vacancies
-  	unless self.workshop.has_vacancies?
+  	if !self.workshop.has_vacancies? && !self.workshop.allow_queued?
   		errors[:base] << I18n.t("user.workshops.no_more_vacancies") 
   		return false
 		end
+  end
+
+  def set_in_queue
+    self.in_queue = true if self.workshop.in_queued_wait?
+  end
+
+  def remove_from_queue_wait
+    self.in_queue = false if self.in_queue? && self.confirmed?
+    return true
   end
 end

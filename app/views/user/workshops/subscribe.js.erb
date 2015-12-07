@@ -1,2 +1,8 @@
 $("#buttons-container").html("<%= escape_javascript(render 'subscribe_links')%>");
-flashNoticeMessage("<%= t('user.workshops.subscribe_success') %>");
+<% if @workshop_participant.in_queue? %>
+	flashNoticeMessage("<%= t('user.workshops.in_queued_success') %>");
+<% else %>
+	flashNoticeMessage("<%= t('user.workshops.subscribe_success') %>");
+<% end %>
+	
+

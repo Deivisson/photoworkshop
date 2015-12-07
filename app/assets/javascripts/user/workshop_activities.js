@@ -2,6 +2,12 @@ $(document).on('ready page:load', function (){
 	bindWorkshopActivityDialog();
 	bindShowWorkshopActivityDialog();
 
+	//('input[id*="date"]')
+	$('li[id*="activity-participant-"]').click(function(){
+		$("#workshop-participants-show > li").removeClass("selected");
+		$(this).addClass("selected");
+	});
+
 	// $( "#slider-range-max" ).slider({
 	// 	range: "max",
 	// 	min: 0,

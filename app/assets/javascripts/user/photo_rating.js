@@ -7,7 +7,7 @@ function TriggerButtonPhotoRating() {
 		var url = $(this).attr('href');
 		var dialog_form = $(getModalContainer("photo-rating-modal-dialog")).dialog({
 		    autoOpen: false,
-		    width: 300,
+		    width: 310,
 		    height: 500,
 		    modal: false,
 		    close: function() {

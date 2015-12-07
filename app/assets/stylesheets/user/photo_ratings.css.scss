@@ -105,4 +105,25 @@ ul.rating-items {
 			}
 		}
 	}
+	p.rating-info {
+		color: #777;
+    float: left;
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 20px;
+    margin-top: -20px;
+	}
+	.photo-comment {
+		float: left;
+		margin: 10px 0 20px -7px;
+		label {
+			float: left;
+			width: 100%;
+		}
+		textarea {
+			height: 90px;
+			resize: none;
+			width:  265px;
+		}
+	}
 }

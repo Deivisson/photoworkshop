@@ -5,4 +5,5 @@ class PhotoComment < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :photo
+  scope :from_workshop_activity, -> {where(from_workshop_activity:true)}
 end
