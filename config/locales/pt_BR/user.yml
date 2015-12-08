@@ -143,12 +143,18 @@ pt_BR:
         responses:
           alert_no_post_activity: "ATENÇÃO, esta atividade ainda está pendente e o prazo final para postagem da sua foto é no dia <b>%{limit_date}.</b>"
           alert_activity_time_over: "ATENÇÃO, Prazo para postagem da foto encerrou no dia <b>%{limit_date}.</b>"
+        activity_response:
+          comments: "Comentários"
+          rating: "Avaliação"
       subscribe_links:
         not_opened: ""
         queue_mg: "ATENÇÃO:: Número de vagas já atingido. Clique no botão abaixo para entrar na fila de Espera."
     workshop_materials:
       new:
         title: 'Novo Material'
+      form:
+        material_description_hint: 'Ex.: Aula 1: Desvendando mistério do ISO, Abertura e Diafragma.'
+        attachment_hint: 'Arquivos permitidos: pdf, ms word, txt, excel, zip e imagens com tamanho máximo de 10MB.'
       edit:
         title: 'Edição do  Material'
     workshop_activities:

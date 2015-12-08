@@ -1,11 +1,22 @@
-<li>
-	<%= image_tag(photo_comment.user.profile.avatar(:medium),class:'avatar') %>	
-	<div class="comments-content">
-		<%= content_tag :h2, class:'user_name' do %>
-			<%= photo_comment.user.profile.user_name %>
-			<%= content_tag :span, distance_of_time_in_words(photo_comment.created_at, Time.now) %>
+<% can_delete ||= false %>
+<li id="photo-comment-<%= photo_comment.id %>">
+	<%= link_to user_photographer_path(photo_comment.user_id), class:'photographer-profile' do %>
+		<%= image_tag(photo_comment.user.profile.avatar(:thumb),class:'avatar') %>
+	<% end %>
+	<div class="text-box">
+		<span class="user-comment">
+			<%= link_to(photo_comment.user.profile.user_name, 
+						user_photographer_path(photo_comment.user_id),
+						class:"photographer-profile") %>
+			<p><%= distance_of_time_in_words(photo_comment.created_at, Time.now) %></p>
+		</span>
+		<p><%= photo_comment.content.html_safe %></p>		
+		<% if can_delete && [photo_comment.user_id, photo_comment.photo.user_id].include?(current_user.id) %>
+			<%= link_to t('buttons.destroy'), user_photo_photo_comment_path(photo_comment.photo_id, photo_comment),
+									remote:true,
+									method: :delete,
+									data: {confirm: t('messages.confirm_destroy')},
+									class:"comment-destroy-link" %>
 		<% end %>
-		<%= content_tag :p, photo_comment.content,class:'content' %>
 	</div>
-	
 </li>

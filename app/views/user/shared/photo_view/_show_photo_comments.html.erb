@@ -9,6 +9,8 @@
 	<% end unless current_user.nil? %>
 	<ul id="photo-list-comments">
 		<%= content_tag :h1, t('.last_comments'), id:"last-comment-label"  %><br>
-		<%= render partial:'user/photo_comments/photo_comment',collection: @photo.comments.order("created_at desc") %>
+		<%= render partial:'user/photo_comments/photo_comment',
+								collection: @photo.comments.order("created_at desc"),
+								locals: {can_delete:true} %>
 	</ul>
 </div>

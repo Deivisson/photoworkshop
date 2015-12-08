@@ -1,10 +1,11 @@
 <div class="comment-list-container">
 	<ul class="comment-items" id="timeline-comment-photo-<%= photo.id %>">
 		<% photo.comments.each do |comment| %>
-			<%= render partial:"photo_comment_item", locals:{photo_comment:comment} %>
+			<%= render partial:"user/photo_comments/photo_comment", 
+								locals:{photo_comment:comment,can_delete:true} %>
 		<% end %>
 		<li id="form-container-photo-<%= photo.id %>">
-			<%= image_tag(current_user.profile.avatar(:thumb),class:'user-avatar') %>
+			<%= image_tag(current_user.profile.avatar(:thumb),class:'avatar') %>
 			<div class="text-box">
 				<div id="comment-form-photo-<%= photo.id %>" class="comment-form">
 					<%= render partial: '/user/photo_comments/form', 

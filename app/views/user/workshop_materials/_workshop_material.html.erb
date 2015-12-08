@@ -1,7 +1,9 @@
 <%= content_tag :li, id:"material-#{workshop_material.id}" do %>
 	<%= image_tag attachment_extension_picture(workshop_material.attachment_content_type) %>
-  <%= link_to workshop_material.description, workshop_material.attachment.url %>
-  
+  <%= link_to workshop_material.attachment.url do %>
+    <%= workshop_material.description %>
+    <%= content_tag :span, format_date(workshop_material.created_at,:default),class:"record-created-at" %>
+  <% end %>
   <%= content_tag :div, class:"buttons-container" do %>
   	<%= link_to t('buttons.edit'),
   							edit_user_workshop_material_path(@workshop,workshop_material),

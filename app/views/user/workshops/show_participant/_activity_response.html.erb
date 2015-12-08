@@ -1,8 +1,37 @@
-<div class="posted-photo" id="workshop-activity-response-<%= response.id %>"
-    style="background-image:url(<%= response.photo.picture.url(:medium) %>)">
-  <div class="buttons-container">
-  	<%= link_to user_workshop_activity_response_path(@workshop.id,response.workshop_activity_id,response.id),class:"btn",method: :delete,data: {confirm:t('messages.confirm_destroy')},remote:true  do %>
-  				<span class="icon16pb destroy"></span>
-  	<% end %>
-  </div>
+<div class="response-item">
+	<div class="posted-photo" id="workshop-activity-response-<%= response.id %>"
+	    style="background-image:url(<%= response.photo.picture.url(:medium) %>)">
+	  <%= link_to("", user_photo_explore_show_path(response.photo),class:'photo-picture')  %>  
+	  <div class="buttons-container">
+	  	<%= link_to user_workshop_activity_response_path(@workshop.id,response.workshop_activity_id,response.id),class:"btn",method: :delete,data: {confirm:t('messages.confirm_destroy')},remote:true  do %>
+	  				<span class="icon16pb destroy"></span>
+	  	<% end %>
+	  </div>
+	</div>
+
+
+	<ul class="response-photo-comments">
+	  <%= content_tag :label,t(".comments"),class:'section-label' %>
+	  <% response.photo.comments.from_workshop_activity.each do |comment| %>
+	  		<%= render partial:'user/photo_comments/photo_comment', locals: {photo_comment:comment} %>
+	  <% end %>
+	</ul>
+
+	<div class="response-photo-ratings rating">
+	  <%= content_tag :label,t(".rating"),class:'section-label' %>
+	  <ul>
+			<% response.photo.ratings.each do |rating| %>
+				<li>
+					<div class="score-bar">
+						<div class="score <%= rating.criterium.css_class %>" 
+								 id="score-comp", style="width: <%= rating.score_perc %>%"> 
+							<label><%= rating.criterium.description %></label>
+						</div>
+						<span class="score-value-label"><%= rating.score %></span>
+					</div>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+
 </div>

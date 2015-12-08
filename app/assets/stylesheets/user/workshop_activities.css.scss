@@ -6,28 +6,100 @@
 			font-weight: bold;
 			line-height: 20px;
 		}
-		.activity-response	.posted-photo {
-			background-position: center center;
-	    background-size: cover;
-	    float: left;
-	    height: 400px;
-	    margin: 10px 0 0 5px;
-	    width: 570px;
-	    transition:All 0.6s ease;
-	    &:hover {
-	    	opacity: 0.9;
-	    	ul.workshop-activities li {
-	    		background-color: #000;	
-	    		a.user-avatar {
-	    			width: 32px 
-	    		}
-	    	}
-	    	.buttons-container {
-					visibility: visible;
-				}
-	    };
-		}	
+		.activity-response .response-item {
+			float: left;
+			.posted-photo {
+				background-position: center center;
+		    background-size: cover;
+		    float: left;
+		    height: 400px;
+		    margin: 10px 0 0 5px;
+		    width: 570px;
+		    transition:All 0.6s ease;
+		    &:hover {
+		    	opacity: 0.9;
+		    	ul.workshop-activities li {
+		    		background-color: #000;	
+		    		a.user-avatar {
+		    			width: 32px 
+		    		}
+		    	}
+		    	.buttons-container {
+		    		margin:5px 5px 0 540px;
+	  				position:absolute;
+						visibility: visible;
+					}
+		    };
+		    a.photo-picture {
+				  display:block;
+				  float:left;
+				  height:100%;
+				  width:100%;
+		    }
+			}	
+		}
 		
+		.activity-response .response-item	ul.response-photo-comments,
+		.activity-response .response-item	.response-photo-ratings {
+			float: left;
+			width: 410px;
+			label.section-label {
+				float: left;
+				font-size: 18px;
+				margin: 10px 0 10px 0;
+				width: 100%;
+			}
+			li {
+				float: left;
+				margin-bottom: 10px;
+				img.avatar {
+					border-radius: 50%;
+					float: left;
+					height: 32px;
+					width: 32px;
+				}
+				.text-box {
+					.user-comment {
+						float: left;
+						margin-bottom: 5px;
+						width: 350px;
+						a {
+							color: #32a6d3;
+							float: left;
+							margin-left: 10px;
+							text-decoration: none;
+							&:hover {
+								text-decoration: underline;
+							};
+						}
+						p {
+							color: #8f8f8f;
+							font-size: 11px;
+							float: left;
+							width: auto;
+						}
+					}
+				}
+				p {
+					font-size: 14px;
+					float: left;
+					line-height: 16px;
+					margin: 0px 0 0 10px;
+					text-align: justify;
+					width: 350px;
+				}
+			}
+		}
+
+		.activity-response .response-item	.response-photo-ratings {
+			float: right;
+			margin-right: 12px;
+			width: 150px;
+			ul li {
+				margin:0 0 2px 0; 
+			}
+		}
+
 		.activity-response .alert {
 			float: left;
 	    margin: 5px 0 0;
@@ -226,7 +298,9 @@
 	}
 }
 
-.response-photo-details ul.comments {
+.response-photo-details ul.comments,
+
+ {
 	width: 200px;
 	label.section-label {
 		float: left;

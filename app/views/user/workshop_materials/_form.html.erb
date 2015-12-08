@@ -3,8 +3,10 @@
   <%= f.inputs do %>
     <%= f.input :description,
     						:input_html => {id:'material-description'},
-    						:hint 			=> "Ex.: Aula 1: Desvendando mistério do ISO, Avertura e Diafragma." %>
-    <%= f.input :attachment %>
+    						:hint 			=> t('.material_description_hint') %>
+    <%= f.input :attachment,
+                :hint       => t('.attachment_hint'),
+                input_html: {accept:'image/*,application/zip,application/pdf,application/msword, application/vnd.ms-office, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/plain' } %>
   <% end %>
   <br>
   <br>

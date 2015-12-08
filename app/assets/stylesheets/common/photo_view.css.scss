@@ -314,30 +314,51 @@
 		    margin: 0px 0 0 7px;
 		    width: 40px;
 			};
-			.comments-content {
+			.text-box {
 				float: left;
-				margin-left: 15px;
-		    max-width: 560px;
-				h2.user_name {
-					color: #32a6d3;
-					font-size: 15px;
-					text-transform: none;
-					float: left;
-					margin-bottom: 2px;
-					width: 100%;
-				};				
-				span {
-					color: #AEAFB0;
-			    font-size: 12px;
-			    font-weight: normal;
-			    margin: 0 0 0 5px;
+				margin: 0px 0 0 10px;
+				width: 530px;
+				&:hover a.comment-destroy-link {
+					visibility: visible;
 				};
-				p.content {
+				span.user-comment {
+					float: left;
+					width: 100%;
+					a {
+						color: #32a6d3;
+						font-size: 14px;
+						float: left;
+						text-decoration: none;
+						&:hover {
+							text-decoration: underline;
+						};
+					}
+					p {
+						color: #8f8f8f;
+						font-size: 11px;
+						float: left;
+						width: auto;
+						margin: -2px 0 0 7px;
+					}
+				}
+				p {
 					float: left;
 					line-height: 20px;
-					margin: 2px 0 0;
+					text-align: justify;
+					width: 97%;
 				}
-			}			
+				a.comment-destroy-link {
+					color: #777;
+					font-size: 12px;
+					text-decoration: none;
+					position: absolute;
+					margin-left: -90px;
+					visibility: hidden;
+					&:hover {
+						text-decoration: underline;
+					};
+				}
+			}					
 		}
 	}
 	.photo-likers ul {

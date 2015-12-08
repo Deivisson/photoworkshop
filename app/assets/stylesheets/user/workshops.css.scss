@@ -148,12 +148,20 @@ ul.workshop-activities {
 			color: #777;
 			display: block;
 			float: left;
+			line-height: 18px;
 			margin: 5px 0 0 5px;
 			text-decoration: none;
 			width: 70%;
 			&:hover {
 				text-decoration: underline;
-			};			
+			};		
+			span.record-created-at {
+				float: left;
+				font-size: 10px;
+				font-style: italic;
+				position: relative;
+				width: 100%;
+			}	
 		};
 		.buttons-container {
 			float: right;
@@ -208,6 +216,15 @@ ul.workshop-activities {
 		}	
 	}
 }
+
+ul.workshop-materials.participants-view {
+	li {
+		a {
+			width: 90%;
+		}
+	}
+}
+
 .ws-preview {
 	height: 600px;
 	width: 960px;
