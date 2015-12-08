@@ -1,6 +1,7 @@
 <% if @workshop_activity_response.errors.empty? %>
 	var idElm = "#workshop-activity-response-<%= @workshop_activity_response.id %>";
 	$(idElm).remove();
+	flashNoticeMessage("<%= t('messages.destroyed_record') %>");
 <% else %>
-	alert("<%= @workshop_activity_response.errors.full_messages.to_sentence %>");
+	flashWarningMessage("<%= @workshop_activity_response.errors.full_messages.to_sentence %>");
 <% end %>

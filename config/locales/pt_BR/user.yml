@@ -124,7 +124,7 @@ pt_BR:
           msg_not_published: '<strong>Atenção, Workshop ainda não está publicado!</strong> Após finalizar todas as configurações, clique no botão acima "Publicar" e o mesmo ficará visível publicamente. É necessário que esteja publicado para que possa receber solicitação de pré-matrícula.'
           confirm_publish_workshop_msg: "Confirmar publicação do Workshop? "
         show_participants:
-          vacancies_users: "Participantes"
+          vacancies_users: "Alunos"
         show_materials:
           materials: "Materiais"
         show_activities:
@@ -135,7 +135,7 @@ pt_BR:
           title: "Workshop: %{workshop_description}"
           activities_legend: "Atividades"
           materials_legend: "Materiais"
-          participants_legend: "Participantes"
+          participants_legend: "Alunos"
           author_legend: "Autor"
         activities:
           activity_info: "Informações sobre Atividade"
@@ -152,14 +152,17 @@ pt_BR:
       edit:
         title: 'Edição do  Material'
     workshop_activities:
+      form:
+        maximum_upload_number_hint: "Indica a quantidade de fotos que o aluno poderá postar para esta atividade."
+        limit_date_hint: "Data limite para que o aluno poste as fotos"
       show: "Atividade"
       new:
         title: 'Nova Atividade'
       edit:
         title: 'Edição da Atividade'
       workshop_activity:
-        post_one: "paticipante já postou"
-        post_many: "participantes já postaram"
+        post_one: "aluno já postou"
+        post_many: "alunos já postaram"
       evaluation:
         response_photo_rating:
           rating_photo: "Avaliação da Foto"
@@ -168,7 +171,7 @@ pt_BR:
           comments: "Comentários"
         participants:
           title: "Postagens"
-          all_participants: "Todos Participantes" 
+          all_participants: "Todos Alunos" 
         responses:
           no_activity_responses: "Não possui atividades postadas."
     workshop_participants:
@@ -176,7 +179,7 @@ pt_BR:
         title: 'Usuários'
       users:
         add_user: "Adicionar Usuário"
-        remove_user: "Remover Participante"
+        remove_user: "Remover Aluno"
       participant:
         remove_user: "Remover"
         confirm_matriculation: "Confirmar Matrícula"
@@ -186,6 +189,7 @@ pt_BR:
         placeholder: "Digite o nome do usuário para pesquisa"
     workshop_activity_responses:
       upload_not_allowed: "Uploads já não são mais permitidos devido já ter postado a quantidade máxima permitida, ou o prazo de postagem chegou ao fim."
+      can_be_destroyed: "Esta postagem já foi avaliada, portanto não poderá ser excluída."
       new:
         title: "Atividade: %{activity_description}"
     shared:

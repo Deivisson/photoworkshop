@@ -6,6 +6,14 @@ function flashNoticeMessage(message){
 	flashMessages(html);
 }
 
+function flashWarningMessage(message){
+	var html ="";
+	html += "<div id='flash_warning'>"
+	html += message  
+	html += "</div>" 
+	flashMessages(html);
+}
+
 function flashMessages(innerHtml){
 	removeModalFlashMenssage();
 	var html = "";

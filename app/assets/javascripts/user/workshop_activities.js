@@ -27,7 +27,7 @@ function bindWorkshopActivityDialog() {
 			var url = $(this).attr('href');
 			var dialog_form = $(getModalContainer("workshop-activities-modal-dialog")).dialog({
 			    autoOpen: false,
-			    width: 700,
+			    width: 500,
 			    height: 600,
 			    modal: true,
 			    close: function() {
@@ -39,6 +39,7 @@ function bindWorkshopActivityDialog() {
 		  		$(this).dialog('option',"title",$("#modal-title-activity").text());
 		  		$(".ui-widget-overlay").css("opacity","0.8");
 		  		$("#workshop-activity-description").focus();
+		  		setFieldMasks();
 			  });
 			  
 			  dialog_form.dialog('open');

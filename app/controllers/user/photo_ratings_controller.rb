@@ -24,7 +24,7 @@ private
 
 	def photo_rating_params
    	params.require(:photo_ratings).map do |r|
-   		ActionController::Parameters.new(r.to_hash).permit(:rating_criterium_id, :photo_id, :score)
+   		ActionController::Parameters.new(r.to_hash).permit(:rating_criterium_id, :photo_id, :score, :workshop_activity_response_id)
    	end
   end
 

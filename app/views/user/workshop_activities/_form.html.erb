@@ -1,14 +1,21 @@
 <%= semantic_form_for [:user,@workshop,@workshop_activity], remote:true do |f| %>
-  <%= f.inputs do %>
-    <%= f.input :description,
-    						:input_html => {id:'workshop-activity-description'} %>
-    <%= f.input :details,:input_html => {rows:10} %>
-    <%= f.input :limit_date, :as => :string %>
-    <%= f.input :maximum_upload_number %>
+  <%= content_tag(:div, class:"panel",style:'margin:0;border:0;margin-top:-20px') do %>
+    <div class="panel-content">
+      <%= f.input :description,
+      						:input_html => {id:'workshop-activity-description'} %>
+      <%= f.input :details,:input_html => {rows:10} %>
+      <div class="grid2column">
+        <%= f.input :limit_date, 
+                    :as         => :string,
+                    :hint       => t('.limit_date_hint'),
+                    :input_html => {value:format_date(@workshop_activity.limit_date)} %>
+
+        <%= f.input :maximum_upload_number, 
+                    :hint => t('.maximum_upload_number_hint') %>
+      </div>
+    </div>
+    <div class="actions" style="margin-left:0px">
+      <%= submit_button f %>
+    </div>
   <% end %>
-  <br>
-  <br>
-  <div class="actions" style="margin-left:-10px">
-    <%= submit_button f %>
-  </div>
 <% end %>

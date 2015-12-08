@@ -5,11 +5,13 @@ class WorkshopActivityResponse < ActiveRecord::Base
   belongs_to :user
   belongs_to :workshop_activity
   has_one :photo, dependent: :destroy
+  has_many :photo_ratings
 
   attr_accessor :can_upload
   accepts_nested_attributes_for :photo
 
   before_save :check_if_can_upload
+  before_destroy :check_if_can_destroy, prepend: true
 
   def can_upload?
   	return @can_upload unless @can_upload.nil?
@@ -22,7 +24,14 @@ private
 	
 	def check_if_can_upload
 		unless can_upload?
-			errors.add(:base, I18n.t('user.workshop_responses.upload_not_allowed_by_limit')) 
+			errors.add(:base, I18n.t('user.workshop_activity_responses.upload_not_allowed_by_limit')) 
 		end
   end  
+
+  def check_if_can_destroy
+    unless self.photo_ratings.limit(1).first.nil?
+      errors.add(:base, I18n.t('user.workshop_activity_responses.can_be_destroyed'))
+      return false
+    end
+  end
 end

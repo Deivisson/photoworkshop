@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151206223207) do
+ActiveRecord::Schema.define(version: 20151208025037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -122,13 +122,13 @@ ActiveRecord::Schema.define(version: 20151206223207) do
     t.string   "orientation",   limit: 100
     t.string   "shutter_speed", limit: 100
     t.string   "aperture",      limit: 100
-    t.string   "iso",           limit: 10
+    t.string   "iso",           limit: 100
     t.datetime "taken_at"
     t.string   "flash",         limit: 100
-    t.string   "focal_lenght",  limit: 20
-    t.string   "colorsapce",    limit: 20
-    t.string   "exposuremode",  limit: 20
-    t.string   "whitebalance",  limit: 20
+    t.string   "focal_lenght",  limit: 100
+    t.string   "colorsapce",    limit: 100
+    t.string   "exposuremode",  limit: 100
+    t.string   "whitebalance",  limit: 100
     t.integer  "imagewidth"
     t.integer  "imageheight"
     t.float    "latitude"
@@ -152,15 +152,17 @@ ActiveRecord::Schema.define(version: 20151206223207) do
   create_table "photo_ratings", force: :cascade do |t|
     t.integer  "photo_id"
     t.integer  "rating_criterium_id"
-    t.integer  "score",               default: 0
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.integer  "score",                         default: 0
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
     t.integer  "user_id"
+    t.integer  "workshop_activity_response_id"
   end
 
   add_index "photo_ratings", ["photo_id"], name: "index_photo_ratings_on_photo_id", using: :btree
   add_index "photo_ratings", ["rating_criterium_id"], name: "index_photo_ratings_on_rating_criterium_id", using: :btree
   add_index "photo_ratings", ["user_id"], name: "index_photo_ratings_on_user_id", using: :btree
+  add_index "photo_ratings", ["workshop_activity_response_id"], name: "index_photo_ratings_on_workshop_activity_response_id", using: :btree
 
   create_table "photos", force: :cascade do |t|
     t.integer  "user_id",                                                   null: false
@@ -384,6 +386,7 @@ ActiveRecord::Schema.define(version: 20151206223207) do
   add_foreign_key "photo_ratings", "photos"
   add_foreign_key "photo_ratings", "rating_criteria"
   add_foreign_key "photo_ratings", "users"
+  add_foreign_key "photo_ratings", "workshop_activity_responses"
   add_foreign_key "photos", "categories", name: "fk_photos_category"
   add_foreign_key "photos", "users", name: "fk_photos_users"
   add_foreign_key "states", "countries", name: "states_countries"

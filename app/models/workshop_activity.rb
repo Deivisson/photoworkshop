@@ -4,7 +4,7 @@ class WorkshopActivity < ActiveRecord::Base
 	validates :status, presence:true
   validates :maximum_upload_number, presence:true, numericality:true
   validates :limit_date, presence:true
-
+  validate :limit_date_minor_than_today
   belongs_to :workshop
   has_many :responses, class_name: "WorkshopActivityResponse"
 
@@ -49,5 +49,14 @@ private
 	  	attributes.merge!(user_receiver_id:participant.id)  
       Notification.create!(attributes)
     end
-  end  
+  end
+
+  def limit_date_minor_than_today
+    return if self.limit_date.nil?
+    if self.limit_date < Date.today
+      errors[:limit_date] << I18n.t('activerecord.errors.messages.date_greater_than_or_equal_to', 
+                                    date: I18n.localize(Date.today, :format => "%d/%m/%Y" ))
+      return false
+    end
+  end
 end

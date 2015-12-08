@@ -4,7 +4,7 @@ $(document).on('ready page:load', function (){
 		var url = $(this).attr('href');
 		var dialog_form = $(getModalContainer("workshop-activity-response-modal-dialog")).dialog({
 		    autoOpen: false,
-		    width: 900,
+		    width: 700,
 		    height: h,
 		    modal: true,
 		    close: function() {
@@ -14,6 +14,7 @@ $(document).on('ready page:load', function (){
 		  });
 
 		  dialog_form.load(url + '#workshop-activity-response-containter', function(){
+		  	$(this).dialog('option',"title",$("#modal-title-response").text());
 		  	jQuery('body').css('overflow','hidden');
 	  		$(".ui-widget-overlay").css("opacity","0.8");
 	  		$("#workshop-activity-response-modal-dialog").css("overflow-x","hidden");

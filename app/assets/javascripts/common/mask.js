@@ -1,6 +1,6 @@
 $(document).on('ready page:load', function (){
   jQuery(function($){
-      setFieldMasks();
+    setFieldMasks();
   });
 });
 
