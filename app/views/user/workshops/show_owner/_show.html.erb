@@ -1,4 +1,12 @@
-<% title t('.workshop') %>
+<%# title t('.workshop') %>
+<%= content_for :menu_itens do %>
+  <li>
+    <%= link_to user_workshops_path do %>
+      <%= t('buttons.back') %>
+      <span class="icon20 back"></span>
+    <% end %>
+  </li>
+<% end %>
 <%= content_for :toolbar_buttons do %>
   <%= link_to t('.preview_workshop'), 
               user_workshop_marketing_path(@workshop),

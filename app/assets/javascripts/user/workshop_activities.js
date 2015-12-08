@@ -2,30 +2,16 @@ $(document).on('ready page:load', function (){
 	bindWorkshopActivityDialog();
 	bindShowWorkshopActivityDialog();
 
-	//('input[id*="date"]')
 	$('li[id*="activity-participant-"]').click(function(){
 		$("#workshop-participants-show > li").removeClass("selected");
 		$(this).addClass("selected");
 	});
-
-	// $( "#slider-range-max" ).slider({
-	// 	range: "max",
-	// 	min: 0,
-	// 	max: 5,
-	// 	value: 0,
-	// 	slide: function( event, ui ) {
-	// 		$("#amount" ).text( ui.value );
-	// 		$("#score-comp").css("width",(ui.value * 20) + "%");
-	// 	}
-	// });
-	// $("#amount").text( $( "#slider-range-max" ).slider( "value" ) );
-
 });
 
 function bindWorkshopActivityDialog() {
 	$("#add-workshop-activities,.edit-workshop-activity").click(function(e){
 			var url = $(this).attr('href');
-			var dialog_form = $(getModalContainer("workshop-activities-modal-dialog")).dialog({
+			var dialog_form = $(getModalContainer("workshop-activities-modal-dialog",true)).dialog({
 			    autoOpen: false,
 			    width: 500,
 			    height: 600,
@@ -51,7 +37,7 @@ function bindWorkshopActivityDialog() {
 function bindShowWorkshopActivityDialog() {
 	$(".show-workshop-activity").click(function(e){
 			var url = $(this).attr('href');
-			var dialog_form = $(getModalContainer("workshop-show-activity-modal-dialog")).dialog({
+			var dialog_form = $(getModalContainer("workshop-show-activity-modal-dialog",true)).dialog({
 			    autoOpen: false,
 			    width: 600,
 			    height: 600,

@@ -1,3 +1,11 @@
+<%= content_for :menu_itens do %>
+  <li>
+    <%= link_to user_workshop_path(@workshop) do %>
+      <%= t('buttons.back') %>
+      <span class="icon20 back"></span>
+    <% end %>
+  </li>
+<% end %>
 <%= content_for :left_col_container do %>
 	<%= content_tag(:div, class:"panel flat user-activity-responses") do %>
 	  <div class="panel-content">

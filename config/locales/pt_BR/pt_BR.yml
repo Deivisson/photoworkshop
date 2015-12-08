@@ -18,6 +18,7 @@ pt_BR:
     favorite: "Favoritar"
     unfavorite: "Remover Favorito"
     reevaluate: "Reavaliar"
+    back: "Voltar"
   labels:
     facebook: "Facebook"
     twitter: "Twitter"

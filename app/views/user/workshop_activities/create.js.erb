@@ -1,11 +1,11 @@
 <% if @workshop_activity.errors.any? %>
 	$("#workshop-activities-containter").html("<%= escape_javascript(render 'form') %>")	;
+	setFieldMasks();
 <% else %>
 	$("#workshop-activities-container").append(
 		"<%= escape_javascript(render partial:'workshop_activity', locals: {workshop_activity:@workshop_activity,workshop_owner:true})%>");
 	$("#workshop-activities-modal-dialog").dialog( "close" );
 	bindWorkshopActivityDialog();
 	bindShowWorkshopActivityDialog();
-	setFieldMasks();
 	flashNoticeMessage("<%= t('messages.created_record') %>");
 <% end %>

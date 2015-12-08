@@ -1,7 +1,7 @@
 <% if @workshop_participant.errors.any? %>
 	alert("<%= @workshop_participant.errors.full_messages.join(" ") %>");
 <% else %>
-	$("#workshop-participants-container").append("<%= escape_javascript(render partial:'participant',locals:{participant:@participant})%>");
+	$("#workshop-participants-container").append("<%= escape_javascript(render partial:'participant',locals:{participant:@workshop_participant,workshop_owner:true})%>");
 	$("#user-" + '<%= @workshop_participant.user_id %>').remove();
 	flashNoticeMessage("<%= t('messages.user_added_to_workshop') %>");
 <% end %>

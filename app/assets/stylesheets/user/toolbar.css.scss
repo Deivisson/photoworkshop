@@ -51,10 +51,10 @@ ul.toolbar {
 		}
 		&.fixed-menu {
 			float: left;
-			width: 325px;
+			width: auto;/*325px;*/
 			/*border-right: 1px solid #0F0F0F;*/
 			li {
-				float: right;
+				float: left;
 
 			}
 			li.app-logo {

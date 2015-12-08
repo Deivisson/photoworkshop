@@ -5,7 +5,7 @@ $(document).on('ready page:load', function (){
 function bindWorkshopMaterialDialog() {
 	$("#add-workshop-materials,.edit-workshop-material").click(function(e){
 			var url = $(this).attr('href');
-			var dialog_form = $(getModalContainer("workshop-materials-modal-dialog")).dialog({
+			var dialog_form = $(getModalContainer("workshop-materials-modal-dialog",true)).dialog({
 			    autoOpen: false,
 			    width: 700,
 			    height: 350,
