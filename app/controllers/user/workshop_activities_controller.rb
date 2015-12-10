@@ -9,7 +9,6 @@ class User::WorkshopActivitiesController < User::BaseController
 
   def show
     if (!request.xhr? || params[:responses_user_id].present? ) && current_user.id == @workshop.user_id
-      puts "Passei aqui"
       @modal = false 
       @activity_responses = @workshop_activity.responses
       if params[:responses_user_id]

@@ -12,7 +12,7 @@ class User::WorkshopActivityResponsesController < User::BaseController
   def show
     @workshop_activity = @workshop.activities.where(id:params[:activity_id]).first
     @workshop_activity_response = @workshop_activity.responses.where(id:params[:id]).first
-    #respond_with(@workshop_activity_response)
+    render layout:'user/plan_layout' unless request.xhr?
   end
 
   def new

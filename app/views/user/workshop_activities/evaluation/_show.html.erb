@@ -15,6 +15,7 @@
 <% end %>
 
 <div id="activity-responses">
-	<%= render 'user/workshop_activities/evaluation/responses' %>
+	<%= render partial:'user/workshop_activities/evaluation/responses', 
+							locals: {activity_response:@activity_responses.first} %>
 </div>
 

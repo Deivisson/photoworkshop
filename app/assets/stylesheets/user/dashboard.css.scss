@@ -366,6 +366,9 @@ ul.toolbar {
     max-width: 1000px;
     width: 100%;
 	}
+	&.full-size {
+		left: 0;
+	};
 }
 
 ul.buttons-bar {

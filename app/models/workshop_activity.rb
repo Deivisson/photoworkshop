@@ -15,7 +15,7 @@ class WorkshopActivity < ActiveRecord::Base
   end
 	
   def time_over?
-    Time.now > self.limit_date
+    Time.now.to_date > self.limit_date
   end
 
   def delivered_count

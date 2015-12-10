@@ -1,3 +1,4 @@
-$("#activity-responses").html("<%= j render 'user/workshop_activities/evaluation/responses' %>");
+$("#activity-responses").html("<%= j render(partial:'user/workshop_activities/evaluation/responses',
+																			locals: {activity_response:@activity_responses.first}) %>");
 photoView();
 TriggerButtonPhotoRating();

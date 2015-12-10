@@ -12,6 +12,7 @@ class WorkshopActivityResponse < ActiveRecord::Base
 
   before_save :check_if_can_upload
   before_destroy :check_if_can_destroy, prepend: true
+  after_create :send_notification
 
   def can_upload?
   	return @can_upload unless @can_upload.nil?
@@ -33,5 +34,16 @@ private
       errors.add(:base, I18n.t('user.workshop_activity_responses.can_be_destroyed'))
       return false
     end
+  end
+
+  def send_notification
+    attributes = {
+      content: I18n.t('notifications.workshop_activity_response',participant:self.user.user_name),
+      type_of: Notification::TYPE_WORKSHOP_ACTIVITY_RESPONSE,
+      user_sender_id: self.user_id,
+      user_receiver_id:self.workshop_activity.workshop.user_id ,
+      read:false
+    }
+    Notification.create!(attributes)
   end
 end
