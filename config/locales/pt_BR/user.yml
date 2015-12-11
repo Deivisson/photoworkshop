@@ -180,6 +180,8 @@ pt_BR:
           all_participants: "Todos Alunos" 
         responses:
           no_activity_responses: "Não possui atividades postadas."
+        show:
+          back_workshop: "Voltar Workshop"
     workshop_participants:
       index:
         title: 'Usuários'
@@ -198,6 +200,8 @@ pt_BR:
       can_be_destroyed: "Esta postagem já foi avaliada, portanto não poderá ser excluída."
       new:
         title: "Atividade: %{activity_description}"
+      show:
+        see_activity: "Visualizar Atividade"
     shared:
       photo_view:
         show_details:

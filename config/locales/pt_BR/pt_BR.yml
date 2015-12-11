@@ -68,7 +68,7 @@ pt_BR:
     workshop_metriculated: "Sua matrícula para o workshop %{workshop_url} acabou de ser confirmada!"
     workshop_subscribe: "Pré-matrícula realizada com sucesso para o workshop %{workshop_url}. Para mais detalhes, confira o seu email."
     workshop_added_activity: "Nova atividade foi adicionada ao workshop %{workshop_url}. Fique atento para o prazo de entrega."
-    workshop_activity_response: "%{participant} acabou de postar a resolução das atividade."
+    workshop_activity_response: "%{participant} acabou de postar uma foto para a atividade %{response_url}."
   share_messages:
     share_photo: "Pic2Gether, confira que fotografia incrível %{url}"
   

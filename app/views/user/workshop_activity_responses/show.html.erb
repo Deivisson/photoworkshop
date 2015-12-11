@@ -1,3 +1,11 @@
+<%= content_for :menu_itens do %>
+  <li>
+    <%= link_to user_workshop_activity_path(@workshop,@workshop_activity) do %>
+      <%= t('.see_activity') %>
+      <span class="icon20 back"></span>
+    <% end %>
+  </li>
+<% end %>
 <div id="activity-responses" class="activity-responses-show">
 	<%= render partial:'user/workshop_activities/evaluation/responses',
 						 locals: {activity_response:@workshop_activity_response} %>

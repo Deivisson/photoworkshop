@@ -23,7 +23,7 @@ private
     workshop_url  = "<a href='#{workshop_path}'>#{self.workshop.description}</a>"
     attributes = {
       content: I18n.t(i18n_key,workshop_url:workshop_url),
-      type_of: Notification::TYPE_WORKSHOP,
+      type_of: Notification::TYPE_WORKSHOP_ADD_PARTICIPANT,
       user_sender_id: self.workshop.user_id,
       user_receiver_id: self.user.id,
       read:false
