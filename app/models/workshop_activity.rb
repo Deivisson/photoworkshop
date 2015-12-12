@@ -32,6 +32,7 @@ class WorkshopActivity < ActiveRecord::Base
     @perc_delivered
   end
 
+  before_create :check_if_not_in_limit_of_workshop_plan
 	after_create :notificate_participants
 
 private
@@ -59,4 +60,11 @@ private
       return false
     end
   end
+
+  def check_if_not_in_limit_of_workshop_plan
+    unless self.workshop.can_add_activity?
+      errors[:base] << I18n.t('activerecord.errors.messages.limit_activities_plan_end')
+      return false
+    end
+  end  
 end

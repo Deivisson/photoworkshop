@@ -1,6 +1,11 @@
 <% if @workshop_activity.errors.any? %>
-	$("#workshop-activities-containter").html("<%= escape_javascript(render 'form') %>")	;
-	setFieldMasks();
+	<% if @workshop_activity.errors[:base].any? %>
+		$("#workshop-activities-modal-dialog").dialog("close");
+		flashWarningMessage("<%= @workshop_activity.errors[:base].join(" ") %>");
+	<% else %>
+		$("#workshop-activities-containter").html("<%= escape_javascript(render 'form') %>")	;
+		setFieldMasks();
+	<% end %>
 <% else %>
 	$("#workshop-activities-container").append(
 		"<%= escape_javascript(render partial:'workshop_activity', locals: {workshop_activity:@workshop_activity,workshop_owner:true})%>");

@@ -1,5 +1,10 @@
 <% if @workshop_material.errors.any? %>
-	$("#workshop-materials-containter").html("<%= escape_javascript(render 'form') %>")	;
+	<% if @workshop_material.errors[:base].any?  %>
+		$("#workshop-materials-modal-dialog").dialog("close");
+		flashWarningMessage("<%= @workshop_material.errors[:base].join(" ") %>");
+	<% else %>
+		$("#workshop-materials-containter").html("<%= escape_javascript(render 'form') %>")	;
+	<% end %>
 <% else %>
 	$("#workshop-materials-container").append(
 		"<%= escape_javascript(render partial:'workshop_material', locals: {workshop_material:@workshop_material,workshop_owner:true})%>");

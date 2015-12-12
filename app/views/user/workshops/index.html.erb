@@ -1,7 +1,8 @@
 <%= render partial:"menu_workshop", locals: {current_menu:@type} %>
 <%= content_for :toolbar_buttons do %>
   <%= link_to t('.add_new'),
-              new_user_workshop_path, 
+              user_workshop_plans_path,
+              id:'workshop-plans-link', 
               class:"btn btn-success btn-small btn-right" %>
 <% end %>
 <div id="workshop-list">

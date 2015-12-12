@@ -75,11 +75,17 @@ if RatingCriterium.first.nil?
   ].each {|criteria|RatingCriterium.create!(criteria)}
   puts "Data entered in the Rating criterias table"
 end
-
 RatingCriterium.update(1,css_class:"composition")
 RatingCriterium.update(2,css_class:"criativity")
 RatingCriterium.update(3,css_class:"exhibition")
 RatingCriterium.update(4,css_class:"distinctness")
+
+plans = [
+  {i18n_key:'workshop_plans.basic',          active:true, value:'19.90',  settings:'[{"key":"add_participants","value":"1","type":"boolean"},{"key":"limit_participants","value":"5","type":"integer"},{"key":"add_materials","value":"0","type":"boolean"},{"key":"limit_materials","value":"0","type":"integer"},{"key":"add_activities","value":"0","type":"boolean"},{"key":"limit_activities","value":"0","type":"integer"}]'},
+  {i18n_key:'workshop_plans.premium',        active:true, value:'65.00',  settings:'[{"key":"add_participants","value":"1","type":"boolean"},{"key":"limit_participants","value":"10","type":"integer"},{"key":"add_materials","value":"1","type":"boolean"},{"key":"limit_materials","value":"5","type":"integer"},{"key":"add_activities","value":"1","type":"boolean"},{"key":"limit_activities","value":"2","type":"integer"}]'},
+  {i18n_key:'workshop_plans.professional',   active:true, value:'95.00',  settings:'[{"key":"add_participants","value":"1","type":"boolean"},{"key":"limit_participants","value":"15","type":"integer"},{"key":"add_materials","value":"1","type":"boolean"},{"key":"limit_materials","value":"10","type":"integer"},{"key":"add_activities","value":"1","type":"boolean"},{"key":"limit_activities","value":"5","type":"integer"}]'},
+  {i18n_key:'workshop_plans.enterprise',     active:true, value:'150.00', settings:'[{"key":"add_participants","value":"1","type":"boolean"},{"key":"limit_participants","value":"25","type":"integer"},{"key":"add_materials","value":"1","type":"boolean"},{"key":"limit_materials","value":"30","type":"integer"},{"key":"add_activities","value":"1","type":"boolean"},{"key":"limit_activities","value":"10","type":"integer"}]'}
+].each{|plan| WorkshopPlan.create!(plan)} if WorkshopPlan.first.nil?
 
 
 # #

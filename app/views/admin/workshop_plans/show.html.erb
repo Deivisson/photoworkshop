@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @workshop_plan.description %>
+</p>
+
+<p>
+  <strong>Settings:</strong>
+  <%= @workshop_plan.settings %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @workshop_plan.active %>
+</p>
+
+<%= link_to 'Edit', edit_workshop_plan_path(@workshop_plan) %> |
+<%= link_to 'Back', workshop_plans_path %>

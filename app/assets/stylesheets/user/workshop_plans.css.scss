@@ -1,0 +1,113 @@
+ul.workshop-plans {
+	float: left;
+	margin-top: 12px;
+	width: 100%;
+	li {
+		border: 1px solid #444;
+		border-radius: 5px 5px 0px 0px; 
+		-moz-border-radius: 5px 5px 0px 0px; 
+		-webkit-border-radius: 5px 5px 0px 0px; 			
+		float: left;
+		height: 320px;
+		margin-right: 10px;
+		padding-bottom: 20px;
+		width: 230px;
+		&:last-child {
+			margin-right: 0;
+		};
+		h1 {
+			border-bottom: 1px solid #444;
+			font-size: 18px;
+			padding: 8px 0 8px 5px;
+		}
+		span.plan-price {
+			font-size: 32px;
+			float: left;
+			font-weight: bold;
+			margin: 20px 0 20px 0;
+			text-align: center;
+			width: 100%;
+			span.currency-unit {
+				font-size: 18px;
+		    font-weight: bold;
+		    margin: 4px 0 0 -24px;
+		    position: absolute;
+			}
+		}
+		.btn {
+			float: left;
+	    height: 25px;
+	    line-height: 25px;
+	    margin-left: -210px;
+	    position: absolute;
+	    text-align: center;
+	    top: 300px;
+	    width: 180px;
+		}
+	}
+}
+
+ul.workshop-plans ul.plan-items {
+	float: left;
+	width: 100%;
+	float: left;
+	li {
+		border: 0px;
+		border-radius: 0; 
+		-moz-border-radius: 0; 
+		-webkit-border-radius: 0; 
+		color: #000;
+		height: auto;
+		padding: 8px 0 0px 5px;	
+		width: 100%;
+		img {
+			float: left;
+			height: 16px;
+			width: 16px;
+			opacity: 0.6;
+		}
+		p {
+			float: left;
+			font-size: 14px;
+			line-height: 15px;
+			text-align: left;
+			margin-left: 4px;
+			width: 200px;
+		}
+
+	}
+}
+
+ul.workshop-plans {
+	li.recommended {
+		background-color: #222222;
+		border-color: #008CBF;
+    transform: rotate(0deg) scale(1.1)  translate(0px);
+    -webkit-transform: rotate(0deg) scale(1.1)  translate(0px);
+    -moz-transform: rotate(0deg) scale(1.1)  translate(0px);
+    -o-transform: rotate(0deg) scale(1.1)  translate(0px);
+    -ms-transform: rotate(0deg) scale(1.1)  translate(0px);
+    box-shadow: 1px 1px 2px #008CBF;
+    z-index: 999999999;		
+		h1 {
+			color: #038CB8;
+			font-size: 16px;
+		}
+		span {
+			color: #FFF;
+		}
+	
+		ul.plan-items li {
+			color: #FFF;
+			font-size: 13px;
+		}
+		.btn {
+			top:265px;
+		}
+	}
+}
+
+p.info-plan {
+  float: left;
+  margin-top: 20px;	
+}

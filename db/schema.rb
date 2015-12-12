@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208025037) do
+ActiveRecord::Schema.define(version: 20151212150815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -343,6 +343,15 @@ ActiveRecord::Schema.define(version: 20151208025037) do
   add_index "workshop_participants", ["user_id"], name: "index_workshop_participants_on_user_id", using: :btree
   add_index "workshop_participants", ["workshop_id"], name: "index_workshop_participants_on_workshop_id", using: :btree
 
+  create_table "workshop_plans", force: :cascade do |t|
+    t.string   "i18n_key",   limit: 100
+    t.text     "settings"
+    t.boolean  "active",                                         default: false, null: false
+    t.decimal  "value",                  precision: 5, scale: 2, default: 0.0,   null: false
+    t.datetime "created_at",                                                     null: false
+    t.datetime "updated_at",                                                     null: false
+  end
+
   create_table "workshops", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "description",        limit: 200,                 null: false
@@ -369,9 +378,11 @@ ActiveRecord::Schema.define(version: 20151208025037) do
     t.text     "email_matriculate"
     t.boolean  "allow_queued",                   default: false, null: false
     t.boolean  "allow_pre_enrolls",              default: true,  null: false
+    t.integer  "workshop_plan_id"
   end
 
   add_index "workshops", ["user_id"], name: "index_workshops_on_user_id", using: :btree
+  add_index "workshops", ["workshop_plan_id"], name: "index_workshops_on_workshop_plan_id", using: :btree
 
   add_foreign_key "cities", "states", name: "cities_states"
   add_foreign_key "favorite_photos", "photos"
@@ -404,4 +415,5 @@ ActiveRecord::Schema.define(version: 20151208025037) do
   add_foreign_key "workshop_participants", "users", name: "workshop_participants_user"
   add_foreign_key "workshop_participants", "workshops", name: "workshop_participants_workshop"
   add_foreign_key "workshops", "users", name: "workshops_user"
+  add_foreign_key "workshops", "workshop_plans"
 end

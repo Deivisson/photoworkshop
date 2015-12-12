@@ -3,6 +3,7 @@
               class:"btn btn-important btn-small btn-right" %>
 <% end %>  
 <%= semantic_form_for [:user,@workshop] do |f| %>
+  <%= f.input :workshop_plan_id, as: :hidden %>
   <%= content_tag(:div, class:"panel",style:'width: 45%;') do %>
     <%= content_tag :h5, t('user.workshops.main_info'),class:'title' %>
     <div class="panel-content">

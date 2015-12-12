@@ -32,7 +32,7 @@ class User::WorkshopParticipantsController < User::BaseController
   def confirm_matriculation
     @workshop_participant = @workshop.workshop_participants.where(user_id:params[:user_id]).first
     unless @workshop_participant.nil?
-      @workshop_participant.update_attribute(:confirmed,true)
+      @workshop_participant.confirm_matriculation #update_attribute(:confirmed,true)
     end
   end
 

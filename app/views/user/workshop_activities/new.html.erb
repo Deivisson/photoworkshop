@@ -1,5 +1,11 @@
 <div id="workshop-activities-containter">
 	<%= content_tag :label,t('.title'), 
 			class:'modal-title',id:'modal-title-activity' %>
-	<%= render 'form' %>
+	<% if @workshop.can_add_activity? %>
+		<%= render 'form' %>
+	<% else %>
+		<div class="alert alert-danger">
+			<%= t("activerecord.errors.messages.limit_activities_plan_end") %>
+		</div>
+	<% end %>
 </div>

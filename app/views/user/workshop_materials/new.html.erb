@@ -1,5 +1,11 @@
 <div id="workshop-materials-containter">
 	<%= content_tag :label,t('.title'), class:'modal-title',id:'modal-title-material' %>
-	<%= render 'form' %>
+	<% if @workshop.can_add_material? %>
+		<%= render 'form' %>
+	<% else %>
+		<div class="alert alert-danger">
+			<%= t("activerecord.errors.messages.limit_materials_plan_end") %>
+		</div>
+	<% end %>
 </div>
 

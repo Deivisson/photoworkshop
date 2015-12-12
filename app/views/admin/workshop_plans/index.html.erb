@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Workshop Plans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Settings</th>
+      <th>Active</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @workshop_plans.each do |workshop_plan| %>
+      <tr>
+        <td><%= workshop_plan.description %></td>
+        <td><%= workshop_plan.settings %></td>
+        <td><%= workshop_plan.active %></td>
+        <td><%= link_to 'Show', workshop_plan %></td>
+        <td><%= link_to 'Edit', edit_workshop_plan_path(workshop_plan) %></td>
+        <td><%= link_to 'Destroy', workshop_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Workshop plan', new_workshop_plan_path %>

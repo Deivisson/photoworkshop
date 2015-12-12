@@ -20,7 +20,7 @@ class User::WorkshopsController < User::BaseController
   end
 
   def new
-    @workshop = Workshop.new
+    @workshop = Workshop.new(workshop_plan_id: params[:plan_id])
     respond_with(@workshop,layout:'/user/workshop_form')
   end
 
@@ -74,7 +74,7 @@ class User::WorkshopsController < User::BaseController
     def workshop_params
       params.require(:workshop).permit(:user_id, :description, :details, :complement, :start_date, :end_date, 
                     :vacancies_number, :value, :prerequisite, :goal, :target_audience, :term, :image,:workload,
-                    :email_subscribe, :email_matriculate,:allow_queued, :allow_pre_enrolls)
+                    :email_subscribe, :email_matriculate,:allow_queued, :allow_pre_enrolls, :workshop_plan_id)
     end
 
     def get_index_type

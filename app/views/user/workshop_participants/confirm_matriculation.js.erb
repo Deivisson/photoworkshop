@@ -3,5 +3,5 @@
 	$(id).remove();
 	flashNoticeMessage("<%= t('user.workshops.matriculation_with_success') %>");
 <% else %>		
-	alert("<%= @workshop_participant.errors.full_messages.to_sentence %>");
+	flashWarningMessage("<%= @workshop_participant.errors.full_messages.to_sentence %>");
 <% end %>

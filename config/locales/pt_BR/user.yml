@@ -202,6 +202,19 @@ pt_BR:
         title: "Atividade: %{activity_description}"
       show:
         see_activity: "Visualizar Atividade"
+    workshop_plans:
+      index:
+        title: "Selecione o Plano adequado."
+        info_plan: "(*) Ao adiquirir o plano, você não terá uma cobrança mensal. O valor pago será por Workshop contratado e nada mais."
+      basic: "Basic"
+      premium: "Premium (recomendado)"
+      professional: "Professional"
+      enterprise: "Enterprise"
+      settings:
+        limit_participants: "Limite de %{value} alunos;"
+        unlimited_participants: "Quantidade ilimitada de Alunos;"
+        limit_materials: "Disponibilização materiais (máximo %{value});"
+        limit_activities: "Cadastro atividades (máximo %{value});"
     shared:
       photo_view:
         show_details:

@@ -8,12 +8,19 @@ class WorkshopParticipant < ActiveRecord::Base
   belongs_to :user
   belongs_to :my_workshops, class_name: "Workshop", foreign_key: "workshop_id"
 
-  before_create :check_if_has_available_vacancies, :set_in_queue
+  before_create :check_if_has_available_vacancies,
+                :set_in_queue
+
   before_save :remove_from_queue_wait
   after_create :notificate
   after_save :notificate, :if => Proc.new {|a| confirmed_changed? && confirmed? && !confirmed_was} 
 
   scope :confirmed, -> {where(confirmed:true)}
+
+  def confirm_matriculation
+    self.confirmed = true
+    self.save
+  end
 
 private
 	
@@ -46,11 +53,19 @@ private
   end
 
   def set_in_queue
-    self.in_queue = true if self.workshop.in_queued_wait?
+    if self.workshop.in_queued_wait?
+      self.confirmed = false
+      self.in_queue = true 
+    end
   end
 
   def remove_from_queue_wait
-    self.in_queue = false if self.in_queue? && self.confirmed?
-    return true
+    if (self.workshop.participants.count >= self.workshop.plan.limit_participants)
+      errors[:base] << I18n.t("activerecord.errors.messages.limit_participants_plan_end")
+      return false
+    else
+      self.in_queue = false if self.in_queue? && self.confirmed?
+      return true
+    end
   end
 end

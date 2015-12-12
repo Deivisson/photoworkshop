@@ -1,15 +1,16 @@
 class Workshop < ActiveRecord::Base
 
   PUBLISHED = 1
-  
+  UNPAID = 2
+
   validates :user, presence:true
   validates :description, presence:true, length: {maximum:200}
   validates :start_date, presence:true
   validates :end_date, presence:true
   validates :vacancies_number, presence:true, numericality: {only_integer:true}
-  #validates :value, presence:true, numericality:true
+  validates :workshop_plan_id, presence:true
   validates :status, presence:true
-  validate :start_date_less_than_end_date
+  validate :start_date_less_than_end_date, :check_vacancies_number_x_number_participants_from_plan
 
   has_attached_file :image, 
                     :styles => { :medium => "300x300>", :thumb => "100x100>" }, 
@@ -19,6 +20,7 @@ class Workshop < ActiveRecord::Base
 
   #is the owner of workshop
   belongs_to :user
+  belongs_to :plan, class_name: "WorkshopPlan", foreign_key: "workshop_plan_id"
 
   has_many :workshop_participants
   has_many :participants,-> { where("workshop_participants.confirmed" => true) }, through: :workshop_participants
@@ -31,6 +33,10 @@ class Workshop < ActiveRecord::Base
 
   def published?
     self.status == PUBLISHED
+  end
+
+  def paid?
+    !(self.status == UNPAID  )
   end
 
   def mine?(user)
@@ -56,11 +62,27 @@ class Workshop < ActiveRecord::Base
     !has_vacancies? && self.allow_queued?
   end
 
+  def can_add_material?
+    self.plan.limit_materials > self.materials.count 
+  end
+
+  def can_add_activity?
+    self.plan.limit_activities > self.activities.count 
+  end
+
 private 
   def start_date_less_than_end_date
     return if self.start_date.nil? || self.end_date.nil?
     if self.start_date > self.end_date
       self.errors[:start_date] << I18n.t("activerecord.errors.messages.start_date_less_than_end_date")
+      return false
+    end
+  end
+
+  def check_vacancies_number_x_number_participants_from_plan
+    if self.vacancies_number > self.plan.limit_participants
+      self.errors[:vacancies_number] << I18n.t("activerecord.errors.messages.invalid_vacancies_number",
+                                              number:self.plan.limit_participants)
       return false
     end
   end
