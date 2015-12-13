@@ -32,6 +32,10 @@ class Level < ActiveRecord::Base
 	end
 
 	def progress_label
+		"#{points_current_level}/#{points_goal_for_current_level}"
+	end
+
+	def progress_label_with_label
 		"#{points_current_level} / #{points_goal_for_current_level} (#{description})"
 	end
 

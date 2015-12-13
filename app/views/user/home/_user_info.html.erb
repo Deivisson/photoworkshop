@@ -39,14 +39,19 @@
       </ul>
     </div>
     <div class="level-progress">
-      <div class="progress-bar">
-        <span class="points">
-          <%= current_user.level.progress_label %>
-        </span>
-        <div class="progress" 
-            style="width:<%= current_user.level.progress_perc %>%">
+      <h1 class="experience-label">Experiência \ Nível</h1>
+      <div class="cicle-progress c100 small p<%= current_user.level.progress_perc.to_i %> center">
+        <span><%= current_user.level.progress_label %></span>
+        <div class="slice">
+          <div class="bar"></div>
+          <div class="fill"></div>
         </div>
       </div>
+      <h2 class="level-number">
+        <%= current_user.level.number %>
+        <span><%= current_user.level.description %></span>
+      </h2>
+      
     </div>
   </div>
 </div>

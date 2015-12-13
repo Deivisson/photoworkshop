@@ -51,6 +51,6 @@
   <div class="panel-content">
     <%= render "user/workshops/show_owner/show_participants" if @workshop.plan.add_participants? %>
     <%= render "user/workshops/show_owner/show_materials"    if @workshop.plan.add_materials? %>
-    <%= render "user/workshops/show_owner/show_activities"   if @workshop.plan.add_activity?%>
+    <%= render "user/workshops/show_owner/show_activities"   if @workshop.plan.add_activities?%>
   </div>
 <% end %>  
