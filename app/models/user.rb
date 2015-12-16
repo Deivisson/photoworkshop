@@ -107,7 +107,7 @@ class User < ActiveRecord::Base
   def suggest_to_follow
     user_ids = self.following_ids
     user_ids.push(self.id)
-    User.where("id not in (?)", user_ids).limit(2)
+    User.where("id not in (?)", user_ids).limit(3)
   end
 
   def last_received_notifications

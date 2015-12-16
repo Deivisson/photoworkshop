@@ -70,6 +70,13 @@ class Workshop < ActiveRecord::Base
     self.plan.limit_activities > self.activities.count 
   end
 
+  def self.to_promote(user_id)
+    @workshops = Workshop.joins(:user => :user_relations)
+    @workshops = @workshops.where("user_relations.user_followed_id = ?",user_id)
+    @workshops = @workshops.limit(1)
+    @workshops
+  end
+
 private 
   def start_date_less_than_end_date
     return if self.start_date.nil? || self.end_date.nil?

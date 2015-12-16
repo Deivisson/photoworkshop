@@ -18,13 +18,19 @@
   <div id="photographers-to-follow">
     <%= render 'suggestion_to_follow' %>
   </div>
-  <%= render 'social_network_share' %>
 <% end %>
 
 <ul class="timeline" id="home-timeline">
   <%= render 'timeline' %>
   <div class="pagination"></div>
 </ul>
+
+<%= content_for :right_col_container do %>
+  <%= render 'ranking' %>
+  <%= render 'workshop_promote' if @workshops.any? %>
+  <%= render 'social_network_share' %>
+<% end %>
+
 
 <div id="infinite-scrolling">
   <%= will_paginate @photos %>

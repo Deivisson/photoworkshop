@@ -1,0 +1,16 @@
+<div class="float-container">
+  <div class="workshop-promote">
+  	<h1>Workshops</h1>
+    <% @workshops.each do |workshop| %>
+    	<div class="ws-promote-item">
+	    	<div class="ws-image" style="background-image: url(<%= workshop.image.url(:medium)%>)">
+	    		<%= link_to "", "#" %>
+	    	</div>
+	    	<%= link_to workshop.description, "#" %>
+	    	<span>
+	    		<%= link_to "com #{workshop.user.profile.user_name}", "#" %>
+	    	</span>
+    	</div>
+    <% end %>
+  </div>
+</div>
