@@ -26,8 +26,8 @@
 </ul>
 
 <%= content_for :right_col_container do %>
-  <%= render 'ranking' %>
   <%= render 'workshop_promote' if @workshops.any? %>
+  <%= render 'ranking' %>
   <%= render 'social_network_share' %>
 <% end %>
 

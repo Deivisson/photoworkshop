@@ -43,6 +43,7 @@ pt_BR:
     cover_photo_updated: "Foto da capa foi atualizada."
     removed_photo: "Foto removida ;-("
     rating_photo_with_success: "Foto Avaliada com sucesso."
+    following_success: "Você acabou de seguir %{photographer}"
   levels:
     beginner: "Iniciante"
     student: "Estudante"

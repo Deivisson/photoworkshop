@@ -4,11 +4,13 @@
     <% @workshops.each do |workshop| %>
     	<div class="ws-promote-item">
 	    	<div class="ws-image" style="background-image: url(<%= workshop.image.url(:medium)%>)">
-	    		<%= link_to "", "#" %>
+	    		<%= link_to "", user_workshop_path(workshop) %>
 	    	</div>
-	    	<%= link_to workshop.description, "#" %>
+	    	<%= link_to t(".title",description:workshop.description), user_workshop_path(workshop) %>
 	    	<span>
-	    		<%= link_to "com #{workshop.user.profile.user_name}", "#" %>
+	    		<%= link_to t('.author',name:workshop.user.profile.user_name),
+	    								user_photographer_path(workshop.user_id),
+	    								class:"photographer-profile" %>
 	    	</span>
     	</div>
     <% end %>

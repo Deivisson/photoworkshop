@@ -16,9 +16,10 @@
   				<% end %>
 
     		</div>
-        <%= link_to t('buttons.follow'), user_photographer_follow_path(photographer.id), 
-                    remote:true, 
-                    class:"common-button add-button" %>
+        <%= link_to  user_photographer_follow_path(photographer.id),remote:true, 
+                    class:"common-button add-button" do %>
+            <span class="icon icon20pb add-user"></span>
+        <% end %>
     	</li>
     <% end %>
   </ul>

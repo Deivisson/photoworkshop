@@ -29,3 +29,4 @@ if ($("#who-follow-user-<%= @user.id %>").length >0 ) {
 	$("#who-follow-user-<%= @user.id %>").remove();	
 }
 
+flashNoticeMessage("<%= t('messages.following_success',photographer:@user.profile.user_name) %>");

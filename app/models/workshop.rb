@@ -73,6 +73,7 @@ class Workshop < ActiveRecord::Base
   def self.to_promote(user_id)
     @workshops = Workshop.joins(:user => :user_relations)
     @workshops = @workshops.where("user_relations.user_followed_id = ?",user_id)
+    @workshops = @workshops.where("status = ? and start_date >= ?",PUBLISHED,Time.now.to_date)
     @workshops = @workshops.limit(1)
     @workshops
   end

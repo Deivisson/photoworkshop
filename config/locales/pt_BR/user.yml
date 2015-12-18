@@ -250,7 +250,9 @@ pt_BR:
         twitter_share: "Compartilhar Twitter"
         share_message: "¹Ganhe direito de postar mais uma foto por dia para cada rede social compartilhada."
         invite_message: "²Para cada amigo convidado, você ganhará um ponto."
-    
+      workshop_promote:
+        title: "%{description}: Matrícule-se agora mesmo!"
+        author: "com %{name}"
     first_login_steps:
       step_0:
         #welcome: "Que Felicidade em ver você por aqui :-).<br>Ajude-nos a melhorar a sua experiência preenchendo as informações a seguir."
