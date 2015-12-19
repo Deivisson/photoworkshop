@@ -5,6 +5,7 @@ body {
 .left-col, .right-col {
 	background-color: #F1F1F1;/*#1B1E24;*/
 	bottom: 0px;
+	float: left;
 	position: relative;
 	top: 55px;
 	width: 250px;
@@ -443,7 +444,7 @@ ul.buttons-bar {
   border-radius: 5px;
   float: right;
   height: auto;
-  position: fixed;
+  position: relative;
   margin-top: 11px;
   right: 16px;
   width: 250px;

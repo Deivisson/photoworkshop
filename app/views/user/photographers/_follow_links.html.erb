@@ -1,9 +1,14 @@
 <% if current_user.id != user.id %>
 	<% if current_user.following_ids.include?(user.id)  %>
-		<%= link_to t('.unfollow'), user_photographer_unfollow_path(user.id),
-													class:'common-button follow-button unfollow-button', remote:true %>
+		<%= link_to user_photographer_unfollow_path(user.id),
+								class:'common-button follow-button unfollow-button', remote:true do %>
+			<%= t('.unfollow') %>
+		<% end %>
 	<% else %>
-		<%= link_to t('.follow'), user_photographer_follow_path(user.id),
-													class:'common-button follow-button', remote:true %>
+		<%= link_to user_photographer_follow_path(user.id),
+								class:'common-button follow-button', remote:true do %>
+			<span class="icon20pb add-user"></span>									
+			<%= t('.follow') %>
+		<% end %>
 	<% end %>
 <% end %>

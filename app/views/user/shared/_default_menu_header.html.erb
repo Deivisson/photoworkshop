@@ -2,11 +2,11 @@
 	<li class="app-logo">
 		<%= image_tag "shared/logo_black.png" %>
 	</li>	
-	<li>
+	<%= content_tag :li, class:(@current_menu == 'home' ? 'current' : '')  do %>
 		<%= link_to user_home_index_path, class:"home-menu" do %>
 			Home
 			<span class="icon20 home"></span>
 		<% end %>
-	</li>
+	<% end %>
 	<%= yield :menu_itens %>
 <% end %>

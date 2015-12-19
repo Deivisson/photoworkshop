@@ -1,6 +1,21 @@
 <div class="float-container">
-  <ul class="suggestion-to-follow-photographers">
+  <ul class="home-ranking">
   	<h1>Ranking</h1>
-    
+    <% @ranking_users.each do |photographer| %>
+    	<li id="ranking-user-<%= photographer.id %>">
+        <%= image_tag(photographer.profile.avatar.url(:thumb),class:'user-avatar') %>
+    		<div class="text-box">
+    			<%= link_to user_photographer_path(photographer.id), 
+                      class:'photographer-name photographer-profile' do %>
+            <%= content_tag :span, @ranking_users.index(photographer) + 1 %>
+            <%= photographer.profile.short_name  %>
+          <% end %>
+          <%=content_tag :span, photographer.level.number,class:'level-number' %>
+    		</div>
+        <div class="progress-bar">
+          <div class="progress" style="width: <%= photographer.level.progress_perc %>%"></div>
+        </div>
+    	</li>
+    <% end %>
   </ul>
 </div>

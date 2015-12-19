@@ -15,9 +15,11 @@
 
 <%= content_for :left_col_container do %>
   <%= render 'user_info' %>
+  <%= render 'ranking' %>
   <div id="photographers-to-follow">
     <%= render 'suggestion_to_follow' %>
   </div>
+
 <% end %>
 
 <ul class="timeline" id="home-timeline">
@@ -27,7 +29,6 @@
 
 <%= content_for :right_col_container do %>
   <%= render 'workshop_promote' if @workshops.any? %>
-  <%= render 'ranking' %>
   <%= render 'social_network_share' %>
 <% end %>
 

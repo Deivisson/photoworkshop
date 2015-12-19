@@ -14,6 +14,7 @@ class User::PhotographersController < User::BaseController
 		end
 		@categories	= Category.all
 		@paging = params[:page].present?
+		@current_menu = "photographers"
 		render layout:'user/explorer'
 	end
 

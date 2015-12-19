@@ -6,7 +6,7 @@
         <%= t('user.main_menu.explore') %>
       <% end %>
     <% end %>
-    <%= content_tag :li do %>
+    <%= content_tag :li, class:(@current_menu == 'photographers' ? 'current' : '') do %>
       <%= link_to  user_photographers_path do %>
         <span class="icon20 photographers"></span>
         <%= t('user.main_menu.photographers') %>
