@@ -13,9 +13,13 @@
           <%=content_tag :span, photographer.level.number,class:'level-number' %>
     		</div>
         <div class="progress-bar">
-          <div class="progress" style="width: <%= photographer.level.progress_perc %>%"></div>
+          <div class="progress" style="width: <%= photographer.level.progress_perc %>%">
+          </div>
         </div>
     	</li>
     <% end %>
+    <%= link_to "Ranking Completo", user_rankings_path, 
+                class:'see-full-ranking', 
+                id:'full-rankings' %>
   </ul>
 </div>

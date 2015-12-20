@@ -37,6 +37,7 @@
 //= require user/tour/home_tour
 //= require user/notifications
 //= require user/photo_rating
+//= require user/rankings
 //= require jquery_price_format
 //= require jquery.maskedinput-1.3.min
 //= require user/workshop_plans

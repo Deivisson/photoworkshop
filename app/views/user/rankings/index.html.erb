@@ -1,0 +1,58 @@
+<div id="full-rankings-container">
+  <ul class="full-ranking">
+    
+    <li class="header">
+      <div class="user-info"></div>
+      <div class="level-progress">
+        Nível
+      </div>
+      <div class="score-item">
+        Pontuação
+      </div>
+      <div class="score-item">
+        Fotos
+      </div>
+      <div class="score-item">
+        Seguindo
+      </div>
+      <div class="score-item">
+        Seguidores
+      </div>
+    </li>
+
+
+    <% @ranking_users.each do |photographer| %>
+    	<li id="ranking-user-<%= photographer.id %>">
+        <div class="user-info">
+          <%= image_tag(photographer.profile.avatar.url(:thumb),class:'user-avatar') %>
+      		<div class="text-box">
+      			<%= link_to user_photographer_path(photographer.id), 
+                        class:'photographer-name photographer-profile' do %>
+              <%= content_tag :span, @ranking_users.index(photographer) + 1 %>
+              <%= photographer.profile.short_name  %>
+            <% end %>
+      		</div>
+        </div>
+        <div class="level-progress">
+          <%=content_tag :span, photographer.level.number,class:'level-number' %>
+          <div class="progress-bar">
+            <div class="progress" style="width: <%= photographer.level.progress_perc %>%">
+            </div>
+          </div>          
+        </div>
+        <div class="score-item">
+          <%=photographer.current_points %>
+        </div>
+        <div class="score-item">
+          <%=photographer.photos_count %>
+        </div>
+        <div class="score-item">
+          <%=photographer.following_count %>
+        </div>
+        <div class="score-item">
+          <%=photographer.followers_count %>
+        </div>
+    	</li>
+    <% end %>
+  <ul>
+</div>

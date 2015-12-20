@@ -73,6 +73,7 @@ Rails.application.routes.draw do
     get "favorite_photos/:photo_id/favoritar", to:'favorite_photos#favoritar', :as => :favoritar_photo
     get "favorite_photos/:photo_id/unfavoritar", to:'favorite_photos#unfavoritar', :as => :unfavoritar_photo
     resources :workshop_plans, only:[:index]
+    resources :rankings, only:[:index]
   end
   
   namespace :home do

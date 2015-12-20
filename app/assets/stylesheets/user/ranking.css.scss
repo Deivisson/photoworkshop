@@ -1,4 +1,4 @@
-ul.home-ranking {
+ul.home-ranking, ul.full-ranking {
 	float: left;
 	width: 100%;
 	h1 {
@@ -101,6 +101,95 @@ ul.home-ranking {
 				height: 100%;
 				width: 30%;
 			}
+		}
+	}
+	a.see-full-ranking {
+		color: #32a6d3;
+		font-size: 12px;
+		float: right;
+		margin: 5px;
+		text-decoration: none;
+		text-align: right;
+
+		width: 100%;
+		&:hover {
+			text-decoration: underline;
+		};
+	}
+}
+
+ul.full-ranking {
+	li {
+		.user-info, .score-item, .level-progress {
+			float: left;
+		}
+		.user-info {
+			border: 1px solid #fff;
+			min-width: 250px;
+			.text-box { 
+				margin-left: 50px;
+
+			}
+		}
+		.score-item {
+			width: 90px;
+
+		}
+		.level-progress {
+			width: 160px;
+			span.level-number,span.level-next {
+				background-color: #8CD4FF;
+				border-radius: 50%; 
+				-moz-border-radius: 50%; 
+				-webkit-border-radius: 50%;
+				float: left;
+				font-size: 12px; 
+				font-weight: bold;
+				height: 27px;
+				line-height: 27px;
+				text-align: center;
+				width: 27px;
+			}
+			span.level-number {
+				/*height: 20px;
+				width: 20px;*/
+			}
+			.progress-bar {
+				background-color: #e8e5e5;
+		    border-radius: 10px;
+		    float: left;
+		    height: 13px;
+		    line-height: 15px;
+		    margin: 7px 0 0 21px;
+		    position: absolute;
+		    width: 108px;
+    		z-index: -1;
+				span.points {
+					color: #333;
+			    font-size: 12px;
+			    line-height: 22px;
+			    position: absolute;
+			    text-align: center;
+			    width: 237px;
+	  		}
+				.progress {
+					border-radius: 10px; 
+					-moz-border-radius: 10px; 
+					-webkit-border-radius: 10px; 
+					background-color: #5ba4cf;
+					height: 100%;
+					width: 30%;
+				}
+			}			
+			span.level-next {
+				float: right;
+				margin: 0 10px 0 0; 
+			}
+		}
+		&.header {
+			margin-bottom: 5px;
+    	min-height: 10px;
+    	padding: 0 0 10px 0;
 		}
 	}
 }
