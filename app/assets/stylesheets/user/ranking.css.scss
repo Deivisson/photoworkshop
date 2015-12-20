@@ -57,11 +57,14 @@ ul.home-ranking {
 				};
 			}
 			span.level-number {
-				background-color: #93CEFF; /*#80C440*/
+				background-color: #fff; /*#B8ED84;*/
+				border: 1px solid #aaa;
 				border-radius: 50%; 
 				-moz-border-radius: 50%; 
 				-webkit-border-radius: 50%;
+				color: #4D8DC4;
 				font-size: 12px; 
+				font-weight: bold;
 				height: 20px;
 				line-height: 20px;
 				position: absolute;
