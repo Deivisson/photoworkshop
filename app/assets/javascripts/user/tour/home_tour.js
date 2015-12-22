@@ -23,8 +23,8 @@ var tourHome = {
       title: "Redes Sociais",
       content: "O compartilhamento em cada uma das redes sociais, lhe dará o direito de postar mais uma foto por dia.",
       target: "social-network-share",
-      placement: "right",
-      xOffset: "-15",
+      placement: "left",
+      xOffset: "-12",
     }
   ]
 };
