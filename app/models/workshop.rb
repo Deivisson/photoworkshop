@@ -88,7 +88,7 @@ private
   end
 
   def check_vacancies_number_x_number_participants_from_plan
-    if self.vacancies_number > self.plan.limit_participants
+    if self.vacancies_number.to_i > self.plan.limit_participants
       self.errors[:vacancies_number] << I18n.t("activerecord.errors.messages.invalid_vacancies_number",
                                               number:self.plan.limit_participants)
       return false

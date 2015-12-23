@@ -35,22 +35,25 @@ ul.workshops-items {
 					text-decoration: underline;
 				};
 			}
-			h1 {
-				font-size: 18px;
-			}
-			p {
-				color: #777777;
-				float: left;
-				line-height: 20px;
-				margin: 10px 0 40px 0;
-				min-height: 38px;
-				word-spacing: normal;
+			.texts {
+		    float: left;
+		    height: 170px;
+		    width: 100%;
+				h1 {
+					font-size: 18px;
+				}
+				p {
+					color: #777777;
+					float: left;
+					line-height: 20px;
+					margin: 10px 0 40px 0;
+					min-height: 38px;
+					word-spacing: normal;
+				}
 			}
 			.workshop-resume {
 				float: left;
-				position: absolute;
-				margin: 5px 0 0 0;
-				margin-top: 150px;
+				margin: 0 0 0 0;
 				.resume-item {
 					border-right: 1px solid #eee; 
 					float: left;
@@ -240,6 +243,7 @@ ul.workshop-materials.participants-view {
 	.ws-workshop-title {
 		float: left;
 		margin-left: 10px;
+		width: 600px;
 		h1 {
 			font-size: 22px;
 			margin-bottom: 7px;
