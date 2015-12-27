@@ -2,7 +2,7 @@ module User::SocialNetworkHelper
 	#https://developers.facebook.com/docs/javascript/reference/FB.ui
 	def facebook_script
 		script = <<-SCRIPT
-			<script src="http://connect.facebook.net/en_US/all.js"></script>
+			<script src="https://connect.facebook.net/en_US/all.js"></script>
 		  <script>
 		    FB.init({
 		      appId:'1546622365584604',
@@ -36,7 +36,7 @@ module User::SocialNetworkHelper
 	def facebook_share()
 		script = <<-SCRIPT
 			<script>
-				function FacebookShare(link='http://pic2gether.com')
+				function FacebookShare(link='https://pic2gether.com')
 		    {
 		      FB.ui({
 		        method: 'share',
@@ -62,7 +62,7 @@ module User::SocialNetworkHelper
 
 	def twitter_link_to_share(title,content,html_options={})
 		html_options.merge!(target:'_blank')
-		link_to title,"http://twitter.com/home?status=#{content}", html_options
+		link_to title,"https://twitter.com/home?status=#{content}", html_options
 	end
 
 	def twitter_share
