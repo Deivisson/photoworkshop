@@ -23,34 +23,36 @@
 
 
 <% end %>
-<%= content_tag(:div, t('.msg_not_published').html_safe,class:'alert') unless @workshop.published? %>
-<%= content_tag(:div, class:"panel flat",style:'width: 50%;') do %>
-  <div class="panel-content">
-    <h4><%= t('user.workshops.main_info') %></h4>
-    <div class="show-fields">
-      <%= sf @workshop,:description %>
-      <%= sf @workshop,:details %>
-      <%= sf @workshop,:target_audience %>
-      <%= sf @workshop,:vacancies_number %>
-      <%= sf @workshop,:workload, @workshop.workload %>
-      <%= sf @workshop,:start_date,format_date(@workshop.start_date) %>
-      <%= sf @workshop,:end_date,format_date(@workshop.end_date) %>
-      <%= sf @workshop,:local %>
-      <%= sf @workshop,:value,number_to_currency(@workshop.value) %>
-      <%= sf @workshop,:allow_pre_enrolls,yes_no(@workshop.allow_pre_enrolls),false,true %>
-      <%= sf @workshop,:allow_queued,yes_no(@workshop.allow_queued),false,true %>
+<div class="workshop-show-container">
+  <%= content_tag(:div, t('.msg_not_published').html_safe,class:'alert') unless @workshop.published? %>
+  <%= content_tag(:div, class:"panel flat",style:'width: 50%;') do %>
+    <div class="panel-content">
+      <h4><%= t('user.workshops.main_info') %></h4>
+      <div class="show-fields">
+        <%= sf @workshop,:description %>
+        <%= sf @workshop,:details %>
+        <%= sf @workshop,:target_audience %>
+        <%= sf @workshop,:vacancies_number %>
+        <%= sf @workshop,:workload, @workshop.workload %>
+        <%= sf @workshop,:start_date,format_date(@workshop.start_date) %>
+        <%= sf @workshop,:end_date,format_date(@workshop.end_date) %>
+        <%= sf @workshop,:local %>
+        <%= sf @workshop,:value,number_to_currency(@workshop.value) %>
+        <%= sf @workshop,:allow_pre_enrolls,yes_no(@workshop.allow_pre_enrolls),false,true %>
+        <%= sf @workshop,:allow_queued,yes_no(@workshop.allow_queued),false,true %>
+      </div>
+      <h4><%= t('user.workshops.more_info') %></h4>
+      <div>
+        <%= @workshop.complement.html_safe unless @workshop.complement.nil? %>
+      </div>
     </div>
-    <h4><%= t('user.workshops.more_info') %></h4>
-    <div>
-      <%= @workshop.complement.html_safe unless @workshop.complement.nil? %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
 
-<%= content_tag(:div, class:"panel flat",style:'width: 42%;') do %>
-  <div class="panel-content">
-    <%= render "user/workshops/show_owner/show_participants" if @workshop.plan.add_participants? %>
-    <%= render "user/workshops/show_owner/show_materials"    if @workshop.plan.add_materials? %>
-    <%= render "user/workshops/show_owner/show_activities"   if @workshop.plan.add_activities?%>
-  </div>
-<% end %>  
+  <%= content_tag(:div, class:"panel flat",style:'width: 42%;') do %>
+    <div class="panel-content">
+      <%= render "user/workshops/show_owner/show_participants" if @workshop.plan.add_participants? %>
+      <%= render "user/workshops/show_owner/show_materials"    if @workshop.plan.add_materials? %>
+      <%= render "user/workshops/show_owner/show_activities"   if @workshop.plan.add_activities?%>
+    </div>
+  <% end %>  
+</div>

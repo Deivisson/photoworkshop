@@ -16,10 +16,13 @@
     <%= render "user/shared/photo_view/show_photo_likers" %>
   </div>
   
-  <div class="photo-info">
+  <div class="photo-info" id="photo-info">
     <div class="content-info">
-      <%= image_tag(@photo.user.profile.avatar.url(:medium),class:'avatar') %>
-      <%= link_to @photo.user.profile.user_name, "#",class:'user-name' %>
+      <%= link_to user_photographer_path(@photo.user_id) do %>
+        <%= image_tag(@photo.user.profile.avatar.url(:medium),class:'avatar') %>
+      <% end %>
+      <%= link_to @photo.user.profile.user_name, 
+                  user_photographer_path(@photo.user_id),class:'user-name' %>
       <%= content_tag :span, 
             t(".posting",category:@photo.category.description,
             created_at:format_date(@photo.created_at,)),

@@ -13,7 +13,7 @@ class User::WorkshopsController < User::BaseController
   def show
     # IF current user isn't the owner of workshop or not matriculated, will display a hot page
     if @workshop.mine?(current_user) || @workshop.enrolled?(current_user)
-      respond_with(@workshop)
+      respond_with(@workshop,layout:'user/plan_layout')
     else
       render :marketing
     end

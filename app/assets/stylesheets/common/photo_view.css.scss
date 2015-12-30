@@ -29,7 +29,7 @@
 			};
 			&.landscape {
 				height: 90%;
-				width: 99%;
+				width: 98%;
 			}
 		}
 		a.previous-link, a.next-link {
@@ -39,6 +39,7 @@
 	    -o-transition:All 0.6s ease;
 	    height: 27px;
 	    opacity: 0.1;
+	    margin-right: 20px;
 			position: absolute;
 			top: 50%;
 			visibility: hidden;
@@ -116,9 +117,8 @@
 		border-left: 1px solid #393B40;
 		right: 0;
 		padding: 10px;
-		position: fixed;
+		position: absolute;
 		width: 280px;
-		z-index: -999;
 		.content-info {
 			border-bottom: 1px solid #393B40;
 			float: left;

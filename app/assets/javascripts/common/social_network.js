@@ -1,5 +1,5 @@
 function UpdateInvitedFriends() {
-	alert("ok");
+
 }
 
 // Update that user shared on social network

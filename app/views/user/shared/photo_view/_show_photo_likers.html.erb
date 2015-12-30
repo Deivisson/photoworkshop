@@ -3,8 +3,11 @@
 		<%= content_tag :h1, t('.likers') %><br>
 		<%- @photo.likers.each do |l| %>
 			<li>
-				<%= image_tag l.profile.avatar.url(:medium), class:'avatar' %>
+				<%= link_to user_photographer_path(l.id) do %>
+					<%= image_tag l.profile.avatar.url(:medium), class:'avatar' %>
+				<% end %>
 			</li>
 		<% end %>
 	</ul>	
 </div>
+
