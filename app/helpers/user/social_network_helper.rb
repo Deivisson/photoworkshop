@@ -21,9 +21,10 @@ module User::SocialNetworkHelper
 				function FacebookInviteFriends()
 		    {
 		      FB.ui({
+		      	title:'Convidar Amigos',
 		        method: 'apprequests',
-		        message: 'Convidar Amigos',
-		        display:'iframe'
+  	        message: 'Torne o Pic2gether conhecido para seus amigos. Eles também merecem !!',
+		        display: 'popup'
 		      }, function(response){
 		        UpdateInvitedFriends();
 		      });
@@ -40,6 +41,8 @@ module User::SocialNetworkHelper
 		    {
 		      FB.ui({
 		        method: 'share',
+		        app_id:'1546622365584604',
+		        display: 'popup',
 					  href: link ,
 		      }, function(response){
 		        UpdateSocialNetworkShared('facebook',response);
