@@ -87,7 +87,7 @@
 
 .social-network-icon,
 .social-network-icon-24 {
-	background: url("/assets/shared/social_network_sprite.png");
+	background: url(asset-path("shared/social_network_sprite.png"));
 	height: 35px;
 	width: 36px;
 	&.tumblr {
@@ -111,7 +111,7 @@
 }
 
 .social-network-icon-24 {
-	background: url("/assets/shared/social_network_sprite_24.png");
+	background: url(asset-path("shared/social_network_sprite_24.png"));
 }
 
 /*.icon32 {

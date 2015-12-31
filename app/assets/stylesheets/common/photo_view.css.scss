@@ -65,20 +65,25 @@
 		float: left;
 		height: 30px;
 		list-style: none;
-		width: 400px;
+		width: 325px;
 		margin: 0 auto;
 		margin-top: 7px;
 		position: relative;
 		li {
+			background-color: #222326;
+			border-radius: 5px; 
+			-moz-border-radius: 5px; 
+			-webkit-border-radius: 5px; 			
+			border: 1px solid #393b40;
 			float: left;
-			width: 32px;
 			height: 32px;
 			margin-left: 4px;
+			width: 70px;
 			a {
 				display: block;
 				height: 100%;
-				margin: 2px 0 0 1px;
-				width: 100%;
+				margin: 1px 0 0 20px;
+				width: 32px;
 				span {
 					float: left;
 			    height: 40px;
@@ -94,7 +99,7 @@
 				a.unlike-photo,
 				a.unfavorite-photo,
 				a.favorite-photo {
-					background: url("/assets/user/photo_preview_toolbar_sprite.png") no-repeat;
+					background: url(asset-path('user/photo_preview_toolbar_sprite.png')) no-repeat;
 					margin-top: 5px;
 				}
 				a.liked-photo {
