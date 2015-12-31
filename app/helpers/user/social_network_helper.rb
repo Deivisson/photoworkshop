@@ -37,8 +37,11 @@ module User::SocialNetworkHelper
 	def facebook_share()
 		script = <<-SCRIPT
 			<script>
-				function FacebookShare(link='https://pic2gether.com')
+				function FacebookShare(link)
 		    {
+		    	if (link == undefined) {
+		    		link='https://pic2gether.com'
+		    	}
 		      FB.ui({
 		        method: 'share',
 		        app_id:'1546622365584604',
