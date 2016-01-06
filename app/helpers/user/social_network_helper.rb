@@ -48,7 +48,7 @@ module User::SocialNetworkHelper
 		        method: 'share',
 		        app_id:'1546622365584604',
 		        display: 'popup',
-					  href: link ,
+					  link: link ,
 		      }, function(response){
 		        UpdateSocialNetworkShared('facebook',response);
 		      });
