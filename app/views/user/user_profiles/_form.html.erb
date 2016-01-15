@@ -4,10 +4,14 @@
     <%= content_tag :h5, t('.basic_info'),class:'title' %>
     <div class="panel-content">
       <%= image_tag @user_profile.avatar.url(:thumb) , class:'user-avatar',id:'user-avatar'%>
-
-      <%= f.input :avatar, 
+      <div class="profile-avatar">
+        <h1><%= ta UserProfile,:avatar %></h1>
+        <h2><%= t(".avatar_max_size") %></h2>
+        <p><%= t("labels.image_types") %></p>
+        <%= f.input :avatar, 
                   label:false,
                   input_html: {:onchange => "showAvatarPreview(this)",accept:"image/*"} %>
+      </div>
                   
       <%= f.input :user_name %>
       <%= f.input :camera %>

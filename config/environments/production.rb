@@ -84,13 +84,14 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
-    :enable_starttls_auto => true,
-    :address => "smtp.gmail.com",
-    :port => 587,
-    :domain => "www.pic2gether.com",
-    :user_name => "deivisson.bruno@gmail.com",
-    :password => "d14m08F15e14d13c",
-    :authentication => :plain
+    :address              => "smtp.zoho.com",
+    :port                 => 465,
+    :domain               => "www.pic2gether.com",
+    :user_name            => "team@pic2gether.com",
+    :password             => "pic2getherteam",
+    :authentication       => :plan,
+    :ssl                  => true,
+    :tls                  => true
   }
   Rails.application.routes.default_url_options[:host] = 'pic2gether.com'
 end

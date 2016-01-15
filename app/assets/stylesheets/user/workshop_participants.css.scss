@@ -64,7 +64,10 @@ ul.workshop-user-participants {
 
 
 .show-workshop-participant {
-	width: 1024px;
+	left: 50%;
+  margin-left: -512px;
+  position: absolute;
+  width: 1024px;
 	.ws-left-col, .ws-right-col {
 		float: left;
 		.panel {

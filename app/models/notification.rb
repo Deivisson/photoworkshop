@@ -2,9 +2,12 @@ class Notification < ActiveRecord::Base
 
 	TYPE_WELCOME = 1
 	TYPE_FOLLOWED = 2
+
   TYPE_WORKSHOP_ADD_PARTICIPANT = 3
-  TYPE_WORKSHOP_ADD_ACTIVITY = 3
+  TYPE_WORKSHOP_ADD_ACTIVITY = 4
   TYPE_WORKSHOP_ACTIVITY_RESPONSE = 6
+  
+  TYPE_PHOTO_COMMENT = 10
 
 	validates :content, presence:true
 	validates :type_of, presence:true

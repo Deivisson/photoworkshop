@@ -241,11 +241,12 @@ ul.toolbar li.user-info {
 				margin: 8px 0 0 8px;
 				padding-bottom: 5px;
 				width: 330px;
-				p {
+				p.notification-content {
 					color: #333;
 					font-size: 14px;
 					line-height: 17px;
 					margin-bottom: 5px;
+					text-align: justify;
 					width: 100%;
 					strong {
 						font-weight: bold;
@@ -260,10 +261,32 @@ ul.toolbar li.user-info {
 							text-decoration: underline;
 						}
 					}
+					span.text-with-pic {
+						float: left;
+						margin-right: 80px; 
+						i {
+							color: #6B6B6B;
+							margin-top: 10px;
+						}
+					}
+					a.aux-pic {
+						float: right;
+				    height: 50px;
+				    position: absolute;
+				    right: 12px;
+				    width: 50px;
+				    img {
+				    	height: 50px;
+				    	width: 50px;
+				    }
+
+					}
 				}
 				span.created-at {
 					color: #8f8f8f;
 					font-size: 12px;
+					float: left;
+					margin: 10px 0 0 2px;
 					text-align: left;
 					width: 100%;
 				}

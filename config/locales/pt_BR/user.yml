@@ -56,6 +56,7 @@ pt_BR:
       form:
         basic_info: "Informações Básicas"
         social_networks: "Redes Sociais"
+        avatar_max_size: "Tamanho máximo 2 megabytes"
       show:
         edit_profile_button: "Editar Perfil"
       profile:
@@ -75,7 +76,7 @@ pt_BR:
         no_followings: "Você ainda não está seguindo ninguém. %{link}"
         link_label: "Clique aqui e comece a seguir agora mesmo !!"
         full_profile_no_followings: "Não está seguindo ninguém."
-      full_profile:
+      profile:
         score: "Nivel %{level} - %{position}"
       follow_links:
         follow: "Seguir"

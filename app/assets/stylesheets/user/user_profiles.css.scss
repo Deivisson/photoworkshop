@@ -24,3 +24,21 @@ img.user-avatar {
 		}
   }
 }
+
+.profile-avatar {
+	float: left;
+	margin: 32px 0 0 10px;
+	h1 {
+		color: #aaaaaa;
+		font-size: 18px;
+		font-weight: bold;
+		margin-bottom: 20px;
+	}
+	h2 {
+		margin-top: 5px;
+	}
+	p {
+		font-size: 13px !important;
+		margin: -5px 0 10px 0;
+	}
+}

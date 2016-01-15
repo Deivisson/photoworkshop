@@ -10,7 +10,9 @@
 				<%= image_tag(@user.profile.avatar.url(:medium)) %>
 			</div>
 			<%= content_tag :h1, @user.profile.user_name,class:"user-name" %>
-			<%= content_tag :h3, t('.score',score:'80%'),class:"score" %>
+			<%= content_tag :h3, class:"score" do %>
+				<%= t('user.photographers.profile.score',level:@user.level.number,position:@user.level.description) %>
+			<% end %>
 			
 			<!--Menu -->
 			<%= content_tag :ul, class:"resume" do %>

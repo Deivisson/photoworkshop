@@ -1,5 +1,5 @@
 class User::WorkshopMailer < ActionMailer::Base
-  default :from => "notifications@pic2gether.com"
+  default :from => "team@pic2gether.com"
  
   def subscribe_message(workshop, user)
     @user = user;  @workshop = workshop

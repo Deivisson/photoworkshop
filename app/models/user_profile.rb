@@ -10,7 +10,8 @@ class UserProfile < ActiveRecord::Base
                     :styles => { :medium => "500x500>", :thumb => "200x200>" }, 
                     :default_url => "user/no_avatar.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-  
+  validates_attachment_size :avatar, less_than: 2.1.megabytes, message: I18n.t("activerecord.errors.messages.image_size",size:2)
+
   belongs_to :user
   belongs_to :category
   belongs_to :city

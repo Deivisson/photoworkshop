@@ -50,7 +50,7 @@ pt_BR:
         country_id: "País"
         state_id: "Estado"
         city_id: "Cidade"
-        avatar: "Avatar"
+        avatar: "Foto Perfil"
         user_name: "Nome Usuário"
       photo:
         title: "Título"
