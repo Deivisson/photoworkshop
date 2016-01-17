@@ -39,11 +39,9 @@ module User::SocialNetworkHelper
 			<script>
 				function FacebookShare(link)
 		    {
-
 		    	if (link == undefined) {
 		    		link='https://pic2gether.com'
 		    	}
-		      alert(link);
 		      FB.ui({
 		        method: 'share',
 		        app_id:'1546622365584604',
@@ -68,9 +66,14 @@ module User::SocialNetworkHelper
 		end
 	end
 
-	def twitter_link_to_share(title,content,html_options={})
+	def twitter_link_to_share(title,content,html_options={}, &block)
 		html_options.merge!(target:'_blank')
-		link_to title,"https://twitter.com/home?status=#{content}", html_options
+		link_to("https://twitter.com/home?status=#{content}", html_options) do
+			inner_html = []
+			inner_html << title
+			inner_html << content_tag(:nil,&block)
+			inner_html.join.html_safe
+		end
 	end
 
 	def twitter_share

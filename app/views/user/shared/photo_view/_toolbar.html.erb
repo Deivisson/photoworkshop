@@ -17,7 +17,7 @@
     <% end %>
   </li>
   <li>
-    <%= link_to "#", onclick:"FacebookShare('#{public_photo_url(@photo)}');" do %>
+    <%= twitter_link_to_share("",t('share_messages.share_photo', url:public_photo_url(@photo))) do %>
       <span class="social-network-icon-24 twitter"></span>  
     <% end %>
   </li>
