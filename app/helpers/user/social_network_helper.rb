@@ -37,17 +37,20 @@ module User::SocialNetworkHelper
 	def facebook_share()
 		script = <<-SCRIPT
 			<script>
-				function FacebookShare(link)
+				function FacebookShare(link,title)
 		    {
 		    	if (link == undefined) {
 		    		link='https://pic2gether.com'
+		    	}
+		    	if (title == undefined || title == '') {
+		    		title = 'Pic2gether'
 		    	}
 		      FB.ui({
 		        method: 'share',
 		        app_id:'1546622365584604',
 		        display: 'popup',
 					  href: link ,
-					  title: "Tsssss",
+					  title: title,
 		      }, function(response){
 		        UpdateSocialNetworkShared('facebook',response);
 		      });

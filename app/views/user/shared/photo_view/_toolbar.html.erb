@@ -12,7 +12,7 @@
   </li>
 
   <li>
-    <%= link_to "#", onclick:"FacebookShare('#{public_photo_url(@photo)}');" do %>
+    <%= link_to "#", onclick:"FacebookShare('#{public_photo_url(@photo)}','#{photo.title}');" do %>
       <span class="social-network-icon-24 facebook"></span>  
     <% end %>
   </li>

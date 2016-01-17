@@ -3,7 +3,7 @@
 		<li>
 			<span class="icon16pb facebook"></span>	
 			<%= link_to t('labels.share_on_facebook'), "#", class:'photo-share-menu-link',
-								onclick:"FacebookShare('#{public_photo_url(photo)}');" %>
+								onclick:"FacebookShare('#{public_photo_url(photo)}','#{photo.title}');" %>
 		</li>
 		<li>
 			<span class="icon16pb twitter"></span>
