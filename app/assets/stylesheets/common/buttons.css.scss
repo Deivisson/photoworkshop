@@ -94,7 +94,15 @@
   padding: 0px 8px !important;
   vertical-align: center;
   width:120px;
+}
 
+.submit-button:hover, .update:hover {
+  background-color: #3276b1;
+  border-color: #357ebd;
+}
+
+.submit-button, .update,
+.submit-button:hover, .update:hover {
   &:disabled {
     background-image: none;
     background:#e4e4e4;
@@ -103,12 +111,6 @@
     color: #a2a2a2;
     text-shadow: 0px 0px 0px #495262;
   }
-
-}
-
-.submit-button:hover, .update:hover {
-  background-color: #3276b1;
-  border-color: #357ebd;
 }
 
 .btn {

@@ -95,8 +95,8 @@ pt_BR:
       confirm_subscribe_question: "Confirma Pré-Matrícula ?"
       confirm_enter_in_queue: "Confirma entrada na Fila de Espera ?"
       already_subscribed: "Você já esta matrículado!"
-      subscribe_email_subject: "Pic2Gether - Confirmação Pré-Matrícula"
-      matriculated_email_subject: "Pic2Gether - Confirmação de Matrícula"
+      subscribe_email_subject: "Confirmação Pré-Matrícula"
+      matriculated_email_subject: "Confirmação de Matrícula"
       no_more_vacancies: "Vagas Esgotadas !!!"
       subscribe_success: "Pré-Matricula realizada com sucesso."
       in_queued_success: "Você acabou de entrar na fila de espera, qualquer novidade você será informado."
@@ -267,3 +267,10 @@ pt_BR:
         team: "Equipe Pic2Gether." 
         info: "Incialmente, o Pic2Gether lhe permitirá postar <strong>1 foto</strong> por dia. <u>Mas não se preocupe</u> existem várias formas de você ganhar mais postagens. Veja como:"
         how_win_photo_uploads: "<span></span>Compartilhando sobre o Pic2Gether nas redes socias(<i>somente é valido os compatilhamentos dentro da aplicação</i>);<br><span></span>Convidando Amigos;"
+    notification_mailer:
+      change_level_message:
+        title: "Mudança de Nível"
+        message: "Parabéns, você acaba de se tornar um fotografo "
+      photo_covered_message:
+        title: "Foto de Capa"
+        message: "Veja que legal, você teve sua foto escolhida como capa do Pic2Gether. Isto lhe deu mais 10 pontos de experiência."

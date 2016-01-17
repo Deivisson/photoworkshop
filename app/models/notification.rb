@@ -8,6 +8,10 @@ class Notification < ActiveRecord::Base
   TYPE_WORKSHOP_ACTIVITY_RESPONSE = 6
   
   TYPE_PHOTO_COMMENT = 10
+  TYPE_PHOTO_COVERED = 11
+
+
+  TYPE_CHANGE_LEVEL = 20
 
 	validates :content, presence:true
 	validates :type_of, presence:true

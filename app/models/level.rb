@@ -13,6 +13,10 @@ class Level < ActiveRecord::Base
 		I18n.t(self.i18n_key)
 	end
 
+	def info
+		I18n.t("#{self.i18n_key}_info")
+	end
+
 	def points_to_next_level
 		self.points_to - user_current_points
 	end

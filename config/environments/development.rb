@@ -43,9 +43,10 @@ Rails.application.configure do
     :domain               => "www.pic2gether.com",
     :user_name            => "team@pic2gether.com",
     :password             => "pic2getherteam",
-    :authentication       => :plan,
+    :authentication       => :login,
     :ssl                  => true,
-    :tls                  => true     
+    :tls                  => true,
+    :enable_starttls_auto => true     
   }
   Rails.application.routes.default_url_options[:host] = 'localhost:3000' 
 end

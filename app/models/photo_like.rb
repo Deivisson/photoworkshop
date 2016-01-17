@@ -21,7 +21,7 @@ private
   def notify_photo_owner
     return if self.user_id == self.photo.user_id
     attributes = {
-      content: I18n.t("notifications.photo_like",user:user_link,photo:get_photo),
+      content: I18n.t("notifications.photo_like",user:user_link,photo:photo_link),
       type_of: Notification::TYPE_PHOTO_COMMENT,
       user_receiver_id: self.photo.user_id,
       user_sender_id: self.user_id,
@@ -36,7 +36,7 @@ private
     link.html_safe
   end
 
-  def get_photo
+  def photo_link
     img = ActionController::Base.helpers.image_tag(self.photo.picture.url(:small))
     photo_url = Rails.application.routes.url_helpers.user_photo_explore_show_path(self.photo_id)
     link = "<a href='#{photo_url}' src='#{self.photo.picture.url(:small)}' class='photo-picture aux-pic'>#{img.html_safe}</a>"
