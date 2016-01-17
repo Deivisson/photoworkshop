@@ -47,6 +47,7 @@ module User::SocialNetworkHelper
 		        app_id:'1546622365584604',
 		        display: 'popup',
 					  href: link ,
+					  title: "Tsssss",
 		      }, function(response){
 		        UpdateSocialNetworkShared('facebook',response);
 		      });
