@@ -2,8 +2,8 @@ require 'openssl'
 OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 class UserProfile < ActiveRecord::Base
 
-  validates :user_name, presence:true
-  validates :full_name, presence:true, length: {maximum:100}, uniqueness:true
+  validates :user_name, presence:true, uniqueness:true
+  validates :full_name, presence:true, length: {maximum:100}
   validate :verify_urls
   
   has_attached_file :avatar, 
@@ -18,7 +18,7 @@ class UserProfile < ActiveRecord::Base
 
   attr_accessor :country_id, :state_id, :avatar_remote_url, :provider_shared
 
-  #before_validation :verify_urls
+  before_validation :format_user_name
   after_save :save_user_points_if_add_cover_photo
   before_create :set_initial_datas
   
@@ -90,5 +90,15 @@ private
   rescue URI::InvalidURIError
     self.errors.add(field, I18n.t('activerecord.errors.messages.invalid_url'))
     false
+  end
+
+  def format_user_name
+    _name = user_name.blank? ? self.full_name.dup : self.user_name
+    _name = _name.gsub(' ','')
+    _name = _name.gsub(/(á|à|ã|â|ä)/, 'a').gsub(/(é|è|ê|ë)/, 'e').gsub(/(í|ì|î|ï)/, 'i').gsub(/(ó|ò|õ|ô|ö)/, 'o').gsub(/(ú|ù|û|ü)/, 'u')
+    _name = _name.gsub(/(Á|À|Ã|Â|Ä)/, 'A').gsub(/(É|È|Ê|Ë)/, 'E').gsub(/(Í|Ì|Î|Ï)/, 'I').gsub(/(Ó|Ò|Õ|Ô|Ö)/, 'O').gsub(/(Ú|Ù|Û|Ü)/, 'U')
+    _name = _name.gsub(/ñ/, 'n').gsub(/Ñ/, 'N')
+    _name = _name.gsub(/ç/, 'c').gsub(/Ç/, 'C')
+    self.user_name = _name.downcase
   end
 end

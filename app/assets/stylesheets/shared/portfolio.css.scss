@@ -34,6 +34,40 @@ HORIZONTAL SLIDE
 				margin: 2px 0 0 0;
 			}			
 		}
+		ul.portfolio-menu {
+			float: left;
+			margin: 10px 0 0 60px;
+			li {
+				float: left;
+				height: 30px;
+				margin-right: 10px;
+				a {
+					color: #fff;
+					font-size: 12px;
+					float: left;
+					font-weight: bold;
+					height: 30px;
+					line-height: 30px;
+					text-decoration: none;
+					text-transform: uppercase;
+					letter-spacing: 2px;
+					&:hover {
+						text-decoration: underline;
+					};
+				}
+			}
+			span.separator {
+				color: #fff;
+				height: 30px;
+				float: left;
+				width: 18px;
+				margin-top: 8px;
+				&:after {
+					content: '/';
+				};
+			}
+		}
+
 	}
 	.container {
     bottom: 0;
@@ -53,7 +87,7 @@ HORIZONTAL SLIDE
 		overflow-x: scroll;
     overflow-y: hidden;
     white-space:nowrap;
-    .about {
+    /*.about {
 			height: auto;
 			float: left;
 			width: 290px;
@@ -91,15 +125,17 @@ HORIZONTAL SLIDE
 				}
 			}
   	}
-
+*/
 		.img-pic {
 			background-position: center center;
 			background-size: cover;
+			
 			height: 90%;
 			display:inline-block;
 	    *display:inline;/* For IE7*/
 	    *zoom:1;/* For IE7*/
-	    margin-right: 10px;
+	    margin-right: 5px;
+	    margin-left: 10px;
 	    transition:All 0.6s ease;
 			&.landscape {
 				width: 800px;
@@ -128,17 +164,22 @@ HORIZONTAL SLIDE
 		}
 		.text-box {
 			h1 {
-				color: #222222;
+				color: #222;
 			}
 			p {
-				color: #222222;
+				color: #222;
 			}			
+		}
+		ul.portfolio-menu {
+			li a, span.separator {
+				color: #222;
+			}
 		}
 	}
 	.container .gallery-content {
     .about {
 			p.biography {
-				color: #222222;
+				color: #222;
 			}
   	}
 		.img-pic {
@@ -146,7 +187,7 @@ HORIZONTAL SLIDE
 				opacity: 0.9;
 			};
 			h1 {
-				color: #222222;
+				color: #222;
 			}
 		}
 	}

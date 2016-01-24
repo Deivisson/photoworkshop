@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151212150815) do
+ActiveRecord::Schema.define(version: 20160124215126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -187,6 +187,16 @@ ActiveRecord::Schema.define(version: 20151212150815) do
   add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
   add_index "photos", ["workshop_activity_response_id"], name: "index_photos_on_workshop_activity_response_id", using: :btree
 
+  create_table "portfolios", force: :cascade do |t|
+    t.string   "i18n_key",   limit: 150,                                         null: false
+    t.text     "settings",                                                       null: false
+    t.boolean  "free",                                           default: false, null: false
+    t.decimal  "price",                  precision: 5, scale: 2, default: 0.0,   null: false
+    t.boolean  "active",                                         default: true,  null: false
+    t.datetime "created_at",                                                     null: false
+    t.datetime "updated_at",                                                     null: false
+  end
+
   create_table "rating_criteria", force: :cascade do |t|
     t.string   "i18n_key",   null: false
     t.datetime "created_at", null: false
@@ -235,6 +245,17 @@ ActiveRecord::Schema.define(version: 20151212150815) do
   end
 
   add_index "user_points", ["user_id"], name: "index_user_points_on_user_id", using: :btree
+
+  create_table "user_portfolios", force: :cascade do |t|
+    t.integer  "user_id",      null: false
+    t.integer  "portfolio_id", null: false
+    t.boolean  "active",       null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "user_portfolios", ["portfolio_id"], name: "index_user_portfolios_on_portfolio_id", using: :btree
+  add_index "user_portfolios", ["user_id"], name: "index_user_portfolios_on_user_id", using: :btree
 
   create_table "user_profiles", force: :cascade do |t|
     t.integer  "user_id"
@@ -404,6 +425,8 @@ ActiveRecord::Schema.define(version: 20151212150815) do
   add_foreign_key "user_auths", "users", name: "user_auths_users"
   add_foreign_key "user_points", "users"
   add_foreign_key "user_points", "users", column: "userx_id", name: "user_points_user_x"
+  add_foreign_key "user_portfolios", "portfolios"
+  add_foreign_key "user_portfolios", "users"
   add_foreign_key "user_profiles", "categories", name: "user_profiles_categories"
   add_foreign_key "user_profiles", "cities", name: "user_profiles_cities"
   add_foreign_key "user_profiles", "photos", column: "cover_photo_id", name: "user_profiles_photos"

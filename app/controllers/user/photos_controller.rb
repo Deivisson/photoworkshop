@@ -15,6 +15,7 @@ class User::PhotosController < User::BaseController
 
   def new
     @photo = Photo.new
+    render :layout => "user/plan_layout"
   end
 
   def edit

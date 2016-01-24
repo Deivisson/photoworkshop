@@ -25,6 +25,7 @@ pt_BR:
         photo_size: "Photo não pode ter mais que 7 MegaBytes" 
         image_size: "Imagem não pode ter mais que %{size} MegaBytes" 
         photo_cover_can_detroyed: "Foto não poderá ser excluída por ela ser a capa do seu perfil. Mude a sua capa e depois poderá excluir!"
+        photo_activity_response: "Foto não poderá ser excluída por ter sido postada em um workshop."
         start_date_less_than_end_date: "Data de início deverá ser menor ou igual à data de término."
         date_greater_than_or_equal_to: "Data deverá ser maior ou igual a %{date}"
         file_size: "Arquivo não poderá ter mais que %{size} MegaBytes."

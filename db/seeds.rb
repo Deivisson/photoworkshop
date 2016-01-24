@@ -87,9 +87,25 @@ plans = [
   {i18n_key:'workshop_plans.enterprise',     active:true, value:'150.00', settings:'[{"key":"add_participants","value":"1","type":"boolean"},{"key":"limit_participants","value":"25","type":"integer"},{"key":"add_materials","value":"1","type":"boolean"},{"key":"limit_materials","value":"30","type":"integer"},{"key":"add_activities","value":"1","type":"boolean"},{"key":"limit_activities","value":"10","type":"integer"}]'}
 ].each{|plan| WorkshopPlan.create!(plan)} if WorkshopPlan.first.nil?
 
+portfolios = [
+  {i18n_key:'portfolios.templates.free.horizontal_slider',    active:true, price:'0', free:true, settings:'[{"css_class":"portfolio-horizontal-slide"}]'},
+  {i18n_key:'portfolios.templates.free.vertical_slider',      active:true, price:'0', free:true, settings:'[{"css_class":"portfolio-vertical-slide"}]'},
+  {i18n_key:'portfolios.templates.free.simple_gallery',       active:true, price:'0', free:true, settings:'[{"css_class":"portfolio-simple-gallery"}]'}
+].each{|portfolio| Portfolio.create!(portfolio)} if Portfolio.first.nil?
 
 # #
 # #Temporary and should remove after execute
+UserProfile.all.each do |up|
+  _name = up.user_name.blank? ? up.full_name.dup : up.user_name
+  _name = _name.gsub(' ','')
+  _name = _name.gsub(/(á|à|ã|â|ä)/, 'a').gsub(/(é|è|ê|ë)/, 'e').gsub(/(í|ì|î|ï)/, 'i').gsub(/(ó|ò|õ|ô|ö)/, 'o').gsub(/(ú|ù|û|ü)/, 'u')
+  _name = _name.gsub(/(Á|À|Ã|Â|Ä)/, 'A').gsub(/(É|È|Ê|Ë)/, 'E').gsub(/(Í|Ì|Î|Ï)/, 'I').gsub(/(Ó|Ò|Õ|Ô|Ö)/, 'O').gsub(/(Ú|Ù|Û|Ü)/, 'U')
+  _name = _name.gsub(/ñ/, 'n').gsub(/Ñ/, 'N')
+  _name = _name.gsub(/ç/, 'c').gsub(/Ç/, 'C')
+  up.user_name = _name.downcase
+  up.save!
+end
+
 # #
 # UserPoint.all.each do |up|
 #   up.userx_id = up.user_followed_id unless up.user_followed_id.nil?

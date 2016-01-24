@@ -2,12 +2,16 @@
 	<div class="float-container">
 		<ul class="menu">
 			<h1><%= t('.menu_title') %></h1>
-			<li>
-				<%= link_to "Horizontal Slider",preview_user_portfolios_path(layout:'horizontal_slide'),
-										remote:true %>
-				<span class="badges success"><%= t(".free") %></span>
-			</li>
-			<li>
+			<% Portfolio.all.each do |portfolio| %>
+				<li>
+					<%= link_to portfolio.description,
+											preview_user_portfolios_path(portfolio:portfolio.id),
+											remote:true %>
+					<%= content_tag :span, t(".free"),class:'badges success' if portfolio.free? %>
+				</li>
+			<% end %>
+				
+			<!-- <li>
 				<%= link_to "Verfical Slider", preview_user_portfolios_path(layout:'vertical_slide'),
 										remote:true %>
 				<span class="badges success"><%= t(".free") %></span>
@@ -16,7 +20,7 @@
 				<%= link_to "Galeria Simples", preview_user_portfolios_path(layout:'simple_gallery'),
 										remote:true %>
 				<span class="badges success"><%= t(".free") %></span>
-			</li>			
+			</li>	 -->		
 		</ul>
 	</div>
 <% end %>

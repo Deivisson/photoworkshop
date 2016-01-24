@@ -5,16 +5,21 @@
 			<h1><%= @photographer.profile.full_name %></h1>
 			<p><%= @photographer.profile.category.description %></p>
 		</div>
+		<ul class="portfolio-menu">
+			<li><%= link_to "Portfolio", "#"%></li>
+			<span class="separator"></span>
+			<li><%= link_to "Sobre", "#"%></li>
+		</ul>
 	</div>
 	<div class="container">
 		<div class="gallery-content">
-			<div class="about">
+			<!-- <div class="about">
 				<p class="biography">
 					<span>Biografia</span>
 					<%= @photographer.profile.description %>
 				</p>
 				<div class="contact-container"><%= render '/shared/portfolio/contacts_link' %></div>
-			</div>
+			</div> -->
 			<% @photographer.photos.each do |photo| %>
 				<%= content_tag :div,class:"img-pic #{photo.orientation}",
 												style:"background-image: url('#{photo.picture.url(:medium)}')" do %>

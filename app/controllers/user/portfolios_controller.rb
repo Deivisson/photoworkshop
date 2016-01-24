@@ -2,13 +2,13 @@ class User::PortfoliosController < User::BaseController
 	before_action :set_photographer
 
 	def index
-		@layout = "horizontal_slide"
+		@portfolio = Portfolio.first
 		@theme = params[:layout_theme] || ""
 		session[:layout_theme] = @theme
 	end
 
 	def preview
-		@layout = params[:layout]
+		@portfolio = Portfolio.find(params[:portfolio])
 		@theme = params[:layout_theme] || ""
 	end
 

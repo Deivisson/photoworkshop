@@ -167,6 +167,10 @@ private
       errors.add(:base,I18n.t("activerecord.errors.messages.photo_cover_can_detroyed"))
       return false
     end
+    if self.workshop_activity_response.present?
+      errors.add(:base,I18n.t("activerecord.errors.messages.photo_activity_response"))
+      return false
+    end
   end
  
 end

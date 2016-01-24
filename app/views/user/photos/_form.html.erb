@@ -1,7 +1,7 @@
 <%= content_for :toolbar_buttons do %>
   <%= link_to t('.cancel_upload'),
               user_photos_path, 
-              class:"common-button cancel-button" %>
+              class:"btn btn-important btn-small btn-right" %>
 <% end %>
 <div class="centralizer">
   <%= semantic_form_for @photo, url:user_photos_path, :html => {multipart:true} do |f| %>

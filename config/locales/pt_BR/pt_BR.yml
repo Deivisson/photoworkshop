@@ -72,6 +72,13 @@ pt_BR:
     vip_info: ""
     superstar: "Super Star"
     superstar_info: ""
+  portfolios:
+    templates:
+      free:
+        horizontal_slider: "Horizontal Slider"
+        vertical_slider: "Vertical Slider"
+        simple_gallery: "Galeria Simples"
+
   rating_criterias:
     composition: "Composição"
     criativity: "Criatividade"
