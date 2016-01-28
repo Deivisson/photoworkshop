@@ -1,0 +1,23 @@
+<div class="portfolio portfolio-horizontal-slide <%= @theme %>"  id="portfolio-template">
+	<div class="header">
+		<%= image_tag(@photographer.profile.avatar.url(:medium), class:'avatar') %>
+		<div class="text-box">
+			<h1><%= @photographer.profile.full_name %></h1>
+			<p><%= @photographer.profile.category.description %></p>
+		</div>
+		<ul class="portfolio-menu">
+			<li>
+				<%= link_to "Portfolio", 
+						public_portfolio_index_path(user_id:@photographer.id), remote:true %> 
+			</li>
+			<span class="separator"></span>
+			<li>
+				<%= link_to "Sobre", 
+							public_portfolio_about_path(@photographer.id), remote:true %>
+			</li>
+		</ul>
+	</div>
+	<div class="container" id="template-container">
+		<%= render "/shared/portfolio_templates/template_#{@portfolio_template.id}/photo_gallery" %>
+	</div>
+</div>

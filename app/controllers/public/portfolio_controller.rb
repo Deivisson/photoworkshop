@@ -1,31 +1,36 @@
 class Public::PortfolioController < ApplicationController
 	layout 'public/photographer_portfolio'
-	
+	before_action :get_user_by_user_name
+
 	def index
-		@photographer = get_user_by_user_name
-		@portfolio  	= get_portfolio
-		@theme 				= params[:layout_theme] || ""
+		@portfolio_template  	= get_portfolio_template
+		@theme 								= params[:layout_theme] || ""
 	end
 
 	def get_photo
 		@photo = Photo.find(params[:photo_id])
 	end
 
+	def about
+		puts "passei aqui"
+		puts @photographer
+	end
+
 private 
 	
 	def get_user_by_user_name
 		if params["user_name"]
-			User.joins(:profile).where("user_profiles.user_name = ?",params[:user_name]).first
+			@photographer = User.joins(:profile).where("user_profiles.user_name = ?",params[:user_name]).first
 		else
-			User.find(params[:user_id])
+			@photographer = User.find(params[:user_id])
 		end
 	end
 
-	def get_portfolio
-		if params[:portfolio]
-			Portfolio.find(params[:portfolio]) 
+	def get_portfolio_template
+		if params[:template]
+			PortfolioTemplate.find(params[:template]) 
 		else 
-			Portfolio.first
+			@photographer.active_portfolio_template
 		end
 	end
 end

@@ -2,12 +2,12 @@
 	<div class="float-container">
 		<ul class="menu">
 			<h1><%= t('.menu_title') %></h1>
-			<% Portfolio.all.each do |portfolio| %>
+			<% PortfolioTemplate.all.each do |template| %>
 				<li>
-					<%= link_to portfolio.description,
-											preview_user_portfolios_path(portfolio:portfolio.id),
+					<%= link_to template.description,
+											preview_user_portfolios_path(template:template.id),
 											remote:true %>
-					<%= content_tag :span, t(".free"),class:'badges success' if portfolio.free? %>
+					<%= content_tag :span, t(".free"),class:'badges success' if template.free? %>
 				</li>
 			<% end %>
 				

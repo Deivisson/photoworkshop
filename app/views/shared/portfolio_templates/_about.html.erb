@@ -1,0 +1,9 @@
+<div class="portfolio-about">
+	<%= image_tag(@photographer.profile.avatar.url(:medium),class:"user-avatar") %>
+	<div class="biography">
+		<h1><%= "Biografia" %></h1>
+		<p>
+			<%= @photographer.profile.description %>
+		</p>
+	</div>
+</div>

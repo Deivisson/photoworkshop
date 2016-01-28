@@ -1,0 +1,8 @@
+<div class="gallery-content">
+	<% @photographer.photos.each do |photo| %>
+		<%= content_tag :div,class:"img-pic #{photo.orientation}",
+										style:"background-image: url('#{photo.picture.url(:medium)}')" do %>
+			<h1><%= photo.title %></h1>
+		<% end %>
+	<% end %>
+</div>

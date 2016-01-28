@@ -30,7 +30,8 @@ class User < ActiveRecord::Base
   has_many :favorite_photos
   has_many :points, class_name: "UserPoint"
   has_many :photo_ratings
-  
+  has_many :portfolio_templates, class_name: 'UserPortfolioTemplate'
+
   has_and_belongs_to_many :categories
 
   before_create :set_default_data
@@ -125,6 +126,12 @@ class User < ActiveRecord::Base
   def level
     @level ||= Level.by_user(self)
   end
+
+  def active_portfolio_template
+    return PortfolioTemplate.first unless self.portfolio_templates.any?
+    self.portfolio_templates.first.template
+  end
+
 private
 
 	def set_default_data

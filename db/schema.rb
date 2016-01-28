@@ -187,7 +187,7 @@ ActiveRecord::Schema.define(version: 20160124215126) do
   add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
   add_index "photos", ["workshop_activity_response_id"], name: "index_photos_on_workshop_activity_response_id", using: :btree
 
-  create_table "portfolios", force: :cascade do |t|
+  create_table "portfolio_templates", force: :cascade do |t|
     t.string   "i18n_key",   limit: 150,                                         null: false
     t.text     "settings",                                                       null: false
     t.boolean  "free",                                           default: false, null: false
@@ -246,16 +246,16 @@ ActiveRecord::Schema.define(version: 20160124215126) do
 
   add_index "user_points", ["user_id"], name: "index_user_points_on_user_id", using: :btree
 
-  create_table "user_portfolios", force: :cascade do |t|
-    t.integer  "user_id",      null: false
-    t.integer  "portfolio_id", null: false
-    t.boolean  "active",       null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+  create_table "user_portfolio_templates", force: :cascade do |t|
+    t.integer  "user_id",               null: false
+    t.integer  "portfolio_template_id", null: false
+    t.boolean  "active",                null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
-  add_index "user_portfolios", ["portfolio_id"], name: "index_user_portfolios_on_portfolio_id", using: :btree
-  add_index "user_portfolios", ["user_id"], name: "index_user_portfolios_on_user_id", using: :btree
+  add_index "user_portfolio_templates", ["portfolio_template_id"], name: "index_user_portfolio_templates_on_portfolio_template_id", using: :btree
+  add_index "user_portfolio_templates", ["user_id"], name: "index_user_portfolio_templates_on_user_id", using: :btree
 
   create_table "user_profiles", force: :cascade do |t|
     t.integer  "user_id"
@@ -425,8 +425,8 @@ ActiveRecord::Schema.define(version: 20160124215126) do
   add_foreign_key "user_auths", "users", name: "user_auths_users"
   add_foreign_key "user_points", "users"
   add_foreign_key "user_points", "users", column: "userx_id", name: "user_points_user_x"
-  add_foreign_key "user_portfolios", "portfolios"
-  add_foreign_key "user_portfolios", "users"
+  add_foreign_key "user_portfolio_templates", "portfolio_templates"
+  add_foreign_key "user_portfolio_templates", "users"
   add_foreign_key "user_profiles", "categories", name: "user_profiles_categories"
   add_foreign_key "user_profiles", "cities", name: "user_profiles_cities"
   add_foreign_key "user_profiles", "photos", column: "cover_photo_id", name: "user_profiles_photos"

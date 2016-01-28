@@ -5,7 +5,7 @@
 			<h1><%= @photographer.profile.full_name %></h1>
 			<p><%= @photographer.profile.category.description %></p>
 		</div>
-		<div class="contact-container"><%= render '/shared/portfolio/contacts_link' %></div>
+		<div class="contact-container"><%= render '/shared/portfolio_templates/contacts_link' %></div>
 	</div>
 	<div class="container">
 		<div class="portfolio-simple-left-col">
@@ -24,7 +24,7 @@
 			</div>
 		</div>	
 		<div class="photo-container" id="portfolio-photo-container">
-			<%= render partial:'shared/portfolio/photo_simple_gallery',
+			<%= render partial:'shared/portfolio_templates/photo_simple_gallery',
 								locals:{photo:@photographer.photos.first} %>
 		</div>
 

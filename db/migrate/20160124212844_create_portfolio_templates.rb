@@ -1,6 +1,6 @@
-class CreatePortfolios < ActiveRecord::Migration
+class CreatePortfolioTemplates < ActiveRecord::Migration
   def change
-    create_table :portfolios do |t|
+    create_table :portfolio_templates do |t|
     	t.string :i18n_key, null:false, limit: 150
     	t.text :settings, null:false
     	t.boolean :free, null:false, default:false

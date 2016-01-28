@@ -87,11 +87,11 @@ plans = [
   {i18n_key:'workshop_plans.enterprise',     active:true, value:'150.00', settings:'[{"key":"add_participants","value":"1","type":"boolean"},{"key":"limit_participants","value":"25","type":"integer"},{"key":"add_materials","value":"1","type":"boolean"},{"key":"limit_materials","value":"30","type":"integer"},{"key":"add_activities","value":"1","type":"boolean"},{"key":"limit_activities","value":"10","type":"integer"}]'}
 ].each{|plan| WorkshopPlan.create!(plan)} if WorkshopPlan.first.nil?
 
-portfolios = [
-  {i18n_key:'portfolios.templates.free.horizontal_slider',    active:true, price:'0', free:true, settings:'[{"css_class":"portfolio-horizontal-slide"}]'},
-  {i18n_key:'portfolios.templates.free.vertical_slider',      active:true, price:'0', free:true, settings:'[{"css_class":"portfolio-vertical-slide"}]'},
-  {i18n_key:'portfolios.templates.free.simple_gallery',       active:true, price:'0', free:true, settings:'[{"css_class":"portfolio-simple-gallery"}]'}
-].each{|portfolio| Portfolio.create!(portfolio)} if Portfolio.first.nil?
+portfolio_templates = [
+  {i18n_key:'portfolio_templates.free.horizontal_slider',    active:true, price:'0', free:true, settings:'[{"css_class":"portfolio-horizontal-slide"}]'},
+  {i18n_key:'portfolio_templates.free.vertical_slider',      active:true, price:'0', free:true, settings:'[{"css_class":"portfolio-vertical-slide"}]'},
+  {i18n_key:'portfolio_templates.free.simple_gallery',       active:true, price:'0', free:true, settings:'[{"css_class":"portfolio-simple-gallery"}]'}
+].each{|template| PortfolioTemplate.create!(template)} if PortfolioTemplate.first.nil?
 
 # #
 # #Temporary and should remove after execute

@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-  
   
   devise_for :admins
   namespace :admin do
@@ -58,11 +56,13 @@ Rails.application.routes.draw do
       end
       resources :workshop_activities, only: [:create,:update]
     end
+
     #explore resources
     get "photo_explore", to: "photo_explore#index", as: :photo_explore
     get "photo_explore/:photo_id", to: "photo_explore#show", as: :photo_explore_show
     resources :portfolios, only: [:index] do 
       get :preview, on: :collection
+      put :buy_template
     end
     get '/states/:state/cities',:to => 'states#cities'
     resources :notifications, only: [:index] do
@@ -85,6 +85,7 @@ Rails.application.routes.draw do
   namespace :public do
     resources :portfolio, only:[:index]
     get "portfolio/:photo_id", to: "portfolio#get_photo", as: :get_photo
+    get "portfolio/about/:user_id", to: "portfolio#about", as: :portfolio_about
     #get "portfolio/:user_name", to: "portfolio#index"
     resources :photo, only:[:show]
   end
