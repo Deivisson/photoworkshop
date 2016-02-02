@@ -1,29 +1,37 @@
 .portfolio-about {
-  left: 50%;
-  margin: 40px 0 0 -480px;
+	background-color: #686764;
+	bottom: 0;
+  left: 0;
   position: absolute;
-  width: 960px;
-  img.user-avatar {
-  	float: left;
-    height: 230px;
-    width: 180px;
-  }
-  .biography {
-  	color: #fff;
-    float: left;
-    margin: 0;
-    width: 600px;
-  	h1 {
-  		font-size: 24px;
-  		margin: 0 0 13px 20px
-  	}
-  	p {
-  		font-size: 16px;
-  		line-height: 24px;
-  		margin: 0 0 0 20px;
-  		text-align: justify;
-  	}
-  }
+  top: 0;
+  right: 0;
+  .portfolio-content {
+  	margin: 40px 0 0 -480px;
+  	position: absolute;
+  	width: 960px;
+  	left: 50%;
+	  img.user-avatar {
+	  	float: left;
+	    height: 230px;
+	    width: 180px;
+	  }
+	  .biography {
+	  	color: #fff;
+	    float: left;
+	    margin: 0;
+	    width: 750px;
+	  	h1 {
+	  		font-size: 24px;
+	  		margin: 0 0 13px 20px
+	  	}
+	  	p {
+	  		font-size: 16px;
+	  		line-height: 24px;
+	  		margin: 0 0 0 20px;
+	  		text-align: justify;
+	  	}
+	  }
+	}
 }
 
 
