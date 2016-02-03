@@ -1,0 +1,9 @@
+<% unless photo.nil? %>
+	<%= content_tag :div,"",class:"img-pic #{photo.orientation}",
+									 style:"background-image: url('#{photo.picture.url(:medium)}')" do %>
+	  <div class="img-text-box #{photo.orientation}">
+	  	<h1><%= photo.title %></h1>
+	  	<p><%= photo.description %></p>
+	  </div>
+  <% end %>
+<% end %>

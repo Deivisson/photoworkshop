@@ -1,5 +1,6 @@
 $(document).on('ready page:load', function (){
 	setLayoutTheme();
+	PortfolioMenuClick();
 });
 
 function setLayoutTheme() {
@@ -15,4 +16,12 @@ function setLayoutTheme() {
 	// 	$("#light-layout").addClass("selected");
 	// 	//e.preventDefault();
 	// });
+}
+
+function PortfolioMenuClick() {
+	$(".portfolio-menu-item").click(function(){
+		$(".portfolio-menu-item").removeClass("active");
+		$(this).addClass("active");
+		//alert("Ok");
+	});
 }

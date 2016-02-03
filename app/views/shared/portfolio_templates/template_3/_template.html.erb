@@ -1,4 +1,4 @@
-<div class="portfolio portfolio-horizontal-slide <%= @theme %>"  id="portfolio-template">
+<div class="portfolio portfolio-simple-gallery <%= @theme %>"  id="portfolio-template">
 	<div class="header">
 		<%= image_tag(@photographer.profile.avatar.url(:medium), class:'avatar') %>
 		<div class="text-box">
@@ -7,7 +7,9 @@
 		</div>
 		<%= render '/shared/portfolio_templates/menu' %>
 	</div>
+
 	<div class="container" id="template-container">
-		<%= render "/shared/portfolio_templates/template_#{@portfolio_template.id}/photo_gallery" %>
+		<%= render partial:"/shared/portfolio_templates/template_#{@portfolio_template.id}/photo_gallery",
+							 locals:{photo:@photographer.photos.first} %>
 	</div>
 </div>
