@@ -9,7 +9,6 @@
 	</div>
 
 	<div class="container" id="template-container">
-		<%= render partial:"/shared/portfolio_templates/template_#{@portfolio_template.id}/photo_gallery",
-							 locals:{photo:@photographer.photos.first} %>
+		<%= render partial:"/shared/portfolio_templates/template_#{@portfolio_template.id}/photo_gallery" %>
 	</div>
 </div>

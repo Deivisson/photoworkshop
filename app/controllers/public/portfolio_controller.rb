@@ -1,10 +1,10 @@
 class Public::PortfolioController < ApplicationController
 	layout 'public/photographer_portfolio'
-	before_action :get_user_by_user_name
-
+	before_action :get_user_by_user_name, except: [:get_photo]
+	before_action :get_portfolio_template, only: [:index, :get_photo]
+	
 	def index
-		@portfolio_template  	= get_portfolio_template
-		@theme 								= params[:layout_theme] || ""
+			@theme = params[:layout_theme] || ""
 	end
 
 	def get_photo
@@ -12,8 +12,7 @@ class Public::PortfolioController < ApplicationController
 	end
 
 	def about
-		puts "passei aqui"
-		puts @photographer
+		@photographer
 	end
 
 private 
@@ -27,10 +26,10 @@ private
 	end
 
 	def get_portfolio_template
-		if params[:template]
-			PortfolioTemplate.find(params[:template]) 
-		else 
-			@photographer.active_portfolio_template
-		end
+		@portfolio_template = if params[:template]
+														PortfolioTemplate.find(params[:template]) 
+													else 
+														@photographer.active_portfolio_template
+													end
 	end
 end

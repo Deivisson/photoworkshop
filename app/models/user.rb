@@ -128,7 +128,7 @@ class User < ActiveRecord::Base
   end
 
   def active_portfolio_template
-    return PortfolioTemplate.first unless self.portfolio_templates.any?
+    return PortfolioTemplate.find(3) unless self.portfolio_templates.any?
     self.portfolio_templates.first.template
   end
 

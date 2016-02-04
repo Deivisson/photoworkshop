@@ -84,7 +84,7 @@ Rails.application.routes.draw do
 
   namespace :public do
     resources :portfolio, only:[:index]
-    get "portfolio/:photo_id", to: "portfolio#get_photo", as: :get_photo
+    get "portfolio/photo/:template/:photo_id", to: "portfolio#get_photo", as: :get_photo
     get "portfolio/about/:user_id", to: "portfolio#about", as: :portfolio_about
     #get "portfolio/:user_name", to: "portfolio#index"
     resources :photo, only:[:show]

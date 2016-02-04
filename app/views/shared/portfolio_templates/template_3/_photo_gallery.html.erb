@@ -1,9 +1,24 @@
-<% unless photo.nil? %>
-	<%= content_tag :div,"",class:"img-pic #{photo.orientation}",
-									 style:"background-image: url('#{photo.picture.url(:medium)}')" do %>
-	  <div class="img-text-box #{photo.orientation}">
-	  	<h1><%= photo.title %></h1>
-	  	<p><%= photo.description %></p>
-	  </div>
-  <% end %>
-<% end %>
+<div class="portfolio-simple-left-col">
+	<div class="photo-thumbs">
+		<% @photographer.photos.each do |photo| %>
+			<%= content_tag :div,"",class:"thumb-img",	style:"background-image: url('#{photo.picture.url(:medium)}')" do %>
+				<%=link_to "", public_get_photo_path(@portfolio_template.id,photo.id), 
+											class:"gallary-photo-item", remote:true %>
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+<div class="photo-container" id="portfolio-photo-container">
+	<%= render partial:"/shared/portfolio_templates/template_#{@portfolio_template.id}/photo",
+							locals:{photo:@photographer.photos.first} %>
+</div>
+
+
+
+
+
+
+
+
+
