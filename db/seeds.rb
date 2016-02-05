@@ -95,16 +95,16 @@ portfolio_templates = [
 
 # #
 # #Temporary and should remove after execute
-UserProfile.all.each do |up|
-  _name = up.user_name.blank? ? up.full_name.dup : up.user_name
-  _name = _name.gsub(' ','')
-  _name = _name.gsub(/(á|à|ã|â|ä)/, 'a').gsub(/(é|è|ê|ë)/, 'e').gsub(/(í|ì|î|ï)/, 'i').gsub(/(ó|ò|õ|ô|ö)/, 'o').gsub(/(ú|ù|û|ü)/, 'u')
-  _name = _name.gsub(/(Á|À|Ã|Â|Ä)/, 'A').gsub(/(É|È|Ê|Ë)/, 'E').gsub(/(Í|Ì|Î|Ï)/, 'I').gsub(/(Ó|Ò|Õ|Ô|Ö)/, 'O').gsub(/(Ú|Ù|Û|Ü)/, 'U')
-  _name = _name.gsub(/ñ/, 'n').gsub(/Ñ/, 'N')
-  _name = _name.gsub(/ç/, 'c').gsub(/Ç/, 'C')
-  up.user_name = _name.downcase
-  up.save!
-end
+# UserProfile.all.each do |up|
+#   _name = up.user_name.blank? ? up.full_name.dup : up.user_name
+#   _name = _name.gsub(' ','')
+#   _name = _name.gsub(/(á|à|ã|â|ä)/, 'a').gsub(/(é|è|ê|ë)/, 'e').gsub(/(í|ì|î|ï)/, 'i').gsub(/(ó|ò|õ|ô|ö)/, 'o').gsub(/(ú|ù|û|ü)/, 'u')
+#   _name = _name.gsub(/(Á|À|Ã|Â|Ä)/, 'A').gsub(/(É|È|Ê|Ë)/, 'E').gsub(/(Í|Ì|Î|Ï)/, 'I').gsub(/(Ó|Ò|Õ|Ô|Ö)/, 'O').gsub(/(Ú|Ù|Û|Ü)/, 'U')
+#   _name = _name.gsub(/ñ/, 'n').gsub(/Ñ/, 'N')
+#   _name = _name.gsub(/ç/, 'c').gsub(/Ç/, 'C')
+#   up.user_name = _name.downcase
+#   up.save!
+# end
 
 # #
 # UserPoint.all.each do |up|
