@@ -239,7 +239,7 @@ pt_BR:
         newest: "Recentes"
         recommended: "Recomendadas"
 
-    portfolios:
+    portfolio_templates:
       menu_options:
         menu_title: "Templates"
         free: Grátis

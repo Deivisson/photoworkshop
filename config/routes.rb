@@ -60,9 +60,9 @@ Rails.application.routes.draw do
     #explore resources
     get "photo_explore", to: "photo_explore#index", as: :photo_explore
     get "photo_explore/:photo_id", to: "photo_explore#show", as: :photo_explore_show
-    resources :portfolios, only: [:index] do 
+    resources :portfolio_templates, only: [:index], as:'portfolio_templates' do 
       get :preview, on: :collection
-      put :buy_template
+      put :buy
     end
     get '/states/:state/cities',:to => 'states#cities'
     resources :notifications, only: [:index] do

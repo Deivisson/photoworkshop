@@ -1,4 +1,4 @@
-class User::PortfoliosController < User::BaseController
+class User::PortfolioTemplatesController < User::BaseController
 	before_action :set_photographer
 
 	def index
@@ -12,7 +12,7 @@ class User::PortfoliosController < User::BaseController
 		@theme = params[:layout_theme] || ""
 	end
 
-	def buy_template
+	def buy
 	end
 
 private
