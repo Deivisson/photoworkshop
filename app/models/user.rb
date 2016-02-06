@@ -129,7 +129,7 @@ class User < ActiveRecord::Base
 
   def active_portfolio_template
     return PortfolioTemplate.first unless self.portfolio_templates.any?
-    self.portfolio_templates.first.template
+    self.portfolio_templates.where(active:true).first.template
   end
 
   def buy_portfolio_template!(template)
