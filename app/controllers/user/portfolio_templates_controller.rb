@@ -20,8 +20,8 @@ private
 	end
 
 	def get_template
-		@portfolio_template = if params[:template]
-														PortfolioTemplate.find(params[:template])
+		@portfolio_template = if params[:template] || params[:portfolio_template_id]
+														PortfolioTemplate.find(params[:template] || params[:portfolio_template_id])
 													else
 														PortfolioTemplate.first
 													end
