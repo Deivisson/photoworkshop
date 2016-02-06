@@ -128,10 +128,19 @@ class User < ActiveRecord::Base
   end
 
   def active_portfolio_template
-    return PortfolioTemplate.find(3) unless self.portfolio_templates.any?
+    return PortfolioTemplate.first unless self.portfolio_templates.any?
     self.portfolio_templates.first.template
   end
 
+  def buy_portfolio_template!(template)
+    unless self.portfolio_template_ids.include?(template.id)
+      attributes = {
+        portfolio_template_id:template.id,
+        active:true
+      }
+      self.portfolio_templates << UserPortfolioTemplate.new(attributes)
+    end
+  end
 private
 
 	def set_default_data
