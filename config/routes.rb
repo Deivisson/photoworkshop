@@ -85,11 +85,10 @@ Rails.application.routes.draw do
   namespace :public do
     #resources :portfolio, only:[:index]
     get "portfolio/photo/:template/:photo_id", to: "portfolio#get_photo", as: :get_photo
-    get "portfolio/about/:user_id", to: "portfolio#about", as: :portfolio_about
-    #get "portfolio/:user_name", to: "portfolio#index"
+    get "portfolio/about/:user_name", to: "portfolio#about", as: :portfolio_about
     resources :photo, only:[:show]
   end
-  get "portfolio/:user_name", to: "public/portfolio#index"
+  get "portfolio/:user_name", to: "public/portfolio#index", as: :photographer_public_portfolio
 
   get "sign_up/finish", to:'omniauth_callbacks#sign_finish', :as => :sign_up_finish
   post "authentication/sign_up_finish/complete_sign_up", to:'authentication/sign_up_finish#complete_sign_up', :as => :complete_sign_up

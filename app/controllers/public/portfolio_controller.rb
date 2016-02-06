@@ -12,17 +12,17 @@ class Public::PortfolioController < ApplicationController
 	end
 
 	def about
-		@photographer
+
 	end
 
 private 
 	
 	def get_user_by_user_name
-		if params["user_name"]
-			@photographer = User.joins(:profile).where("user_profiles.user_name = ?",params[:user_name]).first
-		else
-			@photographer = User.find(params[:user_id])
-		end
+		#if params["user_name"]
+		@photographer = User.joins(:profile).where("user_profiles.user_name = ?",params[:user_name]).first
+		# else
+		# 	@photographer = User.find(params[:user_id])
+		# end
 	end
 
 	def get_portfolio_template

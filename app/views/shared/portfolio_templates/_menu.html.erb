@@ -1,13 +1,13 @@
 <ul class="portfolio-menu">
 	<li>
-		<%# link_to "Portfolio", 
-				public_portfolio_index_path(user_id:@photographer.id),
+		<%= link_to "Portfolio", 
+				photographer_public_portfolio_path(@photographer.profile.user_name, template:@portfolio_template),
 					class:"portfolio-menu-item active", remote:true %> 
 	</li>
 	<span class="separator"></span>
 	<li>
 		<%= link_to "Sobre", 
-					public_portfolio_about_path(@photographer.id),
+					public_portfolio_about_path(@photographer.profile.user_name),
 					class:"portfolio-menu-item", remote:true %>
 	</li>
 </ul>

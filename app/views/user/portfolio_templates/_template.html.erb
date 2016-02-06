@@ -2,9 +2,8 @@
 	<%= link_to t('buttons.apply_template'), 
 							user_portfolio_template_buy_path(@portfolio_template.id), 
 							class:'btn btn-primary', method: :put %>
-	<%# link_to t('buttons.view_template'), 
-						public_portfolio_index_path(template:@portfolio_template.id, layout_theme:@theme,user_id:@photographer.id), 
-						target:"_blank",class:'btn' %>
+	<%= link_to t('buttons.view_template'), 
+						photographer_public_portfolio_path(@photographer.profile.user_name, template:@portfolio_template.id, layout_theme:@theme), target:"_blank",class:'btn' %>
 </div>
 <div class="button-group" style="float:right;margin: 4px 30px 0 0;">
 	<%= link_to t('buttons.dark'), 
