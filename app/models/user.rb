@@ -133,7 +133,7 @@ class User < ActiveRecord::Base
   end
 
   def buy_portfolio_template!(template)
-    unless self.portfolio_template_ids.include?(template.id)
+    unless self.portfolio_templates.where(portfolio_template_id:template.id).first
       UserPortfolioTemplate.where(user_id:self.id).update_all(active:false)
       attributes = {
         portfolio_template_id:template.id,
