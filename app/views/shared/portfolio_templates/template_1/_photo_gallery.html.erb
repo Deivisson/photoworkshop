@@ -1,4 +1,4 @@
-<div class="gallery-content">
+<div class="gallery-content horizontal-scrolling">
 	<% @photographer.photos.each do |photo| %>
 		<%= content_tag :div,class:"img-pic #{photo.orientation}",
 										style:"background-image: url('#{photo.picture.url(:medium)}')" do %>

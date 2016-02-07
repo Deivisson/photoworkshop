@@ -24,6 +24,7 @@
 //= require common/cities.js
 //= require common/hopscotch.js
 //= require common/mask.js
+//= require common/jquery.mousewheel.min
 //= require user/user_profiles
 //= require user/workshops
 //= require user/workshop_materials

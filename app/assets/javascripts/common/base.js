@@ -21,6 +21,10 @@ $(document).on('ready page:load', function (){
       setTimeout(removeFlashMenssage,7000);
     }
   });
+	mouseWheelForHorizontalScroll();
+
+	
+
 });
 
 
@@ -74,4 +78,16 @@ function removeFlashMenssage() {
   $("#flash_notice").remove();
   $("#flash_warning").remove();
   $("#flash_alert").remove();  
+}
+
+
+// 
+function mouseWheelForHorizontalScroll() {
+	if ($(".horizontal-scrolling").length > 0) {
+		$(".horizontal-scrolling").mousewheel(function(event, delta) {
+			this.scrollLeft -= (delta * 80);
+			this.scrollRight -= (delta * 80);
+			event.preventDefault();
+		});
+	}
 }

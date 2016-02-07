@@ -2,16 +2,17 @@ class User::PortfolioTemplatesController < User::BaseController
 	before_action :set_photographer, :get_template
 
 	def index
-		@theme = params[:layout_theme] || ""
-		session[:layout_theme] = @theme
+		@theme_color = params[:theme_color] || "dark"
+		session[:theme_color] = @theme_color
 	end
 
 	def preview
-		@theme = params[:layout_theme] || ""
+		@theme_color = params[:theme_color] || "dark"
 	end
 
 	def buy
-		current_user.buy_portfolio_template!(@portfolio_template)
+		settings = {:theme_color => (params[:theme_color] || "dark")}
+		current_user.buy_portfolio_template!(@portfolio_template,settings.to_json)
 	end
 
 private

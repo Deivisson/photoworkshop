@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160124215126) do
+ActiveRecord::Schema.define(version: 20160207005438) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -252,6 +252,7 @@ ActiveRecord::Schema.define(version: 20160124215126) do
     t.boolean  "active",                null: false
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.string   "settings"
   end
 
   add_index "user_portfolio_templates", ["portfolio_template_id"], name: "index_user_portfolio_templates_on_portfolio_template_id", using: :btree

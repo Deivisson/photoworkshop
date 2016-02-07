@@ -127,24 +127,22 @@ class User < ActiveRecord::Base
     @level ||= Level.by_user(self)
   end
 
-  def active_portfolio_template
+  def active_user_portfolio_template
     user_templates = self.portfolio_templates.where(active:true)
-    if user_templates.any?
-      puts "Passei aqui"
-      return user_templates.first.template
-    else
-      puts "Passei aqui 2"
-      return PortfolioTemplate.first
-    end
+    return user_templates.first if user_templates.any?
+    # else
+    #   return PortfolioTemplate.first
+    # end
   end
 
-  def buy_portfolio_template!(template)
+  def buy_portfolio_template!(template,settings)
     if self.portfolio_templates.where(portfolio_template_id:template.id).first.nil?
       UserPortfolioTemplate.where(user_id:self.id).update_all(active:false)
       attributes = {
         portfolio_template_id:template.id,
         active:true,
-        user_id: self.id
+        user_id: self.id,
+        settings:settings
       }
       UserPortfolioTemplate.create!(attributes)
     end

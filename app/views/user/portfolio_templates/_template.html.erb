@@ -1,18 +1,20 @@
 <div class="portfolio-buttons-container">
 	<%= link_to t('buttons.apply_template'), 
-							user_portfolio_template_buy_path(@portfolio_template.id), 
+							user_portfolio_template_buy_path(@portfolio_template.id,theme_color:@theme_color), 
 							class:'btn btn-primary', method: :put, remote: true %>
 	<%= link_to t('buttons.view_template'), 
-						photographer_public_portfolio_path(@photographer.profile.user_name, template:@portfolio_template.id, layout_theme:@theme), target:"_blank",class:'btn' %>
+						photographer_public_portfolio_path(@photographer.profile.user_name, 
+						template:@portfolio_template.id, theme_color:@theme_color), 
+						target:"_blank",class:'btn' %>
 </div>
 <div class="button-group" style="float:right;margin: 4px 30px 0 0;">
 	<%= link_to t('buttons.dark'), 
-							preview_user_portfolio_templates_path(template:@portfolio_template.id,layout_theme:""), 
-							id:"dark-layout", class:"btn #{@theme.blank? ? "selected" : ""}", remote:true %>
+							preview_user_portfolio_templates_path(template:@portfolio_template.id,theme_color:"dark"), 
+							id:"dark-layout", class:"btn #{@theme_color == "dark" ? "selected" : ""}", remote:true %>
 
 	<%= link_to t('buttons.light'),
-							preview_user_portfolio_templates_path(template:@portfolio_template.id,layout_theme:"light"),
-							id:"light-layout", class:"btn #{@theme == "light" ? "selected" : ""}", remote:true %>
+							preview_user_portfolio_templates_path(template:@portfolio_template.id,theme_color:"light"),
+							id:"light-layout", class:"btn #{@theme_color == "light" ? "selected" : ""}", remote:true %>
 </div>
 <div class="portfolio-preview" id="portfolio-layout">
 	<%= render "/shared/portfolio_templates/template_#{@portfolio_template.id}/template" %>
