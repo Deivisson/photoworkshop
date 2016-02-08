@@ -12,10 +12,7 @@
 *= require common/hopscotch_changes
 *= require common/circle
 *= require user/dashboard
-*= require user/photos
-*= require user/photographers
 *= require user/user_profiles
-*= require user/workshops
 *= require user/workshop_participants
 *= require user/workshop_activities
 *= require user/workshop_activity_responses
@@ -29,7 +26,10 @@
 *= require user/notifications
 *= require user/photo_ratings
 *= require user/ranking
+*= require shared/photos
 *= require shared/portfolio
 *= require shared/icons
 *= require shared/badges
+*= require shared/photographer_profile
+*= require shared/workshops
 */

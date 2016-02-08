@@ -196,6 +196,16 @@ HORIZONTAL SLIDE
 			li a, span.separator {
 				color: #222;
 			}
+			li a:hover {
+				text-decoration: underline;
+				color: #686764;
+			};
+			li a.active {
+				color: #686764;
+				cursor: default;
+				text-decoration: none;
+				pointer-events: none;
+			}
 		}
 	}
 	.container .gallery-content {
@@ -383,6 +393,21 @@ VERTICAL SLIDE
 			p {
 				color: #222;
 			}			
+		}
+		ul.portfolio-menu {
+			li a, span.separator {
+				color: #222;
+			}
+			li a:hover {
+				text-decoration: underline;
+				color: #686764;
+			};
+			li a.active {
+				color: #686764;
+				cursor: default;
+				text-decoration: none;
+				pointer-events: none;
+			}
 		}
 	}
 	.container .about {
@@ -590,6 +615,21 @@ VERTICAL SLIDE
 			p {
 				color: #222;
 			}			
+		}
+		ul.portfolio-menu {
+			li a, span.separator {
+				color: #222;
+			}
+			li a:hover {
+				text-decoration: underline;
+				color: #686764;
+			};
+			li a.active {
+				color: #686764;
+				cursor: default;
+				text-decoration: none;
+				pointer-events: none;
+			}
 		}
 	}
  .container .about {

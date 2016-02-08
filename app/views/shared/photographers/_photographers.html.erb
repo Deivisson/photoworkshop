@@ -5,14 +5,15 @@
            owner="<%= user.profile.user_name %>" >
   			<%= content_tag :div, id:"follow-links-#{user.id}" do %>
   				<%= render partial:"follow_links", locals: {user:user} %>
-  			<% end if @user.id == current_user.id  %>
+  			<% end if @namespace == :user && @user.id == current_user.id  %>
   		</div>
   		<div class="user-infos">
       	<%= image_tag(user.profile.avatar.url(:medium),class:'avatar') %>
         <%= content_tag :label,class:'user-name' do %>
           <span>
-          	<%= link_to user.profile.user_name.truncate(22),
-  								user_photographer_path(user.id), class:"photographer-profile" %>
+          	<%= link_to user.profile.short_name,
+  								photographer_link_path(:photographer_profile,user),
+                  class:"photographer-profile" %>
   				</span>
           <p><%= user.profile.category.description %></p>
         <% end %>

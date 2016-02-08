@@ -130,9 +130,6 @@ class User < ActiveRecord::Base
   def active_user_portfolio_template
     user_templates = self.portfolio_templates.where(active:true)
     return user_templates.first if user_templates.any?
-    # else
-    #   return PortfolioTemplate.first
-    # end
   end
 
   def buy_portfolio_template!(template,settings)

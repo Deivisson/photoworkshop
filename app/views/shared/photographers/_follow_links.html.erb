@@ -1,4 +1,4 @@
-<% if current_user.id != user.id %>
+<% if @namespace == :user && !current_user.nil? && current_user.id != user.id %>
 	<% if current_user.following_ids.include?(user.id)  %>
 		<%= link_to user_photographer_unfollow_path(user.id),
 								class:'common-button follow-button unfollow-button', remote:true do %>

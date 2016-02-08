@@ -6,49 +6,45 @@
 				owner="<%= @user.profile.user_name %>">
 	      <%= link_to user_edit_cover_photo_path(0), class:"btn", id:'edit-cover' do %>
         	<span class="icon16pb edit"></span>
-      	<% end if current_user.id == @user.id %>
+      	<% end if @namespace == :user && !current_user.nil? && current_user.id == @user.id %>
 		</div>
 		<div class="profile">
 			<div class="avatar-container"><%= image_tag(@user.profile.avatar.url(:medium)) %></div>
-			<%= content_tag :h1, @user.profile.user_name,class:"user-name" %>
+			<%= content_tag :h1, @user.profile.full_name,class:"user-name" %>
 			<%= content_tag :h3, class:"score" do %>
-				<%= t('user.photographers.profile.score',level:@user.level.number,position:@user.level.description) %>
+				<%= t('shared.photographers.profile.score',level:@user.level.number,position:@user.level.description) %>
 			<% end %>
 			<%= content_tag :ul, class:"resume" do %>
 				<li>
 					<label><%= t("user.user_resume.photos") %></label>
-					<%= link_to @user.photos_count, 
-										user_photographer_photos_path(@user), remote:true %>
+					<%= link_to @user.photos_count, photographer_link_path(:photos_count,@user),remote:true %>
 				</li>
 				<li>
 					<label><%= t("user.user_resume.following") %></label>
-					<%= link_to @user.following_count, 
-											user_photographer_following_path(@user), remote:true %>
+					<%= link_to @user.following_count, photographer_link_path(:following_count,@user), remote:true %>
 				</li>
 				<li>
 					<label><%= t("user.user_resume.followers") %></label>
-					<%= link_to @user.followers_count,
-									user_photographer_followers_path(@user), 
+					<%= link_to @user.followers_count,photographer_link_path(:followers_count,@user),
 									remote:true, id:"photographer-followers-count" %>
 				</li>
 				
 				<%= content_tag :li do %>
 					<label><%= t("user.user_resume.workshops") %></label>
-					<%= link_to @user.owner_workshops_count,
-									user_photographer_workshops_path(@user), 
+					<%= link_to @user.owner_workshops_count,photographer_link_path(:owner_workshops_count,@user),
 									remote:true %>
 				<% end if @user.owner_workshops_count > 0 %>
 
 				<li>
 					<label>...</label>
-					<%= link_to "Sobre", user_photographer_about_path(@user), remote:true %>
+					<%= link_to "Sobre", photographer_link_path(:about,@user), remote:true %>
 				</li>
 			<% end %>
 			<%= content_tag :ul, class:"links" do %>
 				<%= content_tag :li, id:"follow-links-modal-profile-#{@user.id}" do %>
-					<%= render partial:'user/photographers/follow_links', locals: {user:@user} %>
+					<%= render partial:'follow_links', locals: {user:@user} %>
 				<% end %>
-			<% end %>			
+			<% end unless current_user.nil? %>			
 		</div>
 		<div class="photographers-full-profile" id="photographers-full-profile-container">
 			<%= render 'photos' %>

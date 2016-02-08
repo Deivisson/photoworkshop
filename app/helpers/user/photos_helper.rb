@@ -303,7 +303,8 @@ private
 			html_details << content_tag(:div,class:"details-content") do 
 				html_content = []
 				if @location == :photos_explore
-					html_content << link_to(photo.user.profile.user_name,user_photographer_path(photo.user_id),
+					html_content << link_to(photo.user.profile.short_name,
+																	photographer_link_path(:photographer_profile,photo.user),
 					 												class:"photographer-profile") #photographers name
 					html_content << (render partial:'user/shared/photo/menu_popup', locals:{photo:photo} )
 				elsif @location == :user_photos

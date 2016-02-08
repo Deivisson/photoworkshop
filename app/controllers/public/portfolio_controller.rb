@@ -4,17 +4,13 @@ class Public::PortfolioController < ApplicationController
 	before_action :get_portfolio_template, only: [:index, :get_photo]
 	before_action :get_settings, only: [:index, :get_photo] 
 	
-	def index
-		
-	end
+	def index;end
 
 	def get_photo
 		@photo = Photo.find(params[:photo_id])
 	end
 
-	def about
-
-	end
+	def about;end
 
 	def missing
 		

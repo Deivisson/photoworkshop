@@ -1,0 +1,342 @@
+.public-header {
+	background-color: #222;
+	border-left: 1px solid #0f0f0f;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+	height: 52px;
+  left: 0;
+  list-style: outside none none;
+  position: fixed;
+  right: 0;
+  z-index: 999;
+  .logo-container {
+  	margin: 5px 0 0 20px;
+  	img {
+  		width: 120px
+  	}
+  }
+}
+
+/* Photographers Page List*/
+ul.users-photographers {
+	float: left;
+  /*left: 10px;*/
+  margin: 0 0 0 20px;
+  position: relative;
+  width: auto;
+  /*right: 10px;*/
+	li {
+		background-color: #FFF;
+		border: 1px solid #cecece;
+		border-radius: 3px; 
+		-moz-border-radius: 3px; 
+		-webkit-border-radius: 3px;
+		float: left;  
+		margin: 11px 7px 0 0px;
+		padding: 0;
+		width: 24%;
+		min-width: 240px;
+		height: 300px;
+		.cover-pic {
+			background-position: top center;
+    	background-size: cover;
+			background-color: #222222;
+			border-radius: 5px 5px 0px 0px; 
+			-moz-border-radius: 5px 5px 0px 0px; 
+			-webkit-border-radius: 5px 5px 0px 0px; 
+			height: 210px;
+			width: 100%;
+		}
+		.user-infos {
+			margin-top: -40px;
+			img.avatar {
+				border-radius: 10%;
+				border: 2px solid #fff;
+				float: left;
+				height: 65px;
+				margin: 15px 0 0 7px;
+				width: 65px;
+			}
+			label.user-name {
+				color: #333;
+				float: left;
+				font-size: 18px;
+				margin: 45px 0 0 5px;
+				span {
+					display: block;
+					font-weight: normal;
+					float: left;
+					a {
+						color: #333;
+				    display: table;
+				    font-size: 15px;
+				    margin: -3px 0 0;
+				    text-decoration: none;
+				    width: 158px;
+						&:hover {
+							text-decoration: underline;
+						};
+					}
+				}
+				p {
+					color: #B7B7B7;
+					font-size: 12px;
+					line-height: 18px;
+					margin-top: 15px;
+					width: 100%;
+				}
+			};
+
+			ul.user-resume {
+		    float: left;
+		    height: 40px;
+		    margin: 10px 0 0 10px;
+		    width: 99%;
+		    img.country-flag {
+					float: left;
+			    height: 32px;
+			    margin: -5px 10px 0 0;
+			    width: 32px;
+				}
+				li {
+					border: 0px;
+					float: left;
+			    height: auto;
+			    margin: 0 2px 0 0;
+			    width: auto;
+			    min-width: 40px;
+					label {
+						color: #999999;
+						float: left;
+						font-size: 9px;
+						font-weight: normal;
+						text-transform: uppercase;
+						text-align: center;
+						width: 100%;
+					};
+					span {
+						color: #777;
+						float: left;
+						font-size: 12px;
+						text-align: center;
+						margin-top: 5px;
+						width: 100%;
+					}
+				}
+			}
+		}
+		&:hover {
+			.follow-button {
+				visibility:visible;
+				opacity: 1;
+			}
+		}
+		.follow-button, .unfollow-button {
+	    float: right;
+	    height: 25px;
+	    line-height: 25px;
+	    margin: 0 0 -50px;
+	    position: relative;
+	    text-decoration: none;
+	    opacity: 0.3;
+	    margin: 2px;
+	    padding-top: 4px;
+	    visibility: hidden;
+	    text-indent: 23px;
+	    line-height: 23px;
+	    transition:All 0.8s ease;
+      -webkit-transition:All 0.8s ease;
+      -moz-transition:All 0.8s ease;
+      -o-transition:All 0.8s ease;
+		};
+		.follow-button {
+			background-color: #32a6d3;
+	    border-color: #1B8DBA;
+    	color: #FFF;
+			&::before {
+				content:'  ';
+				display:block;
+				background: url(asset-path("user/follow_add.png")) no-repeat 0 2px;
+				height: 16px;
+				width: 16px;
+				position: absolute;
+			}
+		};
+		.unfollow-button {
+			background-color: #E0180D;
+	    border-color: #A00E06;
+    	color: #FFF;
+			&::before {
+				content:'  ';
+				display:block;
+				background: url(asset-path("user/follow_add.png")) no-repeat 0 2px;
+				height: 16px;
+				width: 16px;
+				position: absolute;
+			}
+		};
+	}		
+}
+
+/* Profile Page Style as Modal */
+.photographer-profile-modal-container {
+	border: 1px solid #EEE;
+	height: 300px;
+	left: 0;
+	margin: -7px 0 0 -2px;
+	position: absolute;
+	width: 100%;
+	.cover-photo {
+		background-color: #222;
+		background-position: center center;
+		background-size: cover;
+		height: 300px;
+		width: 100%;
+		.btn {
+	    float: right;
+	    height: 16px;
+	    margin: 20px 20px 0 0;
+			span {
+				float: left;
+			}
+		}
+	}
+	.profile {
+		border-bottom: 1px solid #DDDDDD;
+    height: 167px;
+    margin-top: -100px;
+    position: absolute;
+    width: 100%;
+    .avatar-container {
+			background-color: #FFFFFF;
+	    border: 1px solid #B7B7B7;
+			border-radius: 5px; 
+			-moz-border-radius: 5px; 
+			-webkit-border-radius: 5px; 	    
+	  	float: left;
+	    height: 145px;
+	    margin: 5px 5px 5px 22px;
+	    padding: 3px;
+	    position: absolute;
+	    width: 140px;
+	    z-index: 99;
+	    img {
+				border-radius: 5px; 
+				-moz-border-radius: 5px; 
+				-webkit-border-radius: 5px;	    	
+	    	height: 100%;
+	    	width: 100%;
+	    }
+    }
+    h1.user-name, h3.score {
+	    color: #FFFFFF;
+	    float: left;
+	    font-size: 32px;
+	    font-weight: normal;
+	    left: 170px;
+	    margin: 5px 0 0 10px;
+	    text-shadow: 1px 1px 1px #333333;
+	    position: absolute;
+    }
+    h1.user-name {
+    	margin-top: 28px;
+    }
+    h3.score {
+    	font-size: 18px;
+    	font-style: normal;
+    	margin-top: 70px
+    }
+	}
+	.profile ul.resume {
+		background: none repeat scroll 0 0 #FFFFFF;
+    float: left;
+    height: 64px;
+    left: 0;
+    margin-top: 98px;
+    padding: 5px 0 0 170px;
+    position: absolute;
+    right: 0;
+    z-index: 0;    
+    li {
+    	float: left;
+    	height: 100%;
+    	padding: 0 10px 0 1px;
+    	width: 80px;
+    	label {
+    		color: #999999;
+    		float: left;
+    		font-size: 11px;
+    		text-align: center;
+    		margin-top: 5px;
+    		width: 100%;
+    		text-transform: uppercase;
+    	}
+    	span, a {
+    		color: #333;
+		    float: left;
+		    font-size: 22px;
+		    margin-top: 10px;
+		    text-align: center;
+		    text-decoration: none;
+		    width: 100%;
+    	}
+    	a {
+    		color: #32a6d3;
+    	}
+    	a:hover {
+    		text-decoration: underline;
+    	}
+    }
+	}
+	.profile ul.links {
+		float: right;
+    margin: 85px 0 0;
+    position: absolute;
+    right: 0;
+		li  {
+			float: left;
+			a {
+				float: left;
+		    height: 35px;
+		    margin: 30px 5px 0 0px;
+		    line-height: 35px;
+		    span.icon20pb {
+		    	margin: 4px 3px 0 0;
+		    }
+			}
+		}
+	}
+	.photographers-photo-gallary {
+    float: left;
+    margin: 70px 0 0 0px;
+    width: 100%;
+    .grid-table  {
+    	margin-left: 0px;
+    	width: 102% !important;
+    	.img-container {
+    		width: 23.6%;
+    	}
+    }	
+	}
+}	
+
+.show-photographer-full-profile {
+	overflow-x: hidden;
+	.main-content-area {
+		left:0;
+		right:-2px;
+		top:58px;
+		padding: 0 ;
+		.photographers-full-profile {
+			margin: 70px 5% 0 5%;
+			width: 90%;	
+		}
+		.photographers-photo-gallary {
+			margin-top: 10px;		
+		}
+		ul.workshops-items {
+			left: 50%;
+			margin-left: -512px;
+			position: absolute;
+		}
+	} 
+}

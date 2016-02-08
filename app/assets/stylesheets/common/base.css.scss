@@ -266,6 +266,13 @@ html {
     margin-left: 6px;
     width: auto;
     /*text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.75);*/
+    a {
+      color: #fff;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      };
+    }
   }
   span.photo-by {
     margin-top: 10px;
