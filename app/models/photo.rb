@@ -35,7 +35,7 @@ class Photo < ActiveRecord::Base
   scope :portraits, -> {joins(:exif).where('photo_exifs.imagewidth < photo_exifs.imageheight')}
 
   def author
-    self.user.profile.user_name  
+    self.user.profile.short_name  
   end
 
   def orientation

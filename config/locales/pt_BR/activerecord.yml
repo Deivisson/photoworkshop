@@ -52,7 +52,8 @@ pt_BR:
         state_id: "Estado"
         city_id: "Cidade"
         avatar: "Foto Perfil"
-        user_name: "Nome Usuário"
+        full_name: "Nome + Sobrenome"
+        user_name: "Username"
       photo:
         title: "Título"
         description: "Descrição"
