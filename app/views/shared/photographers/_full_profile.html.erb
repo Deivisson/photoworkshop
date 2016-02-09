@@ -1,9 +1,8 @@
-<%= facebook_script %>
-<%= facebook_share %>
-<%= twitter_share %>
-
 <%= render '/user/shared/main_menu' %>
 <div id="photographer-show-modal-container">
+	<%= facebook_script %>
+	<%= facebook_share %>
+	<%= twitter_share %>
 	<div class="photographer-profile-modal-container">
 		<div id="user-profile-cover-pic" class="cover-photo" 
 				style="background-image: url(<%= @user.profile.cover_url(:huge) %>)",
