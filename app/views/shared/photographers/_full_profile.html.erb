@@ -1,3 +1,7 @@
+<%= facebook_script %>
+<%= facebook_share %>
+<%= twitter_share %>
+
 <%= render '/user/shared/main_menu' %>
 <div id="photographer-show-modal-container">
 	<div class="photographer-profile-modal-container">
@@ -7,37 +11,61 @@
 	      <%= link_to user_edit_cover_photo_path(0), class:"btn", id:'edit-cover' do %>
         	<span class="icon16pb edit"></span>
       	<% end if @namespace == :user && !current_user.nil? && current_user.id == @user.id %>
+      	<ul class="share-buttons">
+					<li>
+					  <%= twitter_link_to_share("",t('.share_message',
+					  							full_name:@user.profile.full_name,
+					  							link:photographer_profile_url(@user.profile.user_name))) do %>
+					    <span class="social-network-icon-24 twitter"></span>  
+					  <% end %>
+					</li>
+					<li>
+					  <%= link_to "", onclick:"FacebookShare('#{photographer_profile_url(@user.profile.user_name)}',
+					  								'#{t('.share_message',full_name:@user.profile.full_name,link:'')}');" do %>
+					    <span class="social-network-icon-24 facebook"></span>  
+					  <% end %>
+					</li>
+      	</ul>
 		</div>
 		<div class="profile">
-			<div class="avatar-container"><%= image_tag(@user.profile.avatar.url(:medium)) %></div>
+			<div class="avatar-container">
+				<%= image_tag(@user.profile.avatar.url(:medium)) %>
+			</div>
 			<%= content_tag :h1, @user.profile.full_name,class:"user-name" %>
 			<%= content_tag :h3, class:"score" do %>
-				<%= t('shared.photographers.profile.score',level:@user.level.number,position:@user.level.description) %>
+				<%= t('shared.photographers.profile.score',
+							level:@user.level.number,
+							position:@user.level.description) %>
 			<% end %>
 			<%= content_tag :ul, class:"resume" do %>
 				<li>
 					<label><%= t("user.user_resume.photos") %></label>
-					<%= link_to @user.photos_count, photographer_link_path(:photos_count,@user),remote:true %>
+					<%= link_to @user.photos_count, 
+											photographer_link_path(:photos_count,@user),remote:true %>
 				</li>
 				<li>
 					<label><%= t("user.user_resume.following") %></label>
-					<%= link_to @user.following_count, photographer_link_path(:following_count,@user), remote:true %>
+					<%= link_to @user.following_count, 
+											photographer_link_path(:following_count,@user), remote:true %>
 				</li>
 				<li>
 					<label><%= t("user.user_resume.followers") %></label>
-					<%= link_to @user.followers_count,photographer_link_path(:followers_count,@user),
-									remote:true, id:"photographer-followers-count" %>
+					<%= link_to @user.followers_count,
+											photographer_link_path(:followers_count,@user),
+											remote:true, id:"photographer-followers-count" %>
 				</li>
 				
 				<%= content_tag :li do %>
 					<label><%= t("user.user_resume.workshops") %></label>
-					<%= link_to @user.owner_workshops_count,photographer_link_path(:owner_workshops_count,@user),
-									remote:true %>
+					<%= link_to @user.owner_workshops_count,
+											photographer_link_path(:owner_workshops_count,@user),
+											remote:true %>
 				<% end if @user.owner_workshops_count > 0 %>
 
 				<li>
 					<label>...</label>
-					<%= link_to "Sobre", photographer_link_path(:about,@user), remote:true %>
+					<%= link_to t("buttons.about"), 
+											photographer_link_path(:about,@user), remote:true %>
 				</li>
 			<% end %>
 			<%= content_tag :ul, class:"links" do %>

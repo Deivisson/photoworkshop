@@ -217,6 +217,9 @@ pt_BR:
       photo:
         header_search_field:
           search_placeholder: "Pesquisar Fotografia"
+      photographers:
+        full_profile:
+        share_message: "%{full_name}, fotógrafo #Pic2Gether."
     photo_explore:
       menu:
         fans_pictures: "Fãns"

@@ -199,6 +199,28 @@ ul.users-photographers {
 				float: left;
 			}
 		}
+		ul.share-buttons {
+	    height: 30px;
+	    margin: 265px 10px 0 0;
+	    position: absolute;
+	    right: 0;
+	    width: 100px;
+	    z-index: 9999;
+	    li {
+		    float: right;
+		    height: 30px;
+		    width: 30px;
+		    a {
+		    	display: block;
+		    	height: 100%;
+		    	width: 100%;
+		    	span {
+		    		float: left;
+		    		margin: -2px 0 0 -4px;
+		    	}
+		    }
+	    }
+		}
 	}
 	.profile {
 		border-bottom: 1px solid #DDDDDD;

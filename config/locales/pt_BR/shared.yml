@@ -15,5 +15,6 @@ pt_BR:
       follow_links:
         follow: "Seguir"
         unfollow: "Parar de Seguir"
-
+      full_profile:
+        share_message: "Conheça o perfil de %{full_name}, fotógrafo Pic2Gether. %{link}"
   portfolio:
