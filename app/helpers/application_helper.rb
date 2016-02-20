@@ -71,4 +71,8 @@ module ApplicationHelper
     return "Sim" if value
     return "Não" if !value
   end
+
+  def photo_full_url(photo,size)
+    URI.join(ActionController::Base.asset_host, photo.picture.url(size))
+  end
 end

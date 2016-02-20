@@ -361,3 +361,5 @@ def build_gallary_type_link(type)
 		user_photo_explore_path(gallary_type:type)
 	end
 end
+
+

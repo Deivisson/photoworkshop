@@ -33,8 +33,11 @@
           <td class="divider" colspan="2" bgcolor="#c4c4c4" height="1"></td>
         </tr>
         <tr class="episode">
+
           <td>
-            <%= image_tag(@user_point.photo.picture.url(:small),style:"width:200px;height:125px")%>
+            <%= image_tag(URI.join(ActionController::Base.asset_host, 
+                          @user_point.photo.picture.url(:small)),
+                          style:"width:200px;height:125px")%>
           </td>
           <td valign="top">
             <h2 style="color:#544F4F;font-weight:normal">
