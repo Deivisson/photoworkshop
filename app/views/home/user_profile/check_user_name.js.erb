@@ -1,0 +1,8 @@
+$("#user-name-available").removeClass("success").removeClass("failure");
+<% if @valid_user_name %>
+	$("#user-name-available").addClass("success");
+	$("#user-name-available").text("<%= t('home.welcome.sign_up.user_name_available') %>");
+<% else %>
+	$("#user-name-available").addClass("failure");
+	$("#user-name-available").text("<%= t('home.welcome.sign_up.user_name_error') %>");
+<% end %>

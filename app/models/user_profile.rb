@@ -54,8 +54,18 @@ class UserProfile < ActiveRecord::Base
     if self.respond_to?(method_name) && !self.send("#{method_name}?")
       self.limit_upload_photo_by_day += 1
       self.send("#{method_name}=",true)
-      self.save
+      if self.save
+        User::NotificationMailer.upload_increased_message(self.user,provider).deliver
+      end
     end 
+  end
+
+  def self.get_user_name(full_name)
+    UserProfile.consist_user_name!(full_name)
+  end
+
+  def self.valid_user_name?(user_name)
+    return (user_name == UserProfile.consist_user_name!(user_name))
   end
 
 private 
@@ -94,11 +104,16 @@ private
 
   def format_user_name
     _name = user_name.blank? ? self.full_name.dup : self.user_name
-    _name = _name.gsub(' ','')
-    _name = _name.gsub(/(á|à|ã|â|ä)/, 'a').gsub(/(é|è|ê|ë)/, 'e').gsub(/(í|ì|î|ï)/, 'i').gsub(/(ó|ò|õ|ô|ö)/, 'o').gsub(/(ú|ù|û|ü)/, 'u')
-    _name = _name.gsub(/(Á|À|Ã|Â|Ä)/, 'A').gsub(/(É|È|Ê|Ë)/, 'E').gsub(/(Í|Ì|Î|Ï)/, 'I').gsub(/(Ó|Ò|Õ|Ô|Ö)/, 'O').gsub(/(Ú|Ù|Û|Ü)/, 'U')
-    _name = _name.gsub(/ñ/, 'n').gsub(/Ñ/, 'N')
-    _name = _name.gsub(/ç/, 'c').gsub(/Ç/, 'C')
-    self.user_name = _name.downcase
+    self.user_name = UserProfile.consist_user_name!(_name)
   end
+
+  def self.consist_user_name!(name)
+    name = name.gsub(' ','')
+    name = name.gsub(/(á|à|ã|â|ä)/, 'a').gsub(/(é|è|ê|ë)/, 'e').gsub(/(í|ì|î|ï)/, 'i').gsub(/(ó|ò|õ|ô|ö)/, 'o').gsub(/(ú|ù|û|ü)/, 'u')
+    name = name.gsub(/(Á|À|Ã|Â|Ä)/, 'A').gsub(/(É|È|Ê|Ë)/, 'E').gsub(/(Í|Ì|Î|Ï)/, 'I').gsub(/(Ó|Ò|Õ|Ô|Ö)/, 'O').gsub(/(Ú|Ù|Û|Ü)/, 'U')
+    name = name.gsub(/ñ/, 'n').gsub(/Ñ/, 'N')
+    name = name.gsub(/ç/, 'c').gsub(/Ç/, 'C')
+    return name.downcase    
+  end
+
 end

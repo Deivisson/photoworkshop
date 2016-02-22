@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require common/bootstrap.min.js
 //= require home/welcome
+//= require home/sign_up
 

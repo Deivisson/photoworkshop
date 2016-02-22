@@ -55,11 +55,13 @@ pt_BR:
       sign_up:
         title: "Crie sua conta"
         full_name_field: "Nome + Sobrenome"
-        user_name: "User Name"
+        user_name: "Username"
         email: "Email"
         password: "Senha"
         password_confirmation: "Confirmação da Senha"
         submit: "Confirmar"
+        user_name_error: "Username já em uso ou inválido (não poderá conter espaços, acentos, caracteres especiais e letras maiúsculas)."
+        user_name_available: "Username válido."
       contact_us:
         title: "Fale Conosco"
         sub_title: "Envie-nos a sua mensagem e muito em breve entraremos em contato."

@@ -237,7 +237,7 @@ pt_BR:
         facebook_share: "Compartilhar Facebook"
         facebook_invite_friends: "Convidar Amigos do Facebook"
         twitter_share: "Compartilhar Twitter"
-        share_message: "¹Ganhe direito de postar mais uma foto por dia para cada rede social compartilhada."
+        share_message: "¹Ganhe direito de postar mais uma foto por dia ao compartilhar pela primeira vez o Pic2Gether em cada uma das redes sociais acima. "
         invite_message: "²Para cada amigo convidado, você ganhará um ponto."
       workshop_promote:
         title: "%{description}: Matrícule-se agora mesmo!"
@@ -262,3 +262,7 @@ pt_BR:
       photo_covered_message:
         title: "Foto de Capa"
         message: "Veja que legal, você teve sua foto escolhida como capa do Pic2Gether. Isto lhe deu mais 10 pontos de experiência."
+      upload_increased_message:
+        title: "Recompensa de Compartilhamento"
+        message: "Estamos muito felizes por você ter compartilhado o Pic2Gether no %{social_network} :-). E como recompensa, estamos lhe permitindo postar mais uma foto por dia. Agora, o seu limite de postagens é de até %{limit_upload} fotos diárias. Divirta-se !!!"
+        message_share_more: "Continue compartilhando e indicando para os amigos. Ajude a tornar o Pic2Gether.com o maior canal de fotografia do mundo. Contamos com você!"

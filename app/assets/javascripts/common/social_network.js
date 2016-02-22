@@ -1,10 +1,12 @@
-function UpdateInvitedFriends() {
-
+function UpdateInvitedFriends(provider,response) {
+	
 }
 
 // Update that user shared on social network
-function UpdateSocialNetworkShared(provider, response) {
+function UpdateSocialNetworkShared(provider, response,share_callback) {
 	if (response != undefined && !response.hasOwnProperty("error_code")) {
-		$.post( "/user/profile/social_network_shared/" + provider, function() {})	;
+		if (share_callback == "share_pic2gether") {
+			$.post( "/user/profile/social_network_shared/" + provider, function() {})	;	
+		}
 	}
 }

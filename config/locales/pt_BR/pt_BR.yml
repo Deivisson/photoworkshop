@@ -87,6 +87,7 @@ pt_BR:
   mailer_subjects:
     change_level: "Mudança de Nível"
     photo_covered: "Capa do Pic2Gether"
+    reward: "Recompensa"
   notifications:
     team_welcome: "A equipe <strong>Pic2Gether</strong> lhe deseja boas vindas, e estamos ansiosos para conhecer a sua arte."
     followed: "%{follower} começou seguir você."

@@ -26,7 +26,7 @@ module User::SocialNetworkHelper
   	        message: 'Torne o Pic2gether conhecido para seus amigos. Eles também merecem !!',
 		        display: 'popup'
 		      }, function(response){
-		        UpdateInvitedFriends();
+		        UpdateInvitedFriends('facebook',response);
 		      });
 		    }
 	    </script>
@@ -37,7 +37,7 @@ module User::SocialNetworkHelper
 	def facebook_share()
 		script = <<-SCRIPT
 			<script>
-				function FacebookShare(link,title)
+				function FacebookShare(link,title,share_callback)
 		    {
 		    	if (link == undefined) {
 		    		link='https://pic2gether.com'
@@ -52,7 +52,9 @@ module User::SocialNetworkHelper
 					  href: link ,
 					  title: title,
 		      }, function(response){
-		        UpdateSocialNetworkShared('facebook',response);
+		      	if (share_callback != undefined) {
+		      		UpdateSocialNetworkShared('facebook',response,share_callback);	
+		      	}
 		      });
 		    }
 	    </script>
@@ -83,8 +85,10 @@ module User::SocialNetworkHelper
 	def twitter_share
 		script = <<-SCRIPT
 			<script>
-				function TwitterShare() {	
-		    	UpdateSocialNetworkShared('twitter',JSON.stringify("[]"));
+				function TwitterShare(share_callback) {	
+					if (share_callback != undefined) {
+		    		UpdateSocialNetworkShared('twitter',JSON.stringify("[]"),share_callback);
+	    		}
 	      };
 	    </script>
 		SCRIPT

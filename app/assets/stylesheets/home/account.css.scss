@@ -116,3 +116,23 @@
 	}
 
 }
+
+p.user-name-info {
+	color: #727171;
+	font-size: 13px;
+	height: 17px;
+	line-height: 15px;
+	margin: 5px 0 0 4px;
+	padding-left: 20px;
+	display: none;
+	&.success, &.failure {
+		display: table;
+	}
+  &.success {
+  	background: url(asset-path("home/check.png")) no-repeat
+  }
+  &.failure {
+  	background: url(asset-path("home/error.png")) no-repeat;
+  	color: #cc0000 !important;
+  }
+}
