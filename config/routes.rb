@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   
   devise_for :admins
   namespace :admin do
@@ -72,6 +73,8 @@ Rails.application.routes.draw do
     #Favorite Photo
     get "favorite_photos/:photo_id/favoritar", to:'favorite_photos#favoritar', :as => :favoritar_photo
     get "favorite_photos/:photo_id/unfavoritar", to:'favorite_photos#unfavoritar', :as => :unfavoritar_photo
+
+    get "user_profile/:user_id/workshop_wait", to: "user_profiles#workshop_wait", :as => :workshop_wait
     resources :workshop_plans, only:[:index]
     resources :rankings, only:[:index]
   end

@@ -3,8 +3,10 @@ $(document).on('ready page:load', function (){
 			var url = $(this).attr('href');
 			var dialog_form = $(getModalContainer("workshop-plans-modal-dialog",true)).dialog({
 			    autoOpen: false,
-			    width: 1000,
-			    height: 500,
+			    //width: 1000,
+					//height: 500,
+			    width: 600,
+			    height: 300,
 			    modal: true,
 			    close: function() {
 			      $('#workshop-plans-modal-dialog').remove();

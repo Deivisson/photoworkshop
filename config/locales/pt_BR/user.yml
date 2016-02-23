@@ -36,7 +36,7 @@ pt_BR:
       new:
         title: "Uploading Fotografia"
       form:
-        select_file: "Arraste a foto para aqui ou Click para selecionar."
+        select_file: "Click para selecionar a foto."
         photo_info: "Informações"
         cancel_upload: "Cancelar Upload"
 
@@ -191,6 +191,7 @@ pt_BR:
     workshop_plans:
       index:
         title: "Selecione o Plano adequado."
+      plans:
         info_plan: "(*) Ao adiquirir o plano, você não terá uma cobrança mensal. O valor pago será por Workshop contratado e nada mais."
       basic: "Basic"
       premium: "Premium (recomendado)"

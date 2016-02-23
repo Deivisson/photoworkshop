@@ -470,3 +470,33 @@ input.camera-field {
 		}
 	}	
 }
+
+.photo-limit-info {
+	color: #8f8f8f;
+  font-size: 14px;
+  font-weight: bold;
+  float: left;
+  margin: 15px 0 0 7px !important;
+  padding: 10px 0 10px 3px !important;
+  text-transform: uppercase;
+  width: 100%;
+	h1 {
+		font-size: 16px;
+	}
+
+	ul.last-photos {
+		float: left;
+		width: 100%;
+		li {
+			float: left;
+			width: 100%;
+			margin: 4px 0 4px 8px;
+			.img-pic {
+				background-position: center center;
+		    background-size: cover;
+		    height: 160px;
+		    width: 217px;
+			}
+		}
+	}
+}

@@ -24,6 +24,13 @@ class User::UserProfilesController < User::BaseController
     current_user.profile.update_social_network_shared!(params[:provider])
   end
 
+  def workshop_wait
+    puts "passou aqui"
+    p = current_user.profile
+    p.workshop_wait = true
+    p.save
+  end
+
   def edit_cover_photo
     @photos = current_user.photos.limit(30)
     @gallary_type = :table

@@ -1,28 +1,5 @@
 <div id="workshop-plans-container">
 	<%= content_tag :label,t('.title'), class:'modal-title',id:'modal-title-workshop-plan' %>
-	<ul class="workshop-plans">
-		<% @workshop_plans.each do |plan| %>
-			<li class="<%= 'recommended' if plan.id == 2 %>">
-				<h1><%= t("user.#{plan.i18n_key}") %></h1>
-				<span class="plan-price">
-					<span class="currency-unit"><%= t('number.currency.format.unit') %></span>
-					<%="#{number_to_currency(plan.value,unit:'')}*" %>
-				</span>
-				<ul class="plan-items">
-					<% JSON.parse(plan.settings).each do |s| %>
-						<%= content_tag :li do %>
-							<%= image_tag("user/checked.png")%>
-							<%= content_tag :p do %>
-								<%= t("user.workshop_plans.settings.#{s['key']}",value:s['value']) %>
-							<% end %>
-						<% end if (s['value'].to_i > 0 || s['value'].to_i == -1) && s['type'] != "boolean" %>
-					<% end %>
-				</ul>
-				<%= link_to t('buttons.to_hire'),
-						new_user_workshop_path(plan_id:plan.id), 
-						class:'btn btn-success btn-to-hire-plan' %>
-			</li>
-		<% end %>
-		<p class="info-plan"><%= t(".info_plan") %></p>
-	</ul>
+	<% render 'plans' %>
+	<%= render 'pre_sales' %>
 </div>
