@@ -62,12 +62,19 @@ module User::SocialNetworkHelper
 		script.html_safe		
 	end
 	
-	def facebook_image_share(image_link)
-		meta = <<-META
-			<link rel="image_src" href="#{URI.join(root_url, image_link).to_s}" />
-			<meta property="og:image" content="#{URI.join(root_url, image_link).to_s}" />
-			<meta property="og:description" content="Uma maneira incrivelmente divertida e interativa para apresentar suas fotos" />
-		META
+	def facebook_image_share(image_link,description=nil)
+		if description.nil?
+			meta = <<-META
+				<link rel="image_src" href="#{URI.join(root_url, image_link).to_s}" />
+				<meta property="og:image" content="#{URI.join(root_url, image_link).to_s}" />
+			META
+		else
+			meta = <<-META
+				<link rel="image_src" href="#{URI.join(root_url, image_link).to_s}" />
+				<meta property="og:image" content="#{URI.join(root_url, image_link).to_s}" />
+				<meta property="og:description" content="#{description}" />
+			META
+		end
 		content_for :facebook_image_to_share do 
 			meta.html_safe
 		end

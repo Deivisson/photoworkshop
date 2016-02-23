@@ -1,4 +1,4 @@
-<% facebook_image_share @photo_cover.picture.url(:large)  %>
+<% facebook_image_share @photo_cover.picture.url(:small), t('home.welcome.texts.sub_header') %>
 <%= content_for :login_form do %>
 	<%= form_for(:user, :url => session_path(:user), html:{class:"login-form"}) do |f| %>
 	  <%= f.email_field :email, 
