@@ -66,6 +66,7 @@ module User::SocialNetworkHelper
 		meta = <<-META
 			<link rel="image_src" href="#{URI.join(root_url, image_link).to_s}" />
 			<meta property="og:image" content="#{URI.join(root_url, image_link).to_s}" />
+			<meta property="og:description" content="Uma maneira incrivelmente divertida e interativa para apresentar suas fotos" />
 		META
 		content_for :facebook_image_to_share do 
 			meta.html_safe
