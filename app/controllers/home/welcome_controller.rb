@@ -1,7 +1,9 @@
 class Home::WelcomeController < Home::BaseController
+  
   def index
   	@photo_cover = Photo.cover
   end
+
   def contactus
   	@errors = []
   	@name = params["contactus"]["name"]
@@ -16,9 +18,12 @@ class Home::WelcomeController < Home::BaseController
 		end
   	@errors << "Mensagem possui preenchimento obrigatório" unless @message.present?
 
-  	puts @errors.join.to_s
   	if @errors.empty?
   		Home::ContactusMailer::notificate(@name,@email,@message).deliver
 		end
+  end
+
+  def termsconditions
+    render layout: 'home/termsconditions'    
   end
 end

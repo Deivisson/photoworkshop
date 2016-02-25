@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'home', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body style="overflow:auto">
 	<div class="welcome-header" id="welcome-header">
 		<div class="logo-container">
 			<%= link_to image_tag("shared/logo_black.png"), root_path %>
@@ -19,7 +19,7 @@
 	</div>
 	<div class="account-page">
 		<div class="bg"></div>
-		<div class="account-form-box">
+		<div class="terms-conditions">
 			<%= yield %>
 		</div>
 	</div>

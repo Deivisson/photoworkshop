@@ -82,6 +82,7 @@ Rails.application.routes.draw do
   namespace :home do
     resources :welcome, only: [:index] do 
       get :contactus, on: :collection
+      get :termsconditions, on: :collection
     end
     get "user_profile/:user_name/check_user_name", to: "user_profile#check_user_name", as: :check_user_name
     get "user_profile/:full_name/format_user_name", to: "user_profile#format_user_name", as: :format_user_name
