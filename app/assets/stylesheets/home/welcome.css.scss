@@ -251,7 +251,11 @@ a.sign-up-button {
 }
 
 
-.how_work, .made-for-who, .professionals, .sign-up-container, .contact-us {
+.how_work, 
+.made-for-who, 
+.professionals, 
+.sign-up-container, 
+.contact-us {
   background-color: red;
   float: left;
   height: 600px;
@@ -259,7 +263,7 @@ a.sign-up-button {
   padding-top: 140px;
   position: relative;
   z-index:  999;
-
+  visibility: hidden;
 }
 
 .how_work {

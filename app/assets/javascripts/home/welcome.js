@@ -6,6 +6,9 @@ $(document).on('ready page:load', function (){
   // Default move to top
   $('html,body').animate({scrollTop: 0},250);
 	$('#how-work-link, #made-for-who-link, #top-link, #professionals-link, #sign-up-link, #welcome-contact-us-link').click(function(event) {
+   
+    $(".how_work,.made-for-who,.professionals,.sign-up-container,.contact-us").css("visibility","visible");
+
     link = $(this);
 		var linkId = link.attr("id");
 		var top = (linkId == "top-link" ? 0 : $("#"+link.attr("target")).offset().top);
