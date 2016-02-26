@@ -1,4 +1,4 @@
-.account-page {
+.account-page , .terms-conditions-page {
 	background-color: #2D2D2D;
 	position: absolute;
 	left: 0;
@@ -115,6 +115,39 @@
 	  }    
 	}
 
+}
+
+
+.terms-conditions-page {
+	overflow: auto;
+	.terms-conditions {
+	  background-color: #FFF;
+	  border-radius: 10px; 
+	  -moz-border-radius: 10px; 
+	  -webkit-border-radius: 10px;    
+	  float: left;
+	  left: 50%;
+	  height: auto;
+	  padding: 20px;
+	  position: relative;
+	  margin: 100px 0 0 -350px;
+	  width: 700px;
+	  z-index: 999;
+	  h1,h2 {
+	    color: #333;
+	    font-size: 18px;
+	    font-weight: bold;
+	    width: 100%;
+	  }
+	  h1 {
+	  	font-size: 28px;
+	  	margin-bottom: 30px;
+	  }
+	  p {
+	    margin: 10px 0 30px 0;
+	    line-height: 20px;
+	  }
+	}
 }
 
 p.user-name-info {
