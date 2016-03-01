@@ -16,7 +16,9 @@
 						<%= hidden_field_tag "photo_ratings[][workshop_activity_response_id]",
 																	@workshop_activity_response.id %>
 						<%= text_field_tag "photo_ratings[][score]","0",
-																class:"score-value",id:"score-value-#{criterium.id}" %>
+																class:"score-value",
+																id:"score-value-#{criterium.id}",
+																readonly:true %>
 					</li>
 				<% end %>
 			</ul>

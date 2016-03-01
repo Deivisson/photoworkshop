@@ -105,7 +105,7 @@ class Photo < ActiveRecord::Base
   end
 
   def self.posted_today_by_user(user)
-    Photo.where("user_id = ? and (created_at between ? and ?)",
+    Photo.where("user_id = ? and (created_at between ? and ?) and workshop_activity_response_id is null",
            user.id,Time.now.beginning_of_day,Time.now.end_of_day)
   end
 
