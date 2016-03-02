@@ -23,7 +23,7 @@ module User::SocialNetworkHelper
 		      FB.ui({
 		      	title:'Convidar Amigos',
 		        method: 'apprequests',
-  	        message: 'Torne o Pic2gether conhecido para seus amigos. Eles também merecem !!',
+  	        message: 'Conheça o site Pic2gether. O portal que lhe dará grande exposição, inspirações e realmente ajudará a melhorar suas habilidades fotográficas: https://pic2gether.com',
 		        display: 'popup'
 		      }, function(response){
 		        UpdateInvitedFriends('facebook',response);
