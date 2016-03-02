@@ -5,7 +5,7 @@ class FacebookController < ApplicationController
   after_filter :allow_iframe
 
   def canvas 
-    redirect_to "https://www.facebook.com/dialog/oauth?client_id=#{FB['1546622365584604']}&redirect_uri=https://apps.facebook.com/pictwogether"
+    redirect_to "https://www.facebook.com/dialog/oauth?client_id=1546622365584604&redirect_uri=https://apps.facebook.com/pictwogether"
   end 
 
   def allow_iframe
