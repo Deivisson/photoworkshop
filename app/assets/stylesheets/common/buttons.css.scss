@@ -260,3 +260,22 @@ a {
     }
   }
 }
+
+.facebook-button {
+  background-color: #4E70B5;
+  border: 1px solid #4453B5;
+  color: #fff;
+  &:hover {
+    background-color: #325293;
+    border: 1px solid #4E70B5;
+  };
+}
+
+.twitter-button {
+  background-color: #28C2FA; 
+  border: 1px solid #29AFFA;
+  color: #fff;
+  &:hover {
+    background-color: #1595C4;
+  };
+}

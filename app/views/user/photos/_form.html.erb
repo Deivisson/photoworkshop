@@ -3,7 +3,7 @@
               user_photos_path, 
               class:"btn btn-important btn-small btn-right" %>
 <% end %>
-<div class="centralizer">
+<div class="centralizer ">
   <%= semantic_form_for @photo, url:user_photos_path, :html => {multipart:true} do |f| %>
     <%= render partial:'fields', locals: {f: f} %>
     <div class="actions">
@@ -11,6 +11,5 @@
     </div>
   <% end %>
 </div>
-
 
  

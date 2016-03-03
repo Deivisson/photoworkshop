@@ -89,7 +89,7 @@ function showImagePreview(input) {
 	if (input.files && input.files[0]) {
 		var filerdr = new FileReader();
 		filerdr.onload = function(e) {
-			$('#image-upload').attr('src', e.target.result);
+			$("#image-upload").css("background-image",'url(' + e.target.result + ')');
 		}
 		filerdr.readAsDataURL(input.files[0]);
 		$("#dragandrophandler").css("border","1px solid #777")

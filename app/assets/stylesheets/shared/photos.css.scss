@@ -335,6 +335,13 @@ input.camera-field {
 		height: 100%;
 		width: 100%;
 	};
+	.image-upload {
+		background-position: center center;
+    background-size: cover;
+		display: block;
+		height: 100%;
+		width: 100%;
+	}
 	li {
 		left: 0;
 		list-style: none;
@@ -368,6 +375,28 @@ input.camera-field {
 	}	
 }
 
+.common-photo-upload {
+	float: left;
+	.photo-container {
+		float: left;
+		width: 600px;
+		#dragandrophandler {
+			height: 550px;
+			li {
+				width: 600px;
+				position: relative;
+			}
+		}
+	}
+	.photo-fields-container {
+		float: left;
+		width: 420px;
+		margin: -12px 0 0 -40px;
+		.panel .panel-content {
+			width: 92%;
+		}
+	}
+}
 
 /*Limit upload photo END*/
 .end-limit-upload-photo {
@@ -388,16 +417,32 @@ input.camera-field {
 		color: #4e5665;
 		font-size: 32px;
 		margin-top: 10px;
+		line-height: 41px;
 		span.ops-face {
 			color: #747272;
 			font-size: 86px;
 			border-right: 1px solid #d3d0d6;
 			height: 100px;
-			padding: 0px 10px 0 0;
+			padding: 26px 10px 0 0;
 			margin-right: 20px;
 		}
 	}
 }
+
+.end-limit-upload-photo ul.social-network {
+	float: left;
+	margin: 30px 0 0 110px;
+	h1 {
+		font-size: 18px;
+		margin-bottom: 10px;
+	}
+	li {
+		float: left;
+		margin: 0 20px 10px 0;
+		width: auto;
+	}
+}
+
 
 .photo-menu-popup {
 	position: absolute;

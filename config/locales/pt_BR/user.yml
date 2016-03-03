@@ -34,12 +34,15 @@ pt_BR:
 
     photos:
       new:
-        title: "Uploading Fotografia"
+        title: "UPLOAD"
       form:
         select_file: "Click para selecionar a foto."
         photo_info: "Informações"
         cancel_upload: "Cancelar Upload"
-
+      upload_denied:
+        share: "Compartilhe o Pic2Gether e ganhe mais 1 postagem diária para em cada rede compartilhada."
+        facebook_share: "Compartilhar no Facebook"
+        twitter_share: "Compartilhar no Twitter"
     photo_comments:
       form:
         comment_box_placeholder: "Deixe o seu comentário"
