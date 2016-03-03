@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  #match "/", :controller => :facebook, :action => :canvas, :as => 'facebook_canvas', :via => [:post]  
+  match "/", :controller => :facebook, :action => :canvas, :as => 'facebook_canvas', :via => [:post]  
   devise_for :admins
   namespace :admin do
     resources :categories
