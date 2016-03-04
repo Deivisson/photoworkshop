@@ -1,13 +1,17 @@
 <%= content_for :toolbar_buttons do %>
-  <%= link_to t('.cancel_upload'),
-              user_photos_path, 
-              class:"btn btn-important btn-small btn-right" %>
+
 <% end %>
 <div class="centralizer ">
   <%= semantic_form_for @photo, url:user_photos_path, :html => {multipart:true} do |f| %>
     <%= render partial:'fields', locals: {f: f} %>
-    <div class="actions">
+    <div class="actions" style="float: right;width: 285px;">
       <%= submit_button f %>
+  		<li>
+  			<%= link_to t('.cancel_upload'),
+        			      user_photos_path, 
+              			class:"btn btn-important", 
+              			style:"float: left;height: 25px;line-height: 27px;" %>
+      </li>      
     </div>
   <% end %>
 </div>

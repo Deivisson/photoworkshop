@@ -49,9 +49,9 @@ pt_BR:
           coach:
             title: "Ser um Coach (<i>Em Breve...</i>)"
             details: "Sendo um Coach (Técnico) no Pic2Gether, você ajudará na formação de bons fotografos e ainda será remunerado por isto."            
-          technical:
-            title: "Ser um Técnico do Pic2Gether (<i>Em Breve...</i>)"
-            details: "Um técnico do Pic2Gether, tem visibilidade, privilégios e poderes importantes na avalição das fotografias postadas no nosso portal."
+          juror:
+            title: "Ser um Jurado Pic2Gether (<i>Em Breve...</i>)"
+            details: "Um Jurado Pic2Gether, tem visibilidade, privilégios e poderes importantes na avalição das fotografias postadas no nosso portal."
       sign_up:
         title: "Crie sua conta"
         full_name_field: "Nome + Sobrenome"

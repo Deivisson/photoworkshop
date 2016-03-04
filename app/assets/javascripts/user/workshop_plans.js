@@ -6,7 +6,7 @@ $(document).on('ready page:load', function (){
 			    //width: 1000,
 					//height: 500,
 			    width: 600,
-			    height: 300,
+			    height: 400,
 			    modal: true,
 			    close: function() {
 			      $('#workshop-plans-modal-dialog').remove();
@@ -14,7 +14,8 @@ $(document).on('ready page:load', function (){
 			  });
 
 			  dialog_form.load(url + '#workshop-plans-container', function(){
-		  		$(this).dialog('option',"title",$("#modal-title-workshop-plan").text());
+		  		//$(this).dialog('option',"title",$("#modal-title-workshop-plan").text());
+		  		$(this).dialog('option',"title","Gerenciamento simples de Workshops");
 		  		$(".ui-widget-overlay").css("opacity","0.8");
 		  		
 		  		//disable all hire plan buttons
