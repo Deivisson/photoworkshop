@@ -254,8 +254,8 @@ pt_BR:
         interests: "Quais são os seus interesses?"
         select_all: "Selecionar Todos"
       step_2:
-        congratulations: "Parabéns!! Agora que já sabemos um pouquinho mais sobre você e suas preferências, já estamos prontos para começar."
-        msg_welcome: "Pic2Gether foi feito para os apaixonados pela Fotografia, um excelente ambiente de exposição para sua arte, e um local de muitas inspirações. Aqui, quanto mais você participa, mais você ganha.<br> Seja bem vindo e aproveite!"
+        congratulations: "Parabéns!! Já estamos prontos para começar."
+        msg_welcome: "Pic2Gether foi feito para os apaixonados pela Fotografia, um excelente ambiente de exposição para sua arte e um local de muitas inspirações. Aqui, quanto mais você participar, melhores serão suas experiências com o Pic2Gether. Em breve estaremos lançando concursos incríveis que premiará os ganhadores com prêmios bem interessantes, aguarde...<br><br> Seja bem vindo e aproveite!"
         team: "Equipe Pic2Gether." 
         info: "Incialmente, o Pic2Gether lhe permitirá postar <strong>1 foto</strong> por dia. <u>Mas não se preocupe</u> existem várias formas de você ganhar mais postagens. Veja como:"
         how_win_photo_uploads: "<span></span>Compartilhando sobre o Pic2Gether nas redes socias(<i>somente é valido os compatilhamentos dentro da aplicação</i>);<br><span></span>Convidando Amigos;"
