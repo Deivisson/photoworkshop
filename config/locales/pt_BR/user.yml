@@ -193,7 +193,7 @@ pt_BR:
         see_activity: "Visualizar Atividade"
     workshop_plans:
       index:
-        title: "Selecione o Plano adequado."
+        title: "Selecione o Plano adequado. (Beta Teste, somente para Parceiros)"
       plans:
         info_plan: "(*) Ao adiquirir o plano, você não terá uma cobrança mensal. O valor pago será por Workshop contratado e nada mais."
       basic: "Basic"
