@@ -205,6 +205,7 @@ pt_BR:
         unlimited_participants: "Quantidade ilimitada de Alunos;"
         limit_materials: "Disponibilização materiais (máximo %{value});"
         limit_activities: "Cadastro atividades (máximo %{value});"
+        limit_activity : "Ilimitado"
     shared:
       photo_view:
         show_details:

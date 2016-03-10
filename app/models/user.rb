@@ -144,6 +144,10 @@ class User < ActiveRecord::Base
       UserPortfolioTemplate.create!(attributes)
     end
   end
+
+  def can_test_workshop?
+    [1,9,20].include?(self.id)
+  end
 private
 
 	def set_default_data

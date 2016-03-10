@@ -1,5 +1,8 @@
 <div id="workshop-plans-container">
 	<%= content_tag :label,t('.title'), class:'modal-title',id:'modal-title-workshop-plan' %>
-	<% render 'plans' %>
-	<%= render 'pre_sales' %>
+	<% if current_user.can_test_workshop? %>
+		<%= render 'plans' %>
+	<% else %>
+		<%= render 'pre_sales' %>
+	<% end %>
 </div>
