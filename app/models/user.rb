@@ -146,7 +146,7 @@ class User < ActiveRecord::Base
   end
 
   def can_test_workshop?
-    [1,9,20].include?(self.id)
+    [1,9,20,17].include?(self.id)
   end
 private
 

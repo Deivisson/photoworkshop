@@ -1,7 +1,9 @@
 <% if @workshop_activity_response.can_upload? %>
 	<%= semantic_form_for [:user,@workshop_activity_response], remote:true do |f| %>
 	  <%= f.semantic_fields_for :photo do |photo| %>
-	    <%= render partial:'user/photos/fields', locals: {f: photo} %>
+	  	<div class="activity-response-photo-form">
+	    	<%= render partial:'user/photos/fields', locals: {f: photo} %>
+    	</div>
 	  <% end %>
 	  <div class="actions">
 	    <%= submit_button f %>

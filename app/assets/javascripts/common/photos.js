@@ -6,7 +6,8 @@ $(document).on('ready page:load', function (){
 });
 
 function photoView(){
-	$(".photo-picture").click(function(e){
+	$(".photo-picture").unbind("click");
+	$(".photo-picture").bind("click",function(e){
 		var w = $(window).width() * 1;
 		var h = $(window).height() * 1;
 		var url = $(this).attr('href');

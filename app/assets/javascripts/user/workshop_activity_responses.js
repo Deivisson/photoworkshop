@@ -1,11 +1,11 @@
 $(document).on('ready page:load', function (){
 	$(".add-workshop-activities-response").click(function(e){
-		var h = $(window).height() * 1;
+		//var h = $(window).height() * 1;
 		var url = $(this).attr('href');
 		var dialog_form = $(getModalContainer("workshop-activity-response-modal-dialog")).dialog({
 		    autoOpen: false,
-		    width: 700,
-		    height: h,
+		    width: 960,
+		    height: 640,
 		    modal: true,
 		    close: function() {
 		      $('#workshop-activity-response-containter').remove();

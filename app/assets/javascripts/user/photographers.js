@@ -5,7 +5,8 @@ $(document).on('ready page:load', function (){
 });
 
 function photographerPreview(){
-	$(".photographer-profile").click(function(e){
+	$(".photographer-profile").unbind("click");
+	$(".photographer-profile").bind("click",function(e){
 		var h = $(window).height() * 1;
 		var url = $(this).attr('href');
 		var dialog_form = $(getModalContainer("photographer-modal-dialog")).dialog({

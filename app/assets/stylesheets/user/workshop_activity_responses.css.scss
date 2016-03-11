@@ -3,3 +3,33 @@
 		left: 10px;
 	}
 }
+
+.activity-response-photo-form {
+	width: 924px;
+	float: left;
+	.common-photo-upload {
+		float: left;
+		.photo-container {
+			float: left;
+			width: 560px;
+			#dragandrophandler {
+				height: 450px;
+				li {
+					width: 540px;
+					position: relative;
+				}
+			}
+		}
+		.photo-fields-container {
+			float: left;
+			width: 400px;
+			margin: -12px 0 0 -40px;
+			.panel {
+				height: 454px !important;
+				.panel-content {
+					width: 92%;
+				}
+			}
+		}
+	}
+}
