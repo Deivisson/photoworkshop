@@ -101,7 +101,7 @@ class Photo < ActiveRecord::Base
   end
 
   def self.cover
-    Photo.where(cover:true).order(cover_at: :desc).limit(1).first
+    Photo.where(cover:true).unscoped.order(cover_at: :desc).limit(1).first
   end
 
   def self.posted_today_by_user(user)
