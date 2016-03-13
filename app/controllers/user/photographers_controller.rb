@@ -1,6 +1,6 @@
 class User::PhotographersController < Shared::PhotographersController
 	before_action :authenticate_user!, :set_namespace
-	layout 'user/dashboard'
+	layout 'user/dashboard' 
 	
 	def show
 		super

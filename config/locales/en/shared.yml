@@ -1,0 +1,20 @@
+pt_BR:
+  shared:
+    photographers:
+      index:
+        search_placeholder: "Pesquisar Fotografos"
+      followers:
+        no_follower: "Você ainda não possui seguidores."
+        full_profile_no_follower: "Ainda não possui seguidores."
+      following:
+        no_followings: "Você ainda não está seguindo ninguém. %{link}"
+        link_label: "Clique aqui e comece a seguir agora mesmo !!"
+        full_profile_no_followings: "Não está seguindo ninguém."
+      profile:
+        score: "Nivel %{level} - %{position}"
+      follow_links:
+        follow: "Seguir"
+        unfollow: "Parar de Seguir"
+      full_profile:
+        share_message: "Conheça o perfil de %{full_name}, fotógrafo Pic2Gether. %{link}"
+  portfolio:

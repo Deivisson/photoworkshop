@@ -1,6 +1,3 @@
-<%= content_for :toolbar_buttons do %>
-
-<% end %>
 <div class="centralizer ">
   <%= semantic_form_for @photo, url:user_photos_path, :html => {multipart:true} do |f| %>
     <%= render partial:'fields', locals: {f: f} %>

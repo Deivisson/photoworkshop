@@ -191,15 +191,27 @@ html {
 }
 
 
-#flash_notice {
-  padding: 5px 8px;
-  margin: 0px 0px 5px 0px;
-  height:100%
+#flash_notice,
+#flash_warning,
+#flash_alert {
+  border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  -webkit-border-radius: 5px;
+  font-weight: bold;
+  line-height: 30px;
+  min-height: 30px;
+  padding-top: 10px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  text-align: left;
 }
 
 #flash_notice {
-  background-color: #CFC;
-  border: solid 1px #6C6;
+  background-color: #dff0d8;
+  border: solid 1px #d6e9c6;
+  color: #468847;
+  padding: 5px 8px;
+  margin: 0px 0px 5px 0px;
+  height:100%
 }
 
 #flash_warning {

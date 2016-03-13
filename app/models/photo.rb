@@ -30,7 +30,7 @@ class Photo < ActiveRecord::Base
   after_post_process :save_exif
   after_create :save_user_points
   after_update :save_user_points_after_set_photo_as_cover
-
+  default_scope { order("created_at desc")}
   scope :landscapes, -> {joins(:exif).where('photo_exifs.imagewidth > photo_exifs.imageheight')}
   scope :portraits, -> {joins(:exif).where('photo_exifs.imagewidth < photo_exifs.imageheight')}
 

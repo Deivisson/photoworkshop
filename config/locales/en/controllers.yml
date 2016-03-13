@@ -1,0 +1,5 @@
+pt_BR:
+  controller:
+    workshop:
+      published:
+        success_on_publish: "Workshop publicado com sucesso!"

@@ -8,16 +8,8 @@ class User::UserProfilesController < User::BaseController
   def edit; end
 
   def update
-    respond_to do |format|
-      if @user_profile.update(user_profile_params)
-        format.html { redirect_to @user_profile, notice: 'User profile was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user_profile }
-      else
-        format.html { render :edit }
-        format.json { render json: @user_profile.errors, status: :unprocessable_entity }
-        puts @user_profile.errors.full_messages
-      end
-    end
+    @user_profile.update(user_profile_params)
+    respond_with(@user_profile)
   end
 
   def social_network_shared
@@ -25,7 +17,6 @@ class User::UserProfilesController < User::BaseController
   end
 
   def workshop_wait
-    puts "passou aqui"
     p = current_user.profile
     p.workshop_wait = true
     p.save

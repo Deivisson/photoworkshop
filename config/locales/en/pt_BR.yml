@@ -1,0 +1,323 @@
+pt_BR:
+  buttons:
+    confirm: "Confirmar"
+    wait_label: "Aguarde..."
+    cancel: "Cancelar"
+    edit: "Editar"
+    destroy: "Excluir"
+    comment: "Comentar"
+    follow: "Seguir"
+    view_template: "Visualizar"
+    apply_template: "Usar Template"
+    next: "Avanças"
+    previous: "Voltar"
+    continue: "Continuar"
+    conclude: "Concluir"
+    like: "Curtir"
+    unlike: "Não Curtir"
+    favorite: "Favoritar"
+    unfavorite: "Remover Favorito"
+    reevaluate: "Reavaliar"
+    back: "Voltar"
+    to_hire: "Contratar"
+    about: "Sobre"
+    view: "Visualizar"
+  labels:
+    facebook: "Facebook"
+    twitter: "Twitter"
+    notifications: "Notificações"
+    see_all: "Ver Todas"
+    all_categories: "Todas Categorias"
+    share_on_facebook: "Compartilhar Facebook"
+    share_on_twitter: "Compartilhar Twitter"
+    image_types: "Arquivos de imagem (jpg, png, gif, bmp)"
+    pic2gether_team: "Equipe Pic2Gether"
+  messages:
+    confirm_destroy: "Confirma Exclusão?"
+    destroyed_record: "Exclusão realizada com sucesso!"
+    updated_record: "Registro atualizado com sucesso!"
+    created_record: "Registro cadastros com sucesso!"
+    confirm_add_user_to_workshop: "Deseja realmente tornar o Usuário um Participante do Workshop?"
+    user_added_to_workshop: "Usuário adicionado com sucesso!!"
+    confirm_remove_user_from_workshop: "Confirma a remoção do Usuário do Workshop?"
+    user_removed_from_workshop: "Participante removido com sucesso!!"
+    photo_favorited: "Foto favoritada."
+    photo_unfavorited: "Foto desfavoritada."
+    cover_photo_updated: "Foto da capa foi atualizada."
+    removed_photo: "Foto removida ;-("
+    rating_photo_with_success: "Foto Avaliada com sucesso."
+    following_success: "Você acabou de seguir %{photographer}"
+  levels:
+    beginner: "Iniciante"
+    beginner_info: "Você está tirando fotos sem colocar qualquer pensamento técnico para elas, mas este é o começo para se tornar cada vez melhor. Pratique!"
+    student: "Estudante"
+    student_info: "Você começa a tornar-se consciente do processo fotográfico."
+    amateur: "Amador"
+    amateur_info: "Você realmente começa a pensar sobre as fotos que você está tirando em um nível mais técnico."
+    amateur_technician: "Amador Técnico"
+    amateur_technician_info: "Você está fazendo boas fotos utlizando sua técnicas, mas você está tão preocupado em técnicas que não pode passar disso."
+    skilled: "Habilidoso"
+    skilled_info: ""
+    semi_professional: "Semi Profissional"
+    semi_professional_info: "Técnico / Pouco Estilo: A parte técnica está no piloto automático e agora você pode começar a pensar sobre o que suas imagens estão dizendo."
+    professional: "Profissional"
+    professional_info: "Técnica aplicada ao Estilo: Você está fazendo imagens com mais significado sofisticado, que também são tecnicamente perfeito."
+    expert: "Expert"
+    expert_info: "Conhecedor da Técnica e com seu próprio Estilo: As chances são de que agora a maioria das fotos tiradas serem partes de algo importante. Você não apenas tira fotos por tirar, tirar fotos para contar uma história, e essa história tem profundidade."
+    veteran: "Veterano"
+    veteran_info: ""
+    master: "Mestre"
+    master_info: ""
+    grand_master: "Grão-Mestre"
+    grand_master_info: ""
+    vip: "Vip"
+    vip_info: ""
+    superstar: "Super Star"
+    superstar_info: ""
+  portfolio_templates:
+    free:
+      horizontal_slider: "Horizontal Slider"
+      vertical_slider: "Vertical Slider"
+      simple_gallery: "Galeria Simples"
+
+  rating_criterias:
+    composition: "Composição"
+    criativity: "Criatividade"
+    exhibition: "Exposição"
+    distinctness: "Nitidez"
+  mailer_subjects:
+    change_level: "Mudança de Nível"
+    photo_covered: "Capa do Pic2Gether"
+    reward: "Recompensa"
+  notifications:
+    team_welcome: "A equipe <strong>Pic2Gether</strong> lhe deseja boas vindas, e estamos ansiosos para conhecer a sua arte."
+    followed: "%{follower} começou seguir você."
+    workshop_metriculated: "Sua matrícula para o workshop %{workshop_url} acabou de ser confirmada!"
+    workshop_subscribe: "Pré-matrícula realizada com sucesso para o workshop %{workshop_url}. Para mais detalhes, confira o seu email."
+    workshop_added_activity: "Nova atividade foi adicionada ao workshop %{workshop_url}. Fique atento para o prazo de entrega."
+    workshop_activity_response: "%{participant} acabou de postar uma foto para a atividade %{response_url}."
+    photo_comment: '<span class="text-with-pic">%{user} comentou a sua Foto.<br><i>"%{comment_content}"</i></span>%{photo}'
+    photo_like: '<span class="text-with-pic">%{user} curtiu a sua Foto. %{photo}'
+    user_change_level: "Parabéns!! Você acabou de subir de nível, deixou de ser %{old_level} e passou a ser %{new_level}."
+    photo_covered: '<span class="text-with-pic">Que legal, sua foto foi selecionada como Capa do Pic2Gether e com  isto você ganhou %{points} pontos. %{photo}'    
+  share_messages:
+    share_photo: "Pic2Gether, confira que fotografia incrível %{url}"
+  
+  home:
+    welcome:
+      index:
+      how_work:
+        title: "AQUI VOCÊ É O FOTOGRAFO."
+        info: "É simples, você se cadastra, posta suas fotos e começa a receber pontuação conforme os likes das pessoas que curtiram. <br><br>Contamos com profissionais remomados do mundo da fotografia como sendo os nossos jurados, eles também podem te avaliar. A curtição deles valem mais e a medida que vai recebendo boas avaliações, mais popular e mais destaque terá."
+        registers_photographers: "FOTOGRAFOS CADASTRADOS"
+        posted_photos: "FOTOGRAFIAS POSTADAS"
+
+      jurors:
+        title: "JURADOS"
+        info: "Temos o prazer de contar com diversos profissionais renomados, das mais diversas áreas da fotografias. Os nossos jurados tem papel fundamental na avaliação e pontuação das fotos postadas pelos nossos fotografos.<br><br> Contribua para nossa comunidade e seja você também um jurado."
+        how_to_be_juror: "SAIBA COMO SER UM JURADO!"
+
+  date:
+    abbr_day_names:
+    - Dom
+    - Seg
+    - Ter
+    - Qua
+    - Qui
+    - Sex
+    - Sáb
+    abbr_month_names:
+    -
+    - Jan
+    - Fev
+    - Mar
+    - Abr
+    - Mai
+    - Jun
+    - Jul
+    - Ago
+    - Set
+    - Out
+    - Nov
+    - Dez
+    day_names:
+    - Domingo
+    - Segunda
+    - Terça
+    - Quarta
+    - Quinta
+    - Sexta
+    - Sábado
+    formats:
+      default: ! '%d/%m/%Y'
+      long: ! '%d de %B de %Y'
+      short: ! '%d de %B'
+    month_names:
+    -
+    - Janeiro
+    - Fevereiro
+    - Março
+    - Abril
+    - Maio
+    - Junho
+    - Julho
+    - Agosto
+    - Setembro
+    - Outubro
+    - Novembro
+    - Dezembro
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: aproximadamente 1 hora atrás
+        other: aproximadamente %{count} horas atrás
+      about_x_months:
+        one: aproximadamente 1 mês atrás
+        other: aproximadamente %{count} meses atrás
+      about_x_years:
+        one: aproximadamente 1 ano atrás
+        other: aproximadamente %{count} anos atrás
+      almost_x_years:
+        one: quase 1 ano atrás
+        other: quase %{count} anos atrás
+      half_a_minute: meio minuto atrás
+      less_than_x_minutes:
+        one: menos de um minuto atrás
+        other: menos de %{count} minutos atrás
+      less_than_x_seconds:
+        one: menos de 1 segundo atrás
+        other: menos de %{count} segundos atrás
+      over_x_years:
+        one: mais de 1 ano atrás
+        other: mais de %{count} anos atrás
+      x_days:
+        one: 1 dia atrás
+        other: ! '%{count} dias atrás' 
+      x_minutes:
+        one: 1 minuto atrás
+        other: ! '%{count} minutos atrás'
+      x_months:
+        one: 1 mês atrás
+        other: ! '%{count} meses atrás'
+      x_seconds:
+        one: 1 segundo atrás
+        other: ! '%{count} segundos atrás' 
+    prompts:
+      day: Dia 
+      hour: Hora
+      minute: Minuto
+      month: Mês
+      second: Segundo
+      year: Ano
+  errors:
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: deve ser aceito
+      blank: não pode ficar em branco
+      present: deve ficar em branco
+      confirmation: não é igual a %{attribute}
+      empty: não pode ficar vazio
+      equal_to: deve ser igual a %{count}
+      even: deve ser par
+      exclusion: não está disponível
+      greater_than: deve ser maior que %{count}
+      greater_than_or_equal_to: deve ser maior ou igual a %{count}
+      inclusion: não está incluído na lista
+      invalid: não é válido
+      less_than: deve ser menor que %{count}
+      less_than_or_equal_to: deve ser menor ou igual a %{count}
+      not_a_number: não é um número
+      not_an_integer: não é um número inteiro
+      odd: deve ser ímpar
+      record_invalid: ! 'A validação falhou: %{errors}'
+      restrict_dependent_destroy:
+        one: "Não é possível excluir o registro pois existe um %{record} dependente"
+        many: "Não é possível excluir o registro pois existem %{record} dependentes"
+      taken: já está em uso
+      too_long: ! 'é muito longo (máximo: %{count} caracteres)'
+      too_short: ! 'é muito curto (mínimo: %{count} caracteres)'
+      wrong_length: não possui o tamanho esperado (%{count} caracteres)
+    template:
+      body: ! 'Por favor, verifique o(s) seguinte(s) campo(s):'
+      header:
+        one: ! 'Não foi possível gravar %{model}: 1 erro'
+        other: ! 'Não foi possível gravar %{model}: %{count} erros.'
+  helpers:
+    select:
+      prompt: Por favor selecione
+    submit:
+      create: Criar %{model}
+      submit: Salvar %{model}
+      update: Atualizar %{model}
+
+  number:
+    currency:
+      format:
+        delimiter: '.'
+        format: ! '%u %n'
+        precision: 2
+        separator: ','
+        significant: false
+        strip_insignificant_zeros: false
+        unit: R$
+    format:
+      delimiter: '.'
+      precision: 2
+      separator: ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion:
+            one: bilhão
+            other: bilhões
+          million:
+            one: milhão
+            other: milhões
+          quadrillion:
+            one: quatrilhão
+            other: quatrilhões
+          thousand: mil
+          trillion:
+            one: trilhão
+            other: trilhões
+          unit: ''
+      format:
+        delimiter: .
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: .
+    precision:
+      format:
+        delimiter: .
+  support:
+    array:
+      last_word_connector: ! ' e '
+      two_words_connector: ! ' e '
+      words_connector: ! ', '
+  time:
+    am: ''
+    formats:
+      default: ! '%a, %d de %B de %Y, %H:%M'
+      long: ! '%d de %B de %Y, %H:%M'
+      short: ! '%d de %B, %H:%M'
+    pm: ''

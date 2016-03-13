@@ -1,0 +1,273 @@
+pt_BR:
+  user:
+    user_resume:
+      photos: Fotos
+      following: "Seguindo"
+      followers: "Seguidores"
+      workshops: "Workshops"
+    main_menu:
+      home: "Home"
+      explore: "Explorar"
+      profile: "Perfil"
+      me: "Me"
+      photographers: "Fotografos"
+      #workshops: "Workshops"
+      upload: "Upload"
+      #my_portfolio: "Portifolio"
+    user_menu:
+      profile: "Perfil"
+      settings: "Configurações"
+      portifolio: "Portifolio"
+      workshops: "Workshops"
+      logoff: "Logoff"
+    profile:
+      menu:
+        about: "Sobre"
+        photos: "Minhas Fotos"
+        following: "Seguindo"
+        followers: "Seguidores"
+
+    workshop:
+      menu:
+        as_instructor: "Que eu ministrei"
+        as_student: "Que eu participei"
+
+    photos:
+      new:
+        title: "UPLOAD"
+      form:
+        select_file: "Click para selecionar a foto."
+        photo_info: "Informações"
+        cancel_upload: "Cancelar Upload"
+      upload_denied:
+        share: "Compartilhe o Pic2Gether e ganhe mais 1 postagem diária para em cada rede compartilhada."
+        facebook_share: "Compartilhar no Facebook"
+        twitter_share: "Compartilhar no Twitter"
+    photo_comments:
+      form:
+        comment_box_placeholder: "Deixe o seu comentário"
+    photo_ratings:
+      index:
+        info: "Dê notas de 0 à 5 para as caracteristicas abaixo arrastando a barra para pontuar."
+        title: "Avaliar Fotografia"
+        comment: "Comentário(opcional)"
+
+    user_profiles:
+      edit:
+        title: "Atualização de Perfil"
+        cancel_edit_profile: "Cancelar"
+      form:
+        basic_info: "Informações Básicas"
+        social_networks: "Redes Sociais"
+        avatar_max_size: "Tamanho máximo 2 megabytes"
+      show:
+        edit_profile_button: "Editar Perfil"
+      profile:
+        about: "Sobre"
+        basic_info: "Informações Básicas"
+        social_networks: "Redes Sociais"
+        location: "Localização"
+      edit_cover_photo:
+        title: "Foto de Capa "
+
+    workshops:
+      period: "%{start_date} à %{end_date}"
+      vacancies_number: "%{vacancies_number}"
+      workshop_value: "%{workshop_value}"
+      main_info: "Informações Principais"
+      more_info: "Informações Complementares"
+      email_info: "Informações de Envio para Pré-Matriculas."
+      email_matriculate: "Informações para Email ao confirmar matrícula."
+      subscribe: "Faça sua Pré-matrícula"
+      enter_on_queue: "Entrar Fila de Espera"
+      confirm_subscribe_question: "Confirma Pré-Matrícula ?"
+      confirm_enter_in_queue: "Confirma entrada na Fila de Espera ?"
+      already_subscribed: "Você já esta matrículado!"
+      subscribe_email_subject: "Confirmação Pré-Matrícula"
+      matriculated_email_subject: "Confirmação de Matrícula"
+      no_more_vacancies: "Vagas Esgotadas !!!"
+      subscribe_success: "Pré-Matricula realizada com sucesso."
+      in_queued_success: "Você acabou de entrar na fila de espera, qualquer novidade você será informado."
+      waiting_confirmation: "Aguardando confirmação de Matrícula."
+      matriculation_with_success: "Matrícula confirmada com sucesso !!"
+      my_all_workshops: "Meus Workshops"
+      form:
+        image_max_size: "Tamanho máximo 2 megabytes"
+        target_audience_hint: "Ex.: Iniciantes, Amadores, Profissionais Avançados"
+        workload_hint: "Ex.: 16 horas"
+        allow_queued_hint: "Marque esta opção e será permitido que usuários interessados realizem a pré-matrícula mesmo após já ter atingido o número de vagas, formando assim a fila de espera. Você terá todo o controle de quais candidatos estão ou não na fila de espera."
+        allow_pre_enrolls_hint: "Marque esta opção para que usuários interessados em participar do workshop/curso possam realizar a pré-matrícula através do Pic2Gether. "
+      new:
+        title: "Novo Workshop"
+      edit:
+        title: "Editando Workshop"
+      index:
+        add_new: "Adicionar Workshop"
+      show:
+        title: "Workshop"
+      show_owner:
+        show:
+          title: "Workshop"
+          preview_workshop: "Pré-visualizar"
+          publish_workshop: "Publicar"
+          msg_not_published: '<strong>Atenção, Workshop ainda não está publicado!</strong> Após finalizar todas as configurações, clique no botão acima "Publicar" e o mesmo ficará visível publicamente. É necessário que esteja publicado para que possa receber solicitação de pré-matrícula.'
+          confirm_publish_workshop_msg: "Confirmar publicação do Workshop? "
+        show_participants:
+          vacancies_users: "Alunos"
+        show_materials:
+          materials: "Materiais"
+        show_activities:
+          activities: "Atividades"
+
+      show_participant:
+        show:
+          title: "Workshop: %{workshop_description}"
+          activities_legend: "Atividades"
+          materials_legend: "Materiais"
+          participants_legend: "Alunos"
+          author_legend: "Autor"
+        activities:
+          activity_info: "Informações sobre Atividade"
+          post_activity: "Postar Foto"
+        responses:
+          alert_no_post_activity: "ATENÇÃO, esta atividade ainda está pendente e o prazo final para postagem da sua foto é no dia <b>%{limit_date}.</b>"
+          alert_activity_time_over: "ATENÇÃO, Prazo para postagem da foto encerrou no dia <b>%{limit_date}.</b>"
+        activity_response:
+          comments: "Comentários"
+          rating: "Avaliação"
+      subscribe_links:
+        not_opened: ""
+        queue_mg: "ATENÇÃO:: Número de vagas já atingido. Clique no botão abaixo para entrar na fila de Espera."
+    workshop_materials:
+      new:
+        title: 'Novo Material'
+      form:
+        material_description_hint: 'Ex.: Aula 1: Desvendando mistério do ISO, Abertura e Diafragma.'
+        attachment_hint: 'Arquivos permitidos: pdf, ms word, txt, excel, zip e imagens com tamanho máximo de 10MB.'
+      edit:
+        title: 'Edição do  Material'
+    workshop_activities:
+      form:
+        maximum_upload_number_hint: "Indica a quantidade de fotos que o aluno poderá postar para esta atividade."
+        limit_date_hint: "Data limite para que o aluno poste as fotos"
+      show: "Atividade"
+      new:
+        title: 'Nova Atividade'
+      edit:
+        title: 'Edição da Atividade'
+      workshop_activity:
+        post_one: "aluno já postou"
+        post_many: "alunos já postaram"
+      evaluation:
+        response_photo_rating:
+          rating_photo: "Avaliação da Foto"
+          avaluate_photo_button: "Clique para Avaliar a Foto"
+        photo_comments:
+          comments: "Comentários"
+        participants:
+          title: "Postagens"
+          all_participants: "Todos Alunos" 
+        responses:
+          no_activity_responses: "Não possui atividades postadas."
+        show:
+          back_workshop: "Voltar Workshop"
+    workshop_participants:
+      index:
+        title: 'Usuários'
+      users:
+        add_user: "Adicionar Usuário"
+        remove_user: "Remover Aluno"
+      participant:
+        remove_user: "Remover"
+        confirm_matriculation: "Confirmar Matrícula"
+        confirm_matriculation_in_queue: "Confirmar Matrícula (Fila de Espera)"  
+        confirm_matriculation_question: "Confirmar a matrícula do usuário?"
+      search_form:
+        placeholder: "Digite o nome do usuário para pesquisa"
+    workshop_activity_responses:
+      upload_not_allowed: "Uploads já não são mais permitidos devido já ter postado a quantidade máxima permitida, ou o prazo de postagem chegou ao fim."
+      can_be_destroyed: "Esta postagem já foi avaliada, portanto não poderá ser excluída."
+      new:
+        title: "Atividade: %{activity_description}"
+      show:
+        see_activity: "Visualizar Atividade"
+    workshop_plans:
+      index:
+        title: "Selecione o Plano adequado. (Beta Teste, somente para Parceiros)"
+      plans:
+        info_plan: "(*) Ao adiquirir o plano, você não terá uma cobrança mensal. O valor pago será por Workshop contratado e nada mais."
+      basic: "Basic"
+      premium: "Premium (recomendado)"
+      professional: "Professional"
+      enterprise: "Enterprise"
+      settings:
+        limit_participants: "Limite de %{value} alunos;"
+        unlimited_participants: "Quantidade ilimitada de Alunos;"
+        limit_materials: "Disponibilização materiais (máximo %{value});"
+        limit_activities: "Cadastro atividades (máximo %{value});"
+        limit_activity : "Ilimitado"
+    shared:
+      photo_view:
+        show_details:
+          posting: "Postada com %{category}  em %{created_at} "
+          views: "Visualizações"
+          likes: "Curtidas"
+          exif: "Exif"
+          tags: "Tags"
+        show_photo_comments:
+          comments: "Comentários"
+          last_comments: "Comentários Recentes"
+        show_photo_likers:
+          likers: "Usuários que curtiram"
+      photo:
+        header_search_field:
+          search_placeholder: "Pesquisar Fotografia"
+      photographers:
+        full_profile:
+        share_message: "%{full_name}, fotógrafo #Pic2Gether."
+    photo_explore:
+      menu:
+        fans_pictures: "Fãns"
+        inspirations: "Inspirações"
+        newest: "Recentes"
+        recommended: "Recomendadas"
+
+    portfolio_templates:
+      menu_options:
+        menu_title: "Templates"
+        free: Grátis
+    home:
+      social_network_share:
+        share: "Redes Sociais"
+        facebook_share: "Compartilhar Facebook"
+        facebook_invite_friends: "Convidar Amigos do Facebook"
+        twitter_share: "Compartilhar Twitter"
+        share_message: "¹Ganhe direito de postar mais uma foto por dia ao compartilhar pela primeira vez o Pic2Gether em cada uma das redes sociais acima. "
+        invite_message: "²Para cada amigo convidado, você ganhará um ponto."
+      workshop_promote:
+        title: "%{description}: Matrícule-se agora mesmo!"
+        author: "com %{name}"
+    first_login_steps:
+      step_0:
+        #welcome: "Que Felicidade em ver você por aqui :-).<br>Ajude-nos a melhorar a sua experiência preenchendo as informações a seguir."
+        welcome: "Estamos felizes por ter você aqui :-), agora nos conte um pouco mais sobre você. <br>Aonde você mora ?"
+      step_1:
+        interests: "Quais são os seus interesses?"
+        select_all: "Selecionar Todos"
+      step_2:
+        congratulations: "Parabéns!! Já estamos prontos para começar."
+        msg_welcome: "Pic2Gether foi feito para os apaixonados pela Fotografia, um excelente ambiente de exposição para sua arte e um local de muitas inspirações. Aqui, quanto mais você participar, melhores serão suas experiências com o Pic2Gether. Em breve estaremos lançando concursos incríveis que premiará os ganhadores com prêmios bem interessantes, aguarde...<br><br> Seja bem vindo e aproveite!"
+        team: "Equipe Pic2Gether." 
+        info: "Incialmente, o Pic2Gether lhe permitirá postar <strong>1 foto</strong> por dia. <u>Mas não se preocupe</u> existem várias formas de você ganhar mais postagens. Veja como:"
+        how_win_photo_uploads: "<span></span>Compartilhando sobre o Pic2Gether nas redes socias(<i>somente é valido os compatilhamentos dentro da aplicação</i>);<br><span></span>Convidando Amigos;"
+    notification_mailer:
+      change_level_message:
+        title: "Mudança de Nível"
+        message: "Parabéns, você acaba de se tornar um fotografo "
+      photo_covered_message:
+        title: "Foto de Capa"
+        message: "Veja que legal, você teve sua foto escolhida como capa do Pic2Gether. Isto lhe deu mais 10 pontos de experiência."
+      upload_increased_message:
+        title: "Recompensa de Compartilhamento"
+        message: "Estamos muito felizes por você ter compartilhado o Pic2Gether no %{social_network} :-). E como recompensa, estamos lhe permitindo postar mais uma foto por dia. Agora, o seu limite de postagens é de até %{limit_upload} fotos diárias. Divirta-se !!!"
+        message_share_more: "Continue compartilhando e indicando para os amigos. Ajude a tornar o Pic2Gether.com o maior canal de fotografia do mundo. Contamos com você!"

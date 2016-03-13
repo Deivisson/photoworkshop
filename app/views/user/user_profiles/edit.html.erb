@@ -2,6 +2,6 @@
 <%= content_for :toolbar_buttons do %>
   <%= link_to t('.cancel_edit_profile'),
               user_profile_path(current_user.id), 
-              class:"common-button cancel-button" %>
+              class:"btn btn-important btn-small btn-right" %>
 <% end %>
 <%= render 'form' %>
