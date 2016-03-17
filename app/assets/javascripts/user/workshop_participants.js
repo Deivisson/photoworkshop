@@ -10,8 +10,17 @@ function bindWorkshopParticipantsDialog() {
 			    width: 700,
 			    height: 650,
 			    modal: true,
+			    open: function(){
+						$(".ui-widget-overlay").addClass("modal-overlay workshop-participants-modal-dialog-class").removeClass("ui-widget-overlay");
+	          $('.workshop-participants-modal-dialog-class').bind('click',function(){
+	            $('#workshop-participants-modal-dialog').dialog('close');
+	          });
+	        },
 			    close: function() {
 			      $('#workshop-participants-containter').remove();
+			      if ($("div[aria-describedby='workshop-participants-modal-dialog']").length > 0) {
+			      	$("div[aria-describedby='workshop-participants-modal-dialog']").remove();
+			      }
 			    }
 			  });
 

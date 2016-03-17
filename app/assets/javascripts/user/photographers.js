@@ -14,14 +14,24 @@ function photographerPreview(){
 		    width: 900,
 		    height: h,
 		    modal: true,
+				open: function(){
+					$(".ui-widget-overlay").addClass("modal-overlay photographer-modal-dialog-class").removeClass("ui-widget-overlay");
+          $('.photographer-modal-dialog-class').bind('click',function(){
+            $('#photographer-modal-dialog').dialog('close');
+          })
+        },		    
 		    close: function() {
 		      $('#photographer-modal-dialog').remove();
+					if ($("div[aria-describedby='photographer-modal-dialog']").length > 0) {
+		      	$("div[aria-describedby='photographer-modal-dialog']").remove();
+		      }		      
 		      jQuery('body').css('overflow','auto');
 		    },
 		    draggable: false,
         resizable: false,
         dialogClass: 'noTitleStuff'
 		  });
+
 		  dialog_form.load(url + ' #photographer-show-modal-container', function(){
 	  		jQuery('body').css('overflow','hidden');
 	  		$(".ui-dialog-content").css("overflow-x", "hidden");

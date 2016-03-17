@@ -25,7 +25,7 @@ function photoView(){
         dialogClass: 'noTitleStuff'
 		  });
 			$(".ui-widget-content").addClass("ui-widget-content-full");
-		  dialog_form.load(url + ' #photo-show-modal-container', function(){
+		  dialog_form.load(url + ' #photo-show-container', function(){
 		  		jQuery('body').css('overflow','hidden');
 		  		$(".ui-widget-overlay").css("opacity","1");
 		  		adjustLayout();
@@ -45,7 +45,7 @@ $(window).resize(function () {
 
 function adjustLayout(){
 	 //alert("Size " + w + "x" + h);
-	if($("#photo-show-modal-container").length > 0)	{
+	if($("#photo-show-container").length > 0)	{
 		$(".ui-widget-content").css({
 			height:"100%",
 			width: "100%"

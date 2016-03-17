@@ -1,7 +1,15 @@
-.ui-widget-overlay {
+.ui-widget-overlay, .modal-overlay {
 	background-color: #000;
 	z-index: 99999999;
 	opacity: 0.8;
+}
+
+.modal-overlay {
+	height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 /*.ui-dialog-titlebar { display:none; }*/

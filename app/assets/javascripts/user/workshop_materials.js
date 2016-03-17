@@ -10,8 +10,17 @@ function bindWorkshopMaterialDialog() {
 			    width: 700,
 			    height: 350,
 			    modal: true,
+			    open: function(){
+						$(".ui-widget-overlay").addClass("modal-overlay workshop-materials-modal-dialog-class").removeClass("ui-widget-overlay");
+	          $('.workshop-materials-modal-dialog-class').bind('click',function(){
+	            $('#workshop-materials-modal-dialog').dialog('close');
+	          });
+	        },
 			    close: function() {
 			      $('#workshop-materials-containter').remove();
+			      if ($("div[aria-describedby='workshop-materials-modal-dialog']").length > 0) {
+			      	$("div[aria-describedby='workshop-materials-modal-dialog']").remove();
+			      }
 			    }
 			  });
 

@@ -7,8 +7,10 @@
 			<div class="ws-image" style="background-image: url(<%= workshop.image.url(:medium)%>)">
 			</div>
 			<div class="ws-details">
-				<h1><%= link_to workshop.description, user_workshop_path(workshop) %></h1>
-				<p><%= workshop.details.truncate(400) %></p>
+				<div class="texts">
+					<h1><%= link_to workshop.description, user_workshop_path(workshop) %></h1>
+					<p><%= workshop.details.truncate(400) %></p>
+				</div>
 			</div>
 		</li>
 	<% end %>

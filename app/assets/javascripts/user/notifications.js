@@ -7,8 +7,17 @@ $(document).on('ready page:load', function (){
 		    width: 700,
 		    height: h,
 		    modal: true,
+				open: function(){
+					$(".ui-widget-overlay").addClass("modal-overlay notifications-show-all-modal-dialog-class").removeClass("ui-widget-overlay");
+          $('.notifications-show-all-modal-dialog-class').bind('click',function(){
+            $('#notifications-show-all-modal-dialog').dialog('close');
+          });
+        },		    
 		    close: function() {
 		      $('#notifications-show-all-modal-dialog').remove();
+		      if ($("div[aria-describedby='notifications-show-all-modal-dialog']").length > 0) {
+			      	$("div[aria-describedby='notifications-show-all-modal-dialog']").remove();
+		      }
 		      jQuery('body').css('overflow','auto');
 		    },
 		    draggable: false,
