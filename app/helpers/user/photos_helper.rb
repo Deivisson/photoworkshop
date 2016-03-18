@@ -283,7 +283,7 @@ private
 			html_info << content_tag(:li) do 
 				html_info_item = []
 				html_info_item << content_tag(:span,"Visualizacoes")
-				html_info_item << content_tag(:h1, photo.views)
+				html_info_item << content_tag(:h1, photo.views_count)
 				html_info_item.join.html_safe
 			end
 			html_info << content_tag(:li) do 

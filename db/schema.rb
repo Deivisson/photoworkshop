@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160223002445) do
+ActiveRecord::Schema.define(version: 20160318002631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -164,6 +164,25 @@ ActiveRecord::Schema.define(version: 20160223002445) do
   add_index "photo_ratings", ["user_id"], name: "index_photo_ratings_on_user_id", using: :btree
   add_index "photo_ratings", ["workshop_activity_response_id"], name: "index_photo_ratings_on_workshop_activity_response_id", using: :btree
 
+  create_table "photo_views", force: :cascade do |t|
+    t.integer  "photo_id",               null: false
+    t.integer  "user_id",                null: false
+    t.string   "ip"
+    t.string   "country_code", limit: 5
+    t.string   "country_name"
+    t.string   "region_code",  limit: 5
+    t.string   "region_name"
+    t.string   "city"
+    t.string   "zip_code"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "photo_views", ["photo_id"], name: "index_photo_views_on_photo_id", using: :btree
+  add_index "photo_views", ["user_id"], name: "index_photo_views_on_user_id", using: :btree
+
   create_table "photos", force: :cascade do |t|
     t.integer  "user_id",                                                   null: false
     t.integer  "category_id",                                               null: false
@@ -176,7 +195,7 @@ ActiveRecord::Schema.define(version: 20160223002445) do
     t.datetime "picture_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "views",                                     default: 0,     null: false
+    t.integer  "views_count",                               default: 0,     null: false
     t.integer  "likes_count",                               default: 0,     null: false
     t.integer  "workshop_activity_response_id"
     t.boolean  "cover",                                     default: false, null: false
@@ -421,6 +440,8 @@ ActiveRecord::Schema.define(version: 20160223002445) do
   add_foreign_key "photo_ratings", "rating_criteria"
   add_foreign_key "photo_ratings", "users"
   add_foreign_key "photo_ratings", "workshop_activity_responses"
+  add_foreign_key "photo_views", "photos"
+  add_foreign_key "photo_views", "users"
   add_foreign_key "photos", "categories", name: "fk_photos_category"
   add_foreign_key "photos", "users", name: "fk_photos_users"
   add_foreign_key "states", "countries", name: "states_countries"

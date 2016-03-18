@@ -31,7 +31,8 @@ class User < ActiveRecord::Base
   has_many :points, class_name: "UserPoint"
   has_many :photo_ratings
   has_many :portfolio_templates, class_name: 'UserPortfolioTemplate'
-
+  has_many :photo_views
+  
   has_and_belongs_to_many :categories
 
   before_create :set_default_data

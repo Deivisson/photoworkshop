@@ -13,7 +13,7 @@ class User::PhotoExploreController < User::BaseController
 	def show
     @photo_comment = PhotoComment.new
 		@photo = Photo.find(params[:photo_id])
-		@photo.update_views! if @photo.user_id != current_user.id
+		@photo.update_views!(current_user,request.remote_ip)
 	end
 
 end

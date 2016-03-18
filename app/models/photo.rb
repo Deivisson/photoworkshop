@@ -16,6 +16,7 @@ class Photo < ActiveRecord::Base
   has_many :ratings, class_name: "PhotoRating", dependent: :destroy
   has_many :favorites, class_name: "FavoritePhoto", dependent: :destroy
   has_many :user_points,foreign_key: "photo_id", dependent: :nullify
+  has_many :views, class_name:"PhotoView", dependent: :destroy
   
   has_attached_file :picture,:styles => {
     small:"250x250", 
@@ -30,6 +31,8 @@ class Photo < ActiveRecord::Base
   after_post_process :save_exif
   after_create :save_user_points
   after_update :save_user_points_after_set_photo_as_cover
+  after_save :register_photo_view
+
   default_scope { order("created_at desc")}
   scope :landscapes, -> {joins(:exif).where('photo_exifs.imagewidth > photo_exifs.imageheight')}
   scope :portraits, -> {joins(:exif).where('photo_exifs.imagewidth < photo_exifs.imageheight')}
@@ -50,8 +53,10 @@ class Photo < ActiveRecord::Base
     self.exif.imagewidth < self.exif.imageheight
   end
 
-  def update_views!
-    self.update_attribute(:views,self.views+1)
+  def update_views!(user,ip)
+    return if (!user.nil? && self.user_id == user.id)
+    @view_user = user; @view_ip = ip
+    self.update_attribute(:views_count,self.views_count+1)
   end
 
   def increment_likes!
@@ -173,4 +178,24 @@ private
     end
   end
  
+  def register_photo_view
+    #@view_ip = "45.55.239.124"
+    geo = Geocoder.search(@view_ip).first
+    unless geo.nil?
+      view_attributes = {
+        :photo_id         => self.id,
+        :user_id          => @view_user.nil? ? nil : @view_user.id ,
+        :ip               => @view_ip,
+        :country_code     => geo.country_code,
+        :country_name     => geo.country,
+        :region_code      => geo.state_code,
+        :region_name      => geo.state,
+        :city             => geo.city,
+        :zip_code         => geo.postal_code,
+        :latitude         => geo.latitude,
+        :longitude        => geo.longitude
+      }
+      PhotoView.create!(view_attributes)
+    end
+  end
 end

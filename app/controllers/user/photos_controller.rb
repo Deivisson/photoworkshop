@@ -9,7 +9,7 @@ class User::PhotosController < User::BaseController
 
   def show
     @photo_comment = PhotoComment.new
-    @photo.update_views! if @photo.user_id != current_user.id
+    @photo.update_views!(current_user,request.remote_ip)
     #respond_with(@photo,layout:'user/show_photo')
   end
 
