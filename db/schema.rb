@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318002631) do
+ActiveRecord::Schema.define(version: 20160319165948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -165,19 +165,21 @@ ActiveRecord::Schema.define(version: 20160318002631) do
   add_index "photo_ratings", ["workshop_activity_response_id"], name: "index_photo_ratings_on_workshop_activity_response_id", using: :btree
 
   create_table "photo_views", force: :cascade do |t|
-    t.integer  "photo_id",               null: false
-    t.integer  "user_id",                null: false
+    t.integer  "photo_id",                    null: false
+    t.integer  "user_id",                     null: false
     t.string   "ip"
-    t.string   "country_code", limit: 5
+    t.string   "country_code",      limit: 5
     t.string   "country_name"
-    t.string   "region_code",  limit: 5
+    t.string   "region_code",       limit: 5
     t.string   "region_name"
     t.string   "city"
     t.string   "zip_code"
     t.float    "latitude"
     t.float    "longitude"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.text     "error_description"
+    t.integer  "search_method"
   end
 
   add_index "photo_views", ["photo_id"], name: "index_photo_views_on_photo_id", using: :btree

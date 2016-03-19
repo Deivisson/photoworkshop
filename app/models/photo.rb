@@ -179,23 +179,43 @@ private
   end
  
   def register_photo_view
-    #@view_ip = "45.55.239.124"
-    geo = Geocoder.search(@view_ip).first
-    unless geo.nil?
-      view_attributes = {
+    view_attributes = {search_method: PhotoView::SEARCH_BY_IP}
+    begin
+      geo = Geocoder.search(@view_ip).first
+      unless geo.city.present?
+        geo = Geocoder.search(address_to_search).first
+        view_attributes.merge!({search_method: PhotoView::SEARCH_BY_ADDRESS})  
+      end
+      view_attributes.merge!({
         :photo_id         => self.id,
         :user_id          => @view_user.nil? ? nil : @view_user.id ,
-        :ip               => @view_ip,
-        :country_code     => geo.country_code,
-        :country_name     => geo.country,
-        :region_code      => geo.state_code,
-        :region_name      => geo.state,
-        :city             => geo.city,
-        :zip_code         => geo.postal_code,
-        :latitude         => geo.latitude,
-        :longitude        => geo.longitude
-      }
+        :ip               => @view_ip
+      })
+      unless geo.nil?
+        view_attributes.merge!({ 
+          :country_code     => geo.country_code,
+          :country_name     => geo.country,
+          :region_code      => geo.state_code,
+          :region_name      => geo.state,
+          :city             => geo.city,
+          :zip_code         => geo.postal_code,
+          :latitude         => geo.latitude,
+          :longitude        => geo.longitude
+        })
+      end
+    rescue => e
+      view_attributes.merge!({:error_description => e.message})
+    ensure
       PhotoView.create!(view_attributes)
+    end
+  end
+
+  def address_to_search
+    profile = @view_user.profile
+    if profile.city_id.to_i > 0
+      return [profile.city.name, profile.city.state.name,profile.city.state.country.name].join(", ")
+    else
+      return ""
     end
   end
 end
