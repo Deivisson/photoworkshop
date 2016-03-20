@@ -23,6 +23,7 @@ pt_BR:
     about: "Sobre"
     view: "Visualizar"
   labels:
+    example: "Exemplo"
     facebook: "Facebook"
     twitter: "Twitter"
     notifications: "Notificações"

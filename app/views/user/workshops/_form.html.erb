@@ -18,7 +18,9 @@
       </div>
       <%= f.input :description,
                   :input_html => {autofocus:true, id:'workshop-description'} %>
-      <%= f.input :details,input_html: {style:'height: 325px'} %>
+      
+      <%= f.input :details,input_html: {style:'height: 225px'} %>
+
       <%= f.input :target_audience, placeholder:t('.target_audience_hint') %>
       <div class="grid2column">
         <%= f.input :vacancies_number %>
@@ -41,23 +43,39 @@
                   :hint => t('.allow_queued_hint'),
                   :input_html => {:id => "allow-queued-input",:disabled => !@workshop.allow_pre_enrolls? }  %>
     </div>
-  <% end %>    
+  <% end %>
+  
   <%= content_tag(:div, class:"panel",style:'width: 45%;') do %>
-    <%= content_tag :h5, t('user.workshops.more_info'),class:'title' %>
+    <%= content_tag :h5, class:'title' do %>
+      <%= t('user.workshops.more_info') %>
+      <%= link_to t('labels.example'),
+                  user_workshop_example_path("more_info"),
+                  class:'ws-example-info' %>    
+    <% end %>
     <div class="panel-content">
-      <%= f.input :complement, input_html: {style:'height: 150px',class:"mceEditor"} %>
+      <%= f.input :complement, input_html: {style:'height: 150px',class:"mceEditor"}, label:false %>
     </div>
   <% end %>
   <%= content_tag(:div, class:"panel",style:'width: 45%;') do %>
-    <%= content_tag :h5, t('user.workshops.email_info'),class:'title' %>
+    <%= content_tag :h5,class:'title' do %>
+      <%= t('user.workshops.email_info') %>
+      <%= link_to t('labels.example'),
+                  user_workshop_example_path("email_info"),
+                  class:'ws-example-info' %> 
+    <% end %>
     <div class="panel-content">
-      <%= f.input :email_subscribe, input_html: {style:'height: 150px',class:"mceEditor"} %>
+      <%= f.input :email_subscribe, input_html: {style:'height: 150px',class:"mceEditor"}, label:false %>
     </div>
   <% end %>     
   <%= content_tag(:div, class:"panel",style:'width: 45%;') do %>
-    <%= content_tag :h5, t('user.workshops.email_matriculate'),class:'title' %>
+    <%= content_tag :h5, class:'title' do %>
+      <%= t('user.workshops.email_matriculate') %>
+      <%= link_to t('labels.example'),
+                  user_workshop_example_path("email_matriculate"),
+                  class:'ws-example-info' %>     
+    <% end %>
     <div class="panel-content">
-      <%= f.input :email_matriculate, input_html: {style:'height: 150px',class:"mceEditor"} %>
+      <%= f.input :email_matriculate, input_html: {style:'height: 150px',class:"mceEditor"}, label:false %>
     </div>
   <% end %>       
   <div class="actions">

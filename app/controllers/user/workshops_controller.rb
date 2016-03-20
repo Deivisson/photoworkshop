@@ -61,6 +61,11 @@ class User::WorkshopsController < User::BaseController
     @workshop_participant = @workshop.subscribe!(current_user)
   end
 
+  def example
+    @key = params[:key]
+    render layout:false
+  end
+
   private
     def set_workshop
       id = params[:id] || params[:workshop_id]

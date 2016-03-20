@@ -30,12 +30,13 @@
 			<p class="ws-details">
 				<%= @workshop.details %>
 			</p>
+	    <%= sf @workshop,:target_audience %>
+	    <%= sf @workshop,:vacancies_number %>
+	    <%= sf @workshop,:workload,@workshop.workload %>
 	    <%= sf @workshop,:start_date,format_date(@workshop.start_date) %>
 	    <%= sf @workshop,:end_date,format_date(@workshop.end_date) %>
-	    <%= sf @workshop,:workload,@workshop.workload %>
-	    <%= sf @workshop,:vacancies_number %>
+			<%= sf @workshop,:local %>
 	    <%= sf @workshop,:value,number_to_currency(@workshop.value) %>
-	    <%= sf @workshop,:target_audience %>
 	    <br>
 	    <br>
 			<div class="complement-info">

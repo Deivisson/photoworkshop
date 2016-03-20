@@ -57,6 +57,7 @@ Rails.application.routes.draw do
       end
       resources :workshop_activities, only: [:create,:update]
     end
+    get "workshops/example/:key", to:'workshops#example', :as => :workshop_example
 
     #explore resources
     get "photo_explore", to: "photo_explore#index", as: :photo_explore

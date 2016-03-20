@@ -37,6 +37,16 @@ html {
     text-transform: uppercase;
 		height: 37px;
 		width: 100%;
+    a.ws-example-info {
+      color: #32a6d3;
+      font-size: 9px;
+      float: right;
+      margin-right: 10px;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      };
+    }
 	};
 	h4 {
 		background-color: #fff;
@@ -159,6 +169,10 @@ html {
     }
   }
 } 
+
+.panel .panel-content li .mce-tinymce  {
+  margin-top: 20px;
+}
 
 .search-form {
 	float: right;
@@ -362,4 +376,8 @@ html {
     color: #fff;
     visibility: hidden;
   }
+}
+
+div.mce-fullscreen {
+  margin-top: 50px !important;
 }
