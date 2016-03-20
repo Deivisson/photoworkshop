@@ -59,6 +59,13 @@ pt_BR:
         description: "Descrição"
         category_id: "Categoria"
         tags: "Tags"
+      photo_exif:
+        maker: "Fabricante Equipamento"
+        model: "Modelo Equipamento"
+        aperture: "Abertura"
+        focal_lenght: "Distância Focal"
+        iso: "ISO"
+        shutter_speed: "Velociade Obturador"
       workshop:
         image: "Imagem do Workshop"
         description: "Descrição"

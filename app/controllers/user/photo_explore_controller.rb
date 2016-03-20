@@ -5,6 +5,17 @@ class User::PhotoExploreController < User::BaseController
 		if params[:search]
 			@photos = @photos.where("(title ~* :str) or (description ~* :str) or (tags ~* :str)", str: "#{params[:search]}")
 		end
+
+		if params[:exif_fields]
+			@photos = @photos.joins(:exif)
+			@photos = @photos.where("photo_exifs.maker ~* ?",params[:exif_fields]["maker"]) if params[:exif_fields]["maker"].present?
+			@photos = @photos.where("photo_exifs.model ~* ?",params[:exif_fields]["model"]) if params[:exif_fields]["model"].present?
+			@photos = @photos.where("photo_exifs.aperture ~* ?",params[:exif_fields]["aperture"]) if params[:exif_fields]["aperture"].present?
+			@photos = @photos.where("photo_exifs.focal_lenght ~* ?",params[:exif_fields]["focal_lenght"]) if params[:exif_fields]["focal_lenght"].present?
+			@photos = @photos.where("photo_exifs.iso = ?",params[:exif_fields]["iso"]) if params[:exif_fields]["iso"].present?
+			@photos = @photos.where("photo_exifs.shutter_speed ~* ?",params[:exif_fields]["shutter_speed"]) if params[:exif_fields]["shutter_speed"].present?
+		end
+
 		@gallary_type 	= params[:gallary_type] || "flow" 
 		@categories			= Category.all
 		render layout: "user/explorer"

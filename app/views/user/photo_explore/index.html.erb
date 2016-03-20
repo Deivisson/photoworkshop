@@ -17,3 +17,35 @@
 		<% end %>
 	</ul>
 <% end %>
+
+<% content_for :exif_search do %>
+	<%= form_tag user_photo_explore_path, method: :get, remote:true do |f| %>
+		<ul class="exif-search-fields">
+			<label><%= t('.exif_search') %></label>
+			<li>
+	    	<%= text_field_tag "exif_fields[shutter_speed]","",placeholder:ta(PhotoExif,:shutter_speed) %>
+	    </li>
+	    <li>
+	    	<%= text_field_tag "exif_fields[aperture]","",placeholder:ta(PhotoExif,:aperture) %>
+	    </li>
+			<li>
+	    	<%= text_field_tag "exif_fields[iso]","",placeholder:ta(PhotoExif,:iso) %>
+	    </li>
+			<li>
+				<%= text_field_tag "exif_fields[focal_lenght]","",placeholder:ta(PhotoExif,:focal_lenght) %>
+			</li>
+			<li>
+				<%= text_field_tag "exif_fields[maker]","",placeholder:ta(PhotoExif,:maker) %>
+			</li>
+			<li>
+				<%= text_field_tag "exif_fields[model]","",placeholder:ta(PhotoExif,:model) %>
+			</li>  		
+			<li>
+				<br>
+    		<%= submit_tag t("buttons.search"),class:'btn' %>
+  		</li>
+    </ul>
+
+  <% end %>
+<% end %>
+

@@ -231,7 +231,8 @@ pt_BR:
         inspirations: "Inspirações"
         newest: "Recentes"
         recommended: "Recomendadas"
-
+      index:
+        exif_search: "Pesquisar por Exif"
     portfolio_templates:
       menu_options:
         menu_title: "Templates"

@@ -8,7 +8,10 @@
 </head>
 <body>
 	<%= render "/user/shared/toolbar" %>
-	<div class="left-col fixed-col"><%= yield :categories %></div>
+	<div class="left-col fixed-col" style="position:absolute">
+		<%= yield :categories %>
+		<%= yield :exif_search %>
+	</div>
 	<div class="main-content-area"><%= yield %></div>
 	<div class="social-network-box">
 		<div id='fb-root'></div>
