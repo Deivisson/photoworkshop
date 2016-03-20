@@ -23,7 +23,11 @@ class User::PhotosController < User::BaseController
 
   def create
     @photo = current_user.photos.build(photo_params)
-    @photo.save
+    unless @photo.save
+      puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+      puts "Não salvou - #{@photo.errors.any?}"
+      puts @photo.errors.full_messages
+    end 
     respond_with(@photo, location:user_photos_path)
   end
 

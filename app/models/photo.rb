@@ -30,8 +30,8 @@ class Photo < ActiveRecord::Base
   before_destroy :check_if_can_be_destroyed
   after_post_process :save_exif
   after_create :save_user_points
-  after_update :save_user_points_after_set_photo_as_cover
-  after_save :register_photo_view
+  after_update :save_user_points_after_set_photo_as_cover, :register_photo_view
+  #after_save :, except
 
   default_scope { order("created_at desc")}
   scope :landscapes, -> {joins(:exif).where('photo_exifs.imagewidth > photo_exifs.imageheight')}
@@ -179,6 +179,7 @@ private
   end
  
   def register_photo_view
+    return true unless self.views_count_changed?
     view_attributes = {search_method: PhotoView::SEARCH_BY_IP}
     begin
       geo = Geocoder.search(@view_ip).first
@@ -207,6 +208,7 @@ private
       view_attributes.merge!({:error_description => e.message})
     ensure
       PhotoView.create!(view_attributes)
+      return true
     end
   end
 
