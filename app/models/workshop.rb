@@ -78,6 +78,10 @@ class Workshop < ActiveRecord::Base
     @workshops
   end
 
+  def participant_activites
+    self.activities.order("created_at desc")
+  end
+
 private 
   def start_date_less_than_end_date
     return if self.start_date.nil? || self.end_date.nil?
