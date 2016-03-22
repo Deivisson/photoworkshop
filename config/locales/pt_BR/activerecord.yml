@@ -30,7 +30,7 @@ pt_BR:
         date_greater_than_or_equal_to: "Data deverá ser maior ou igual a %{date}"
         file_size: "Arquivo não poderá ter mais que %{size} MegaBytes."
         invalid_vacancies_number: "De acordo com o plano contratado, o nº máximo de vagas é %{number}."
-        limit_participants_plan_end: "De acordo com o plano contratado, você atingiu o número máximo de alunos permitidos."
+        limit_students_plan_end: "De acordo com o plano contratado, você atingiu o número máximo de alunos permitidos."
         limit_materials_plan_end: "De acordo com o plano contratado, o limite de postagens de materiais chegou ao fim."
         limit_activities_plan_end: "De acordo com o plano contratado, o limite de postagem de atividades chegou ao fim."
     models:

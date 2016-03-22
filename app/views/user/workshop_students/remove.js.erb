@@ -1,0 +1,5 @@
+<% unless @workshop_student.errors.any? %>
+	$('#student-<%= "#{@workshop.id}#{@workshop_student.user_id}" %>').remove();
+	$("#user-" + '<%= @workshop_student.user_id %>').remove();
+	flashNoticeMessage("<%= t('messages.user_removed_from_workshop') %>");
+<% end %>

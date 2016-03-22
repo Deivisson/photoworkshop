@@ -1,10 +1,10 @@
-class WorkshopParticipant < ActiveRecord::Base
+class WorkshopStudent < ActiveRecord::Base
 	validates :user_id, presence:true, uniqueness: {scope: :workshop_id}
 	validates :workshop_id, presence:true
 	
   belongs_to :workshop 
-  belongs_to :participant, class_name: "User", foreign_key: "user_id"
-  belongs_to :participants_enrolled, class_name: "User", foreign_key: "user_id"
+  belongs_to :student, class_name: "User", foreign_key: "user_id"
+  belongs_to :students_enrolled, class_name: "User", foreign_key: "user_id"
   belongs_to :user
   belongs_to :my_workshops, class_name: "Workshop", foreign_key: "workshop_id"
 
@@ -60,8 +60,8 @@ private
   end
 
   def remove_from_queue_wait
-    if (self.workshop.participants.count >= self.workshop.plan.limit_participants)
-      errors[:base] << I18n.t("activerecord.errors.messages.limit_participants_plan_end")
+    if (self.workshop.students.count >= self.workshop.plan.limit_students)
+      errors[:base] << I18n.t("activerecord.errors.messages.limit_students_plan_end")
       return false
     else
       self.in_queue = false if self.in_queue? && self.confirmed?

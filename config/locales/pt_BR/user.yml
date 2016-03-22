@@ -112,19 +112,19 @@ pt_BR:
           publish_workshop: "Publicar"
           msg_not_published: '<strong>Atenção, Workshop ainda não está publicado!</strong> Após finalizar todas as configurações, clique no botão acima "Publicar" e o mesmo ficará visível publicamente. É necessário que esteja publicado para que possa receber solicitação de pré-matrícula.'
           confirm_publish_workshop_msg: "Confirmar publicação do Workshop? "
-        show_participants:
+        show_students:
           vacancies_users: "Alunos"
         show_materials:
           materials: "Materiais"
         show_activities:
           activities: "Atividades"
 
-      show_participant:
+      show_student:
         show:
           title: "Workshop: %{workshop_description}"
           activities_legend: "Atividades"
           materials_legend: "Materiais"
-          participants_legend: "Alunos"
+          students_legend: "Alunos"
           author_legend: "Autor"
         activities:
           activity_info: "Informações sobre Atividade"
@@ -164,20 +164,20 @@ pt_BR:
           avaluate_photo_button: "Clique para Avaliar a Foto"
         photo_comments:
           comments: "Comentários"
-        participants:
+        students:
           title: "Postagens"
-          all_participants: "Todos Alunos" 
+          all_students: "Todos Alunos" 
         responses:
           no_activity_responses: "Não possui atividades postadas."
         show:
           back_workshop: "Voltar Workshop"
-    workshop_participants:
+    workshop_students:
       index:
         title: 'Usuários'
       users:
         add_user: "Adicionar Usuário"
         remove_user: "Remover Aluno"
-      participant:
+      student:
         remove_user: "Remover"
         confirm_matriculation: "Confirmar Matrícula"
         confirm_matriculation_in_queue: "Confirmar Matrícula (Fila de Espera)"  
@@ -201,8 +201,8 @@ pt_BR:
       professional: "Professional"
       enterprise: "Enterprise"
       settings:
-        limit_participants: "Limite de %{value} alunos;"
-        unlimited_participants: "Quantidade ilimitada de Alunos;"
+        limit_students: "Limite de %{value} alunos;"
+        unlimited_students: "Quantidade ilimitada de Alunos;"
         limit_materials: "Disponibilização materiais (máximo %{value});"
         limit_activities: "Cadastro atividades (máximo %{value});"
         limit_activity : "Ilimitado"

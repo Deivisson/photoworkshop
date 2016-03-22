@@ -1,0 +1,17 @@
+<h4><%= t('.title') %></h4>
+<ul class="workshop-students show" id="workshop-students-show">
+	<%= content_tag :li, id:"activity-student-0" do %>
+	  <%= link_to t(".all_students"),
+	              user_workshop_activity_path(@workshop,@workshop_activity,responses_user_id:0),class:"user-name", remote:true %>
+	<% end %>
+	<% @workshop.students.each do |student| %>
+		<%= content_tag :li, id:"activity-student-#{@workshop.id}#{student.id}" do %>
+		  <%= link_to user_photographer_path(student.id),class:"photographer-profile user-avatar-link" do %>
+	  		<%= image_tag student.profile.avatar.url(:thumb),class:'user-avatar' %>
+	  	<% end %>
+		  <%= link_to student.profile.user_name,
+		              user_workshop_activity_path(@workshop,@workshop_activity,responses_user_id:student.id),
+		              class:"user-name", remote:true %>
+		<% end %>
+	<% end %>
+</ul>

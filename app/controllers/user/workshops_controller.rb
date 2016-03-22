@@ -58,7 +58,7 @@ class User::WorkshopsController < User::BaseController
   end
 
   def subscribe
-    @workshop_participant = @workshop.subscribe!(current_user)
+    @workshop_student = @workshop.subscribe!(current_user)
   end
 
   def example

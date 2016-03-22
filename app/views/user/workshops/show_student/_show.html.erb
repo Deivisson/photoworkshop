@@ -5,7 +5,7 @@
               class:"btn btn-success btn-small btn-right" %>
 <% end %>
 
-<div class="show-workshop-participant">
+<div class="show-workshop-student">
 
   <div class="ws-left-col">
     <%= content_tag(:div, class:"panel flat",style:'width: 100%') do %>
@@ -18,7 +18,7 @@
     <%= content_tag(:div, class:"panel flat",style:'width: 100%;') do %>
       <div class="panel-content">
         <h4><%= t('.activities_legend') %></h4>
-        <%= render "user/workshops/show_participant/activities" %>
+        <%= render "user/workshops/show_student/activities" %>
       </div>
     <% end %>
   </div>
@@ -27,17 +27,17 @@
     <%= content_tag(:div, class:"panel flat",style:'width: 100%;') do %>
       <div class="panel-content">
         <h4><%= t('.materials_legend') %></h4>
-        <%= render "user/workshops/show_participant/materials" %>
+        <%= render "user/workshops/show_student/materials" %>
       </div>
     <% end %> 
 
     <%= content_tag(:div, class:"panel flat",style:'width: 100%;') do %>
       <div class="panel-content">
-        <h4><%= t('.participants_legend') %></h4>
-          <ul class="workshop-participants">
-            <% @workshop.workshop_participants.confirmed.each do |participant| %>
-              <%= render partial:'/user/workshop_participants/participant',
-                    locals: {participant:participant, workshop_owner:false} %>
+        <h4><%= t('.students_legend') %></h4>
+          <ul class="workshop-students">
+            <% @workshop.workshop_students.confirmed.each do |student| %>
+              <%= render partial:'/user/workshop_students/student',
+                    locals: {student:student, workshop_owner:false} %>
             <% end %>
           </ul>
       </div>

@@ -1,0 +1,8 @@
+<% if @workshop_student.errors.any? %>
+	flashWarningMessage("<%= @workshop_student.errors.full_messages.join(" ") %>");
+<% else %>
+	$("#workshop-students-container").append("<%= escape_javascript(render partial:'student',locals:{student:@workshop_student,workshop_owner:true})%>");
+	$("#user-" + '<%= @workshop_student.user_id %>').remove();
+	flashNoticeMessage("<%= t('messages.user_added_to_workshop') %>");
+	photographerPreview();
+<% end %>

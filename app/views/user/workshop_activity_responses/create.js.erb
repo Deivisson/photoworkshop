@@ -3,7 +3,7 @@
 	if ($(id + " > .alert").length > 0) {
 		$(id + " > .alert").remove();	
 	}
-	$(id).append("<%= j (render partial:'user/workshops/show_participant/activity_response',locals: {response:@workshop_activity_response}) %>");
+	$(id).append("<%= j (render partial:'user/workshops/show_student/activity_response',locals: {response:@workshop_activity_response}) %>");
 	$(".ui-dialog-titlebar-close").click();
 	photoView();
 <% end %>

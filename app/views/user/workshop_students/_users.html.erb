@@ -1,5 +1,5 @@
 <% if @user_profiles.any? %>
-	<%= content_tag :ul, class:'workshop-user-participants' do %>
+	<%= content_tag :ul, class:'workshop-user-students' do %>
 		<% @user_profiles.each do |user_profile| %>
 			<%= content_tag :li, id:"user-#{user_profile.user_id}" do %>
 				<%= image_tag(user_profile.avatar.url(:medium),class:'user-avatar') %>
@@ -8,16 +8,16 @@
 					<%= content_tag(:p,user_profile.city.name) unless user_profile.city.nil? %>
 				</div>
 				<div class="buttons">
-					<% if @participant_ids.include?(user_profile.user_id) %>
+					<% if @student_ids.include?(user_profile.user_id) %>
 				  	<%= link_to t('.remove_user'),
-				  							user_workshop_remove_participant_path(@workshop,user_profile.user_id),
+				  							user_workshop_remove_student_path(@workshop,user_profile.user_id),
 				  							method: :delete,
 				  							data: {confirm:t('messages.confirm_remove_user_from_workshop')},
 				  							remote:true,
 				  							class:"common-button destroy-button" %>
 					<% else %>
 						<%= link_to t('.add_user'),
-												user_workshop_add_participant_path(@workshop,user_profile.user_id),
+												user_workshop_add_student_path(@workshop,user_profile.user_id),
 												data: {confirm:t('messages.confirm_add_user_to_workshop')},
 												remote:true,
 												class:"common-button add-button" %>					

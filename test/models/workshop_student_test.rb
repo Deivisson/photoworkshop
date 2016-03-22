@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class WorkshopParticipantTest < ActiveSupport::TestCase
+class WorkshopStudentTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -48,10 +48,10 @@ Rails.application.routes.draw do
       post :subscribe
       resources :workshop_materials, as: :materials, except: [:create,:update,:index,:show]
       resources :workshop_materials, only: [:create,:update]
-      resources :workshop_participants, as: :participants, only: [:index,:destroy]
-      get "workshop_participants/:user_id/add", to:'workshop_participants#add', :as => :add_participant
-      delete "workshop_participants/:user_id/remove", to:'workshop_participants#remove', :as => :remove_participant
-      put  "workshop_participants/:user_id/confirm_matriculation", to:'workshop_participants#confirm_matriculation', :as => :confirm_matriculation
+      resources :workshop_students, as: :students, only: [:index,:destroy]
+      get "workshop_students/:user_id/add", to:'workshop_students#add', :as => :add_student
+      delete "workshop_students/:user_id/remove", to:'workshop_students#remove', :as => :remove_student
+      put  "workshop_students/:user_id/confirm_matriculation", to:'workshop_students#confirm_matriculation', :as => :confirm_matriculation
       resources :workshop_activities, as: :activities, except: [:index] do 
         resources :workshop_activity_responses, as: :responses, except: [:index] 
       end

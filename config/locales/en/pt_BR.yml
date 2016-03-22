@@ -39,10 +39,10 @@ pt_BR:
     destroyed_record: "Exclusão realizada com sucesso!"
     updated_record: "Registro atualizado com sucesso!"
     created_record: "Registro cadastros com sucesso!"
-    confirm_add_user_to_workshop: "Deseja realmente tornar o Usuário um Participante do Workshop?"
+    confirm_add_user_to_workshop: "Deseja realmente tornar o Usuário um Aluno do Workshop?"
     user_added_to_workshop: "Usuário adicionado com sucesso!!"
     confirm_remove_user_from_workshop: "Confirma a remoção do Usuário do Workshop?"
-    user_removed_from_workshop: "Participante removido com sucesso!!"
+    user_removed_from_workshop: "Aluno removido com sucesso!!"
     photo_favorited: "Foto favoritada."
     photo_unfavorited: "Foto desfavoritada."
     cover_photo_updated: "Foto da capa foi atualizada."
@@ -97,7 +97,7 @@ pt_BR:
     workshop_metriculated: "Sua matrícula para o workshop %{workshop_url} acabou de ser confirmada!"
     workshop_subscribe: "Pré-matrícula realizada com sucesso para o workshop %{workshop_url}. Para mais detalhes, confira o seu email."
     workshop_added_activity: "Nova atividade foi adicionada ao workshop %{workshop_url}. Fique atento para o prazo de entrega."
-    workshop_activity_response: "%{participant} acabou de postar uma foto para a atividade %{response_url}."
+    workshop_activity_response: "%{student} acabou de postar uma foto para a atividade %{response_url}."
     photo_comment: '<span class="text-with-pic">%{user} comentou a sua Foto.<br><i>"%{comment_content}"</i></span>%{photo}'
     photo_like: '<span class="text-with-pic">%{user} curtiu a sua Foto. %{photo}'
     user_change_level: "Parabéns!! Você acabou de subir de nível, deixou de ser %{old_level} e passou a ser %{new_level}."

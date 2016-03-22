@@ -2,7 +2,7 @@
 	<% responses = activity.user_responses(current_user) %>
 	<% if responses.any? %>
     <% responses.each do |response| %>
-    	<%= render partial:'user/workshops/show_participant/activity_response', 
+    	<%= render partial:'user/workshops/show_student/activity_response', 
     							locals: {response:response} %>
   	<% end %>  
 	<% else %>

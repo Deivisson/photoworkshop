@@ -42,7 +42,7 @@ private
 
     link = ActionController::Base.helpers.link_to self.workshop_activity.description,url
     attributes = {
-      content: I18n.t('notifications.workshop_activity_response',participant:self.user.profile.user_name,response_url:link),
+      content: I18n.t('notifications.workshop_activity_response',student:self.user.profile.user_name,response_url:link),
       type_of: Notification::TYPE_WORKSHOP_ACTIVITY_RESPONSE,
       user_sender_id: self.user_id,
       user_receiver_id:self.workshop_activity.workshop.user_id ,

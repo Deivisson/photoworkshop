@@ -10,7 +10,7 @@ class Workshop < ActiveRecord::Base
   validates :vacancies_number, presence:true, numericality: {only_integer:true}
   validates :workshop_plan_id, presence:true
   validates :status, presence:true
-  validate :start_date_less_than_end_date, :check_vacancies_number_x_number_participants_from_plan
+  validate :start_date_less_than_end_date, :check_vacancies_number_x_number_students_from_plan
 
   has_attached_file :image, 
                     :styles => { :medium => "300x300>", :thumb => "100x100>" }, 
@@ -22,9 +22,9 @@ class Workshop < ActiveRecord::Base
   belongs_to :user
   belongs_to :plan, class_name: "WorkshopPlan", foreign_key: "workshop_plan_id"
 
-  has_many :workshop_participants
-  has_many :participants,-> { where("workshop_participants.confirmed" => true) }, through: :workshop_participants
-  has_many :participants_enrolled,  through: :workshop_participants #include all 
+  has_many :workshop_students
+  has_many :students,-> { where("workshop_students.confirmed" => true) }, through: :workshop_students
+  has_many :students_enrolled,  through: :workshop_students #include all 
   
   has_many :materials, class_name: "WorkshopMaterial"
   has_many :activities, class_name: "WorkshopActivity"
@@ -44,18 +44,18 @@ class Workshop < ActiveRecord::Base
   end
 
   def enrolled?(user)
-    self.participant_ids.include?(user.id)
+    self.student_ids.include?(user.id)
   end
 
   def subscribe!(user)
-    @workshop_participant = self.workshop_participants.build(user_id:user.id)
-    @workshop_participant.confirmed = false
-    @workshop_participant.save
-    @workshop_participant
+    @workshop_student = self.workshop_students.build(user_id:user.id)
+    @workshop_student.confirmed = false
+    @workshop_student.save
+    @workshop_student
   end
 
   def has_vacancies?
-    (self.vacancies_number - self.participants_enrolled.count) > 0
+    (self.vacancies_number - self.students_enrolled.count) > 0
   end
 
   def in_queued_wait?
@@ -78,7 +78,7 @@ class Workshop < ActiveRecord::Base
     @workshops
   end
 
-  def participant_activites
+  def student_activites
     self.activities.order("created_at desc")
   end
 
@@ -91,10 +91,10 @@ private
     end
   end
 
-  def check_vacancies_number_x_number_participants_from_plan
-    if self.vacancies_number.to_i > self.plan.limit_participants
+  def check_vacancies_number_x_number_students_from_plan
+    if self.vacancies_number.to_i > self.plan.limit_students
       self.errors[:vacancies_number] << I18n.t("activerecord.errors.messages.invalid_vacancies_number",
-                                              number:self.plan.limit_participants)
+                                              number:self.plan.limit_students)
       return false
     end
   end

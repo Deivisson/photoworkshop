@@ -2,8 +2,8 @@ $(document).on('ready page:load', function (){
 	bindWorkshopActivityDialog();
 	bindShowWorkshopActivityDialog();
 
-	$('li[id*="activity-participant-"]').click(function(){
-		$("#workshop-participants-show > li").removeClass("selected");
+	$('li[id*="activity-student-"]').click(function(){
+		$("#workshop-students-show > li").removeClass("selected");
 		$(this).addClass("selected");
 	});
 });

@@ -19,9 +19,9 @@ class User < ActiveRecord::Base
   #Workshops given by user
   has_many :owner_workshops, class_name:"Workshop"
 
-  #Workshops that the user is a participant
-  has_many :workshop_participants
-  has_many :my_workshops, -> { where("workshop_participants.confirmed" => true) }, through: :workshop_participants
+  #Workshops that the user is a student
+  has_many :workshop_students
+  has_many :my_workshops, -> { where("workshop_students.confirmed" => true) }, through: :workshop_students
   has_many :photo_comments
   has_many :auths, class_name:"UserAuth"
   has_many :activity_responses, class_name: "WorkshopActivityResponse"
@@ -97,9 +97,9 @@ class User < ActiveRecord::Base
   end
 
   def matricula_confirmed_for?(workshop)
-    participant = workshop.workshop_participants.where(user_id:self.id).first
-    return false if participant.nil?
-    participant.confirmed?
+    student = workshop.workshop_students.where(user_id:self.id).first
+    return false if student.nil?
+    student.confirmed?
   end
 
   def can_upload_photo_today?

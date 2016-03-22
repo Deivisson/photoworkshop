@@ -1,6 +1,6 @@
 <% if (@workshop.allow_pre_enrolls? && @workshop.published?) || @workshop.user_id == current_user.id %>
 	
-	<% if @workshop.participants_enrolled_ids.include?(current_user.id) %>
+	<% if @workshop.students_enrolled_ids.include?(current_user.id) %>
 		<% if current_user.matricula_confirmed_for?(@workshop) %>
 			<%= link_to  t('user.workshops.already_subscribed'),"#",class:"btn btn-bigger disabled" %>
 		<% else %>	

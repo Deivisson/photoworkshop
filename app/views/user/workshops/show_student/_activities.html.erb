@@ -1,5 +1,5 @@
-<div class="participant-activities">
-	<% @workshop.participant_activites.each do |activity| %>
+<div class="student-activities">
+	<% @workshop.student_activites.each do |activity| %>
 		<%= content_tag(:div, class:"panel flat",style:'width: 100%;') do %>
 	    <div class="panel-content">
 	      <h4>
@@ -28,7 +28,7 @@
 	      	</li>
 	      </ul>
 	      <!--Responses of activities -->
-	    	<%= render partial:'user/workshops/show_participant/responses', 
+	    	<%= render partial:'user/workshops/show_student/responses', 
 	    							locals:{activity:activity} %>
 	    </div>
 	  <% end %>

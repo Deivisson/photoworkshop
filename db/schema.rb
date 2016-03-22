@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160319165948) do
+ActiveRecord::Schema.define(version: 20160322014235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -375,18 +375,6 @@ ActiveRecord::Schema.define(version: 20160319165948) do
 
   add_index "workshop_materials", ["workshop_id"], name: "index_workshop_materials_on_workshop_id", using: :btree
 
-  create_table "workshop_participants", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "workshop_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "confirmed",   default: false, null: false
-    t.boolean  "in_queue",    default: false, null: false
-  end
-
-  add_index "workshop_participants", ["user_id"], name: "index_workshop_participants_on_user_id", using: :btree
-  add_index "workshop_participants", ["workshop_id"], name: "index_workshop_participants_on_workshop_id", using: :btree
-
   create_table "workshop_plans", force: :cascade do |t|
     t.string   "i18n_key",   limit: 100
     t.text     "settings"
@@ -395,6 +383,18 @@ ActiveRecord::Schema.define(version: 20160319165948) do
     t.datetime "created_at",                                                     null: false
     t.datetime "updated_at",                                                     null: false
   end
+
+  create_table "workshop_students", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "workshop_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "confirmed",   default: false, null: false
+    t.boolean  "in_queue",    default: false, null: false
+  end
+
+  add_index "workshop_students", ["user_id"], name: "index_workshop_students_on_user_id", using: :btree
+  add_index "workshop_students", ["workshop_id"], name: "index_workshop_students_on_workshop_id", using: :btree
 
   create_table "workshops", force: :cascade do |t|
     t.integer  "user_id"
@@ -460,8 +460,8 @@ ActiveRecord::Schema.define(version: 20160319165948) do
   add_foreign_key "user_relations", "users", name: "user_relations_users"
   add_foreign_key "workshop_activities", "workshops", name: "workshop_activities_workshop"
   add_foreign_key "workshop_materials", "workshops", name: "workshop_materials_workshop"
-  add_foreign_key "workshop_participants", "users", name: "workshop_participants_user"
-  add_foreign_key "workshop_participants", "workshops", name: "workshop_participants_workshop"
+  add_foreign_key "workshop_students", "users", name: "workshop_students_user"
+  add_foreign_key "workshop_students", "workshops", name: "workshop_students_workshop"
   add_foreign_key "workshops", "users", name: "workshops_user"
   add_foreign_key "workshops", "workshop_plans"
 end

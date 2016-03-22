@@ -48,8 +48,8 @@ class User::WorkshopActivitiesController < User::BaseController
     def set_workshop
       if action_name == "show"
         @workshop = Workshop.find(params[:workshop_id])
-        #Only the workshop owner or workshop's participant can see the workshop and activity
-        unless (@workshop.user_id == current_user.id || @workshop.participant_ids.include?(current_user.id))
+        #Only the workshop owner or workshop's student can see the workshop and activity
+        unless (@workshop.user_id == current_user.id || @workshop.student_ids.include?(current_user.id))
           @workshop = nil
         end
       else

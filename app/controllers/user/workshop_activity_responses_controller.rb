@@ -8,7 +8,7 @@ class User::WorkshopActivityResponsesController < User::BaseController
   #   respond_with(@workshop_activity_responses)
   # end
 
-  #This action is used by workshop owner to avaliate the responses by participants
+  #This action is used by workshop owner to avaliate the responses by students
   def show
     @workshop_activity = @workshop.activities.where(id:params[:activity_id]).first
     @workshop_activity_response = @workshop_activity.responses.where(id:params[:id]).first

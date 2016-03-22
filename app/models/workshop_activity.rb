@@ -23,21 +23,21 @@ class WorkshopActivity < ActiveRecord::Base
   end
 
   def perc_delivered
-    participant_count = self.workshop.participants.count
-    return 0 if participant_count == 0
+    student_count = self.workshop.students.count
+    return 0 if student_count == 0
     if @perc_delivered.nil? 
-      @perc_delivered = (delivered_count.to_f / participant_count.to_f) * 100
+      @perc_delivered = (delivered_count.to_f / student_count.to_f) * 100
       @perc_delivered = 100 if @perc_delivered > 100
     end
     @perc_delivered
   end
 
   before_create :check_if_not_in_limit_of_workshop_plan
-	after_create :notificate_participants
+	after_create :notificate_students
 
 private
 
-  def notificate_participants
+  def notificate_students
     path = Rails.application.routes.url_helpers.user_workshop_path(id:self.workshop_id)
     url  = "<a href='#{path}'>#{self.workshop.description}</a>"
 		attributes = {
@@ -46,8 +46,8 @@ private
       user_sender_id: self.workshop.user_id,
       read:false
   	}
-    self.workshop.participants.each do |participant|
-	  	attributes.merge!(user_receiver_id:participant.id)  
+    self.workshop.students.each do |student|
+	  	attributes.merge!(user_receiver_id:student.id)  
       Notification.create!(attributes)
     end
   end

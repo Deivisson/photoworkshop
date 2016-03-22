@@ -92,7 +92,7 @@ ul.workshops-items {
   }
 }
 
-ul.workshop-participants, 
+ul.workshop-students, 
 ul.workshop-materials,
 ul.workshop-activities {
 	float: left;
@@ -120,7 +120,7 @@ ul.workshop-activities {
 			margin: 1px 0 0 7px !important;
 			line-height: 20px;
 		}
-		.buttons-container-participants {
+		.buttons-container-students {
 			margin-top: -3px !important;
 		}
 		&:hover {background-color: #eee;};
@@ -136,7 +136,7 @@ ul.workshop-activities {
 	}
 }
 
-ul.workshop-participants, 
+ul.workshop-students, 
 ul.workshop-materials,
 ul.workshop-activities {
 	li {
@@ -220,7 +220,7 @@ ul.workshop-activities {
 	}
 }
 
-ul.workshop-materials.participants-view {
+ul.workshop-materials.students-view {
 	li {
 		a {
 			width: 90%;
