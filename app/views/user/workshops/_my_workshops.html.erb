@@ -9,7 +9,7 @@
 			<div class="ws-details">
 				<div class="texts">
 					<h1><%= link_to workshop.description, user_workshop_path(workshop) %></h1>
-					<p><%= workshop.details.truncate(400) %></p>
+					<p><%= workshop.details.truncate(400) unless workshop.details.nil? %></p>
 				</div>
 			</div>
 		</li>

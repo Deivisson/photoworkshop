@@ -8,6 +8,10 @@ class WorkshopPlan < ActiveRecord::Base
 		return 0
 	end
 
+	def description
+		I18n.t("user.#{self.i18n_key}")
+	end
+
 private 
 	def write_settings_methods
 		settings = JSON.parse(self.settings)

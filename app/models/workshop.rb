@@ -4,19 +4,24 @@ class Workshop < ActiveRecord::Base
   UNPAID = 2
 
   validates :user, presence:true
-  validates :description, presence:true, length: {maximum:200}
-  validates :start_date, presence:true
-  validates :end_date, presence:true
-  validates :vacancies_number, presence:true, numericality: {only_integer:true}
   validates :workshop_plan_id, presence:true
-  validates :status, presence:true
-  validate :start_date_less_than_end_date, :check_vacancies_number_x_number_students_from_plan
+  validates :description, presence:true, 
+            length: {maximum:200} unless lambda{|w| w.new_record?}
+  validates :start_date, presence:true unless lambda{|w| w.new_record?}
+  validates :end_date, presence:true unless lambda{|w| w.new_record?}
+  validates :vacancies_number, presence:true, 
+            numericality: {only_integer:true} unless lambda{|w| w.new_record?}
+  validates :status, presence:true 
+  validate :start_date_less_than_end_date, 
+           :check_vacancies_number_x_number_students_from_plan
 
   has_attached_file :image, 
-                    :styles => { :medium => "300x300>", :thumb => "100x100>" }, 
-                    :default_url => "user/no_image.png"
+                    :styles       => { :medium => "300x300>", :thumb => "100x100>" }, 
+                    :default_url  => "user/no_image.png"
+
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
-  validates_attachment_size :image, less_than: 2.1.megabytes, message: I18n.t("activerecord.errors.messages.image_size",size:2)
+  validates_attachment_size :image, less_than: 2.1.megabytes, 
+                    message: I18n.t("activerecord.errors.messages.image_size",size:2)
 
   #is the owner of workshop
   belongs_to :user
@@ -92,6 +97,7 @@ private
   end
 
   def check_vacancies_number_x_number_students_from_plan
+    return false if self.plan.nil?
     if self.vacancies_number.to_i > self.plan.limit_students
       self.errors[:vacancies_number] << I18n.t("activerecord.errors.messages.invalid_vacancies_number",
                                               number:self.plan.limit_students)

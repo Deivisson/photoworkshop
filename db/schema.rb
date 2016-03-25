@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160322014235) do
+ActiveRecord::Schema.define(version: 20160325131222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,6 +101,20 @@ ActiveRecord::Schema.define(version: 20160322014235) do
 
   add_index "notifications", ["user_receiver_id"], name: "index_notifications_on_user_receiver_id", using: :btree
   add_index "notifications", ["user_sender_id"], name: "index_notifications_on_user_sender_id", using: :btree
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id",          null: false
+    t.string   "integration_code"
+    t.integer  "type_of",          null: false
+    t.integer  "productable_id"
+    t.string   "productable_type"
+    t.integer  "status",           null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "orders", ["productable_type", "productable_id"], name: "index_orders_on_productable_type_and_productable_id", using: :btree
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "photo_comments", force: :cascade do |t|
     t.integer  "user_id",                                null: false
@@ -400,8 +414,8 @@ ActiveRecord::Schema.define(version: 20160322014235) do
     t.integer  "user_id"
     t.string   "description",        limit: 200,                 null: false
     t.text     "details"
-    t.date     "start_date",                                     null: false
-    t.date     "end_date",                                       null: false
+    t.date     "start_date"
+    t.date     "end_date"
     t.integer  "vacancies_number"
     t.decimal  "value"
     t.string   "prerequisite",       limit: 255
@@ -423,6 +437,7 @@ ActiveRecord::Schema.define(version: 20160322014235) do
     t.boolean  "allow_queued",                   default: false, null: false
     t.boolean  "allow_pre_enrolls",              default: true,  null: false
     t.integer  "workshop_plan_id"
+    t.boolean  "paid",                           default: false, null: false
   end
 
   add_index "workshops", ["user_id"], name: "index_workshops_on_user_id", using: :btree
@@ -433,6 +448,7 @@ ActiveRecord::Schema.define(version: 20160322014235) do
   add_foreign_key "favorite_photos", "users"
   add_foreign_key "notifications", "users", column: "user_receiver_id", name: "notifications_receiver_user"
   add_foreign_key "notifications", "users", column: "user_sender_id", name: "notifications_sender_user"
+  add_foreign_key "orders", "users"
   add_foreign_key "photo_comments", "photos", name: "photo_comments_photo"
   add_foreign_key "photo_comments", "users", name: "photo_comments_user"
   add_foreign_key "photo_exifs", "photos", name: "fk_photos_exifs"

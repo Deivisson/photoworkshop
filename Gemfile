@@ -29,3 +29,4 @@ gem 'will_paginate', '~> 3.0.7'
 gem "delocalize"
 gem "browser"
 gem "geocoder"
+gem "pagseguro-oficial", "~> 2.5.0"

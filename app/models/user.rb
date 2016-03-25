@@ -32,6 +32,7 @@ class User < ActiveRecord::Base
   has_many :photo_ratings
   has_many :portfolio_templates, class_name: 'UserPortfolioTemplate'
   has_many :photo_views
+  has_many :orders
   
   has_and_belongs_to_many :categories
 

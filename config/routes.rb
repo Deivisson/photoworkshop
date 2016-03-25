@@ -78,6 +78,7 @@ Rails.application.routes.draw do
     get "user_profile/:user_id/workshop_wait", to: "user_profiles#workshop_wait", :as => :workshop_wait
     resources :workshop_plans, only:[:index]
     resources :rankings, only:[:index]
+    resources :orders, only: [:create]
   end
   
   namespace :home do
@@ -102,6 +103,13 @@ Rails.application.routes.draw do
       get :workshops
     end
   end
+
+  namespace :api do
+    namespace :v1 do 
+      resources :pagseguro_notifications, only: :create 
+    end
+  end
+
   get "portfolio/:user_name", to: "public/portfolio#index", as: :photographer_public_portfolio
   get ":user_name", to: "public/photographers#show", as: :photographer_profile
  
