@@ -17,11 +17,11 @@
 					<% end if (s['value'].to_i > 0 || s['value'].to_i == -1) && s['type'] != "boolean" %>
 				<% end %>
 			</ul>
-			<% link_to t('buttons.to_hire'),
+			<%= link_to t('buttons.to_hire'),
 					new_user_workshop_path(plan_id:plan.id), 
 					class:'btn btn-success btn-to-hire-plan' %>
 
-			<%= link_to t('buttons.to_hire'),
+			<% link_to t('buttons.to_hire'),
 					user_orders_path(plan_id:plan.id), 
 					method: :post,
 					class:'btn btn-success btn-to-hire-plan' %>

@@ -21,29 +21,8 @@ class User::WorkshopsController < User::BaseController
 
 
   def new
-    plan = WorkshopPlan.find(params[:plan_id])
-    unless plan.nil?
-      attributes = {workshop_plan_id:plan.id,description:plan.description}
-      @workshop = current_user.owner_workshops.build(attributes)
-      if @workshop.save
-        payment = PagSeguro::PaymentRequest.new
-        payment.reference = @workshop.id
-        payment.notification_url = api_v1_pagseguro_notifications_url
-        payment.redirect_url = user_workshop_url(@workshop)
-
-        payment.items << {
-          id: plan.id,description:plan.description,amount: plan.value
-        }
-        response = payment.register
-        if response.errors.any?
-          raise response.errors.join("\n")
-        else
-          redirect_to response.url
-        end
-      end
-    end
-    #@workshop = Workshop.new(workshop_plan_id: params[:plan_id])
-    #respond_with(@workshop,layout:'/user/workshop_form')
+    @workshop = Workshop.new(workshop_plan_id: params[:plan_id])
+    respond_with(@workshop,layout:'/user/workshop_form')
   end
 
   def edit

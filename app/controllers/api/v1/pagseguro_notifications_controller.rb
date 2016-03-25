@@ -3,11 +3,16 @@ class Api::V1::PagseguroNotificationsController < ApplicationController
 	before_filter :cors_set_access_control_headers
 
 	def create
-		puts "passei aqui"
-		puts "nf code #{params[:notificationCode]}"																												
-		transaction = PagSeguro::Transaction.find_by_code(params[:notificationCode])
+		transaction = PagSeguro::Transaction.find_by_notification_code(params[:notificationCode])
 	 	if transaction.errors.empty?
-	 		puts transaction.methods.sort
+	 		order = Order.find(transaction.reference)
+	 		unless order.nil?
+	 			order.integration_code = transaction.code
+	 			order.status 					 = transaction.status.id
+	 			order.type_of					 = transaction.type_id
+	 			order.save
+	 		end
+	 		#puts transaction.methods.sort
       # Processa a notificação. A melhor maneira de se fazer isso é realizar
       # o processamento em background. Uma boa alternativa para isso é a
       # biblioteca Sidekiq.

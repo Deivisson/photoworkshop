@@ -1,6 +1,6 @@
 class Order < ActiveRecord::Base
-	TYPE_WORKSHOP = 1
-	TYPE_PORTFOLIO = 2
+	ORIGIN_WORKSHOP = 1
+	ORIGIN_PORTFOLIO = 2
 
 	STATUS_PENDING = 0
 
