@@ -89,3 +89,17 @@ pt_BR:
         details: "Detalhes"
         limit_date: "Data Limite Entrega"
         maximum_upload_number: "Qtde máxima de Postagem."
+      workshop_plan:
+        description: "Descrição"
+      order:
+        id: "Ref."
+        status: "Status"
+        installment_count: "Nº Parcelas"
+        gross_amount: "Valor Total"
+        created_at: "Data Compra"
+        payment_type: "Tipo Pgto"
+        payment_code: "Meio Pgto"
+      order_payment_history:
+        status: "Status"
+        status_date: "Data/Hora"
+        status_description: "Descrição"

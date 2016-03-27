@@ -5,8 +5,7 @@ class Workshop < ActiveRecord::Base
 
   validates :user, presence:true
   validates :workshop_plan_id, presence:true
-  validates :description, presence:true, 
-            length: {maximum:200} unless lambda{|w| w.new_record?}
+  validates :description, presence:true, length: {maximum:200}
   validates :start_date, presence:true unless lambda{|w| w.new_record?}
   validates :end_date, presence:true unless lambda{|w| w.new_record?}
   validates :vacancies_number, presence:true, 
@@ -33,7 +32,7 @@ class Workshop < ActiveRecord::Base
   
   has_many :materials, class_name: "WorkshopMaterial"
   has_many :activities, class_name: "WorkshopActivity"
-
+  has_many :orders, as: :productable
   before_save :uncheck_allow_queued_if_allow_pre_enrolls
 
   def published?

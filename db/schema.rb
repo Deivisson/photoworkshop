@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160325131222) do
+ActiveRecord::Schema.define(version: 20160326042611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,15 +102,36 @@ ActiveRecord::Schema.define(version: 20160325131222) do
   add_index "notifications", ["user_receiver_id"], name: "index_notifications_on_user_receiver_id", using: :btree
   add_index "notifications", ["user_sender_id"], name: "index_notifications_on_user_sender_id", using: :btree
 
+  create_table "order_payment_histories", force: :cascade do |t|
+    t.integer  "order_id"
+    t.integer  "status",      null: false
+    t.datetime "status_date", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "order_payment_histories", ["order_id"], name: "index_order_payment_histories_on_order_id", using: :btree
+
   create_table "orders", force: :cascade do |t|
-    t.integer  "user_id",          null: false
+    t.integer  "user_id",                                                     null: false
     t.string   "integration_code"
-    t.integer  "type_of",          null: false
+    t.integer  "type_of",                                                     null: false
     t.integer  "productable_id"
     t.string   "productable_type"
-    t.integer  "status",           null: false
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.integer  "status",                                                      null: false
+    t.datetime "created_at",                                                  null: false
+    t.datetime "updated_at",                                                  null: false
+    t.string   "description",                                   default: "",  null: false
+    t.integer  "origin",                                        default: 1,   null: false
+    t.integer  "workshop_plan_id"
+    t.integer  "payment_type"
+    t.integer  "payment_code"
+    t.decimal  "gross_amount",          precision: 5, scale: 2, default: 0.0, null: false
+    t.decimal  "discount_amount",       precision: 5, scale: 2, default: 0.0, null: false
+    t.decimal  "net_amount",            precision: 5, scale: 2, default: 0.0, null: false
+    t.decimal  "extra_amount",          precision: 5, scale: 2, default: 0.0, null: false
+    t.integer  "installment_count",                             default: 1,   null: false
+    t.datetime "last_status_update_at"
   end
 
   add_index "orders", ["productable_type", "productable_id"], name: "index_orders_on_productable_type_and_productable_id", using: :btree
@@ -448,6 +469,7 @@ ActiveRecord::Schema.define(version: 20160325131222) do
   add_foreign_key "favorite_photos", "users"
   add_foreign_key "notifications", "users", column: "user_receiver_id", name: "notifications_receiver_user"
   add_foreign_key "notifications", "users", column: "user_sender_id", name: "notifications_sender_user"
+  add_foreign_key "order_payment_histories", "orders"
   add_foreign_key "orders", "users"
   add_foreign_key "photo_comments", "photos", name: "photo_comments_photo"
   add_foreign_key "photo_comments", "users", name: "photo_comments_user"

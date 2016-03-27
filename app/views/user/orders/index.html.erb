@@ -1,0 +1,19 @@
+<%= content_for :left_col_container  do %>
+	<div class="float-container">
+		<ul class="menu orders-menus" id="orders-menu">
+			<h1><%= t(".menu_title") %></h1>
+			<% @orders.each.with_index do |order,index| %>
+				<%= content_tag :li, "", class: "order-menu-item #{(index==0 ? "selected" : "")}" do %>
+					<%= link_to order.description,user_order_path(order),remote:true %>
+					<span class="badges <%= order.paid? ? 'success' : 'important' %>">
+						<%= Pagseguro.status_title(order.status) %>
+					</span>
+				<% end %>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+<div id="order-container" class="order-container">
+	<%= render "order" unless @order.nil? %>
+</div>

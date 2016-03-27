@@ -7,9 +7,17 @@ class Api::V1::PagseguroNotificationsController < ApplicationController
 	 	if transaction.errors.empty?
 	 		order = Order.find(transaction.reference)
 	 		unless order.nil?
-	 			order.integration_code = transaction.code
-	 			order.status 					 = transaction.status.id
-	 			order.type_of					 = transaction.type_id
+	 			order.integration_code 			= transaction.code
+	 			order.status 					 			= transaction.status.id
+	 			order.type_of					 			= transaction.type_id
+	 			order.payment_type					= transaction.payment_method.type_id
+				order.payment_code					= transaction.payment_method.code
+				order.gross_amount					= transaction.gross_amount
+				order.discount_amount				= transaction.discount_amount
+				order.net_amount						= transaction.net_amount
+				order.extra_amount					= transaction.extra_amount
+				order.installment_count			= transaction.installments
+				order.last_status_update_at = transaction.updated_at
 	 			order.save
 	 		end
 	 		#puts transaction.methods.sort

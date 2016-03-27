@@ -1,5 +1,6 @@
 class WorkshopPlan < ActiveRecord::Base
 	has_many :workshops
+	has_many :orders
 	scope :active, -> {where(active:true)}
 
 	after_find :write_settings_methods

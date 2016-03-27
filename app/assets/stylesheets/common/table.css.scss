@@ -1,0 +1,96 @@
+/* Default table */
+table {
+	border: 1px solid #ddd;
+	border-collapse: collapse;
+  font-family:arial;
+  font-size: 13px;
+  width:100%;
+  text-align: left;
+  margin:0;
+}
+
+
+table thead tr ,
+table tbody tr {
+  background-color: #fff;
+	height: 35px;
+}
+
+table thead tr {
+	background-color: #eee;
+	border: 1px solid #ddd;
+}
+
+table thead tr th,
+table tbody tr td  { 
+	color: #555;
+	font-size: 10pt; 
+	font-weight: bold; 
+	text-indent:4px ;
+	padding: 0;
+	vertical-align: middle;
+} 
+
+table thead tr th {
+	cursor:pointer;
+	padding-top: 2px;
+	border-left: 1px solid #ddd;
+}
+
+table tbody tr {
+	font-weight: normal;
+	border-bottom: 1px solid #ddd;
+}
+
+table tbody tr:last-child {
+	border-bottom: 0;
+}
+
+table tbody tr td {
+	font-weight: normal;
+	border-left: 1px solid #ddd;
+	padding: 0 5px 0 5px;
+}
+
+table tbody tr td.checkbox-column {
+	width: 30px;
+}
+
+
+/* boreded table */
+table.bordered {
+	border: 1px solid #ddd;
+}
+
+table.bordered thead tr, 
+table.bordered tbody tr {
+	border: 1px solid #ddd;
+}
+
+table.bordered thead tr th, 
+table.bordered tbody tr td {
+	border: 1px solid #ddd;
+}
+
+/* Hovered table */
+table.hovered tbody tr:hover {
+	background-color: #F2F2F2;
+}
+
+/* Table with header in color  */
+table.header-color thead tr {
+	background-color: #EFEFEF;
+}
+
+/* Buttons container */
+table tbody tr td .table-buttons-container {
+	float: right;
+	width: auto;
+	position: relative;
+	right: 5px;
+	visibility: hidden;
+}
+
+table tbody tr:hover .table-buttons-container {
+	visibility: visible;
+}

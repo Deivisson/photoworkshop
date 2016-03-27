@@ -78,7 +78,7 @@ Rails.application.routes.draw do
     get "user_profile/:user_id/workshop_wait", to: "user_profiles#workshop_wait", :as => :workshop_wait
     resources :workshop_plans, only:[:index]
     resources :rankings, only:[:index]
-    resources :orders, only: [:create]
+    resources :orders, only: [:create, :show, :index]
   end
   
   namespace :home do
