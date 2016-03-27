@@ -8,8 +8,12 @@ class Order < ActiveRecord::Base
   belongs_to :productable, polymorphic: true
   belongs_to :workshop_plan
   
-  before_create :set_initial_params
-  after_save :create_payment_history, :create_workshop_on_paid
+  before_create :set_default_values
+  after_save :create_payment_history, :create_workshop_after_paid
+
+  def reference
+    "#{self.origin == ORIGIN_WORKSHOP ? "ws-" : ""}#{self.id.to_s.rjust(6,'0')}"  
+  end
 
   def payment_type_description
     return "-" if self.payment_type.nil?
@@ -22,13 +26,14 @@ class Order < ActiveRecord::Base
   end
 
   def paid?
-    self.payment_histories.where(status:Pagseguro::STATUS_PAID).first.present? 
+    self.status == Pagseguro::STATUS_PAID #payment_histories.where(status:Pagseguro::STATUS_PAID).first.present? 
   end
 
 private 
 
-  def set_initial_params
+  def set_default_values
   	self.status = Pagseguro::STATUS_PENDING
+    self.last_status_update_at = DateTime.now
   end
 
   def create_payment_history
@@ -40,7 +45,7 @@ private
     self.payment_histories << OrderPaymentHistory.new(attributes)
   end 
 
-  def create_workshop_on_paid
+  def create_workshop_after_paid
     if self.productable.nil? && self.status_changed? && self.status == Pagseguro::STATUS_PAID
       attributes = {
         user_id: self.user_id,
@@ -50,6 +55,25 @@ private
       workshop = Workshop.create!(attributes)
       self.productable = workshop
       self.save
+      notificate_user(workshop)
     end
-   end 
+  end
+
+  def notificate_user(workshop)
+    i18n_key = 'notifications.workshop_paid'
+    workshop_path = Rails.application.routes.url_helpers.user_workshop_path(workshop.id)
+    workshop_url  = "<a href='#{workshop_path}'>#{I18n.t('activerecord.models.workshop.one')}</a>"
+
+    order_path = Rails.application.routes.url_helpers.user_order_path(self.id)
+    order_url  = "<a href='#{order_path}'> ref:#{self.reference}</a>"
+    attributes = {
+      content: I18n.t(i18n_key,order_ref:order_url,workshop_url:workshop_url),
+      type_of: Notification::TYPE_WORKSHOP_PAYMENT_COMPLETED,
+      user_sender_id: User::SYSTEM_USER,
+      user_receiver_id: self.user_id,
+      read:false
+    }
+    Notification.create!(attributes)
+    User::NotificationMailer.workshop_paid_message(self).deliver_now!   
+  end 
 end

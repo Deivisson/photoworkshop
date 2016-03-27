@@ -1,5 +1,5 @@
 class User::OrdersController < User::BaseController
-  before_action :set_order, only: [:index, :show]
+  before_action :set_order, except: [:create]
 
 	def index
 		@orders = current_user.orders.order("created_at desc")
@@ -9,6 +9,10 @@ class User::OrdersController < User::BaseController
 		@callback_provider = params["provider"].present?
     puts @callback_provider
 	end
+
+  def check_payment
+
+  end
 
 	def create
 		plan = WorkshopPlan.find(params[:plan_id])
@@ -30,6 +34,15 @@ class User::OrdersController < User::BaseController
         payment.items << {
           id: plan.id,description:description,amount: plan.value
         }
+        payment.sender = {
+          name: current_user.profile.full_name,
+          email: current_user.email,
+          cpf: "51996566270",
+          phone: {
+            area_code: "31",
+            number: "999999999"
+          }
+        } 
         response = payment.register
         if response.errors.any?
           raise response.errors.join("\n")
@@ -42,8 +55,9 @@ class User::OrdersController < User::BaseController
 
 private
   def set_order
-    if params[:id]
-      @order = current_user.orders.find(params[:id]) 
+    id = params[:id] || params[:order_id]
+    if id
+      @order = current_user.orders.find(id) 
     else
       @order = current_user.orders.last
     end

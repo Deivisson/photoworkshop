@@ -1,0 +1,10 @@
+<div class="show-fields with-bottom-border" style="width: 100%">
+	<label class="sub-title"><%= t('user.orders.order.order_products') %></label>
+	<% if @order.productable_type == "Workshop" %>
+		<p><%= @order.description %></p>
+  	<%= link_to "Acessar Workshop",
+  					user_workshop_path(@order.productable_id), 
+  					class:"btn btn-success btn-small",
+  					style:"float:left" %>
+	<% end %>
+</div>

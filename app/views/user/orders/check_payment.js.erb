@@ -1,0 +1,5 @@
+<% status = [Pagseguro::STATUS_PENDING,Pagseguro::STATUS_WAITING_PAYGMENT,Pagseguro::STATUS_IN_ANALYSIS] %>
+<% unless status.include?(@order.status) %>
+	$("#order-container").html("<%= j render 'order' %>");
+	flashNoticeMessage("<%= t('messages.order_workshop_paid') %>");
+<% end %>

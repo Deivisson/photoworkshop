@@ -43,7 +43,9 @@ pt_BR:
       photo:
         one: "Foto"
         other: "Fotos"
-
+      workshop:
+        one: "Workshop\\Curso"
+        other: "Workshops\\Cursos"
     attributes:
       user_profile:
         description: "Biografia"
@@ -97,7 +99,7 @@ pt_BR:
         installment_count: "Nº Parcelas"
         gross_amount: "Valor Total"
         created_at: "Data Compra"
-        payment_type: "Tipo Pgto"
+        payment_type: "Forma Pgto"
         payment_code: "Meio Pgto"
       order_payment_history:
         status: "Status"

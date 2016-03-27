@@ -40,7 +40,9 @@ pt_BR:
       photo:
         one: "Foto"
         other: "Fotos"
-
+      workshop:
+        one: "Workshop"
+        other: "Workshops"
     attributes:
       user_profile:
         description: "Biografia"

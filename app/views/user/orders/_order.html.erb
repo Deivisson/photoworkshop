@@ -1,52 +1,23 @@
 <%= content_tag(:div, class:"panel flat", style:'width: 80%;float:left') do %>
+	<%= content_tag :p, class:"alert alert-info delayed_feedback",id:'delayed-msg-feedback' do %>
+		<%= t(".delayed_feedback").html_safe %>
+	<% end unless @order.paid?%>
 	<div class="panel-content">
 		<%= content_tag :div, id:'order-transaction-feedback' do %>
+			<%= hidden_field_tag "", @order.id,id:"order-in-process-id" %>
 			<div class="order-overlay-mask"></div>
 			<div class="feedback">
 				<div class="loading-round-gif"></div>
 				<p class="message"><%= t('.wait_payment_message') %></p>
-				<%= link_to t(".wait_button_label"), user_root_path, class:"btn btn-success" %>
+				<%= link_to t(".wait_button_label"), 
+									user_root_path, class:"btn btn-success" %>
 			</div>
 		<% end if @callback_provider.present? && !@order.paid? %>
 		<h4><%= @order.description %></h4>
-	  <div class="show-fields with-bottom-border" style="width: 100%"> 
-	  	<label class="sub-title"><%= t('.title') %></label>
-	    <%= sf @order,:id %>
-	    <%= sf @order,:status, Pagseguro.status_title(@order.status) %>
-	    <%= sf @order,:created_at, format_date(@order.created_at) %>
-	  </div>
-	  <div class="show-fields with-bottom-border" style="width: 100%">
-	  	<label class="sub-title"><%= t(".payment_details")%></label>
-	    <%= sf @order, :gross_amount, @order.gross_amount > 0 ? number_to_currency(@order.gross_amount) : "-"%>
-	    <%= sf @order, :payment_type, @order.payment_type_description %>
-	    <%= sf @order, :payment_code, @order.payment_method_description %>
-	    <%= sf @order, :installment_count %>
-	  </div>
-	  <div class="show-fields with-bottom-border" style="width: 100%">
-	  	<label class="sub-title"><%= t('.plan_details') %></label>
-	    <%= sf @order.workshop_plan,:description %>
-	  </div>
-	  <div class="show-fields with-bottom-border" style="width: 100%">
-	  	<label class="sub-title"><%= t('.status_histories') %></label>
-      <table>
-      	<thead>
-		      <tr>
-			      <th width="150"><%= ta OrderPaymentHistory, :status %></th>
-			      <th><%= ta OrderPaymentHistory, :status_description %></th>
-			      <th width="180"><%= ta OrderPaymentHistory, :status_date %></th>
-		    	</tr>
-  			</thead>
-			  <tbody>
-			    <% @order.payment_histories.each do |history| %>
-			      <tr>
-			        <td><%= Pagseguro.status_title(history.status) %></td>
-			        <td><%= Pagseguro.status_description(history.status) %></td>
-			        <td><%= format_date(history.status_date,:short) %></td>
-			      </tr>
-			    <% end %>
-			  </tbody>
-			</table>
-	  </div>
+	  <%= render 'order_details' %>
+	  <%= render 'order_payment_details' %>
+	  <%= render 'order_products' %>
+	  <%= render 'order_plan_details' %>
+	  <%= render 'order_status_histories' %>
 	</div>
-
 <% end %>

@@ -1,0 +1,21 @@
+<div class="show-fields with-bottom-border" style="width: 100%">
+	<label class="sub-title"><%= t('user.orders.order.status_histories') %></label>
+  <table>
+  	<thead>
+      <tr>
+	      <th width="150"><%= ta OrderPaymentHistory, :status %></th>
+	      <th><%= ta OrderPaymentHistory, :status_description %></th>
+	      <th width="180"><%= ta OrderPaymentHistory, :status_date %></th>
+    	</tr>
+		</thead>
+	  <tbody>
+	    <% @order.payment_histories.each do |history| %>
+	      <tr>
+	        <td><%= Pagseguro.status_title(history.status) %></td>
+	        <td><%= Pagseguro.status_description(history.status) %></td>
+	        <td><%= format_date(history.status_date,:short) %></td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+</div>

@@ -1,0 +1,6 @@
+<div class="show-fields with-bottom-border" style="width: 100%"> 
+	<label class="sub-title"><%= t('user.orders.order.title') %></label>
+  <%= sf @order,:id,@order.reference %>
+  <%= sf @order,:status, Pagseguro.status_title(@order.status) %>
+  <%= sf @order,:created_at, format_date(@order.created_at) %>
+</div>

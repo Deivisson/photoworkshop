@@ -1,0 +1,7 @@
+<div class="show-fields with-bottom-border" style="width: 100%">
+	<label class="sub-title"><%= t("user.orders.order.payment_details")%></label>
+  <%= sf @order, :gross_amount, @order.gross_amount > 0 ? number_to_currency(@order.gross_amount) : "-"%>
+  <%= sf @order, :payment_type, @order.payment_type_description %>
+  <%= sf @order, :payment_code, @order.payment_method_description %>
+  <%= sf @order, :installment_count %>
+</div>

@@ -1,0 +1,4 @@
+<%= content_tag :div, class:"show-fields with-bottom-border", style:"width: 100%" do %>
+	<label class="sub-title"><%= t('user.orders.order.plan_details') %></label>
+  <%= sf @order.workshop_plan,:description %>
+<% end unless @order.workshop_plan_id.nil? %>

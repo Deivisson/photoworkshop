@@ -40,6 +40,9 @@ ul.orders-menus {
 		width: 100%;
 
 	}
+	.delayed_feedback {
+		display: none;
+	}
 }
 
 .order-container {
@@ -60,7 +63,7 @@ ul.orders-menus {
 			.feedback {
 				background-color: #FFF;
 				position: absolute;
-				height: 170px;
+				height: 180px;
 				width: 500px;
 				left: 50%;
 				margin-left: -350px;
@@ -79,11 +82,11 @@ ul.orders-menus {
  					float: left;
  					margin: 10px 0 0 100px;
  					width: 380px;
- 					text-align: left;
+ 					text-align: justify;
  				}
  				.btn {
  					float: left;
- 					margin: 9px 0 0 100px
+ 					margin: 10px 0 0 100px
  				}
 			}
 		}

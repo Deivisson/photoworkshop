@@ -39,9 +39,9 @@ pt_BR:
     destroyed_record: "Exclusão realizada com sucesso!"
     updated_record: "Registro atualizado com sucesso!"
     created_record: "Registro cadastros com sucesso!"
-    confirm_add_user_to_workshop: "Deseja realmente tornar o Usuário um Aluno do Workshop?"
+    confirm_add_user_to_workshop: "Deseja realmente tornar o usuário um Aluno?"
     user_added_to_workshop: "Usuário adicionado com sucesso!!"
-    confirm_remove_user_from_workshop: "Confirma a remoção do Usuário do Workshop?"
+    confirm_remove_user_from_workshop: "Confirma a remoção do Aluno?"
     user_removed_from_workshop: "Aluno removido com sucesso!!"
     photo_favorited: "Foto favoritada."
     photo_unfavorited: "Foto desfavoritada."
@@ -49,6 +49,7 @@ pt_BR:
     removed_photo: "Foto removida ;-("
     rating_photo_with_success: "Foto Avaliada com sucesso."
     following_success: "Você acabou de seguir %{photographer}"
+    order_workshop_paid: "Parabéns, sua compra foi efetuada com sucesso. O seu Workshop/Curso já esta disponível."
   levels:
     beginner: "Iniciante"
     beginner_info: "Você está tirando fotos sem colocar qualquer pensamento técnico para elas, mas este é o começo para se tornar cada vez melhor. Pratique!"
@@ -91,9 +92,11 @@ pt_BR:
     change_level: "Mudança de Nível"
     photo_covered: "Capa do Pic2Gether"
     reward: "Recompensa"
+    workshop_paid: "Compra Gerenciamento Workshop"
   notifications:
     team_welcome: "A equipe <strong>Pic2Gether</strong> lhe deseja boas vindas, e estamos ansiosos para conhecer a sua arte."
     followed: "%{follower} começou seguir você."
+    workshop_paid: "Agradecemos pela sua compra %{order_ref}. O seu %{workshop_url} esta disponível para configuração!"
     workshop_metriculated: "Sua matrícula para o workshop %{workshop_url} acabou de ser confirmada!"
     workshop_subscribe: "Pré-matrícula realizada com sucesso para o workshop %{workshop_url}. Para mais detalhes, confira o seu email."
     workshop_added_activity: "Nova atividade foi adicionada ao workshop %{workshop_url}. Fique atento para o prazo de entrega."
@@ -173,6 +176,11 @@ pt_BR:
     - :month
     - :year
   datetime:
+    formats:
+      default: ! '%d/%m/%Y'
+      long: ! '%d de %B de %Y'
+      short: ! '%d de %B'
+
     distance_in_words:
       about_x_hours:
         one: aproximadamente 1 hora atrás

@@ -8,8 +8,7 @@ class Workshop < ActiveRecord::Base
   validates :description, presence:true, length: {maximum:200}
   validates :start_date, presence:true unless lambda{|w| w.new_record?}
   validates :end_date, presence:true unless lambda{|w| w.new_record?}
-  validates :vacancies_number, presence:true, 
-            numericality: {only_integer:true} unless lambda{|w| w.new_record?}
+  validates :vacancies_number, presence:true, numericality: {only_integer:true} 
   validates :status, presence:true 
   validate :start_date_less_than_end_date, 
            :check_vacancies_number_x_number_students_from_plan
@@ -33,6 +32,8 @@ class Workshop < ActiveRecord::Base
   has_many :materials, class_name: "WorkshopMaterial"
   has_many :activities, class_name: "WorkshopActivity"
   has_many :orders, as: :productable
+
+  before_validation :set_default_values
   before_save :uncheck_allow_queued_if_allow_pre_enrolls
 
   def published?
@@ -106,5 +107,9 @@ private
 
   def uncheck_allow_queued_if_allow_pre_enrolls
     self.allow_queued = false unless self.allow_pre_enrolls?
+  end
+
+  def set_default_values
+    self.vacancies_number = 0 if self.vacancies_number.nil?
   end
 end

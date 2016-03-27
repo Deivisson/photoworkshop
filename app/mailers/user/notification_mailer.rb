@@ -1,4 +1,5 @@
 class User::NotificationMailer < ActionMailer::Base
+  helper :application
   default :from => "Equipe Pic2gether <team@pic2gether.com>"
  
   def change_level_message(user)
@@ -22,6 +23,13 @@ class User::NotificationMailer < ActionMailer::Base
 
     mail(:to        => user.email, 
          :subject   => I18n.t('mailer_subjects.reward'),
+         :reply_to  => "<team@pic2gether.com>")
+  end
+
+  def workshop_paid_message(order)
+    @order = order
+    mail(:to        => @order.user.email, 
+         :subject   => I18n.t('mailer_subjects.workshop_paid'),
          :reply_to  => "<team@pic2gether.com>")
   end
 end

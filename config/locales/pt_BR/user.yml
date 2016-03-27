@@ -283,11 +283,13 @@ pt_BR:
           702: "Depósito em conta - HSBC"
       order:
         title: "Detalhes da compra"
-        wait_payment_message: "Estamos aguardando o processamento da sua compra pela instiuição financeira... Você poderá continuar navegando no Pic2Gether que enviaremos uma notificação quando tudo estiver finalizado."
-        wait_button_label: "Ok, Vou continuar no Pic2Gether"
+        wait_payment_message: "Estamos aguardando o processamento da sua compra pelo PagSeguro... Você poderá aguardar, ou continuar navegando no Pic2Gether que enviaremos uma notificação quando tudo estiver finalizado."
+        wait_button_label: "Ok, Vou continuar navegando."
         payment_details: "Detalhes Pagamento"
         plan_details: "Detalhes Plano"
+        order_products: "Produto(s) Comprado(s)"
         status_histories: "Histórico de Status"
+        delayed_feedback: "Ainda não obtivemos retorno da transação de pagamento, isto pode ser consequência de:<br> 1 - Você não ter concluído o pagamento;<br> 2 - Demora de resposta pelo Pagseguro/instituição financeira;<br> 3 - Pagamento via Boleto Bancário.<br>Não se preocupe, estaremos atentos e iremos lhe notificar em caso de novidades."
       index:
         menu_title: "Minhas Compras"
     shared:
@@ -356,3 +358,6 @@ pt_BR:
         title: "Recompensa de Compartilhamento"
         message: "Estamos muito felizes por você ter compartilhado o Pic2Gether no %{social_network} :-). E como recompensa, estamos lhe permitindo postar mais uma foto por dia. Agora, o seu limite de postagens é de até %{limit_upload} fotos diárias. Divirta-se !!!"
         message_share_more: "Continue compartilhando e indicando para os amigos. Ajude a tornar o Pic2Gether.com o maior canal de fotografia do mundo. Contamos com você!"
+      workshop_paid_message:
+        title: "Compra Gerenciamento Workshop"
+        message: "A sua compra foi realizada com sucesso e o %{link} já esta disponível para configuração."

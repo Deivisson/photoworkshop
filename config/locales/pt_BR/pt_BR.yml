@@ -171,6 +171,10 @@ pt_BR:
     - :month
     - :year
   datetime:
+    formats:
+      default: ! '%d/%m/'
+      long: ! '%d de %B di %Y'
+      short: ! '%d de %B'
     distance_in_words:
       about_x_hours:
         one: aproximadamente 1 hora atrás
@@ -317,7 +321,7 @@ pt_BR:
   time:
     am: ''
     formats:
-      default: ! '%a, %d de %B de %Y, %H:%M'
+      default: ! '%a, %d de %B di %Y, %H:%M'
       long: ! '%d de %B de %Y, %H:%M'
-      short: ! '%d de %B, %H:%M'
+      short: ! '%d/%m/%Y %H:%M:%S'
     pm: ''
