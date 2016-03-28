@@ -27,6 +27,24 @@ $(document).on('ready page:load', function (){
 
 });
 
+function InitializeTinyMce(){
+	tinymce.init({
+    mode : "specific_textareas",
+    editor_selector : "mceEditor",
+    theme: "modern",
+    plugins: [
+        "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+        "searchreplace wordcount visualblocks visualchars code fullscreen",
+        "insertdatetime media nonbreaking save table contextmenu directionality",
+        "emoticons template paste textcolor colorpicker textpattern imagetools"
+    ],
+    toolbar1: "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent ",
+    toolbar2: "print preview | forecolor backcolor emoticons | link fullscreen",
+    image_advtab: true,
+    menubar: false,
+    toolbar_items_size: 'small'
+	});
+}
 
 // Popups menu on photo (show Options: Like, Share, Favorit e etc..)
 // function PhotoPopupMenuTrigger(){

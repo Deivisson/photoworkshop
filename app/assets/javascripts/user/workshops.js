@@ -40,9 +40,7 @@ $(document).on('ready page:load', function (){
 		  dialog_form.dialog('open');
 		  e.preventDefault();  
 	});	
-
-	
-
+	InitializeTinyMce();
 });
 
 function showImageWorkshopPreview(input) {

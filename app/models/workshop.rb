@@ -9,6 +9,7 @@ class Workshop < ActiveRecord::Base
   validates :start_date, presence:true unless lambda{|w| w.new_record?}
   validates :end_date, presence:true unless lambda{|w| w.new_record?}
   validates :vacancies_number, presence:true, numericality: {only_integer:true} 
+  validates :vacancies_number, numericality: {greater_than:5}
   validates :status, presence:true 
   validate :start_date_less_than_end_date, 
            :check_vacancies_number_x_number_students_from_plan
