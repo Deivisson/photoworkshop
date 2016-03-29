@@ -43,7 +43,6 @@
 //= require user/workshop_plans
 //= require jquery_price_format
 //= require jquery.maskedinput-1.3.min
-//= require tinymce/tinymce.min
-
+//= require tinymce
 
 

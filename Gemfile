@@ -30,3 +30,4 @@ gem "delocalize"
 gem "browser"
 gem "geocoder"
 gem "pagseguro-oficial", "~> 2.5.0"
+gem 'tinymce-rails'
