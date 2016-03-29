@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160326042611) do
+ActiveRecord::Schema.define(version: 20160329014844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -433,17 +433,17 @@ ActiveRecord::Schema.define(version: 20160326042611) do
 
   create_table "workshops", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "description",        limit: 200,                 null: false
+    t.string   "description",        limit: 200,                                          null: false
     t.text     "details"
     t.date     "start_date"
     t.date     "end_date"
     t.integer  "vacancies_number"
-    t.decimal  "value"
+    t.decimal  "value",                          precision: 10, scale: 2, default: 0.0,   null: false
     t.string   "prerequisite",       limit: 255
     t.text     "goal"
     t.string   "target_audience",    limit: 255
     t.text     "term"
-    t.integer  "status",                         default: 0,     null: false
+    t.integer  "status",                                                  default: 0,     null: false
     t.string   "image_file_name",    limit: 255
     t.string   "image_content_type", limit: 255
     t.integer  "image_file_size"
@@ -455,10 +455,10 @@ ActiveRecord::Schema.define(version: 20160326042611) do
     t.text     "complement"
     t.text     "email_subscribe"
     t.text     "email_matriculate"
-    t.boolean  "allow_queued",                   default: false, null: false
-    t.boolean  "allow_pre_enrolls",              default: true,  null: false
+    t.boolean  "allow_queued",                                            default: false, null: false
+    t.boolean  "allow_pre_enrolls",                                       default: true,  null: false
     t.integer  "workshop_plan_id"
-    t.boolean  "paid",                           default: false, null: false
+    t.boolean  "paid",                                                    default: false, null: false
   end
 
   add_index "workshops", ["user_id"], name: "index_workshops_on_user_id", using: :btree

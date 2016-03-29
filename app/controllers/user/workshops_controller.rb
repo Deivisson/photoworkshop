@@ -1,5 +1,6 @@
 class User::WorkshopsController < User::BaseController
   before_action :set_workshop, only: [:show, :edit, :update, :destroy, :publish,:marketing, :subscribe]
+  layout :set_layout
 
   def index
     get_index_type
@@ -20,27 +21,30 @@ class User::WorkshopsController < User::BaseController
   end
 
 
-  def new
-    @workshop = Workshop.new(workshop_plan_id: params[:plan_id])
-    respond_with(@workshop,layout:'/user/workshop_form')
-  end
+  # def new
+  #   @workshop = Workshop.new(workshop_plan_id: params[:plan_id])
+  #   respond_with(@workshop,layout:'/user/workshop_form')
+  # end
 
   def edit
-    respond_with(@workshop,layout:'/user/workshop_form')
+    #respond_with(@workshop,layout:'/user/workshop_form')
   end
 
-  def create
-    @workshop = current_user.owner_workshops.build(workshop_params)
-    if @workshop.save
+  # def create
+  #   @workshop = current_user.owner_workshops.build(workshop_params)
+  #   if @workshop.save
+  #     respond_with(@workshop,  location:user_workshop_path(@workshop))
+  #   else
+  #     respond_with(@workshop,layout:'/user/workshop_form')
+  #   end
+  # end
+
+  def update
+    if @workshop.update(workshop_params)
       respond_with(@workshop, location:user_workshop_path(@workshop))
     else
       respond_with(@workshop)
     end
-  end
-
-  def update
-    @workshop.update(workshop_params)
-    respond_with(@workshop, location:user_workshop_path(@workshop))
   end
 
   def destroy
@@ -78,9 +82,11 @@ class User::WorkshopsController < User::BaseController
     end
 
     def workshop_params
-      params.require(:workshop).permit(:user_id, :description, :details, :complement, :start_date, :end_date, 
-                    :vacancies_number, :value, :prerequisite, :goal, :target_audience, :term, :image,:workload,
-                    :email_subscribe, :email_matriculate,:allow_queued, :allow_pre_enrolls, :workshop_plan_id)
+        delocalize_config = {:value =>  :number }
+        params.require(:workshop).permit(:user_id, :description, :details, :complement, :start_date, :end_date, 
+                      :vacancies_number, :value, :prerequisite, :goal, :target_audience, :term, :image,:workload,
+                      :email_subscribe, :email_matriculate,:allow_queued, :allow_pre_enrolls, :workshop_plan_id).delocalize(delocalize_config)
+
     end
 
     def get_index_type
@@ -90,5 +96,9 @@ class User::WorkshopsController < User::BaseController
       else
         @type = "student" unless current_user.owner_workshops.limit(1).any?
       end
+    end
+
+    def set_layout
+      %w(edit update).include?(action_name) ? "/user/workshop_form" : "user/dashboard"
     end
 end
