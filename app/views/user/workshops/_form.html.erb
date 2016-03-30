@@ -21,9 +21,11 @@
       
       <%= f.input :details,input_html: {style:'height: 225px'} %>
 
-      <%= f.input :target_audience, placeholder:t('.target_audience_hint') %>
+      <%= f.input :target_audience, 
+                  placeholder:t('.target_audience_hint') %>
       <div class="grid2column">
-        <%= f.input :vacancies_number %>
+        <%= f.input :vacancies_number,
+                    :hint => t('.plan_limit_students',count:@workshop.plan.limit_students) %>
         <%= f.input :workload,:as => :string,placeholder:t('.workload_hint')  %>
       </div>
 

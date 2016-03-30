@@ -98,6 +98,7 @@ pt_BR:
         workload_hint: "Ex.: 16 horas"
         allow_queued_hint: "Marque esta opção e será permitido que usuários interessados realizem a pré-matrícula mesmo após já ter atingido o número de vagas, formando assim a fila de espera. Você terá todo o controle de quais candidatos estão ou não na fila de espera."
         allow_pre_enrolls_hint: "Marque esta opção para que usuários interessados em participar do workshop/curso possam realizar a pré-matrícula através do Pic2Gether. "
+        plan_limit_students:  "Máximo de %{count} vagas definido pelo plano contratado."
       new:
         title: "Novo Workshop"
       edit:
@@ -139,6 +140,12 @@ pt_BR:
       subscribe_links:
         not_opened: ""
         queue_mg: "ATENÇÃO:: Número de vagas já atingido. Clique no botão abaixo para entrar na fila de Espera."
+      owner_workshops:
+        no_workshop: "Você ainda não ministrou nenhum workshop."  
+        workshop_info: "O Pic2Gether te permite criar um espaço para seu workshop, aonde você poderá gerenciar matrículas, postar materiais, postar e avaliar atividades dos alunos e muito mais... %{link}"
+        try_workshop: "Experimente agora mesmo!"
+      my_workshops:
+        no_workshop: "Você ainda não participou de nenhum workshop."
     workshop_materials:
       new:
         title: 'Novo Material'

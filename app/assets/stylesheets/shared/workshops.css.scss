@@ -90,6 +90,24 @@ ul.workshops-items {
 	  position: absolute;
 	  margin: -13px 0 0 950px;
   }
+  p.no-record {
+  	color: #424141;
+  	right: 250px;
+  	span {
+  		color: #878787;
+  		display: table;
+  		font-size: 18px;
+  		line-height: 22px;
+  		text-align: center;
+  		width: 100%;
+  		margin-top: 10px;
+  		a {
+  			color: #32A6D3 !important;
+  			font-size: 18px;
+  		}
+
+  	}
+  }
 }
 
 ul.workshop-students, 

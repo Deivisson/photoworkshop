@@ -1,5 +1,11 @@
 $(document).on('ready page:load', function (){
-	$("#workshop-plans-link").click(function(e){
+	WorkshopPlansTrigger();
+});
+
+function WorkshopPlansTrigger() {
+
+	$("#workshop-plans-link, #workshop-plans-link3").unbind('click');
+	$("#workshop-plans-link, #workshop-plans-link3").bind('click',function(e){
 			var url = $(this).attr('href');
 			var dialog_form = $(getModalContainer("workshop-plans-modal-dialog",true)).dialog({
 			    autoOpen: false,
@@ -28,7 +34,9 @@ $(document).on('ready page:load', function (){
 			  e.preventDefault();  
 	});
 
-	$("#workshop-plans-link2").click(function(e){
+
+	$("#workshop-plans-link2,#workshop-plans-link3").unbind('click');
+	$("#workshop-plans-link2,#workshop-plans-link3").bind('click',function(e){
 			var url = $(this).attr('href');
 			var dialog_form = $(getModalContainer("workshop-plans-modal-dialog",true)).dialog({
 			    autoOpen: false,
@@ -53,6 +61,4 @@ $(document).on('ready page:load', function (){
 			  dialog_form.dialog('open');
 			  e.preventDefault();  
 	});
-
-});
-
+}

@@ -1,17 +1,23 @@
 <ul class="workshops-items">
-	<% @workshops.each do |workshop| %>
-		<li>
-			<div class="ribbon-wrapper">
-				<div class="ribbon ribbon-success"><%= workshop_status(workshop) %></div>
-			</div>
-			<div class="ws-image" style="background-image: url(<%= workshop.image.url(:medium)%>)">
-			</div>
-			<div class="ws-details">
-				<div class="texts">
-					<h1><%= link_to workshop.description, user_workshop_path(workshop) %></h1>
-					<p><%= workshop.details.truncate(400) unless workshop.details.nil? %></p>
+	<% if @workshops.any? %>
+		<% @workshops.each do |workshop| %>
+			<li>
+				<div class="ribbon-wrapper">
+					<div class="ribbon ribbon-success"><%= workshop_status(workshop) %></div>
 				</div>
-			</div>
-		</li>
+				<div class="ws-image" style="background-image: url(<%= workshop.image.url(:medium)%>)">
+				</div>
+				<div class="ws-details">
+					<div class="texts">
+						<h1><%= link_to workshop.description, user_workshop_path(workshop) %></h1>
+						<p><%= workshop.details.truncate(400) unless workshop.details.nil? %></p>
+					</div>
+				</div>
+			</li>
+		<% end %>
+	<% else %>
+		<p class="no-record">
+			<%= t('.no_workshop') %>
+		</p>
 	<% end %>
 </ul>

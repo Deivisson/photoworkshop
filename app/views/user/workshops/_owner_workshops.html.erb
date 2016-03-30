@@ -1,31 +1,41 @@
 <ul class="workshops-items">
-	<% @workshops.each do |workshop| %>
-		<li>
-			<div class="ribbon-wrapper">
-				<div class="ribbon ribbon-success"><%= workshop_status(workshop) %></div>
-			</div>
-			<div class="ws-image" style="background-image: url(<%= workshop.image.url(:medium)%>)">
-			</div>
-			<div class="ws-details">
-				<div class="texts">
-					<h1><%= link_to workshop.description, user_workshop_path(workshop) %></h1>
-					<p><%= workshop.details.truncate(400) unless workshop.details.nil?  %></p>
+	<% if @workshops.any? %>
+		<% @workshops.each do |workshop| %>
+			<li>
+				<div class="ribbon-wrapper">
+					<div class="ribbon ribbon-success"><%= workshop_status(workshop) %></div>
 				</div>
-				<div class="workshop-resume">
-					<div class="resume-item">
-						<h4>Início</h4>
-						<span><%= format_date(workshop.start_date) %></span>
+				<div class="ws-image" style="background-image: url(<%= workshop.image.url(:medium)%>)">
+				</div>
+				<div class="ws-details">
+					<div class="texts">
+						<h1><%= link_to workshop.description, user_workshop_path(workshop) %></h1>
+						<p><%= workshop.details.truncate(400) unless workshop.details.nil?  %></p>
 					</div>
-					<div class="resume-item">
-						<h4>Numero Vagas</h4>
-						<span><%= workshop.vacancies_number %></span>
-					</div>
-					<div class="resume-item">
-						<h4>Investimento</h4>
-						<span><%= number_to_currency(workshop.value) %></span>
+					<div class="workshop-resume">
+						<div class="resume-item">
+							<h4>Início</h4>
+							<span><%= format_date(workshop.start_date) %></span>
+						</div>
+						<div class="resume-item">
+							<h4>Numero Vagas</h4>
+							<span><%= workshop.vacancies_number %></span>
+						</div>
+						<div class="resume-item">
+							<h4>Investimento</h4>
+							<span><%= number_to_currency(workshop.value) %></span>
+						</div>
 					</div>
 				</div>
-			</div>
-		</li>
+			</li>
+		<% end %>
+	<% else %>
+		<p class="no-record">
+			<%= t('.no_workshop') %>
+			<span>
+				<%= t('.workshop_info',
+							link: link_to(t('.try_workshop'), user_workshop_plans_path,id:'workshop-plans-link3')).html_safe %>
+			</span>			
+		</p>
 	<% end %>
 </ul>
