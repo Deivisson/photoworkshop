@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pic2Gether</title>
+  <%= stylesheet_link_tag    'home', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'home', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="awards-page">
+	<div class="welcome-header" id="welcome-header">
+		<div class="logo-container">
+			<%= link_to image_tag("shared/logo_black.png"), root_path %>
+		</div>
+		<div class="flash_container">
+			<%- flash.each do |name, msg| %>
+		    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+		  <%- end %>
+		</div>
+	</div>
+	<div class="awards-info">
+		<%= yield %>
+	</div>
+</body>
+</html>
