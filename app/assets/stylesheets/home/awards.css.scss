@@ -13,6 +13,13 @@ body.awards-page {
 
 .awards-page {
 	overflow: auto;
+	margin-bottom: 5px;
+	.btn {
+		float: left;
+		margin: 60px 10px 0 0; 
+
+
+	}
 	.awards-info {
 	  background-color: #FFF;
 	  border-radius: 10px; 
@@ -40,14 +47,19 @@ body.awards-page {
 		box-shadow:         0px 1px 6px 0px rgba(50, 50, 50, 0.75);
 		height: 350px;
 		width: 960px;
+		.btn {
+			float: right;
+			margin: 327px 20px 0 0;
+		}
 	}
 	.awards-info .textbox {
 		float: left;
 		width: 100%;
-		margin-top: 20px;
+		margin-top: 40px;
 		h1 {
 			
 			font-size: 20px;
+			margin-bottom: 20px;
 		}
 		p {
 			color: #777;
@@ -55,6 +67,13 @@ body.awards-page {
 			line-height: 24px;
 			margin-top: 10px;
 			text-align: justify;
+			a {
+				color: #65ABD4;
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				};
+			}
 		}
 		.col1,.col2 {
 			width: 45%;

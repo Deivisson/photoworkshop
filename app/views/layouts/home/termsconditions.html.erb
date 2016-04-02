@@ -16,6 +16,11 @@
 		    <%= content_tag :div, msg, :id => "flash_#{name}" %>
 		  <%- end %>
 		</div>
+		<div class="account-buttons">
+			<%= link_to t('home.welcome.menu.login'), new_user_session_path %>
+			<%= link_to t('home.welcome.menu.sign_up').html_safe,"#",class:'sign-up',
+									 id:"sign-up-link",target:'welcome-sign-up' %>
+		</div>
 	</div>
 	<div class="terms-conditions-page">
 		<div class="terms-conditions">
