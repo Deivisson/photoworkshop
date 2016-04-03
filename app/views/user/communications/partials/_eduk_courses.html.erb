@@ -1,0 +1,23 @@
+<span class="greetings">
+	Olá <%= current_user.profile.full_name %>,<br><br>
+</span>
+<p>
+	Falta pouco para você concorrer a uma Assinatura de 1(um) ano do Plano Básico da Eduk dos cursos de Design e Fotografia. Você terá acesso a mais de 90 cursos relacionados ao assunto. Uma ótima oportunidade de aprendizado e atualização.
+	<br><br>
+	Para confirmar a sua participação basta clicar no botão abaixo e postar suas imagens! Lembrando, que quanto mais você postar, maiores são as chances de ser o ganhador. 
+	Confira o 
+	<%= link_to "Regularmento",pic2gether_awards_path("eduk_courses"),target:'_blank' %> 
+	de Participação.
+</p>
+
+<br><br>
+<%= link_to "Ok, quero participar",
+						user_communications_path(id:@communication),
+						class:"btn btn-success", method: :post,
+						style:"float:left", remote:true %>
+
+<%= link_to "Não quero participar do Sorteio",
+						user_communications_path(id:@communication,tag:'refuse'),	
+						data: {confirm:'Confirma a não Participação ?'},
+						class:"btn btn-important", remote:true,method: :post,
+						style:"float:right" %>

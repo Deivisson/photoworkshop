@@ -27,7 +27,7 @@ module ApplicationHelper
 
       content = (content.nil? ? model_instance.send(attribute) : content)
       if as_link
-        inner_html << link_to(content,content,target:"_blank")
+        inner_html << link_to(content,content,target:"_blank") unless content.nil?
       else
         inner_html << content_tag(:span,content)
       end

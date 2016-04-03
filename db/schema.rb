@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160329014844) do
+ActiveRecord::Schema.define(version: 20160402201050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,19 @@ ActiveRecord::Schema.define(version: 20160329014844) do
   end
 
   add_index "cities", ["state_id"], name: "index_cities_on_state_id", using: :btree
+
+  create_table "communications", force: :cascade do |t|
+    t.string   "description",     null: false
+    t.string   "partial_name",    null: false
+    t.datetime "expiration_date"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "communications_users", id: false, force: :cascade do |t|
+    t.integer "communication_id", null: false
+    t.integer "user_id",          null: false
+  end
 
   create_table "countries", force: :cascade do |t|
     t.string   "name",       limit: 100
@@ -355,12 +368,12 @@ ActiveRecord::Schema.define(version: 20160329014844) do
   add_index "user_relations", ["user_id"], name: "index_user_relations_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "",   null: false
-    t.string   "encrypted_password",     limit: 255, default: "",   null: false
+    t.string   "email",                  limit: 255, default: "",    null: false
+    t.string   "encrypted_password",     limit: 255, default: "",    null: false
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                      default: 0,    null: false
+    t.integer  "sign_in_count",                      default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255
@@ -368,7 +381,8 @@ ActiveRecord::Schema.define(version: 20160329014844) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "first_login",                        default: true
-    t.integer  "current_points",                     default: 0,    null: false
+    t.integer  "current_points",                     default: 0,     null: false
+    t.boolean  "refuse_eduk_award",                  default: false, null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

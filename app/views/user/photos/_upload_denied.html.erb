@@ -5,21 +5,22 @@
 <div class="end-limit-upload-photo">
 	<p>
 		<span class="ops-face">;-(</span>
-		Ops, Você atingiu seu limite diário de postagem de novas fotos! Saiba como aumentar este limite: 
+		Ops, Você atingiu seu limite diário de postagem de novas fotos! Veja o que você pode fazer para ganhar postagens extras: 
 	</p>
 
 
 	<% if !current_user.profile.facebook_shared? || !current_user.profile.twitter_shared? %>
-		<ul class="social-network">
-	  	<h1><%= t(".share") %></h1>
+		<ul class="increase-limit-way">
 	  	<li>
+	  		<h1><%= t(".share") %></h1>
 		    <%= link_to t('.facebook_share'),"#", class:'btn btn-bigger facebook-button',
 	            onclick:"FacebookShare(undefined,'Inspire-se e torne-se cada vez melhor.','share_pic2gether');" unless current_user.profile.facebook_shared? %>
-	    </li>
-	  	<li>
-		    <%= link_to t('.twitter_share'),
+        <%= link_to t('.twitter_share'),
 	        'http://twitter.com/home?status=Confira Pic2Gether, feito p/ quem gosta de fotografia! Ganhe prêmios, exposição e muitas inspirações. pic2Gether.com' , target:'_blank', class:'btn btn-bigger twitter-button',
 	          onclick:"TwitterShare('share_pic2gether');" unless current_user.profile.twitter_shared? %>
+	    </li>
+	  	<li>
+		    <h1><%= t(".invite_friends") %></h1>
 	    </li>
 	  </ul>
   <% end %>

@@ -1,0 +1,18 @@
+.communication-container {
+	span.greetings {
+		font-size: 24px;
+	}
+	p {
+		color: #777;
+		font-size: 18px;
+		line-height: 27px;
+		text-align: justify;
+		a {
+			color: #65ABD4;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			};
+		}
+	}
+}

@@ -4,7 +4,7 @@ class UserProfile < ActiveRecord::Base
 
   validates :user_name, presence:true, uniqueness:true
   validates :full_name, presence:true, length: {maximum:100}
-  validate :verify_urls
+  validate :verify_urls, on: :update
   
   has_attached_file :avatar, 
                     :styles => { :medium => "500x500>", :thumb => "200x200>" }, 

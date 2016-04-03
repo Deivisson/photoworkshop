@@ -8,6 +8,12 @@ var tourHome = {
     closeTooltip: "Fechar",
     stepNums : ["1", "2", "3"]
   },
+  onEnd: function() {
+    ShowCommunication();
+  },
+  onClose: function() {
+    ShowCommunication();
+  },
   steps: [
     {
       title: "Poste suas fotos",

@@ -81,6 +81,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:create, :show, :index] do 
       get :check_payment
     end
+    resources :communications, only:[:show,:create]
   end
   
   namespace :home do
@@ -91,7 +92,7 @@ Rails.application.routes.draw do
     get "user_profile/:user_name/check_user_name", to: "user_profile#check_user_name", as: :check_user_name
     get "user_profile/:full_name/format_user_name", to: "user_profile#format_user_name", as: :format_user_name
   end
-  get "awards/:name", to: "home/awards#index"
+  get "awards/:name", to: "home/awards#index", as: :pic2gether_awards
   
   namespace :public do
     #resources :portfolio, only:[:index]

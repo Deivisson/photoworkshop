@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   #user's photos
   has_many :photos
-  has_one :profile, class_name:'UserProfile'
+  has_one :profile, class_name:'UserProfile',dependent: :destroy
 
   #Likes associations. Photos liked by user
   has_many :photo_likes
@@ -23,18 +23,20 @@ class User < ActiveRecord::Base
   has_many :workshop_students
   has_many :my_workshops, -> { where("workshop_students.confirmed" => true) }, through: :workshop_students
   has_many :photo_comments
-  has_many :auths, class_name:"UserAuth"
+  has_many :auths, class_name:"UserAuth",dependent: :destroy
   has_many :activity_responses, class_name: "WorkshopActivityResponse"
   has_many :notifications_sent, class_name: "Notification", foreign_key: 'user_sender_id'
-  has_many :notifications_received, class_name: "Notification", foreign_key: 'user_receiver_id'
+  has_many :notifications_received, class_name: "Notification", foreign_key: 'user_receiver_id', dependent: :destroy
   has_many :favorite_photos
-  has_many :points, class_name: "UserPoint"
+  has_many :points, class_name: "UserPoint",dependent: :destroy
   has_many :photo_ratings
   has_many :portfolio_templates, class_name: 'UserPortfolioTemplate'
   has_many :photo_views
   has_many :orders
   
+
   has_and_belongs_to_many :categories
+  has_and_belongs_to_many :communications
 
   before_create :set_default_data
   after_create :create_profile, :send_welcome_notification, :save_user_points
@@ -77,6 +79,7 @@ class User < ActiveRecord::Base
   end
 
   def self.from_omniauth(auth)
+    puts auth[:email]
     user_auth = UserAuth.where(provider: auth[:provider], uid: auth[:uid]).first
     if user_auth.nil?
       user = User.where(email: auth[:email]).first || User.new
@@ -90,7 +93,9 @@ class User < ActiveRecord::Base
       user.auth_uid         = auth[:uid]
       user.email            = auth[:email]
       user.account_url      = auth[:account_url]
+      puts "Tem error -> #{user.errors.full_messages}"
       user.save if user.email.present?
+      
     else
       user = user_auth.user
     end
@@ -150,6 +155,13 @@ class User < ActiveRecord::Base
   def can_test_workshop?
     [1,9,20,17].include?(self.id)
   end
+
+  def pending_communication
+    communication = Communication.where("id not in (select communication_id from communications_users where user_id = ?)",self.id)
+    communication = communication.where("(expiration_date is null or expiration_date > ?)",Time.now)
+    communication.first
+  end
+
 private
 
 	def set_default_data
@@ -157,11 +169,13 @@ private
   end
 
 	def create_profile
- 		self.profile = UserProfile.new(
-      { user_name: user_name,
-        full_name: full_name, 
-        avatar_remote_url: auth_avatar_url
-      })
+    attributes = {
+      user_id: self.id,  
+      user_name: user_name,
+      full_name: full_name, 
+      avatar_remote_url: auth_avatar_url
+    }
+    UserProfile.create!(attributes)
 	end
 
   def save_user_points

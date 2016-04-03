@@ -41,6 +41,7 @@
 //= require user/rankings
 //= require user/order
 //= require user/workshop_plans
+//= require user/communication
 //= require jquery_price_format
 //= require jquery.maskedinput-1.3.min
 //= require tinymce

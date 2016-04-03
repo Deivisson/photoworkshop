@@ -5,6 +5,7 @@ class User::HomeController < User::BaseController
 		@photographers_to_follow = current_user.suggest_to_follow
 		@workshops = Workshop.to_promote(current_user.id)
 		@ranking_users = User.order("current_points desc").limit(4)
+		@communication = current_user.pending_communication
 		@current_menu = "home"
 		render layout:'user/home'
 	end

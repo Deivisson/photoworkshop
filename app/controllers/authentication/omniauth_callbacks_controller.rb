@@ -8,7 +8,7 @@ class Authentication::OmniauthCallbacksController < Devise::OmniauthCallbacksCon
       email:      auth.info.email,
       full_name:  auth.info.name,
       user_name:  auth.info.name,
-      avatar_url: auth.info.image,
+      avatar_url: get_avatar_url(auth),
       account_url: get_account_url(auth)
     }
     @user = User.from_omniauth(auth_params)
@@ -33,5 +33,15 @@ class Authentication::OmniauthCallbacksController < Devise::OmniauthCallbacksCon
       url = "https://www.facebook.com/#{auth.uid}"
     end
     url
+  end
+
+  def get_avatar_url(auth)
+    url = ""
+    if auth.provider == "twitter"
+      url = auth.info.image
+    elsif auth.provider == "facebook"
+      url = "https://graph.facebook.com/#{auth.uid}/picture?type=large"
+    end
+    return url
   end
 end

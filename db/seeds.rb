@@ -94,12 +94,21 @@ portfolio_templates = [
   {i18n_key:'portfolio_templates.free.simple_gallery',       active:true, price:'0', free:true, settings:'[{"css_class":"portfolio-simple-gallery"}]'}
 ].each{|template| PortfolioTemplate.create!(template)} if PortfolioTemplate.first.nil?
 
+
+#Comunications
+communications = [
+  {description:'Sorteio de Assinatura Eduk - Lancamento Pic2Gether',partial_name:'eduk_courses',expiration_date:'2016-04-24 23:59:59'}
+].each do |communication|
+  Communication.where(communication).first_or_create
+end
+
 # #
 # #Temporary and should remove after execute
-WorkshopPlan.all.each do |wp|
-  wp.settings = wp.settings.gsub("participants","students")
-  wp.save
-end
+
+# WorkshopPlan.all.each do |wp|
+#   wp.settings = wp.settings.gsub("participants","students")
+#   wp.save
+# end
 
 # UserProfile.all.each do |up|
 #   _name = up.user_name.blank? ? up.full_name.dup : up.user_name
