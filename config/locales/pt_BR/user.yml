@@ -41,10 +41,10 @@ pt_BR:
         photo_info: "Informações"
         cancel_upload: "Cancelar Upload"
       upload_denied:
-        share: "1 - Compartilhe o Pic2Gether e ganhe mais 1 postagem diária para em cada rede compartilhada."
+        share: "Compartilhe o Pic2Gether e ganhe mais 1 postagem diária para em cada rede compartilhada."
         facebook_share: "Compartilhar no Facebook"
         twitter_share: "Compartilhar no Twitter"
-        invite_friends: "2 - Convide Amigos"
+        invite_friends: "Convide Amigos"
     photo_comments:
       form:
         comment_box_placeholder: "Deixe o seu comentário"
@@ -215,6 +215,9 @@ pt_BR:
         limit_materials: "Disponibilização materiais (máximo %{value});"
         limit_activities: "Cadastro atividades (máximo %{value});"
         limit_activity : "Ilimitado"
+    invited_friends:
+      form:
+        email_hint: "Envie email para o seu amigo e após ele se tornar um usuário do Pic2Gether você ganhará mais uma postagem diária para cada amigo que se cadastrar."
     orders:
       pagseguro:
         status:
@@ -355,6 +358,8 @@ pt_BR:
         team: "Equipe Pic2Gether." 
         info: "Incialmente, o Pic2Gether lhe permitirá postar <strong>1 foto</strong> por dia. <u>Mas não se preocupe</u> existem várias formas de você ganhar mais postagens. Veja como:"
         how_win_photo_uploads: "<span></span>Compartilhando sobre o Pic2Gether nas redes socias(<i>somente é valido os compatilhamentos dentro da aplicação</i>);<br><span></span>Convidando Amigos;"
+    invite_friends:
+      invited_success: "Convite enviado com sucesso! Convide outro :-)"
     notification_mailer:
       change_level_message:
         title: "Mudança de Nível"
@@ -369,3 +374,9 @@ pt_BR:
       workshop_paid_message:
         title: "Compra Gerenciamento Workshop"
         message: "A sua compra foi realizada com sucesso e o %{link} já esta disponível para configuração."
+      invited_friend_message:
+        title: "Conheça o Pic2Gether"
+        hi: "Olá %{email}, "
+        message: "O seu amigo %{user_name}, está lhe convidando a conhecer o Pic2Gether.com. <br><br>Pic2Gether foi feito para os apaixonados pela Fotografia, um excelente ambiente de exposição para sua arte e um local de muitas inspirações."
+        visit_site: "Acesse e confira %{link}"
+        sign_up_link: "Se cadastre clicando %{link}."

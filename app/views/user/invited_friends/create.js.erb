@@ -1,0 +1,7 @@
+<% if @invited_friend.errors.any? %>
+	alert("<%= @invited_friend.errors.full_messages.to_sentence %>");
+<% else %>
+	$("#invited-friend-container").html("<%= j render('/user/invited_friends/form') %>");
+	flashNoticeMessage("<%= I18n.t('user.invite_friends.invited_success') %>")
+<% end %>
+$("#invited-friend-email").focus();

@@ -33,13 +33,13 @@ class User < ActiveRecord::Base
   has_many :portfolio_templates, class_name: 'UserPortfolioTemplate'
   has_many :photo_views
   has_many :orders
-  
+  has_many :invited_friends
 
   has_and_belongs_to_many :categories
   has_and_belongs_to_many :communications
 
   before_create :set_default_data
-  after_create :create_profile, :send_welcome_notification, :save_user_points
+  after_create :create_profile, :send_welcome_notification, :save_user_points, :verify_if_was_invited
   after_save :create_user_auth
 
   attr_accessor :following, :full_name, :user_name, :unread_notifications_count, :favorited_photos_ids, :level
@@ -79,7 +79,6 @@ class User < ActiveRecord::Base
   end
 
   def self.from_omniauth(auth)
-    puts auth[:email]
     user_auth = UserAuth.where(provider: auth[:provider], uid: auth[:uid]).first
     if user_auth.nil?
       user = User.where(email: auth[:email]).first || User.new
@@ -93,9 +92,7 @@ class User < ActiveRecord::Base
       user.auth_uid         = auth[:uid]
       user.email            = auth[:email]
       user.account_url      = auth[:account_url]
-      puts "Tem error -> #{user.errors.full_messages}"
       user.save if user.email.present?
-      
     else
       user = user_auth.user
     end
@@ -200,6 +197,30 @@ private
         user_auth = UserAuth.new({user_id: id,provider: auth_provider,uid: auth_uid,account_url: account_url})
         user_auth.save
       end
+    end
+  end
+
+  def verify_if_was_invited
+    invited_friends = InvitedFriend.where("email = ? and friend_id is null ", self.email)
+    invited_friends.each do |invite|
+      invite.friend_id = self.id
+      invite.save!
+
+      #update limit of upload for the user
+      user = invite.user
+      limit_count = user.profile.limit_upload_photo_by_day + 1
+      user.profile.limit_upload_photo_by_day = limit_count
+      user.profile.save
+
+      #notificate user
+      attributes = {
+        content: I18n.t('notifications.invited_friend_became_user',user_name:user.profile.full_name,limit:limit_count),
+        type_of: Notification::TYPE_INVITED_FRIEND,
+        user_sender_id: SYSTEM_USER,
+        user_receiver_id: invite.user_id,
+        read:false
+      }
+      Notification.create!(attributes)
     end
   end
 end

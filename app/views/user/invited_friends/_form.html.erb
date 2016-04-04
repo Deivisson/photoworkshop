@@ -1,0 +1,11 @@
+<%= semantic_form_for [:user,InvitedFriend.new], remote:true do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :email, 
+                :as => :email,
+  							:input_html => {
+  							  id:"invited-friend-email"
+								},
+								:hint => t('.email_hint') %>
+  <% end %>
+  <%= submit_button f, label:t('buttons.send_invite') %>
+<% end %>

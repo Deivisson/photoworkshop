@@ -430,16 +430,27 @@ input.camera-field {
 }
 
 .end-limit-upload-photo ul.increase-limit-way {
-	float: left;
-	margin: 30px 0 0 110px;
+  float: left;
+  margin: 30px 0 0 110px;
+  width: 667px;
 	h1 {
 		font-size: 18px;
 		margin-bottom: 10px;
 	}
 	li {
+	 	border-bottom: 1px dashed #d3d0d6;
+    float: left;
+    margin: 0 20px 20px 0;
+    padding-bottom: 21px;
+    width: 100%;
+	}
+	li:last-child {
+		border: 0;
+	};
+	.submit-button {
 		float: left;
-		margin: 0 20px 40px 0;
-		width: auto;
+    margin: -36px 0 0;
+    position: relative;
 	}
 }
 

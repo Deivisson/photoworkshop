@@ -2,6 +2,7 @@ pt_BR:
   activerecord:
     errors:
       messages:
+        invalid_email: "Email inválido."
         inclusion: "Não é um valor válido. Não incluso nas opções dada."
         exclusion: "is reserved"
         invalid: "é inválido"
@@ -33,6 +34,8 @@ pt_BR:
         limit_students_plan_end: "De acordo com o plano contratado, você atingiu o número máximo de alunos permitidos."
         limit_materials_plan_end: "De acordo com o plano contratado, o limite de postagens de materiais chegou ao fim."
         limit_activities_plan_end: "De acordo com o plano contratado, o limite de postagem de atividades chegou ao fim."
+        invited_friend_already_registered: "Já existe usuário cadastrado com este email."
+        invited_friend_already_sended: "Você já convidou uma pessoa com este email."
     models:
       user:
         one: "Usuário"

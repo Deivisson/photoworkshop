@@ -13,6 +13,7 @@ class Notification < ActiveRecord::Base
 
   TYPE_CHANGE_LEVEL = 20
 
+  TYPE_INVITED_FRIEND = 30 
 	validates :content, presence:true
 	validates :type_of, presence:true
 	validates :user_sender_id, presence:true

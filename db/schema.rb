@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160402201050) do
+ActiveRecord::Schema.define(version: 20160403213922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,16 @@ ActiveRecord::Schema.define(version: 20160402201050) do
 
   add_index "favorite_photos", ["photo_id"], name: "index_favorite_photos_on_photo_id", using: :btree
   add_index "favorite_photos", ["user_id"], name: "index_favorite_photos_on_user_id", using: :btree
+
+  create_table "invited_friends", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.string   "email",      null: false
+    t.integer  "friend_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "invited_friends", ["user_id"], name: "index_invited_friends_on_user_id", using: :btree
 
   create_table "levels", force: :cascade do |t|
     t.string   "i18n_key"
@@ -481,6 +491,8 @@ ActiveRecord::Schema.define(version: 20160402201050) do
   add_foreign_key "cities", "states", name: "cities_states"
   add_foreign_key "favorite_photos", "photos"
   add_foreign_key "favorite_photos", "users"
+  add_foreign_key "invited_friends", "users"
+  add_foreign_key "invited_friends", "users", column: "friend_id", name: "fk_users_friends"
   add_foreign_key "notifications", "users", column: "user_receiver_id", name: "notifications_receiver_user"
   add_foreign_key "notifications", "users", column: "user_sender_id", name: "notifications_sender_user"
   add_foreign_key "order_payment_histories", "orders"

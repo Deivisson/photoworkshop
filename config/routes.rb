@@ -82,6 +82,7 @@ Rails.application.routes.draw do
       get :check_payment
     end
     resources :communications, only:[:show,:create]
+    resources :invited_friends, only:[:create]
   end
   
   namespace :home do

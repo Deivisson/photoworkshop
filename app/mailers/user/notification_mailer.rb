@@ -32,4 +32,12 @@ class User::NotificationMailer < ActionMailer::Base
          :subject   => I18n.t('mailer_subjects.workshop_paid'),
          :reply_to  => "<team@pic2gether.com>")
   end
+
+  def invited_friend_message(invited_friend)
+    @invited_friend = invited_friend
+    mail(:to        => @invited_friend.email, 
+         :subject   => I18n.t('mailer_subjects.invited_friend'),
+         :reply_to  => "<team@pic2gether.com>")
+  end
+
 end

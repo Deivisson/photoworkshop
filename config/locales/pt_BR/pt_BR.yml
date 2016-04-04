@@ -89,6 +89,8 @@ pt_BR:
     change_level: "Mudança de Nível"
     photo_covered: "Capa do Pic2Gether"
     reward: "Recompensa"
+    workshop_paid: "Compra Gerenciamento Workshop"
+    invited_friend: "Convite Pic2Gether"
   notifications:
     team_welcome: "A equipe <strong>Pic2Gether</strong> lhe deseja boas vindas, e estamos ansiosos para conhecer a sua arte."
     followed: "%{follower} começou seguir você."
@@ -100,6 +102,7 @@ pt_BR:
     photo_like: '<span class="text-with-pic">%{user} curtiu a sua Foto. %{photo}'
     user_change_level: "Parabéns!! Você acabou de subir de nível, deixou de ser %{old_level} e passou a ser %{new_level}."
     photo_covered: '<span class="text-with-pic">Que legal, sua foto foi selecionada como Capa do Pic2Gether e com  isto você ganhou %{points} pontos. %{photo}'    
+    invited_friend_became_user: "O seu convidado %{user_name} acabou de se tornar um usuário Pic2Gether, e você acabou de ganhar o bônus, para postar mais uma foto diária. O seu limite atual é de %{limit} postagens."
   share_messages:
     share_photo: "Pic2Gether, confira que fotografia incrível %{url}"
   
