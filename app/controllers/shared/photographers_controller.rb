@@ -1,18 +1,25 @@
 class Shared::PhotographersController < ApplicationController
 	before_action :set_user
+	before_action :load_resources, only: [:index]
 	before_action :get_photos, only: [:photos,:show]
 
 	#For the index method, the @user is current user
 	def index
-		@users = User.joins(:profile).paginate(page: params[:page], per_page: 30)
+		if params[:conditions].present? && params[:conditions][:state_id].present?
+			@users = User.joins(:profile => :city)
+		else
+			@users = User.joins(:profile)
+		end
+		@users = @users.paginate(page: params[:page], per_page: 30)
 		@users = @users.where("users.id <> ?",current_user.id)
-		if params[:search].present?
-			@users = @users.where("user_profiles.user_name like ?","%#{params[:search]}%") 
+		@users = @users.where("user_profiles.user_name like ?","%#{params[:search]}%") if params[:search].present?
+		if params[:conditions].present?
+			@users = @users.where("cities.state_id = ?", params[:conditions][:state_id].to_i) if params[:conditions][:state_id].present?
+			@users = @users.where("user_profiles.city_id = ?", params[:conditions][:city_id].to_i) if params[:conditions][:city_id].present?
+			@users = @users.where("user_profiles.available_for_employment = true") if params[:conditions][:available_for_employment].present?
+			@users = @users.where("user_profiles.available_for_freelance = true") if params[:conditions][:available_for_freelance].present?
 		end
-		if params[:category_id].present?
-			@users = @users.where("user_profiles.category_id = ?", params[:category_id])
-		end
-		@categories	= Category.all
+		@users = @users.where("user_profiles.category_id = ?", params[:category_id]) if params[:category_id].present?
 		@paging = params[:page].present?
 		@current_menu = "photographers"
 		render layout:'user/explorer'
@@ -78,5 +85,11 @@ private
 
 	def get_photos
 		@photos = @user.photos.limit(16)
+	end
+
+	def load_resources
+		@categories	= Category.all
+    @states = State.all
+    @cities =  []
 	end
 end

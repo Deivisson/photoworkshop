@@ -44,7 +44,8 @@ class User::UserProfilesController < User::BaseController
     def user_profile_params
       params.require(:user_profile).permit(:category_id, :description, :work, 
         :country_id, :state_id, :city_id, :camera, :home_page, :facebook,:twitter,
-        :tumblr,:flickr,:google_plus,:avatar, :user_name, :full_name)
+        :tumblr,:flickr,:google_plus,:avatar, :user_name, :full_name,:available_for_employment,
+        :available_for_freelance)
     end
 
     def load_resources

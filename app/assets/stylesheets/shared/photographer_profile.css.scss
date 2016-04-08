@@ -362,3 +362,14 @@ ul.users-photographers {
 		}
 	} 
 }
+
+ul.photographer-search-form {
+	li.checkbox-field {
+		margin-bottom: 9px;
+		label {
+			cursor: pointer;
+			margin: 4px 0 0;
+	    width: 196px;
+		}
+	}
+}

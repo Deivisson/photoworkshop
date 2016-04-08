@@ -52,8 +52,8 @@ pt_BR:
     attributes:
       user_profile:
         description: "Biografia"
-        category_id: "Categoria"
-        work: "Trabalho"
+        category_id: "Categoria Principal"
+        work: "Trabalho s"
         camera: "Camera"
         home_page: "Home Page"
         country_id: "País"
@@ -62,6 +62,8 @@ pt_BR:
         avatar: "Foto Perfil"
         full_name: "Nome + Sobrenome"
         user_name: "Username"
+        available_for_freelance: "Disponível para Trabalho FreeLancer"
+        available_for_employment: "Em busca de oportunidade de Emprego"
       photo:
         title: "Título"
         description: "Descrição"

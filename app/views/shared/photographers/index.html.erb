@@ -21,6 +21,46 @@
 	</ul>
 <% end %>
 
+<% content_for :search_form do %>
+	<%= form_tag user_photographers_path, method: :get, remote:true do |f| %>
+  	<ul class="float-panel photographer-search-form">
+			<label>
+				<%= t('user.shared.photographers.index.search_photographer') %>
+			</label>
+			<li>
+				<%= select_tag "country_id", 
+						options_from_collection_for_select(Country.all, "id", "name"),
+						id:"country-select" %>
+			</li>
+			<li>
+	    	<%= select_tag "conditions[state_id]", 
+							options_from_collection_for_select(State.all, "id", "name"),
+							id:"states-select" %>
+	    </li>
+	    <li>
+	    	<%= select_tag "conditions[city_id]", 
+								options_from_collection_for_select([], "id", "name"),
+								id:"cities-select" %>
+	    </li>
+	    <li class="checkbox-field">
+	    	<%= check_box_tag "conditions[available_for_employment]" %>
+	    	<label for="conditions_available_for_employment">
+	    		<%= ta UserProfile, :available_for_employment %>
+	    	</label>
+	    </li>
+	    <li class="checkbox-field">
+	    	<%= check_box_tag "conditions[available_for_freelance]" %>
+	    	<label for="conditions_available_for_freelance">
+	    		<%= ta UserProfile, :available_for_freelance %>
+	    	</label>
+	    </li>
+	    <li>
+    		<%= submit_tag t("buttons.search"),class:'btn' %>
+  		</li>
+    </ul>
+  <% end %>
+<% end %>
+
 <%= content_tag :div, id:"photographers-container" do %>
 	<div id="photographers-items">
 		<%= render "photographers" %>

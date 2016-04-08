@@ -1,4 +1,4 @@
-ul.categories-list {
+ul.float-panel {
   background-color: #fff;
   border: 1px solid #ddd;
   float: left;
@@ -22,7 +22,7 @@ ul.categories-list {
 	}
 }
 
-/*ul.exif-search-fields {
+ul.float-panel {
 	label {
 		color: #8f8f8f;
     float: left;
@@ -38,10 +38,13 @@ ul.categories-list {
 		float: left;
 		width: 218px;
 		margin-bottom: 2px;
-		input {
+		input[type="text"],select {
 			float: left;
 			height: 22px;
 		 	width: 211px;
+		}
+		select {
+			height: 30px;
 		}
 		input.btn {
 			float: right;
@@ -49,30 +52,17 @@ ul.categories-list {
 	    padding: 0;
 	    width: auto;
 		}
-	}
-}*/
-
-.grid-styles {
-	background-color: #fff;
-  border: 1px solid #ddd;
-	border-radius: 5px; 
-	-moz-border-radius: 5px; 
-	-webkit-border-radius: 5px;  
-	height: auto;
-	width: 35px;
-	position: fixed;
-	right: 10px;
-	top: 60px;
-	padding-bottom: 2px;
-	a {
-    float: left;
-    height: 26px;
-    margin: 2px 2px 2px 6px;
-    opacity: 0.5;
-    transition:All 0.6s ease; 
-    width: 28px;
-    &:hover, &.selected {
-    	opacity: 1;
-    };
+		&.checkbox-field {
+			input[type="checkbox"] {
+				float: left;
+			}
+			label {
+				color: #333;
+		    float: left;
+		    font-weight: normal;
+		    padding: 0;
+		    text-transform: none;
+			}
+		}
 	}
 }
