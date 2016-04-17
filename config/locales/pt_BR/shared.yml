@@ -17,4 +17,9 @@ pt_BR:
         unfollow: "Parar de Seguir"
       full_profile:
         share_message: "Conheça o perfil de %{full_name}, fotógrafo Pic2Gether. %{link}"
+      search_form:
+        search_photographer: "Encontre Fotógrafos"
+      photographers:
+        no_photographers: "Fotógrafos não Localizados<br>"
+        no_photographer_info: "Altere as opções de filtros e realize nova pesquisa."        
   portfolio:

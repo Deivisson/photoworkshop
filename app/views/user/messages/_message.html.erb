@@ -1,0 +1,10 @@
+<li>
+	<% class_name = (message.user_sender_id == current_user.id ? "my" : "other") %>
+	<%= content_tag :div, class:"message #{class_name}" do %>
+		<%= image_tag message.sender.profile.avatar.url(:thumb),class:"user-avatar-rounded" %>
+		<%= content_tag :p, message.content %>
+		<span class="timestamp">
+			<%= time_ago_in_words(message.created_at) %>
+		</span>
+	<% end %>
+</li>

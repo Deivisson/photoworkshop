@@ -7,7 +7,12 @@ class User::CommunicationsController < User::BaseController
 	def create
 		unless @communication.nil?
 			current_user.communications << @communication
-			current_user.update_attribute(:refuse_eduk_award,true) if params[:tag] == "refuse"
+			case @communication.id
+			when 1
+				current_user.update_attribute(:refuse_eduk_award,true) if params[:tag] == "refuse"
+			when 3
+				redirect_to edit_user_profile_path(current_user) unless request.xhr?
+			end
 		end
 	end
 

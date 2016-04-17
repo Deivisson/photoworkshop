@@ -1,0 +1,12 @@
+<ul class="dropdown-menu dropdown-preview-items messages" id="messages-menu-dropdown">
+	<span class="up-arrow"></span>
+	<div class="menu-header">
+		<label class="menu-header-title"><%= t("labels.messages") %></label>
+	</div>
+	<% current_user.last_received_messages.each do |message| %>
+		<%= render partial:'user/messages/recent_message', locals:{message:message} %>
+	<% end %>
+	<li>
+		<%= link_to t('labels.see_all'),user_messages_path,class:'footer-link' %>
+	</li>
+</ul>

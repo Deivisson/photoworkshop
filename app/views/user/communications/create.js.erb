@@ -1,4 +1,6 @@
 if ($("#communication_tag").length > 0) {
 	$("#communication_tag").remove();
+	$('#communication-modal-dialog').dialog("close");
+}else if ($("#communication-alert-message").length > 0 ) {
+	$("#communication-alert-message").remove();
 }
-$('#communication-modal-dialog').dialog("close");

@@ -83,6 +83,9 @@ Rails.application.routes.draw do
     end
     resources :communications, only:[:show,:create]
     resources :invited_friends, only:[:create]
+    resources :messages, only: [:index, :show,:new,:create]
+    put "users/reset_unseen_notifications_count", to:"users#reset_unseen_notifications_count", as: :reset_unseen_notifications_count
+    put "users/reset_unseen_messages_count", to:"users#reset_unseen_messages_count", as: :reset_unseen_messages_count
   end
   
   namespace :home do

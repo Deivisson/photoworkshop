@@ -1,0 +1,13 @@
+<div class="alert alert-info">
+  <p>
+    O Pic2Gether dando uma forcinha para você conquistar um espaço no mercado da fotógrafia. 
+    Você pode configurar o seu <b>Perfil Fotográfico</b> para sinalizar o seu interesse em trabalhos
+    <b>Freelancer</b> ou até mesmo um <b>Emprego Fixo.</b>
+  </p>
+  <%= link_to "Configurar agora meu perfil",user_communications_path(id:@communication),
+          class:"btn btn-success btn-tiny", method: :post,
+          style:"float:left" %>
+  <%= link_to "Se eu precisar, configuro depois.",user_communications_path(id:@communication),
+          class:"btn btn-tiny btn-important", method: :post,
+          style:"float:left", remote:true %>            
+</div>

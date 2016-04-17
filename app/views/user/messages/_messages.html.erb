@@ -1,0 +1,15 @@
+<div class="messages-board">
+	<div class="message-header">
+		<h2><%= @user_sender.profile.full_name  %><h2>
+	</div>
+	<ul id="messages-list">
+		<%= render @messages %>
+	</ul>
+	<div class="form-container">
+		<%= form_for [:user,Message.new], remote:true do |f| %>
+			<%= f.text_area :content,id:"message-content-field" %>
+			<%= hidden_field_tag "message[user_receiver_id]",@user_sender.id %>
+			<%= f.submit t("buttons.send"), class:"btn btn-small btn-success" %>
+		<% end %>
+	</div>
+</div>

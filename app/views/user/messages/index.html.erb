@@ -1,0 +1,25 @@
+<div class="inbox-container">
+  <div class="left-col">
+    <div class="float-container menu-container">
+      <ul class="menu menu-messages" id="menu-messages">
+        <h1><%= t(".menu_title") %></h1>
+        <% @received_messages.each_with_index do |message,index| %>
+          <%= content_tag :li, class: (index == 0 ? 'selected' : "") do %>
+            <%= link_to "", 
+                user_message_path(message,user_sender_id:message.user_sender_id),remote:true %>
+            <%= image_tag message.sender.profile.avatar.url(:thumb),
+                        class:"user-avatar-rounded" %>
+            <div class="text-container">
+              <%= content_tag :label,message.sender.profile.short_name(30),class:"user-name" %>
+              <%= content_tag :p, message.content.truncate(150) %>
+            </div>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div id="message-container" class="message-container">
+    <%= render "messages" unless @messages.nil? %>
+  </div>
+</div>

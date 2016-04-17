@@ -10,7 +10,7 @@ pt_BR:
       explore: "Explorar"
       profile: "Perfil"
       me: "Me"
-      photographers: "Fotografos"
+      photographers: "Fotógrafos"
       #workshops: "Workshops"
       upload: "Upload"
       #my_portfolio: "Portifolio"
@@ -221,6 +221,13 @@ pt_BR:
     invited_friends:
       form:
         email_hint: "Envie email para o seu amigo e após ele se tornar um usuário do Pic2Gether você ganhará mais uma postagem diária para cada amigo que se cadastrar."
+    messages:
+      index: 
+        menu_title: "Mensagens Recentes"
+      new:
+        title: "Nova Mensagem"
+      form:
+        placeholder: "Escreva a mensagem"
     orders:
       pagseguro:
         status:
@@ -322,11 +329,6 @@ pt_BR:
       photo:
         header_search_field:
           search_placeholder: "Pesquisar Fotografia"
-      photographers:
-        full_profile: 
-        share_message: "%{full_name}, fotógrafo #Pic2Gether."
-        index:
-          search_photographer: "Pesquisar"
     photo_explore:
       menu:
         fans_pictures: "Fãns"

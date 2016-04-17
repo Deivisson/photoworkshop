@@ -97,13 +97,19 @@ portfolio_templates = [
 
 #Comunications
 communications = [
-  {description:'Sorteio de Assinatura Eduk - Lancamento Pic2Gether',partial_name:'eduk_courses',expiration_date:'2016-04-24 23:59:59'}
+  {description:'Sorteio de Assinatura Eduk - Lancamento Pic2Gether',partial_name:'eduk_courses',expiration_date:'2016-04-24 23:59:59'},
+  {description:'Fotografo Oportunidades Emprego e Freelancer',partial_name:'photographer_workers'}  
 ].each do |communication|
   Communication.where(communication).first_or_create
 end
 
 # #
 # #Temporary and should remove after execute
+User.all.each do |u|
+  #remove method unread_notifications_count on user model
+  u.update_column(:unseen_notifications_count,u.unread_notifications_count)
+end
+
 
 # WorkshopPlan.all.each do |wp|
 #   wp.settings = wp.settings.gsub("participants","students")

@@ -14,6 +14,8 @@ function photographerPreview(){
 		    width: 900,
 		    height: h,
 		    modal: true,
+		    show: {effect: 'fadeIn',duration: 1000},
+		    hide: {effect: 'fadeOut',duration: 500},
 				open: function(){
 					$(".ui-widget-overlay").addClass("modal-overlay photographer-modal-dialog-class").removeClass("ui-widget-overlay");
           $('.photographer-modal-dialog-class').bind('click',function(){
@@ -38,6 +40,7 @@ function photographerPreview(){
 	  		photoView();
 	  		PhotoAvoidRightClick();
 	  		PhotoAvoidRightClick(".cover-photo");
+	  		TriggerSendMessage();
 	  		$("#modal-close-button").click(function() {
 					$('#photographer-modal-dialog').dialog("close");
 				});

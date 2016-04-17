@@ -1,0 +1,14 @@
+<% unless @message.errors.any? %>
+	if($("#messages-list").length > 0) {
+		$("#messages-list").append("<%= j render(partial:'message', locals:{message:@message}) %>");
+		$("#messages-list").animate({scrollTop: $('#messages-list').prop("scrollHeight")}, 1000);
+		$("#message-content-field").val("");
+		$("#message-content-field").focus();
+	}
+
+	// If send by modal screen
+	if ($("#new-message-modal-dialog").length > 0){
+		$("#new-message-modal-dialog").dialog( "close" );
+		flashNoticeMessage("<%= t('messages.menssage_sended') %>");
+	}
+<% end %>

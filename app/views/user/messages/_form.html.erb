@@ -1,0 +1,11 @@
+<%= semantic_form_for [:user,@message], remote:true do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :content, input_html:{rows:9},
+    						label:false,
+    						placeholder:t('.placeholder') %>
+		<%= f.input :user_receiver_id, as: :hidden %>
+  <% end %>
+  <div class="actions" style="margin-left:0px">
+    <%= submit_button f, label:"Enviar" %>
+  </div>
+<% end %>

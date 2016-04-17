@@ -1,0 +1,42 @@
+<% content_for :search_form do %>
+	<%= form_tag user_photographers_path, method: :get, remote:true do |f| %>
+  	<ul class="float-panel photographer-search-form">
+			<label>
+				<%= t('.search_photographer') %>
+			</label>
+			<li>
+				<%= content_tag :label, (tm Country,false)  %>
+				<%= select_tag "country_id", 
+						options_from_collection_for_select(Country.all, "id", "name"),prompt:"",
+						id:"country-select" %>
+			</li>
+			<li>
+				<%= content_tag :label, (tm State,false) %>
+	    	<%= select_tag "conditions[state_id]", 
+							options_from_collection_for_select(State.all, "id", "name"),prompt:"",
+							id:"states-select" %>
+	    </li>
+	    <li>
+	    	<%= content_tag :label, (tm City,false)  %>
+	    	<%= select_tag "conditions[city_id]", 
+								options_from_collection_for_select([], "id", "name"),prompt:'',
+								id:"cities-select" %>
+	    </li>
+	    <li class="checkbox-field">
+	    	<%= check_box_tag "conditions[available_for_employment]" %>
+	    	<label for="conditions_available_for_employment">
+	    		<%= ta UserProfile, :available_for_employment %>
+	    	</label>
+	    </li>
+	    <li class="checkbox-field">
+	    	<%= check_box_tag "conditions[available_for_freelance]" %>
+	    	<label for="conditions_available_for_freelance">
+	    		<%= ta UserProfile, :available_for_freelance %>
+	    	</label>
+	    </li>
+	    <li>
+    		<%= submit_tag t("buttons.search"),class:'btn' %>
+  		</li>
+    </ul>
+  <% end %>
+<% end %>

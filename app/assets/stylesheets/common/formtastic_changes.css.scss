@@ -302,3 +302,7 @@
   padding:0;
 }
 
+/*Inputs */
+select option[value=""] {
+  color: #C6C6C6;
+}

@@ -1,0 +1,7 @@
+<li class="with-bottom-border <%= 'selected' unless message.read? %>">
+	<%= image_tag(message.sender.profile.avatar.url(:thumb),class:'sender-avatar') %>
+	<div class="preview-text-box">
+	  <p class="content"><%= message.content.html_safe %></p>
+	  <span class="created-at"><%= time_ago_in_words(message.created_at) %> </span>
+	</div>
+</li>

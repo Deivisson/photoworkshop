@@ -5,6 +5,15 @@ img.user-avatar {
 	height: 140px;
 }
 
+img.user-avatar-rounded {
+	border-radius: 50%;
+	float: left;
+	left: 0;
+	height: 45px;
+	position: absolute;
+	width: 45px;
+}
+
 .edit-modal-cover-photos {
   float: left;
   margin-top: -20px;

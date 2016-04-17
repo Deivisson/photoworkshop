@@ -26,7 +26,16 @@ class Notification < ActiveRecord::Base
   scope :recents, -> {limit(5)}
   scope :unread, -> {where(read:false)}
 
+  after_create :increment_unseen_notification_count
+
   def self.set_all_as_read(user_id)
   	Notification.where("read = ? and user_receiver_id = ? ",false,user_id).update_all(read:true)
+  end
+
+private
+
+  def increment_unseen_notification_count
+    self.receiver.unseen_notifications_count += 1
+    self.receiver.save
   end
 end

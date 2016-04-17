@@ -22,10 +22,12 @@ pt_BR:
     to_hire: "Contratar"
     about: "Sobre"
     view: "Visualizar"
+    send: "Enviar"
   labels:
     facebook: "Facebook"
     twitter: "Twitter"
     notifications: "Notificações"
+    messages: "Mensagens"
     see_all: "Ver Todas"
     all_categories: "Todas Categorias"
     share_on_facebook: "Compartilhar Facebook"
@@ -47,6 +49,7 @@ pt_BR:
     removed_photo: "Foto removida ;-("
     rating_photo_with_success: "Foto Avaliada com sucesso."
     following_success: "Você acabou de seguir %{photographer}"
+    menssage_sended: "Mensagem Enviada com sucesso!"
   levels:
     beginner: "Iniciante"
     beginner_info: "Você está tirando fotos sem colocar qualquer pensamento técnico para elas, mas este é o começo para se tornar cada vez melhor. Pratique!"

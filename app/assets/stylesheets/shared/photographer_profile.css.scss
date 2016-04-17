@@ -325,6 +325,13 @@ ul.users-photographers {
 		    	margin: 4px 3px 0 0;
 		    }
 			}
+			a.message-button {
+				width: 22px;
+				span.icon20pb {
+					margin: 3px 0 0 2px;
+					width: 26px;
+				}
+			}
 		}
 	}
 	.photographers-photo-gallary {
@@ -364,6 +371,15 @@ ul.users-photographers {
 }
 
 ul.photographer-search-form {
+	li {
+		label {
+			color: #333;
+			font-size: 12px;
+			font-weight: normal;
+			text-transform: none;
+			margin: 0;
+		}
+	}
 	li.checkbox-field {
 		margin-bottom: 9px;
 		label {

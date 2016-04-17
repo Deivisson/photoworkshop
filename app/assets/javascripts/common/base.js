@@ -16,6 +16,16 @@ $(document).on('ready page:load', function (){
 		menuTrigger($('#notifications-menu-dropdown'));
 	});
 	
+
+	// Message Menu
+	$("#messages-menu-trigger").click(function(e){
+		closeAllMenus();
+		if ($("#message-bubble-count").length == 0) {
+			e.stopPropagation();	
+		}
+		menuTrigger($('#messages-menu-dropdown'));
+	});
+
 	$(function(){
     if ($("#flash_notice").length > 0 || $("#flash_warning").length > 0 || $("#flash_alert").length > 0)  {
       setTimeout(removeFlashMenssage,7000);

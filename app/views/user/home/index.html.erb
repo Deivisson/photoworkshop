@@ -9,9 +9,6 @@
                        href:user_first_login_steps_path   %>
 <% end %>
 
-<%= hidden_field_tag :communication,@communication.id,
-                     id:'communication_tag',
-                     href:user_communication_path(@communication) unless @communication.nil? %>
 
 <%= render partial:'/user/shared/photo/header_search_field', 
             locals: {remote:false} %>
@@ -23,6 +20,7 @@
 <% end %>
 
 <ul class="timeline" id="home-timeline">
+  <%= communication_message %>
   <%= render 'timeline' %>
   <div class="pagination"></div>
 </ul>

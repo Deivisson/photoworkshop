@@ -7,19 +7,13 @@
 	<% end if show_title? %>
 
 	<%= content_tag :li, class:'user-info'  do %>
-		<%= link_to_notification(current_user.unread_notifications_count) do %>
-			<%= content_tag :span,class:'notification-bubble-count', id:'notification-bubble-count' do %>
-				<%= current_user.unread_notifications_count %>
-			<% end if current_user.unread_notifications_count > 0 %>
-			<span class="icon20 notification"></span>
-		<% end %>
-		<%= render "user/notifications/resume_menu" %>
-
+		<%= toolbar_message_button %>
+		<%= toolbar_notification_button %>
 		<%= link_to new_user_photo_path, class:"upload-image", id:'photo-upload-link-header' do %>
 			<span class="icon20 upload"></span>
 		<% end %>
 		<%= image_tag(current_user.profile.avatar.url(:medium),class:'avatar',id:'menu-trigger') %>
-		<ul class="dropdown-menu" id="menu-dropdown">
+		<ul class="dropdown-menu profile-menu" id="menu-dropdown">
 			<span class="up-arrow"></span>
 			<li><%= link_to t('user.user_menu.profile'), user_profile_path(0) %></li>
 			<li><%= link_to t('user.user_menu.portfolio'), user_portfolio_templates_path %></li>

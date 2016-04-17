@@ -34,6 +34,8 @@ class User < ActiveRecord::Base
   has_many :photo_views
   has_many :orders
   has_many :invited_friends
+  has_many :messages_sent, class_name: "Message", foreign_key: 'user_sender_id'
+  has_many :messages_received, class_name: "Message", foreign_key: 'user_receiver_id', dependent: :destroy
 
   has_and_belongs_to_many :categories
   has_and_belongs_to_many :communications
@@ -119,9 +121,15 @@ class User < ActiveRecord::Base
     self.notifications_received.recents
   end
 
+  #deprecated, remove after execute seeds
   def unread_notifications_count
     @unread_notifications_count ||= self.notifications_received.unread.count
   end
+  
+  def last_received_messages
+    self.messages_received.recents
+  end
+ 
 
   def favorited_photos_ids
     @favorited_photos_ids ||= self.favorite_photos.collect{|p| p.photo_id}

@@ -60,10 +60,21 @@
     color: #3a87ad;
 }
 
+.alert p {
+  float: left;
+  width: 105%;
+  text-align: justify;
+}
+.alert .btn {
+  margin: 5px 10px 0 0;
+  text-shadow: none;
+  text-decoration: none !important;
+}
+
 .no-record {
   background-color: #F1F1F1;
   border-color: #D8D8D8;
-  color: #878787;
+  color: #424141;
   font-size: 22px;
   text-align: center;
   text-shadow: 1px 2px 0px rgba(255, 255, 255, 0.44);
@@ -74,5 +85,14 @@
   a {
     color: #878787;
     font-size: 20px;
+  }
+  span {
+    color: #878787;
+    display: table;
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
   }
 }

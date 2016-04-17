@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160408004842) do
+ActiveRecord::Schema.define(version: 20160417002716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,6 +111,18 @@ ActiveRecord::Schema.define(version: 20160408004842) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer  "user_sender_id"
+    t.integer  "user_receiver_id"
+    t.text     "content"
+    t.boolean  "read",             default: false, null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
+
+  add_index "messages", ["user_receiver_id"], name: "index_messages_on_user_receiver_id", using: :btree
+  add_index "messages", ["user_sender_id"], name: "index_messages_on_user_sender_id", using: :btree
 
   create_table "notifications", force: :cascade do |t|
     t.integer  "user_sender_id"
@@ -380,21 +392,23 @@ ActiveRecord::Schema.define(version: 20160408004842) do
   add_index "user_relations", ["user_id"], name: "index_user_relations_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "",    null: false
-    t.string   "encrypted_password",     limit: 255, default: "",    null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                      limit: 255, default: "",    null: false
+    t.string   "encrypted_password",         limit: 255, default: "",    null: false
+    t.string   "reset_password_token",       limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                      default: 0,     null: false
+    t.integer  "sign_in_count",                          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
+    t.string   "current_sign_in_ip",         limit: 255
+    t.string   "last_sign_in_ip",            limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "first_login",                        default: true
-    t.integer  "current_points",                     default: 0,     null: false
-    t.boolean  "refuse_eduk_award",                  default: false, null: false
+    t.boolean  "first_login",                            default: true
+    t.integer  "current_points",                         default: 0,     null: false
+    t.boolean  "refuse_eduk_award",                      default: false, null: false
+    t.integer  "unseen_notifications_count",             default: 0,     null: false
+    t.integer  "unseen_messages_count",                  default: 0,     null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -495,6 +509,8 @@ ActiveRecord::Schema.define(version: 20160408004842) do
   add_foreign_key "favorite_photos", "users"
   add_foreign_key "invited_friends", "users"
   add_foreign_key "invited_friends", "users", column: "friend_id", name: "fk_users_friends"
+  add_foreign_key "messages", "users", column: "user_receiver_id", name: "messages_receiver_user"
+  add_foreign_key "messages", "users", column: "user_sender_id", name: "messages_sender_user"
   add_foreign_key "notifications", "users", column: "user_receiver_id", name: "notifications_receiver_user"
   add_foreign_key "notifications", "users", column: "user_sender_id", name: "notifications_sender_user"
   add_foreign_key "order_payment_histories", "orders"

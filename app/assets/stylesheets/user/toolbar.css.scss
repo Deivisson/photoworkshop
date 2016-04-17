@@ -98,7 +98,9 @@ ul.toolbar li.user-info {
 	border-left: 1px solid #0F0F0F;
 	float: right;
 	width: auto;
-	a.upload-image, a.notifications-icon {
+	a.upload-image, 
+	a.notifications-icon,
+	a.messages-icon {
 		color: #b9c1c7;
     display: block;
     float: left;
@@ -117,8 +119,9 @@ ul.toolbar li.user-info {
 	    width: 32px;
 		}
 	}
-	a.notifications-icon {
-		span.notification-bubble-count {
+	a.notifications-icon,
+	a.messages-icon {
+		span.bubble-count {
 			background-color: #940a00;
 	    border: 1px solid #700b04;
 			border-radius: 50%; 
@@ -220,77 +223,93 @@ ul.toolbar li.user-info {
 			visibility: visible;
 		}
 	}
-	ul.notifications-menu {
-		right: 83px;
-		margin-top: -8px;
-    width: 400px;
-    li {
-    	width: 390px;
-    	padding-bottom: 10px;
-			img.sender-avatar {
-				border-radius: 50%; 
-				-moz-border-radius: 50%; 
-				-webkit-border-radius: 50%;
-				float: left;
-				height: 50px;
-				margin: 4px 0 4px 0;
-				width: 50px;
-			}
-			.notifications-text-box {
-				float: left;
-				margin: 8px 0 0 8px;
-				padding-bottom: 5px;
-				width: 330px;
-				p.notification-content {
-					color: #333;
-					font-size: 14px;
-					line-height: 17px;
-					margin-bottom: 5px;
-					text-align: justify;
-					width: 100%;
-					strong {
-						font-weight: bold;
-					}
-					a {
-						color: #32a6d3 !important;
-						display: inline;
-						line-height: 17px;
-						margin-right: 5px; 
-						width: auto;
-						&:hover {
-							text-decoration: underline;
-						}
-					}
-					span.text-with-pic {
-						float: left;
-						margin-right: 80px; 
-						i {
-							color: #6B6B6B;
-							margin-top: 10px;
-						}
-					}
-					a.aux-pic {
-						float: right;
-				    height: 50px;
-				    position: absolute;
-				    right: 12px;
-				    width: 50px;
-				    img {
-				    	height: 50px;
-				    	width: 50px;
-				    }
+}
 
+ul.toolbar li.user-info ul.dropdown-menu {
+	margin-top: -8px;
+  width: 400px;
+  li {
+  	width: 390px;
+		img.sender-avatar {
+			border-radius: 50%; 
+			-moz-border-radius: 50%; 
+			-webkit-border-radius: 50%;
+			float: left;
+			height: 50px;
+			margin: 4px 0 4px 0;
+			width: 50px;
+		}
+		.preview-text-box {
+			float: left;
+			margin: 8px 0 0 8px;
+			padding-bottom: 5px;
+			width: 330px;
+			p.content {
+				color: #333;
+				font-size: 14px;
+				line-height: 17px;
+				margin-bottom: 5px;
+				text-align: justify;
+				width: 100%;
+				strong {
+					font-weight: bold;
+				}
+				a {
+					color: #32a6d3 !important;
+					display: inline;
+					line-height: 17px;
+					margin-right: 5px; 
+					width: auto;
+					&:hover {
+						text-decoration: underline;
 					}
 				}
-				span.created-at {
-					color: #8f8f8f;
-					font-size: 12px;
+				span.text-with-pic {
 					float: left;
-					margin: 10px 0 0 2px;
-					text-align: left;
-					width: 100%;
+					margin-right: 80px; 
+					i {
+						color: #6B6B6B;
+						margin-top: 10px;
+					}
+				}
+				a.aux-pic {
+					float: right;
+			    height: 50px;
+			    position: absolute;
+			    right: 12px;
+			    width: 50px;
+			    img {
+			    	height: 50px;
+			    	width: 50px;
+			    }
+
 				}
 			}
-    }
+			span.created-at {
+				color: #8f8f8f;
+				font-size: 12px;
+				float: left;
+				margin: 10px 0 0 2px;
+				text-align: left;
+				width: 100%;
+			}
+		}
+  }
+}
+
+ul.dropdown-menu.profile-menu {
+	width: 200px !important;
+	li {
+		padding: 0 !important
+		a {
+			line-height: 29px !important;
+		}
 	}
+}
+
+ul.dropdown-menu.dropdown-preview-items.notifications {
+	margin-right: 80px;
+}
+ul.dropdown-menu.dropdown-preview-items.messages {
+	margin-right: 120px;
 }

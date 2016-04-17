@@ -4,13 +4,17 @@ ul.timeline {
 	margin-left: -310px;
 	position: absolute;
 	width: 612px;
+	.alert {
+		float: left;
+		margin-bottom: -30px;
+	}
+	li:first-child {
+		margin-top: 0px;
+	}
 	li {
 		float: left;
 		margin-top: 60px;
 		width: 600px;
-		&:first-child {
-			margin-top: 0px;
-		};
 		.photo-author-container {
 			float: left;
 			position: relative;

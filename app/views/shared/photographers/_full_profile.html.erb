@@ -53,14 +53,12 @@
 											photographer_link_path(:followers_count,@user),
 											remote:true, id:"photographer-followers-count" %>
 				</li>
-				
 				<%= content_tag :li do %>
 					<label><%= t("user.user_resume.workshops") %></label>
 					<%= link_to @user.owner_workshops_count,
 											photographer_link_path(:owner_workshops_count,@user),
 											remote:true %>
 				<% end if @user.owner_workshops_count > 0 %>
-
 				<li>
 					<label>...</label>
 					<%= link_to t("buttons.about"), 
@@ -68,6 +66,7 @@
 				</li>
 			<% end %>
 			<%= content_tag :ul, class:"links" do %>
+				<%= message_button_tag %>
 				<%= content_tag :li, id:"follow-links-modal-profile-#{@user.id}" do %>
 					<%= render partial:'follow_links', locals: {user:@user} %>
 				<% end %>

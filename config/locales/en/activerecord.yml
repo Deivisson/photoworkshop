@@ -49,6 +49,15 @@ pt_BR:
       workshop:
         one: "Workshop\\Curso"
         other: "Workshops\\Cursos"
+      country:
+        one: "País"
+        other: "Países"
+      city:
+        one: "Cidade"
+        other: "Cidades"
+      state:
+        one: "Estado"
+        other: "Estados"
     attributes:
       user_profile:
         description: "Biografia"

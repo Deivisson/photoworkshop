@@ -14,6 +14,8 @@ function WorkshopPlansTrigger() {
 			    width: 600,
 			    height: 400,
 			    modal: true,
+			    show: {effect: 'fadeIn',duration: 1000},
+	    		hide: {effect: 'fadeOut',duration: 500},
 			    close: function() {
 			      $('#workshop-plans-modal-dialog').remove();
 			    }

@@ -9,7 +9,7 @@ function ShowCommunication(){
     var url = $("#communication_tag").attr("href");
     var dialog_form = $(getModalContainer("communication-modal-dialog")).dialog({
       autoOpen: false,
-      width: 460,
+      width: 500,
       height: 450,
       modal: true,
       close: function() {

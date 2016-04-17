@@ -45,8 +45,8 @@ class UserProfile < ActiveRecord::Base
     return photo_url
   end
 
-  def short_name
-    self.full_name.truncate(18)
+  def short_name(size=18)
+    self.full_name.truncate(size)
   end
 
   def update_social_network_shared!(provider)

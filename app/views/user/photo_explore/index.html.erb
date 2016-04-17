@@ -20,7 +20,7 @@
 
 <% content_for :exif_search do %>
 	<%= form_tag user_photo_explore_path, method: :get, remote:true do |f| %>
-		<ul class="exif-search-fields">
+		<ul class="float-panel exif-search-fields">
 			<label><%= t('.exif_search') %></label>
 			<li>
 	    	<%= text_field_tag "exif_fields[shutter_speed]","",placeholder:ta(PhotoExif,:shutter_speed) %>

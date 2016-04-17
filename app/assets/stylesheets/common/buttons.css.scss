@@ -15,6 +15,9 @@
   /*text-shadow: 0px 1px 1px #384917;*/
   vertical-align: center;
   width:auto;	
+  &.only-icon {
+    padding: 0px 14px 0px 2px;
+  }
 }
 
 .upload-button {
@@ -217,7 +220,7 @@
   font-size: 12px;
   height: 16px;
   line-height: 16px;
-  padding: 1px;
+  padding: 1px 5px 1px 5px ;
 }
 
 .button-group {
