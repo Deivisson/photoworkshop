@@ -1,0 +1,81 @@
+@media screen and (max-width: 700px) {
+  html, body {
+    overflow: hidden;
+    min-width: 0;
+  }
+  .welcome-header .logo-container {
+    .pic2gether-logo {
+      background-image: url(asset-path("shared/logo_small.png"));
+      height: 60px;
+      margin: 0 0 0 -20px;
+      width: 60px;
+    }
+  }
+  .menu {
+    display: none;
+  }
+  .welcome-content {
+    max-width: 500px;
+    width: 100%;
+    h1 {
+      margin-top: 60px;
+    }
+    h2 {
+      display: none;
+    }
+    a.sign-up-button.facebook,a.sign-up-button.twitter {
+      left: 50%;
+      height: 30px;
+      line-height: 30px;
+      margin: 15px 0 0 -96px;
+      width: 180px;
+    }
+    a.sign-up-button.twitter {
+      margin-top: 65px;
+    }
+    a.sign_up_email {
+      font-size: 12px;
+      margin-top: 120px;
+    }
+  }
+  .centralizer {
+    max-width: 500px;
+  }
+  .coverby-container {
+    margin: 79px 0 0 3px;
+  }
+  ul.about-container {
+    bottom: 0px;
+    left: 10px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .welcome-content {
+    h1 {
+      font-size: 48px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .welcome-content {
+    h1 {
+      font-size: 31px;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .welcome-content {
+    h1 {
+      font-size: 27px;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .menu {
+    display: inline;
+  }
+}

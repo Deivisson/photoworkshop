@@ -1,4 +1,5 @@
 <li class="with-bottom-border <%= 'selected' unless message.read? %>">
+	<%= link_to "" ,user_messages_path(user_sender_id:message.user_sender_id),class:"link-to-message" %>
 	<%= image_tag(message.sender.profile.avatar.url(:thumb),class:'sender-avatar') %>
 	<div class="preview-text-box">
 	  <p class="content"><%= message.content.html_safe %></p>

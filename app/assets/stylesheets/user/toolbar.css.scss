@@ -312,4 +312,10 @@ ul.dropdown-menu.dropdown-preview-items.notifications {
 }
 ul.dropdown-menu.dropdown-preview-items.messages {
 	margin-right: 120px;
+	li a.link-to-message {
+    float: left;
+    height: 55px;
+    position: absolute;
+    width: 100%;
+	}
 }

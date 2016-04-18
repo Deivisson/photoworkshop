@@ -1,10 +1,14 @@
 class User::MessagesController < User::BaseController
 
   def index
-   @received_messages = Message.lasts_messages(current_user)
-   @user_sender = @received_messages.first.sender
-   load_conversation
-   render layout:"user/plan_layout"
+    @received_messages = Message.lasts_messages(current_user)
+    if params[:user_sender_id]
+      @user_sender = User.find(params[:user_sender_id])
+    else
+      @user_sender = @received_messages.first.sender
+    end
+    load_conversation
+    render layout:"user/plan_layout"
   end
 
   def show

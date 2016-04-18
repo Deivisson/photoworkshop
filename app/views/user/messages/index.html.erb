@@ -3,8 +3,8 @@
     <div class="float-container menu-container">
       <ul class="menu menu-messages" id="menu-messages">
         <h1><%= t(".menu_title") %></h1>
-        <% @received_messages.each_with_index do |message,index| %>
-          <%= content_tag :li, class: (index == 0 ? 'selected' : "") do %>
+        <% @received_messages.each do |message| %>
+          <%= content_tag :li, class: (@user_sender.id == message.user_sender_id ? 'selected' : "") do %>
             <%= link_to "", 
                 user_message_path(message,user_sender_id:message.user_sender_id),remote:true %>
             <%= image_tag message.sender.profile.avatar.url(:thumb),

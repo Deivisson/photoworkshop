@@ -5,12 +5,13 @@
   <%= stylesheet_link_tag    'home', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'home', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= yield :facebook_image_to_share %>
 </head>
 <body>
 	<div class="welcome-header" id="welcome-header">
 		<div class="logo-container">
-			<%= image_tag "shared/logo_black.png" %>
+			<div class="pic2gether-logo"></div>
 		</div>
 		<div class="centralizer">
 			<ul class="menu" id="menu-home" >

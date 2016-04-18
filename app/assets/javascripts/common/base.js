@@ -95,6 +95,9 @@ function closeAllMenus()
 	if($('#notifications-menu-dropdown').length > 0) {
 		$('#notifications-menu-dropdown').removeClass("open-menu");
 	}
+	if($('#messages-menu-dropdown').length > 0) {
+		$('#messages-menu-dropdown').removeClass("open-menu");
+	}
 	if($('#menu-dropdown').length > 0) {
 		$('#menu-dropdown').removeClass("open-menu");
 	}
