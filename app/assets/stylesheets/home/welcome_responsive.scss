@@ -1,4 +1,7 @@
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 481px), 
+  screen and (max-width: 767px),
+  screen and (min-width: 768px) and (max-width: 979px)  {
+
   html, body {
     overflow: hidden;
     min-width: 0;
@@ -50,23 +53,82 @@
   }
 }
 
-@media screen and (max-width: 700px) {
+
+/* Portrait tablet to landscape and desktop */
+@media screen and (min-width: 768px) and (max-width: 979px) {
+  .menu {
+    display: inline;
+  }
+  .welcome-header {
+    .centralizer {
+      margin-left: 77px;
+    }
+    .account-buttons {
+      margin: 20px 6px 0 0;
+    }
+  }
   .welcome-content {
     h1 {
-      font-size: 48px;
+      font-size: 45px;
+      margin-top: 0px;
+    }
+    a.sign-up-button.facebook,a.sign-up-button.twitter {
+      margin: 45px 0 0 -190px;
+    }
+    a.sign-up-button.twitter {
+      margin-left: 20px;
     }
   }
 }
 
-@media screen and (max-width: 500px) {
-  .welcome-content {
-    h1 {
-      font-size: 31px;
+@media screen and (min-width: 481px) and (max-width: 767px),
+       screen and  (max-width: 480px) { 
+  .welcome-header {
+    height: 45px;
+    .account-buttons {
+      margin: 8px 4px 0 0;
+      a.sign-up {
+        display: none;
+      }
+    }
+    .logo-container {
+      .pic2gether-logo {
+        background-image: url(asset-path("shared/logo_tiny.png"));
+        height: 48px;
+        margin: -7px 0 0 -20px;
+        width: 48px;
+      }
     }
   }
 }
 
-@media screen and (max-width: 400px) {
+/* Landscape phone to portrait tablet */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .welcome-content {
+    h1 {
+      font-size: 45px;
+      margin-top: 0px;
+    }
+    a.sign-up-button.facebook,a.sign-up-button.twitter {
+      margin: 45px 0 0 -190px;
+    }
+    a.sign-up-button.twitter {
+      margin-left: 20px;
+    }
+  }
+}
+ 
+/* Landscape phones and down */
+@media screen and  (max-width: 480px) {
+  .welcome-header {
+    height: 45px;
+    .account-buttons {
+      margin: 8px 4px 0 0;
+      a.sign-up {
+        display: none;
+      }
+    }
+  }
   .welcome-content {
     h1 {
       font-size: 27px;
@@ -74,8 +136,8 @@
   }
 }
 
-@media screen and (max-width: 960px) {
-  .menu {
-    display: inline;
+@media screen and (min-width: 200) and (max-width: 250) {
+  .welcome-header {
+    display: none;
   }
 }

@@ -33,6 +33,7 @@ html, body {
     height: 50px;
     width: 150px;
     background-image: url(asset-path("shared/logo_black.png"));
+    transition:All 0.6s ease;
   }
 }
 
