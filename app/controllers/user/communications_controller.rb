@@ -10,7 +10,7 @@ class User::CommunicationsController < User::BaseController
 			case @communication.id
 			when 1
 				current_user.update_attribute(:refuse_eduk_award,true) if params[:tag] == "refuse"
-			when 3
+			when 2
 				redirect_to edit_user_profile_path(current_user) unless request.xhr?
 			end
 		end
