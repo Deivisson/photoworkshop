@@ -4,8 +4,8 @@ class User::MessagesController < User::BaseController
     @received_messages = Message.lasts_messages(current_user)
     if params[:user_sender_id]
       @user_sender = User.find(params[:user_sender_id])
-    else
-      @user_sender = @received_messages.first.sender
+    elsif !@received_messages.first.nil?
+      @user_sender = @received_messages.first.sender 
     end
     load_conversation
     render layout:"user/plan_layout"
@@ -29,6 +29,7 @@ class User::MessagesController < User::BaseController
  
   private
     def load_conversation
+      return if @user_sender.nil?
       @messages = Message.all_by_user(current_user.id,@user_sender.id)
     end
 

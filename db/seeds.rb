@@ -105,11 +105,13 @@ end
 
 # #
 # #Temporary and should remove after execute
-User.all.each do |u|
-  #remove method unread_notifications_count on user model
-  u.update_column(:unseen_notifications_count,u.unread_notifications_count)
-end
 
+
+
+# User.all.each do |u|
+#   #remove method unread_notifications_count on user model
+#   u.update_column(:unseen_notifications_count,u.unread_notifications_count)
+# end
 
 # WorkshopPlan.all.each do |wp|
 #   wp.settings = wp.settings.gsub("participants","students")

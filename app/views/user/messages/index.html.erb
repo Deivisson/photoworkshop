@@ -20,6 +20,12 @@
   </div>
 
   <div id="message-container" class="message-container">
-    <%= render "messages" unless @messages.nil? %>
+    <% unless @messages.nil? %>
+      <%= render "messages"  %>
+    <% else %>
+      <p class="no-record" style="left:385px">
+        <%= t('.no_messages').html_safe %>
+      </p>
+    <% end %>
   </div>
 </div>

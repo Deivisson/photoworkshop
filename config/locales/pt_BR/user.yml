@@ -224,6 +224,7 @@ pt_BR:
     messages:
       index: 
         menu_title: "Mensagens Recentes"
+        no_messages: "Não possui mensagens na sua caixa de entrada."
       new:
         title: "Nova Mensagem"
       form:
