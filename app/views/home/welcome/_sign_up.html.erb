@@ -1,5 +1,6 @@
 <h1 class="title"><%= t(".title") %></h1>
-<div class="form-box" id="sign-up-box">
+<div class="account-page">
+<div class="form-box account-form-box" id="sign-up-box">
 	<%= form_for(:user, :url => registration_path(:user), html:{class:"sign-up-form"}) do |f| %>
 		<div class="field">
 			<%= f.text_field :full_name, 
@@ -40,4 +41,5 @@
 								user_omniauth_authorize_path(:twitter),
 								class:'sign-up-button twitter'%>
 	</div>
+</div>
 </div>

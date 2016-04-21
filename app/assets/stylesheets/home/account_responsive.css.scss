@@ -1,0 +1,82 @@
+@media screen and (max-width: 481px), 
+  screen and (max-width: 767px),
+  screen and (min-width: 768px) and (max-width: 979px)  {
+  html, body {
+    overflow: hidden;
+    min-width: 0;
+  }
+  .account-page .account-form-box {
+    margin: 50px 0 0 -150px;
+    width: 280px;
+    form {
+      margin-top: 15px;
+      .field {
+        margin-bottom: 4px;
+      }
+    }
+    .social-network-buttons {
+      a {
+        width: 100px;
+      }
+    }
+  }
+}
+
+
+/* Portrait tablet to landscape and desktop */
+@media screen and (min-width: 768px) and (max-width: 979px) {
+ .account-page .account-form-box {
+    margin: 150px 0 0 -190px;
+    width: 380px;
+    form {
+      margin-top: 30px;
+    }
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px),
+       screen and  (max-width: 480px) { 
+  
+}
+
+/* Landscape phone to portrait tablet */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .account-page .account-form-box {
+    margin: 50px 0 0 -260px;
+    width: 500px;
+    form {
+      margin-top: 10px;
+      .field {
+        margin-right: 19px; 
+        width: 45%;
+      }
+    }
+    .links {
+      border-left: 1px solid #e7e7e7;
+      float: left;
+      margin: -37px 0 10px 236px;
+      padding-left: 10px;
+    }
+    .social-network-buttons {
+      border-top: 1px solid #e7e7e7;
+      float: left;
+      height: 61px;
+      margin: 0 0 0 12px;
+      padding-top: 10px;
+      width: auto;
+      a {
+        width: 210px;
+      }
+    }
+  }
+}
+ 
+/* Landscape phones and down */
+@media screen and  (max-width: 480px) {
+  .account-page .account-form-box {
+    margin-top: 50px;
+    .social-network-buttons {
+      padding-top: 10px;
+    }
+  }
+}

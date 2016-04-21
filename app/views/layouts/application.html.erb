@@ -4,12 +4,15 @@
   <title>Pic2Gether</title>
   <%= stylesheet_link_tag    'home', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'home', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
 </head>
 <body>
 	<div class="welcome-header" id="welcome-header">
 		<div class="logo-container">
-			<%= link_to image_tag("shared/logo_black.png"), root_path %>
+			<%= link_to root_path do %>
+				<div class="pic2gether-logo"></div>
+			<% end %>
 		</div>
 		<div class="flash_container">
 			<%- flash.each do |name, msg| %>

@@ -55,8 +55,8 @@
 	  }
 	  form {
 	    float: left;
-	    margin: 30px 0 0 10px;
-	    width: 355px;
+	    margin: 30px 23px 0 10px;
+	    width: auto;
 	    .field {
 	      float: left;
 	      margin-bottom: 12px;
@@ -78,11 +78,21 @@
 	    	width: 100%;
 	    	margin-bottom: 10px;
 	    }
+	    #error_explanation {
+	    	margin-top: -20px;
+	    	h2 {
+	    		display: none
+	    	}
+	    	ul li {
+	    		color: #cc0000;
+	    		margin-bottom: 5px;
+	    	}
+	    }
 	  }
 	  .links {
-	  	float: left;
-	  	margin: 10px 0 10px 10px;
-	  	width: 100%;
+	    float: left;
+	    margin: 10px 0 10px 10px;
+	    width: 100%;
 	  	a {
 	  		color: #48A6D3;
 	  		float: left;
@@ -100,7 +110,7 @@
 	    height: 80px;
 	    margin: 0px 0 0 12px;
 	    padding-top: 30px;
-	    width: 360px;
+	    width: auto;
 	    a {
 	      float: left;
 	      height: 30px;
