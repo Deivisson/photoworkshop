@@ -67,7 +67,7 @@ ul.timeline {
 			display: table;
 			float: left;
 			height: 100px;
-			width: 100%;
+			width: 98%;
 			margin-top: 10px;
 			padding: 5px;
 			
@@ -165,8 +165,10 @@ ul.timeline {
 					}
 					.text-box {
 						float: left;
-						margin: 0px 0 0 10px;
-						width: 530px;
+				    left: 50px;
+				    margin: 0 0 0 10px;
+				    position: absolute;
+				    right: 0;
 						&:hover a.comment-destroy-link {
 							visibility: visible;
 						};
@@ -212,6 +214,10 @@ ul.timeline {
 						form {
 							margin: -15px 0 0 -2px;
     					width: 97%;
+    					.inputs ol li.text textarea {
+							    resize: vertical;
+							    width: 95%;
+							}
 						}
 					}
 				}

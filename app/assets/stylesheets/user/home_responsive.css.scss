@@ -1,0 +1,42 @@
+/*@media screen and (max-width: 1024px) {
+ 
+}*/
+
+@media screen and (max-width: 481px), 
+  screen and (max-width: 767px),
+  screen and (min-width: 768px) and (max-width: 979px)  {
+  ul.timeline {
+    height: 400px;
+    left: 5px;
+    margin-left: 0;
+    max-width: 100%;
+    position: absolute;
+    right: 5px;
+    width: auto;
+    li {
+      float: left;
+      max-width: 100%;
+      margin-right: 15px;
+      width: 100%;
+    }
+  }
+}
+
+
+/* Portrait tablet to landscape and desktop */
+@media screen and (min-width: 768px) and (max-width: 979px) {
+  
+}
+
+/* Landscape phone to portrait tablet */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  
+}
+ 
+/* Landscape phones and down */
+@media screen and  (max-width: 480px) {
+  ul.timeline li .item {
+    margin-right: 0;
+    width: 96%;
+  }
+}

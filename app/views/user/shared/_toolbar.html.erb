@@ -1,7 +1,13 @@
-<ul class="toolbar">
+<%# content_tag :ul, class:"toolbar #{defined?(show_default) ? 'full-size' : ''}" do%>
+<%= content_tag :ul, class:"toolbar" do%>
+	<%# render "/user/shared/default_menu_header" if defined?(show_default) %>
 	<%= render "/user/shared/default_menu_header" %>
+	<li class="icon-responsive-menu">
+		<%= link_to "#", id:'show-responsive-menu',class:'show-responsive-menu-link' do %>
+			<span class="icon20pb icon-grid-list"></span>
+		<% end %>
+	</li>
 	<%= yield :toolbar %>
-
 	<%= content_tag :li, class:'page-title'  do %>
   	<%= yield(:title) %>
 	<% end if show_title? %>
@@ -25,7 +31,7 @@
 		</ul>
 	<% end %>
 	<%= yield :toolbar_buttons %>
-</ul>
+<% end %>
 <div class="flash_container">
 	<%- flash.each do |name, msg| %>
     <%= content_tag :div, msg, :id => "flash_#{name}" %>

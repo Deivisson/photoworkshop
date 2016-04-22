@@ -5,14 +5,16 @@
   <%= stylesheet_link_tag    'user', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'user', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
-	<%= render "/user/shared/toolbar" %>
-	<div class="left-col fixed-col" style="position:absolute">
+	<%= render partial:"/user/shared/toolbar", locals:{show_default:true} %>
+	<div class="left-col fixed-col full-size-layout" style="position:absolute">
 		<%= yield :categories %>
 		<%= yield :exif_search %>
 		<%= yield :search_form %>
 	</div>
+	<%= render partial:'/user/shared/main_menu',locals:{type:'responsive'} %>
 	<div class="main-content-area"><%= yield %></div>
 	<div class="social-network-box">
 		<div id='fb-root'></div>

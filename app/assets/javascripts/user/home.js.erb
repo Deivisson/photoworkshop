@@ -3,6 +3,14 @@ $(document).on('ready page:load', function (){
     showFirstLoginModal();
   }
   ActiveInfinitScrolling();
+  $("#show-responsive-menu").click(function(){
+    $("#responsive-menu-overlay-id").css("display","inline");
+    $("#responsive-menu-id").addClass("opened");
+  });
+  $("#hide-responsive-menu").click(function(){
+    $("#responsive-menu-overlay-id").css("display","none");
+    $("#responsive-menu-id").removeClass("opened");
+  });
 });
 
 function showFirstLoginModal(url){

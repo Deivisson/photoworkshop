@@ -5,10 +5,14 @@
   <%= stylesheet_link_tag    'user', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'user', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
 	<%= render "/user/shared/toolbar" %>
-	<div class="left-col"><%= yield :left_col_container %></div>
+	<div class="left-col">
+		<%= yield :left_col_container %>
+	</div>
+	<%= render partial:'/user/shared/main_menu',locals:{type:'responsive'} %>
 	<div class="main-content-area"><%= yield %></div>
 	<div class="social-network-box">
 		<div id='fb-root'></div>
