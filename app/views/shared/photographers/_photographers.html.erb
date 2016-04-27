@@ -1,42 +1,40 @@
 <% if @users.any? %>
-  <ul class="users-photographers">
-    <% @users.each do |user| %>
-    	<li>
-    		<div class="cover-pic" style="background-image: url('<%= user.profile.cover_url %>')",
-             owner="<%= user.profile.user_name %>" >
-    			<%= content_tag :div, id:"follow-links-#{user.id}" do %>
-    				<%= render partial:"follow_links", locals: {user:user} %>
-    			<% end if @namespace == :user && @user.id == current_user.id  %>
-    		</div>
-    		<div class="user-infos">
-        	<%= image_tag(user.profile.avatar.url(:medium),class:'avatar') %>
-          <%= content_tag :label,class:'user-name' do %>
-            <span>
-            	<%= link_to user.profile.short_name,
-    								photographer_link_path(:photographer_profile,user),
-                    class:"photographer-profile" %>
-    				</span>
-            <p><%= user.profile.category.description %></p>
-          <% end %>
-          <ul class="user-resume">
-          	<%= image_tag("user/flags/1.png",class:'country-flag') %>
-            <li>
-              <%= content_tag :label, t('user.user_resume.photos') %>
-              <%= content_tag :span, user.photos_count %>
-            </li>
-            <li>
-              <%= content_tag :label, t('user.user_resume.following') %>
-              <%= content_tag :span, user.following_count %> 
-            </li>
-            <li>
-              <%= content_tag :label, t('user.user_resume.followers') %>
-              <%= content_tag :span, user.followers_count %> 
-            </li>                       
-          </ul>
-        </div>			
-    	</li>
-    <% end %>
-  </ul>
+  <% @users.each do |user| %>
+  	<li>
+  		<div class="cover-pic" style="background-image: url('<%= user.profile.cover_url %>')",
+           owner="<%= user.profile.user_name %>" >
+  			<%= content_tag :div, id:"follow-links-#{user.id}" do %>
+  				<%= render partial:"follow_links", locals: {user:user} %>
+  			<% end if @namespace == :user && @user.id == current_user.id  %>
+  		</div>
+  		<div class="user-infos">
+      	<%= image_tag(user.profile.avatar.url(:medium),class:'avatar') %>
+        <%= content_tag :label,class:'user-name' do %>
+          <span>
+          	<%= link_to user.profile.short_name,
+  								photographer_link_path(:photographer_profile,user),
+                  class:"photographer-profile" %>
+  				</span>
+          <p><%= user.profile.category.description %></p>
+        <% end %>
+        <ul class="user-resume">
+        	<%= image_tag("user/flags/1.png",class:'country-flag') %>
+          <li>
+            <%= content_tag :label, t('user.user_resume.photos') %>
+            <%= content_tag :span, user.photos_count %>
+          </li>
+          <li>
+            <%= content_tag :label, t('user.user_resume.following') %>
+            <%= content_tag :span, user.following_count %> 
+          </li>
+          <li>
+            <%= content_tag :label, t('user.user_resume.followers') %>
+            <%= content_tag :span, user.followers_count %> 
+          </li>                       
+        </ul>
+      </div>			
+  	</li>
+  <% end %>
 <% else %>
   <p class="no-record">
     <%= t('.no_photographers').html_safe %>

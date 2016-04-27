@@ -22,9 +22,11 @@
 <% end %>
 <%= render 'search_form' %>
 <%= content_tag :div, id:"photographers-container" do %>
-	<div id="photographers-items">
-		<%= render "photographers" %>
-	</div>
+	<ul class="users-photographers">
+		<div id="photographers-items">
+			<%= render "photographers" %>
+		</div>
+	</ul>
 	<div class="pagination"></div>
 <% end %>
 

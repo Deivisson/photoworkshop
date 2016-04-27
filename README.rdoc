@@ -30,3 +30,8 @@ Please feel free to use a different markup language if you do not plan to run
 
 DICAS - Grupo do facebook, CACADORES DE FOTOGRA, a forma que pontuam os fotografos
 UM BRINDE A TUDO ISSO!!! Este é o 2.139 Selo Diamante distribuído pelo grupo Caçadores de Imagens. O Selo Diamante é o Top do Ranking do elenco dos exclusivos selos deste já conceituado grupo de fotografia. Onde, acompanhe, 300 curtidas, vale BRONZE; 500 curtidas, PRATA; 800 curtidas, OURO e MIL curtidas, o cobiçado DIAMANTE. Deixamos evidenciado que, do mais simples registro fotográfico ao mais sofisticado trabalho de edição, os selos de “CURTIDAS”” é destinado, acima de tudo, ao seu olhar. A sua vitória é a nossa conquista! E uma “curtida” continua fazendo toda a diferença por aqui, hein? Comemore, Fabio Guidoni!! 
+
+
+photos = Photo.joins(:user).where("users.refuse_eduk_award=false and photos.created_at >= '2016-04-04'")
+ids = photos.collect{|p|p.id}
+ids[prng.rand(0..7)]
