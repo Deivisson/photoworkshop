@@ -3,6 +3,7 @@ $(document).on('ready page:load', function (){
     showFirstLoginModal();
   }
   ActiveInfinitScrolling();
+  TimeLineListEffect();
   $("#show-responsive-menu").click(function(){
     $("#responsive-menu-overlay-id").css("display","inline");
     $("#responsive-menu-id").addClass("opened");
@@ -12,6 +13,12 @@ $(document).on('ready page:load', function (){
     $("#responsive-menu-id").removeClass("opened");
   });
 });
+
+function TimeLineListEffect(){
+  if ($("#home-timeline").length > 0) {
+    $("#home-timeline li").fadeIn(1600);
+  }
+}
 
 function showFirstLoginModal(url){
   var h = $(window).height() * 0.6;

@@ -36,6 +36,10 @@ ul.users-photographers {
 		width: 24%;
 		min-width: 240px;
 		height: 300px;
+		display:none;
+		/*visibility: hidden;
+		opacity: 0;
+		transition: all 2s linear;*/
 		.cover-pic {
 			background-position: top center;
     	background-size: cover;

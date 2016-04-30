@@ -1,6 +1,8 @@
 <%= render partial:"user/menu_profile", locals: {current_menu:'following'} %>
 <% if @users.any? %>
-	<%= render "photographers" %>
+	<ul class='users-photographers'>
+		<%= render "photographers" %>
+	</ul>
 <% else %>
 	<div class="alert alert-success no-record">
 		<%= t(".no_followings", link: link_to(t('.link_label'),		user_photographers_path)).html_safe %>

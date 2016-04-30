@@ -1,6 +1,7 @@
 <% if @users.any? %>
-	$("#photographers-full-profile-container").html("<%= j render 'photographers' %>");
+	$("#photographers-full-profile-container").html("<ul class='users-photographers'><%= j render 'photographers' %><ul>");
 <% else %>
 	$("#photographers-full-profile-container").html("<div class='alert alert-success no-record'><%= j t('.full_profile_no_followings') %></div>");
 <% end %>
+PhotographerListEffect();
 photographerPreview();

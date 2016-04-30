@@ -2,7 +2,14 @@ $(document).on('ready page:load', function (){
 	photographerPreview();
 	PhotoAvoidRightClick("#user-profile-cover-pic");
 	PhotoAvoidRightClick(".cover-pic");
+	PhotographerListEffect();
 });
+
+function PhotographerListEffect(){
+	if ($(".users-photographers").length > 0) {
+		$(".users-photographers li").fadeIn(1600);
+	}
+}
 
 function photographerPreview(){
 	$(".photographer-profile").unbind("click");

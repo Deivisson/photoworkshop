@@ -1,7 +1,7 @@
 <% if @paging %>
 		$("#photographers-items").append("<%= escape_javascript(render 'photographers') %>");
 	<% if @users.next_page %>
-		$('.pagination').replaceWith('<%= j will_paginate @users %>');
+		$('.pagination').html('<%= j will_paginate @users %>');
 	<% else %>
 		$(window).off('scroll');
 		$('.pagination').remove();
@@ -9,8 +9,9 @@
 <% else %>
 	$("#photographers-items").html("<%= escape_javascript(render 'photographers') %>");
 	$("<div class='pagination'></div>").insertAfter($("#photographers-items"));
-	$('#infinite-scrolling').replaceWith('<%= j will_paginate @users %>');
+	$('#infinite-scrolling').html('<%= j will_paginate @users %>');
 <% end %>
+PhotographerListEffect();
 photographerPreview();
 ActiveInfinitScrolling();
 PhotoAvoidRightClick(".cover-pic");
