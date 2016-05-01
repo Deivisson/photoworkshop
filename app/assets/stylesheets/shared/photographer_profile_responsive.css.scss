@@ -1,0 +1,38 @@
+@media screen and (max-width: 481px), 
+  screen and (max-width: 767px),
+  screen and (min-width: 768px) and (max-width: 979px)  {
+
+  html, body {
+    overflow-x: hidden;
+    min-width: 0;
+  }
+  ul.users-photographers li .user-infos ul.user-resume li {
+    width: auto !important;
+  }
+}
+
+
+/* Portrait tablet to landscape and desktop */
+@media screen and (min-width: 768px) and (max-width: 979px) {
+  ul.users-photographers li {
+    width: 30% !important;
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  ul.users-photographers { 
+    margin-left: 5px;
+    li {
+      min-width: 0px;
+      width: 48% !important;
+    }   
+  }
+}
+ 
+/* Landscape phones and down */
+@media screen and  (max-width: 480px) {
+ ul.users-photographers li {
+    width: 93% !important;
+  }    
+}
