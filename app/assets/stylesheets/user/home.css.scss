@@ -1,3 +1,11 @@
+ul.upload-button-timeline{
+  margin-top: 10px;
+  width: 612px;
+  margin-left: -310px;
+  position: absolute;
+  left: 50%;
+}
+
 ul.timeline {
 	height: 400px;
 	left: 50%;
@@ -30,7 +38,7 @@ ul.timeline {
 					font-size: 10px;
 					font-weight: normal;
 					margin-bottom: 4px;
-					margin-top: 10px;	 	
+					margin-top: 10px;
 	 			}
 	 			&.user-name {
 	 				margin: 25px 0 0 -42px;
@@ -53,8 +61,8 @@ ul.timeline {
 		}
 		.timestamp {
 			/*ackground-color: #008CBF;
-			border-radius: 31px; 
-			-moz-border-radius: 31px; 
+			border-radius: 31px;
+			-moz-border-radius: 31px;
 			-webkit-border-radius: 31px; */
 			color: #9D9D9D;
 			font-size: 13px;
@@ -72,7 +80,7 @@ ul.timeline {
 			width: 98%;
 			margin-top: 10px;
 			padding: 5px;
-			
+
 			.img-pic {
 				height: 100%;
 				width: 100%;
@@ -142,7 +150,7 @@ ul.timeline {
 				}
 			}
 		}
-		
+
 		.item .comment-list-container {
 			background-color: #F7F7F7;
 			border-top: 1px solid #eaebed ;

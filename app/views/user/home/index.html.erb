@@ -4,13 +4,13 @@
 <%= twitter_share %>
 
 <% if @current_user.first_login? %>
-  <%= hidden_field_tag :first_login, @current_user.first_login?, 
-                       id:'first-login-tag', 
+  <%= hidden_field_tag :first_login, @current_user.first_login?,
+                       id:'first-login-tag',
                        href:user_first_login_steps_path   %>
 <% end %>
 
 
-<%= render partial:'/user/shared/photo/header_search_field', 
+<%= render partial:'/user/shared/photo/header_search_field',
             locals: {remote:false} %>
 <%= render '/user/shared/main_menu' %>
 
@@ -39,7 +39,7 @@
   <%= render 'workshop_promote' if @workshops.any? %>
   <div id="photographers-to-follow">
     <%= render 'suggestion_to_follow' %>
-  </div>  
+  </div>
   <%= render 'social_network_share' %>
 <% end %>
 
@@ -47,6 +47,3 @@
 <div id="infinite-scrolling">
   <%= will_paginate @photos %>
 </div>
-
-
-
