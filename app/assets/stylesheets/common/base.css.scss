@@ -288,9 +288,18 @@ html {
   border-color: #e08a8e;
 }
 
+.upload-button-timeline{
+  height: 400px;
+  left: 8%;
+  position: absolute;
+  width: 612px;
+  align-items: center;
+}
+
 .upload-text{
   float: right;
   margin-left: 12px;
+  text-decoration: none;
 }
 
 .upload-picture-container{
