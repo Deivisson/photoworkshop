@@ -288,6 +288,33 @@ html {
   border-color: #e08a8e;
 }
 
+.upload-text{
+  float: right;
+  margin-left: 12px;
+}
+
+.upload-picture-container{
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  color: #000000;
+  display: flex;
+  height: 41px;
+  margin-bottom: -50px;
+  margin-top: 5px;
+  justify-content: center;
+}
+
+.upload-picture-container a i {
+    font-size: 24px;
+    margin-right: 16px;
+}
+
+.upload-picture-container:hover{
+  background-color: #f7f7f7;
+}
+
 .coverby-container, 
 .photo-author-container {
   position: absolute;

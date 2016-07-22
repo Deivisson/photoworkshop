@@ -45,6 +45,7 @@ pt_BR:
         facebook_share: "Compartilhar no Facebook"
         twitter_share: "Compartilhar no Twitter"
         invite_friends: "Convide Amigos"
+
     photo_comments:
       form:
         comment_box_placeholder: "Deixe o seu comentário"
@@ -388,3 +389,6 @@ pt_BR:
         message: "O seu amigo %{user_name}, está lhe convidando a conhecer o Pic2Gether.com. <br><br>Pic2Gether foi feito para os apaixonados pela Fotografia, um excelente ambiente de exposição para sua arte e um local de muitas inspirações."
         visit_site: "Acesse e confira %{link}"
         sign_up_link: "Se cadastre clicando %{link}."
+  upload:
+    title_upload: "Upload Fotografia"
+

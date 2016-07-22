@@ -1,4 +1,12 @@
 <% @photos.each do |photo| %>
+	<%= link_to new_user_photo_path, id:'photo-upload-link-header' do %>
+		<li>
+			<div class="upload-picture-container">
+				<%= image_tag("upload.png")%>
+				<div class="upload-text"><%= t('upload.title_upload')%></div>
+			</div>
+		</li>
+	<% end %>
 	<li>
 		<div class="photo-author-container">
 			<%= image_tag(photo.user.profile.avatar(:thumb),class:'user-avatar') %>
