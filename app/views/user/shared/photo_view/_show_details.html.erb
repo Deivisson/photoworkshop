@@ -12,6 +12,10 @@
   </div>
   
   <div class="photo-show-extra-content">
+    <div class="title-photo">
+      <h1><%= @photo.title%></h1>
+    </div>
+    <p class="description-photo"><%= @photo.description%></p>
     <%= render "user/shared/photo_view/show_photo_comments" %>
     <%= render "user/shared/photo_view/show_photo_likers" %>
   </div>
