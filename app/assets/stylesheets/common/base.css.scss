@@ -299,9 +299,11 @@ html {
 .upload-text{
   float: right;
   margin-left: 12px;
-  text-decoration: none;
 }
 
+.upload-image{
+  text-decoration: none !important
+}
 .upload-picture-container{
   align-items: center;
   background-color: #fff;

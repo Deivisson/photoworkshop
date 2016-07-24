@@ -19,7 +19,7 @@
   <%= render 'ranking' %>
 <% end %>
 <ul class="upload-button-timeline">
-  <%= link_to new_user_photo_path, id:'photo-upload-link-header' do %>
+  <%= link_to new_user_photo_path, id:'photo-upload-link-header', class: 'upload-image' do %>
     <li>
       <div class="upload-picture-container">
         <%= image_tag("upload.png")%>
