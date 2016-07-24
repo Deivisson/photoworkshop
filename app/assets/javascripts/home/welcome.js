@@ -5,7 +5,7 @@ $(document).on('ready page:load', function (){
 
   // Default move to top
   $('html,body').animate({scrollTop: 0},250);
-	$('#how-work-link, #made-for-who-link, #top-link, #professionals-link, #sign-up-link, #welcome-contact-us-link').click(function(event) {
+	$('#how-work-link, #made-for-who-link, #top-link, #professionals-link,#sign-up-link, #welcome-contact-us-link, #welcome-contact-us-link2').click(function(event) {
    
     $(".how_work,.made-for-who,.professionals,.sign-up-container,.contact-us").css("visibility","visible");
 
@@ -40,7 +40,7 @@ $(document).on('ready page:load', function (){
     $(".step").removeClass("hover");
   });
 
-  $("#welcome-contact-us-link").click(function() {
+  $("#welcome-contact-us-link, #welcome-contact-us-link2").click(function() {
     $("#contact-name-field").focus();
   });
 
