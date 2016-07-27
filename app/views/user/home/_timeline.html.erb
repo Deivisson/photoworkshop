@@ -27,6 +27,10 @@
 						<span class="icon16pb like"></span>
 						<%= content_tag :span,photo.likes.count, id:"timeline-likes-count-#{photo.id}", class:'count-item' %>
 					</label>
+					<label class="favorites">
+						<span><%= image_tag('favorite.png') %></span>
+						<%= content_tag :span,photo.favorites.count, id:"photo-favorite-links-count-#{photo.id}", class:'count-item' %>
+					</label>
 				</div>
 				<%= render partial:'user/shared/photo/menu_popup', locals:{photo:photo} %>
 			</div>

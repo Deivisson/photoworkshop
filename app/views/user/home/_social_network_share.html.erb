@@ -2,10 +2,12 @@
   <ul class="social-network" id="social-network-share">
   	<h1><%= t(".share") %></h1>
   	<li>
+      <span class="icon16pb facebook"></span> 
 	    <%= link_to t('.facebook_share'),"#", 
             onclick:"FacebookShare(undefined,'Inspire-se e torne a sua fotografia cada vez melhor.','share_pic2gether');" %>
     </li>
   	<li>
+      <span class="icon16pb twitter"></span>
 	    <%= link_to t('.twitter_share'),
         'http://twitter.com/home?status=Confira Pic2Gether, feito p/ quem gosta de fotografia! Ganhe prêmios, exposição e muitas inspirações. pic2Gether.com' , target:'_blank',
           onclick:"TwitterShare('share_pic2gether');" %>

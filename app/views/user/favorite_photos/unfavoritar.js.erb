@@ -10,5 +10,11 @@
 	if ($(idElement).length > 0) {
 		$(idElement).html("<%= j(render partial:'user/shared/photo_view/favorite_links', locals:{photo:@photo,show_label:true}) %>");
 	}
+
+	idElement = "#photo-favorite-links-count-<%= @photo.id %>";
+	if ($(idElement).length > 0) {
+		$(idElement).text("<%= @photo.favorites.count %>");
+	}
+	
 	flashNoticeMessage("<%= t('messages.photo_unfavorited') %>");
 <% end %>
