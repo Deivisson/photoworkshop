@@ -274,11 +274,13 @@ ul.toolbar li.user-info ul.dropdown-menu {
 				}
 				a.aux-pic {
 					float: right;
-			    height: 50px;
-			    position: absolute;
-			    right: 0px;
-			    width: 50px;
-			    margin-top: -22px;
+					height: 50px;
+					position: absolute;
+					right: 0px;
+					width: 50px;
+					margin-top: -22px;
+					vertical-align: top;
+					display: inline-table;
 			    img {
 			    	height: 50px;
 			    	width: 50px;
