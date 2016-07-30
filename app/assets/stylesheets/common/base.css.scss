@@ -289,13 +289,13 @@ html {
 }
 
 .upload-button-timeline{
-  height: 400px;
-  left: 8%;
-  position: absolute;
-  width: 612px;
-  align-items: center;
+    height: auto;
+    left: 50%;
+    margin-left: -310px;
+    position: absolute;
+    width: 612px;
+    margin-top: 10px;
 }
-
 .upload-text{
   float: right;
   margin-left: 12px;

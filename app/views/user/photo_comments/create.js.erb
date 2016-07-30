@@ -1,5 +1,5 @@
 <% if  @photo_comment.errors.any? %>
-	alert("Error");
+ 	$(".photo-comment-input-text").focus();
 <% else %>
 	if ($("#photo-list-comments").length > 0) {
 		// Comment photo on Photo View
