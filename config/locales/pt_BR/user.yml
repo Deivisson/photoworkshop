@@ -45,7 +45,8 @@ pt_BR:
         facebook_share: "Compartilhar no Facebook"
         twitter_share: "Compartilhar no Twitter"
         invite_friends: "Convide Amigos"
-
+      fields:
+        limit_photo_size: "Sua foto deverá ter no máximo 8 MB de tamanho."
     photo_comments:
       form:
         comment_box_placeholder: "Deixe o seu comentário"

@@ -1,0 +1,60 @@
+@media screen and (max-width: 984px) {
+  .main-content-area {
+    /*border: 1px solid green;*/
+    width: 99%;
+    .common-photo-upload {
+      /*border: 1px solid red;*/
+      width: 100%;
+      .photo-container {
+        width: 65%;
+        #dragandrophandler {
+          width: 95%;
+        }
+      }
+      .photo-fields-container {
+        float: right;
+      }
+    }
+    .actions {
+      margin-right: -24px !important; 
+    }
+  }
+}
+
+@media screen and (min-width:767px) and (max-width: 983px) {
+  .main-content-area {
+   .common-photo-upload {
+      .photo-container {
+        width: 60%;
+      }
+      .photo-fields-container{
+        width: 41%;
+        margin: -12px 0 0 -40px;
+      }
+    }
+  }
+}
+/*@media screen and (min-width: 1124) and (max-width:1148 ){
+  .main-content-area {
+    right: 250px !important;
+  }
+}*/
+
+@media screen and (min-width: 281px) and (max-width: 766px) {
+  .main-content-area {
+    .common-photo-upload {
+      .photo-container {
+        width: 100%;
+        #dragandrophandler {
+          height: 400px;
+        }
+      }
+      .photo-fields-container{
+        width: 100%;
+      }
+    }
+    .actions {
+      margin: 20px -11px 40px -20px !important; 
+    }
+  }
+}

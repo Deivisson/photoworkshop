@@ -6,18 +6,24 @@
         <%= f.input :picture, 
                     as: :file,
                     label: t('user.photos.form.select_file'),
-                    input_html: {:onchange => "showImagePreview(this)", accept:"image/*" } %>
+                    input_html: {:onchange => "showImagePreview(this)", 
+                    accept:"image/*", class:'btn'} do %>
+        <% end %>
+        <li id="photo_picture_input" class="file input required" style="top: 90px;">
+          <label class="photo-size"><%= t('.limit_photo_size') %></label>
+        </li>
       <% end %>
+
     </div>
   </div>
   <div class="photo-fields-container">
-    <%= content_tag(:div, class:"panel",style:'width: 92%;height:555px') do %>
+    <%= content_tag(:div, class:"panel",style:'width: 92%') do %>
       <%= content_tag :h5, t('user.photos.form.photo_info'),class:'title' %>
       <div class="panel-content">
         <%= f.input :title %>
         <%= f.input :description, :input_html => {rows:5} %>
       </div>
-      <div class="panel-content">
+      <div class="panel-content" style="margin-top: -30px;">
         <%= f.input :category_id,
                     as: :select,
                     collection: @categories.collect{|c|[c.description,c.id]} %>

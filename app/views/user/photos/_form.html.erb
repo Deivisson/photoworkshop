@@ -1,7 +1,7 @@
 <div class="centralizer ">
   <%= semantic_form_for @photo, url:user_photos_path, :html => {multipart:true} do |f| %>
     <%= render partial:'fields', locals: {f: f} %>
-    <div class="actions" style="float: right;width: 285px;">
+    <div class="actions" style="float: right;width: 285px; margin: -120px 0px 0 0">
       <%= submit_button f %>
   		<li>
   			<%= link_to t('.cancel_upload'),

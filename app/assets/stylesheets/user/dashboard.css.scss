@@ -379,6 +379,9 @@ body {
 .right-col ul.social-network {
 	li {
 		min-height: 20px;
+		.icon16pb {
+			margin: 3px 0 0 10px;
+		}
 		a {
 			color: #333;
 			font-size: 13px;

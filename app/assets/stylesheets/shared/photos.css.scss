@@ -341,6 +341,14 @@ input.camera-field {
 		display: block;
 		height: 100%;
 		width: 100%;
+		label.photo-size {
+	    color: #aaaaaa;
+	    float: left;
+	    font-size: 12px;
+	    height: 30px;
+	    margin-top: -10px;
+	    width: 100%;
+		}
 	}
 	li {
 		left: 0;
@@ -383,7 +391,7 @@ input.camera-field {
 		#dragandrophandler {
 			height: 550px;
 			li {
-				width: 600px;
+				width: 100%;
 				position: relative;
 			}
 		}
