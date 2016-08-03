@@ -6,4 +6,4 @@
   <%= link_to (show_label ? t('buttons.favorite') : ""),
   						user_favoritar_photo_path(photo.id),
   						remote:true, class:'favorite-photo' %> 
-<% end unless current_user.nil? %>
+<% end %>
