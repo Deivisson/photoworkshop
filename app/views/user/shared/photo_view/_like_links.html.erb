@@ -6,4 +6,4 @@
   <%= link_to (show_label ? t('buttons.like') : ""),
   						user_photo_like_path(photo.id),
   						remote:true, class:'liked-photo' %> 
-<% end unless current_user.nil? %>
+<% end %>
