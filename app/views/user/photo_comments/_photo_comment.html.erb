@@ -11,7 +11,7 @@
 			<p><%= distance_of_time_in_words(photo_comment.created_at, Time.now) %></p>
 		</span>
 		<p><%= photo_comment.content.html_safe %></p>		
-		<% if can_delete && [photo_comment.user_id, photo_comment.photo.user_id].include?(current_user.id) %>
+		<% if !current_user.nil? && can_delete && [photo_comment.user_id, photo_comment.photo.user_id].include?(current_user.id) %>
 			<%= link_to t('buttons.destroy'), user_photo_photo_comment_path(photo_comment.photo_id, photo_comment),
 									remote:true,
 									method: :delete,
