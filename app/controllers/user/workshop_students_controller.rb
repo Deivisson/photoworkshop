@@ -9,6 +9,7 @@ class User::WorkshopStudentsController < User::BaseController
       @user_profiles = UserProfile.includes(:city)
       @user_profiles = @user_profiles.where("user_name ~* ? ",params[:conditions])
       @user_profiles = @user_profiles.where("user_id <> ? ",current_user.id)
+      @user_profiles = @user_profiles.limit(20)
     end
     render layout:false
   end

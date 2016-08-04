@@ -1,3 +1,4 @@
+var searchValue = "";
 $(document).on('ready page:load', function (){
 	bindWorkshopStudentsDialog();
 });
@@ -28,6 +29,11 @@ function bindWorkshopStudentsDialog() {
 		  		$(this).dialog('option',"title",$("#modal-title-student").text());
 		  		$(".ui-widget-overlay").css("opacity","0.8");
 		  		$("#user-search-field").focus();
+
+	  			// Fire search on type a name
+	  			$("#user-search-field").on('input',function() { 
+	  				$('#student-seach-form').submit(); 
+	  			});
 			  });
 			  
 			  dialog_form.dialog('open');
