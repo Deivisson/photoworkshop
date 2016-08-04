@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, :omniauth_providers => [:facebook, :twitter]
+         :omniauthable, :omniauth_providers => [:facebook, :twitter, :google_oauth2]
 
   SYSTEM_USER = 1
 
@@ -94,7 +94,9 @@ class User < ActiveRecord::Base
       user.auth_uid         = auth[:uid]
       user.email            = auth[:email]
       user.account_url      = auth[:account_url]
-      user.save if user.email.present?
+      puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+      puts user.email
+      user.save! if user.email.present?
     else
       user = user_auth.user
     end

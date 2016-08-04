@@ -21,23 +21,29 @@
     max-width: 500px;
     width: 100%;
     h1 {
-      margin-top: 60px;
+      float: left;
+      margin-top: 10px;
     }
     h2 {
       display: none;
     }
-    a.sign-up-button.facebook,a.sign-up-button.twitter {
+    a.sign-up-button.facebook,a.sign-up-button.twitter,a.sign-up-button.google_oauth2 {
       left: 50%;
       height: 30px;
       line-height: 30px;
-      margin: 15px 0 0 -96px;
-      width: 180px;
+      margin: 70px 0 0 -70px;
+      width: 140px;
     }
     a.sign-up-button.twitter {
-      margin-top: 65px;
+      margin-top: 96px;
+    }
+
+    a.sign-up-button.google_oauth2 {
+      margin-top: 142px;
     }
     a.sign_up_email {
       font-size: 12px;
+      left: 0;
       margin-top: 120px;
     }
   }
@@ -70,13 +76,16 @@
   .welcome-content {
     h1 {
       font-size: 45px;
-      margin-top: 0px;
+      margin-top: -20px;
     }
-    a.sign-up-button.facebook,a.sign-up-button.twitter {
-      margin: 45px 0 0 -190px;
+    a.sign-up-button.facebook,a.sign-up-button.twitter,a.sign-up-button.google_oauth2 {
+      margin: 45px 0 0 -220px;
     }
     a.sign-up-button.twitter {
-      margin-left: 20px;
+      margin-left: -65px;
+    }
+    a.sign-up-button.google_oauth2 {
+      margin-left: 90px; 
     }
   }
 }
@@ -107,13 +116,16 @@
   .welcome-content {
     h1 {
       font-size: 45px;
-      margin-top: 0px;
+      margin-top: -20px;
     }
-    a.sign-up-button.facebook,a.sign-up-button.twitter {
-      margin: 45px 0 0 -190px;
+    a.sign-up-button.facebook,a.sign-up-button.twitter,a.sign-up-button.google_oauth2 {
+      margin: 45px 0 0 -220px;
     }
     a.sign-up-button.twitter {
-      margin-left: 20px;
+      margin-left: -65px;
+    }
+    a.sign-up-button.google_oauth2 {
+      margin-left: 90px; 
     }
   }
 }
@@ -133,6 +145,22 @@
     h1 {
       font-size: 27px;
     }
+    a.sign-up-button.facebook {
+      margin-top: 56px;
+    }
+
+    a.sign-up-button.twitter {
+      margin-top: 96px;
+    }
+
+    a.sign-up-button.google_oauth2 {
+      margin-top: 136px;
+    }
+    a.sign_up_email {
+      font-size: 12px;
+      left: 0;
+      margin-top: 190px;
+    }    
   }
 }
 

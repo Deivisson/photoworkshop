@@ -10,7 +10,7 @@ class Shared::PhotographersController < ApplicationController
 		else
 			@users = User.joins(:profile)
 		end
-		@users = @users.paginate(page: params[:page], per_page: 10)
+		@users = @users.paginate(page: params[:page], per_page: 16)
 		@users = @users.where("users.id <> ?",current_user.id)
 		@users = @users.where("user_profiles.user_name like ?","%#{params[:search]}%") if params[:search].present?
 		if params[:conditions].present?

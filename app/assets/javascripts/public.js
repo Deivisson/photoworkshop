@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.remotipart
 //= require turbolinks
+//= require jquery.remotipart
 //= require common/base
 //= require common/modal_dialog
 //= require common/portfolio.js
