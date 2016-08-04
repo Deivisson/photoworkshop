@@ -34,12 +34,15 @@
 		<label class="social-network-account-label">
 			<%= t('home.account.social_network_account') %>
 		</label>
-		<%= link_to t('home.welcome.authentication.facebook_sign_up'),
-								user_omniauth_authorize_path(:facebook),
+		<%= link_to t('home.welcome.authentication.facebook'),
+								user_facebook_omniauth_authorize_path,
 								class:'sign-up-button facebook'%>
-		<%= link_to t('home.welcome.authentication.twitter_sign_up'),
-								user_omniauth_authorize_path(:twitter),
+		<%= link_to t('home.welcome.authentication.twitter'),
+								user_twitter_omniauth_authorize_path,
 								class:'sign-up-button twitter'%>
+		<%= link_to t('home.welcome.authentication.google'),
+										user_google_oauth2_omniauth_authorize_path,
+										class:'sign-up-button google_oauth2' %>								
 	</div>
 </div>
 </div>

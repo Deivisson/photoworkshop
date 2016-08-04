@@ -43,6 +43,7 @@
 @media screen and (min-width: 481px) and (max-width: 767px) {
   .account-page .account-form-box {
     margin: 50px 0 0 -260px;
+    padding-bottom: 60px;
     width: 500px;
     form {
       margin-top: 10px;
@@ -77,6 +78,7 @@
     margin-top: 50px;
     .social-network-buttons {
       padding-top: 10px;
+      padding-bottom: 60px;
     }
   }
 }

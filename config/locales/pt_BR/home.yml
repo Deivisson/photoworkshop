@@ -15,9 +15,13 @@ pt_BR:
       texts:
         header: "Cadastre-se agora"
         sub_header: "Uma maneira incrivelmente divertida e interativa para apresentar suas fotos"
-      authentication:    
+      authentication:
         facebook_sign_up: "Conta Facebook"
         twitter_sign_up: "Conta Twitter"
+        google_sign_up: "Conta Google"
+        facebook: "Facebook"
+        twitter: "Twitter"
+        google: "Google"
         sign_up_email: "ou cadastre-se usando o email."
       how_work:
         sub_title: "Aprenda fotografar, obtenha dicas, feedback e reconhecimento. Compartilhe sua experiência e seja recompensado com exposição global."

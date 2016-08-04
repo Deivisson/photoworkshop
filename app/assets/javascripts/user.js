@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.remotipart
 //= require turbolinks
+//= require jquery.remotipart
 //= require common/modal_dialog
 //= require common/jquery-ui.min.js
 //= require common/flash_messages.js

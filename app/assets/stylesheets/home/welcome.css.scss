@@ -216,7 +216,7 @@ ul.menu {
     position: absolute;
     margin: 120px 0 0 0;
     text-align: center;
-    text-shadow: 2px 2px 1px rgba(68, 68, 68, 1);
+    text-shadow: 2px 2px 1px #000;
     width: 100%;
   }
 }
@@ -230,19 +230,19 @@ a.sign-up-button {
   float: left;
   font-size: 16px;
   font-weight: bold;
-  line-height: 40px;
+  line-height: 35px;
   text-align: center;
-  height: 40px;
+  height: 35px;
   margin: 40px 10px 0 auto;
-  padding: 5px;
+  padding: 2px;
   position: absolute;
   text-decoration: none;
   transition:All 0.6s ease;
-  width: 250px;
+  width: 190px;
   &.facebook {
     background-color: #4E70B5;
     border: 1px solid #4453B5;
-    margin-left: 210px;
+    margin-left: 170px;
     &:hover {
       background-color: #325293;
       border: 1px solid #4E70B5;
@@ -251,9 +251,17 @@ a.sign-up-button {
   &.twitter {
     background-color: #28C2FA; 
     border: 1px solid #29AFFA;
-    margin-left: 490px;
+    margin-left: 380px;
     &:hover {
       background-color: #1595C4;
+    };
+  }
+  &.google_oauth2 {
+    background-color: #dd4b39; 
+    border: 1px solid #dd4b39;
+    margin-left: 590px;
+    &:hover {
+      background-color: #C23321;
     };
   }
 }

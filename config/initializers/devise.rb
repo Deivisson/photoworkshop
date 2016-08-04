@@ -255,4 +255,5 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   config.omniauth :facebook, "1546622365584604", "4bc84a16267c4328eae57226706bf209",:client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}},scope: 'email', info_fields: 'email, name', secure_image_url: true
   config.omniauth :twitter, "a76VtYhlqqpePvTJiZeEwXGI8", "iUNicoJovnDp3qkiFeog6bk9C5kkCwe1YufQHTuDchl4bw3qky", :client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}},scope: 'r_fullprofile, r_emailaddress', secure_image_url: true
+  config.omniauth :google_oauth2, "737885671403-5nordgeaidsuhcrtqrbho65n1l6e21e5.apps.googleusercontent.com", "k53vkEYePRe25LR4itaFaYQy", :scope => "userinfo.email,userinfo.profile"
 end

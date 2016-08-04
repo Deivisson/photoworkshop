@@ -47,7 +47,7 @@ $(document).on('ready page:load', function (){
   // Resize windows
   $( window ).resize(function() {
     resizeContainer();
-    link.click();
+    if (link != undefined) link.click();
   });
 });
 

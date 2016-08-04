@@ -16,6 +16,8 @@ private
 				profile.twitter = account_url
 			elsif provider == "facebook"
 				profile.facebook = account_url 
+			elsif provider == "google_oauth2"
+				profile.google_plus = account_url
 			end
 			profile.save
 		end
