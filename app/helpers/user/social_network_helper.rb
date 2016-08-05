@@ -103,4 +103,26 @@ module User::SocialNetworkHelper
 		script.html_safe		
 	end
 	
+	def google_plus_link_to_share(title,content,html_options={}, &block)
+		html_options.merge!(target:'_blank')
+		link_to("https://plus.google.com/share?url=#{content}", html_options) do
+			inner_html = []
+			inner_html << title
+			inner_html << content_tag(:nil,&block)
+			inner_html.join.html_safe
+		end
+	end
+
+	def google_plus_share
+		script = <<-SCRIPT
+			<script>
+				function GooglePlusShare(share_callback) {	
+					if (share_callback != undefined) {
+		    		UpdateSocialNetworkShared('google_plus',JSON.stringify("[]"),share_callback);
+	    		}
+	      };
+	    </script>
+		SCRIPT
+		script.html_safe		
+	end
 end

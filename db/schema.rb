@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160417002716) do
+ActiveRecord::Schema.define(version: 20160805032754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -377,6 +377,7 @@ ActiveRecord::Schema.define(version: 20160417002716) do
     t.boolean  "workshop_wait",                         default: false, null: false
     t.boolean  "available_for_freelance",               default: false, null: false
     t.boolean  "available_for_employment",              default: false, null: false
+    t.boolean  "google_plus_shared",                    default: false, null: false
   end
 
   add_index "user_profiles", ["category_id"], name: "index_user_profiles_on_category_id", using: :btree

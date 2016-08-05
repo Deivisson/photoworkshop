@@ -94,8 +94,6 @@ class User < ActiveRecord::Base
       user.auth_uid         = auth[:uid]
       user.email            = auth[:email]
       user.account_url      = auth[:account_url]
-      puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>"
-      puts user.email
       user.save! if user.email.present?
     else
       user = user_auth.user

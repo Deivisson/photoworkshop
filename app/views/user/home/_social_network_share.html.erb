@@ -12,6 +12,11 @@
         'http://twitter.com/home?status=Confira Pic2Gether, feito p/ quem gosta de fotografia! Ganhe prêmios, exposição e muitas inspirações. pic2Gether.com' , target:'_blank',
           onclick:"TwitterShare('share_pic2gether');" %>
     </li>
+    <li>
+      <span class="icon16pb google_plus"></span>
+      <%= google_plus_link_to_share(t('.google_plus_share'),"https://pic2gether.com",onclick:"GooglePlusShare('share_pic2gether');") %>
+    </li>
+
   	<!-- <li>
 	    <%# link_to t('.facebook_invite_friends'),"#", onclick:"FacebookInviteFriends();" %>
     </li>  -->   

@@ -2,6 +2,7 @@
 <%= facebook_invite_friends %>
 <%= facebook_share %>
 <%= twitter_share %>
+<%= google_plus_share %>
 
 <% if @current_user.first_login? %>
   <%= hidden_field_tag :first_login, @current_user.first_login?,

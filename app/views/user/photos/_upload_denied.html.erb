@@ -1,7 +1,7 @@
 <%= facebook_script %>
 <%= facebook_share %>
 <%= twitter_share %>
-
+<%= google_plus_share %>
 <div class="end-limit-upload-photo">
 	<p>
 		<span class="ops-face">;-(</span>
@@ -9,7 +9,7 @@
 	</p>
 	
 	<ul class="increase-limit-way">
-  	<% if !current_user.profile.facebook_shared? || !current_user.profile.twitter_shared? %>
+  	<% if !current_user.profile.facebook_shared? || !current_user.profile.twitter_shared? || !current_user.profile.google_plus_shared?  %>
 	  	<li>
 	  		<h1><%= t(".share") %></h1>
 		    <%= link_to t('.facebook_share'),"#", class:'btn btn-bigger facebook-button',
@@ -17,6 +17,11 @@
         <%= link_to t('.twitter_share'),
 	        'http://twitter.com/home?status=Confira Pic2Gether, feito p/ quem gosta de fotografia! Ganhe prêmios, exposição e muitas inspirações. pic2Gether.com' , target:'_blank', class:'btn btn-bigger twitter-button',
 	          onclick:"TwitterShare('share_pic2gether');" unless current_user.profile.twitter_shared? %>
+
+        <%= google_plus_link_to_share(t('.google_plus_share'),
+        			"https://pic2gether.com",
+        			onclick:"GooglePlusShare('share_pic2gether');") unless 
+        			current_user.profile.google_plus_shared? %>
 	    </li>
 		<% end %>    
   	<li>
