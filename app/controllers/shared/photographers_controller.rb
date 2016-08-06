@@ -12,7 +12,7 @@ class Shared::PhotographersController < ApplicationController
 		end
 		@users = @users.paginate(page: params[:page], per_page: 16)
 		@users = @users.where("users.id <> ?",current_user.id)
-		@users = @users.where("user_profiles.user_name like ?","%#{params[:search]}%") if params[:search].present?
+		@users = @users.where("(user_profiles.user_name like :name or user_profiles.full_name like :name )",name:"%#{params[:search]}%") if params[:search].present?
 		if params[:conditions].present?
 			@users = @users.where("cities.state_id = ?", params[:conditions][:state_id].to_i) if params[:conditions][:state_id].present?
 			@users = @users.where("user_profiles.city_id = ?", params[:conditions][:city_id].to_i) if params[:conditions][:city_id].present?
