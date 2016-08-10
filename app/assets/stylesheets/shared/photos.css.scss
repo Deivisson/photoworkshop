@@ -350,6 +350,15 @@ input.camera-field {
 	    width: 100%;
 		}
 	}
+	button#photo_remove{
+		display: none;
+	}
+
+	.remove-photo-upload{
+	    display: none;
+	    float: right;
+	    margin-top: 0px;
+	}
 	li {
 		left: 0;
 		list-style: none;

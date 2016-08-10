@@ -96,6 +96,12 @@ function showImagePreview(input) {
 		$("#dragandrophandler").css("border","1px solid #777")
 		$("li#photo_picture_input > label").hide();
 		$("#photo_title").focus();
+		$("#photo_remove").css("display", "block");
+
+		$("#photo_remove").on("click", function () {
+			console.log("teste")
+			$("#picture_uploaded").replaceWith($("#picture_uploaded").val('').clone(true));
+ 		 });
 	}
 }
 
