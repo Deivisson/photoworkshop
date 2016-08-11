@@ -35,12 +35,12 @@ function photoView(){
 					});
 		  });
 		  dialog_form.dialog('open');
-		  e.preventDefault();  
-	});	
+		  e.preventDefault();
+	});
 }
 
 $(window).resize(function () {
-	adjustLayout();	
+	adjustLayout();
 });
 
 function adjustLayout(){
@@ -71,7 +71,7 @@ function resizeModalDialog(){
 	var h = $(window).height() * 1;
 	$("#ui-widget-overlay").css("height",h);
 	$("#ui-widget-overlay").css("width",w);
-	$("#ui-widget-content").css("height",h);	
+	$("#ui-widget-content").css("height",h);
 	$("#ui-widget-content").css("width",w);
 }
 
@@ -96,6 +96,14 @@ function showImagePreview(input) {
 		$("#dragandrophandler").css("border","1px solid #777")
 		$("li#photo_picture_input > label").hide();
 		$("#photo_title").focus();
+		$("#photo_remove").css("display", "block");
+
+		$("#photo_remove").on("click", function () {
+			console.log("teste")
+      $("#image-upload").css("background-image","")
+      $("li#photo_picture_input > label").show();
+      $("#photo_remove").css("display", "none");
+ 		 });
 	}
 }
 
@@ -122,7 +130,6 @@ function PhotoAvoidRightClick(photoElem) {
 		$(photoElem).on("contextmenu",function() {
 	 		alert("Direitos autorais pertence a " + $(this).attr("owner") +".");
 	   	return false;
-		}); 		
+		});
 	}
 }
-

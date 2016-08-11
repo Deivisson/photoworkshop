@@ -1,19 +1,19 @@
 <div class="common-photo-upload">
   <div class="photo-container">
     <div id="dragandrophandler">
+      <div id="photo_remove" class="remove-photo-upload"><%= image_tag("close.png")%></div>
       <% content_tag :img ,"", id:'sdimage-upload'%>
-      <%= content_tag :div, "",class:'image-upload', id:'image-upload' do %> 
-        <%= f.input :picture, 
+      <%= content_tag :div, "",class:'image-upload', id:'image-upload' do %>
+        <%= f.input :picture,
                     as: :file,
                     label: t('user.photos.form.select_file'),
-                    input_html: {:onchange => "showImagePreview(this)", 
+                    input_html: {:onchange => "showImagePreview(this)",
                     accept:"image/*", class:'btn'} do %>
         <% end %>
         <li id="photo_picture_input" class="file input required" style="top: 90px;">
           <label class="photo-size"><%= t('.limit_photo_size') %></label>
         </li>
       <% end %>
-
     </div>
   </div>
   <div class="photo-fields-container">
@@ -28,7 +28,7 @@
                     as: :select,
                     collection: @categories.collect{|c|[c.description,c.id]} %>
         <%= f.input :tags %>
-      </div>      
+      </div>
     <% end %>
   </div>
 </div>

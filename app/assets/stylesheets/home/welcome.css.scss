@@ -461,6 +461,52 @@ a.sign-up-button {
   } 
 }
 
+.workshops{
+  background-color: #fff;
+  margin-top: 5px;
+    h1.title {
+    font-size: 38px;
+    color: #303030;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: -40px;
+    width: 100%;
+  }
+  h4.sub-title {
+    font-size: 20px;
+    color:  #777;
+    text-align: center;
+    margin-top: 10px;
+    width: 70%; 
+    margin-left: 15%;
+  }
+  .align-img-right{
+    float: right;
+    width: 50%;
+    margin-top: 10px;
+  }
+  .description-left{
+    float: left;
+    width: 50%;
+    color: #585656;
+    font-size: 27px;
+    margin-top: 65px;
+
+  }
+  .align-img-left{
+    float: left;
+    width: 50%;
+    margin-top: 130px;
+  }
+  .description-right{
+    float: right;
+    width: 50%;
+    color: #585656;
+    font-size: 27px;
+    margin-top: 65px;
+  }
+}
+
 .professionals {
   background-color: #eee;
   h1.title {
