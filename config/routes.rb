@@ -93,6 +93,9 @@ Rails.application.routes.draw do
       get :contactus, on: :collection
       get :termsconditions, on: :collection
     end
+    resources :promotions, only: [:workshops] do
+      get :workshops, on: :collection
+    end
     get "user_profile/:user_name/check_user_name", to: "user_profile#check_user_name", as: :check_user_name
     get "user_profile/:full_name/format_user_name", to: "user_profile#format_user_name", as: :format_user_name
   end
