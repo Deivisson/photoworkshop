@@ -38,7 +38,8 @@
       <%= f.input :category_id,
                   as: :select,
                   collection: @categories.collect{|c|[c.description,c.id]} %>
-      <%= f.input :work %>
+      <%= f.input :work,
+                  :hint => t('.work_hint') %>
       <%= f.input :available_for_employment,
                   :hint => t('.available_for_employment_hint') %>
       <%= f.input :available_for_freelance,

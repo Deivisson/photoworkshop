@@ -61,8 +61,8 @@ pt_BR:
     attributes:
       user_profile:
         description: "Biografia"
-        category_id: "Categoria Principal"
-        work: "Trabalho s"
+        category_id: "Categoria"
+        work: "Trabalho Atual"
         camera: "Camera"
         home_page: "Home Page"
         country_id: "País"

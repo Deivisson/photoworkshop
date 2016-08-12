@@ -66,6 +66,7 @@ pt_BR:
         social_networks: "Redes Sociais"
         avatar_max_size: "Tamanho máximo 2 megabytes"
         photograph_profile: "Perfil Fotográfico"
+        work_hint: "Informe onde você trabalha ou com o que trabalha"
         available_for_freelance_hint: "Marcando esta opção, você passa a ficar visível para pessoas/empresas que possam estar buscando um profissional para trabalhos Freelancer." 
         available_for_employment_hint: "Marcando esta opção, você passa a ficar visível para pessoas/empresas que possam estar buscando um profissional para trabalhos Fixo."
       show:

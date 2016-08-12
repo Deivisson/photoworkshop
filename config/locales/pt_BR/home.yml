@@ -56,6 +56,22 @@ pt_BR:
           juror:
             title: "Ser um Jurado Pic2Gether (<i>Em Breve...</i>)"
             details: "Um Jurado Pic2Gether, tem visibilidade, privilégios e poderes importantes na avalição das fotografias postadas no nosso portal."
+      workshops:
+        title: "GERENCIAMENTO DE WORKSHOPS"
+        sub_title: "ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip"
+        features:
+          functionality1:
+            title: "Gerenciar Workshops"
+            details: "    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip"
+          functionality2:
+            title: "Gerenciar Workshops"
+            details: "Sendo um Coach ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation (Técnico) no Pic2Gether, você ajudará na formação de bons fotografos e ainda será remunerado por isto."            
+          functionality3:
+            title: "Gerenciar Workshops"
+            details: "Um Jurado Pic2Gether, tem visibilidade, privilégios e poderes importantes na avalição das fotografias postadas no nosso portal."
+          functionality4:
+            title: "Gerenciar Workshops"
+            details: "Um Jurado Pic2Gether, tem visibilidade, privilégios e poderes importantes na avalição das fotografias postadas no nosso portal."
       sign_up:
         title: "Crie sua conta"
         full_name_field: "Nome + Sobrenome"
