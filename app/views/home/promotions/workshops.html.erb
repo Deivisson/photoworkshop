@@ -1,16 +1,16 @@
 <h1 class="workshop-promotions-title">
 	Alguns motivos para você utilizar o Pic2Gether
 </h1>
-<h4 class="workshop-promotions-sub-title">
+<p class="workshop-promotions-sub-title">
 	Gerencie workshops, cursos, mentoring sem complicações. Com o Pic2Gether você se preocupa com as aulas práticas e nós gerenciamos tudo pra você.
-</h4>
+</p>
 <%= content_tag :div, 
 							style:"background-image:url(#{image_url('home/promotions/workshops/avaliation.png')})", 
 							class:'workshop-image' do %>
 <% end %>
 
 <div class="workshop-promotions-share">
-  <%= link_to "#", onclick:"FacebookShare('#{workshops_home_promotions_url}','Imperdivel para Fotografos que ministram workshops, cursos, mentoring.')" do %>
+  <%= link_to "#", onclick:"FacebookShare('#{workshops_home_promotions_url}','Imperdível para Fotografos que ministram workshops, cursos, mentoring.')" do %>
     <span class="social-network-icon-24 facebook"></span>  
   <% end %>
   <%= twitter_link_to_share("", "Gerencie workshops, cursos, mentoring sem complicações.#{workshops_home_promotions_url}") do %>
