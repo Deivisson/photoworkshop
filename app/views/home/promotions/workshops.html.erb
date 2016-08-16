@@ -1,8 +1,25 @@
 <h1 class="workshop-promotions-title">
-	Gerenciamento de Workshops sem complicação
+	Alguns motivos para você utilizar o Pic2Gether
 </h1>
-<%= image_tag("home/promotions/workshops/avaliation.png",class:'workshop-avaliations') %>
+<p class="workshop-promotions-sub-title">
+	Gerencie workshops, cursos, mentoring sem complicações. Com o Pic2Gether você se preocupa com as aulas práticas e nós gerenciamos tudo pra você.
+</p>
+<%= content_tag :div, 
+							style:"background-image:url(#{image_url('home/promotions/workshops/avaliation.png')})", 
+							class:'workshop-image' do %>
+<% end %>
 
+<div class="workshop-promotions-share">
+  <%= link_to "#", onclick:"FacebookShare('#{workshops_home_promotions_url}','Imperdível para Fotografos que ministram workshops, cursos, mentoring.')" do %>
+    <span class="social-network-icon-24 facebook"></span>  
+  <% end %>
+  <%= twitter_link_to_share("", "Gerencie workshops, cursos, mentoring sem complicações.#{workshops_home_promotions_url}") do %>
+    <span class="social-network-icon-24 twitter"></span>  
+  <% end %>
+  <%= google_plus_link_to_share("",workshops_home_promotions_url) do %>
+    <span class="social-network-icon-24 googleplus"></span>  
+  <% end %>
+</div>
 <div class="workshop-promotions">
 	<ul>
 		<li>
@@ -61,3 +78,8 @@
 	</ul>
 
 </div>
+
+<%= link_to "Cadastre-se Agora mesmo !!",
+						new_user_registration_path,
+						class:'btn btn-success btn-bigger',
+						style:'margin-left: 300px; width: 500px;text-align:center' %>

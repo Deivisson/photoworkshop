@@ -17,10 +17,10 @@
         <%= link_to t('.twitter_share'),
 	        'http://twitter.com/home?status=Confira Pic2Gether, feito p/ quem gosta de fotografia! Ganhe prêmios, exposição e muitas inspirações. pic2Gether.com' , target:'_blank', class:'btn btn-bigger twitter-button',
 	          onclick:"TwitterShare('share_pic2gether');" unless current_user.profile.twitter_shared? %>
-
+        <br></br>
         <%= google_plus_link_to_share(t('.google_plus_share'),
         			"https://pic2gether.com",
-        			onclick:"GooglePlusShare('share_pic2gether');") unless 
+        			onclick:"GooglePlusShare('share_pic2gether');",class:'btn btn-bigger google-plus-button') unless 
         			current_user.profile.google_plus_shared? %>
 	    </li>
 		<% end %>    
