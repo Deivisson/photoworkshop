@@ -30,7 +30,8 @@ function photoView(){
 		  		$(".ui-widget-overlay").css("opacity","1");
 		  		adjustLayout();
 		  		PhotoAvoidRightClick("#photo-picture");
-	  			$("#photo-view-modal-close-button").click(function() {
+	  			$("#photo-view-modal-close-button").click(function(e) {
+	  				e.preventDefault();
 		  			$("#photo-modal-dialog").dialog( "close" );
 					});
 		  });

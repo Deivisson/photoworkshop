@@ -1,11 +1,13 @@
-img.workshop-avaliations {
-	height: 500px;
+.workshop-image {
+	height: 460px;
 	margin: 0 0 70px 100px; 
+	width: 760px;
+	background-size: cover;
+	background-position: 50% center;
 }
 
 h1.workshop-promotions-title,
 h4.workshop-promotions-sub-title  {
-	color: #333;
   font-size: 40px;
   line-height: 46px;
   margin: 10px 0 30px;
@@ -13,11 +15,14 @@ h4.workshop-promotions-sub-title  {
   width: 100%;
 }
 
-/*h4.workshop-promotions-sub-title  {
-	font-size: 18px;
-	text-align: left;
+h4.workshop-promotions-sub-title  {
+	color: #656565;
+	font-size: 19px;
+	line-height: 22px;
+	width: 80%;
+	margin-left: 100px;
 }
-*/
+
 .workshop-promotions {
 	float: left;
 	width: 100%;
@@ -64,6 +69,21 @@ h4.workshop-promotions-sub-title  {
 			color: #656565;
 		  font-size: 18px;
 		  line-height: 28px;
+		}
+	}
+}
+
+.workshop-promotions-share {
+	position: fixed;
+	right: 50px;
+	top: 110px;
+	width: 40px;
+	a {
+		float: left;
+		height: 38px;
+		width: 48px;
+		span {
+			float: left;
 		}
 	}
 }
