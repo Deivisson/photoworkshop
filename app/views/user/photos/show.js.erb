@@ -1,5 +1,6 @@
 $("#photo-show-container").html("<%= escape_javascript(render 'user/shared/photo_view/show_details') %>");
-$("#photo-view-modal-close-button").click(function() {
+$("#photo-view-modal-close-button").click(function(e) {
+	e.preventDefault();
 	$("#photo-modal-dialog").dialog( "close" );
 });
 adjustLayout();
