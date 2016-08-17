@@ -33,7 +33,8 @@ function photoView(){
 	  			$("#photo-view-modal-close-button").click(function(e) {
 	  				e.preventDefault();
 		  			$("#photo-modal-dialog").dialog( "close" );
-					});
+		  			console.log('TESTE');
+				});
 		  });
 		  dialog_form.dialog('open');
 		  e.preventDefault();
