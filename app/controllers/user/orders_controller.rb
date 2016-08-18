@@ -26,30 +26,37 @@ class User::OrdersController < User::BaseController
       }
       @order = current_user.orders.build(attributes)
       if @order.save
-        payment 								 = PagSeguro::PaymentRequest.new
-        payment.reference 			 = @order.id
-        payment.notification_url = api_v1_pagseguro_notifications_url
-        payment.redirect_url 		 = user_order_url(id:@order.id,provider:"pagseguro")
-
-        payment.items << {
-          id: plan.id,description:description,amount: plan.value
-        }
-        payment.sender = {
-          name: current_user.profile.full_name,
-          email: current_user.email,
-          cpf: "51996566270",
-          phone: {
-            area_code: "31",
-            number: "999999999"
-          }
-        } 
-        response = payment.register
-        if response.errors.any?
-          raise response.errors.join("\n")
-        else
-          redirect_to response.url
-        end
+        @order.status = Pagseguro::STATUS_PAID
+        @order.save!
+        redirect_to user_order_path(@order)
       end
+      #Codigo comentado apenas para testes de parceiros 
+
+      # if @order.save
+      #   payment 								 = PagSeguro::PaymentRequest.new
+      #   payment.reference 			 = @order.id
+      #   payment.notification_url = api_v1_pagseguro_notifications_url
+      #   payment.redirect_url 		 = user_order_url(id:@order.id,provider:"pagseguro")
+
+      #   payment.items << {
+      #     id: plan.id,description:description,amount: plan.value
+      #   }
+      #   payment.sender = {
+      #     name: current_user.profile.full_name,
+      #     email: current_user.email,
+      #     cpf: "51996566270",
+      #     phone: {
+      #       area_code: "31",
+      #       number: "999999999"
+      #     }
+      #   } 
+      #   response = payment.register
+      #   if response.errors.any?
+      #     raise response.errors.join("\n")
+      #   else
+      #     redirect_to response.url
+      #   end
+      # end
     end		
 	end
 

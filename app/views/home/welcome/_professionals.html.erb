@@ -12,7 +12,9 @@
 	<li>
 		<h4><%= t('.features.workshops.title') %></h4>
 		<p><%= t('.features.workshops.details') %></p>
-		<%# link_to t('home.welcome.menu.how_work'),"#",id:'how-workshop-link' %>
+		<%= link_to t('home.welcome.menu.how_work'),
+				workshops_home_promotions_path,
+				class:"btn btn-small btn-success" %>
 	</li>
 	<li>
 		<h4><%= t('.features.coach.title').html_safe %></h4>
