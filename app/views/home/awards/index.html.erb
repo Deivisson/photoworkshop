@@ -1,5 +1,4 @@
-	<% if params[:name] = 'basket_raffle' %>
-			<%= render '/home/awards/basket_raffle' %>
-	<% else %>
-	  <%= render '/home/awards/eduk_course' %>
-	<% end %>	
+	<%= render '/home/awards/basket_raffle' if params[:name] == 'basket_raffle' %>
+	<%= render '/home/awards/eduk_course' if params[:name] == 'eduk_course' %>
+	
+

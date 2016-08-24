@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  match "/", :controller => :facebook, :action => :canvas, :as => 'facebook_canvas', :via => [:post]  
+  match "/", :controller => :facebook, :action => :canvas, :as => 'facebook_canvas', :via => [:post]
   devise_for :admins
   namespace :admin do
     resources :categories
@@ -8,18 +8,18 @@ Rails.application.routes.draw do
     resources :states
     resources :workshop_plans
   end
-  
+
   devise_for :users,controllers: {registrations: "authentication/registrations",
                                  omniauth_callbacks:"authentication/omniauth_callbacks"}
 
-  namespace :user do 
+  namespace :user do
     root "home#index"
     resources :home, :only => [:index]
-    resources :first_login_steps, :only => [:index] do 
+    resources :first_login_steps, :only => [:index] do
       get :forward, to: "first_login_steps#step"
       get :backward, to: "first_login_steps#step"
     end
-    resources :photos do 
+    resources :photos do
       resources :photo_comments, only: [:create,:destroy]
       resources :photo_ratings, only: [:index] do
         put :save, on: :collection
@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     get "profile/edit_cover_photo", to:"user_profiles#edit_cover_photo", :as => :edit_cover_photo
     put "profile/:photo_id/update_cover_photo", to:"user_profiles#update_cover_photo", :as => :update_cover_photo
     post "profile/social_network_shared/:provider", to: "user_profiles#social_network_shared"
-    
+
     get "photo_likes/:photo_id/like", to: "photo_likes#like", :as => :photo_like
     get "photo_likes/:photo_id/unlike", to: "photo_likes#unlike", :as => :photo_unlike
     resources :photographers, only: [:index,:show] do
@@ -41,7 +41,7 @@ Rails.application.routes.draw do
       get :about
       get :workshops
     end
-    
+
     resources :workshops do
       get :publish
       get :marketing
@@ -52,8 +52,8 @@ Rails.application.routes.draw do
       get "workshop_students/:user_id/add", to:'workshop_students#add', :as => :add_student
       delete "workshop_students/:user_id/remove", to:'workshop_students#remove', :as => :remove_student
       put  "workshop_students/:user_id/confirm_matriculation", to:'workshop_students#confirm_matriculation', :as => :confirm_matriculation
-      resources :workshop_activities, as: :activities, except: [:index] do 
-        resources :workshop_activity_responses, as: :responses, except: [:index] 
+      resources :workshop_activities, as: :activities, except: [:index] do
+        resources :workshop_activity_responses, as: :responses, except: [:index]
       end
       resources :workshop_activities, only: [:create,:update]
     end
@@ -62,7 +62,7 @@ Rails.application.routes.draw do
     #explore resources
     get "photo_explore", to: "photo_explore#index", as: :photo_explore
     get "photo_explore/:photo_id", to: "photo_explore#show", as: :photo_explore_show
-    resources :portfolio_templates, only: [:index], as:'portfolio_templates' do 
+    resources :portfolio_templates, only: [:index], as:'portfolio_templates' do
       get :preview, on: :collection
       put :buy
     end
@@ -78,7 +78,7 @@ Rails.application.routes.draw do
     get "user_profile/:user_id/workshop_wait", to: "user_profiles#workshop_wait", :as => :workshop_wait
     resources :workshop_plans, only:[:index]
     resources :rankings, only:[:index]
-    resources :orders, only: [:create, :show, :index] do 
+    resources :orders, only: [:create, :show, :index] do
       get :check_payment
     end
     resources :communications, only:[:show,:create]
@@ -87,9 +87,9 @@ Rails.application.routes.draw do
     put "users/reset_unseen_notifications_count", to:"users#reset_unseen_notifications_count", as: :reset_unseen_notifications_count
     put "users/reset_unseen_messages_count", to:"users#reset_unseen_messages_count", as: :reset_unseen_messages_count
   end
-  
+
   namespace :home do
-    resources :welcome, only: [:index] do 
+    resources :welcome, only: [:index] do
       get :contactus, on: :collection
       get :termsconditions, on: :collection
     end
@@ -100,7 +100,7 @@ Rails.application.routes.draw do
     get "user_profile/:full_name/format_user_name", to: "user_profile#format_user_name", as: :format_user_name
   end
   get "awards/:name", to: "home/awards#index", as: :pic2gether_awards
-  
+
   namespace :public do
     #resources :portfolio, only:[:index]
     get "portfolio/photo/:template/:photo_id", to: "portfolio#get_photo", as: :get_photo
@@ -116,14 +116,14 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    namespace :v1 do 
-      resources :pagseguro_notifications, only: :create 
+    namespace :v1 do
+      resources :pagseguro_notifications, only: :create
     end
   end
 
   get "portfolio/:user_name", to: "public/portfolio#index", as: :photographer_public_portfolio
   get ":user_name", to: "public/photographers#show", as: :photographer_profile
- 
+
   get "sign_up/finish", to:'omniauth_callbacks#sign_finish', :as => :sign_up_finish
   post "authentication/sign_up_finish/complete_sign_up", to:'authentication/sign_up_finish#complete_sign_up', :as => :complete_sign_up
   root "home/welcome#index"
