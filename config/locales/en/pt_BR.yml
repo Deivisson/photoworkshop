@@ -52,6 +52,7 @@ pt_BR:
     rating_photo_with_success: "Foto Avaliada com sucesso."
     following_success: "Você acabou de seguir %{photographer}"
     order_workshop_paid: "Parabéns, sua compra foi efetuada com sucesso. O seu Workshop/Curso já esta disponível."
+    portifolio_apply: "Template adicionado com sucesso."
   levels:
     beginner: "Iniciante"
     beginner_info: "Você está tirando fotos sem colocar qualquer pensamento técnico para elas, mas este é o começo para se tornar cada vez melhor. Pratique!"
