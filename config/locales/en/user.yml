@@ -24,6 +24,7 @@ pt_BR:
       menu:
         about: "Sobre"
         photos: "Minhas Fotos"
+        photos_favorites: "Minhas Favoritas"
         following: "Seguindo"
         followers: "Seguidores"
 

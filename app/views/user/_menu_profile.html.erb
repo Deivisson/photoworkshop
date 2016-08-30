@@ -6,6 +6,9 @@
     <%= content_tag :li, class:(current_menu == 'photos' ? 'current' : '')  do  %>
       <%= link_to t('user.profile.menu.photos'), user_photos_path %>
     <% end %>
+    <%= content_tag :li, class:(current_menu == 'photos_favorites' ? 'current' : '')  do  %>
+      <%= link_to t('user.profile.menu.photos_favorites'), user_favorite_photos_explore_path %>
+    <% end %>
     <%= content_tag :li, class:(current_menu == 'following' ? 'current' : '')  do %>
       <%= link_to t('user.profile.menu.following'),user_photographer_following_path(current_user) %>
     <% end %>
