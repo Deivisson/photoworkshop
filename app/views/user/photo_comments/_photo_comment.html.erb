@@ -1,7 +1,6 @@
 <% can_delete ||= false %>
 <li id="photo-comment-<%= photo_comment.id %>">
 	<%= link_to user_photographer_path(photo_comment.user_id), class:'photographer-profile' do %>
-		<% image_tag(photo_comment.user.profile.avatar(:thumb),class:'avatar') %>
 		<%= avatar_tag(photo_comment.user.profile.avatar(:thumb),class:'user-avatar avatar-rounded') %>
 	<% end %>
 	<div class="text-box">

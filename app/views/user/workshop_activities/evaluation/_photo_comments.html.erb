@@ -3,7 +3,7 @@
   <% response.photo.comments.from_workshop_activity.each do |comment| %>
   		<li>
   			<%= link_to user_photographer_path(comment.user_id),class:"photographer-profile" do %>
-		  		<%= image_tag(comment.user.profile.avatar.url(:medium),class:'user-avatar') %>
+		  		<%= avatar_tag(comment.user.profile.avatar.url(:medium),class:'user-avatar avatar-rounded') %>
 		  	<% end %>
 		  	<p><%= comment.content %></p>
 	  	</li>
