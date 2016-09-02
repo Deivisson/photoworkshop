@@ -299,7 +299,8 @@ private
 	def photo_details(photo)
 		content_tag(:div) do 
 			html_details = []
-			html_details << image_tag(photo.user.profile.avatar.url(:thumb),class:'user-avatar')
+			#html_details << image_tag(photo.user.profile.avatar.url(:thumb),class:'user-avatar')
+			html_details << avatar_tag(photo.user.profile.avatar.url(:thumb),class:'user-avatar avatar-rounded')
 			html_details << content_tag(:div,class:"details-content") do 
 				html_content = []
 				if @location == :photos_explore

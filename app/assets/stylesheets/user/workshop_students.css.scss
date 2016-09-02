@@ -12,8 +12,7 @@ ul.workshop-user-students {
 			background-color: #eee
 		};
 		&:hover .buttons {visibility: visible;};
-		img.user-avatar {
-			float: left;
+		.user-avatar {
 			height: 45px; 
 			width: 45px;
 			max-height: 45px; 

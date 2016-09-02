@@ -1,6 +1,6 @@
 <div class="portfolio portfolio-vertical-slide <%= @theme_color %>"  id="portfolio-template">
 	<div class="header">
-		<%= image_tag(@photographer.profile.avatar.url(:medium), class:'avatar') %>
+		<%= avatar_tag(@photographer.profile.avatar.url(:medium),class:"user-avatar avatar-rounded")%>
 		<div class="text-box">
 			<h1><%= @photographer.profile.full_name %></h1>
 			<p><%= @photographer.profile.category.description %></p>

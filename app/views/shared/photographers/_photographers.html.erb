@@ -8,7 +8,7 @@
   			<% end if @namespace == :user && @user.id == current_user.id  %>
   		</div>
   		<div class="user-infos">
-      	<%= image_tag(user.profile.avatar.url(:medium),class:'avatar') %>
+        <%= avatar_tag(user.profile.avatar.url(:medium),class:"avatar") %>
         <%= content_tag :label,class:'user-name' do %>
           <span>
           	<%= link_to user.profile.short_name,

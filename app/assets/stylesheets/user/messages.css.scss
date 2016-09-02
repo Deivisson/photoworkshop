@@ -29,7 +29,7 @@ ul.menu-messages {
     height: 55px !important;
     margin-left: -5px !important;
     padding: 5px 0 !important;
-		img.user-avatar-rounded {
+		.user-avatar {
 			float: left;
 			margin: 0 0 0 14px
 		}
@@ -112,9 +112,10 @@ ul.menu-messages {
 			}
   		.message.my {
   			float: right;
-  			.user-avatar-rounded {
+  			.user-avatar {
   				float: right;
   				margin-right: 15px;
+  				position: relative;
   			}
   			p {
 	  			background-color: #dff0d8;
@@ -128,9 +129,10 @@ ul.menu-messages {
 			}
   		.message.other {
   			float: left;
-  			.user-avatar-rounded {
+  			.user-avatar {
   				float: left;
   				margin-left: 15px;
+  				position: relative;
   			}  			
   			p {
 			    background-color: #d9edf7;

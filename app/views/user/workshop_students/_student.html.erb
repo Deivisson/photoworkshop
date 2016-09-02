@@ -1,6 +1,6 @@
 
 <%= content_tag :li, id:"student-#{@workshop.id}#{student.user_id}" do %>
-  <%= image_tag student.user.profile.avatar.url(:thumb),class:'user-avatar' %>
+  <%= avatar_tag(student.user.profile.avatar.url(:thumb),class:'user-avatar') %>
   <%= link_to student.user.profile.user_name,
               user_photographer_path(student.user_id),
               class:"photographer-profile user-name" %>

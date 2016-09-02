@@ -18,7 +18,8 @@
 		<%= link_to new_user_photo_path, class:"upload-image", id:'photo-upload-link-header' do %>
 			<span class="icon20 upload"></span>
 		<% end %>
-		<%= image_tag(current_user.profile.avatar.url(:medium),class:'avatar',id:'menu-trigger') %>
+		<%= avatar_tag(current_user.profile.avatar.url(:medium),
+									{class:'user-avatar avatar-rounded',id:'menu-trigger'}) %>
 		<ul class="dropdown-menu profile-menu" id="menu-dropdown">
 			<span class="up-arrow"></span>
 			<li><%= link_to t('user.user_menu.profile'), user_profile_path(0) %></li>

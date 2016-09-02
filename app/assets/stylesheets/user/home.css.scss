@@ -43,12 +43,11 @@ ul.timeline {
 	 				}
 	 			}
 		 	}
-		 	img.user-avatar {
-		 		border-radius: 50%;
+		 	.user-avatar {
+		 		border: 2px solid #FFF;
 		    border-width: 3px;
-		    height: 45px;
-		    margin-left: 0;
-		    width: 45px
+  			margin: 4px 0 0 0px;
+  			position: relative;
 		 	}
 		}
 		.timestamp {
@@ -157,13 +156,12 @@ ul.timeline {
 					width: 100%;
 					margin-top: 10px;
 					padding: 5px;
-					.avatar {
+					.user-avatar {
 						float: left;
 						border: 2px solid #fff;
-				    border-radius: 50%;
-				    float: left;
 				    height: 35px;
 				    margin: -4px 0 0 0px;
+				    position: relative;
 				    width: 35px;
 					}
 					.text-box {

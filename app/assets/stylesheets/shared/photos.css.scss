@@ -93,14 +93,13 @@
 	float: left;
 	height: 50px;
 	width: 100%;
-	img.user-avatar {
-		border-radius: 50%;
+	.user-avatar {
 		border: 0px solid #131519;
-		float: left;
 		height: 40px;
-		margin: 2px 0 0 7px;
+		margin: 4px 0 0 7px;
 		opacity: 1;
 		width: 40px;
+		position: relative;
 	}
 	.details-content {
     float: left;

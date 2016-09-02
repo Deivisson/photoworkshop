@@ -1,7 +1,7 @@
 <% @photos.each do |photo| %>
 	<li>
 		<div class="photo-author-container">
-			<%= image_tag(photo.user.profile.avatar(:thumb),class:'user-avatar') %>
+			<%= avatar_tag(photo.user.profile.avatar.url(:thumb),class:"user-avatar avatar-rounded") %>
 			<span class="photo-by">Photo by</span>
 			<span class="user-name">
 				<%= link_to photo.author, user_photographer_path(photo.user_id), 

@@ -8,7 +8,7 @@
       <% end %>
     </div>
     <div class="user-infos">
-      <%= image_tag(current_user.profile.avatar.url(:medium),class:'avatar') %>
+      <%= avatar_tag(current_user.profile.avatar.url(:medium),class:"avatar") %>
       <%= content_tag :label,class:'user-name' do %>
         <%= link_to current_user.profile.short_name, user_photographer_path(current_user) %>
         <p><%= current_user.profile.category.description %></p>

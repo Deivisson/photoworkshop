@@ -18,13 +18,10 @@ ul.notifications-list {
 		&.selected {
 			 	background-color: #F9F9F9;
 		}
-		img.sender-avatar {
-			border-radius: 50%; 
-			-moz-border-radius: 50%; 
-			-webkit-border-radius: 50%;
-			float: left;
+		.user-avatar {
 			height: 50px;
 			margin: 4px 0 4px 0;
+			position: relative;
 			width: 50px;
 		}
 		.preview-text-box {

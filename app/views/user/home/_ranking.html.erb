@@ -3,7 +3,7 @@
   	<h1>Ranking</h1>
     <% @ranking_users.each do |photographer| %>
     	<li id="ranking-user-<%= photographer.id %>">
-        <%= image_tag(photographer.profile.avatar.url(:thumb),class:'user-avatar') %>
+        <%= avatar_tag(photographer.profile.avatar.url(:thumb),class:"user-avatar avatar-rounded") %>
     		<div class="text-box">
     			<%= link_to user_photographer_path(photographer.id), 
                       class:'photographer-name photographer-profile' do %>

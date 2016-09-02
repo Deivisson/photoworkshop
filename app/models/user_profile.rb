@@ -7,7 +7,7 @@ class UserProfile < ActiveRecord::Base
   validate :verify_urls, on: :update
   
   has_attached_file :avatar, 
-                    :styles => { :medium => "500x500>", :thumb => "200x200>" }, 
+                    :styles => { :medium => "500x500>", :thumb => "200x200>", :mini => "46x46" }, 
                     :default_url => "user/no_avatar.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   validates_attachment_size :avatar, less_than: 2.1.megabytes, message: I18n.t("activerecord.errors.messages.image_size",size:2)

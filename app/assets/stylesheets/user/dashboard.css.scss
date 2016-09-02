@@ -98,7 +98,9 @@ body {
 			}
 			.user-infos {
 				margin-top: -80px;
-				img.avatar {
+				.avatar {
+					background-position: center center;
+					background-size: cover;
 					border-radius: 10%;
 					border: 2px solid #fff;
 					float: left;
@@ -324,12 +326,8 @@ body {
 		&:last-child {
 			border-bottom: 0;
 		};
-		img.user-avatar {
-			border-radius: 50%;
-			float: left;
-			height: 45px;
-			margin-left: 10px;
-			width: 45px;
+		.user-avatar {
+			position: relative;
 		}
 		.text-box {
 			float: left;

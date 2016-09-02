@@ -5,7 +5,7 @@
 								locals:{photo_comment:comment,can_delete:true} %>
 		<% end %>
 		<li id="form-container-photo-<%= photo.id %>">
-			<%= image_tag(current_user.profile.avatar(:thumb),class:'avatar') %>
+			<%= avatar_tag(current_user.profile.avatar(:thumb),class:'user-avatar avatar-rounded') %>
 			<div class="text-box">
 				<div id="comment-form-photo-<%= photo.id %>" class="comment-form">
 					<%= render partial: '/user/photo_comments/form', 

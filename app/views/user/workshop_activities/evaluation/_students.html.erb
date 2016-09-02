@@ -7,7 +7,7 @@
 	<% @workshop.students.each do |student| %>
 		<%= content_tag :li, id:"activity-student-#{@workshop.id}#{student.id}" do %>
 		  <%= link_to user_photographer_path(student.id),class:"photographer-profile user-avatar-link" do %>
-	  		<%= image_tag student.profile.avatar.url(:thumb),class:'user-avatar' %>
+	  		<%= avatar_tag(student.profile.avatar.url(:thumb),class:'user-avatar')%>
 	  	<% end %>
 		  <%= link_to student.profile.user_name,
 		              user_workshop_activity_path(@workshop,@workshop_activity,responses_user_id:student.id),

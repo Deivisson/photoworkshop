@@ -7,8 +7,7 @@
           <%= content_tag :li, class: (@user_sender.id == message.user_sender_id ? 'selected' : "") do %>
             <%= link_to "", 
                 user_message_path(message,user_sender_id:message.user_sender_id),remote:true %>
-            <%= image_tag message.sender.profile.avatar.url(:thumb),
-                        class:"user-avatar-rounded" %>
+            <%= avatar_tag(message.sender.profile.avatar.url(:thumb),class:"user-avatar avatar-rounded") %>
             <div class="text-container">
               <%= content_tag :label,message.sender.profile.short_name(30),class:"user-name" %>
               <%= content_tag :p, message.content.truncate(150) %>

@@ -1,11 +1,28 @@
-img.user-avatar {
+/*img.user-avatar {
+	border: 1px solid #aaa;
+	float: left;
+	width: 120px;
+	height: 140px;
+}*/
+.user-avatar {
+	background-position: center center;
+	background-size: cover;
 	border: 1px solid #aaa;
 	float: left;
 	width: 120px;
 	height: 140px;
 }
 
-img.user-avatar-rounded {
+/*img.user-avatar-rounded {
+	border-radius: 50%;
+	float: left;
+	left: 0;
+	height: 45px;
+	position: absolute;
+	width: 45px;
+}*/
+
+.avatar-rounded {
 	border-radius: 50%;
 	float: left;
 	left: 0;

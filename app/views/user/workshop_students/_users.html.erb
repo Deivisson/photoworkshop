@@ -2,7 +2,7 @@
 	<%= content_tag :ul, class:'workshop-user-students' do %>
 		<% @user_profiles.each do |user_profile| %>
 			<%= content_tag :li, id:"user-#{user_profile.user_id}" do %>
-				<%= image_tag(user_profile.avatar.url(:medium),class:'user-avatar') %>
+				<%= avatar_tag(user_profile.avatar.url(:medium),class:'user-avatar') %>
 				<div class="details">
 					<%= content_tag :label, user_profile.user_name,class:'user-name' %>
 					<%= content_tag(:p,user_profile.city.name) unless user_profile.city.nil? %>

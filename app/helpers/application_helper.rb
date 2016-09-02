@@ -75,4 +75,12 @@ module ApplicationHelper
   def photo_full_url(photo,size)
     URI.join(ActionController::Base.asset_host, photo.picture.url(size))
   end
+
+  def avatar_tag(avatar_url,html_options={})
+    options = {} 
+    options.merge!(html_options)
+    options.merge!(style:"background-image:url(#{path_to_image(avatar_url)})")
+    html = content_tag(:div,"",options)
+    html.html_safe
+  end
 end

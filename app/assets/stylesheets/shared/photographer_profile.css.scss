@@ -52,7 +52,17 @@ ul.users-photographers {
 		}
 		.user-infos {
 			margin-top: -40px;
-			img.avatar {
+/*			img.avatar {
+				border-radius: 10%;
+				border: 2px solid #fff;
+				float: left;
+				height: 65px;
+				margin: 15px 0 0 7px;
+				width: 65px;
+			}*/
+			.avatar {
+				background-position: center center;
+				background-size: cover;
 				border-radius: 10%;
 				border: 2px solid #fff;
 				float: left;
@@ -246,6 +256,15 @@ ul.users-photographers {
 	    width: 140px;
 	    z-index: 99;
 	    img {
+				border-radius: 5px; 
+				-moz-border-radius: 5px; 
+				-webkit-border-radius: 5px;	    	
+	    	height: 100%;
+	    	width: 100%;
+	    }
+	    .avatar-img {
+	    	background-position: center center;
+	    	background-size: cover;
 				border-radius: 5px; 
 				-moz-border-radius: 5px; 
 				-webkit-border-radius: 5px;	    	

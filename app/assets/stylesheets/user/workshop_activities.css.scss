@@ -334,9 +334,10 @@ ul.workshop-students.show {
 		a.photographer-profile.user-avatar-link {
 			margin-top: -2px;
 			width: 32px;
-			img {
-				height: 32px;
-				width: 32px;
+			.user-avatar {
+				float: left;
+		    margin-left: -9px;
+		    position: relative;
 			}
 		}
 		a.user-name {

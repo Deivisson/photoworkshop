@@ -67,13 +67,14 @@ HORIZONTAL SLIDE
 	.header {
 		height: 70px;
 		width: 100%;
-		.avatar {
+		.user-avatar {
 			border: 2px solid #F1F1F1;
 			border-radius: 50%;
 			float: left;
 			height: 40px;
 			width: 40px;
 			margin: 5px 10px 0 10px;
+			position: relative;
 		}
 		.text-box {
 			float: left;
@@ -181,8 +182,9 @@ HORIZONTAL SLIDE
 .portfolio-horizontal-slide.light {
 	background-color: #FFF;
 	.header {
-		.avatar {
+		.user-avatar {
 			border: 2px solid #F1F1F1;
+			position: relative;
 		}
 		.text-box {
 			h1 {
@@ -237,13 +239,14 @@ VERTICAL SLIDE
 	.header {
 		height: 70px;
 		width: 100%;
-		.avatar {
+		.user-avatar {
 			border: 2px solid #F1F1F1;
 			border-radius: 50%;
 			float: left;
 			height: 40px;
 			width: 40px;
 			margin: 5px 10px 0 10px;
+			position: relative;
 		}
 		.text-box {
 			float: left;
@@ -383,8 +386,9 @@ VERTICAL SLIDE
 .portfolio-vertical-slide.light {
 	background-color: #FFF;
 	.header {
-		.avatar {
+		.user-avatar {
 			border: 2px solid #F1F1F1;
+			position: relative;
 		}
 		.text-box {
 			h1 {
@@ -441,13 +445,14 @@ VERTICAL SLIDE
 	.header {
 		height: 70px;
 		width: 100%;
-		.avatar {
+		.user-avatar {
 			border: 2px solid #F1F1F1;
 			border-radius: 50%;
 			float: left;
 			height: 40px;
 			width: 40px;
 			margin: 5px 10px 0 10px;
+			position: relative;
 		}
 		.text-box {
 			float: left;
