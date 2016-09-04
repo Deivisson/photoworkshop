@@ -1,4 +1,4 @@
-<div class="portfolio-simple-left-col">
+<div class="portfolio-simple-left-col" id="portfolio-simple-image-thumbs">
 	<div class="photo-thumbs">
 		<% @photographer.photos.each do |photo| %>
 			<%= content_tag :div,"",class:"thumb-img",	style:"background-image: url('#{photo.picture.url(:medium)}')" do %>

@@ -1,6 +1,7 @@
 $(document).on('ready page:load', function (){
 	setLayoutTheme();
 	PortfolioMenuClick();
+	SetCustomScrollBar();
 });
 
 function setLayoutTheme() {
@@ -24,4 +25,10 @@ function PortfolioMenuClick() {
 		$(this).addClass("active");
 		//alert("Ok");
 	});
+}
+
+function SetCustomScrollBar(){
+	if ($("#portfolio-simple-image-thumbs").length > 0) {
+		$("#portfolio-simple-image-thumbs").mCustomScrollbar();
+	}
 }
