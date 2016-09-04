@@ -3,6 +3,7 @@ $(document).on('ready page:load', function (){
 });
 
 function TriggerSubmitOnEnterCommentInputField(){
+  	$(".photo-comment-input-text").unbind('keypress');
 	$(".photo-comment-input-text").keypress(function(e) {
     if(e.which == 13) {
     	e.preventDefault();
@@ -12,4 +13,5 @@ function TriggerSubmitOnEnterCommentInputField(){
     }
 	});
 }
+
 
