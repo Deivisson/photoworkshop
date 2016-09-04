@@ -29,7 +29,7 @@ class Photo < ActiveRecord::Base
 
   before_destroy :check_if_can_be_destroyed
   after_post_process :save_exif
-  after_create :save_user_points
+  after_create :save_user_points, :increase_photo_upload
   after_update :save_user_points_after_set_photo_as_cover
   # :register_photo_view
 
@@ -219,5 +219,10 @@ private
     else
       return ""
     end
+  end
+
+  def increase_photo_upload
+    user_profile = UserProfile.where(user_id:self.user_id).first
+    user_profile.increase_photo_upload_in_first_post!
   end
 end

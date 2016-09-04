@@ -17,9 +17,10 @@ class User::NotificationMailer < ActionMailer::Base
   end
 
   def upload_increased_message(user,social_network)
-    @user = user;
-    @social_network = social_network;
-    @profile = user.profile;
+    @user                       = user;
+    @social_network             = social_network;
+    @increased_by_first_upload  = social_network.nil?
+    @profile                    = user.profile;
 
     mail(:to        => user.email, 
          :subject   => I18n.t('mailer_subjects.reward'),

@@ -60,6 +60,15 @@ class UserProfile < ActiveRecord::Base
     end 
   end
 
+  def increase_photo_upload_in_first_post!
+    unless self.uploaded_first_photo?
+      self.uploaded_first_photo = true
+      self.limit_upload_photo_by_day += 1
+      self.save!
+      User::NotificationMailer.upload_increased_message(self.user,nil).deliver
+    end
+  end
+
   def self.get_user_name(full_name)
     UserProfile.consist_user_name!(full_name)
   end

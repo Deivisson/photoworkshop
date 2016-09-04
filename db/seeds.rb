@@ -106,7 +106,14 @@ end
 # #
 # #Temporary and should remove after execute
 
-
+puts "Updating UPLOADED_FIRST_PHOTO"
+User.all.each do |p|
+  if p.photos.count > 0
+    p.profile.uploaded_first_photo = true
+    p.profile.save!
+  end
+end
+puts "End Updating UPLOADED_FIRST_PHOTO"
 
 # User.all.each do |u|
 #   #remove method unread_notifications_count on user model

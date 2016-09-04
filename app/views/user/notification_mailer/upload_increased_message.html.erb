@@ -25,7 +25,11 @@
               </a>
             </div>
             <h1 style="color: #4D8DC4; float: left;font-size: 29px;font-weight: normal; margin: 16px 0 0 20px; width: auto;">
-              <%= t('.title') %>
+              <% if @increased_by_first_upload %>
+                <%= t('.title_first_upload') %>
+              <% else %>
+                <%= t('.title') %>
+              <% end %>
             </h1>
           </td>
         </tr>
@@ -35,8 +39,14 @@
         <tr class="episode">
           <td valign="top">
             <h2 style="color:#544F4F;font-weight:normal">
-               <%= t('.message',social_network:@social_network.humanize,
+              <% if @increased_by_first_upload %>
+                <%= t('.message_first_upload',
+                      limit_upload:@profile.limit_upload_photo_by_day).html_safe %>
+                
+              <% else %>
+                <%= t('.message',social_network:@social_network.humanize,
                				limit_upload:@profile.limit_upload_photo_by_day).html_safe %>
+              <% end %>
             </h2>
             <h4 style="color:#544F4F;font-weight:normal;font-size:14px;margin-top: 40px">
                <%= t('.message_share_more') %>
