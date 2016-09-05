@@ -12,6 +12,8 @@ class User::CommunicationsController < User::BaseController
 				current_user.update_attribute(:refuse_eduk_award,true) if params[:tag] == "refuse"
 			when 2
 				redirect_to edit_user_profile_path(current_user) unless request.xhr?
+			when 3
+				current_user.update_attribute(:participating_raffle_basket,true) unless params[:tag] == "refuse"
 			end
 		end
 	end

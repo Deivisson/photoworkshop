@@ -35,3 +35,12 @@ UM BRINDE A TUDO ISSO!!! Este é o 2.139 Selo Diamante distribuído pelo grupo C
 photos = Photo.joins(:user).where("users.refuse_eduk_award=false and photos.created_at >= '2016-04-04'")
 ids = photos.collect{|p|p.id}
 ids[prng.rand(0..7)]
+
+
+===============================
+Passos para Backup Postgresql
+===============================
+1 - Logar via ssh 			-> ssh root@pic2gether.com
+2 - Usar usuário rails  -> sudo su - rails
+3 - Executar dump				-> pg_dump pic2gether_production > pic2gether_ddMMyyyy_hhMM
+4 - Restaurar dump      -> psql pic2gether_production < pic2gether_ddMMyyyy_hhMM

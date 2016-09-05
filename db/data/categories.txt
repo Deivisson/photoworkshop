@@ -30,3 +30,4 @@ Urbanismo
 Mergulho
 Veiculo
 Casamento
+Newborn

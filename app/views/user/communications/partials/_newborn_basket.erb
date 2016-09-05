@@ -1,0 +1,23 @@
+<div class="alert alert-info">
+	<span class="greetings">
+		Olá <%= current_user.profile.full_name %>,<br><br>
+	</span>
+	<p>
+		Falta pouco para você concorrer a um lindo cesto para fotografia Newborn.
+		Para confirmar a sua participação basta clicar no botão abaixo e postar suas fotografias! Lembrando, que quanto mais você postar, maiores são as chances de ganhar. Confira o 
+		<%= link_to "Regularmento",pic2gether_awards_path("basket_raffle"),target:'_blank' %> 
+		de Participação.
+	</p>
+
+	<br><br>
+	<%= link_to "Ok, quero participar",
+							user_communications_path(id:@communication),
+							class:"btn btn-success", method: :post,
+							style:"float:left", remote:true %>
+
+	<%= link_to "Não quero participar do Sorteio",
+							user_communications_path(id:@communication,tag:'refuse'),	
+							data: {confirm:'Confirma a não Participação ?'},
+							class:"btn btn-important", remote:true,method: :post,
+							style:"float:right" %>
+</div>
