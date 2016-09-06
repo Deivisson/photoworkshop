@@ -3,4 +3,7 @@ if ($("#communication_tag").length > 0) {
 	$('#communication-modal-dialog').dialog("close");
 }else if ($("#communication-alert-message").length > 0 ) {
 	$("#communication-alert-message").remove();
+	<% unless @refuse %>
+		flashNoticeMessage("<%= @message %>");
+	<% end %>
 }
