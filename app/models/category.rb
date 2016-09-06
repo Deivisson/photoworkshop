@@ -4,4 +4,5 @@ class Category < ActiveRecord::Base
 	has_many :user_profiles
 	has_many :photos
 	has_and_belongs_to_many :users
+	default_scope -> {order("description asc")}
 end
