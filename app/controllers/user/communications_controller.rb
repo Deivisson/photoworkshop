@@ -5,6 +5,7 @@ class User::CommunicationsController < User::BaseController
 	end
 
 	def create
+		@message = ""
 		unless @communication.nil?
 			current_user.communications << @communication
 			case @communication.id
@@ -14,6 +15,8 @@ class User::CommunicationsController < User::BaseController
 				redirect_to edit_user_profile_path(current_user) unless request.xhr?
 			when 3
 				current_user.update_attribute(:participating_raffle_basket,true) unless params[:tag] == "refuse"
+				@refuse = (params[:tag] == "refuse")
+				@message = "A sua participação foi registrada, poste suas fotos e boa sorte.."
 			end
 		end
 	end

@@ -98,7 +98,8 @@ portfolio_templates = [
 #Comunications
 communications = [
   {description:'Sorteio de Assinatura Eduk - Lancamento Pic2Gether',partial_name:'eduk_courses',expiration_date:'2016-04-24 23:59:59'},
-  {description:'Fotografo Oportunidades Emprego e Freelancer',partial_name:'photographer_workers'}
+  {description:'Fotografo Oportunidades Emprego e Freelancer',partial_name:'photographer_workers'},
+  {description:'Sorteio Cesto Newborn',partial_name:'newborn_basket',expiration_date:'2016-09-20 23:59:59'}
 ].each do |communication|
   Communication.where(communication).first_or_create
 end
@@ -106,14 +107,14 @@ end
 # #
 # #Temporary and should remove after execute
 
-puts "Updating UPLOADED_FIRST_PHOTO"
-User.all.each do |p|
-  if p.photos.count > 0
-    p.profile.uploaded_first_photo = true
-    p.profile.save!
-  end
-end
-puts "End Updating UPLOADED_FIRST_PHOTO"
+# puts "Updating UPLOADED_FIRST_PHOTO"
+# User.all.each do |p|
+#   if p.photos.count > 0
+#     p.profile.uploaded_first_photo = true
+#     p.profile.save!
+#   end
+# end
+# puts "End Updating UPLOADED_FIRST_PHOTO"
 
 # User.all.each do |u|
 #   #remove method unread_notifications_count on user model
